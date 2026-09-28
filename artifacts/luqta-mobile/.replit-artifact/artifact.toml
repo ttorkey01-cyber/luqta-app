@@ -1,0 +1,24 @@
+kind = "mobile"
+previewPath = "/luqta-mobile/"
+title = "LUQTA Mobile Shopping App"
+description = "A premium Arabic RTL shopping discovery app for finding products through visual search, curated recommendations, favorites, and the LUQTA find-it-for-me experience."
+version = "1.0.0"
+id = "artifacts/luqta-mobile"
+router = "expo-domain"
+
+[[services]]
+name = "expo"
+ensurePreviewReachable = "/status"
+paths = [ "/luqta-mobile/" ]
+localPort = 20751
+
+[services.development]
+run = "pnpm --filter @workspace/luqta-mobile run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/luqta-mobile", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/luqta-mobile", "run", "serve" ]
+
+[services.env]
+PORT = "20751"
+BASE_PATH = "/luqta-mobile/"

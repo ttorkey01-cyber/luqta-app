@@ -1,0 +1,971 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: search
+    description: Product search operations
+  - name: providers
+    description: Development and admin provider configuration
+  - name: home
+    description: Curated feed-backed Home collections
+  - name: images
+    description: Provider image delivery
+  - name: hunts
+    description: Device-scoped saved Hunt operations
+  - name: devices
+    description: Anonymous device identity and push registration
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+  /providers/status:
+    get:
+      operationId: getProviderIntegrationStatus
+      tags: [providers]
+      summary: Provider integration status
+      description: Returns non-consumer provider configuration for development and admin inspection.
+      responses:
+        "200":
+          description: Provider status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProviderStatusResponse"
+  /search:
+    post:
+      operationId: searchProducts
+      tags: [search]
+      summary: Search authorized product providers
+      description: Searches enabled providers through the server-side SearchOrchestrator.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProductSearchRequest"
+      responses:
+        "200":
+          description: Ranked product search results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProductSearchResponse"
+  /devices/register:
+    post:
+      operationId: registerHuntDevice
+      tags: [devices]
+      summary: Register an anonymous app installation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DeviceRegistrationRequest"
+      responses:
+        "201":
+          description: Device-scoped access session
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeviceSession"
+  /devices/me:
+    get:
+      operationId: getHuntDevice
+      tags: [devices]
+      summary: Get the current device's notification status
+      security:
+        - huntDeviceBearer: []
+      responses:
+        "200":
+          description: Current device status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeviceStatus"
+  /devices/push-token:
+    put:
+      operationId: registerHuntPushToken
+      tags: [devices]
+      summary: Register this device's Expo push token
+      security:
+        - huntDeviceBearer: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DevicePushTokenRequest"
+      responses:
+        "200":
+          description: Push notifications are enabled for this device
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeviceStatus"
+    delete:
+      operationId: disableHuntPushToken
+      tags: [devices]
+      summary: Disable push notifications for this device
+      security:
+        - huntDeviceBearer: []
+      responses:
+        "200":
+          description: Push notifications are disabled for this device
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeviceStatus"
+  /hunts:
+    get:
+      operationId: listSavedHunts
+      tags: [hunts]
+      summary: List this device's saved Hunts
+      security:
+        - huntDeviceBearer: []
+      responses:
+        "200":
+          description: Saved Hunts and device notification status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SavedHuntsResponse"
+    post:
+      operationId: createSavedHunt
+      tags: [hunts]
+      summary: Create a device-scoped saved Hunt
+      security:
+        - huntDeviceBearer: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/HuntUpsertRequest"
+      responses:
+        "201":
+          description: Saved Hunt
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SavedHunt"
+  /hunts/{huntId}:
+    parameters:
+      - name: huntId
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      operationId: upsertSavedHunt
+      tags: [hunts]
+      summary: Synchronize a saved Hunt by its client ID
+      security:
+        - huntDeviceBearer: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/HuntUpsertRequest"
+      responses:
+        "200":
+          description: Synchronized saved Hunt
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SavedHunt"
+    patch:
+      operationId: updateSavedHunt
+      tags: [hunts]
+      summary: Update a saved Hunt
+      security:
+        - huntDeviceBearer: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/HuntPatchRequest"
+      responses:
+        "200":
+          description: Updated saved Hunt
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SavedHunt"
+        "404":
+          description: Hunt not found
+    delete:
+      operationId: deleteSavedHunt
+      tags: [hunts]
+      summary: Delete a saved Hunt
+      security:
+        - huntDeviceBearer: []
+      responses:
+        "204":
+          description: Hunt deleted
+  /home/picks:
+    get:
+      operationId: getHomePicks
+      tags: [home]
+      summary: Feed-backed Home picks
+      description: Returns a cached editorial collection built only from enabled product-feed catalogs.
+      responses:
+        "200":
+          description: Curated Home collection
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HomePicksResponse"
+  /images/nazih:
+    get:
+      operationId: getNazihProductImage
+      tags: [images]
+      summary: Deliver a Nazih product image
+      description: Fetches an allowlisted Nazih product image for clients that cannot load the source directly.
+      parameters:
+        - name: url
+          in: query
+          required: true
+          schema:
+            type: string
+            format: uri
+            pattern: "^https://nazih\\.sa/media/catalog/product/"
+      responses:
+        "200":
+          description: Product image bytes
+          content:
+            image/jpeg:
+              schema:
+                type: string
+                format: binary
+            image/png:
+              schema:
+                type: string
+                format: binary
+            image/webp:
+              schema:
+                type: string
+                format: binary
+        "400":
+          description: Invalid or non-Nazih image URL
+        "502":
+          description: Nazih did not return a supported image
+        "504":
+          description: Nazih image request timed out
+components:
+  securitySchemes:
+    huntDeviceBearer:
+      type: http
+      scheme: bearer
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+    ProviderStatusResponse:
+      type: object
+      properties:
+        providers:
+          type: array
+          items:
+            $ref: "#/components/schemas/ProviderStatus"
+      required:
+        - providers
+    ProviderStatus:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        searchAvailability:
+          type: string
+          enum: [enabled, disabled, authorized_access_required]
+        affiliateCapability:
+          type: string
+          enum: [active, available_pending_access, not_verified, not_applicable]
+        priceMonitoringCapability:
+          type: string
+          enum: [allowed, disabled, restricted_by_policy, requires_authorization]
+        credentialsRequired:
+          type: array
+          items:
+            type: string
+        integrationStatus:
+          type: string
+          enum: [mock, disabled, authorized, ready]
+        country:
+          type: string
+        currency:
+          type: string
+        integrationType:
+          type: string
+        priority:
+          type: integer
+        lastSuccessfulSync:
+          type:
+            - string
+            - "null"
+          format: date-time
+        imageHealth:
+          $ref: "#/components/schemas/ProviderImageHealth"
+      required:
+        - id
+        - name
+        - searchAvailability
+        - affiliateCapability
+        - priceMonitoringCapability
+        - credentialsRequired
+        - integrationStatus
+        - country
+        - currency
+        - integrationType
+        - priority
+        - lastSuccessfulSync
+        - imageHealth
+    ProviderImageHealth:
+      type: object
+      properties:
+        populatedImageCount:
+          type: integer
+          minimum: 0
+        sampledImageCount:
+          type: integer
+          minimum: 0
+        reachableImageCount:
+          type: integer
+          minimum: 0
+        status:
+          type: string
+          enum: [not_checked, healthy, degraded, unhealthy]
+        lastCheckedAt:
+          type:
+            - string
+            - "null"
+          format: date-time
+      required:
+        - populatedImageCount
+        - sampledImageCount
+        - reachableImageCount
+        - status
+        - lastCheckedAt
+    ProductSearchRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          minLength: 1
+          maxLength: 200
+        category:
+          $ref: "#/components/schemas/LuqtaCategory"
+        categoryFilterId:
+          type: string
+          description: Stable category facet ID to apply before result ranking and pagination.
+        page:
+          type: integer
+          minimum: 1
+        pageSize:
+          type: integer
+          minimum: 1
+          maximum: 24
+        searchMode:
+          type: string
+          enum: [category_browse, intent]
+        preferredProviderIds:
+          type: array
+          items:
+            type: string
+      required:
+        - query
+    LuqtaCategory:
+      type: string
+      enum:
+        - beauty_care
+        - fashion
+        - bags_accessories
+        - watches_jewelry
+        - electronics
+        - home_living
+        - shoes
+        - eyewear
+        - automotive
+        - kids_baby
+        - sports_fitness
+        - games_hobbies
+    ProductSearchResponse:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            $ref: "#/components/schemas/SearchProduct"
+        categoryState:
+          type: string
+          enum: [healthy, low, zero]
+        categoryInventoryCount:
+          type: integer
+          minimum: 0
+        categoryFilters:
+          type: array
+          items:
+            $ref: "#/components/schemas/CategoryFilter"
+        total:
+          type: integer
+          minimum: 0
+        page:
+          type: integer
+          minimum: 1
+        pageSize:
+          type: integer
+          minimum: 1
+        hasMore:
+          type: boolean
+        structuredIntent:
+          $ref: "#/components/schemas/StructuredSearchIntent"
+        strongInternalMatchCount:
+          type: integer
+          minimum: 0
+        fallbackStatus:
+          type: string
+          enum: [not_needed, unavailable, empty, used]
+      required:
+        - products
+        - fallbackStatus
+    StructuredSearchIntent:
+      type: object
+      properties:
+        raw:
+          type: string
+        normalized:
+          type: string
+        keywords:
+          type: array
+          items:
+            type: string
+        category:
+          type: string
+        productType:
+          type: string
+        audience:
+          type: string
+          enum: [women, men, boys, girls, kids]
+        brand:
+          type: string
+        color:
+          type: string
+        maxPrice:
+          type: number
+        minPrice:
+          type: number
+        currency:
+          type: string
+          enum: [SAR]
+        condition:
+          type: string
+          enum: [new, used, refurbished, unknown]
+        location:
+          type: string
+        vehicleMake:
+          type: string
+        vehicleModel:
+          type: string
+        vehicleYear:
+          type: string
+        partName:
+          type: string
+        partNumber:
+          type: string
+        oemNumber:
+          type: string
+        newOrUsed:
+          type: string
+          enum: [new, used, refurbished, unknown]
+      additionalProperties: false
+    DeviceRegistrationRequest:
+      type: object
+      properties:
+        platform:
+          type: string
+          enum: [android, ios, web]
+      required: [platform]
+    DeviceSession:
+      type: object
+      properties:
+        deviceId:
+          type: string
+          format: uuid
+        accessToken:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+      required: [deviceId, accessToken, createdAt]
+    DeviceStatus:
+      type: object
+      properties:
+        deviceId:
+          type: string
+          format: uuid
+        platform:
+          type: string
+          enum: [android, ios, web]
+        pushNotificationsEnabled:
+          type: boolean
+      required: [deviceId, platform, pushNotificationsEnabled]
+    DevicePushTokenRequest:
+      type: object
+      properties:
+        expoPushToken:
+          type: string
+          minLength: 20
+          maxLength: 200
+        platform:
+          type: string
+          enum: [android, ios]
+      required: [expoPushToken, platform]
+    HuntDiscoveryMatch:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        merchant:
+          type: [string, "null"]
+        productUrl:
+          type: [string, "null"]
+        affiliateUrl:
+          type: [string, "null"]
+        price:
+          type: [number, "null"]
+        currency:
+          type: [string, "null"]
+        priceStatus:
+          type: string
+          enum: [within_budget, above_budget, known, unavailable]
+      required: [id, title, price, priceStatus]
+    HuntUpsertRequest:
+      type: object
+      properties:
+        id:
+          type: string
+          minLength: 1
+          maxLength: 160
+        query:
+          type: string
+          minLength: 1
+          maxLength: 200
+        originalQuery:
+          type: string
+          minLength: 1
+          maxLength: 200
+        normalizedIntent:
+          type: string
+          maxLength: 500
+        structuredIntent:
+          $ref: "#/components/schemas/StructuredSearchIntent"
+        targetPrice:
+          type: [number, "null"]
+          minimum: 0
+        currency:
+          type: string
+          enum: [SAR]
+        condition:
+          type: string
+          enum: [any, new, used]
+        createdAt:
+          type: string
+          format: date-time
+        status:
+          type: string
+          enum: [active, paused, completed]
+        matchStatus:
+          type: string
+          enum: [matched, no_reliable_match, no_verified_price, search_unavailable]
+        bestMatchId:
+          type: [string, "null"]
+        bestMatchTitle:
+          type: [string, "null"]
+        bestPrice:
+          type: [number, "null"]
+        discoveryMatches:
+          type: array
+          items:
+            $ref: "#/components/schemas/HuntDiscoveryMatch"
+      required: [id, query, originalQuery, normalizedIntent, currency, condition, createdAt, status]
+    HuntPatchRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          minLength: 1
+          maxLength: 200
+        originalQuery:
+          type: string
+          minLength: 1
+          maxLength: 200
+        normalizedIntent:
+          type: string
+          maxLength: 500
+        structuredIntent:
+          $ref: "#/components/schemas/StructuredSearchIntent"
+        targetPrice:
+          type: [number, "null"]
+          minimum: 0
+        currency:
+          type: string
+          enum: [SAR]
+        condition:
+          type: string
+          enum: [any, new, used]
+        status:
+          type: string
+          enum: [active, paused, completed]
+    SavedHunt:
+      allOf:
+        - $ref: "#/components/schemas/HuntUpsertRequest"
+        - type: object
+          properties:
+            lastCheckedAt:
+              type: [string, "null"]
+              format: date-time
+            monitoringState:
+              type: string
+              enum: [active, inactive, paused, blocked_by_provider_policy]
+          required: [lastCheckedAt, monitoringState]
+    SavedHuntsResponse:
+      type: object
+      properties:
+        hunts:
+          type: array
+          items:
+            $ref: "#/components/schemas/SavedHunt"
+        pushNotificationsEnabled:
+          type: boolean
+        monitoringProviderCount:
+          type: integer
+          minimum: 0
+      required: [hunts, pushNotificationsEnabled, monitoringProviderCount]
+    CategoryFilter:
+      type: object
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        count:
+          type: integer
+          minimum: 1
+        level:
+          type: integer
+          enum: [0, 1]
+        parentId:
+          type: string
+      required:
+        - id
+        - label
+        - count
+        - level
+    HomePicksResponse:
+      type: object
+      properties:
+        collection:
+          $ref: "#/components/schemas/HomeCollection"
+        products:
+          type: array
+          items:
+            $ref: "#/components/schemas/SearchProduct"
+      required:
+        - collection
+        - products
+    HomeCollection:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        category:
+          $ref: "#/components/schemas/LuqtaCategory"
+        filterId:
+          type: string
+      required:
+        - id
+        - title
+        - category
+    CanonicalProduct:
+      type: object
+      properties:
+        id:
+          type: string
+        providerId:
+          type: string
+        providerProductId:
+          type: string
+          nullable: true
+        title:
+          type: string
+        description:
+          type: string
+          nullable: true
+        brand:
+          type: string
+          nullable: true
+        productType:
+          type: string
+          nullable: true
+        category:
+          allOf:
+            - $ref: "#/components/schemas/LuqtaCategory"
+          nullable: true
+        subcategory:
+          type: string
+          nullable: true
+        audience:
+          type: string
+          enum: [women, men, boys, girls, kids]
+          nullable: true
+        color:
+          type: string
+          nullable: true
+        imageUrl:
+          type: string
+          format: uri
+          nullable: true
+        alternateImageUrls:
+          type: array
+          nullable: true
+          items:
+            type: string
+            format: uri
+        price:
+          type: number
+          nullable: true
+        originalPrice:
+          type: number
+          nullable: true
+        discount:
+          type: number
+          nullable: true
+        currency:
+          type: string
+          nullable: true
+        merchant:
+          type: string
+          nullable: true
+        productUrl:
+          type: string
+          format: uri
+          nullable: true
+        affiliateUrl:
+          type: string
+          format: uri
+          nullable: true
+        destinationUrl:
+          type: string
+          format: uri
+          nullable: true
+        availability:
+          type: string
+          enum: [in_stock, out_of_stock]
+          nullable: true
+        condition:
+          type: string
+          enum: [new, used, refurbished]
+          nullable: true
+        location:
+          type: string
+          nullable: true
+        rating:
+          type: number
+          nullable: true
+        reviewCount:
+          type: integer
+          minimum: 0
+          nullable: true
+        updatedAt:
+          type: string
+          nullable: true
+        sourceType:
+          type: string
+      required:
+        - id
+        - providerId
+        - providerProductId
+        - title
+        - description
+        - brand
+        - productType
+        - category
+        - subcategory
+        - audience
+        - color
+        - imageUrl
+        - alternateImageUrls
+        - price
+        - originalPrice
+        - discount
+        - currency
+        - merchant
+        - productUrl
+        - affiliateUrl
+        - destinationUrl
+        - availability
+        - condition
+        - location
+        - rating
+        - reviewCount
+        - updatedAt
+        - sourceType
+    SearchProduct:
+      type: object
+      properties:
+        id:
+          type: string
+        canonical:
+          $ref: "#/components/schemas/CanonicalProduct"
+        title:
+          type: string
+        description:
+          type: string
+          nullable: true
+        productUrl:
+          type: string
+          format: uri
+          nullable: true
+        affiliateUrl:
+          type: string
+          format: uri
+          nullable: true
+        destinationUrl:
+          type: string
+          format: uri
+          nullable: true
+        imageUrl:
+          type: string
+          format: uri
+          nullable: true
+        alternateImageUrls:
+          type: array
+          nullable: true
+          items:
+            type: string
+            format: uri
+        price:
+          type: number
+          nullable: true
+        originalPrice:
+          type: number
+          nullable: true
+        discount:
+          type: number
+          nullable: true
+        currency:
+          type: string
+          nullable: true
+        merchant:
+          type: string
+          nullable: true
+        category:
+          type: string
+          nullable: true
+        categoryFilterIds:
+          type: array
+          items:
+            type: string
+        brand:
+          type: string
+          nullable: true
+        productType:
+          type: string
+          nullable: true
+        subcategory:
+          type: string
+          nullable: true
+        audience:
+          type: string
+          nullable: true
+        color:
+          type: string
+          nullable: true
+        availability:
+          type: string
+          enum: [in_stock, out_of_stock, unknown]
+        condition:
+          type: string
+          enum: [new, used, refurbished, unknown]
+        location:
+          type: string
+          nullable: true
+        rating:
+          type: number
+          nullable: true
+        reviewCount:
+          type: integer
+          nullable: true
+        source:
+          type: string
+        sourceType:
+          type: string
+        updatedAt:
+          type: string
+          nullable: true
+        providerId:
+          type: string
+        providerName:
+          type: string
+        isAffiliate:
+          type: boolean
+        rankScore:
+          type: number
+        priceScore:
+          type: number
+        availabilityScore:
+          type: number
+        conditionScore:
+          type: number
+        locationScore:
+          type: number
+        exactMatchScore:
+          type: number
+        reliabilityScore:
+          type: number
+        specificationScore:
+          type: number
+      required:
+        - id
+        - title
+        - canonical
+        - availability
+        - sourceType
+        - providerId
+        - providerName
+        - isAffiliate
+        - rankScore
+        - priceScore
+        - availabilityScore
+        - conditionScore
+        - locationScore
+

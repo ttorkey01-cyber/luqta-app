@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "LUQTA Public Landing Page"
+description = "A lightweight bilingual public website for LUQTA (لُقطة), the Saudi shopping discovery mobile app currently under development."
+version = "1.0.0"
+id = "artifacts/luqta-landing"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20313
+
+[services.development]
+run = "pnpm --filter @workspace/luqta-landing run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/luqta-landing", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/luqta-landing/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20313"
+BASE_PATH = "/"
