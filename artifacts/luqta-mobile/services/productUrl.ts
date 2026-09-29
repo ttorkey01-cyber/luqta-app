@@ -1,21 +1,12 @@
-import { Alert, Linking } from 'react-native';
+import { Alert, Linking, Platform } from 'react-native';
 import type { ProductResult } from '@/types/search';
-
-function isSafeHttpUrl(value: string | null | undefined): value is string {
-  if (!value) return false;
-  try {
-    const parsed = new URL(value);
-    return parsed.protocol === 'https:' || parsed.protocol === 'http:';
-  } catch {
-    return false;
-  }
-}
+import { productOutboundUrl } from '@/types/outboundLink';
 
 export async function openProductUrl(
-  product: Pick<ProductResult, 'affiliateUrl' | 'productUrl'>,
+  product: Pick<ProductResult, 'affiliateUrl' | 'productUrl'> & { source?: ProductResult['source'] },
 ) {
-  const destination = product.affiliateUrl ?? product.productUrl;
-  if (!isSafeHttpUrl(destination)) {
+  const destination = productOutboundUrl(product, Platform.OS === 'android');
+  if (!destination) {
     Alert.alert('الرابط غير متاح', 'لا يوجد رابط متجر صالح لهذا المنتج حالياً.');
     return false;
   }

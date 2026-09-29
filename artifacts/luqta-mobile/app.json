@@ -1,8 +1,23 @@
 {
   "expo": {
     "name": "LUQTA Mobile Shopping App",
-    "slug": "luqta-mobile",
+    "slug": "luqta",
+    "owner": "luqta-app",
     "version": "1.0.0",
+    "runtimeVersion": {
+      "policy": "fingerprint"
+    },
+    "updates": {
+      "enabled": true,
+      "url": "https://u.expo.dev/8fa7523f-0675-436e-ae97-f3f11f76519e",
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8fa7523f-0675-436e-ae97-f3f11f76519e"
+      }
+    },
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "luqta-mobile",

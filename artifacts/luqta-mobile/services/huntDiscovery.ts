@@ -9,6 +9,7 @@ export type HuntDiscoveryPriceStatus =
 export type HuntDiscoveryMatch = {
   id: string;
   title: string;
+  source?: ProductResult['source'];
   merchant?: string | null;
   productUrl?: string | null;
   affiliateUrl?: string | null;
@@ -41,6 +42,7 @@ export function buildHuntDiscoveryMatches(
     return {
       id: product.id,
       title: product.title,
+      source: product.source,
       merchant: product.merchant,
       productUrl: product.productUrl,
       affiliateUrl: product.affiliateUrl,

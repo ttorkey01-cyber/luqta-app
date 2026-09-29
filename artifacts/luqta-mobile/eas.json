@@ -6,6 +6,7 @@
     "production-test": {
       "developmentClient": false,
       "distribution": "internal",
+      "channel": "production",
       "android": {
         "buildType": "apk"
       },

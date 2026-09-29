@@ -1,5 +1,6 @@
 import { Platform, type ImageSourcePropType } from 'react-native';
 import type { SearchProduct } from '@workspace/api-client-react';
+import { luxuryClosetAndroidImageUri } from './imageFallback';
 
 export type ProductImage = ImageSourcePropType | string;
 export type CanonicalProduct = SearchProduct['canonical'];
@@ -89,10 +90,10 @@ export function imageSource(
   const uri =
     useNazihProxy && providerId === 'nazih'
       ? nazihImageProxyUri(image) ?? image
-      : image;
+      : luxuryClosetAndroidImageUri(image, providerId, Platform.OS === 'android');
   let referer: string | undefined;
   try {
-    const parsed = new URL(image);
+    const parsed = new URL(uri);
     referer =
       providerId === 'nazih'
         ? 'https://nazih.sa/'

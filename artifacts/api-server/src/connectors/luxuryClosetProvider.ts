@@ -15,7 +15,7 @@ export class LuxuryClosetProvider extends AdmitadFeedProvider {
       feedFetchTimeoutMs: 120_000,
       maxIndexedProducts: 5_000,
       fieldMappings: {
-        image: ["picture", "icon_media_url"],
+        image: ["picture"],
         category: ["categories", "categoryid"],
         condition: ["condition_detail"],
       },

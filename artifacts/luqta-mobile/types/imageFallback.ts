@@ -14,6 +14,30 @@ export function nextProductImageUrl(
   });
 }
 
+export function luxuryClosetAndroidImageUri(
+  imageUrl: string,
+  providerId: string | undefined,
+  isAndroid: boolean,
+): string {
+  if (providerId !== 'luxury-closet' || !isAndroid) return imageUrl;
+  try {
+    const url = new URL(imageUrl);
+    if (
+      url.protocol === 'http:' &&
+      url.hostname === 'cdn.theluxurycloset.com' &&
+      !url.port &&
+      !url.username &&
+      !url.password
+    ) {
+      // The merchant's HTTP URL redirects to this exact HTTPS image.
+      return imageUrl.replace(/^http:\/\//i, 'https://');
+    }
+  } catch {
+    // Leave malformed URLs to the normal image-error placeholder.
+  }
+  return imageUrl;
+}
+
 export function shouldTryNazihImageProxy(
   providerId: string,
   isAndroid: boolean,

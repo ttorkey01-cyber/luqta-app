@@ -51,11 +51,12 @@ test('classifies verified target-price results separately from unknown prices', 
 
 test('a known price without a target is not presented as a budget match', () => {
   const [match] = buildHuntDiscoveryMatches(
-    [product('watch', { price: 500, currency: 'SAR' })],
+    [product('watch', { source: 'deal-outlet', price: 500, currency: 'SAR' })],
     undefined,
     'SAR',
   );
 
   assert.equal(match.priceStatus, 'known');
   assert.equal(match.price, 500);
+  assert.equal(match.source, 'deal-outlet');
 });
