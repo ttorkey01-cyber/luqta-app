@@ -5,6 +5,7 @@ import {
   SearchProductsResponse,
 } from "@workspace/api-zod";
 import { searchOrchestrator } from "../connectors";
+import { InventoryUnavailableError } from "../connectors/searchOrchestrator";
 import { logger } from "../lib/logger";
 
 const router: IRouter = Router();
@@ -82,6 +83,16 @@ router.post("/search", async (req, res, next) => {
     emitStage("request_error", {
       errorType: error instanceof Error ? error.name : "UnknownError",
     });
+    if (error instanceof InventoryUnavailableError) {
+      res.setHeader("Cache-Control", "no-store");
+      res.setHeader("Retry-After", "5");
+      res.status(503).json({
+        code: "INVENTORY_UNAVAILABLE",
+        error: "Product inventory is still warming. Please retry shortly.",
+        providerIds: error.providerIds,
+      });
+      return;
+    }
     next(error);
   }
 });

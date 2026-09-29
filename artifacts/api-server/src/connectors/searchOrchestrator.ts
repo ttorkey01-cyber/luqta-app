@@ -44,6 +44,7 @@ export type SearchTimeouts = {
   providerSearchMs: number;
   intentParserMs: number;
   braveSearchMs: number;
+  indexReadinessMs?: number;
 };
 
 const DEFAULT_SEARCH_TIMEOUTS: SearchTimeouts = {
@@ -59,6 +60,13 @@ class SearchStageTimeoutError extends Error {
   ) {
     super(`${stage} timed out after ${timeoutMs}ms`);
     this.name = "SearchStageTimeoutError";
+  }
+}
+
+export class InventoryUnavailableError extends Error {
+  constructor(readonly providerIds: string[]) {
+    super("Product inventory is still warming or temporarily unavailable");
+    this.name = "InventoryUnavailableError";
   }
 }
 
@@ -803,50 +811,43 @@ export class SearchOrchestrator {
             !categoryBrowse ||
             provider.metadata.integrationType !== "web_search"),
       );
-    // Autoscale can receive a category request while the startup feed imports
-    // are still running. Keep that request alive until an indexed provider has
-    // products for this category (or the imports settle), instead of returning
-    // a false "zero inventory" response and letting the process idle mid-build.
-    if (categoryBrowse && request.category) {
-      const refreshing = providers.filter(
-        (provider) =>
-          provider.searchCategory &&
-          provider.refreshIndex &&
-          provider.getSearchIndexReadiness?.().refreshing,
-      );
-      if (refreshing.length) {
-        const startedAt = performance.now();
-        emit("category_index_wait_start", { providerCount: refreshing.length });
-        const checks = refreshing.map(async (provider) => {
-          try {
-            await provider.refreshIndex!(false);
-            const result = await provider.searchCategory!({
-              ...request,
-              page: 1,
-              pageSize: 1,
-            });
-            return result.total > 0;
-          } catch {
-            return false;
-          }
-        });
-        await new Promise<void>((resolve) => {
-          const timer = setTimeout(resolve, 15_000);
-          const finish = () => {
-            clearTimeout(timer);
-            resolve();
-          };
-          for (const check of checks) {
-            void check.then((hasProducts) => {
-              if (hasProducts) finish();
-            });
-          }
-          void Promise.all(checks).then(finish);
-        });
-        emit("category_index_wait_end", {
-          durationMs: Number((performance.now() - startedAt).toFixed(2)),
+    // An Autoscale worker has its own index. Keep cold requests attached to
+    // the existing single-flight imports, but never wait past the mobile SLA.
+    const coldProviders = providers.filter(
+      (provider) => provider.getSearchIndexReadiness?.().ready === false,
+    );
+    if (coldProviders.length) {
+      const startedAt = performance.now();
+      emit("index_wait_start", {
+        providerIds: coldProviders.map((provider) => provider.metadata.id),
+      });
+      const imports = coldProviders.map(async (provider) => {
+        try {
+          await (provider.ensureSearchIndexReady?.() ?? provider.refreshIndex?.(false));
+        } catch (error) {
+          emit("index_recovery_failed", {
+            providerId: provider.metadata.id,
+            errorType: error instanceof Error ? error.name : "UnknownError",
+          });
+        }
+      });
+      try {
+        await withTimeout(
+          () => Promise.all(imports),
+          this.timeouts.indexReadinessMs ?? (categoryBrowse ? 12_000 : 3_000),
+          "index_readiness",
+        );
+      } catch (error) {
+        emit("index_wait_timeout", {
+          errorType: error instanceof Error ? error.name : "UnknownError",
         });
       }
+      emit("index_wait_end", {
+        durationMs: Number((performance.now() - startedAt).toFixed(2)),
+        unreadyProviderIds: coldProviders
+          .filter((provider) => provider.getSearchIndexReadiness?.().ready === false)
+          .map((provider) => provider.metadata.id),
+      });
     }
     let parsedIntent: ProviderSearchRequest["intent"] = {};
     if (!categoryBrowse) {
@@ -1376,6 +1377,23 @@ export class SearchOrchestrator {
       fallbackStatus: response.fallbackStatus,
       categoryBrowse,
     });
+    const unavailableProviders = providerResults
+      .filter((providerResult) =>
+        providerResult.readiness?.ready === false ||
+        providerResult.categoryResult?.ready === false ||
+        providerResult.timedOut ||
+        Boolean(providerResult.errorType),
+      )
+      .map((providerResult) => providerResult.providerId);
+    if (
+      (categoryBrowse
+        ? (categoryInventoryCount ?? 0) === 0
+        : response.products.length === 0) &&
+      (unavailableProviders.length > 0 || providers.length === 0)
+    ) {
+      emit("inventory_unavailable", { providerIds: unavailableProviders });
+      throw new InventoryUnavailableError(unavailableProviders);
+    }
     const hasProviderFailure = providerResults.some(
       (providerResult) => providerResult.timedOut || providerResult.errorType,
     );

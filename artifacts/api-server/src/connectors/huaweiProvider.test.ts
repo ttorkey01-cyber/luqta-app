@@ -106,3 +106,28 @@ test("Huawei rejects malformed or non-empty-but-invalid feeds instead of treatin
     globalThis.fetch = originalFetch;
   }
 });
+
+test("a subsequent valid empty Huawei feed does not erase an already usable index", async () => {
+  const originalFetch = globalThis.fetch;
+  let feedRequests = 0;
+  globalThis.fetch = (async (input) => {
+    if (String(input) === FEED_URL) {
+      feedRequests++;
+      return new Response(feedRequests === 1 ? `${HEADER}\n${PRODUCT}\n` : `${HEADER}\n`);
+    }
+    return new Response(null, { status: 200 });
+  }) as typeof fetch;
+  try {
+    const provider = new HuaweiProvider(FEED_URL, false);
+    assert.equal(await provider.refreshIndex(), 1);
+    const lastSync = provider.metadata.lastSuccessfulSync;
+    assert.equal(await provider.refreshIndex(), 1);
+    assert.equal(provider.getSearchIndexReadiness().productCount, 1);
+    assert.equal(provider.metadata.lastSuccessfulSync, lastSync);
+    assert.equal((await provider.searchCategory({
+      query: "electronics", category: "electronics", searchMode: "category_browse",
+    })).total, 1);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});

@@ -2,6 +2,10 @@ import { logger } from "../lib/logger";
 import { CacheService } from "./cacheService";
 import { CategoryProductIndex } from "./categoryProductIndex";
 import { collectFeedImageUrls } from "./feedImageUrls";
+import {
+  FEED_REQUEST_RECOVERY_COOLDOWN_MS,
+  retryFeedRefresh,
+} from "./feedRefreshCoordinator";
 import { getCategoryFilterSelectionIds } from "./categoryTaxonomy";
 import type {
   ProviderImageHealth,
@@ -327,6 +331,7 @@ export class AdmitadFeedProvider implements SearchProvider {
   private readonly categoryProductIndex = new CategoryProductIndex();
   private indexRefreshedAt = 0;
   private refreshPromise: Promise<number> | undefined;
+  private lastRecoveryRequestAt = 0;
   private readonly refreshTimer: NodeJS.Timeout | undefined;
   private consecutiveImageHealthFailures = 0;
   private imageHealthRefreshId = 0;
@@ -386,6 +391,7 @@ export class AdmitadFeedProvider implements SearchProvider {
 
   async search(request: ProviderSearchRequest): Promise<ProviderProduct[]> {
     if (!this.metadata.searchEnabled) return [];
+    this.recoverUnreadyIndexOnRequest();
 
     const searchText = `${request.query.trim()} ${
       request.intent?.keywords?.join(" ") ?? ""
@@ -427,12 +433,25 @@ export class AdmitadFeedProvider implements SearchProvider {
     };
   }
 
+  ensureSearchIndexReady(): Promise<number> {
+    if (!this.metadata.searchEnabled || this.getSearchIndexReadiness().ready) {
+      return Promise.resolve(this.productIndex.length);
+    }
+    if (this.refreshPromise) return this.refreshPromise;
+    if (Date.now() - this.lastRecoveryRequestAt < FEED_REQUEST_RECOVERY_COOLDOWN_MS) {
+      return Promise.resolve(0);
+    }
+    this.lastRecoveryRequestAt = Date.now();
+    return this.refreshIndex(false);
+  }
+
   async searchCategory(
     request: ProviderSearchRequest,
   ): Promise<ProviderCategorySearchResult> {
     if (!this.metadata.searchEnabled || !request.category) {
       return { products: [], total: 0, facetCounts: {} };
     }
+    this.recoverUnreadyIndexOnRequest();
 
     if (!this.getSearchIndexReadiness().ready) {
       return {
@@ -519,8 +538,15 @@ export class AdmitadFeedProvider implements SearchProvider {
     }
     if (this.refreshPromise) return this.refreshPromise;
 
-    const refresh = this.fetchProductIndex()
+    const refresh = retryFeedRefresh(() => this.fetchProductIndex())
       .then(async (products) => {
+        if (!products.length && this.productIndex.length) {
+          logger.warn(
+            { providerId: this.metadata.id, retainedProductCount: this.productIndex.length },
+            "Empty provider refresh ignored; retaining existing index",
+          );
+          return this.productIndex.length;
+        }
         await this.categoryProductIndex.setProductsYielding(products);
         this.productIndex = products;
         this.indexRefreshedAt = Date.now();
@@ -543,6 +569,18 @@ export class AdmitadFeedProvider implements SearchProvider {
       });
     this.refreshPromise = refresh;
     return refresh;
+  }
+
+  private recoverUnreadyIndexOnRequest() {
+    void this.ensureSearchIndexReady().catch((error) => {
+      logger.warn(
+        {
+          providerId: this.metadata.id,
+          error: error instanceof Error ? error.message : "Unknown feed error",
+        },
+        "Provider on-request index recovery failed",
+      );
+    });
   }
 
   private createInitialImageHealth(): ProviderImageHealth {

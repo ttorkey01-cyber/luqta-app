@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { ProviderRegistry } from "./providerRegistry";
-import { SearchOrchestrator } from "./searchOrchestrator";
+import { InventoryUnavailableError, SearchOrchestrator } from "./searchOrchestrator";
 import { BraveWebSearchProvider } from "./braveWebSearchProvider";
 import {
   getCategoryFilterFacets,
@@ -849,6 +849,79 @@ test("category browse waits for a cold feed refresh before reporting inventory",
   assert.deepEqual(response.products.map((item) => item.id), ["refreshed-hair"]);
   assert.equal(response.categoryInventoryCount, 1);
   assert.notEqual(response.categoryState, "empty");
+});
+
+test("concurrent cold requests reuse one import and do not cache a false zero", async () => {
+  let imports = 0;
+  let indexed = false;
+  let inFlight: Promise<number> | undefined;
+  let release!: () => void;
+  const pending = new Promise<void>((resolve) => { release = resolve; });
+  const provider: SearchProvider = {
+    metadata,
+    async search() { return indexed ? [product("cold", "Royal Beauty Hair Cream")] : []; },
+    getSearchIndexReadiness() {
+      return { ready: indexed, refreshing: !indexed, productCount: indexed ? 1 : 0, lastSuccessfulSync: null };
+    },
+    ensureSearchIndexReady() {
+      if (!inFlight) {
+        imports++;
+        inFlight = pending.then(() => {
+          indexed = true;
+          return 1;
+        });
+      }
+      return inFlight;
+    },
+    async searchCategory() {
+      return { products: indexed ? [product("cold", "Royal Beauty Hair Cream")] : [],
+        total: indexed ? 1 : 0, facetCounts: {}, ready: indexed };
+    },
+  };
+  const orchestrator = new SearchOrchestrator(new ProviderRegistry([provider]));
+  const request = { query: "beauty_care", category: "beauty_care" as const,
+    searchMode: "category_browse" as const };
+  const first = orchestrator.searchWithMetadata(request);
+  const second = orchestrator.searchWithMetadata(request);
+  await new Promise((resolve) => setTimeout(resolve, 20));
+  assert.equal(imports, 1, "concurrent cold requests must share a single import");
+  release();
+  const responses = await Promise.all([first, second]);
+  assert.ok(responses.every((result) => result.categoryInventoryCount === 1));
+  assert.ok(responses.every((result) => result.products.length === 1));
+});
+
+test("a cold instance reports unavailable rather than a genuine zero when recovery times out", async () => {
+  let release!: () => void;
+  const pending = new Promise<void>((resolve) => { release = resolve; });
+  const provider: SearchProvider = {
+    metadata,
+    async search() { return []; },
+    getSearchIndexReadiness() {
+      return { ready: false, refreshing: true, productCount: 0, lastSuccessfulSync: null };
+    },
+    async refreshIndex() { await pending; return 0; },
+    async searchCategory() { return { products: [], total: 0, facetCounts: {}, ready: false }; },
+  };
+  const orchestrator = new SearchOrchestrator(
+    new ProviderRegistry([provider]), undefined, undefined, undefined,
+    undefined, undefined, undefined, undefined,
+    { providerSearchMs: 50, intentParserMs: 50, braveSearchMs: 50, indexReadinessMs: 20 },
+  );
+  try {
+    await assert.rejects(
+      orchestrator.searchWithMetadata({
+        query: "beauty_care", category: "beauty_care", searchMode: "category_browse",
+      }),
+      InventoryUnavailableError,
+    );
+    await assert.rejects(
+      orchestrator.searchWithMetadata({ query: "phone", searchMode: "intent" }),
+      InventoryUnavailableError,
+    );
+  } finally {
+    release();
+  }
 });
 
 test("a failed category index refresh does not block inventory from another provider", async () => {

@@ -225,6 +225,7 @@ export interface SearchProvider {
   readonly metadata: ProviderMetadata;
   search(request: ProviderSearchRequest): Promise<ProviderProduct[]>;
   refreshIndex?(force?: boolean): Promise<number>;
+  ensureSearchIndexReady?(): Promise<number>;
   getSearchIndexReadiness?(): ProviderIndexReadiness;
   searchCategory?(
     request: ProviderSearchRequest,
