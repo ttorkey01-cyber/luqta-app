@@ -20,7 +20,19 @@ export type VisualAdapter = {
   compareImages(
     reference: VisualImage,
     candidate: VisualImage,
-  ): Promise<{ visualScore: number; pixelScore: number; embeddingScore?: number; embeddingError?: string }>;
+  ): Promise<{ visualScore: number; pixelScore: number; pixelUnavailable?: boolean; embeddingScore?: number; embeddingError?: string }>;
+  getEmbeddingMetrics?(): {
+    imageCalls: number;
+    queryImageCalls: number;
+    candidateImageCalls: number;
+    cacheHits: number;
+    cacheMisses: number;
+    estimatedCostUsd: number;
+  };
+  /** Optional experiment-only serialization for accurate per-search counters. */
+  withSearchLock?<T>(action: () => Promise<T>): Promise<T>;
+  /** Shared provider/cache, but a fresh query-image promise for each search. */
+  forSearch?(): VisualAdapter;
 };
 
 export type VisualCandidateDiagnostic = {
@@ -28,6 +40,7 @@ export type VisualCandidateDiagnostic = {
   textScore: number;
   identityScore: number;
   visualScore?: number;
+  embeddingScore?: number;
   hybridScore: number;
   visualStatus: "compared" | "unavailable" | "skipped";
   unavailableReason?: string;
@@ -35,6 +48,7 @@ export type VisualCandidateDiagnostic = {
 
 type ComparisonRecord = {
   visualScore?: number;
+  embeddingScore?: number;
   visualStatus: "compared" | "unavailable" | "skipped";
   unavailableReason?: string;
 };
@@ -268,8 +282,14 @@ export async function rerankWithVisual(
             if (!Number.isFinite(comparison.visualScore)) {
               throw new Error("Visual adapter returned a non-finite score");
             }
+            const embeddingScore = comparison.embeddingScore;
+            const hasEmbedding = embeddingScore !== undefined && Number.isFinite(embeddingScore);
             const record: ComparisonRecord = {
-              visualScore: Math.max(0, Math.min(1, comparison.visualScore)),
+              // Semantic evidence complements local pixels; neither can establish exact identity.
+              visualScore: Math.max(0, Math.min(1, hasEmbedding && !comparison.pixelUnavailable
+                ? 0.4 * comparison.pixelScore + 0.6 * embeddingScore
+                : comparison.visualScore)),
+              ...(hasEmbedding ? { embeddingScore: Math.max(0, Math.min(1, embeddingScore)) } : {}),
               visualStatus: "compared",
             };
             state.comparisonsCompleted += 1;
@@ -325,6 +345,7 @@ export async function rerankWithVisual(
       textScore: Number(textScore.toFixed(4)),
       identityScore: Number(identityScore.toFixed(4)),
       ...(record.visualScore !== undefined ? { visualScore: Number(record.visualScore.toFixed(4)) } : {}),
+      ...(record.embeddingScore !== undefined ? { embeddingScore: Number(record.embeddingScore.toFixed(4)) } : {}),
       hybridScore: Number(hybridScore.toFixed(4)),
       visualStatus: record.visualStatus,
       ...(record.unavailableReason ? { unavailableReason: record.unavailableReason } : {}),
@@ -343,6 +364,8 @@ export async function rerankWithVisual(
     textScore: candidate.textScore ?? 0,
     identityScore: candidate.identityScore ?? 0,
     ...(candidate.visualScore !== undefined ? { visualScore: candidate.visualScore } : {}),
+    ...("embeddingScore" in candidate && candidate.embeddingScore !== undefined
+      ? { embeddingScore: candidate.embeddingScore } : {}),
     hybridScore: candidate.hybridScore ?? candidate.score,
     visualStatus: candidate.visualStatus ?? "unavailable",
     ...("unavailableReason" in candidate && candidate.unavailableReason

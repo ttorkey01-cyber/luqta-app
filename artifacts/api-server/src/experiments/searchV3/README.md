@@ -77,40 +77,68 @@ predict production latency. Use the runner's current report, not a static score.
 
 `realWorld/manifest.ts` records public Wikimedia Commons image cases with source
 pages, attribution, and license metadata; images are linked, not committed.
-`realWorld/benchmark.ts` provides a paired V2/V3 runner that requires the same
-candidate-catalog fingerprint, available reference images, and independently
-reviewed relevance judgments before reporting quality metrics. For an honest
-unmeasured status report:
+`realWorld/benchmark.ts` provides a paired V2/local-V3/optional-Gemini-V3 runner.
+Each arm receives the same case image URL, candidate catalog object, and catalog
+fingerprint. The Gemini arm is only run when a caller explicitly injects a
+`version: "gemini-v3"` adapter into `runRealWorldBenchmark`; it does not look up
+credentials, silently fall back to another provider, or make a Gemini import.
+The adapter can be composed by a caller using `ExperimentalSearchV3` with its
+existing injected dependencies (for example, a Gemini-backed `MultimodalReranker`
+when an approved implementation is available), then adapted to the benchmark
+interface. This leaves the adapter export/import decision with that caller and
+keeps the benchmark independent of provider keys.
+
+The runner reports top-1/3/5, exact and close match, constraint/violation
+metrics, latency, provider/Brave/model calls, cache hits/misses, estimated cost,
+and per-case errors. Missing instrumentation is `null`; errors are recorded and
+make aggregate call/cost totals unavailable instead of being treated as zero.
+Quality metrics require independent image verification, full-catalog review,
+and relevance judgments. For an honest no-configuration status report:
 
 ```sh
 pnpm --dir artifacts/api-server exec tsx src/experiments/searchV3/realWorld/run.ts
 ```
 
-The manifest metadata and image URLs are not a labeled shopping catalog. There
-are no bundled real merchant candidates, verified exact-product matches,
-independent human relevance judgments, or completed paired V2/V3 runs. Its
-Top-1/3/5, exact, close, constraint, visual-quality, real-world latency, and
-cost metrics therefore remain **unavailable**, not zero or a claimed win.
-Some requested scenarios still need verified examples. A reviewed catalog,
-permissions, reference-image inspections, and paired measurements are required
-before recommending a production merge.
+The manifest metadata and image URLs are not a labeled shopping catalog. The
+manifest's Commons metadata check is not verification that each image is
+currently retrievable or visually suitable. There are no bundled real merchant
+candidates, verified exact-product matches, independent human relevance
+judgments, or completed paired runs. Accordingly Top-1/3/5, exact, close,
+constraint, visual-quality, latency, and cost metrics remain **unavailable**,
+not zero or a claimed win. Some requested scenarios still need verified
+examples. A reviewed catalog, permissions, reference-image inspections, and
+paired measurements are required before recommending a production merge.
 
-## Optional future semantic embeddings (not activated)
+## Optional Gemini embedding benchmark adapter (experimental)
 
-Google's [`gemini-embedding-2`](https://ai.google.dev/gemini-api/docs/embeddings)
-maps images and text into one embedding space. This could compare product photos
-across different crops, backgrounds, and views better than local pixel hashes,
-but accuracy and latency on LUQTA products have **not been measured**. It
-requires Gemini API access, image-consent/privacy review, and approval before
-enabling any paid use. Google's [published prices](https://ai.google.dev/gemini-api/docs/pricing#gemini-embedding-2)
-are $0.00012 per input image on the standard paid tier and $0.00006 per image
-for asynchronous batch processing (as checked September 29, 2026). If each
-search embeds one user image and 100 *uncached* candidate images, that is
-approximately $0.01212 per search in image-input charges. Pre-embed and cache
-candidate vectors by image/version, then reuse them; the incremental charge
-for a new image query is approximately $0.00012, plus text tokens and any
-storage/network charges. Batch candidate indexing costs approximately $0.006
-per 100 images and is **not** synchronous search. Google's free tier exists,
-but its content-use terms differ from paid use; no service or billing was
-enabled. The model accepts at most six images per request; each catalog image
-needs its own vector, then a local cosine comparison or approved index.
+`realWorld/adapters.ts` now provides `createGeminiV3BenchmarkAdapter()` using
+the actual `GeminiEmbeddingProvider` and existing `GeminiVisualAdapter` pixel +
+embedding composition. The catalog-only visual baseline is available through
+`createLocalV3BenchmarkAdapter()`. Both rank the same explicitly supplied
+catalog (capped at 20 candidates) and use the caller-supplied reference/candidate
+image loader. These builders measure controlled-catalog visual ranking, not the
+full feed-routing, text-intent, or constraint-search pipeline; use a separately
+configured existing V2 adapter when making end-to-end claims. The adapter
+records per-search provider/model calls, cache hit/
+miss deltas, estimated image-input cost, and latency. Gemini scores use the V3
+visual composition (40% local pixel score and 60% embedding score); a failed
+Gemini comparison is reported as an error rather than silently ranking local
+pixel fallback results as Gemini results.
+
+Gemini is strictly opt-in: the builder returns no adapter when `enabled` is
+false, and when enabled it requires the caller to pass an explicit server-side
+API key. It never reads `GEMINI_API_KEY` or falls back to another credential.
+Construction performs no requests; the injected transport/provider is called
+only when the caller runs the benchmark adapter. No paid request, image download,
+or production route is triggered by the CLI/status report or by importing these
+builders. The caller remains responsible for explicitly approved provider access,
+image permissions, catalog selection, and wiring an existing V2 adapter for a
+three-way run.
+
+Accuracy and latency on LUQTA products remain **unmeasured**. Google's
+[`gemini-embedding-2`](https://ai.google.dev/gemini-api/docs/embeddings)
+published standard paid-tier price is $0.00012 per image input, so uncached
+query-plus-candidate image embeddings are estimated and reported from actual
+provider counters rather than represented as billing data. No batch pricing or
+uncached-large-catalog extrapolation is included in synchronous benchmark
+results.

@@ -16,6 +16,7 @@ import {
   rerankWithVisual,
   type VisualAdapter,
   type VisualCandidateDiagnostic,
+  type VisualRankingOptions,
   type VisualRankingState,
 } from "./visualRanking";
 
@@ -52,6 +53,7 @@ export type V3ProductResult = {
   textScore: number;
   identityScore: number;
   visualScore?: number;
+  embeddingScore?: number;
   hybridScore: number;
   visualStatus: "compared" | "unavailable" | "skipped";
   confidence: "exact" | "high" | "close" | "alternative" | "weak";
@@ -112,6 +114,15 @@ export type V3Diagnostics = {
     comparisonsFailed: number;
     imageLoadCalls: number;
     adapterCallCount: number;
+    /** Counted by the experimental Gemini provider; never includes credentials. */
+    gemini?: {
+      imageCalls: number;
+      queryImageCalls: number;
+      candidateImageCalls: number;
+      cacheHits: number;
+      cacheMisses: number;
+      estimatedCostUsd: number;
+    };
   };
   photoOnlyDiscovery: {
     status: "not_requested" | "available" | "unavailable";
@@ -153,6 +164,7 @@ export type RerankedCandidate = {
   identityScore?: number;
   identityPriority?: number;
   visualScore?: number;
+  embeddingScore?: number;
   hybridScore?: number;
   visualStatus?: "compared" | "unavailable" | "skipped";
 };
@@ -175,6 +187,8 @@ export type ExperimentalSearchV3Options = {
   brave?: SearchProvider;
   reranker?: MultimodalReranker;
   visualAdapter?: VisualAdapter;
+  /** Opt-in budget only for this isolated experiment. */
+  visualRankingOptions?: VisualRankingOptions;
   imageLoader?: ImageUrlLoader;
   photoOnlyCandidatePool?:
     | readonly ProviderProduct[]
@@ -921,6 +935,19 @@ export class DeterministicMultimodalReranker implements MultimodalReranker {
   }
 }
 
+type EmbeddingMetrics = ReturnType<NonNullable<VisualAdapter["getEmbeddingMetrics"]>>;
+
+function embeddingMetricsDelta(before: EmbeddingMetrics, after: EmbeddingMetrics): EmbeddingMetrics {
+  return {
+    imageCalls: after.imageCalls - before.imageCalls,
+    queryImageCalls: after.queryImageCalls - before.queryImageCalls,
+    candidateImageCalls: after.candidateImageCalls - before.candidateImageCalls,
+    cacheHits: after.cacheHits - before.cacheHits,
+    cacheMisses: after.cacheMisses - before.cacheMisses,
+    estimatedCostUsd: Number((after.estimatedCostUsd - before.estimatedCostUsd).toFixed(8)),
+  };
+}
+
 export class ExperimentalSearchV3 {
   private readonly enabled: boolean;
   private readonly reranker: MultimodalReranker;
@@ -931,7 +958,16 @@ export class ExperimentalSearchV3 {
   }
 
   async search(request: V3Request): Promise<{ products: V3ProductResult[]; diagnostics: V3Diagnostics }> {
+    const adapter = this.options.visualAdapter;
+    return adapter?.withSearchLock
+      ? adapter.withSearchLock(() => this.searchUnlocked(request))
+      : this.searchUnlocked(request);
+  }
+
+  private async searchUnlocked(request: V3Request): Promise<{ products: V3ProductResult[]; diagnostics: V3Diagnostics }> {
     const startedAt = Date.now();
+    const visualAdapter = this.options.visualAdapter?.forSearch?.() ?? this.options.visualAdapter;
+    const geminiBefore = visualAdapter?.getEmbeddingMetrics?.();
     const intentStartedAt = Date.now();
     const parsed = await deterministicIntentParser.parse(request.query);
     applyExplicitIdentifierIntent(request.query, parsed);
@@ -948,10 +984,10 @@ export class ExperimentalSearchV3 {
     const expansionStartedAt = Date.now();
     const queries = uniqueQueries(request, intent);
     const queryExpansionMs = Date.now() - expansionStartedAt;
-    const visualState = createVisualRankingState();
+    const visualState = createVisualRankingState(this.options.visualRankingOptions?.candidateLimit);
     const visualUnavailableReason = !request.image?.imageBytes?.byteLength
       ? "REFERENCE_IMAGE_BYTES_MISSING"
-      : !this.options.visualAdapter
+      : !visualAdapter
         ? "VISUAL_ADAPTER_UNAVAILABLE"
         : !this.options.imageLoader
           ? "IMAGE_URL_LOADER_UNAVAILABLE"
@@ -1008,7 +1044,7 @@ export class ExperimentalSearchV3 {
       return { products: [], diagnostics };
     }
     if (isPhotoOnlyRequest(request)) {
-      return this.searchPhotoOnly(request, intent, diagnostics, startedAt);
+      return this.searchPhotoOnly(request, intent, diagnostics, startedAt, visualAdapter);
     }
     if (!queries.length) {
       diagnostics.totalLatencyMs = Date.now() - startedAt;
@@ -1101,11 +1137,16 @@ export class ExperimentalSearchV3 {
       const visualRanked = await rerankWithVisual(
         { request, intent },
         ranked,
-        this.options.visualAdapter,
+        visualAdapter,
         this.options.imageLoader,
         visualState,
+        this.options.visualRankingOptions,
       );
       diagnostics.visual = visualRanked.diagnostics;
+      if (geminiBefore) {
+        const current = visualAdapter?.getEmbeddingMetrics?.();
+        if (current) diagnostics.visual.gemini = embeddingMetricsDelta(geminiBefore, current);
+      }
       const finalRanked = visualRanked.ranked;
       const bestScore = finalRanked[0]?.score ?? 0;
       diagnostics.passes.push({
@@ -1155,6 +1196,7 @@ export class ExperimentalSearchV3 {
       textScore: candidate.textScore ?? 0,
       identityScore: candidate.identityScore ?? 0,
       ...(candidate.visualScore !== undefined ? { visualScore: candidate.visualScore } : {}),
+      ...(candidate.embeddingScore !== undefined ? { embeddingScore: candidate.embeddingScore } : {}),
       hybridScore: candidate.hybridScore ?? candidate.score,
       visualStatus: candidate.visualStatus ?? "unavailable",
       confidence: candidate.confidence,
@@ -1172,7 +1214,9 @@ export class ExperimentalSearchV3 {
     intent: V3Intent,
     diagnostics: V3Diagnostics,
     startedAt: number,
+    visualAdapter?: VisualAdapter,
   ): Promise<{ products: V3ProductResult[]; diagnostics: V3Diagnostics }> {
+    const geminiBefore = visualAdapter?.getEmbeddingMetrics?.();
     const catalogStartedAt = Date.now();
     let pool: readonly ProviderProduct[] | undefined;
     try {
@@ -1226,17 +1270,24 @@ export class ExperimentalSearchV3 {
     const ranked = await rerankWithVisual(
       { request, intent },
       candidates,
-      this.options.visualAdapter,
+      visualAdapter,
       this.options.imageLoader,
-      createVisualRankingState(MAX_PHOTO_ONLY_CANDIDATES),
+      createVisualRankingState(Math.min(
+        MAX_PHOTO_ONLY_CANDIDATES,
+        this.options.visualRankingOptions?.candidateLimit ?? MAX_PHOTO_ONLY_CANDIDATES,
+      )),
       {
-        candidateLimit: MAX_PHOTO_ONLY_CANDIDATES,
-        concurrency: 4,
-        comparisonTimeoutMs: 1_000,
-        stageTimeoutMs: 15_000,
+        candidateLimit: this.options.visualRankingOptions?.candidateLimit ?? MAX_PHOTO_ONLY_CANDIDATES,
+        concurrency: this.options.visualRankingOptions?.concurrency ?? 4,
+        comparisonTimeoutMs: this.options.visualRankingOptions?.comparisonTimeoutMs ?? 1_000,
+        stageTimeoutMs: this.options.visualRankingOptions?.stageTimeoutMs ?? 15_000,
       },
     );
     diagnostics.visual = ranked.diagnostics;
+    if (geminiBefore) {
+      const current = visualAdapter?.getEmbeddingMetrics?.();
+      if (current) diagnostics.visual.gemini = embeddingMetricsDelta(geminiBefore, current);
+    }
     diagnostics.stageLatencyMs.reranking = Date.now() - visualStartedAt;
     const visuallyCompared = ranked.ranked.filter(
       (candidate) => candidate.visualStatus === "compared",
@@ -1262,6 +1313,7 @@ export class ExperimentalSearchV3 {
         textScore: candidate.textScore ?? 0,
         identityScore: candidate.identityScore ?? 0,
         ...(candidate.visualScore !== undefined ? { visualScore: candidate.visualScore } : {}),
+        ...(candidate.embeddingScore !== undefined ? { embeddingScore: candidate.embeddingScore } : {}),
         hybridScore: candidate.hybridScore ?? candidate.score,
         visualStatus: candidate.visualStatus ?? "unavailable",
         confidence: candidate.confidence,

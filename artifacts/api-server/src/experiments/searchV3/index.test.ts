@@ -373,6 +373,61 @@ test("visual image evidence reranks candidates and reports component scores with
   assert.equal(JSON.stringify(result.diagnostics).includes("candidate-a.png"), false);
 });
 
+test("Gemini semantic evidence breaks a local-pixel tie without classifying a lookalike as exact", async () => {
+  const result = await new ExperimentalSearchV3({
+    registry: new ProviderRegistry([
+      provider("official", async () => [
+        product({ id: "a", title: "Nike trainer A", imageUrl: "https://images.example/a.png", productUrl: "https://shop.example/a" }),
+        product({ id: "b", title: "Nike trainer B", imageUrl: "https://images.example/b.png", productUrl: "https://shop.example/b" }),
+      ]),
+    ]),
+    enabled: true,
+    imageLoader: async (url) => ({ bytes: new Uint8Array([1]), url }),
+    visualAdapter: {
+      async compareImages(_reference, candidate) {
+        return {
+          pixelScore: 0.5,
+          visualScore: 0.5,
+          embeddingScore: candidate.url?.endsWith("/b.png") ? 0.99 : 0.01,
+        };
+      },
+    },
+  }).search({
+    query: "Nike trainer",
+    image: { identities: [], imageBytes: new Uint8Array([2]) },
+  });
+  assert.equal(result.products[0]?.product.id, "b");
+  assert.equal(result.products[0]?.embeddingScore, 0.99);
+  assert.equal(result.diagnostics.visual.candidates[0]?.embeddingScore, 0.99);
+  assert.notEqual(result.products[0]?.confidence, "exact");
+});
+
+test("experimental photo-only visual ranking never compares more than its configured 20 candidates", async () => {
+  let comparisons = 0;
+  const catalog = Array.from({ length: 25 }, (_, index) => product({
+    id: `catalog-${index}`,
+    title: `Catalog shoe ${index}`,
+    productUrl: `https://shop.example/${index}`,
+    imageUrl: `https://images.example/${index}.png`,
+  }));
+  const result = await new ExperimentalSearchV3({
+    registry: new ProviderRegistry([]),
+    enabled: true,
+    photoOnlyCandidatePool: catalog,
+    visualRankingOptions: { candidateLimit: 20 },
+    imageLoader: async (url) => ({ bytes: new Uint8Array([1]), url }),
+    visualAdapter: {
+      async compareImages() {
+        comparisons += 1;
+        return { visualScore: 0.5, pixelScore: 0.5, embeddingScore: 0.5 };
+      },
+    },
+  }).search({ query: "", image: { identities: [], imageBytes: new Uint8Array([2]) } });
+  assert.equal(comparisons, 20);
+  assert.equal(result.diagnostics.visual.comparisonsAttempted, 20);
+  assert.equal(result.diagnostics.visual.imageLoadCalls, 20);
+});
+
 test("verified SKU outranks a visually favored lookalike and remains the only eligible product", async () => {
   const registry = new ProviderRegistry([
     provider("official", async () => [

@@ -62,6 +62,8 @@ export type AdapterSearchResult = {
   providerCalls?: number;
   braveCalls?: number;
   modelCalls?: number;
+  cacheHits?: number;
+  cacheMisses?: number;
   estimatedCostPerSearch?: number;
   firstPassSuccess?: boolean;
   secondPassAttempted?: boolean;
@@ -75,7 +77,8 @@ export type BenchmarkObservation = AdapterSearchResult & {
 };
 
 export type RealWorldSearchAdapter = {
-  version: "v2" | "v3";
+  /** `v3` is the local V3 path; `gemini-v3` is the opt-in Gemini-backed path. */
+  version: "v2" | "v3" | "gemini-v3";
   /** Stable adapter identifier, distinct from human reviewer identifiers. */
   id: string;
   search(input: {
@@ -85,6 +88,32 @@ export type RealWorldSearchAdapter = {
     candidateCatalogFingerprint: string;
   }): Promise<AdapterSearchResult>;
 };
+
+export type BenchmarkAdapterError = {
+  caseId: string;
+  message: string;
+  latencyMs: number;
+  providerCalls?: number;
+  braveCalls?: number;
+  modelCalls?: number;
+  cacheHits?: number;
+  cacheMisses?: number;
+  estimatedCostPerSearch?: number;
+};
+
+/** Lets adapters preserve trustworthy counters when a search fails partway through. */
+export class BenchmarkAdapterCallError extends Error {
+  constructor(
+    message: string,
+    readonly measurements: Partial<Pick<
+      AdapterSearchResult,
+      "providerCalls" | "braveCalls" | "modelCalls" | "cacheHits" | "cacheMisses" | "estimatedCostPerSearch"
+    >> = {},
+  ) {
+    super(message);
+    this.name = "BenchmarkAdapterCallError";
+  }
+}
 
 export type RateMetric = { rate: number | null; numerator: number; denominator: number };
 
@@ -111,6 +140,8 @@ export type RealWorldMetricSummary = {
   providerCalls: number | null;
   braveCalls: number | null;
   modelCalls: number | null;
+  cacheHits: number | null;
+  cacheMisses: number | null;
   estimatedCostPerSearch: number | null;
 };
 
@@ -119,16 +150,19 @@ export type VersionBenchmarkReport = {
   unavailableReason?: string;
   summary: RealWorldMetricSummary;
   observations: BenchmarkObservation[];
+  errors: BenchmarkAdapterError[];
 };
 
 export type RealWorldBenchmarkReport = {
-  benchmark: "LUQTA Search V2 vs V3 real-image";
+  benchmark: "LUQTA Search V2 vs local V3 vs Gemini V3 real-image";
   generatedAt: string;
   candidateCatalogFingerprint: string | null;
   imageCases: number;
   provenance: "Static Wikimedia Commons metadata snapshot; remote images are not downloaded by this runner.";
   v2: VersionBenchmarkReport;
+  /** Local V3 benchmark arm (keeps the existing v3 adapter interface). */
   v3: VersionBenchmarkReport;
+  geminiV3: VersionBenchmarkReport;
   limitations: string[];
 };
 
@@ -141,15 +175,26 @@ const rate = (numerator: number, denominator: number): RateMetric => ({
 const mean = (values: number[]): number | null =>
   values.length ? Number((values.reduce((total, value) => total + value, 0) / values.length).toFixed(2)) : null;
 
+const meanCost = (values: number[]): number | null =>
+  values.length ? Number((values.reduce((total, value) => total + value, 0) / values.length).toFixed(8)) : null;
+
 function p95(values: number[]): number | null {
   if (!values.length) return null;
   const sorted = [...values].sort((a, b) => a - b);
   return Number(sorted[Math.ceil(sorted.length * 0.95) - 1]!.toFixed(2));
 }
 
-function sumIfComplete(observations: BenchmarkObservation[], key: "providerCalls" | "braveCalls" | "modelCalls"): number | null {
-  return observations.length && observations.every((observation) => observation[key] !== undefined)
-    ? observations.reduce((total, observation) => total + observation[key]!, 0)
+function sumMeasurements(
+  observations: BenchmarkObservation[],
+  errors: BenchmarkAdapterError[],
+  key: "providerCalls" | "braveCalls" | "modelCalls" | "cacheHits" | "cacheMisses",
+): number | null {
+  const counts = [
+    ...observations.map((observation) => observation[key]),
+    ...errors.map((error) => error[key]),
+  ];
+  return counts.length && counts.every((value) => value !== undefined)
+    ? counts.reduce((total, value) => total + value!, 0)
     : null;
 }
 
@@ -231,6 +276,7 @@ export function summarizeRealWorldObservations(
   observations: readonly BenchmarkObservation[],
   candidateCatalogFingerprint: string,
   candidateCatalogIds: ReadonlySet<string>,
+  errors: readonly BenchmarkAdapterError[] = [],
 ): RealWorldMetricSummary {
   const observationsById = new Map(observations.map((observation) => [observation.caseId, observation]));
   const fullyReviewed = new Map<string, BenchmarkObservation>();
@@ -248,16 +294,6 @@ export function summarizeRealWorldObservations(
   const judged = cases.flatMap((benchmarkCase) => {
     const observation = fullyReviewed.get(benchmarkCase.id);
     return observation ? [{ benchmarkCase, observation }] : [];
-  });
-  const imageReadyIds = new Set(cases
-    .filter((benchmarkCase) => {
-      const observation = observationsById.get(benchmarkCase.id);
-      return observation && hasVerifiedImageForCase(observation, benchmarkCase);
-    })
-    .map(({ id }) => id));
-  const imageReadyObservations = cases.flatMap((benchmarkCase) => {
-    const observation = observationsById.get(benchmarkCase.id);
-    return imageReadyIds.has(benchmarkCase.id) && observation ? [observation] : [];
   });
   const topK = (k: number, qualifies: (observation: BenchmarkObservation, id: string) => boolean) =>
     rate(judged.filter(({ observation }) => observation.rankedCandidateIds.slice(0, k).some((id) => qualifies(observation, id))).length, judged.length);
@@ -296,15 +332,22 @@ export function summarizeRealWorldObservations(
     }
   }
 
-  const latencies = imageReadyObservations
-    .map(({ latencyMs }) => latencyMs)
+  const latencies = [
+    ...observations.map(({ latencyMs }) => latencyMs),
+    ...errors.map(({ latencyMs }) => latencyMs),
+  ]
     .filter((latencyMs) => Number.isFinite(latencyMs) && latencyMs >= 0);
-  const firstPassObservations = imageReadyObservations.filter(({ firstPassSuccess }) => firstPassSuccess !== undefined);
-  const secondPassObservations = imageReadyObservations.filter(({ secondPassAttempted, secondPassRecovery }) =>
+  const firstPassObservations = observations.filter(({ firstPassSuccess }) => firstPassSuccess !== undefined);
+  const secondPassObservations = observations.filter(({ secondPassAttempted, secondPassRecovery }) =>
     secondPassAttempted === true && secondPassRecovery !== undefined,
   );
   const violationRate = (key: keyof ResultViolations) =>
     rate(violationValues[key].filter(Boolean).length, violationValues[key].length);
+  const costs = [
+    ...observations.map(({ estimatedCostPerSearch }) => estimatedCostPerSearch),
+    ...errors.map(({ estimatedCostPerSearch }) => estimatedCostPerSearch),
+  ];
+  const allCostsMeasured = costs.length > 0 && costs.every((cost) => cost !== undefined);
 
   return {
     totalCases: cases.length,
@@ -334,12 +377,12 @@ export function summarizeRealWorldObservations(
     firstPassSuccess: rate(firstPassObservations.filter(({ firstPassSuccess }) => firstPassSuccess).length, firstPassObservations.length),
     secondPassRecovery: rate(secondPassObservations.filter(({ secondPassRecovery }) => secondPassRecovery).length, secondPassObservations.length),
     latencyMs: { mean: mean(latencies), p95: p95(latencies), measuredCases: latencies.length },
-    providerCalls: sumIfComplete([...imageReadyObservations], "providerCalls"),
-    braveCalls: sumIfComplete([...imageReadyObservations], "braveCalls"),
-    modelCalls: sumIfComplete([...imageReadyObservations], "modelCalls"),
-    estimatedCostPerSearch: imageReadyObservations.length && imageReadyObservations.every(({ estimatedCostPerSearch }) => estimatedCostPerSearch !== undefined)
-      ? mean(imageReadyObservations.map(({ estimatedCostPerSearch }) => estimatedCostPerSearch!))
-      : null,
+    providerCalls: sumMeasurements([...observations], [...errors], "providerCalls"),
+    braveCalls: sumMeasurements([...observations], [...errors], "braveCalls"),
+    modelCalls: sumMeasurements([...observations], [...errors], "modelCalls"),
+    cacheHits: sumMeasurements([...observations], [...errors], "cacheHits"),
+    cacheMisses: sumMeasurements([...observations], [...errors], "cacheMisses"),
+    estimatedCostPerSearch: allCostsMeasured ? meanCost(costs as number[]) : null,
   };
 }
 
@@ -349,6 +392,7 @@ function emptyVersion(cases: readonly RealWorldImageCase[], reason: string): Ver
     unavailableReason: reason,
     summary: summarizeRealWorldObservations(cases, [], "", new Set()),
     observations: [],
+    errors: [],
   };
 }
 
@@ -373,6 +417,7 @@ function summarizeVersion(
   observations: BenchmarkObservation[],
   catalogFingerprint: string,
   catalogIds: ReadonlySet<string>,
+  errors: BenchmarkAdapterError[],
 ): VersionBenchmarkReport {
   const observationByCaseId = new Map(observations.map((observation) => [observation.caseId, observation]));
   const imageReady = cases.filter((benchmarkCase) => {
@@ -392,7 +437,9 @@ function summarizeVersion(
   let unavailableReason: string | undefined;
   if (imageReady === 0) {
     status = "unavailable";
-    unavailableReason = "No independent reference-image verification evidence was supplied; real-image metrics are unavailable.";
+    unavailableReason = errors.length
+      ? `${errors.length}/${cases.length} adapter calls failed and no independent reference-image verification evidence was supplied.`
+      : "No independent reference-image verification evidence was supplied; real-image metrics are unavailable.";
   } else if (reviewed === 0) {
     status = "unavailable";
     unavailableReason = "No case has independent image evidence plus complete, reviewer-identified relevance judgments for the supplied catalog; quality metrics are unavailable.";
@@ -405,8 +452,9 @@ function summarizeVersion(
   return {
     status,
     ...(unavailableReason ? { unavailableReason } : {}),
-    summary: summarizeRealWorldObservations(cases, observations, catalogFingerprint, catalogIds),
+    summary: summarizeRealWorldObservations(cases, observations, catalogFingerprint, catalogIds, errors),
     observations,
+    errors,
   };
 }
 
@@ -429,6 +477,17 @@ function validateObservation(
   if (new Set(observation.rankedCandidateIds).size !== observation.rankedCandidateIds.length) {
     throw new Error(`${benchmarkCase.id}: adapter returned duplicate candidate IDs`);
   }
+  for (const key of ["providerCalls", "braveCalls", "modelCalls", "cacheHits", "cacheMisses"] as const) {
+    const value = observation[key];
+    if (value !== undefined && (!Number.isSafeInteger(value) || value < 0)) {
+      throw new Error(`${benchmarkCase.id}: ${key} must be a non-negative integer`);
+    }
+  }
+  if (observation.estimatedCostPerSearch !== undefined &&
+      (!Number.isFinite(observation.estimatedCostPerSearch) || observation.estimatedCostPerSearch < 0)
+  ) {
+    throw new Error(`${benchmarkCase.id}: estimatedCostPerSearch must be finite and non-negative`);
+  }
 }
 
 /**
@@ -442,7 +501,10 @@ export async function runRealWorldBenchmark(input: {
   candidateCatalog?: readonly RealWorldCandidate[];
   candidateCatalogFingerprint?: string;
   v2?: RealWorldSearchAdapter;
+  /** Existing V3 adapter using the local, non-Gemini visual/reranking path. */
   v3?: RealWorldSearchAdapter;
+  /** Explicit opt-in Gemini V3 adapter. No key lookup or fallback is performed here. */
+  geminiV3?: RealWorldSearchAdapter;
   cases?: readonly RealWorldImageCase[];
   /** Separate independent human/provenance evidence; never returned by adapters. */
   reviews?: readonly BenchmarkCaseReview[];
@@ -467,50 +529,82 @@ export async function runRealWorldBenchmark(input: {
     throw new Error("Candidate catalog contains duplicate candidate IDs");
   }
 
-  const execute = async (adapter: RealWorldSearchAdapter | undefined, version: "v2" | "v3") => {
+  const execute = async (
+    adapter: RealWorldSearchAdapter | undefined,
+    version: "v2" | "v3" | "gemini-v3",
+  ) => {
     if (!adapter) return emptyVersion(cases, `${version.toUpperCase()} search adapter is not configured.`);
     if (adapter.version !== version) throw new Error(`Expected a ${version.toUpperCase()} adapter, received ${adapter.version.toUpperCase()}`);
     if (!adapter.id.trim()) throw new Error(`${version.toUpperCase()} adapter id is required`);
     if (missingImageReason) return emptyVersion(cases, missingImageReason);
     if (unavailableCatalogReason) return emptyVersion(cases, unavailableCatalogReason);
     const observations: BenchmarkObservation[] = [];
+    const errors: BenchmarkAdapterError[] = [];
     for (const benchmarkCase of cases) {
-      const observation = await adapter.search({
-        adapterId: adapter.id,
-        benchmarkCase,
-        candidateCatalog: catalog!,
-        candidateCatalogFingerprint: fingerprint!,
-      });
-      validateObservation(observation, benchmarkCase, fingerprint!, catalogIds);
-      const independentReview = reviewsByCaseId.get(benchmarkCase.id);
-      observations.push({
-        caseId: observation.caseId,
-        adapterId: adapter.id,
-        candidateCatalogFingerprint: observation.candidateCatalogFingerprint,
-        rankedCandidateIds: observation.rankedCandidateIds,
-        latencyMs: observation.latencyMs,
-        ...(observation.providerCalls !== undefined ? { providerCalls: observation.providerCalls } : {}),
-        ...(observation.braveCalls !== undefined ? { braveCalls: observation.braveCalls } : {}),
-        ...(observation.modelCalls !== undefined ? { modelCalls: observation.modelCalls } : {}),
-        ...(observation.estimatedCostPerSearch !== undefined ? { estimatedCostPerSearch: observation.estimatedCostPerSearch } : {}),
-        ...(observation.firstPassSuccess !== undefined ? { firstPassSuccess: observation.firstPassSuccess } : {}),
-        ...(observation.secondPassAttempted !== undefined ? { secondPassAttempted: observation.secondPassAttempted } : {}),
-        ...(observation.secondPassRecovery !== undefined ? { secondPassRecovery: observation.secondPassRecovery } : {}),
-        ...(independentReview ? { review: independentReview } : {}),
-      });
+      const startedAt = Date.now();
+      try {
+        const observation = await adapter.search({
+          adapterId: adapter.id,
+          benchmarkCase,
+          candidateCatalog: catalog!,
+          candidateCatalogFingerprint: fingerprint!,
+        });
+        validateObservation(observation, benchmarkCase, fingerprint!, catalogIds);
+        const independentReview = reviewsByCaseId.get(benchmarkCase.id);
+        observations.push({
+          caseId: observation.caseId,
+          adapterId: adapter.id,
+          candidateCatalogFingerprint: observation.candidateCatalogFingerprint,
+          rankedCandidateIds: observation.rankedCandidateIds,
+          latencyMs: observation.latencyMs,
+          ...(observation.providerCalls !== undefined ? { providerCalls: observation.providerCalls } : {}),
+          ...(observation.braveCalls !== undefined ? { braveCalls: observation.braveCalls } : {}),
+          ...(observation.modelCalls !== undefined ? { modelCalls: observation.modelCalls } : {}),
+          ...(observation.cacheHits !== undefined ? { cacheHits: observation.cacheHits } : {}),
+          ...(observation.cacheMisses !== undefined ? { cacheMisses: observation.cacheMisses } : {}),
+          ...(observation.estimatedCostPerSearch !== undefined ? { estimatedCostPerSearch: observation.estimatedCostPerSearch } : {}),
+          ...(observation.firstPassSuccess !== undefined ? { firstPassSuccess: observation.firstPassSuccess } : {}),
+          ...(observation.secondPassAttempted !== undefined ? { secondPassAttempted: observation.secondPassAttempted } : {}),
+          ...(observation.secondPassRecovery !== undefined ? { secondPassRecovery: observation.secondPassRecovery } : {}),
+          ...(independentReview ? { review: independentReview } : {}),
+        });
+      } catch (error) {
+        const measurements = error instanceof BenchmarkAdapterCallError ? error.measurements : {};
+        errors.push({
+          caseId: benchmarkCase.id,
+          message: error instanceof BenchmarkAdapterCallError
+            ? "BENCHMARK_ADAPTER_CALL_FAILED"
+            : "ADAPTER_CALL_FAILED",
+          latencyMs: Math.max(0, Date.now() - startedAt),
+          ...(measurements.providerCalls !== undefined ? { providerCalls: measurements.providerCalls } : {}),
+          ...(measurements.braveCalls !== undefined ? { braveCalls: measurements.braveCalls } : {}),
+          ...(measurements.modelCalls !== undefined ? { modelCalls: measurements.modelCalls } : {}),
+          ...(measurements.cacheHits !== undefined ? { cacheHits: measurements.cacheHits } : {}),
+          ...(measurements.cacheMisses !== undefined ? { cacheMisses: measurements.cacheMisses } : {}),
+          ...(measurements.estimatedCostPerSearch !== undefined ? { estimatedCostPerSearch: measurements.estimatedCostPerSearch } : {}),
+        });
+      }
     }
-    return summarizeVersion(cases, observations, fingerprint!, catalogIds);
+    return summarizeVersion(cases, observations, fingerprint!, catalogIds, errors);
   };
 
-  const [v2, v3] = await Promise.all([execute(input.v2, "v2"), execute(input.v3, "v3")]);
+  if (input.geminiV3 && input.geminiV3.version !== "gemini-v3") {
+    throw new Error(`Expected a Gemini V3 adapter, received ${input.geminiV3.version}`);
+  }
+  const [v2, v3, geminiV3] = await Promise.all([
+    execute(input.v2, "v2"),
+    execute(input.v3, "v3"),
+    execute(input.geminiV3, "gemini-v3"),
+  ]);
   return {
-    benchmark: "LUQTA Search V2 vs V3 real-image",
+    benchmark: "LUQTA Search V2 vs local V3 vs Gemini V3 real-image",
     generatedAt: new Date().toISOString(),
     candidateCatalogFingerprint: unavailableCatalogReason ? null : fingerprint!,
     imageCases: cases.length,
     provenance: "Static Wikimedia Commons metadata snapshot; remote images are not downloaded by this runner.",
     v2,
     v3,
+    geminiV3,
     limitations: [
       "The manifest contains public Commons thumbnails with recorded attribution/license metadata; the runner never fetches images.",
       "A reference image counts only with independently identified image-verification evidence tied to the exact manifest URL; adapter boolean assertions are not sufficient.",
@@ -519,6 +613,8 @@ export async function runRealWorldBenchmark(input: {
       "For a valid paired comparison, pass the same real candidate catalog and fingerprint to both adapters and echo that fingerprint in every observation.",
       "Quality metrics require independent reviewer IDs, review of every candidate in the shared catalog, matching catalog fingerprints, and relevance labels for every catalog ID. Missing evidence yields partial/unavailable quality metrics.",
       "Adapters must instrument provider, Brave, model calls and cost. Uninstrumented values are null rather than assumed zero.",
+      "Cache hit/miss counters and errors are reported only when supplied/measured; failed calls are listed and make aggregate call/cost totals unavailable.",
+      "Gemini V3 is strictly opt-in through an explicitly injected adapter. This runner performs no key fallback, credential discovery, or implicit Gemini import.",
       "New automotive, app-screenshot, and multi-object entries are prompt-only source-title representatives, not independently validated visual scenarios. No validated low-quality, automotive OEM, or genuine shopping screenshot case is bundled.",
     ],
   };
@@ -532,13 +628,14 @@ export function renderRealWorldReportJson(report: RealWorldBenchmarkReport): str
 export function unavailableRealWorldReport(): RealWorldBenchmarkReport {
   const reportCases = REAL_WORLD_IMAGE_CASES;
   return {
-    benchmark: "LUQTA Search V2 vs V3 real-image",
+    benchmark: "LUQTA Search V2 vs local V3 vs Gemini V3 real-image",
     generatedAt: new Date().toISOString(),
     candidateCatalogFingerprint: null,
     imageCases: reportCases.length,
     provenance: "Static Wikimedia Commons metadata snapshot; remote images are not downloaded by this runner.",
     v2: emptyVersion(reportCases, "No real candidate catalog or V2 search adapter was configured."),
     v3: emptyVersion(reportCases, "No real candidate catalog or V3 search adapter was configured."),
+    geminiV3: emptyVersion(reportCases, "Gemini V3 is opt-in and no explicit adapter was injected."),
     limitations: [
       "This no-configuration report is a capability/status export, not a search evaluation.",
       "No real candidate catalog or image-capable model was bundled or called; quality and retrieval rates are unavailable.",
