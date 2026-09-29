@@ -4,9 +4,7 @@
     "slug": "luqta",
     "owner": "luqta-app",
     "version": "1.0.0",
-    "runtimeVersion": {
-      "policy": "fingerprint"
-    },
+    "runtimeVersion": "1.0.0-ota1",
     "updates": {
       "enabled": true,
       "url": "https://u.expo.dev/8fa7523f-0675-436e-ae97-f3f11f76519e",
