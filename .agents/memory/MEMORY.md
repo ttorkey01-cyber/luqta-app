@@ -1,0 +1,19 @@
+- [Merchant image health](merchant-image-health.md) — keep feed image-field counts separate from a bounded reachability sample, and run probes outside search latency.
+- [API test runtime](api-test-runtime.md) — run TypeScript API tests through tsx because native Node type stripping cannot resolve extensionless ESM imports.
+- [Generated API client artifacts](generated-api-client-artifacts.md) — rebuild the shared client project before consumer typechecks when API schema fields change.
+- [Large affiliate feeds](large-affiliate-feeds.md) — keep size and timeout allowances provider-specific so one large catalog does not weaken every feed's bounds.
+- [Hunt monitoring claims](hunt-monitoring-claims.md) — show immediate real search results and persisted requests; do not imply background monitoring until a real scheduler exists.
+- [Relevance-aware fallback](relevance-aware-web-fallback.md) — structured hard constraints govern fallback decisions and result filtering; unknown query words must not discard valid results.
+- [Expo static build port](expo-static-build-port.md) — the static Expo build helper assumes Metro can use port 8081 and cannot resolve an occupied port interactively.
+- [Category catalog boundary](category-catalog-boundary.md) — category routes use typed taxonomy and feed-only filtering; never reuse intent-search web fallback.
+- [Large-feed category cold starts](large-feed-category-cold-starts.md) — keep category paging at the provider boundary; never materialize an entire matching catalog for one page.
+- [Android image CDN headers](android-image-cdn-headers.md) — Nazih’s official image URLs can 403 only from native Android requests; diagnose headers at the image component.
+- [Expo stale Metro process](expo-stale-metro-process.md) — a restart can leave the phone on an older Metro process while the replacement waits on an alternate port.
+- [API workflow trace capture](api-workflow-trace-capture.md) — use workflow scrollback for correlated server timing when log refreshes expose only a recent tail.
+- [Autoscale feed index readiness](autoscale-feed-index-readiness.md) — bound huge catalogs and keep cold category requests active until an index is usable.
+- [AliExpress feed ordering](aliexpress-feed-ordering.md) — the live hot-products feed begins with apparel; genuine electronics appear later under broad tool categories.
+- [Native Android verification access](native-android-verification-access.md) — Expo web preview and Hermes export are not native simulator evidence; verify Android separately.
+- [EAS pnpm build approvals](eas-pnpm-build-approvals.md) — a successful preinstall can still end in an EAS install failure when pnpm rejects dependency build scripts.
+- [Luxury Closet image transport](luxury-closet-image-transport.md) — feed product photos use HTTP URLs that redirect to identical HTTPS JPEGs; the separate store icon is not a product photo.
+- [Deal Outlet mobile redirects](deal-outlet-mobile-redirects.md) — mobile affiliate redirects go through Adjust to Play; the feed embeds exact web product URLs without a verified tracking route.
+- [GitHub API pushes](github-api-pushes.md) — when no GitHub git remote is configured, connector commits can advance main without sharing the local commit SHA.
