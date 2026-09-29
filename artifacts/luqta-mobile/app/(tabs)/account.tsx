@@ -37,7 +37,6 @@ export default function AccountScreen() {
         </View>
         <Pressable style={({ pressed }) => [styles.logout, pressed && styles.pressed]}><Feather name="log-out" size={16} color={colors.pink} /><Text style={styles.logoutText}>تسجيل الخروج</Text></Pressable>
         <View style={styles.version}><Text style={styles.versionText}>لُقطة · الإصدار ١.٠</Text></View>
-        <Text style={styles.otaTest}>OTA TEST 1</Text>
       </Screen>
       <BottomNav />
     </View>
@@ -61,6 +60,5 @@ const styles = StyleSheet.create({
   logoutText: { color: colors.pink, fontSize: 13, fontWeight: '800' },
   version: { alignItems: 'center', marginTop: 24 },
   versionText: { color: colors.inkFaint, fontSize: 10 },
-  otaTest: { color: colors.inkFaint, fontSize: 9, textAlign: 'center', marginTop: 12 },
   pressed: { opacity: 0.72, transform: [{ scale: 0.98 }] },
 });
