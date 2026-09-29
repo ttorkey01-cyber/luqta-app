@@ -1,6 +1,7 @@
 import {
   getHomePicks,
   searchProducts,
+  setProductRequestObserver,
   type HomePicksResponse,
   type ProductSearchResponse,
   type ProductSearchRequest,
@@ -8,6 +9,11 @@ import {
 } from '@workspace/api-client-react';
 import type { ProductResult } from '@/types/search';
 import { logMobileTiming, mobileNow } from '@/services/mobileDiagnostics';
+import {
+  recordCachedProductRequest,
+  recordProductPipeline,
+  recordProductRequest,
+} from '@/services/productDiagnostics';
 
 export type SearchMode = NonNullable<ProductSearchRequest['searchMode']>;
 export type CategoryState = 'healthy' | 'low' | 'zero';
@@ -42,6 +48,7 @@ const SEARCH_REQUEST_DEADLINE_MS = 8_000;
 const COLD_CATEGORY_REQUEST_DEADLINE_MS = 20_000;
 
 let hasLoggedNazihImageUrlTrace = false;
+setProductRequestObserver(recordProductRequest);
 
 function mapSearchProduct(product: SearchProduct): ProductResult {
   const canonical = product.canonical;
@@ -127,7 +134,18 @@ export class SearchService {
     const categoryBrowse = Boolean(category && searchMode === 'category_browse');
     const key = `${category ?? 'search'}:${searchMode}:${categoryFilterId ?? 'all'}:${categoryBrowse ? page : 1}:${normalizedQuery.toLocaleLowerCase()}`;
     const cached = this.cache.get(key);
-    if (cached && cached.expiresAt > Date.now()) return cached.response;
+    if (cached && cached.expiresAt > Date.now()) {
+      const kind = categoryBrowse ? 'category' : 'search';
+      recordCachedProductRequest(
+        kind, categoryBrowse ? category ?? null : null,
+        cached.response.products.length, cached.response.total ?? null,
+      );
+      recordProductPipeline(kind, {
+        received: cached.response.products.length,
+        mapped: cached.response.products.length,
+      });
+      return cached.response;
+    }
 
     const requestStartedAt = mobileNow();
     logMobileTiming('REQUEST_STARTED', {
@@ -166,6 +184,10 @@ export class SearchService {
     }
     const responseReceivedAt = mobileNow();
     const results = response.products.map(mapSearchProduct);
+    recordProductPipeline(categoryBrowse ? 'category' : 'search', {
+      received: response.products.length,
+      mapped: results.length,
+    });
     const mappedAt = mobileNow();
     if (__DEV__) {
       console.log('[luqta-timing] search', {

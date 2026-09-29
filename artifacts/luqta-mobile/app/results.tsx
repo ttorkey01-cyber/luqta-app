@@ -36,6 +36,7 @@ import {
 import type { ProductResult } from '@/types/search';
 import type { ProductSearchRequest } from '@workspace/api-client-react';
 import { logMobileTiming } from '@/services/mobileDiagnostics';
+import { recordProductPipeline } from '@/services/productDiagnostics';
 
 const GENERAL_FILTERS = [
   { id: 'all', label: 'الكل' },
@@ -282,6 +283,13 @@ export default function ResultsScreen() {
     }
     return sorted;
   }, [filteredResults, isCategoryBrowse, selectedFilter]);
+  useEffect(() => {
+    if (dataLoading) return;
+    recordProductPipeline(isCategoryBrowse ? 'category' : 'search', {
+      filtered: filteredResults.length,
+      rendered: sortedProducts.length,
+    });
+  }, [dataLoading, filteredResults.length, isCategoryBrowse, sortedProducts.length, requestError]);
   const loadMore = useCallback(() => {
     if (
       !isCategoryBrowse ||

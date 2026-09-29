@@ -18,6 +18,75 @@ const DEFAULT_JSON_ACCEPT = "application/json, application/problem+json";
 let _baseUrl: string | null = null;
 let _authTokenGetter: AuthTokenGetter | null = null;
 
+export type ProductRequestObservation = {
+  type: "search" | "category" | "home";
+  path: "/api/search" | "/api/home/picks";
+  category: string | null;
+  source: "network" | "cache";
+  status: number | null;
+  productCount: number | null;
+  total: number | null;
+  errorCode: string | null;
+  durationMs: number;
+  timestamp: string;
+};
+
+let _productRequestObserver: ((event: ProductRequestObservation) => void) | null = null;
+
+export function setProductRequestObserver(
+  observer: ((event: ProductRequestObservation) => void) | null,
+): void {
+  _productRequestObserver = observer;
+}
+
+export function getBaseUrl(): string | null {
+  return _baseUrl;
+}
+
+function productRequestTarget(
+  url: string,
+  body: BodyInit | null | undefined,
+): Pick<ProductRequestObservation, "type" | "path" | "category"> | null {
+  // Only these two public product endpoints are observed. Never retain a
+  // free-form search query, a URL query string, or a request/response body.
+  const path = url.split("?")[0];
+  if (path.endsWith("/api/home/picks")) {
+    return { type: "home", path: "/api/home/picks", category: null };
+  }
+  if (!path.endsWith("/api/search")) return null;
+  let category: string | null = null;
+  if (typeof body === "string") {
+    try {
+      const request = JSON.parse(body) as { category?: unknown; searchMode?: unknown };
+      if (request.searchMode === "category_browse" &&
+          typeof request.category === "string" &&
+          /^[a-z_]{1,32}$/.test(request.category)) {
+        category = request.category;
+      }
+    } catch {
+      // Instrumentation must not change request or response handling.
+    }
+  }
+  return { type: category ? "category" : "search", path: "/api/search", category };
+}
+
+function safeProductCount(data: unknown): number | null {
+  if (!data || typeof data !== "object" || !("products" in data)) return null;
+  return Array.isArray(data.products) ? data.products.length : null;
+}
+
+function safeTotal(data: unknown): number | null {
+  if (!data || typeof data !== "object" || !("total" in data)) return null;
+  return typeof data.total === "number" && Number.isFinite(data.total)
+    ? data.total : null;
+}
+
+function safeErrorCode(data: unknown): string {
+  if (!data || typeof data !== "object" || !("code" in data)) return "HTTP_ERROR";
+  return typeof data.code === "string" && /^[A-Z_]{1,48}$/.test(data.code)
+    ? data.code : "HTTP_ERROR";
+}
+
 /**
  * Set a base URL that is prepended to every relative request URL
  * (i.e. paths that start with `/`).
@@ -362,6 +431,30 @@ export async function customFetch<T = unknown>(
 
   const requestStartedAt =
     typeof performance !== "undefined" ? performance.now() : Date.now();
+  const target = _productRequestObserver
+    ? productRequestTarget(requestInfo.url, init.body)
+    : null;
+  const observe = (status: number | null, data: unknown, errorCode: string | null) => {
+    if (!target || !_productRequestObserver) return;
+    try {
+      _productRequestObserver({
+        ...target,
+        source: "network",
+        status,
+        productCount: status !== null && status >= 200 && status < 300
+          ? safeProductCount(data) : null,
+        total: status !== null && status >= 200 && status < 300 ? safeTotal(data) : null,
+        errorCode,
+        durationMs: Math.round(
+          (typeof performance !== "undefined" ? performance.now() : Date.now()) -
+            requestStartedAt,
+        ),
+        timestamp: new Date().toISOString(),
+      });
+    } catch {
+      // A diagnostic observer can never change the API request result.
+    }
+  };
   const isDevelopment =
     (globalThis as { __DEV__?: boolean }).__DEV__ === true;
   const traceSearch = isDevelopment && requestInfo.url.includes("/api/search");
@@ -377,6 +470,7 @@ export async function customFetch<T = unknown>(
   try {
     response = await fetch(input, { ...init, method, headers });
   } catch (error) {
+    observe(null, null, init.signal?.aborted ? "ABORTED" : "NETWORK_ERROR");
     if (traceSearch) {
       const expectedAbort =
         init.signal?.aborted && error instanceof Error && error.name === "AbortError";
@@ -414,11 +508,25 @@ export async function customFetch<T = unknown>(
   }
 
   if (!response.ok) {
-    const errorData = await parseErrorBody(response, method);
+    let errorData: unknown;
+    try {
+      errorData = await parseErrorBody(response, method);
+    } catch (error) {
+      observe(response.status, null, "PARSE_ERROR");
+      throw error;
+    }
+    observe(response.status, null, safeErrorCode(errorData));
     throw new ApiError(response, errorData, requestInfo);
   }
 
-  const body = await parseSuccessBody(response, responseType, requestInfo);
+  let body: unknown;
+  try {
+    body = await parseSuccessBody(response, responseType, requestInfo);
+  } catch (error) {
+    observe(response.status, null, "PARSE_ERROR");
+    throw error;
+  }
+  observe(response.status, body, null);
   if (isDevelopment && requestInfo.url.includes("/api/search")) {
     const parsedAt =
       typeof performance !== "undefined" ? performance.now() : Date.now();
