@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { deflateSync } from "node:zlib";
 import { ProviderRegistry } from "../../connectors/providerRegistry";
 import { expandShoppingQuery } from "../../connectors/queryExpansion";
 import type { ProviderMetadata, ProviderProduct, SearchProvider } from "../../connectors/types";
@@ -8,6 +9,53 @@ import {
   type MultimodalReranker,
   type RerankContext,
 } from "./index";
+import { PixelVisualSimilarityAdapter } from "./visual";
+import { createImageUrlLoader } from "./visual/urlLoader";
+
+function pngCrc32(bytes: Buffer) {
+  let crc = 0xffffffff;
+  for (const byte of bytes) {
+    crc ^= byte;
+    for (let bit = 0; bit < 8; bit += 1) crc = (crc >>> 1) ^ (crc & 1 ? 0xedb88320 : 0);
+  }
+  return (crc ^ 0xffffffff) >>> 0;
+}
+
+function pngChunk(name: string, data: Buffer) {
+  const type = Buffer.from(name, "ascii");
+  const length = Buffer.alloc(4);
+  length.writeUInt32BE(data.length);
+  const checksum = Buffer.alloc(4);
+  checksum.writeUInt32BE(pngCrc32(Buffer.concat([type, data])));
+  return Buffer.concat([length, type, data, checksum]);
+}
+
+function makeLocalPng(color: readonly [number, number, number]) {
+  const width = 32;
+  const height = 32;
+  const header = Buffer.alloc(13);
+  header.writeUInt32BE(width, 0);
+  header.writeUInt32BE(height, 4);
+  header[8] = 8;
+  header[9] = 2;
+  const scanlines = Buffer.alloc(height * (1 + width * 3));
+  for (let y = 0; y < height; y += 1) {
+    const row = y * (1 + width * 3);
+    scanlines[row] = 0;
+    for (let x = 0; x < width; x += 1) {
+      const offset = row + 1 + x * 3;
+      scanlines[offset] = color[0];
+      scanlines[offset + 1] = color[1];
+      scanlines[offset + 2] = color[2];
+    }
+  }
+  return Buffer.concat([
+    Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
+    pngChunk("IHDR", header),
+    pngChunk("IDAT", deflateSync(scanlines)),
+    pngChunk("IEND", Buffer.alloc(0)),
+  ]);
+}
 
 function provider(
   id: string,
@@ -71,6 +119,65 @@ test("V3 is disabled by default and performs no provider searches", async () => 
   assert.equal(result.diagnostics.enabled, false);
   assert.equal(result.diagnostics.externalApiCallCount, 0);
   assert.equal(result.diagnostics.providerInvocationCount, 0);
+});
+
+test("photo-only search ranks an injected catalog using real local PNG pixels and the safe URL loader", async () => {
+  const redPng = makeLocalPng([238, 24, 18]);
+  const bluePng = makeLocalPng([18, 34, 238]);
+  const providerCalls: string[] = [];
+  const registry = new ProviderRegistry([
+    provider("official", async () => {
+      providerCalls.push("official");
+      return [];
+    }),
+  ]);
+  const candidates = [
+    product({
+      id: "blue-item",
+      imageUrl: "https://images.example/blue.png",
+      productUrl: "https://shop.example/blue-item",
+    }),
+    product({
+      id: "red-item",
+      imageUrl: "https://images.example/red.png",
+      productUrl: "https://shop.example/red-item",
+    }),
+  ];
+  const safeLoader = createImageUrlLoader({
+    enabled: true,
+    allowedHosts: ["images.example"],
+    resolveHostname: async () => [{ address: "8.8.8.8", family: 4 }],
+    fetch: async (url) =>
+      new Response(new Uint8Array(url.endsWith("/red.png") ? redPng : bluePng), {
+        status: 200,
+        headers: { "content-type": "image/png" },
+      }),
+  });
+  const result = await new ExperimentalSearchV3({
+    registry,
+    enabled: true,
+    photoOnlyCandidatePool: (maxCandidates) => {
+      assert.equal(maxCandidates, 100);
+      return candidates;
+    },
+    imageLoader: safeLoader,
+    visualAdapter: new PixelVisualSimilarityAdapter(),
+  }).search({
+    query: "",
+    image: { identities: [], imageBytes: redPng },
+  });
+
+  assert.deepEqual(providerCalls, []);
+  assert.deepEqual(result.diagnostics.sourcesSearched, []);
+  assert.equal(result.diagnostics.providerInvocationCount, 0);
+  assert.equal(result.diagnostics.passes.length, 0);
+  assert.equal(result.diagnostics.photoOnlyDiscovery.status, "available", JSON.stringify(result.diagnostics));
+  assert.equal(result.diagnostics.photoOnlyDiscovery.candidateCount, 2);
+  assert.equal(result.diagnostics.visual.comparisonsCompleted, 2);
+  assert.equal(result.products[0]?.product.id, "red-item");
+  assert.equal(result.products[0]?.visualScore, 1);
+  assert.ok((result.products[1]?.visualScore ?? 1) < 1);
+  assert.ok(result.products.every(({ confidence }) => confidence !== "exact"));
 });
 
 test("an explicitly named catalog brand and product category exclude unrelated matches", async () => {
@@ -148,7 +255,7 @@ test("explicit color, price, and condition constraints are enforced and URLs pre
   assert.equal(result.products.length, 1);
   assert.equal(result.products[0]?.product.productUrl, "https://shop.example/p1?sku=123");
   assert.equal(result.diagnostics.removedByConstraints, 5);
-  assert.equal(result.products[0]?.confidence, "close");
+  assert.equal(result.products[0]?.confidence, "high");
 });
 
 test("uses a single second pass when the first pass has weak candidates", async () => {
@@ -202,7 +309,196 @@ test("passes image inputs to an injected reranker without putting them in diagno
   assert.equal(result.products[0]?.reasons[0], "Injected visual rank");
 });
 
-test("Brave discovery is separate and does not override product destination URLs", async () => {
+test("visual image evidence reranks candidates and reports component scores without leaking inputs", async () => {
+  const candidates = [
+    product({
+      id: "text-first",
+      title: "Nike Air Max Shoes",
+      imageUrl: "https://images.example/candidate-a.png",
+      productUrl: "https://shop.example/a",
+    }),
+    product({
+      id: "visual-first",
+      title: "Nike Air Max Shoes",
+      imageUrl: "https://images.example/candidate-b.png",
+      productUrl: "https://shop.example/b",
+    }),
+  ];
+  const registry = new ProviderRegistry([
+    provider("official", async () => candidates),
+  ]);
+  let loaderCalls = 0;
+  let adapterCalls = 0;
+  const referenceBytes = new Uint8Array([11, 12, 13]);
+  const result = await new ExperimentalSearchV3({
+    registry,
+    enabled: true,
+    imageLoader: async (url) => {
+      loaderCalls += 1;
+      return { bytes: new Uint8Array([21]), url };
+    },
+    visualAdapter: {
+      async compareImages(reference, candidate) {
+        adapterCalls += 1;
+        assert.deepEqual(reference.bytes, referenceBytes);
+        return {
+          visualScore: candidate.url?.endsWith("candidate-b.png") ? 0.99 : 0.01,
+          pixelScore: candidate.url?.endsWith("candidate-b.png") ? 0.99 : 0.01,
+        };
+      },
+    },
+  }).search({
+    query: "Nike shoes",
+    image: { identities: [], imageBytes: referenceBytes, imageUri: "https://private.example/upload?token=secret" },
+  });
+
+  assert.equal(result.products[0]?.product.id, "visual-first");
+  assert.equal(result.products[0]?.visualStatus, "compared");
+  assert.equal(result.products[0]?.visualScore, 0.99);
+  assert.ok(result.products[0]?.textScore !== undefined);
+  assert.ok(result.products[0]?.identityScore !== undefined);
+  assert.equal(result.products[0]?.hybridScore, result.products[0]?.score);
+  assert.equal(loaderCalls, 2);
+  assert.equal(adapterCalls, 2);
+  assert.equal(result.diagnostics.visual.comparisonsAttempted, 2);
+  assert.equal(result.diagnostics.visual.comparisonsCompleted, 2);
+  assert.equal(result.diagnostics.visual.status, "available");
+  assert.ok(result.diagnostics.visual.stageLatencyMs >= 0);
+  assert.equal(result.diagnostics.visual.imageLoadCalls, 2);
+  assert.equal(result.diagnostics.visual.adapterCallCount, 2);
+  assert.equal(result.diagnostics.visual.candidates.length, 2);
+  assert.equal(result.diagnostics.visual.candidates[0]?.visualScore, 0.99);
+  assert.equal(JSON.stringify(result.diagnostics).includes("secret"), false);
+  assert.equal(JSON.stringify(result.diagnostics).includes("imageBytes"), false);
+  assert.equal(JSON.stringify(result.diagnostics).includes("candidate-a.png"), false);
+});
+
+test("verified SKU outranks a visually favored lookalike and remains the only eligible product", async () => {
+  const registry = new ProviderRegistry([
+    provider("official", async () => [
+      product({
+        id: "sku-match",
+        title: "Sony WH-1000XM5 Wireless Headphones",
+        brand: "Sony",
+        productType: "headphones",
+        providerProductId: "WH-1000XM5",
+        imageUrl: "https://images.example/exact.png",
+        productUrl: "https://audio.example/exact",
+      }),
+      product({
+        id: "lookalike",
+        title: "Sony WH-1000XM4 Wireless Headphones",
+        brand: "Sony",
+        productType: "headphones",
+        imageUrl: "https://images.example/lookalike.png",
+        productUrl: "https://audio.example/lookalike",
+      }),
+    ]),
+  ]);
+  const compared: string[] = [];
+  const result = await new ExperimentalSearchV3({
+    registry,
+    enabled: true,
+    imageLoader: async (url) => ({ bytes: new Uint8Array([1]), url }),
+    visualAdapter: {
+      async compareImages(_reference, candidate) {
+        compared.push(candidate.url ?? "");
+        return {
+          visualScore: candidate.url?.endsWith("lookalike.png") ? 1 : 0,
+          pixelScore: candidate.url?.endsWith("lookalike.png") ? 1 : 0,
+        };
+      },
+    },
+  }).search({
+    query: "Sony headphones SKU WH-1000XM5",
+    image: { identities: [], imageBytes: new Uint8Array([2]) },
+  });
+
+  assert.deepEqual(result.products.map(({ product: item }) => item.id), ["sku-match"]);
+  assert.equal(result.products[0]?.confidence, "exact");
+  assert.deepEqual(compared, ["https://images.example/exact.png"]);
+});
+
+test("explicit text color remains a hard filter against conflicting visual evidence", async () => {
+  const registry = new ProviderRegistry([
+    provider("official", async () => [
+      product({
+        id: "black",
+        title: "Nike Air Max 90",
+        brand: "Nike",
+        productType: "shoes",
+        color: "black",
+        imageUrl: "https://images.example/black.png",
+        productUrl: "https://shop.example/black-visual",
+      }),
+      product({
+        id: "white",
+        title: "Nike Air Max 90",
+        brand: "Nike",
+        productType: "shoes",
+        color: "white",
+        imageUrl: "https://images.example/white.png",
+        productUrl: "https://shop.example/white-visual",
+      }),
+    ]),
+  ]);
+  const compared: string[] = [];
+  const result = await new ExperimentalSearchV3({
+    registry,
+    enabled: true,
+    imageLoader: async (url) => ({ bytes: new Uint8Array([1]), url }),
+    visualAdapter: {
+      async compareImages() {
+        compared.push("compared");
+        return { visualScore: 0.01, pixelScore: 0.01 };
+      },
+    },
+  }).search({
+    query: "black Nike shoes",
+    image: {
+      identities: [{ label: "white Nike Air Max 90", confidence: 0.99, brand: "Nike", model: "Air Max 90", color: "white" }],
+      imageBytes: new Uint8Array([2]),
+    },
+  });
+
+  assert.deepEqual(result.products.map(({ product: item }) => item.id), ["black"]);
+  assert.equal(compared.length, 1);
+  assert.equal(result.diagnostics.removedByConstraints, 1);
+});
+
+test("visual ranking reports explicit unavailability instead of inventing a score", async () => {
+  const registry = new ProviderRegistry([
+    provider("official", async () => [
+      product({
+        id: "candidate",
+        imageUrl: "https://images.example/candidate.png",
+        productUrl: "https://shop.example/candidate",
+      }),
+    ]),
+  ]);
+  const missingAdapter = await new ExperimentalSearchV3({ registry, enabled: true }).search({
+    query: "Nike shoes",
+    image: { identities: [], imageBytes: new Uint8Array([1]) },
+  });
+  assert.equal(missingAdapter.diagnostics.visual.unavailableReason, "VISUAL_ADAPTER_UNAVAILABLE");
+  assert.equal(missingAdapter.products[0]?.visualStatus, "unavailable");
+  assert.equal(missingAdapter.products[0]?.visualScore, undefined);
+
+  const missingBytes = await new ExperimentalSearchV3({
+    registry,
+    enabled: true,
+    imageLoader: async (url) => ({ bytes: new Uint8Array([1]), url }),
+    visualAdapter: {
+      async compareImages() {
+        throw new Error("must not compare without uploaded image bytes");
+      },
+    },
+  }).search({ query: "Nike shoes", image: { identities: [] } });
+  assert.equal(missingBytes.diagnostics.visual.unavailableReason, "REFERENCE_IMAGE_BYTES_MISSING");
+  assert.equal(missingBytes.diagnostics.visual.adapterCallCount, 0);
+});
+
+test("strong official results skip unnecessary Brave discovery", async () => {
   let braveCalls = 0;
   const official = provider("official", async () => [
     product({ id: "official", productUrl: "https://merchant.example/item" }),
@@ -222,9 +518,79 @@ test("Brave discovery is separate and does not override product destination URLs
     enabled: true,
   }).search({ query: "Nike shoes" });
 
-  assert.equal(braveCalls, 1);
+  assert.equal(braveCalls, 0);
+  assert.deepEqual(result.diagnostics.sourcesSearched, ["official"]);
+  assert.deepEqual(result.diagnostics.passes.map(({ sources }) => sources), [["official"]]);
+  assert.ok(result.products.some((item) => item.product.productUrl === "https://merchant.example/item"));
+});
+
+test("category routing prioritizes a relevant permitted provider while retaining broad feeds", async () => {
+  const calls: string[] = [];
+  const registry = new ProviderRegistry([
+    provider("general-feed", async () => {
+      calls.push("general-feed");
+      return [];
+    }),
+    provider(
+      "beauty-specialist",
+      async () => {
+        calls.push("beauty-specialist");
+        return [];
+      },
+      { priority: 99 },
+    ),
+  ]);
+  const result = await new ExperimentalSearchV3({ registry, enabled: true }).search({
+    query: "Dior perfume",
+  });
+
+  assert.deepEqual(calls.slice(0, 2), ["beauty-specialist", "general-feed"]);
+  assert.deepEqual(result.diagnostics.sourceRouting.relevantProviders, ["beauty-specialist"]);
+  assert.deepEqual(result.diagnostics.sourceRouting.broadProviders, ["general-feed"]);
+  assert.deepEqual(result.diagnostics.passes[0]?.sources, ["beauty-specialist", "general-feed"]);
+});
+
+test("weak first pass uses one alternate-query Brave discovery fallback", async () => {
+  let officialCalls = 0;
+  let braveRequests = 0;
+  const queries: string[] = [];
+  const registry = new ProviderRegistry([
+    provider("official", async () => {
+      officialCalls += 1;
+      return [];
+    }),
+  ]);
+  const brave = provider(
+    "brave",
+    async (request) => {
+      queries.push(request.query);
+      braveRequests += 1;
+      return [
+        product({
+          id: "discovered",
+          title: "Obscure Jeans",
+          productUrl: "https://discovery.example/gadget",
+          sourceType: "web",
+        }),
+      ];
+    },
+    { integrationType: "web_search" },
+  ) as SearchProvider & { getUsageMetrics: () => { braveRequests: number } };
+  brave.getUsageMetrics = () => ({ braveRequests });
+  const result = await new ExperimentalSearchV3({ registry, brave, enabled: true }).search({
+    query: "obscure jeans",
+  });
+
+  assert.equal(officialCalls, 2);
+  assert.equal(queries.length, 1);
+  assert.equal(result.diagnostics.passes.length, 2);
+  assert.equal(result.diagnostics.passes[0]?.sources.includes("brave"), false);
+  assert.equal(result.diagnostics.passes[1]?.sources.includes("brave"), true);
+  assert.equal(result.diagnostics.providerInvocationCount, 3);
+  assert.equal(result.diagnostics.externalApiCallCount, 1);
   assert.deepEqual(result.diagnostics.sourcesSearched, ["official", "brave"]);
-  assert.ok(result.products.some((item) => item.product.productUrl === "https://discovered.example/item"));
+  assert.ok(result.diagnostics.passes[1]?.query !== result.diagnostics.passes[0]?.query);
+  assert.equal(result.products[0]?.product.productUrl, "https://discovery.example/gadget");
 });
 
 test("cheaper relation requires reference brand and model and a lower price", async () => {
@@ -269,6 +635,95 @@ test("cheaper relation requires reference brand and model and a lower price", as
   assert.equal(result.diagnostics.removedByConstraints, 5);
 });
 
+test("same-product cheaper and similar-product cheaper use distinct identity rules", async () => {
+  const candidates = [
+    product({
+      id: "same-model",
+      title: "Nike Air Max 90",
+      brand: "Nike",
+      productType: "shoes",
+      price: 300,
+      productUrl: "https://shop.example/same-model",
+    }),
+    product({
+      id: "different-model",
+      title: "Nike Air Max 270",
+      brand: "Nike",
+      productType: "shoes",
+      price: 250,
+      productUrl: "https://shop.example/different-model",
+    }),
+    product({
+      id: "similar-brand",
+      title: "Adidas Running Shoes",
+      brand: "Adidas",
+      productType: "shoes",
+      price: 200,
+      productUrl: "https://shop.example/similar-brand",
+    }),
+  ];
+  const makeRegistry = () =>
+    new ProviderRegistry([provider("official", async () => candidates)]);
+  const reference = { brand: "Nike", model: "Air Max 90", price: 450, currency: "SAR" };
+
+  const sameProduct = await new ExperimentalSearchV3({
+    registry: makeRegistry(),
+    enabled: true,
+  }).search({
+    query: "cheaper Nike shoes",
+    relation: "cheaper",
+    reference,
+  });
+  assert.deepEqual(sameProduct.products.map(({ product: item }) => item.id), ["same-model"]);
+
+  const similarProduct = await new ExperimentalSearchV3({
+    registry: makeRegistry(),
+    enabled: true,
+  }).search({
+    query: "similar cheaper shoes",
+    relation: "similar_cheaper",
+    reference,
+  });
+  assert.ok(similarProduct.products.some(({ product: item }) => item.id === "similar-brand"));
+  assert.ok(!similarProduct.products.some(({ product: item }) => item.id === "same-model"));
+  assert.ok(similarProduct.products.every(({ confidence }) => confidence !== "exact"));
+});
+
+test("similar-cheaper can relax a high-confidence image reference model", async () => {
+  const registry = new ProviderRegistry([
+    provider("official", async () => [
+      product({
+        id: "same-reference-model",
+        title: "Nike Air Max 90",
+        brand: "Nike",
+        productType: "shoes",
+        price: 300,
+        productUrl: "https://shop.example/reference-model",
+      }),
+      product({
+        id: "different-model",
+        title: "Nike Air Max 270",
+        brand: "Nike",
+        productType: "shoes",
+        price: 250,
+        productUrl: "https://shop.example/alternative-model",
+      }),
+    ]),
+  ]);
+  const result = await new ExperimentalSearchV3({ registry, enabled: true }).search({
+    query: "similar cheaper shoes",
+    relation: "similar_cheaper",
+    reference: { price: 450, currency: "SAR" },
+    image: {
+      identities: [
+        { label: "Nike Air Max 90", confidence: 0.99, brand: "Nike", model: "Air Max 90" },
+      ],
+    },
+  });
+
+  assert.deepEqual(result.products.map(({ product: item }) => item.id), ["different-model"]);
+});
+
 test("different-color relation matches the reference product without enforcing inferred target color", async () => {
   const registry = new ProviderRegistry([
     provider("official", async () => [
@@ -291,6 +746,59 @@ test("different-color relation matches the reference product without enforcing i
 
   assert.deepEqual(result.products.map(({ product: item }) => item.id), ["red"]);
   assert.equal(result.diagnostics.removedByConstraints, 2);
+});
+
+test("explicit text color overrides conflicting image color inference", async () => {
+  const registry = new ProviderRegistry([
+    provider("official", async () => [
+      product({
+        id: "black",
+        title: "Nike Air Max 90",
+        brand: "Nike",
+        productType: "shoes",
+        color: "black",
+        productUrl: "https://shop.example/black",
+      }),
+      product({
+        id: "white",
+        title: "Nike Air Max 90",
+        brand: "Nike",
+        productType: "shoes",
+        color: "white",
+        productUrl: "https://shop.example/white",
+      }),
+    ]),
+  ]);
+  const result = await new ExperimentalSearchV3({ registry, enabled: true }).search({
+    query: "black Nike shoes",
+    image: {
+      identities: [
+        { label: "white Nike Air Max 90", confidence: 0.99, brand: "Nike", model: "Air Max 90", color: "white" },
+      ],
+    },
+  });
+
+  assert.equal(result.diagnostics.parsedIntent.color, "black");
+  assert.deepEqual(result.products.map(({ product: item }) => item.id), ["black"]);
+});
+
+test("low-confidence image color hypothesis is retained but not hard-enforced or called exact", async () => {
+  const registry = new ProviderRegistry([
+    provider("official", async () => [
+      product({ id: "black", color: "black", productUrl: "https://shop.example/black-low" }),
+      product({ id: "white", color: "white", productUrl: "https://shop.example/white-low" }),
+    ]),
+  ]);
+  const result = await new ExperimentalSearchV3({ registry, enabled: true }).search({
+    query: "Nike shoes",
+    image: {
+      identities: [{ label: "white shoe", confidence: 0.32, color: "white" }],
+    },
+  });
+
+  assert.equal(result.products.length, 2);
+  assert.notEqual(result.products[0]?.confidence, "exact");
+  assert.equal(result.diagnostics.parsedIntent.identityHypotheses[0]?.confidence, 0.32);
 });
 
 test("explicit location and automotive part/model/SKU constraints require verified product fields", async () => {
@@ -406,10 +914,10 @@ test("image-only Brave discovery uses identity text and reports only measured Br
     },
   });
 
-  assert.equal(braveQueries.length, 2);
-  assert.match(braveQueries[0] ?? "", /Nike.*Air Zoom/u);
-  assert.equal(result.diagnostics.providerInvocationCount, 2);
-  assert.equal(result.diagnostics.externalApiCallCount, 4);
+  assert.equal(braveQueries.length, 1);
+  assert.match(braveQueries[0] ?? "", /Nike.*Air Zoom/iu);
+  assert.equal(result.diagnostics.providerInvocationCount, 1);
+  assert.equal(result.diagnostics.externalApiCallCount, 2);
   assert.deepEqual(result.diagnostics.sourcesSearched, ["brave"]);
   assert.equal(JSON.stringify(result.diagnostics).includes("do-not-forward"), false);
 });
@@ -472,6 +980,69 @@ test("inferred material attributes affect ranking without becoming strict filter
   assert.equal(result.diagnostics.parsedIntent.material, "leather");
 });
 
+test("URL deduplication happens across official sources before ranking", async () => {
+  const shared = product({
+    id: "shared",
+    productUrl: "https://shop.example/shared",
+  });
+  const registry = new ProviderRegistry([
+    provider("feed-a", async () => [shared]),
+    provider("feed-b", async () => [{ ...shared, id: "duplicate" }]),
+  ]);
+  const result = await new ExperimentalSearchV3({ registry, enabled: true }).search({
+    query: "Nike shoes",
+  });
+
+  assert.equal(result.diagnostics.totalCandidates, 2);
+  assert.equal(result.diagnostics.deduplicatedCandidates, 1);
+  assert.equal(result.products.length, 1);
+  assert.equal(result.products[0]?.product.productUrl, "https://shop.example/shared");
+});
+
+test("close-match diversification limits repeated merchants without changing hard eligibility", async () => {
+  const registry = new ProviderRegistry([
+    provider("catalog", async () => [
+      product({
+        id: "m1a",
+        title: "Running Shoes",
+        productType: "shoes",
+        merchant: "Merchant One",
+        productUrl: "https://one.example/a",
+      }),
+      product({
+        id: "m1b",
+        title: "Running Shoes",
+        productType: "shoes",
+        merchant: "Merchant One",
+        productUrl: "https://one.example/b",
+      }),
+      product({
+        id: "m1c",
+        title: "Running Shoes",
+        productType: "shoes",
+        merchant: "Merchant One",
+        productUrl: "https://one.example/c",
+      }),
+      product({
+        id: "m2",
+        title: "Running Shoes",
+        productType: "shoes",
+        merchant: "Merchant Two",
+        productUrl: "https://two.example/a",
+      }),
+    ]),
+  ]);
+  const result = await new ExperimentalSearchV3({ registry, enabled: true }).search({
+    query: "uncommon comfortable waterproof lightweight running shoes",
+  });
+
+  assert.equal(result.products.length, 4);
+  assert.equal(result.products[0]?.product.merchant, "Merchant One");
+  assert.equal(result.products[1]?.product.merchant, "Merchant One");
+  assert.equal(result.products[2]?.product.merchant, "Merchant Two");
+  assert.equal(result.diagnostics.rerankedCandidates, 4);
+});
+
 test("verified typed SKU may be exact only with brand and product-type corroboration", async () => {
   const registry = new ProviderRegistry([
     provider("official", async () => [
@@ -523,4 +1094,49 @@ test("unknown text model without corroborated brand is never classified exact", 
 
   assert.equal(result.products.length, 1);
   assert.notEqual(result.products[0]?.confidence, "exact");
+});
+
+test("reference models and seller-description mentions are not independent exact-identity evidence", async () => {
+  const referenceModelRegistry = new ProviderRegistry([
+    provider("catalog", async () => [
+      product({
+        id: "reference-only-model",
+        title: "Sony WH-1000XM5 Wireless Headphones",
+        brand: "Sony",
+        productType: "headphones",
+        providerProductId: undefined,
+        productUrl: "https://audio.example/reference-only",
+      }),
+    ]),
+  ]);
+  const referenceOnly = await new ExperimentalSearchV3({
+    registry: referenceModelRegistry,
+    enabled: true,
+  }).search({
+    query: "Sony headphones",
+    reference: { brand: "Sony", model: "WH-1000XM5" },
+  });
+  assert.equal(referenceOnly.products.length, 1);
+  assert.notEqual(referenceOnly.products[0]?.confidence, "exact");
+
+  const descriptionRegistry = new ProviderRegistry([
+    provider("catalog", async () => [
+      product({
+        id: "description-model",
+        title: "Sony Wireless Headphones",
+        description: "Seller notes compatibility with model WH-1000XM5",
+        brand: "Sony",
+        productType: "headphones",
+        providerProductId: undefined,
+        productUrl: "https://audio.example/description-model",
+      }),
+    ]),
+  ]);
+  const descriptionOnly = await new ExperimentalSearchV3({
+    registry: descriptionRegistry,
+    enabled: true,
+  }).search({ query: "Sony WH-1000XM5 headphones" });
+
+  assert.equal(descriptionOnly.products.length, 1);
+  assert.notEqual(descriptionOnly.products[0]?.confidence, "exact");
 });

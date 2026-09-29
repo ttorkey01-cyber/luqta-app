@@ -10,6 +10,14 @@ import type {
   QueryIntent,
   SearchProvider,
 } from "../../connectors/types";
+import type { ImageUrlLoader } from "./visual/urlLoader";
+import {
+  createVisualRankingState,
+  rerankWithVisual,
+  type VisualAdapter,
+  type VisualCandidateDiagnostic,
+  type VisualRankingState,
+} from "./visualRanking";
 
 export type V3Request = {
   query: string;
@@ -25,8 +33,10 @@ export type V3Request = {
     description?: string;
     extractedText?: string;
     imageUri?: string;
+    imageBytes?: Uint8Array;
+    mimeType?: string;
   };
-  relation?: "cheaper" | "different_color" | "similar";
+  relation?: "cheaper" | "similar_cheaper" | "different_color" | "similar";
   reference?: {
     price?: number;
     currency?: string;
@@ -39,7 +49,12 @@ export type V3Request = {
 export type V3ProductResult = {
   product: ProviderProduct;
   score: number;
-  confidence: "exact" | "close" | "alternative";
+  textScore: number;
+  identityScore: number;
+  visualScore?: number;
+  hybridScore: number;
+  visualStatus: "compared" | "unavailable" | "skipped";
+  confidence: "exact" | "high" | "close" | "alternative" | "weak";
   reasons: string[];
 };
 
@@ -74,6 +89,12 @@ export type V3Diagnostics = {
   enabled: boolean;
   parsedIntent: V3Intent;
   generatedQueries: string[];
+  selectedQueries: string[];
+  sourceRouting: {
+    category?: string;
+    relevantProviders: string[];
+    broadProviders: string[];
+  };
   sourcesSearched: string[];
   resultCountPerSource: Record<string, number>;
   totalCandidates: number;
@@ -81,7 +102,38 @@ export type V3Diagnostics = {
   removedByConstraints: number;
   rerankedCandidates: number;
   confidenceScores: number[];
-  passes: Array<{ pass: 1 | 2; query: string; candidates: number }>;
+  visual: {
+    status: "available" | "partial" | "unavailable";
+    unavailableReason?: string;
+    candidates: VisualCandidateDiagnostic[];
+    stageLatencyMs: number;
+    comparisonsAttempted: number;
+    comparisonsCompleted: number;
+    comparisonsFailed: number;
+    imageLoadCalls: number;
+    adapterCallCount: number;
+  };
+  photoOnlyDiscovery: {
+    status: "not_requested" | "available" | "unavailable";
+    candidateCount: number;
+    eligibleCount: number;
+    unavailableReason?: string;
+  };
+  passes: Array<{
+    pass: 1 | 2;
+    query: string;
+    sources: string[];
+    candidates: number;
+  }>;
+  stageLatencyMs: {
+    intentParsing: number;
+    queryExpansion: number;
+    sourceRouting: number;
+    firstPass: number;
+    secondPass: number;
+    reranking: number;
+    photoOnlyCatalog: number;
+  };
   totalLatencyMs: number;
   providerInvocationCount: number;
   externalApiCallCount: number;
@@ -95,7 +147,14 @@ export type RerankContext = {
 export type RerankedCandidate = {
   product: ProviderProduct;
   score: number;
+  baseScore?: number;
   reasons: string[];
+  textScore?: number;
+  identityScore?: number;
+  identityPriority?: number;
+  visualScore?: number;
+  hybridScore?: number;
+  visualStatus?: "compared" | "unavailable" | "skipped";
 };
 
 /**
@@ -115,6 +174,13 @@ export type ExperimentalSearchV3Options = {
   registry: ProviderRegistry;
   brave?: SearchProvider;
   reranker?: MultimodalReranker;
+  visualAdapter?: VisualAdapter;
+  imageLoader?: ImageUrlLoader;
+  photoOnlyCandidatePool?:
+    | readonly ProviderProduct[]
+    | ((
+        maxCandidates: number,
+      ) => Promise<readonly ProviderProduct[]> | readonly ProviderProduct[]);
   enabled?: boolean;
 };
 
@@ -125,6 +191,8 @@ const SEARCH_TIMEOUT_MS = 4_000;
 const RERANK_TIMEOUT_MS = 1_500;
 const MAX_RESULTS_PER_SOURCE = 20;
 const MAX_EXPANDED_QUERIES = 8;
+const MAX_RELEVANT_PROVIDERS = 6;
+const MAX_PHOTO_ONLY_CANDIDATES = 100;
 
 const MATERIALS: Array<{ value: string; aliases: string[] }> = [
   { value: "leather", aliases: ["leather", "جلد", "جلدية", "جلديه"] },
@@ -210,6 +278,16 @@ function uniqueQueries(request: V3Request, intent: QueryIntent) {
   return result;
 }
 
+function isPhotoOnlyRequest(request: V3Request) {
+  return Boolean(
+    request.image?.imageBytes?.byteLength &&
+      !request.query.trim() &&
+      !request.image.extractedText?.trim() &&
+      !request.image.description?.trim() &&
+      !(request.image.identities?.length),
+  );
+}
+
 function productSurface(product: ProviderProduct) {
   return [
     product.title,
@@ -223,6 +301,49 @@ function productSurface(product: ProviderProduct) {
   ]
     .filter(Boolean)
     .join(" ");
+}
+
+function identifierSurface(product: ProviderProduct) {
+  return [product.title, product.providerProductId].filter(Boolean).join(" ");
+}
+
+const CATEGORY_PROVIDER_HINTS: Record<string, string[]> = {
+  beauty_care: ["beauty", "nazih", "cosmetic", "perfume"],
+  fashion: ["fashion", "namshi", "shein", "diesel", "stylewe", "luxury"],
+  bags_accessories: ["bag", "accessor", "namshi", "stylewe", "luxury"],
+  watches_jewelry: ["watch", "jewel", "luxury", "noon", "amazon"],
+  electronics: ["electronic", "huawei", "noon", "amazon", "aliexpress"],
+  automotive: ["automotive", "auto", "car", "parts", "haraj"],
+  shoes: ["shoe", "namshi", "shein", "sports", "noon"],
+  eyewear: ["eyewear", "glass", "sunglass", "noon", "amazon"],
+  home_living: ["home", "furniture", "living", "noon", "amazon"],
+  kids_baby: ["kids", "baby", "children", "noon", "amazon"],
+  sports_fitness: ["sport", "fitness", "noon", "amazon"],
+  games_hobbies: ["game", "hobby", "console", "noon", "amazon"],
+};
+
+function routeOfficialProviders(
+  providers: SearchProvider[],
+  category?: string,
+) {
+  const hints = category ? CATEGORY_PROVIDER_HINTS[category] ?? [] : [];
+  const relevant = providers.filter((provider) => {
+    const searchable = normalized(`${provider.metadata.id} ${provider.metadata.name}`);
+    return hints.some((hint) => searchable.includes(normalized(hint)));
+  });
+  const relevantIds = new Set(relevant.map((provider) => provider.metadata.id));
+  const broad = providers.filter((provider) => !relevantIds.has(provider.metadata.id));
+  const relevantLimit =
+    broad.length > 0
+      ? Math.min(MAX_RELEVANT_PROVIDERS, MAX_OFFICIAL_PROVIDERS - 1)
+      : MAX_OFFICIAL_PROVIDERS;
+  const orderedRelevant = relevant.slice(0, relevantLimit);
+  const orderedBroad = broad.slice(0, MAX_OFFICIAL_PROVIDERS - orderedRelevant.length);
+  return {
+    providers: [...orderedRelevant, ...orderedBroad],
+    relevantProviderIds: orderedRelevant.map((provider) => provider.metadata.id),
+    broadProviderIds: orderedBroad.map((provider) => provider.metadata.id),
+  };
 }
 
 function namedBrandInResults(query: string, products: ProviderProduct[]) {
@@ -360,7 +481,10 @@ function buildV3Intent(request: V3Request, intent: QueryIntent): V3Intent {
   const userPreferences = PREFERENCE_TERMS
     .filter(({ aliases }) => aliases.some((alias) => includesPhrase(request.query, alias)))
     .map(({ value }) => value);
-  if (request.relation === "cheaper" && !userPreferences.includes("budget_friendly")) {
+  if (
+    (request.relation === "cheaper" || request.relation === "similar_cheaper") &&
+    !userPreferences.includes("budget_friendly")
+  ) {
     userPreferences.push("budget_friendly");
   }
   if (request.relation === "different_color") userPreferences.push("different_color");
@@ -414,25 +538,28 @@ function hasAttribute(surface: string, attribute: string) {
 function satisfiesConstraints(product: ProviderProduct, request: V3Request, intent: V3Intent) {
   const identity = selectedIdentity(request);
   const surface = productSurface(product);
+  const verifiedIdentifierSurface = identifierSurface(product);
   if (
     intent.category &&
     product.category &&
     normalized(intent.category) !== normalized(product.category)
   ) return false;
   const requiredBrand =
-    request.reference?.brand ||
+    (request.relation !== "similar_cheaper" ? request.reference?.brand : undefined) ||
     (request.relation === "cheaper" || request.relation === "different_color"
       ? identity?.brand
       : undefined) ||
     intent.brand ||
     (identity && identity.confidence >= 0.9 ? identity.brand : undefined);
   const requiredModel =
-    request.reference?.model ||
+    (request.relation !== "similar_cheaper" ? request.reference?.model : undefined) ||
     (request.relation === "cheaper" || request.relation === "different_color"
       ? identity?.model
       : undefined) ||
     intent.vehicleModel ||
-    (identity && identity.confidence >= 0.9 ? identity.model : undefined);
+    (request.relation !== "similar_cheaper" && identity && identity.confidence >= 0.9
+      ? identity.model
+      : undefined);
   const requiredSku = identity && identity.confidence >= 0.85 ? identity.sku : undefined;
 
   if (requiredBrand) {
@@ -443,16 +570,16 @@ function satisfiesConstraints(product: ProviderProduct, request: V3Request, inte
       return false;
     }
   }
-  if (requiredModel && !includesPhrase(surface, requiredModel)) return false;
-  if (requiredSku && !includesPhrase(surface, requiredSku)) return false;
+  if (requiredModel && !includesPhrase(verifiedIdentifierSurface, requiredModel)) return false;
+  if (requiredSku && !includesPhrase(verifiedIdentifierSurface, requiredSku)) return false;
   if (
     intent.partName &&
     ![intent.partName, ...getShoppingVocabularyAliases(intent.partName)].some(
       (name) => includesPhrase(surface, name),
     )
   ) return false;
-  if (intent.partNumber && !includesPhrase(surface, intent.partNumber)) return false;
-  if (intent.oemNumber && !includesPhrase(surface, intent.oemNumber)) return false;
+  if (intent.partNumber && !includesPhrase(verifiedIdentifierSurface, intent.partNumber)) return false;
+  if (intent.oemNumber && !includesPhrase(verifiedIdentifierSurface, intent.oemNumber)) return false;
   if (intent.vehicleMake && !includesPhrase(surface, intent.vehicleMake)) return false;
   if (intent.vehicleYear && !includesPhrase(surface, intent.vehicleYear)) return false;
 
@@ -483,6 +610,21 @@ function satisfiesConstraints(product: ProviderProduct, request: V3Request, inte
     if (!requiredBrand && !requiredModel) return false;
   }
   if (request.relation === "cheaper") {
+    const strongReferenceIdentifier =
+      (requiredModel && includesPhrase(verifiedIdentifierSurface, requiredModel)) ||
+      (requiredSku && includesPhrase(verifiedIdentifierSurface, requiredSku)) ||
+      intent.typedIdentifiers.some(
+        (identifier) =>
+          identifier.kind === "sku" &&
+          includesPhrase(verifiedIdentifierSurface, identifier.value),
+      );
+    if (!requiredBrand || !strongReferenceIdentifier) return false;
+  }
+  if (request.relation === "similar_cheaper") {
+    const referenceModel = request.reference?.model ?? identity?.model;
+    if (referenceModel && includesPhrase(verifiedIdentifierSurface, referenceModel)) return false;
+  }
+  if (request.relation === "cheaper" || request.relation === "similar_cheaper") {
     const referenceCurrency =
       request.reference?.currency ??
       intent.currency ??
@@ -515,6 +657,7 @@ function classifyConfidence(
 ): V3ProductResult["confidence"] {
   const identity = selectedIdentity(request);
   const surface = productSurface(result.product);
+  const verifiedIdentifierSurface = identifierSurface(result.product);
   const requiredBrand =
     intent.brand || (identity && identity.confidence >= 0.9 ? identity.brand : undefined);
   const brandVerified = Boolean(
@@ -522,7 +665,7 @@ function classifyConfidence(
       !intent.inferredBrandFromCandidates &&
       (result.product.brand
         ? includesPhrase(result.product.brand, requiredBrand)
-        : includesPhrase(surface, requiredBrand)),
+        : includesPhrase(result.product.title, requiredBrand)),
   );
   const requiredType = intent.productType;
   const typeAliases: Record<string, string[]> = {
@@ -562,10 +705,12 @@ function classifyConfidence(
   const verifiedIdentifier = intent.typedIdentifiers.some((identifier) => {
     const sufficientlyCertain =
       identifier.source === "text" || identifier.confidence >= 0.9;
-    return sufficientlyCertain && includesPhrase(surface, identifier.value);
+    return sufficientlyCertain && includesPhrase(verifiedIdentifierSurface, identifier.value);
   });
   if (
-    result.score >= 0.88 &&
+    request.relation !== "similar" &&
+    request.relation !== "similar_cheaper" &&
+    (result.baseScore ?? result.score) >= 0.88 &&
     verifiedIdentifier &&
     brandVerified &&
     typeVerified &&
@@ -573,7 +718,10 @@ function classifyConfidence(
   ) {
     return "exact";
   }
-  return result.score >= 0.58 ? "close" : "alternative";
+  if (result.score >= 0.78) return "high";
+  if (result.score >= 0.55) return "close";
+  if (result.score >= 0.32) return "alternative";
+  return "weak";
 }
 
 function bounded<T>(promise: Promise<T>, timeoutMs: number): Promise<T> {
@@ -607,9 +755,27 @@ function stableProductKey(product: ProviderProduct) {
 function explain(product: ProviderProduct, request: V3Request, intent: V3Intent, score: number) {
   const reasons: string[] = [];
   const surface = productSurface(product);
+  const verifiedIdentifierSurface = identifierSurface(product);
   const identity = selectedIdentity(request);
-  if (identity?.sku && includesPhrase(surface, identity.sku)) reasons.push("SKU matches image identity");
-  if (identity?.model && includesPhrase(surface, identity.model)) reasons.push("Model matches image identity");
+  if (identity?.sku && includesPhrase(verifiedIdentifierSurface, identity.sku)) reasons.push("SKU matches image identity");
+  if (identity?.model && includesPhrase(verifiedIdentifierSurface, identity.model)) reasons.push("Model matches image identity");
+  if (
+    intent.typedIdentifiers.some(
+      (identifier) =>
+        identifier.kind === "sku" &&
+        includesPhrase(verifiedIdentifierSurface, identifier.value),
+    )
+  ) {
+    reasons.push("Exact SKU/OEM identifier match");
+  } else if (
+    intent.typedIdentifiers.some(
+      (identifier) =>
+        identifier.kind === "model" &&
+        includesPhrase(verifiedIdentifierSurface, identifier.value),
+    )
+  ) {
+    reasons.push("Exact model identifier match");
+  }
   if ((intent.brand || identity?.brand) && includesPhrase(surface, intent.brand ?? identity?.brand)) {
     reasons.push("Brand match");
   }
@@ -658,16 +824,57 @@ export class DeterministicMultimodalReranker implements MultimodalReranker {
         .join(" "),
     );
     const uniqueQueryTokens = [...new Set(queryTokens)];
+    const textTokens = [
+      ...new Set(tokens([request.query, intent.normalized, request.image?.extractedText].filter(Boolean).join(" "))),
+    ];
 
     return candidates
       .map((product) => {
         const surface = normalized(productSurface(product));
+        const verifiedIdentifierSurface = normalized(identifierSurface(product));
         const matched = uniqueQueryTokens.filter((token) => surface.includes(token));
         let score = uniqueQueryTokens.length ? matched.length / uniqueQueryTokens.length : 0.25;
-        const exactIdentifier = [identity?.sku, identity?.model].some(
-          (value) => value && includesPhrase(surface, value),
+        const textMatches = textTokens.filter((token) => surface.includes(token));
+        const textScore = textTokens.length ? textMatches.length / textTokens.length : 0;
+        const matchedIdentifiers = intent.typedIdentifiers.filter((identifier) =>
+          includesPhrase(verifiedIdentifierSurface, identifier.value),
         );
-        if (exactIdentifier) score += 0.48;
+        const skuConfidence = Math.max(
+          0,
+          ...matchedIdentifiers
+            .filter((identifier) => identifier.kind === "sku")
+            .map((identifier) => identifier.confidence),
+        );
+        const modelConfidence = Math.max(
+          0,
+          ...matchedIdentifiers
+            .filter((identifier) => identifier.kind === "model")
+            .map((identifier) => identifier.confidence),
+        );
+        if (skuConfidence > 0) score += 0.08 + skuConfidence * 0.55;
+        else if (modelConfidence > 0) score += 0.06 + modelConfidence * 0.43;
+        const identifierPriority = Math.max(
+          0,
+          ...matchedIdentifiers.map(
+            (identifier) =>
+              (identifier.kind === "sku" ? 2 : 1) + identifier.confidence,
+          ),
+        );
+        const identityHypothesisScores = intent.identityHypotheses.map((hypothesis) => {
+          const certainty = Math.max(0, Math.min(1, hypothesis.confidence));
+          if (hypothesis.sku && includesPhrase(surface, hypothesis.sku)) return certainty;
+          if (hypothesis.model && includesPhrase(surface, hypothesis.model)) return certainty * 0.85;
+          const labelTokens = tokens(hypothesis.label);
+          const labelMatches = labelTokens.filter((token) => surface.includes(token));
+          return labelTokens.length
+            ? (labelMatches.length / labelTokens.length) * certainty * 0.65
+            : 0;
+        });
+        const identityScore = Math.max(
+          skuConfidence,
+          modelConfidence * 0.85,
+          ...identityHypothesisScores,
+        );
         if (intent.brand && includesPhrase(`${product.brand ?? ""} ${surface}`, intent.brand)) score += 0.18;
         if (identity?.brand && includesPhrase(`${product.brand ?? ""} ${surface}`, identity.brand)) score += 0.12;
         if (intent.productType && includesPhrase(surface, intent.productType)) score += 0.12;
@@ -700,9 +907,17 @@ export class DeterministicMultimodalReranker implements MultimodalReranker {
           product,
           score: Number(score.toFixed(4)),
           reasons: explain(product, request, intent, score),
+          textScore: Number(textScore.toFixed(4)),
+          identityScore: Number(identityScore.toFixed(4)),
+          identifierPriority,
         };
       })
-      .sort((left, right) => right.score - left.score);
+      .sort(
+        (left, right) =>
+          right.identifierPriority - left.identifierPriority ||
+          right.score - left.score,
+      )
+      .map(({ identifierPriority, ...candidate }) => ({ ...candidate, identityPriority: identifierPriority }));
   }
 }
 
@@ -717,16 +932,40 @@ export class ExperimentalSearchV3 {
 
   async search(request: V3Request): Promise<{ products: V3ProductResult[]; diagnostics: V3Diagnostics }> {
     const startedAt = Date.now();
+    const intentStartedAt = Date.now();
     const parsed = await deterministicIntentParser.parse(request.query);
     applyExplicitIdentifierIntent(request.query, parsed);
-    if (request.reference?.brand && !parsed.brand) parsed.brand = request.reference.brand;
+    if (
+      request.relation !== "similar_cheaper" &&
+      request.reference?.brand &&
+      !parsed.brand
+    ) {
+      parsed.brand = request.reference.brand;
+    }
     if (!parsed.location) parsed.location = explicitLocation(request.query);
     const intent = buildV3Intent(request, parsed);
+    const intentParsingMs = Date.now() - intentStartedAt;
+    const expansionStartedAt = Date.now();
     const queries = uniqueQueries(request, intent);
+    const queryExpansionMs = Date.now() - expansionStartedAt;
+    const visualState = createVisualRankingState();
+    const visualUnavailableReason = !request.image?.imageBytes?.byteLength
+      ? "REFERENCE_IMAGE_BYTES_MISSING"
+      : !this.options.visualAdapter
+        ? "VISUAL_ADAPTER_UNAVAILABLE"
+        : !this.options.imageLoader
+          ? "IMAGE_URL_LOADER_UNAVAILABLE"
+          : undefined;
     const diagnostics: V3Diagnostics = {
       enabled: this.enabled,
       parsedIntent: { ...intent },
       generatedQueries: queries,
+      selectedQueries: [],
+      sourceRouting: {
+        ...(intent.category ? { category: intent.category } : {}),
+        relevantProviders: [],
+        broadProviders: [],
+      },
       sourcesSearched: [],
       resultCountPerSource: {},
       totalCandidates: 0,
@@ -734,32 +973,78 @@ export class ExperimentalSearchV3 {
       removedByConstraints: 0,
       rerankedCandidates: 0,
       confidenceScores: [],
+      visual: {
+        status: "unavailable",
+        ...(visualUnavailableReason ? { unavailableReason: visualUnavailableReason } : {}),
+        candidates: [],
+        stageLatencyMs: 0,
+        comparisonsAttempted: 0,
+        comparisonsCompleted: 0,
+        comparisonsFailed: 0,
+        imageLoadCalls: 0,
+        adapterCallCount: 0,
+      },
+      photoOnlyDiscovery: {
+        status: "not_requested",
+        candidateCount: 0,
+        eligibleCount: 0,
+      },
       passes: [],
+      stageLatencyMs: {
+        intentParsing: intentParsingMs,
+        queryExpansion: queryExpansionMs,
+        sourceRouting: 0,
+        firstPass: 0,
+        secondPass: 0,
+        reranking: 0,
+        photoOnlyCatalog: 0,
+      },
       totalLatencyMs: 0,
       providerInvocationCount: 0,
       externalApiCallCount: 0,
     };
-    if (!this.enabled || !queries.length) {
+    if (!this.enabled) {
+      diagnostics.totalLatencyMs = Date.now() - startedAt;
+      return { products: [], diagnostics };
+    }
+    if (isPhotoOnlyRequest(request)) {
+      return this.searchPhotoOnly(request, intent, diagnostics, startedAt);
+    }
+    if (!queries.length) {
       diagnostics.totalLatencyMs = Date.now() - startedAt;
       return { products: [], diagnostics };
     }
 
-    const official = this.options.registry
+    const routingStartedAt = Date.now();
+    const allOfficialProviders = this.options.registry
       .getSearchProviders()
-      .filter((provider) => provider.metadata.integrationType !== "web_search")
-      .slice(0, MAX_OFFICIAL_PROVIDERS);
-    const sources = [
+      .filter((provider) => provider.metadata.integrationType !== "web_search");
+    const routing = routeOfficialProviders(allOfficialProviders, intent.category);
+    const official = routing.providers;
+    const braveAvailable = Boolean(
+      this.options.brave?.metadata.enabled && this.options.brave.metadata.searchEnabled,
+    );
+    diagnostics.sourceRouting = {
+      ...(intent.category ? { category: intent.category } : {}),
+      relevantProviders: routing.relevantProviderIds,
+      broadProviders: routing.broadProviderIds,
+    };
+    diagnostics.stageLatencyMs.sourceRouting = Date.now() - routingStartedAt;
+    const secondPassSources = [
       ...official,
-      ...(this.options.brave?.metadata.enabled && this.options.brave.metadata.searchEnabled
-        ? [this.options.brave]
-        : []),
+      ...(braveAvailable && this.options.brave ? [this.options.brave] : []),
     ];
-    const uniqueSources = [...new Map(sources.map((provider) => [provider.metadata.id, provider])).values()];
     const allCandidates: ProviderProduct[] = [];
     const searchedSources = new Set<string>();
 
-    const runPass = async (pass: 1 | 2, query: string) => {
-      const tasks = uniqueSources.map(async (provider) => {
+    const runPass = async (
+      pass: 1 | 2,
+      query: string,
+      passSources: SearchProvider[],
+    ) => {
+      const passStartedAt = Date.now();
+      const passSearchedSources = new Set<string>();
+      const tasks = passSources.map(async (provider) => {
         const searchRequest: ProviderSearchRequest = {
           query,
           page: 1,
@@ -776,6 +1061,7 @@ export class ExperimentalSearchV3 {
         const beforeBraveRequests = braveRequestCount(provider);
         diagnostics.providerInvocationCount += 1;
         searchedSources.add(provider.metadata.id);
+        passSearchedSources.add(provider.metadata.id);
         try {
           const found = await bounded(provider.search(searchRequest), SEARCH_TIMEOUT_MS);
           const products = found.slice(0, MAX_RESULTS_PER_SOURCE);
@@ -795,7 +1081,7 @@ export class ExperimentalSearchV3 {
         }
       });
       await Promise.all(tasks);
-      diagnostics.passes.push({ pass, query, candidates: allCandidates.length });
+      diagnostics.selectedQueries.push(query);
       diagnostics.totalCandidates = allCandidates.length;
       const deduped = deduplicate(allCandidates);
       if (!intent.brand && request.relation !== "similar") {
@@ -806,18 +1092,56 @@ export class ExperimentalSearchV3 {
         }
       }
       const eligible = deduped.filter((product) => satisfiesConstraints(product, request, intent));
+      const rerankStartedAt = Date.now();
       const ranked = await bounded(
         this.reranker.rerank({ request, intent }, eligible),
         RERANK_TIMEOUT_MS,
       );
-      const bestScore = ranked[0]?.score ?? 0;
-      return { deduped, eligible, ranked, bestScore };
+      diagnostics.stageLatencyMs.reranking += Date.now() - rerankStartedAt;
+      const visualRanked = await rerankWithVisual(
+        { request, intent },
+        ranked,
+        this.options.visualAdapter,
+        this.options.imageLoader,
+        visualState,
+      );
+      diagnostics.visual = visualRanked.diagnostics;
+      const finalRanked = visualRanked.ranked;
+      const bestScore = finalRanked[0]?.score ?? 0;
+      diagnostics.passes.push({
+        pass,
+        query,
+        sources: [...passSearchedSources],
+        candidates: allCandidates.length,
+      });
+      diagnostics.stageLatencyMs[pass === 1 ? "firstPass" : "secondPass"] =
+        Date.now() - passStartedAt;
+      return { deduped, eligible, ranked: finalRanked, bestScore };
     };
 
-    let result = await runPass(1, queries[0]);
-    const weak = result.bestScore < 0.58 || result.eligible.length === 0;
-    if (weak && queries.length > 1) {
-      result = await runPass(2, queries[1]);
+    let result = await runPass(1, queries[0], official);
+    const topConfidence =
+      result.ranked[0]
+        ? classifyConfidence(result.ranked[0], request, intent)
+        : "weak";
+    const insufficientFirstPass =
+      result.bestScore < 0.55 ||
+      result.eligible.length === 0 ||
+      (result.eligible.length < 2 && topConfidence !== "exact" && topConfidence !== "high");
+    if (insufficientFirstPass && secondPassSources.length > 0) {
+      const secondQuery = queries[1] ?? queries[0];
+      // With no alternate query, use Brave for discovery rather than repeat
+      // the same official-feed calls. Otherwise retry official feeds once and
+      // add Brave as a bounded fallback.
+      const fallbackSources =
+        queries.length > 1
+          ? secondPassSources
+          : braveAvailable && this.options.brave
+            ? [this.options.brave]
+            : [];
+      if (fallbackSources.length) {
+        result = await runPass(2, secondQuery, fallbackSources);
+      }
     }
 
     diagnostics.sourcesSearched = [...searchedSources];
@@ -825,15 +1149,130 @@ export class ExperimentalSearchV3 {
     diagnostics.deduplicatedCandidates = result.deduped.length;
     diagnostics.removedByConstraints = Math.max(0, result.deduped.length - result.eligible.length);
     diagnostics.rerankedCandidates = result.ranked.length;
-    const products = result.ranked.slice(0, 30).map((candidate) => ({
+    const products = diversifiedResults(result.ranked, request, intent).slice(0, 30).map((candidate) => ({
       product: candidate.product,
       score: candidate.score,
-      confidence: classifyConfidence(candidate, request, intent),
+      textScore: candidate.textScore ?? 0,
+      identityScore: candidate.identityScore ?? 0,
+      ...(candidate.visualScore !== undefined ? { visualScore: candidate.visualScore } : {}),
+      hybridScore: candidate.hybridScore ?? candidate.score,
+      visualStatus: candidate.visualStatus ?? "unavailable",
+      confidence: candidate.confidence,
       reasons: candidate.reasons.length
         ? candidate.reasons
         : explain(candidate.product, request, intent, candidate.score),
     }));
     diagnostics.confidenceScores = products.map((product) => product.score);
+    diagnostics.totalLatencyMs = Date.now() - startedAt;
+    return { products, diagnostics };
+  }
+
+  private async searchPhotoOnly(
+    request: V3Request,
+    intent: V3Intent,
+    diagnostics: V3Diagnostics,
+    startedAt: number,
+  ): Promise<{ products: V3ProductResult[]; diagnostics: V3Diagnostics }> {
+    const catalogStartedAt = Date.now();
+    let pool: readonly ProviderProduct[] | undefined;
+    try {
+      const injectedPool = this.options.photoOnlyCandidatePool;
+      if (injectedPool) {
+        pool =
+          typeof injectedPool === "function"
+            ? await bounded(
+                Promise.resolve().then(() => injectedPool(MAX_PHOTO_ONLY_CANDIDATES)),
+                SEARCH_TIMEOUT_MS,
+              )
+            : injectedPool;
+      }
+    } catch {
+      pool = undefined;
+    }
+    diagnostics.stageLatencyMs.photoOnlyCatalog = Date.now() - catalogStartedAt;
+    const catalogCandidates = Array.isArray(pool)
+      ? pool.slice(0, MAX_PHOTO_ONLY_CANDIDATES)
+      : [];
+    if (!catalogCandidates.length) {
+      diagnostics.photoOnlyDiscovery = {
+        status: "unavailable",
+        candidateCount: 0,
+        eligibleCount: 0,
+        unavailableReason: "PHOTO_ONLY_CATALOG_UNAVAILABLE",
+      };
+      diagnostics.totalLatencyMs = Date.now() - startedAt;
+      return { products: [], diagnostics };
+    }
+
+    const deduped = deduplicate([...catalogCandidates]);
+    const eligible = deduped.filter((product) => satisfiesConstraints(product, request, intent));
+    diagnostics.totalCandidates = catalogCandidates.length;
+    diagnostics.deduplicatedCandidates = deduped.length;
+    diagnostics.removedByConstraints = Math.max(0, deduped.length - eligible.length);
+    diagnostics.photoOnlyDiscovery = {
+      status: "available",
+      candidateCount: catalogCandidates.length,
+      eligibleCount: eligible.length,
+    };
+    const candidates: RerankedCandidate[] = eligible.map((product) => ({
+      product,
+      score: 0.25,
+      baseScore: 0.25,
+      textScore: 0,
+      identityScore: 0,
+      reasons: [],
+    }));
+    const visualStartedAt = Date.now();
+    const ranked = await rerankWithVisual(
+      { request, intent },
+      candidates,
+      this.options.visualAdapter,
+      this.options.imageLoader,
+      createVisualRankingState(MAX_PHOTO_ONLY_CANDIDATES),
+      {
+        candidateLimit: MAX_PHOTO_ONLY_CANDIDATES,
+        concurrency: 4,
+        comparisonTimeoutMs: 1_000,
+        stageTimeoutMs: 15_000,
+      },
+    );
+    diagnostics.visual = ranked.diagnostics;
+    diagnostics.stageLatencyMs.reranking = Date.now() - visualStartedAt;
+    const visuallyCompared = ranked.ranked.filter(
+      (candidate) => candidate.visualStatus === "compared",
+    );
+    diagnostics.rerankedCandidates = visuallyCompared.length;
+    if (!visuallyCompared.length) {
+      diagnostics.photoOnlyDiscovery = {
+        status: "unavailable",
+        candidateCount: catalogCandidates.length,
+        eligibleCount: eligible.length,
+        unavailableReason:
+          ranked.diagnostics.unavailableReason ?? "PHOTO_ONLY_VISUAL_COMPARISON_UNAVAILABLE",
+      };
+      diagnostics.totalLatencyMs = Date.now() - startedAt;
+      return { products: [], diagnostics };
+    }
+
+    const products = diversifiedResults(visuallyCompared, request, intent)
+      .slice(0, 30)
+      .map((candidate) => ({
+        product: candidate.product,
+        score: candidate.score,
+        textScore: candidate.textScore ?? 0,
+        identityScore: candidate.identityScore ?? 0,
+        ...(candidate.visualScore !== undefined ? { visualScore: candidate.visualScore } : {}),
+        hybridScore: candidate.hybridScore ?? candidate.score,
+        visualStatus: candidate.visualStatus ?? "unavailable",
+        confidence: candidate.confidence,
+        reasons: candidate.reasons.length ? candidate.reasons : ["Visual image match"],
+      }));
+    diagnostics.confidenceScores = products.map((product) => product.score);
+    diagnostics.photoOnlyDiscovery = {
+      status: "available",
+      candidateCount: catalogCandidates.length,
+      eligibleCount: eligible.length,
+    };
     diagnostics.totalLatencyMs = Date.now() - startedAt;
     return { products, diagnostics };
   }
@@ -846,4 +1285,39 @@ function deduplicate(products: ProviderProduct[]) {
     if (!byKey.has(key)) byKey.set(key, product);
   }
   return [...byKey.values()].slice(0, MAX_CANDIDATES);
+}
+
+function diversifiedResults(
+  ranked: RerankedCandidate[],
+  request: V3Request,
+  intent: V3Intent,
+) {
+  const classified = ranked.map((candidate) => ({
+    ...candidate,
+    confidence: classifyConfidence(candidate, request, intent),
+  }));
+  const dominant = classified.filter(
+    (candidate) => candidate.confidence === "exact" || candidate.confidence === "high",
+  );
+  const alternatives = classified.filter(
+    (candidate) => candidate.confidence !== "exact" && candidate.confidence !== "high",
+  );
+  const merchantCounts = new Map<string, number>();
+  const selected: typeof alternatives = [];
+  const deferred: typeof alternatives = [];
+  for (const candidate of alternatives) {
+    const merchant =
+      candidate.product.merchant ??
+      candidate.product.source ??
+      candidate.product.sourceType ??
+      "unknown";
+    const count = merchantCounts.get(merchant) ?? 0;
+    if (count >= 2) {
+      deferred.push(candidate);
+      continue;
+    }
+    merchantCounts.set(merchant, count + 1);
+    selected.push(candidate);
+  }
+  return [...dominant, ...selected, ...deferred];
 }
