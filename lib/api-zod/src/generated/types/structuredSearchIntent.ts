@@ -7,7 +7,6 @@
  */
 import type { StructuredSearchIntentAudience } from './structuredSearchIntentAudience';
 import type { StructuredSearchIntentCondition } from './structuredSearchIntentCondition';
-import type { StructuredSearchIntentCurrency } from './structuredSearchIntentCurrency';
 import type { StructuredSearchIntentNewOrUsed } from './structuredSearchIntentNewOrUsed';
 
 export interface StructuredSearchIntent {
@@ -21,7 +20,9 @@ export interface StructuredSearchIntent {
   color?: string;
   maxPrice?: number;
   minPrice?: number;
-  currency?: StructuredSearchIntentCurrency;
+  approximatePrice?: number;
+  /** @pattern ^[A-Z]{3}$ */
+  currency?: string;
   condition?: StructuredSearchIntentCondition;
   location?: string;
   vehicleMake?: string;

@@ -110,6 +110,8 @@ export type SearchOrchestrationResult = {
   pageSize?: number;
   hasMore?: boolean;
   structuredIntent?: ProviderSearchRequest["intent"];
+  exactMatches?: number;
+  constraintRelaxationAvailable?: boolean;
   strongInternalMatchCount?: number;
   fallbackStatus?: "not_needed" | "unavailable" | "empty" | "used";
   __timings?: {
@@ -614,6 +616,62 @@ export function filterExplicitIntentResults(
   );
 }
 
+function hasStrictPriceConstraint(intent?: QueryIntent) {
+  return (
+    Number.isFinite(intent?.minPrice) ||
+    Number.isFinite(intent?.maxPrice)
+  );
+}
+
+function normalizeCurrencyCode(currency: string | null | undefined) {
+  const normalized = currency?.trim().toLocaleUpperCase();
+  if (!normalized) return undefined;
+  if (["SAR", "ر.س", "ريال", "ريال سعودي", "SAUDI RIYAL"].includes(normalized)) {
+    return "SAR";
+  }
+  if (["USD", "US$", "$", "US DOLLAR", "DOLLAR"].includes(normalized)) {
+    return "USD";
+  }
+  if (["AED", "درهم", "درهم اماراتي", "UAE DIRHAM"].includes(normalized)) {
+    return "AED";
+  }
+  if (["KWD", "دينار كويتي", "KUWAITI DINAR"].includes(normalized)) {
+    return "KWD";
+  }
+  if (["BHD", "دينار بحريني", "BAHRAINI DINAR"].includes(normalized)) {
+    return "BHD";
+  }
+  if (["EUR", "€", "EURO"].includes(normalized)) return "EUR";
+  if (["GBP", "£", "POUND STERLING"].includes(normalized)) return "GBP";
+  return normalized;
+}
+
+export function filterStrictPriceResults(
+  products: NormalizedProduct[],
+  intent?: QueryIntent,
+) {
+  if (!hasStrictPriceConstraint(intent)) return products;
+  const targetCurrency = normalizeCurrencyCode(intent?.currency ?? "SAR");
+  if (!targetCurrency) return [];
+  return products.filter((product) => {
+    const price = product.price;
+    const currency = normalizeCurrencyCode(product.currency);
+    if (
+      price === null ||
+      price === undefined ||
+      !Number.isFinite(price) ||
+      !currency ||
+      currency !== targetCurrency
+    ) {
+      return false;
+    }
+    return (
+      (intent?.minPrice === undefined || price >= intent.minPrice) &&
+      (intent?.maxPrice === undefined || price <= intent.maxPrice)
+    );
+  });
+}
+
 export function assessSearchQuality(
   results: NormalizedProduct[],
   queryExpansion: SearchQueryExpansion,
@@ -1033,6 +1091,11 @@ export class SearchOrchestrator {
         )
       : bestMatchesFirst;
     const deduplicated = this.deduplication.deduplicate(categoryFiltered);
+    const priceConstraintActive =
+      !categoryBrowse && hasStrictPriceConstraint(sharedIntent);
+    const priceFiltered = priceConstraintActive
+      ? filterStrictPriceResults(deduplicated, sharedIntent)
+      : deduplicated;
     const categoryFilterMs =
       categoryBrowse && request.category
         ? performance.now() - sortingDeduplicationStartedAt
@@ -1051,7 +1114,7 @@ export class SearchOrchestrator {
               product.categoryFilterIds ??
               getCategoryFilterIds(product, request.category!),
           }))
-        : deduplicated;
+        : priceFiltered;
     const categorySelection =
       categoryBrowse && request.category && request.categoryFilterId
         ? getCategoryFilterSelectionIds(
@@ -1191,9 +1254,12 @@ export class SearchOrchestrator {
         const normalizedFallback = fallbackProducts.map((result) =>
           this.normalizer.normalize(result, this.webFallback!.metadata),
         );
-        const relevantFallback = filterExplicitIntentResults(
+        const relevantFallback = filterStrictPriceResults(
+          filterExplicitIntentResults(
           normalizedFallback,
           queryExpansion,
+          sharedIntent,
+          ),
           sharedIntent,
         );
         fallbackStatus = relevantFallback.length > 0 ? "used" : "empty";
@@ -1234,7 +1300,10 @@ export class SearchOrchestrator {
       }
     }
 
-    const results = merged.map((result) =>
+    const exactPriceResults = priceConstraintActive
+      ? filterStrictPriceResults(merged, sharedIntent)
+      : merged;
+    const results = exactPriceResults.map((result) =>
       this.affiliateLinks.attach(
         result,
         result.providerId === this.webFallback?.metadata.id
@@ -1246,6 +1315,12 @@ export class SearchOrchestrator {
     const response: SearchOrchestrationResult = {
       products: results,
       ...(!categoryBrowse ? { structuredIntent: sharedIntent } : {}),
+      ...(priceConstraintActive
+        ? {
+            exactMatches: results.length,
+            constraintRelaxationAvailable: results.length === 0,
+          }
+        : {}),
       ...(!categoryBrowse
         ? { strongInternalMatchCount: quality.stronglyRelevantCount }
         : {}),

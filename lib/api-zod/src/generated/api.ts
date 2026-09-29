@@ -77,6 +77,8 @@ export const SearchProductsBody = zod.object({
 
 export const searchProductsResponseProductsItemCanonicalReviewCountMin = 0;
 
+export const searchProductsResponseExactMatchesMin = 0;
+
 export const searchProductsResponseCategoryInventoryCountMin = 0;
 
 
@@ -84,6 +86,7 @@ export const searchProductsResponseTotalMin = 0;
 
 
 
+export const searchProductsResponseStructuredIntentCurrencyRegExp = new RegExp('^[A-Z]{3}$');
 export const searchProductsResponseStrongInternalMatchCountMin = 0;
 
 
@@ -160,6 +163,8 @@ export const SearchProductsResponse = zod.object({
   "reliabilityScore": zod.number().optional(),
   "specificationScore": zod.number().optional()
 })),
+  "exactMatches": zod.number().int().min(searchProductsResponseExactMatchesMin).optional().describe('Number of returned products satisfying explicit strict price constraints.'),
+  "constraintRelaxationAvailable": zod.boolean().optional().describe('True when strict price constraints produced no exact results; alternatives are not mixed in.'),
   "categoryState": zod.enum(['healthy', 'low', 'zero']).optional(),
   "categoryInventoryCount": zod.number().int().min(searchProductsResponseCategoryInventoryCountMin).optional(),
   "categoryFilters": zod.array(zod.object({
@@ -184,7 +189,8 @@ export const SearchProductsResponse = zod.object({
   "color": zod.string().optional(),
   "maxPrice": zod.number().optional(),
   "minPrice": zod.number().optional(),
-  "currency": zod.enum(['SAR']).optional(),
+  "approximatePrice": zod.number().optional(),
+  "currency": zod.string().regex(searchProductsResponseStructuredIntentCurrencyRegExp).optional(),
   "condition": zod.enum(['new', 'used', 'refurbished', 'unknown']).optional(),
   "location": zod.string().optional(),
   "vehicleMake": zod.string().optional(),
@@ -197,6 +203,89 @@ export const SearchProductsResponse = zod.object({
 }).optional(),
   "strongInternalMatchCount": zod.number().int().min(searchProductsResponseStrongInternalMatchCountMin).optional(),
   "fallbackStatus": zod.enum(['not_needed', 'unavailable', 'empty', 'used'])
+})
+
+
+/**
+ * Returns structured visual candidates and confidence without searching or retaining the image.
+ * @summary Identify possible products in a JPEG image
+ */
+export const interpretProductImageBodyImageDataUrlMin = 25;
+export const interpretProductImageBodyImageDataUrlMax = 1400000;
+
+
+export const interpretProductImageBodyImageDataUrlRegExp = new RegExp('^data:image/jpeg;base64,');
+export const interpretProductImageBodyUserTextMax = 200;
+
+
+
+export const InterpretProductImageBody = zod.object({
+  "imageDataUrl": zod.string().min(interpretProductImageBodyImageDataUrlMin).max(interpretProductImageBodyImageDataUrlMax).regex(interpretProductImageBodyImageDataUrlRegExp).describe('A bounded JPEG data URL. The server does not store the image.'),
+  "userText": zod.string().max(interpretProductImageBodyUserTextMax).optional().describe('Optional query constraints supplied alongside the image.')
+})
+
+export const interpretProductImageResponsePrimaryCandidateOneNameMax = 80;
+
+export const interpretProductImageResponsePrimaryCandidateOneQueryMax = 120;
+
+export const interpretProductImageResponsePrimaryCandidateOneConfidenceMin = 0;
+export const interpretProductImageResponsePrimaryCandidateOneConfidenceMax = 1;
+
+export const interpretProductImageResponsePrimaryCandidateOneProductTypeMax = 80;
+
+export const interpretProductImageResponsePrimaryCandidateOneBrandMax = 80;
+
+export const interpretProductImageResponsePrimaryCandidateOneColorMax = 40;
+
+export const interpretProductImageResponsePrimaryCandidateOneAttributesItemMax = 60;
+
+export const interpretProductImageResponsePrimaryCandidateOneAttributesMax = 8;
+
+export const interpretProductImageResponseAlternativesItemNameMax = 80;
+
+export const interpretProductImageResponseAlternativesItemQueryMax = 120;
+
+export const interpretProductImageResponseAlternativesItemConfidenceMin = 0;
+export const interpretProductImageResponseAlternativesItemConfidenceMax = 1;
+
+export const interpretProductImageResponseAlternativesItemProductTypeMax = 80;
+
+export const interpretProductImageResponseAlternativesItemBrandMax = 80;
+
+export const interpretProductImageResponseAlternativesItemColorMax = 40;
+
+export const interpretProductImageResponseAlternativesItemAttributesItemMax = 60;
+
+export const interpretProductImageResponseAlternativesItemAttributesMax = 8;
+
+export const interpretProductImageResponseAlternativesMax = 3;
+
+export const interpretProductImageResponseConfidenceMin = 0;
+export const interpretProductImageResponseConfidenceMax = 1;
+
+
+
+export const InterpretProductImageResponse = zod.object({
+  "primaryCandidate": zod.union([zod.object({
+  "name": zod.string().min(1).max(interpretProductImageResponsePrimaryCandidateOneNameMax),
+  "query": zod.string().min(1).max(interpretProductImageResponsePrimaryCandidateOneQueryMax),
+  "confidence": zod.number().min(interpretProductImageResponsePrimaryCandidateOneConfidenceMin).max(interpretProductImageResponsePrimaryCandidateOneConfidenceMax),
+  "productType": zod.string().max(interpretProductImageResponsePrimaryCandidateOneProductTypeMax).nullable(),
+  "brand": zod.string().max(interpretProductImageResponsePrimaryCandidateOneBrandMax).nullable(),
+  "color": zod.string().max(interpretProductImageResponsePrimaryCandidateOneColorMax).nullable(),
+  "attributes": zod.array(zod.string().max(interpretProductImageResponsePrimaryCandidateOneAttributesItemMax)).max(interpretProductImageResponsePrimaryCandidateOneAttributesMax)
+}),zod.null()]),
+  "alternatives": zod.array(zod.object({
+  "name": zod.string().min(1).max(interpretProductImageResponseAlternativesItemNameMax),
+  "query": zod.string().min(1).max(interpretProductImageResponseAlternativesItemQueryMax),
+  "confidence": zod.number().min(interpretProductImageResponseAlternativesItemConfidenceMin).max(interpretProductImageResponseAlternativesItemConfidenceMax),
+  "productType": zod.string().max(interpretProductImageResponseAlternativesItemProductTypeMax).nullable(),
+  "brand": zod.string().max(interpretProductImageResponseAlternativesItemBrandMax).nullable(),
+  "color": zod.string().max(interpretProductImageResponseAlternativesItemColorMax).nullable(),
+  "attributes": zod.array(zod.string().max(interpretProductImageResponseAlternativesItemAttributesItemMax)).max(interpretProductImageResponseAlternativesItemAttributesMax)
+})).max(interpretProductImageResponseAlternativesMax),
+  "confidence": zod.number().min(interpretProductImageResponseConfidenceMin).max(interpretProductImageResponseConfidenceMax),
+  "needsConfirmation": zod.boolean()
 })
 
 
@@ -265,6 +354,7 @@ export const listSavedHuntsResponseHuntsItemOneOriginalQueryMax = 200;
 
 export const listSavedHuntsResponseHuntsItemOneNormalizedIntentMax = 500;
 
+export const listSavedHuntsResponseHuntsItemOneStructuredIntentCurrencyRegExp = new RegExp('^[A-Z]{3}$');
 export const listSavedHuntsResponseHuntsItemOneTargetPriceMin = 0;
 
 export const listSavedHuntsResponseMonitoringProviderCountMin = 0;
@@ -288,7 +378,8 @@ export const ListSavedHuntsResponse = zod.object({
   "color": zod.string().optional(),
   "maxPrice": zod.number().optional(),
   "minPrice": zod.number().optional(),
-  "currency": zod.enum(['SAR']).optional(),
+  "approximatePrice": zod.number().optional(),
+  "currency": zod.string().regex(listSavedHuntsResponseHuntsItemOneStructuredIntentCurrencyRegExp).optional(),
   "condition": zod.enum(['new', 'used', 'refurbished', 'unknown']).optional(),
   "location": zod.string().optional(),
   "vehicleMake": zod.string().optional(),
@@ -338,6 +429,7 @@ export const createSavedHuntBodyOriginalQueryMax = 200;
 
 export const createSavedHuntBodyNormalizedIntentMax = 500;
 
+export const createSavedHuntBodyStructuredIntentCurrencyRegExp = new RegExp('^[A-Z]{3}$');
 export const createSavedHuntBodyTargetPriceMin = 0;
 
 
@@ -358,7 +450,8 @@ export const CreateSavedHuntBody = zod.object({
   "color": zod.string().optional(),
   "maxPrice": zod.number().optional(),
   "minPrice": zod.number().optional(),
-  "currency": zod.enum(['SAR']).optional(),
+  "approximatePrice": zod.number().optional(),
+  "currency": zod.string().regex(createSavedHuntBodyStructuredIntentCurrencyRegExp).optional(),
   "condition": zod.enum(['new', 'used', 'refurbished', 'unknown']).optional(),
   "location": zod.string().optional(),
   "vehicleMake": zod.string().optional(),
@@ -398,6 +491,7 @@ export const createSavedHuntResponseOneOriginalQueryMax = 200;
 
 export const createSavedHuntResponseOneNormalizedIntentMax = 500;
 
+export const createSavedHuntResponseOneStructuredIntentCurrencyRegExp = new RegExp('^[A-Z]{3}$');
 export const createSavedHuntResponseOneTargetPriceMin = 0;
 
 
@@ -418,7 +512,8 @@ export const CreateSavedHuntResponse = zod.object({
   "color": zod.string().optional(),
   "maxPrice": zod.number().optional(),
   "minPrice": zod.number().optional(),
-  "currency": zod.enum(['SAR']).optional(),
+  "approximatePrice": zod.number().optional(),
+  "currency": zod.string().regex(createSavedHuntResponseOneStructuredIntentCurrencyRegExp).optional(),
   "condition": zod.enum(['new', 'used', 'refurbished', 'unknown']).optional(),
   "location": zod.string().optional(),
   "vehicleMake": zod.string().optional(),
@@ -469,6 +564,7 @@ export const upsertSavedHuntBodyOriginalQueryMax = 200;
 
 export const upsertSavedHuntBodyNormalizedIntentMax = 500;
 
+export const upsertSavedHuntBodyStructuredIntentCurrencyRegExp = new RegExp('^[A-Z]{3}$');
 export const upsertSavedHuntBodyTargetPriceMin = 0;
 
 
@@ -489,7 +585,8 @@ export const UpsertSavedHuntBody = zod.object({
   "color": zod.string().optional(),
   "maxPrice": zod.number().optional(),
   "minPrice": zod.number().optional(),
-  "currency": zod.enum(['SAR']).optional(),
+  "approximatePrice": zod.number().optional(),
+  "currency": zod.string().regex(upsertSavedHuntBodyStructuredIntentCurrencyRegExp).optional(),
   "condition": zod.enum(['new', 'used', 'refurbished', 'unknown']).optional(),
   "location": zod.string().optional(),
   "vehicleMake": zod.string().optional(),
@@ -529,6 +626,7 @@ export const upsertSavedHuntResponseOneOriginalQueryMax = 200;
 
 export const upsertSavedHuntResponseOneNormalizedIntentMax = 500;
 
+export const upsertSavedHuntResponseOneStructuredIntentCurrencyRegExp = new RegExp('^[A-Z]{3}$');
 export const upsertSavedHuntResponseOneTargetPriceMin = 0;
 
 
@@ -549,7 +647,8 @@ export const UpsertSavedHuntResponse = zod.object({
   "color": zod.string().optional(),
   "maxPrice": zod.number().optional(),
   "minPrice": zod.number().optional(),
-  "currency": zod.enum(['SAR']).optional(),
+  "approximatePrice": zod.number().optional(),
+  "currency": zod.string().regex(upsertSavedHuntResponseOneStructuredIntentCurrencyRegExp).optional(),
   "condition": zod.enum(['new', 'used', 'refurbished', 'unknown']).optional(),
   "location": zod.string().optional(),
   "vehicleMake": zod.string().optional(),
@@ -598,6 +697,7 @@ export const updateSavedHuntBodyOriginalQueryMax = 200;
 
 export const updateSavedHuntBodyNormalizedIntentMax = 500;
 
+export const updateSavedHuntBodyStructuredIntentCurrencyRegExp = new RegExp('^[A-Z]{3}$');
 export const updateSavedHuntBodyTargetPriceMin = 0;
 
 
@@ -617,7 +717,8 @@ export const UpdateSavedHuntBody = zod.object({
   "color": zod.string().optional(),
   "maxPrice": zod.number().optional(),
   "minPrice": zod.number().optional(),
-  "currency": zod.enum(['SAR']).optional(),
+  "approximatePrice": zod.number().optional(),
+  "currency": zod.string().regex(updateSavedHuntBodyStructuredIntentCurrencyRegExp).optional(),
   "condition": zod.enum(['new', 'used', 'refurbished', 'unknown']).optional(),
   "location": zod.string().optional(),
   "vehicleMake": zod.string().optional(),
@@ -642,6 +743,7 @@ export const updateSavedHuntResponseOneOriginalQueryMax = 200;
 
 export const updateSavedHuntResponseOneNormalizedIntentMax = 500;
 
+export const updateSavedHuntResponseOneStructuredIntentCurrencyRegExp = new RegExp('^[A-Z]{3}$');
 export const updateSavedHuntResponseOneTargetPriceMin = 0;
 
 
@@ -662,7 +764,8 @@ export const UpdateSavedHuntResponse = zod.object({
   "color": zod.string().optional(),
   "maxPrice": zod.number().optional(),
   "minPrice": zod.number().optional(),
-  "currency": zod.enum(['SAR']).optional(),
+  "approximatePrice": zod.number().optional(),
+  "currency": zod.string().regex(updateSavedHuntResponseOneStructuredIntentCurrencyRegExp).optional(),
   "condition": zod.enum(['new', 'used', 'refurbished', 'unknown']).optional(),
   "location": zod.string().optional(),
   "vehicleMake": zod.string().optional(),

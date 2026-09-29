@@ -13,6 +13,13 @@ import type { StructuredSearchIntent } from './structuredSearchIntent';
 
 export interface ProductSearchResponse {
   products: SearchProduct[];
+  /**
+     * Number of returned products satisfying explicit strict price constraints.
+     * @minimum 0
+     */
+  exactMatches?: number;
+  /** True when strict price constraints produced no exact results; alternatives are not mixed in. */
+  constraintRelaxationAvailable?: boolean;
   categoryState?: ProductSearchResponseCategoryState;
   /** @minimum 0 */
   categoryInventoryCount?: number;

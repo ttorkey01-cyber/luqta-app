@@ -6,6 +6,7 @@ import homeRouter from "./home";
 import nazihImagesRouter from "./nazihImages";
 import devicesRouter from "./devices";
 import huntsRouter from "./hunts";
+import visionRouter from "./vision";
 
 const router: IRouter = Router();
 
@@ -16,5 +17,6 @@ router.use(homeRouter);
 router.use(nazihImagesRouter);
 router.use(devicesRouter);
 router.use(huntsRouter);
+router.use(visionRouter);
 
 export default router;

@@ -182,9 +182,11 @@ const STOP_WORDS = new Set([
 ]);
 
 function normalizeDigits(value: string) {
-  return value.replace(/[٠-٩]/gu, (digit) =>
-    String("٠١٢٣٤٥٦٧٨٩".indexOf(digit)),
-  );
+  const digits = "٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹";
+  return value.replace(/[٠-٩۰-۹]/gu, (digit) => {
+    const index = digits.indexOf(digit);
+    return String(index < 10 ? index : index - 10);
+  });
 }
 
 function includesAlias(query: string, alias: string) {
@@ -214,6 +216,17 @@ function parsePrice(query: string, marker: RegExp) {
   if (!match?.[1]) return undefined;
   const value = Number(match[1].replaceAll(",", ""));
   return Number.isFinite(value) && value > 0 ? value : undefined;
+}
+
+function parseCurrency(query: string) {
+  if (/\b(?:sar|ر\.?\s*س)\b|ريال(?:\s+سعودي)?/iu.test(query)) return "SAR";
+  if (/\b(?:usd|us\$)\b|\$|دولار(?:\s+امريكي)?/iu.test(query)) return "USD";
+  if (/\bAED\b|درهم(?:\s+اماراتي)?/iu.test(query)) return "AED";
+  if (/\bKWD\b|دينار\s+كويتي/iu.test(query)) return "KWD";
+  if (/\bBHD\b|دينار\s+بحريني/iu.test(query)) return "BHD";
+  if (/\bEUR\b|€|يورو/iu.test(query)) return "EUR";
+  if (/\bGBP\b|£|جنيه\s+استرليني/iu.test(query)) return "GBP";
+  return undefined;
 }
 
 function cleanKeywords(query: string) {
@@ -255,14 +268,42 @@ export class DeterministicIntentParser implements AIIntentParser {
     );
     const queryTokens = cleanKeywords(normalizedQuery);
 
-    const maxPrice = parsePrice(
-      normalizedQuery,
-      /(?:under|below|less\s+than|اقل\s+من|حد\s+اقصي|اقصي\s+سعر)\s*([0-9][0-9,]*(?:\.[0-9]+)?)/iu,
+    const priceNumber = "([0-9][0-9,]*(?:\\.[0-9]+)?)";
+    const range = normalizedQuery.match(
+      new RegExp(
+        `(?:\\bfrom|من)\\s*${priceNumber}\\s*(?:to|through|until|الي|الى|حتي|حتى|-)\\s*${priceNumber}`,
+        "iu",
+      ),
     );
-    const minPrice = parsePrice(
+    const approximatePrice = parsePrice(
       normalizedQuery,
-      /(?:over|above|more\s+than|اكبر\s+من|اكثر\s+من|فوق)\s*([0-9][0-9,]*(?:\.[0-9]+)?)/iu,
+      new RegExp(
+        `(?:around|about|approximately|approx\\.?|حوالي|حوالى|تقريبا|تقريباً|~)\\s*${priceNumber}`,
+        "iu",
+      ),
     );
+    const maxPrice = range
+      ? Number(range[2].replaceAll(",", ""))
+      : parsePrice(
+          normalizedQuery,
+          new RegExp(
+            `(?:under|below|less\\s+than|at\\s+most|no\\s+more\\s+than|maximum|max(?:imum)?\\s+price|اقل(?:\\s+من)?|ما\\s*يتعد[ىي]|لا\\s*يتعد[ىي]|ما\\s*يتجاوز|لا\\s*يتجاوز|بحد\\s+اقصى|حد\\s+اقصى|اقصى\\s+سعر|ميزانيتي|ميزانية)\\s*${priceNumber}`,
+            "iu",
+          ),
+        );
+    const minPrice = range
+      ? Number(range[1].replaceAll(",", ""))
+      : parsePrice(
+          normalizedQuery,
+          new RegExp(
+            `(?:over|above|more\\s+than|اكبر\\s+من|اكثر\\s+من|فوق)\\s*${priceNumber}`,
+            "iu",
+          ),
+        );
+    const priceCurrency =
+      maxPrice !== undefined || minPrice !== undefined || approximatePrice !== undefined
+        ? parseCurrency(normalizedQuery) ?? "SAR"
+        : undefined;
     const condition =
       /(?:^|[^a-z])(?:used|pre[\s-]?owned|مستعمل)(?=$|[^a-z])/iu.test(normalizedQuery)
         ? "used"
@@ -323,6 +364,7 @@ export class DeterministicIntentParser implements AIIntentParser {
       productType?.value,
       maxPrice === undefined ? undefined : `under ${maxPrice}`,
       minPrice === undefined ? undefined : `above ${minPrice}`,
+      approximatePrice === undefined ? undefined : `around ${approximatePrice}`,
     ]
       .filter(Boolean)
       .join(" ") || normalizedExpansion || normalizedQuery;
@@ -341,7 +383,8 @@ export class DeterministicIntentParser implements AIIntentParser {
     if (color) intent.color = color.value;
     if (maxPrice !== undefined) intent.maxPrice = maxPrice;
     if (minPrice !== undefined) intent.minPrice = minPrice;
-    if (maxPrice !== undefined || minPrice !== undefined) intent.currency = "SAR";
+    if (approximatePrice !== undefined) intent.approximatePrice = approximatePrice;
+    if (priceCurrency !== undefined) intent.currency = priceCurrency;
     if (condition) intent.condition = condition;
     if (vehicleMake) intent.vehicleMake = vehicleMake;
     if (vehicleModel) intent.vehicleModel = vehicleModel;

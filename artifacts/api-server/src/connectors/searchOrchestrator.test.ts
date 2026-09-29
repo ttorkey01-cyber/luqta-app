@@ -637,13 +637,15 @@ test("category browse reports low inventory and only real facet counts", async (
   const orchestrator = new SearchOrchestrator(new ProviderRegistry([provider]));
 
   const response = await orchestrator.searchWithMetadata({
-    query: "الجمال والعناية",
+    query: "الجمال والعناية أقل من 100 ريال",
     category: "beauty_care",
     searchMode: "category_browse",
   });
 
   assert.equal(response.categoryState, "low");
   assert.equal(response.categoryInventoryCount, 4);
+  assert.equal(response.products.length, 4);
+  assert.equal(response.exactMatches, undefined);
   assert.deepEqual(
     response.categoryFilters?.map((filter) => filter.id),
     ["fragrance", "hair_care"],
@@ -651,6 +653,152 @@ test("category browse reports low inventory and only real facet counts", async (
   assert.ok(
     response.products.every((result) => result.categoryFilterIds?.length),
   );
+});
+
+test("strict Arabic maximum excludes over-budget and unknown-price products and preserves merged intent", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [
+        {
+          ...product("bag-299", "Black handbag"),
+          productType: "handbag",
+          color: "black",
+          price: 299,
+          currency: "SAR",
+        },
+        {
+          ...product("bag-300", "Black handbag at budget"),
+          productType: "handbag",
+          color: "black",
+          price: 300,
+          currency: "SAR",
+        },
+        {
+          ...product("bag-301", "Black handbag above budget"),
+          productType: "handbag",
+          color: "black",
+          price: 301,
+          currency: "SAR",
+        },
+        {
+          ...product("bag-unknown", "Black handbag without a listed price"),
+          productType: "handbag",
+          color: "black",
+          price: null,
+          currency: "SAR",
+        },
+        {
+          ...product("bag-usd", "Black handbag priced in dollars"),
+          productType: "handbag",
+          color: "black",
+          price: 10,
+          currency: "USD",
+        },
+      ];
+    },
+  };
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({
+    query: "شنطة سوداء أقل من 300 ريال",
+    intent: { brand: "Guess", condition: "used", location: "Riyadh" },
+  });
+
+  assert.deepEqual(
+    response.products.map((result) => result.id),
+    ["bag-299", "bag-300"],
+  );
+  assert.equal(response.exactMatches, 2);
+  assert.equal(response.constraintRelaxationAvailable, false);
+  assert.equal(response.structuredIntent?.brand, "Guess");
+  assert.equal(response.structuredIntent?.color, "black");
+  assert.equal(response.structuredIntent?.productType, "handbag");
+  assert.equal(response.structuredIntent?.condition, "used");
+  assert.equal(response.structuredIntent?.location, "Riyadh");
+});
+
+test("strict Arabic price range keeps in-range prices and reports zero exact matches separately", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [
+        { ...product("shoe-199", "Running shoes"), productType: "shoes", price: 199, currency: "SAR" },
+        { ...product("shoe-200", "Running shoes at lower limit"), productType: "shoes", price: 200, currency: "SAR" },
+        { ...product("shoe-400", "Running shoes at upper limit"), productType: "shoes", price: 400, currency: "SAR" },
+        { ...product("shoe-401", "Running shoes above range"), productType: "shoes", price: 401, currency: "SAR" },
+        { ...product("shoe-unknown", "Running shoes without price"), productType: "shoes", price: null, currency: "SAR" },
+      ];
+    },
+  };
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({ query: "جزمة من 200 إلى 400" });
+
+  assert.deepEqual(
+    response.products.map((result) => result.id),
+    ["shoe-200", "shoe-400"],
+  );
+  assert.equal(response.exactMatches, 2);
+  assert.equal(response.constraintRelaxationAvailable, false);
+
+  const emptyProvider: SearchProvider = {
+    metadata,
+    async search() {
+      return [{ ...product("shoe-unknown-only", "Running shoes"), productType: "shoes", price: null, currency: null }];
+    },
+  };
+  const empty = await new SearchOrchestrator(
+    new ProviderRegistry([emptyProvider]),
+  ).searchWithMetadata({ query: "جزمة من 200 إلى 400" });
+
+  assert.deepEqual(empty.products, []);
+  assert.equal(empty.exactMatches, 0);
+  assert.equal(empty.constraintRelaxationAvailable, true);
+});
+
+test("strict price limits also filter web fallback products with missing or out-of-budget prices", async () => {
+  const provider: SearchProvider = { metadata, async search() { return []; } };
+  const fallback = {
+    metadata: { ...metadata, id: "brave-web", integrationType: "web_search" as const, searchEnabled: true },
+    noteFallbackTriggered() {},
+    async search() {
+      return [
+        { ...product("web-unknown", "Black handbag"), price: null, currency: "SAR", sourceType: "web" },
+        { ...product("web-over", "Black handbag"), price: 400, currency: "SAR", sourceType: "web" },
+      ];
+    },
+  } as unknown as BraveWebSearchProvider;
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    fallback,
+  ).searchWithMetadata({ query: "شنطة سوداء ما يتعدى 300 ريال" });
+
+  assert.deepEqual(response.products, []);
+  assert.equal(response.exactMatches, 0);
+  assert.equal(response.constraintRelaxationAvailable, true);
+});
+
+test("approximate prices do not become strict price limits", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [{ ...product("bag-500", "Handbag"), productType: "handbag", price: 500, currency: "SAR" }];
+    },
+  };
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({ query: "شنطة حوالي 300 ريال" });
+
+  assert.deepEqual(response.products.map((result) => result.id), ["bag-500"]);
+  assert.equal(response.structuredIntent?.approximatePrice, 300);
+  assert.equal(response.structuredIntent?.maxPrice, undefined);
+  assert.equal(response.exactMatches, undefined);
 });
 
 test("category browse waits for a cold feed refresh before reporting inventory", async () => {
@@ -1029,7 +1177,9 @@ test("explicit category-context intent can use Brave without category filtering"
   assert.equal(calls[0]?.searchMode, "intent");
   assert.equal(braveCalls, 2);
   assert.equal(response.categoryState, undefined);
-  assert.ok(response.products.some((result) => result.providerId === "brave-web"));
+  assert.deepEqual(response.products, []);
+  assert.equal(response.exactMatches, 0);
+  assert.equal(response.constraintRelaxationAvailable, true);
 });
 
 test("category matcher does not use incidental description mentions", () => {

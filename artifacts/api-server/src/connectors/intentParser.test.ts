@@ -102,3 +102,62 @@ test("keeps unsupported words unclassified rather than inventing intent", async 
   assert.equal(intent.maxPrice, undefined);
   assert.equal(intent.minPrice, undefined);
 });
+
+test("parses Arabic maximum price, product, color, and explicit Saudi currency", async () => {
+  const intent = await new DeterministicIntentParser().parse(
+    "شنطة سوداء أقل من ٣٠٠ ريال",
+  );
+
+  assert.equal(intent.productType, "handbag");
+  assert.equal(intent.color, "black");
+  assert.equal(intent.maxPrice, 300);
+  assert.equal(intent.currency, "SAR");
+});
+
+test("parses Arabic minimum and maximum price ranges with Arabic-Indic digits", async () => {
+  const intent = await new DeterministicIntentParser().parse(
+    "جزمة من ۲۰۰ إلى ۴۰۰",
+  );
+
+  assert.equal(intent.productType, "shoes");
+  assert.equal(intent.minPrice, 200);
+  assert.equal(intent.maxPrice, 400);
+  assert.equal(intent.currency, "SAR");
+});
+
+test("parses a Saudi budget phrase as a strict maximum", async () => {
+  const intent = await new DeterministicIntentParser().parse("ميزانيتي 500");
+
+  assert.equal(intent.maxPrice, 500);
+  assert.equal(intent.minPrice, undefined);
+});
+
+test("parses ما يتعدى as a strict maximum", async () => {
+  const intent = await new DeterministicIntentParser().parse(
+    "ساعة ما يتعدى 600 ريال",
+  );
+
+  assert.equal(intent.productType, "watch");
+  assert.equal(intent.maxPrice, 600);
+  assert.equal(intent.currency, "SAR");
+});
+
+test("keeps an approximate price separate from strict maximum and minimum", async () => {
+  const intent = await new DeterministicIntentParser().parse("حوالي 300 ريال");
+
+  assert.equal(intent.approximatePrice, 300);
+  assert.equal(intent.maxPrice, undefined);
+  assert.equal(intent.minPrice, undefined);
+  assert.equal(intent.currency, "SAR");
+});
+
+test("preserves an explicit strict maximum alongside an approximate price", async () => {
+  const intent = await new DeterministicIntentParser().parse(
+    "شنطة حوالي 300 لكن ما يتعدى 350",
+  );
+
+  assert.equal(intent.productType, "handbag");
+  assert.equal(intent.approximatePrice, 300);
+  assert.equal(intent.maxPrice, 350);
+  assert.equal(intent.minPrice, undefined);
+});

@@ -20,6 +20,8 @@ export type CategoryFacet = {
 };
 export type SearchResults = {
   products: ProductResult[];
+  exactMatches?: number;
+  constraintRelaxationAvailable?: boolean;
   categoryState?: CategoryState;
   categoryInventoryCount?: number;
   categoryFilters: CategoryFacet[];
@@ -185,6 +187,8 @@ export class SearchService {
     });
     const mappedResponse: SearchResults = {
       products: results,
+      exactMatches: response.exactMatches,
+      constraintRelaxationAvailable: response.constraintRelaxationAvailable,
       categoryState: response.categoryState,
       categoryInventoryCount: response.categoryInventoryCount,
       categoryFilters: response.categoryFilters ?? [],

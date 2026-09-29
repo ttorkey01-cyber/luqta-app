@@ -133,6 +133,7 @@ export default function ResultsScreen() {
   const [refreshing] = useState(false);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
+  const [strictPriceHasNoMatches, setStrictPriceHasNoMatches] = useState(false);
   const [requestError, setRequestError] = useState(false);
   const [retryAttempt, setRetryAttempt] = useState(0);
   const loadingRef = useRef(false);
@@ -177,6 +178,11 @@ export default function ResultsScreen() {
         setCategoryState(response.categoryState);
         setCategoryFilters(response.categoryFilters);
         setHasMore(response.hasMore ?? false);
+        setStrictPriceHasNoMatches(
+          !category &&
+          response.exactMatches === 0 &&
+          response.constraintRelaxationAvailable === true,
+        );
       })
       .catch((error: unknown) => {
         // A newer query or navigation intentionally cancels this request.
@@ -196,6 +202,7 @@ export default function ResultsScreen() {
         setHasMore(false);
         setCategoryState(undefined);
         setCategoryFilters([]);
+        setStrictPriceHasNoMatches(false);
         setRequestError(true);
       })
       .finally(() => {
@@ -467,6 +474,17 @@ export default function ResultsScreen() {
         />
       );
     }
+    if (strictPriceHasNoMatches) {
+      return (
+        <View style={styles.empty}>
+          <View style={styles.emptyIcon}>
+            <Feather name="search" size={24} color={colors.pink} />
+          </View>
+          <Text style={styles.emptyTitle}>ما لقينا منتجات ضمن السعر اللي طلبته</Text>
+          <Text style={styles.emptyText}>تقدر تغيّر حد السعر في شريط البحث. ما عرضنا منتجات تتجاوز ميزانيتك.</Text>
+        </View>
+      );
+    }
     return (
       <View style={styles.empty}>
         <View style={styles.emptyIcon}>
@@ -474,13 +492,14 @@ export default function ResultsScreen() {
         </View>
         <Text style={styles.emptyTitle}>ما لقينا نتيجة مطابقة</Text>
         <Text style={styles.emptyText}>
-          جرّب وصفاً أبسط أو ابحث عن كرسي، حقيبة، أو ساعة.
+          جرّب وصفاً أبسط أو ابحث باسم المنتج.
         </Text>
       </View>
     );
   }, [
     category,
     categoryState,
+    strictPriceHasNoMatches,
     isCategoryBrowse,
     dataLoading,
     requestError,

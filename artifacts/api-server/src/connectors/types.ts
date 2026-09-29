@@ -128,7 +128,8 @@ export type QueryIntent = {
   color?: string;
   maxPrice?: number;
   minPrice?: number;
-  currency?: "SAR";
+  approximatePrice?: number;
+  currency?: string;
   condition?: "new" | "used" | "refurbished" | "unknown";
   location?: string;
   vehicleMake?: string;

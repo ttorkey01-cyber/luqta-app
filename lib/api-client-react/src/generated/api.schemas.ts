@@ -5,6 +5,71 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
+export interface InterpretProductImageRequest {
+  /**
+     * A bounded JPEG data URL. The server does not store the image.
+     * @minLength 25
+     * @maxLength 1400000
+     * @pattern ^data:image/jpeg;base64,
+     */
+  imageDataUrl: string;
+  /**
+     * Optional query constraints supplied alongside the image.
+     * @maxLength 200
+     */
+  userText?: string;
+}
+
+export interface ImageCandidate {
+  /**
+     * @minLength 1
+     * @maxLength 80
+     */
+  name: string;
+  /**
+     * @minLength 1
+     * @maxLength 120
+     */
+  query: string;
+  /**
+     * @minimum 0
+     * @maximum 1
+     */
+  confidence: number;
+  /**
+     * @maxLength 80
+     * @nullable
+     */
+  productType: string | null;
+  /**
+     * @maxLength 80
+     * @nullable
+     */
+  brand: string | null;
+  /**
+     * @maxLength 40
+     * @nullable
+     */
+  color: string | null;
+  /**
+     * @maxItems 8
+     * @items.maxLength 60
+     */
+  attributes: string[];
+}
+
+export interface ImageUnderstanding {
+  primaryCandidate: ImageCandidate | null;
+  /** @maxItems 3 */
+  alternatives: ImageCandidate[];
+  /**
+     * @minimum 0
+     * @maximum 1
+     */
+  confidence: number;
+  needsConfirmation: boolean;
+}
+
 export interface HealthStatus {
   status: string;
 }
@@ -306,13 +371,6 @@ export const StructuredSearchIntentAudience = {
   kids: 'kids',
 } as const;
 
-export type StructuredSearchIntentCurrency = typeof StructuredSearchIntentCurrency[keyof typeof StructuredSearchIntentCurrency];
-
-
-export const StructuredSearchIntentCurrency = {
-  SAR: 'SAR',
-} as const;
-
 export type StructuredSearchIntentCondition = typeof StructuredSearchIntentCondition[keyof typeof StructuredSearchIntentCondition];
 
 
@@ -344,7 +402,9 @@ export interface StructuredSearchIntent {
   color?: string;
   maxPrice?: number;
   minPrice?: number;
-  currency?: StructuredSearchIntentCurrency;
+  approximatePrice?: number;
+  /** @pattern ^[A-Z]{3}$ */
+  currency?: string;
   condition?: StructuredSearchIntentCondition;
   location?: string;
   vehicleMake?: string;
@@ -358,6 +418,13 @@ export interface StructuredSearchIntent {
 
 export interface ProductSearchResponse {
   products: SearchProduct[];
+  /**
+     * Number of returned products satisfying explicit strict price constraints.
+     * @minimum 0
+     */
+  exactMatches?: number;
+  /** True when strict price constraints produced no exact results; alternatives are not mixed in. */
+  constraintRelaxationAvailable?: boolean;
   categoryState?: ProductSearchResponseCategoryState;
   /** @minimum 0 */
   categoryInventoryCount?: number;

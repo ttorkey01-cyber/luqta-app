@@ -29,6 +29,8 @@ import type {
   HomePicksResponse,
   HuntPatchRequest,
   HuntUpsertRequest,
+  ImageUnderstanding,
+  InterpretProductImageRequest,
   ProductSearchRequest,
   ProductSearchResponse,
   ProviderStatusResponse,
@@ -306,6 +308,95 @@ export const useSearchProducts = <TError = ErrorType<unknown>,
         TContext
       > => {
       return useMutation(getSearchProductsMutationOptions(options));
+    }
+
+export const getInterpretProductImageUrl = () => {
+
+
+
+
+  return `/api/vision/interpret`
+}
+
+/**
+ * Returns structured visual candidates and confidence without searching or retaining the image.
+ * @summary Identify possible products in a JPEG image
+ */
+export const interpretProductImage = async (interpretProductImageRequest: InterpretProductImageRequest, options?: Parameters<typeof customFetch>[1]): Promise<ImageUnderstanding> => {
+
+    const getHeaders = (h?: NonNullable<RequestInit['headers']>): Record<string, string | readonly string[]> => {
+    if (!h) return {};
+    if (h instanceof Headers) return Object.fromEntries(h.entries());
+    if (Symbol.iterator in h) {
+      return Object.fromEntries(
+        Array.from(h as Iterable<Iterable<string>>, (entry) => Array.from(entry) as [string, string]),
+      );
+    }
+    const headers: Record<string, string | readonly string[]> = {};
+    for (const [name, value] of Object.entries<string | readonly string[] | undefined>(h)) {
+      if (value !== undefined) headers[name] = value;
+    }
+    return headers;
+  };
+return customFetch<ImageUnderstanding>(getInterpretProductImageUrl(),
+  {
+    ...options,
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...getHeaders(options?.headers) },
+    body: JSON.stringify(interpretProductImageRequest)
+  }
+);}
+
+
+
+
+
+export const getInterpretProductImageMutationKey = () => ['interpretProductImage'] as const;
+
+export const getInterpretProductImageMutationOptions = <TError = ErrorType<void>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof interpretProductImage>>, TError,InterpretProductImageMutationVariables, TContext>, request?: SecondParameter<typeof customFetch>}
+): UseMutationOptions<Awaited<ReturnType<typeof interpretProductImage>>, TError,InterpretProductImageMutationVariables, TContext> => {
+
+const mutationKey = getInterpretProductImageMutationKey();
+const {mutation: mutationOptions, request: requestOptions} = options ?
+      options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
+      options
+      : {...options, mutation: {...options.mutation, mutationKey}}
+      : {mutation: { mutationKey, }, request: undefined};
+
+
+
+
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof interpretProductImage>>, InterpretProductImageMutationVariables> = (props) => {
+          const {data} = props ?? {};
+
+          return  interpretProductImage(data,requestOptions)
+        }
+
+
+
+
+
+
+  return  { mutationFn, ...mutationOptions }}
+
+    export type InterpretProductImageMutationResult = NonNullable<Awaited<ReturnType<typeof interpretProductImage>>>
+    export type InterpretProductImageMutationBody = BodyType<InterpretProductImageRequest>
+    export type InterpretProductImageMutationError = ErrorType<void>
+    export type InterpretProductImageMutationVariables = {data: BodyType<InterpretProductImageRequest>}
+
+    /**
+ * @summary Identify possible products in a JPEG image
+ */
+export const useInterpretProductImage = <TError = ErrorType<void>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof interpretProductImage>>, TError,InterpretProductImageMutationVariables, TContext>, request?: SecondParameter<typeof customFetch>}
+ ): UseMutationResult<
+        Awaited<ReturnType<typeof interpretProductImage>>,
+        TError,
+        InterpretProductImageMutationVariables,
+        TContext
+      > => {
+      return useMutation(getInterpretProductImageMutationOptions(options));
     }
 
 export const getRegisterHuntDeviceUrl = () => {

@@ -68,6 +68,42 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ProductSearchResponse"
+  /vision/interpret:
+    post:
+      operationId: interpretProductImage
+      tags: [search]
+      summary: Identify possible products in a JPEG image
+      description: Returns structured visual candidates and confidence without searching or retaining the image.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InterpretProductImageRequest"
+      responses:
+        "200":
+          description: Visual candidates and confirmation requirement
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ImageUnderstanding"
+        "400":
+          description: Invalid image data or text
+        "413":
+          description: JPEG exceeds the supported size
+        "429":
+          description: Image recognition rate or concurrency limit reached; Retry-After is in seconds
+          headers:
+            Retry-After:
+              schema:
+                type: integer
+                minimum: 1
+        "502":
+          description: Image recognition provider failed
+        "503":
+          description: Image recognition is not configured
+        "504":
+          description: Image recognition timed out
   /devices/register:
     post:
       operationId: registerHuntDevice
@@ -277,6 +313,88 @@ components:
       type: http
       scheme: bearer
   schemas:
+    InterpretProductImageRequest:
+      type: object
+      properties:
+        imageDataUrl:
+          type: string
+          minLength: 25
+          maxLength: 1400000
+          pattern: "^data:image/jpeg;base64,"
+          description: A bounded JPEG data URL. The server does not store the image.
+        userText:
+          type: string
+          maxLength: 200
+          description: Optional query constraints supplied alongside the image.
+      required:
+        - imageDataUrl
+    ImageCandidate:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 80
+        query:
+          type: string
+          minLength: 1
+          maxLength: 120
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+        productType:
+          type:
+            - string
+            - "null"
+          maxLength: 80
+        brand:
+          type:
+            - string
+            - "null"
+          maxLength: 80
+        color:
+          type:
+            - string
+            - "null"
+          maxLength: 40
+        attributes:
+          type: array
+          maxItems: 8
+          items:
+            type: string
+            maxLength: 60
+      required:
+        - name
+        - query
+        - confidence
+        - productType
+        - brand
+        - color
+        - attributes
+    ImageUnderstanding:
+      type: object
+      properties:
+        primaryCandidate:
+          oneOf:
+            - $ref: "#/components/schemas/ImageCandidate"
+            - type: "null"
+        alternatives:
+          type: array
+          maxItems: 3
+          items:
+            $ref: "#/components/schemas/ImageCandidate"
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+        needsConfirmation:
+          type: boolean
+      required:
+        - primaryCandidate
+        - alternatives
+        - confidence
+        - needsConfirmation
     HealthStatus:
       type: object
       properties:
@@ -421,6 +539,13 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/SearchProduct"
+        exactMatches:
+          type: integer
+          minimum: 0
+          description: Number of returned products satisfying explicit strict price constraints.
+        constraintRelaxationAvailable:
+          type: boolean
+          description: True when strict price constraints produced no exact results; alternatives are not mixed in.
         categoryState:
           type: string
           enum: [healthy, low, zero]
@@ -479,9 +604,11 @@ components:
           type: number
         minPrice:
           type: number
+        approximatePrice:
+          type: number
         currency:
           type: string
-          enum: [SAR]
+          pattern: "^[A-Z]{3}$"
         condition:
           type: string
           enum: [new, used, refurbished, unknown]
