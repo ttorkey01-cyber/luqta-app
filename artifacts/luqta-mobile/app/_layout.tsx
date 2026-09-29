@@ -18,15 +18,19 @@ import { AppProvider } from '@/context/AppContext';
 import { setBaseUrl } from '@workspace/api-client-react';
 import Constants, { AppOwnership } from 'expo-constants';
 import { useRouter } from 'expo-router';
+import { resolveMobileApiBaseUrl } from '@/services/apiHost';
 
 SplashScreen.preventAutoHideAsync();
 I18nManager.allowRTL(true);
 I18nManager.forceRTL(true);
-setBaseUrl(
-  process.env.EXPO_PUBLIC_DOMAIN
-    ? `https://${process.env.EXPO_PUBLIC_DOMAIN}`
-    : null,
+const apiBaseUrl = resolveMobileApiBaseUrl(
+  __DEV__,
+  process.env.EXPO_PUBLIC_DOMAIN,
 );
+if (!__DEV__ && !apiBaseUrl) {
+  throw new Error('Production API host is required');
+}
+setBaseUrl(apiBaseUrl);
 
 const queryClient = new QueryClient();
 

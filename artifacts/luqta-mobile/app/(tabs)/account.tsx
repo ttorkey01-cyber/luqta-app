@@ -6,6 +6,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { getBaseUrl } from '@workspace/api-client-react';
 import colors from '@/constants/colors';
 import { BottomNav, Header, Screen } from '@/components/LuqtaUI';
+import { PRODUCTION_API_BASE_URL } from '@/services/apiHost';
 import {
   clearProductDiagnostics,
   getProductDiagnostics,
@@ -33,14 +34,14 @@ export default function AccountScreen() {
   let apiHost = 'غير محدد (مسار نسبي)';
   if (baseUrl) {
     try {
-      apiHost = new URL(baseUrl).host;
+      apiHost = new URL(baseUrl).origin;
     } catch {
       apiHost = 'عنوان غير صالح';
     }
   }
   const runtime = Constants.expoConfig?.runtimeVersion;
   const isProduction = !__DEV__ &&
-    apiHost === 'luqta-mobile-shopping-app--ttorkey01.replit.app';
+    apiHost === PRODUCTION_API_BASE_URL;
   const kinds: { kind: ProductRequestKind; label: string }[] = [
     { kind: 'search', label: 'Normal search' },
     { kind: 'category', label: 'Category browse' },
