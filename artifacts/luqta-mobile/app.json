@@ -4,7 +4,7 @@
     "slug": "luqta",
     "owner": "luqta-app",
     "version": "1.0.0",
-    "runtimeVersion": "1.0.0-ota1",
+    "runtimeVersion": "1.0.0-ota2",
     "updates": {
       "enabled": true,
       "url": "https://u.expo.dev/8fa7523f-0675-436e-ae97-f3f11f76519e",
@@ -29,7 +29,20 @@
     "web": {
       "favicon": "./assets/images/icon.png"
     },
-    "plugins": ["expo-router", "expo-image-picker", "expo-notifications"],
+    "plugins": [
+      "expo-router",
+      "expo-image-picker",
+      "expo-notifications",
+      [
+        "expo-audio",
+        {
+          "recordAudioAndroid": false,
+          "microphonePermission": false,
+          "enableBackgroundPlayback": false,
+          "enableBackgroundRecording": false
+        }
+      ]
+    ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true

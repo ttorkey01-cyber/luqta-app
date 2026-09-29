@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { I18nManager, Platform } from 'react-native';
+import { AppState, I18nManager, Platform } from 'react-native';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
@@ -14,11 +14,13 @@ import {
 } from '@expo-google-fonts/inter';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
+import { createAudioPlayer } from 'expo-audio';
 import { AppProvider } from '@/context/AppContext';
 import { setBaseUrl } from '@workspace/api-client-react';
 import Constants, { AppOwnership } from 'expo-constants';
 import { useRouter } from 'expo-router';
 import { resolveMobileApiBaseUrl } from '@/services/apiHost';
+import { createStartupSonicLogoController } from '@/services/startupSonicLogo';
 
 SplashScreen.preventAutoHideAsync();
 I18nManager.allowRTL(true);
@@ -33,6 +35,9 @@ if (!__DEV__ && !apiBaseUrl) {
 setBaseUrl(apiBaseUrl);
 
 const queryClient = new QueryClient();
+const startupSound = createStartupSonicLogoController(
+  () => createAudioPlayer(require('../assets/audio/LUQTA_Sonic_Logo_v4___Future_Luxury.mp3')),
+);
 
 function RootLayoutNav() {
   const router = useRouter();
@@ -87,9 +92,29 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
-    if (fontsLoaded || fontError) {
-      SplashScreen.hideAsync();
-    }
+    if (Platform.OS === 'web') return;
+    // This root effect runs while the native logo splash waits for fonts. It
+    // never waits for the audio, and the process-scoped controller cannot replay.
+    startupSound.start(AppState.currentState !== 'background');
+    const stateSubscription = AppState.addEventListener('change', (state) => {
+      if (state === 'background') startupSound.stop();
+    });
+    return () => {
+      stateSubscription.remove();
+      startupSound.stop();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!fontsLoaded && !fontError) return;
+    let active = true;
+    void (async () => {
+      // Cached fonts may resolve before audio loads. Wait only briefly for its
+      // first play event so startup stays responsive even if audio is unavailable.
+      if (Platform.OS !== 'web') await startupSound.waitForStart(300);
+      if (active) await SplashScreen.hideAsync();
+    })().catch(() => { /* A sound or splash error must not block app setup. */ });
+    return () => { active = false; };
   }, [fontsLoaded, fontError]);
 
   if (!fontsLoaded && !fontError) return null;
