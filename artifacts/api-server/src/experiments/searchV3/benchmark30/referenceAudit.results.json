@@ -1,0 +1,444 @@
+{
+  "audit": "search-v3-benchmark30-reference-audit",
+  "date": "2026-09-29",
+  "frozenDefinitionsSha256": "c9f354b3501f9b10b7a1dc6a41ee59fdcb5eb0b3cd4d5437dd85ba6cfc2dce6d",
+  "caseCount": 30,
+  "groupCounts": {
+    "exact-product-identity": 6,
+    "visually-similar": 6,
+    "hard-constraints": 5,
+    "automotive": 4,
+    "saudi-arabic": 4,
+    "difficult-ambiguous-image": 3,
+    "negative-no-match": 2
+  },
+  "caseIds": [
+    "b30-exact-casio-dw5600e",
+    "b30-exact-adidas-samba-og",
+    "b30-exact-longchamp-pliage-m",
+    "b30-exact-galaxy-s24",
+    "b30-exact-ordinary-niacinamide",
+    "b30-exact-levis-501-original",
+    "b30-similar-black-structured-bag",
+    "b30-similar-casual-low-top-sneaker",
+    "b30-similar-classic-wristwatch",
+    "b30-similar-over-ear-headphones",
+    "b30-similar-evening-dress",
+    "b30-similar-home-coffee-maker",
+    "b30-constraint-budget-ksa",
+    "b30-constraint-used-camera-range",
+    "b30-constraint-color-size",
+    "b30-constraint-new-tablet",
+    "b30-constraint-home-delivery",
+    "b30-auto-camry-headlamp",
+    "b30-auto-civic-brake-pads",
+    "b30-auto-filter-sku",
+    "b30-auto-bracket-image",
+    "b30-arabic-earbuds-riyadh",
+    "b30-arabic-used-iphone",
+    "b30-arabic-coffee-machine",
+    "b30-arabic-abaya-color",
+    "b30-ambiguous-watch-back",
+    "b30-ambiguous-headphones-scene",
+    "b30-ambiguous-multiple-shoes",
+    "b30-negative-nonexistent-model",
+    "b30-negative-incompatible-charger"
+  ],
+  "references": [
+    {
+      "benchmarkCaseId": "b30-similar-black-structured-bag",
+      "manifestCaseId": "rw-bag-retail",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Handbag_at_Nordstrom_Rack_-_Santa_Rosa_-_December_2022_-_Sarah_Stierch.jpg/960px-Handbag_at_Nordstrom_Rack_-_Santa_Rosa_-_December_2022_-_Sarah_Stierch.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Handbag_at_Nordstrom_Rack_-_Santa_Rosa_-_December_2022_-_Sarah_Stierch.jpg",
+      "source": "Wikimedia Commons",
+      "author": "Missvain",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/cc-by/4.0/",
+      "metadataCheckedAt": "2026-09-29",
+      "network": {
+        "status": "reachable",
+        "httpStatus": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 238405,
+        "error": null
+      },
+      "visualIdentityVerification": "UNVERIFIED"
+    },
+    {
+      "benchmarkCaseId": "b30-similar-casual-low-top-sneaker",
+      "manifestCaseId": "rw-shoe-vans",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/A_Vans_Sneaker_On_The_Side.jpg/960px-A_Vans_Sneaker_On_The_Side.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:A_Vans_Sneaker_On_The_Side.jpg",
+      "source": "Wikimedia Commons",
+      "author": "Joeltorresmejia78",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/cc-by-sa/4.0/",
+      "metadataCheckedAt": "2026-09-29",
+      "network": {
+        "status": "reachable",
+        "httpStatus": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 159945,
+        "error": null
+      },
+      "visualIdentityVerification": "UNVERIFIED"
+    },
+    {
+      "benchmarkCaseId": "b30-similar-classic-wristwatch",
+      "manifestCaseId": "rw-watch-montinari",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Montinari_Milano.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Montinari_Milano.jpg",
+      "source": "Wikimedia Commons",
+      "author": "André Karwath aka Aka",
+      "license": "CC BY-SA 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/cc-by-sa/2.5/",
+      "metadataCheckedAt": "2026-09-29",
+      "network": {
+        "status": "reachable",
+        "httpStatus": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 145802,
+        "error": null
+      },
+      "visualIdentityVerification": "UNVERIFIED"
+    },
+    {
+      "benchmarkCaseId": "b30-similar-over-ear-headphones",
+      "manifestCaseId": "rw-headphones-white",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Headphones_on_white_background.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Headphones_on_white_background.jpg",
+      "source": "Wikimedia Commons",
+      "author": "Sprinno",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "metadataCheckedAt": "2026-09-29",
+      "network": {
+        "status": "reachable",
+        "httpStatus": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 26054,
+        "error": null
+      },
+      "visualIdentityVerification": "UNVERIFIED"
+    },
+    {
+      "benchmarkCaseId": "b30-similar-evening-dress",
+      "manifestCaseId": "rw-fashion-nina",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/1968_Nina_Ricci_evening_dress_from_the_V_and_A_fashion_gallery_-_geograph.org.uk_-_1162570.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:1968_Nina_Ricci_evening_dress_from_the_V_and_A_fashion_gallery_-_geograph.org.uk_-_1162570.jpg",
+      "source": "Wikimedia Commons",
+      "author": "Zorba the Geek",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/cc-by-sa/2.0/",
+      "metadataCheckedAt": "2026-09-29",
+      "network": {
+        "status": "reachable",
+        "httpStatus": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 198567,
+        "error": null
+      },
+      "visualIdentityVerification": "UNVERIFIED"
+    },
+    {
+      "benchmarkCaseId": "b30-similar-home-coffee-maker",
+      "manifestCaseId": "rw-coffee-hamilton-home",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Hamilton_Beach_home_coffee_maker.jpg/960px-Hamilton_Beach_home_coffee_maker.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Hamilton_Beach_home_coffee_maker.jpg",
+      "source": "Wikimedia Commons",
+      "author": "Infrogmation of New Orleans",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/cc-by-sa/4.0/",
+      "metadataCheckedAt": "2026-09-29",
+      "network": {
+        "status": "reachable",
+        "httpStatus": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 299308,
+        "error": null
+      },
+      "visualIdentityVerification": "UNVERIFIED"
+    },
+    {
+      "benchmarkCaseId": "b30-auto-camry-headlamp",
+      "manifestCaseId": "rw-auto-headlamp",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/IAA-2005-S-Class_Light.jpg/960px-IAA-2005-S-Class_Light.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:IAA-2005-S-Class_Light.jpg",
+      "source": "Wikimedia Commons",
+      "author": "Sjr at de.wikipedia",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/cc-by-sa/3.0/",
+      "metadataCheckedAt": "2026-09-29",
+      "network": {
+        "status": "reachable",
+        "httpStatus": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 160347,
+        "error": null
+      },
+      "visualIdentityVerification": "UNVERIFIED"
+    },
+    {
+      "benchmarkCaseId": "b30-auto-bracket-image",
+      "manifestCaseId": "rw-auto-headlamp-bracket",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Nomination_56_-_Safety_-_Integrated_Headlamp-Hood_Bump-Stop_Bracket_%288116070903%29.jpg/960px-Nomination_56_-_Safety_-_Integrated_Headlamp-Hood_Bump-Stop_Bracket_%288116070903%29.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Nomination_56_-_Safety_-_Integrated_Headlamp-Hood_Bump-Stop_Bracket_(8116070903).jpg",
+      "source": "Wikimedia Commons",
+      "author": "spe.automotive",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/cc-by/2.0/",
+      "metadataCheckedAt": "2026-09-29",
+      "network": {
+        "status": "reachable",
+        "httpStatus": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 70261,
+        "error": null
+      },
+      "visualIdentityVerification": "UNVERIFIED"
+    },
+    {
+      "benchmarkCaseId": "b30-ambiguous-watch-back",
+      "manifestCaseId": "rw-watch-openback",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Self-winding_wristwatch_%28transparent_backside%29.jpg/960px-Self-winding_wristwatch_%28transparent_backside%29.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Self-winding_wristwatch_(transparent_backside).jpg",
+      "source": "Wikimedia Commons",
+      "author": "Petar Milošević",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/cc-by-sa/4.0/",
+      "metadataCheckedAt": "2026-09-29",
+      "network": {
+        "status": "reachable",
+        "httpStatus": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 163478,
+        "error": null
+      },
+      "visualIdentityVerification": "UNVERIFIED"
+    },
+    {
+      "benchmarkCaseId": "b30-ambiguous-headphones-scene",
+      "manifestCaseId": "rw-headphones-desk",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Headphones_on_desk.jpg/960px-Headphones_on_desk.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Headphones_on_desk.jpg",
+      "source": "Wikimedia Commons",
+      "author": "Lirazelf",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/cc-by-sa/3.0/",
+      "metadataCheckedAt": "2026-09-29",
+      "network": {
+        "status": "reachable",
+        "httpStatus": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 131301,
+        "error": null
+      },
+      "visualIdentityVerification": "UNVERIFIED"
+    },
+    {
+      "benchmarkCaseId": "b30-ambiguous-multiple-shoes",
+      "manifestCaseId": "rw-shoes-socks",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Vans_sneakers_and_socks.jpg/960px-Vans_sneakers_and_socks.jpg",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Vans_sneakers_and_socks.jpg",
+      "source": "Wikimedia Commons",
+      "author": "Downtowngal",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/cc-by-sa/4.0/",
+      "metadataCheckedAt": "2026-09-29",
+      "network": {
+        "status": "reachable",
+        "httpStatus": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 266283,
+        "error": null
+      },
+      "visualIdentityVerification": "UNVERIFIED"
+    }
+  ],
+  "referenceCount": 11,
+  "evaluation": {
+    "arms": [
+      {
+        "name": "v2",
+        "status": "NOT RUN"
+      },
+      {
+        "name": "v3",
+        "status": "NOT RUN"
+      },
+      {
+        "name": "geminiV3",
+        "status": "NOT RUN"
+      }
+    ],
+    "perCaseScores": [
+      {
+        "caseId": "b30-exact-casio-dw5600e",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-exact-adidas-samba-og",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-exact-longchamp-pliage-m",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-exact-galaxy-s24",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-exact-ordinary-niacinamide",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-exact-levis-501-original",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-similar-black-structured-bag",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-similar-casual-low-top-sneaker",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-similar-classic-wristwatch",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-similar-over-ear-headphones",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-similar-evening-dress",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-similar-home-coffee-maker",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-constraint-budget-ksa",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-constraint-used-camera-range",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-constraint-color-size",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-constraint-new-tablet",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-constraint-home-delivery",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-auto-camry-headlamp",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-auto-civic-brake-pads",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-auto-filter-sku",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-auto-bracket-image",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-arabic-earbuds-riyadh",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-arabic-used-iphone",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-arabic-coffee-machine",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-arabic-abaya-color",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-ambiguous-watch-back",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-ambiguous-headphones-scene",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-ambiguous-multiple-shoes",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-negative-nonexistent-model",
+        "status": "NOT RUN",
+        "score": null
+      },
+      {
+        "caseId": "b30-negative-incompatible-charger",
+        "status": "NOT RUN",
+        "score": null
+      }
+    ],
+    "actualActivity": {
+      "modelCalls": 0,
+      "queryImageCalls": 0,
+      "candidateImageCalls": 0,
+      "cacheHits": 0,
+      "cacheMisses": 0,
+      "embeddingDimension": 768,
+      "estimatedCostUsd": 0
+    },
+    "execution": "No model, cache, catalog, or production service was invoked."
+  },
+  "blockers": [
+    "Merchant photos must not be sent to Gemini without confirmed permission; no approved merchant-image catalog is available.",
+    "No independent relevance judgments are available.",
+    "Wikimedia reference photos are not a merchant inventory or independently verified product labels."
+  ],
+  "visualIdentityVerification": "UNVERIFIED",
+  "networkCheckEnabled": true
+}
