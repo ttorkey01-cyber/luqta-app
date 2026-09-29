@@ -1,6 +1,6 @@
 import { CacheService } from "./cacheService";
 import type { LuqtaCategory, NormalizedProduct } from "./types";
-import { InventoryUnavailableError, type SearchOrchestrator } from "./searchOrchestrator";
+import type { SearchOrchestrator } from "./searchOrchestrator";
 
 export type HomeCollectionDefinition = {
   id: string;
@@ -106,21 +106,13 @@ export class HomeCurationService {
 
     const startIndex =
       Math.floor(Date.now() / (24 * 60 * 60 * 1_000)) % COLLECTIONS.length;
-    let inventoryUnavailable = false;
     for (let offset = 0; offset < COLLECTIONS.length; offset += 1) {
       const collection = COLLECTIONS[(startIndex + offset) % COLLECTIONS.length];
-      let response;
-      try {
-        response = await this.search.searchWithMetadata({
-          query: collection.category,
-          category: collection.category,
-          searchMode: "category_browse",
-        });
-      } catch (error) {
-        if (!(error instanceof InventoryUnavailableError)) throw error;
-        inventoryUnavailable = true;
-        continue;
-      }
+      const response = await this.search.searchWithMetadata({
+        query: collection.category,
+        category: collection.category,
+        searchMode: "category_browse",
+      });
       const products = response.products
         .filter(isFeaturedEligible)
         .filter((product) =>
@@ -138,7 +130,6 @@ export class HomeCurationService {
       }
     }
 
-    if (inventoryUnavailable) throw new InventoryUnavailableError([]);
     const emptyResult: HomePicksResponse = {
       collection: COLLECTIONS[startIndex] ?? COLLECTIONS[0],
       products: [],

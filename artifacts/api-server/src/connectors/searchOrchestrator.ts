@@ -849,6 +849,15 @@ export class SearchOrchestrator {
           .map((provider) => provider.metadata.id),
       });
     }
+    // Do not start a search against an index that is still cold. In
+    // particular, fallback results cannot certify incomplete feed inventory.
+    const stillUnready = providers
+      .filter((provider) => provider.getSearchIndexReadiness?.().ready === false)
+      .map((provider) => provider.metadata.id);
+    if (stillUnready.length) {
+      emit("inventory_unavailable", { providerIds: stillUnready });
+      throw new InventoryUnavailableError(stillUnready);
+    }
     let parsedIntent: ProviderSearchRequest["intent"] = {};
     if (!categoryBrowse) {
       const intentStartedAt = performance.now();
@@ -1072,6 +1081,20 @@ export class SearchOrchestrator {
         (providerResult) => providerResult.errorType && !providerResult.timedOut,
       ).length,
     });
+    // Partial results (including web fallback) cannot establish a complete
+    // inventory while a relevant feed index is still cold. A completed empty
+    // feed is ready; a refresh of an existing usable index remains ready too.
+    const unreadyProviderIds = providerResults
+      .filter(
+        (result) =>
+          result.readiness?.ready === false ||
+          (categoryBrowse && result.categoryResult?.ready === false),
+      )
+      .map((result) => result.providerId);
+    if (unreadyProviderIds.length) {
+      emit("inventory_unavailable", { providerIds: unreadyProviderIds });
+      throw new InventoryUnavailableError(unreadyProviderIds);
+    }
     const sortingDeduplicationStartedAt = performance.now();
     emit("deduplication_start", {
       providerResultCount: providerResults.reduce(

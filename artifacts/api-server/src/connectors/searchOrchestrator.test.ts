@@ -924,7 +924,105 @@ test("a cold instance reports unavailable rather than a genuine zero when recove
   }
 });
 
-test("a failed category index refresh does not block inventory from another provider", async () => {
+test("partial category and search results remain unavailable until every feed index is ready", async () => {
+  let release!: () => void;
+  const pending = new Promise<void>((resolve) => { release = resolve; });
+  let coldReady = false;
+  let imports = 0;
+  let inFlight: Promise<number> | undefined;
+  const availableProduct = {
+    ...product("available-hair", "Royal Beauty Hair Cream"),
+    category: "Hair Care",
+    description: "A leave-in hair care treatment",
+  };
+  const available: SearchProvider = {
+    metadata: { ...metadata, id: "available-catalog" },
+    async search() { return [availableProduct]; },
+    getSearchIndexReadiness() {
+      return { ready: true, productCount: 2, refreshing: false, lastSuccessfulSync: null };
+    },
+    async searchCategory() {
+      return { products: [availableProduct, { ...availableProduct, id: "second-hair", title: "Royal Beauty Hair Serum" }],
+        total: 2, facetCounts: {}, ready: true };
+    },
+  };
+  const cold: SearchProvider = {
+    metadata: { ...metadata, id: "cold-catalog" },
+    async search() { return []; },
+    getSearchIndexReadiness() {
+      return { ready: coldReady, productCount: 0, refreshing: !coldReady, lastSuccessfulSync: null };
+    },
+    ensureSearchIndexReady() {
+      if (!inFlight) {
+        imports++;
+        inFlight = pending.then(() => { coldReady = true; return 0; });
+      }
+      return inFlight;
+    },
+    async searchCategory() {
+      return { products: [], total: 0, facetCounts: {}, ready: coldReady };
+    },
+  };
+  const orchestrator = new SearchOrchestrator(
+    new ProviderRegistry([available, cold]), undefined, undefined, undefined,
+    undefined, undefined, undefined, undefined,
+    { providerSearchMs: 50, intentParserMs: 50, braveSearchMs: 50, indexReadinessMs: 15 },
+  );
+  const category = {
+    query: "الجمال والعناية", category: "beauty_care" as const,
+    searchMode: "category_browse" as const,
+  };
+  try {
+    const requests = [
+      orchestrator.searchWithMetadata(category),
+      orchestrator.searchWithMetadata(category),
+      orchestrator.searchWithMetadata({ query: "hair", searchMode: "intent" }),
+      new HomeCurationService(orchestrator).getPicks(),
+    ];
+    const settled = await Promise.allSettled(requests);
+    assert.ok(settled.every((result) =>
+      result.status === "rejected" && result.reason instanceof InventoryUnavailableError,
+    ));
+    assert.equal(imports, 1, "concurrent requests share the cold import");
+  } finally {
+    release();
+  }
+  await inFlight;
+  const genuinelySmall = await orchestrator.searchWithMetadata(category);
+  assert.equal(genuinelySmall.categoryInventoryCount, 2);
+  assert.equal(genuinelySmall.categoryState, "low");
+  assert.equal(genuinelySmall.products.length, 2);
+});
+
+test("web fallback cannot certify a search while a relevant feed is unready", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() { return []; },
+    getSearchIndexReadiness() {
+      return { ready: false, refreshing: false, productCount: 0, lastSuccessfulSync: null };
+    },
+    async refreshIndex() { return 0; },
+  };
+  let fallbackCalls = 0;
+  const fallback = new BraveWebSearchProvider("test-key", async () => {
+    fallbackCalls++;
+    return new Response(JSON.stringify({ web: { results: [
+      { title: "Phone", url: "https://retailer.example.sa/phone" },
+    ] } }), { status: 200 });
+  });
+  const orchestrator = new SearchOrchestrator(
+    new ProviderRegistry([provider]), undefined, undefined, undefined,
+    undefined, undefined, fallback, undefined,
+    { providerSearchMs: 50, intentParserMs: 50, braveSearchMs: 50, indexReadinessMs: 10 },
+  );
+  await assert.rejects(
+    orchestrator.searchWithMetadata({ query: "phone", searchMode: "intent" }),
+    InventoryUnavailableError,
+  );
+  assert.equal(fallbackCalls, 0);
+});
+
+test("a failed category index refresh cannot certify partial inventory from another provider", async () => {
   const failedProvider: SearchProvider = {
     metadata: { ...metadata, id: "refresh-failure", name: "Refresh failure" },
     async search() {
@@ -971,14 +1069,14 @@ test("a failed category index refresh does not block inventory from another prov
   );
   const startedAt = Date.now();
 
-  const response = await orchestrator.searchWithMetadata({
-    query: "الجمال والعناية",
-    category: "beauty_care",
-    searchMode: "category_browse",
-  });
-
-  assert.deepEqual(response.products.map((item) => item.id), ["available-hair"]);
-  assert.equal(response.categoryInventoryCount, 1);
+  await assert.rejects(
+    orchestrator.searchWithMetadata({
+      query: "الجمال والعناية",
+      category: "beauty_care",
+      searchMode: "category_browse",
+    }),
+    InventoryUnavailableError,
+  );
   assert.ok(Date.now() - startedAt < 2_000, "failed refresh should settle promptly");
 });
 
