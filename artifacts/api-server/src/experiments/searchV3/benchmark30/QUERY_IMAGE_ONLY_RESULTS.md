@@ -176,6 +176,49 @@ do **not** assign a fabricated root cause. The Civic case returned
 insufficiently evidenced fitment in V2, rather than a verified Saudi-spec
 replacement. Image understanding was wrong for V2's multiple-shoes case.
 
+### Primary observable classification for every failed positive case
+
+`MATCH` = independently supported top-five result; `N` = no valid candidate
+returned; `M` = metadata quality (only unjudgeable results); `H` = hard
+constraint not supported by a returned close candidate; `Q` = query-image
+understanding failure; `O` = other / root cause unattributable from returned
+metadata; `S` = Gemini service error; `NR` = C stopped without attempting this
+image. `O` is intentionally **not** a claim that a particular reranker or
+provider caused the failure. The two correct negative/no-match cases and two
+pre-excluded UNSCORABLE cases are not failed positive cases.
+
+| Case ID | V2 | V3-local | C |
+| --- | --- | --- | --- |
+| b30-exact-casio-dw5600e | MATCH | MATCH | MATCH* |
+| b30-exact-adidas-samba-og | M | O | O* |
+| b30-exact-longchamp-pliage-m | MATCH | O | O* |
+| b30-exact-galaxy-s24 | H | O | O* |
+| b30-exact-ordinary-niacinamide | MATCH | O | O* |
+| b30-exact-levis-501-original | MATCH | O | O* |
+| b30-similar-casual-low-top-sneaker | M | O | S |
+| b30-similar-classic-wristwatch | MATCH | O | NR |
+| b30-similar-over-ear-headphones | MATCH | M | NR |
+| b30-similar-evening-dress | MATCH | O | NR |
+| b30-similar-home-coffee-maker | MATCH | MATCH | NR |
+| b30-constraint-budget-ksa | M | N | N* |
+| b30-constraint-used-camera-range | M | O | O* |
+| b30-constraint-color-size | N | N | N* |
+| b30-constraint-new-tablet | N | N | N* |
+| b30-constraint-home-delivery | N | N | N* |
+| b30-auto-civic-brake-pads | H | N | N* |
+| b30-auto-filter-sku | N | N | N* |
+| b30-auto-bracket-image | N | N | NR |
+| b30-arabic-earbuds-riyadh | O | M | M* |
+| b30-arabic-used-iphone | N | N | N* |
+| b30-arabic-coffee-machine | N | N | N* |
+| b30-arabic-abaya-color | O | N | N* |
+| b30-ambiguous-watch-back | MATCH | N | NR |
+| b30-ambiguous-headphones-scene | MATCH | MATCH | NR |
+| b30-ambiguous-multiple-shoes | Q | MATCH | NR |
+
+`*` Text-only C made **no Gemini call** and returned the same ranking as
+V3-local; these entries classify that observed ranking, not a Gemini effect.
+
 Gemini ranking improvements: **none measured**. Worsenings: **none measured**.
 Intent improvements without ranking change: **none measured**. A correct
 Gemini interpretation blocked by inventory: **none established**. Gemini
