@@ -20,6 +20,12 @@ import {
 import { ProviderRegistry } from "./providerRegistry";
 import { RankingService } from "./rankingService";
 import {
+  createSearchRelevanceGate,
+  filterSearchRelevance,
+  preserveDistinctiveFallbackQuery,
+  sortSearchRelevance,
+} from "./relevanceGate";
+import {
   expandShoppingQuery,
   getShoppingVocabularyAliases,
   normalizeArabicForSearch,
@@ -502,6 +508,7 @@ function phraseMatchesSurface(surfaceTokens: Set<string>, phrase: string) {
 function matchesExplicitIntent(
   result: ProviderProduct,
   constraints: QualityConstraints,
+  requireProductTypeEvidence = true,
 ) {
   const intent = constraints.intent;
   if (!intent) return true;
@@ -595,12 +602,14 @@ function matchesExplicitIntent(
     return false;
   }
   if (
+    requireProductTypeEvidence &&
     !constraints.requiredProductGroups.every((group) =>
       groupMatchesSurface(labelTokens, group),
     ) ||
-    !constraints.requiredProductTerms.every((term) =>
-      surfaceMatchesTerm(labelTokens, term),
-    )
+    (requireProductTypeEvidence &&
+      !constraints.requiredProductTerms.every((term) =>
+        surfaceMatchesTerm(labelTokens, term),
+      ))
   ) {
     return false;
   }
@@ -720,10 +729,11 @@ export function filterExplicitIntentResults(
   results: NormalizedProduct[],
   queryExpansion: SearchQueryExpansion,
   intent?: QueryIntent,
+  requireProductTypeEvidence = true,
 ) {
   const constraints = buildQualityConstraints(queryExpansion, intent);
   return results.filter((result) =>
-    matchesExplicitIntent(result, constraints),
+    matchesExplicitIntent(result, constraints, requireProductTypeEvidence),
   );
 }
 
@@ -1014,6 +1024,9 @@ export class SearchOrchestrator {
         request.intent?.category ??
         parsedIntent?.category,
     };
+    const relevanceGate = categoryBrowse
+      ? undefined
+      : createSearchRelevanceGate(queryExpansion.originalQuery, sharedIntent);
     const searchQueries = categoryBrowse
       ? [queryExpansion.normalizedQuery]
       : queryExpansion.variants;
@@ -1218,11 +1231,22 @@ export class SearchOrchestrator {
         )
       : bestMatchesFirst;
     const deduplicated = this.deduplication.deduplicate(categoryFiltered);
+    // Reject only established product/size/model conflicts before price can
+    // contribute to ranking. An unknown type or size is not a verified match.
+    const relevanceFiltered = relevanceGate
+      ? filterSearchRelevance(deduplicated, relevanceGate)
+      : deduplicated;
+    if (relevanceGate) {
+      emit("relevance_gate_end", {
+        candidateCount: deduplicated.length,
+        rejectedCount: deduplicated.length - relevanceFiltered.length,
+      });
+    }
     const priceConstraintActive =
       !categoryBrowse && hasStrictPriceConstraint(sharedIntent);
     const priceFiltered = priceConstraintActive
-      ? filterStrictPriceResults(deduplicated, sharedIntent)
-      : deduplicated;
+      ? filterStrictPriceResults(relevanceFiltered, sharedIntent)
+      : relevanceFiltered;
     const categoryFilterMs =
       categoryBrowse && request.category
         ? performance.now() - sortingDeduplicationStartedAt
@@ -1290,11 +1314,14 @@ export class SearchOrchestrator {
         : undefined;
     const rankingStartedAt = performance.now();
     emit("ranking_start", { candidateCount: selectedCategoryProducts.length });
-    const rankedProducts = this.ranking.rank(
+    const scoredProducts = this.ranking.rank(
       selectedCategoryProducts,
       sharedIntent,
       categoryBrowse && request.category === "electronics",
     );
+    const rankedProducts = relevanceGate
+      ? sortSearchRelevance(scoredProducts, relevanceGate)
+      : scoredProducts;
     const rankingMs = performance.now() - rankingStartedAt;
     emit("ranking_end", {
       durationMs: Number(rankingMs.toFixed(2)),
@@ -1355,7 +1382,7 @@ export class SearchOrchestrator {
         queryExpansion.normalizedQuery,
       );
       const intentQuery = sharedIntent.normalized?.trim();
-      const fallbackQuery =
+      const plannedFallbackQuery =
         intentQuery &&
         /[a-z]/iu.test(intentQuery) &&
         !/[\u0600-\u06ff]/u.test(intentQuery)
@@ -1365,6 +1392,13 @@ export class SearchOrchestrator {
               !/[\u0600-\u06ff]/u.test(qualityQuery)
             ? qualityQuery
           : queryExpansion.originalQuery;
+      const fallbackQuery = relevanceGate
+        ? preserveDistinctiveFallbackQuery(
+            queryExpansion.originalQuery,
+            plannedFallbackQuery,
+            relevanceGate,
+          )
+        : plannedFallbackQuery;
       const braveStartedAt = performance.now();
       emit("brave_request_start");
       try {
@@ -1383,9 +1417,12 @@ export class SearchOrchestrator {
         );
         const relevantFallback = filterStrictPriceResults(
           filterExplicitIntentResults(
-          normalizedFallback,
-          queryExpansion,
-          sharedIntent,
+            relevanceGate
+              ? filterSearchRelevance(normalizedFallback, relevanceGate)
+              : normalizedFallback,
+            queryExpansion,
+            sharedIntent,
+            false,
           ),
           sharedIntent,
         );
@@ -1394,15 +1431,17 @@ export class SearchOrchestrator {
           relevantFallback.length > 0
             ? quality.relevantResults
             : internalRanked;
-        merged = this.ranking
-          .rank(
-            this.deduplication.deduplicate([
-              ...internalForMerge,
-              ...relevantFallback,
-            ]),
-            sharedIntent,
-          )
-          .slice(0, 100);
+        const mergedRanked = this.ranking.rank(
+          this.deduplication.deduplicate([
+            ...internalForMerge,
+            ...relevantFallback,
+          ]),
+          sharedIntent,
+        );
+        merged = (relevanceGate
+          ? sortSearchRelevance(mergedRanked, relevanceGate)
+          : mergedRanked
+        ).slice(0, 100);
         emit("brave_request_end", {
           durationMs: Number(
             (performance.now() - braveStartedAt).toFixed(2),
@@ -1427,9 +1466,12 @@ export class SearchOrchestrator {
       }
     }
 
-    const exactPriceResults = priceConstraintActive
-      ? filterStrictPriceResults(merged, sharedIntent)
+    const finalRelevant = relevanceGate
+      ? filterSearchRelevance(merged, relevanceGate)
       : merged;
+    const exactPriceResults = priceConstraintActive
+      ? filterStrictPriceResults(finalRelevant, sharedIntent)
+      : finalRelevant;
     const results = exactPriceResults.map((result) =>
       this.affiliateLinks.attach(
         result,

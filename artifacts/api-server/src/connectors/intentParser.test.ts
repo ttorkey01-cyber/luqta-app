@@ -234,3 +234,30 @@ test("preserves explicitly labeled fashion sizes but not unmarked standalone amo
   assert.equal(unmarked.minPrice, undefined);
   assert.equal(unmarked.approximatePrice, undefined);
 });
+
+test("keeps the ten smoke-test intents distinct from price, brand, model, and size", async () => {
+  const parser = new DeterministicIntentParser();
+  const cases = [
+    ["شنطة سوداء", { productType: "handbag", color: "black" }],
+    ["Nike أسود مقاس 42", { brand: "Nike", color: "black", productType: undefined }],
+    ["شنطة سوداء أقل من 300 ريال", { productType: "handbag", color: "black", maxPrice: 300 }],
+    ["ساعة حدود 500 ريال", { productType: "watch", approximatePrice: 500, maxPrice: undefined }],
+    ["Samsung S24 Ultra", { brand: "Samsung", productType: undefined }],
+    ["Diesel jeans مقاس 32", { brand: "Diesel", productType: "jeans" }],
+    ["iPhone 15 Pro Max", { productType: undefined, maxPrice: undefined }],
+    ["جوال أقل من 1500 ريال", { productType: "phone", maxPrice: 1500 }],
+    ["electronics", { productType: undefined }],
+    ["QZVTR-999 seventeen-handle purple toaster", { productType: "toaster" }],
+  ] as const;
+
+  for (const [query, expected] of cases) {
+    const intent = await parser.parse(query);
+    for (const [field, value] of Object.entries(expected)) {
+      assert.equal(intent[field as keyof typeof intent], value, `${query}: ${field}`);
+    }
+    if (query.includes("S24")) assert.match(intent.normalized ?? "", /s24 ultra/iu);
+    if (query.includes("iPhone")) assert.match(intent.normalized ?? "", /iphone 15 pro max/iu);
+    if (query.includes("QZVTR")) assert.match(intent.normalized ?? "", /qzvtr-999/iu);
+    if (query.includes("مقاس")) assert.match(intent.normalized ?? "", /مقاس \d+/u);
+  }
+});

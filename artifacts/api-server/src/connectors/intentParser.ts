@@ -94,6 +94,11 @@ const PRODUCT_TYPES: ProductTypeDefinition[] = [
     aliases: ["phone", "smartphone", "mobile", "جوال", "موبايل", "هاتف"],
   },
   {
+    value: "toaster",
+    category: "home_living",
+    aliases: ["toaster", "toasters", "محمصة", "توستر"],
+  },
+  {
     value: "laptop",
     category: "electronics",
     aliases: ["laptop", "notebook", "لابتوب", "حاسوب محمول"],

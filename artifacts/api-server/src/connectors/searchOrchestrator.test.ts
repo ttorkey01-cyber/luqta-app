@@ -888,6 +888,380 @@ test("strict Arabic maximum excludes over-budget and unknown-price products and 
   assert.equal(response.structuredIntent?.location, "Riyadh");
 });
 
+test("Arabic black handbag intent rejects cheap beauty and false Hand Bag brush matches before strict price ranking", async () => {
+  const fixtures: ProviderProduct[] = [
+    {
+      ...product("black-bag-299", "Black leather handbag"),
+      productType: "handbag",
+      color: "black",
+      price: 299,
+      currency: "SAR",
+    },
+    {
+      ...product("black-bag-300", "Black handbag at the limit"),
+      productType: "handbag",
+      color: "black",
+      price: 300,
+      currency: "SAR",
+    },
+    {
+      ...product("black-bag-unknown-price", "Black handbag price unavailable"),
+      productType: "handbag",
+      color: "black",
+      price: null,
+      currency: "SAR",
+    },
+    {
+      ...product("black-bag-over-budget", "Black handbag over budget"),
+      productType: "handbag",
+      color: "black",
+      price: 301,
+      currency: "SAR",
+    },
+    {
+      ...product("hand-bag-paddle-brush", "Hand Bag paddle brush"),
+      productType: "paddle brush",
+      price: 25,
+      currency: "SAR",
+    },
+    {
+      ...product("cheap-shampoo", "Black shampoo"),
+      productType: "shampoo",
+      color: "black",
+      price: 15,
+      currency: "SAR",
+    },
+    {
+      ...product("incidental-bag-shampoo", "Black shampoo for handbag care"),
+      productType: "shampoo",
+      color: "black",
+      price: 20,
+      currency: "SAR",
+    },
+    {
+      ...product("cheap-black-headphones", "Black headphones"),
+      productType: "headphones",
+      color: "black",
+      price: 100,
+      currency: "SAR",
+    },
+  ];
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return fixtures;
+    },
+  };
+
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({ query: "شنطة سوداء أقل من 300 ريال" });
+
+  assert.deepEqual(
+    response.products.map((result) => result.id),
+    ["black-bag-299", "black-bag-300"],
+  );
+  assert.ok(response.products.every((result) => result.price !== null && result.price! <= 300));
+  assert.equal(response.exactMatches, 2, "exactMatches remains a strict-price count, not an identity claim");
+  assert.equal(response.constraintRelaxationAvailable, false);
+});
+
+test("Arabic phone maximum cannot make inexpensive grooming products relevant", async () => {
+  const fixtures: ProviderProduct[] = [
+    {
+      ...product("phone-under-1500", "Samsung Galaxy phone"),
+      productType: "phone",
+      price: 1_499,
+      currency: "SAR",
+    },
+    {
+      ...product("cheap-beard-trimmer", "Beard trimmer"),
+      productType: "grooming",
+      price: 40,
+      currency: "SAR",
+    },
+    {
+      ...product("cheap-shaver", "Electric shaver"),
+      productType: "grooming",
+      price: 80,
+      currency: "SAR",
+    },
+    {
+      ...product("cheap-hair-cream", "Hair cream"),
+      productType: "cream",
+      price: 20,
+      currency: "SAR",
+    },
+  ];
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return fixtures;
+    },
+  };
+
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({ query: "جوال أقل من 1500 ريال" });
+
+  assert.deepEqual(response.products.map((result) => result.id), ["phone-under-1500"]);
+  assert.ok(response.products.every((result) => result.price !== null && result.price! <= 1_500));
+  assert.equal(response.structuredIntent?.productType, "phone");
+});
+
+test("Nike size 42 treats millimeters as conflicting evidence while retaining an unknown-size shoe", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [
+        {
+          ...product("nike-eu-42-shoe", "Nike black running shoe EU 42"),
+          productType: "shoes",
+          brand: "Nike",
+          color: "black",
+        },
+        {
+          ...product("nike-42mm-band", "Nike black 42 mm watch band"),
+          productType: "watch band",
+          brand: "Nike",
+          color: "black",
+        },
+        {
+          ...product("nike-unknown-size-shoe", "Nike black running shoe"),
+          productType: "shoes",
+          brand: "Nike",
+          color: "black",
+        },
+      ];
+    },
+  };
+
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({ query: "Nike أسود مقاس 42" });
+
+  assert.deepEqual(
+    response.products.map((result) => result.id),
+    ["nike-eu-42-shoe", "nike-unknown-size-shoe"],
+  );
+  assert.equal(response.products[0]?.title.includes("EU 42"), true);
+  assert.equal(response.products[1]?.title.includes("42"), false);
+  assert.equal(response.exactMatches, undefined);
+});
+
+test("Diesel jeans size 32 distinguishes waist from inseam and keeps unknown waist discoverable", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [
+        {
+          ...product("diesel-waist-32", "Diesel jeans waist 32"),
+          productType: "jeans",
+          brand: "Diesel",
+        },
+        {
+          ...product("diesel-waist-34-inseam-32", "Diesel jeans waist 34 inseam 32"),
+          productType: "jeans",
+          brand: "Diesel",
+        },
+        {
+          ...product("diesel-unknown-waist", "Diesel denim jeans"),
+          productType: "jeans",
+          brand: "Diesel",
+        },
+      ];
+    },
+  };
+
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({ query: "Diesel jeans مقاس 32" });
+
+  assert.deepEqual(
+    response.products.map((result) => result.id),
+    ["diesel-waist-32", "diesel-unknown-waist"],
+  );
+  assert.equal(response.products[0]?.title.includes("waist 32"), true);
+  assert.equal(response.products[1]?.title.includes("waist"), false);
+  assert.equal(response.exactMatches, undefined);
+});
+
+test("distinctive SKU is preserved through fallback and generic toasters remain an honest no-match", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [
+        {
+          ...product("generic-purple-toaster", "Purple seventeen-handle toaster"),
+          productType: "toaster",
+          color: "purple",
+        },
+      ];
+    },
+  };
+  const fallbackQueries: string[] = [];
+  const fallback = new BraveWebSearchProvider("test-key", async (input) => {
+    const requestUrl =
+      typeof input === "string" || input instanceof URL ? input : input.url;
+    fallbackQueries.push(new URL(requestUrl).searchParams.get("q") ?? "");
+    return new Response(
+      JSON.stringify({
+        web: {
+          results: [
+            {
+              title: "Purple seventeen-handle toaster",
+              url: "https://retailer.example.sa/purple-toaster",
+            },
+          ],
+        },
+      }),
+      { status: 200 },
+    );
+  });
+
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    fallback,
+  ).searchWithMetadata({
+    query: "QZVTR-999 seventeen-handle purple toaster",
+  });
+
+  assert.ok(fallbackQueries.length > 0, "a no-match must attempt the stubbed fallback");
+  assert.ok(
+    fallbackQueries.every((query) => query.includes("QZVTR-999")),
+    "each planned fallback query must retain the distinctive identifier",
+  );
+  assert.deepEqual(response.products, []);
+  assert.equal(response.fallbackStatus, "empty");
+  assert.equal(response.exactMatches, undefined);
+});
+
+test("Samsung S24 Ultra and iPhone 15 Pro Max preserve complete models and reject family pages", async () => {
+  const cases = [
+    {
+      query: "Samsung S24 Ultra",
+      model: "Samsung Galaxy S24 Ultra",
+      family: "Samsung Galaxy S24 family",
+      identifier: "S24 Ultra",
+    },
+    {
+      query: "iPhone 15 Pro Max",
+      model: "Apple iPhone 15 Pro Max",
+      family: "Apple iPhone 15 family",
+      identifier: "iPhone 15 Pro Max",
+    },
+  ];
+
+  for (const fixture of cases) {
+    const providerQueries: string[] = [];
+    const provider: SearchProvider = {
+      metadata,
+      async search(request) {
+        providerQueries.push(request.query);
+        return [
+          product(`${fixture.identifier}-exact`, fixture.model),
+          {
+            ...product(`${fixture.identifier}-accessory`, `${fixture.model} case`),
+            productType: "phone case",
+            category: "electronics",
+          },
+          {
+            ...product(`${fixture.identifier}-family`, fixture.family),
+            productUrl: "https://retailer.example.sa/collections/phones",
+          },
+        ];
+      },
+    };
+    const response = await new SearchOrchestrator(
+      new ProviderRegistry([provider]),
+    ).searchWithMetadata({ query: fixture.query });
+
+    assert.ok(
+      providerQueries.some((query) => query.includes(fixture.identifier)),
+      `${fixture.query} must be issued intact to the connected provider`,
+    );
+    assert.deepEqual(
+      response.products.map((result) => result.id),
+      [`${fixture.identifier}-exact`],
+      `${fixture.query} must not be broadened to a family page`,
+    );
+    assert.equal(response.exactMatches, undefined, "a preserved model is not an identity EXACT claim");
+  }
+});
+
+test("soft Arabic watch budget cannot make a nearby-priced grooming product outrank relevance", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [
+        {
+          ...product("watch-near-budget", "Classic wrist watch"),
+          productType: "watch",
+          price: 500,
+          currency: "SAR",
+        },
+        {
+          ...product("watch-over-budget", "Automatic wrist watch"),
+          productType: "watch",
+          price: 1_800,
+          currency: "SAR",
+        },
+        {
+          ...product("brush-near-budget", "Paddle hair brush"),
+          productType: "paddle brush",
+          price: 495,
+          currency: "SAR",
+        },
+      ];
+    },
+  };
+
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({ query: "ساعة حدود 500 ريال" });
+
+  assert.equal(response.products[0]?.id, "watch-near-budget");
+  assert.deepEqual(
+    response.products.map((result) => result.id),
+    ["watch-near-budget", "watch-over-budget"],
+  );
+  assert.equal(response.structuredIntent?.approximatePrice, 500);
+  assert.equal(response.structuredIntent?.maxPrice, undefined);
+  assert.equal(response.exactMatches, undefined);
+});
+
+test("plain Arabic black bag search rejects unrelated products without claiming exact identity", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [
+        {
+          ...product("plain-black-handbag", "Black handbag"),
+          productType: "handbag",
+          color: "black",
+        },
+        {
+          ...product("plain-black-shampoo", "Black shampoo"),
+          productType: "shampoo",
+          color: "black",
+        },
+      ];
+    },
+  };
+
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({ query: "شنطة سوداء" });
+
+  assert.deepEqual(response.products.map((result) => result.id), ["plain-black-handbag"]);
+  assert.equal(response.exactMatches, undefined);
+});
+
 test("requested color accepts UNKNOWN evidence but filters explicit conflicts without making identity claims", async () => {
   const provider: SearchProvider = {
     metadata,
