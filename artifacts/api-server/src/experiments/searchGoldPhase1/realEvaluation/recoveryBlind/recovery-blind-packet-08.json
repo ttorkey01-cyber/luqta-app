@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "packet": 8,
+  "cases": [
+    {
+      "caseId": 36,
+      "query": "هوندا أكورد 2015 بواجي أصلية",
+      "intended": "original spark plugs for Honda Accord 2015",
+      "hard": [
+        {
+          "field": "vehicle",
+          "op": "eq",
+          "value": "Honda Accord 2015"
+        },
+        {
+          "field": "part",
+          "op": "eq",
+          "value": "spark plugs"
+        },
+        {
+          "field": "authenticity",
+          "op": "eq",
+          "value": "original, verifiable"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "Spark plugs with source-backed compatibility and original provenance",
+      "irrelevant": "Headlights or unverified fitment/authenticity",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": []
+    },
+    {
+      "caseId": 37,
+      "query": "بطارية سيارة 12V 70Ah الرياض",
+      "intended": "12V 70Ah car battery sold in Riyadh",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "car battery"
+        },
+        {
+          "field": "voltage",
+          "op": "eq",
+          "value": "12V"
+        },
+        {
+          "field": "capacity",
+          "op": "eq",
+          "value": "70Ah"
+        },
+        {
+          "field": "city",
+          "op": "eq",
+          "value": "Riyadh"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "A 12V 70Ah car battery with verified Riyadh location",
+      "irrelevant": "Different Ah/voltage or unavailable location",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": [
+        {
+          "id": "9331b32228e4469b1bd0fee0",
+          "title": "Duracell Car Battery in Saudi | Duracell Car Battery Supplier Saudi",
+          "description": "Duracell Car Battery in Saudi delivers 12V 70Ah reliable starting power for cars and SUVs, available from Nassguard across KSA cities",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:46:50.449Z"
+        },
+        {
+          "id": "e213349db1af12383691dde5",
+          "title": "Car Batteries KSA | Best Price Offers | Riyadh, Jeddah",
+          "description": "Biggest selection of Car Batteries in KSA ✓ Secure Shopping ✓ 100% Contactless ✓ Fast Shipping ✓ Cash on Delivery ✓ Easy Free Returns. Shop Now",
+          "brand": null,
+          "productType": null,
+          "category": "automotive",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:46:50.449Z"
+        }
+      ]
+    },
+    {
+      "caseId": 38,
+      "query": "shampoo for dry hair",
+      "intended": "shampoo for dry hair",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "shampoo"
+        }
+      ],
+      "preferences": [
+        {
+          "field": "hairType",
+          "value": "dry hair"
+        }
+      ],
+      "expectedIdentity": null,
+      "useful": "A shampoo with source-backed dry-hair suitability where available",
+      "irrelevant": "Conditioner or unrelated beauty product",
+      "exactRequired": false,
+      "alternativeAcceptable": true,
+      "candidates": [
+        {
+          "id": "17aa48f9d971348d398add3e",
+          "title": "Buy Dry Hair Shampoo - GK Hair Best Dry Shampoo – GK Hair KSA",
+          "description": "Buy the best dry shampoo, fortified with Juvexin, reduces oil and product accumulation on the scalp, restoring that fresh, just washed look.",
+          "brand": null,
+          "productType": null,
+          "category": "beauty_care",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:46:53.008Z"
+        },
+        {
+          "id": "d20771a9b360767f656bbacb",
+          "title": "Shampoo - Hair",
+          "description": "Shop our shampoo range, we have something for every hair type: dry, dull, dandruff and more.",
+          "brand": null,
+          "productType": null,
+          "category": "beauty_care",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:46:53.008Z"
+        },
+        {
+          "id": "a4139aa52d125e81ab58b70e",
+          "title": "Shampoo | Faces KSA",
+          "description": "shampoo, Experience the ultimate cleanse and refreshment for your hair with our top-tier shampoos and dry shampoos. cater to your haircare needs. From revitalizing shampoos that address specific hair concerns to convenient dry shampoos that provide on-the-go freshness, we have the perfect solutions",
+          "brand": null,
+          "productType": null,
+          "category": "beauty_care",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:46:53.008Z"
+        }
+      ]
+    },
+    {
+      "caseId": 39,
+      "query": "women's handbags",
+      "intended": "women's handbags",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "handbag"
+        },
+        {
+          "field": "audience",
+          "op": "eq",
+          "value": "women"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "A women's handbag listing",
+      "irrelevant": "Men's-only wallet or non-bag",
+      "exactRequired": false,
+      "alternativeAcceptable": true,
+      "candidates": []
+    },
+    {
+      "caseId": 40,
+      "query": "wireless headphones",
+      "intended": "wireless headphones",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "headphones"
+        },
+        {
+          "field": "connectivity",
+          "op": "eq",
+          "value": "wireless"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "Wireless headphone listing with source-backed connectivity",
+      "irrelevant": "Wired earbuds or unrelated audio accessory",
+      "exactRequired": false,
+      "alternativeAcceptable": true,
+      "candidates": []
+    }
+  ]
+}

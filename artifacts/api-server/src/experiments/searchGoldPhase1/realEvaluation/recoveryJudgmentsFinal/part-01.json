@@ -1,0 +1,1114 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 1,
+      "candidates": [
+        {
+          "id": "4a25409f615807e0918c974f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Samsung Galaxy S24 Ultra, AI Phone, 256GB ”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title/description explicitly identifies a different variant: “Samsung Galaxy S24 Ultra, AI Phone, 256GB Storage, Titanium Black, 12GB RAM, Android Smartphone, 200”."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “xy S24 Ultra, AI Phone, 256GB Storage, Titanium Black, 12GB RAM,”."
+            }
+          ],
+          "evidence": "S24 Ultra is explicitly excluded; title states 256GB."
+        },
+        {
+          "id": "da1c6bd6d67fd1d79de60c3d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Samsung Galaxy S24 Ultra, 256GB, Gray, 12G”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title/description explicitly identifies a different variant: “Samsung Galaxy S24 Ultra, 256GB, Gray, 12GB RAM, Android Smartphone, 200MP Camera, (International Ve”."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “msung Galaxy S24 Ultra, 256GB, Gray, 12GB RAM, Android Smartphon”."
+            }
+          ],
+          "evidence": "Title identifies S24 Ultra 256GB, not the base model."
+        },
+        {
+          "id": "5962103c8da7155232c62cce",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Samsung Galaxy S24, 256GB, Black, 8GB RAM,”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Sm”."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Smartphon”."
+            }
+          ],
+          "evidence": "Title identifies Galaxy S24 256GB smartphone; individual-offer evidence is limited."
+        },
+        {
+          "id": "3419fb7d8359776acc784487",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “SAMSUNG Galaxy S24 256GB price in Saudi Ar”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “SAMSUNG Galaxy S24 256GB price in Saudi Arabia - [URL”."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “SAMSUNG Galaxy S24 256GB price in Saudi Arabia - [URL remov”."
+            }
+          ],
+          "evidence": "Comparison text identifies Samsung Galaxy S24 256GB, but not an individual seller offer."
+        },
+        {
+          "id": "5769e72e21b0cb8cf0b6d7e0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “S24+ | Price & Offers | Samsung Saudi Arabia If you need any assis”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title/description do not establish model Galaxy S24."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Title/description do not establish storage 256GB."
+            }
+          ],
+          "evidence": "Samsung page includes S24 and S24+ and mentions 256GB without tying storage to a specific base-S24 offer."
+        },
+        {
+          "id": "cf5e10a37aad0d22fef69e4d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Samsung Galaxy S24 Series at the best pric”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title/description explicitly identifies a different variant: “Buy Samsung Galaxy S24 Series at the best prices | eXtra Saudi”."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Title/description do not establish storage 256GB."
+            }
+          ],
+          "evidence": "Description identifies S24 Ultra and S24+, not intended base S24."
+        },
+        {
+          "id": "4bfda0f3acb92a1a1cc81d12",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android S”."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android Smartpho”."
+            }
+          ],
+          "evidence": "Title identifies Galaxy S24 256GB; listing states international version and no manufacturer warranty."
+        },
+        {
+          "id": "115b7e8d94cdafc8c982a854",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “S24 Onyx Black 256 GB | Samsung Saudi Arabia Saudi Arabia / Englis”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Galaxy S24 Onyx Black 256 GB | Samsung Saudi ”."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Galaxy S24 Onyx Black 256 GB | Samsung Saudi Arabia Saudi Arabia / English · UK / English · Othe”."
+            }
+          ],
+          "evidence": "Samsung title identifies Galaxy S24 Onyx Black 256 GB; extracted description lacks offer detail."
+        },
+        {
+          "id": "e4c257e568936d140df5c5bc",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title/description names ديزل (Diesel)."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title/description explicitly identifies a different variant: “اشتر جالكسي S24 FE 256GB - أزرق | سامسونج السعودية”."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “اشتر جالكسي S24 FE 256GB - أزرق | سامسونج السعودية اشتر جال”."
+            }
+          ],
+          "evidence": "Title identifies S24 FE 256GB, a different model."
+        },
+        {
+          "id": "f1e5fa1c85e5d3e621a42942",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “SAMSUNG Galaxy S24 Ultra, 256GB, Black, 12”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title/description explicitly identifies a different variant: “SAMSUNG Galaxy S24 Ultra, 256GB, Black, 12GB RAM, Android Smartphone, 200MP Camera, No Manufacturer ”."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “MSUNG Galaxy S24 Ultra, 256GB, Black, 12GB RAM, Android Smartpho”."
+            }
+          ],
+          "evidence": "Title/description identify S24 Ultra 256GB, not base S24."
+        }
+      ],
+      "judgeRationale": "Explicitly reject Ultra/FE variants; assess base-model and storage evidence from each listing."
+    },
+    {
+      "caseId": 2,
+      "candidates": [
+        {
+          "id": "cf06d1d40e62d6d6aad02757",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Huawei Watch GT5 – 41mm AMOLED Display, F”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Huawei Watch GT5 – 41mm AMOLED Display, Fitness Tracking, Smartwatch, Brown in Saudi Arabia. Hua”."
+            }
+          ],
+          "evidence": "Title identifies Huawei Watch GT5 41mm smartwatch listing."
+        },
+        {
+          "id": "e99f539780fbbe73741fcd54",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “HUAWEI WATCH GT 5 46mm Smartwatch, up to ”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “HUAWEI WATCH GT 5 46mm Smartwatch, up to 14 Days Bat”."
+            }
+          ],
+          "evidence": "Title identifies Watch GT 5 46mm smartwatch listing bundled with earbuds."
+        },
+        {
+          "id": "cd3d920886be8ec50d91efb6",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “HUAWEI WATCH GT 5 Repair and Service | HU”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “HUAWEI WATCH GT 5 Repair and Service | HUAWEI Suppor”."
+            }
+          ],
+          "evidence": "Huawei GT 5 repair/support information, not a watch offer."
+        },
+        {
+          "id": "fcf9284e06f8004041ef279c",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Huawei Watch GT5 في السعودية | خصم 30-75%”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Huawei Watch GT5 في السعودية | خصم 30-75% | الرياض وجدة | نون تسوق Huawei Watch GT5 من نون. ✓ تسوق آ”."
+            }
+          ],
+          "evidence": "Noon title/description identify Huawei Watch GT5; variant details are limited."
+        },
+        {
+          "id": "917423c97857e7bba3a52344",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Huawei Watch GT 5 Pro Price in Saudi Arab”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title/description explicitly identifies a different variant: “Huawei Watch GT 5 Pro Price in Saudi Arabia 2025 with Specs and Features - Phoneaqua”."
+            }
+          ]
+        },
+        {
+          "id": "6f26c821b5045958bec008f3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Huawei Watch GT5 Pro KSA | 30-75% OFF | R”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title/description explicitly identifies a different variant: “Huawei Watch GT5 Pro KSA | 30-75% OFF | Riyadh, Jeddah | noon”."
+            }
+          ]
+        },
+        {
+          "id": "4b1609b29b8338c44d952be7",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Huawei Watch GT 5 Pro price in Saudi Arab”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title/description explicitly identifies a different variant: “Huawei Watch GT 5 Pro price in Saudi Arabia | Compare Prices”."
+            }
+          ]
+        },
+        {
+          "id": "2f70035564578b64a83565e8",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “HUAWEI Watch GT 5 46 mm Smartwatch, 1.43\"”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “HUAWEI Watch GT 5 46 mm Smartwatch, 1.43\" AMOLED 326”."
+            }
+          ],
+          "evidence": "Title identifies Huawei Watch GT 5 46mm smartwatch with features and color."
+        },
+        {
+          "id": "cf12183e0ce0c1eacddcdfea",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Huawei Watch GT 5 Pro 46mm - Black Fluoro”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title/description explicitly identifies a different variant: “Huawei Watch GT 5 Pro 46mm - Black Fluoroelastomer Strap”."
+            }
+          ],
+          "evidence": "GT 5 Pro strap, not requested GT 5 watch."
+        },
+        {
+          "id": "2c18d1a09ed1c988c1a6809b",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Huawei Watch GT 5 price in Saudi Arabia |”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Huawei Watch GT 5 price in Saudi Arabia | Compare Pr”."
+            }
+          ],
+          "evidence": "Price listing identifies Huawei Watch GT 5 41, sold at Jarir with delivery availability."
+        }
+      ],
+      "judgeRationale": "GT 5 Pro and support/strap results are wrong items; GT 5 watch listings are relevant when the exact series is named."
+    },
+    {
+      "caseId": 3,
+      "candidates": [
+        {
+          "id": "91cbbf6680e72e495693494d",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Women's Shoes - Black/”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Women's Shoes - Black/Black/Black ”."
+            }
+          ],
+          "evidence": "Nike Saudi listing identifies Air Max 270 women's shoes and colorway."
+        },
+        {
+          "id": "600c5c3156a8a2c210b97cf1",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Men's Shoes - Black/Wh”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Men's Shoes - Black/White/Solar Re”."
+            }
+          ],
+          "evidence": "Nike Saudi listing identifies Air Max 270 men's shoes and colorway."
+        },
+        {
+          "id": "d4eb25becd0db0865f889fef",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Men's Shoes - Black/Bl”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Men's Shoes - Black/Black/Black @ ”."
+            }
+          ],
+          "evidence": "Nike Saudi listing identifies Air Max 270 men's shoes and colorway."
+        },
+        {
+          "id": "46a80718a843d01eac530058",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Men's Shoes - Cargo Kh”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Men's Shoes - Cargo Khaki/Obsidian”."
+            }
+          ],
+          "evidence": "Nike Saudi listing identifies Air Max 270 men's shoes and colorway."
+        },
+        {
+          "id": "14adf0027a34de4dff0c8361",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Men's Shoes - White/Wh”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Men's Shoes - White/White/Black | ”."
+            }
+          ],
+          "evidence": "Nike Saudi listing identifies Air Max 270 men's shoes and colorway."
+        },
+        {
+          "id": "c20b7bd2c97ea32083d2e6d1",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Women's Shoes - Black/”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Women's Shoes - Black/White/Anthra”."
+            }
+          ],
+          "evidence": "Nike Saudi listing identifies Air Max 270 women's shoes and colorway."
+        },
+        {
+          "id": "f2b2a6acb8bf6c453d7adb20",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Women's Shoes - White/”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Women's Shoes - White/Pale Ivory/M”."
+            }
+          ],
+          "evidence": "Nike Saudi listing identifies Air Max 270 women's shoes and colorway."
+        },
+        {
+          "id": "a925b2f0ad932e65762219b6",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Older Kids' Shoes | Ni”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Older Kids' Shoes | Nike Saudi Off”."
+            }
+          ],
+          "evidence": "Nike Saudi listing identifies Air Max 270 older kids' shoes."
+        },
+        {
+          "id": "52bbf831f1bc8cece86a8933",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Older Kids' Shoes - Bl”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Buy Nike Air Max 270 Older Kids' Shoes - Black/Lightnin”."
+            }
+          ],
+          "evidence": "Nike Saudi listing identifies Air Max 270 older kids' shoes and colorway."
+        }
+      ],
+      "judgeRationale": "Nike Air Max 270 shoe listings identify the requested model; gender, age range, and color are stated variants, not frozen constraints."
+    },
+    {
+      "caseId": 4,
+      "candidates": [
+        {
+          "id": "ff85cb20f3e2455e8acdbbc1",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Kérastase Genesis Hair Serum, Leave-In Conditioner, For Hair Fall, With Caffeine, Anti-Chute Fortifi”."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Kérastase Genesis Hair Serum, Leave-In Conditioner, For Hair Fall, With Caffeine, Anti-Chute Fortifi”."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “ Anti-Chute Fortifiant, 90ml | LOOKFANTASTIC Buy Kérastase Gene”."
+            }
+          ],
+          "evidence": "Title/description identify Kérastase Genesis Anti-Chute Fortifiant hair serum 90ml as retail listing."
+        },
+        {
+          "id": "006463fa205c5cb8cd9e106c",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Chute Fortifiant - 90ml KERASTASE · Volume · 90ml · When will I get ”."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Genesis Serum Anti-Chute Fortifiant - 90ml KERASTASE · Volume · 90ml ·”."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Anti-Chute Fortifiant - 90ml KERASTASE · Volume · 90ml · When w”."
+            }
+          ],
+          "evidence": "Title names Genesis Serum Anti-Chute Fortifiant 90ml; description identifies KERASTASE and delivery details."
+        },
+        {
+          "id": "459ca47e75f99a0eed034815",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Kérastase Genesis Fortifying Anti Hairfall Serum 90ml Kérastase Genesis Fortifying Anti Hairfall Ser”."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Kérastase Genesis Fortifying Anti Hairfall Serum 90ml Kérastase Genesis Fortifying Anti Hairfall Ser”."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “ing Anti Hairfall Serum 90ml Kérastase Genesis Fortifying Anti ”."
+            }
+          ],
+          "evidence": "Title identifies Kérastase Genesis Fortifying Anti Hairfall Serum 90ml, a semantic match."
+        },
+        {
+          "id": "819125f506f401008d923ba2",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Kérastase Genesis Serum Anti-Chute Fortifiant | [URL removed] The hair feels silky smooth after usin”."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Description identifies Genesis Defense Thermique application guidance, not the requested serum."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Title/description do not establish size 90ml."
+            }
+          ],
+          "evidence": "Description instead gives application guidance for Genesis Defense Thermique, a different treatment."
+        },
+        {
+          "id": "2202e30f52eac63d10245040",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Fortifiant Hair Serum - Kerastase 97% LESS HAIR FALL DUE TO BREAKAGE”."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title/description do not establish product Genesis Serum Anti-Chute Fortifiant."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Title/description do not establish size 90ml."
+            }
+          ],
+          "evidence": "Related Genesis Fortifiant hair serum; Anti-Chute identity and 90ml are not established."
+        },
+        {
+          "id": "9d04240fd0696fd9e4ccfdb5",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “KÉRASTASE Genesis Sérum Anti-Chute Fortifiant - 90ml USA Available for shipping: Hair Loss Treatment”."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “KÉRASTASE Genesis Sérum Anti-Chute Fortifiant - 90ml USA Available for shipping: Hair Loss Treatment”."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Anti-Chute Fortifiant - 90ml USA Available for shipping: Hair L”."
+            }
+          ],
+          "evidence": "Title names Kérastase Genesis Sérum Anti-Chute Fortifiant 90ml; description says available for shipping."
+        },
+        {
+          "id": "8803c3d81458e624f7052be8",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “in United Arab Emirates Kerastase, Hair Treatments Trending Kérastas”."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Shop Kérastase Genesis Serum Anti-Chute Fortifiant 90ml Online in United Arab Emirate”."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “m Anti-Chute Fortifiant 90ml Online in United Arab Emirates Ker”."
+            }
+          ],
+          "evidence": "Title/description identify Genesis Serum Anti-Chute Fortifiant 90ml as online shop listing."
+        },
+        {
+          "id": "0a29bba9134055de502983c6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Sérum Anti Chute Fortifiant - Kérastase Genesis Serum Resultados: de producto(s) - · Fortifying seru”."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Sérum Anti Chute Fortifiant - Kérastase Genesis Serum Resultados: de producto(s) - · Fortifying seru”."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Title/description do not establish size 90ml."
+            }
+          ],
+          "evidence": "Spanish title/description identify Kérastase Genesis fortifying anti-hair-loss serum, but omit size."
+        },
+        {
+          "id": "857dd2057af82ab0b9b4b384",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “KERASTASE Genesis Serum Anti-Chute Fortifian”."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “KERASTASE Genesis Serum Anti-Chute Fortifiant 90ml Shop online from noon UAE – y”."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “m Anti-Chute Fortifiant 90ml Shop online from noon UAE – your o”."
+            }
+          ],
+          "evidence": "Title identifies Kérastase Genesis Serum Anti-Chute Fortifiant 90ml; noon UAE listing details are generic."
+        },
+        {
+          "id": "8927e819366eb048f953afb9",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Kerastase Genesis Serum Anti-Chute Fortifian”."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Kerastase Genesis Serum Anti-Chute Fortifiant Hair Serum 90ml Buy Genesis Serum ”."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “e Fortifiant Hair Serum 90ml Buy Genesis Serum Anti-Chute Forti”."
+            }
+          ],
+          "evidence": "Title identifies Kerastase Genesis Anti-Chute Fortifiant hair serum 90ml; FACES KSA offer named."
+        }
+      ],
+      "judgeRationale": "Require Anti-Chute Fortifiant identity and 90ml evidence; do not substitute other Genesis treatments or infer missing size."
+    },
+    {
+      "caseId": 5,
+      "candidates": [
+        {
+          "id": "96e296e7f2e07da7caabb2a7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title/description names ديزل (Diesel)."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “بنطلونات جينز للرجال من ديزل في السعودية | خصم 30-75% | الرياض وجدة | نون تسوق بنطلونات جينز للرجال ”."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Title/description do not establish productType jeans."
+            }
+          ],
+          "evidence": "Arabic title/description identify Diesel men's jeans, but not D-Strukt."
+        },
+        {
+          "id": "c62f276618a16a0171edef8c",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title/description names ديزل (Diesel)."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Arabic title identifies D-Luster jeans, not the requested D-Strukt."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title/description identifies jeans (جينز)."
+            }
+          ],
+          "evidence": "Arabic title identifies Diesel D-Luster jeans, not D-Strukt."
+        },
+        {
+          "id": "bab64346cb31d526f748d3ef",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Diesel Jeans : Shop Online At Best Prices”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Diesel Jeans : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed] diesel jeans : Shop o”."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Title/description do not establish productType jeans."
+            }
+          ],
+          "evidence": "Broad Diesel jeans shop page does not establish D-Strukt."
+        },
+        {
+          "id": "73bf6a78fb76f649a4076046",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Diesel UAE Men's dstrukt fit Jeans Slim J”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Jeans Slim Jeans - 2019 D-Strukt · AED 725.00 · Add to Wish List · ”."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “l UAE Men's dstrukt fit Jeans Slim Jeans - 2019 D-Strukt · AED 7”."
+            }
+          ],
+          "evidence": "Title/description identify men's D-Strukt jeans and priced entries, but group multiple items."
+        },
+        {
+          "id": "c9dcf3095969d439e4f023f0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title/description names ديزل (Diesel)."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “ديزل الرجال جينز في السعودية أونلاين - نمشي تسوق آحدث ديزل جينز في الرياض٬ جدة٬ وكل السعودية - ✓ احص”."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Title/description do not establish productType jeans."
+            }
+          ],
+          "evidence": "Arabic title/description identify Diesel men's jeans, without model evidence."
+        },
+        {
+          "id": "62b6eac21ed6ec355b1f11f5",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Diesel Men's Denim online | Saudi Arabia ”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “eans Regular Waist 2019 D-Strukt · SAR 1,550.00 · Slim Jeans Regula”."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “ine | Saudi Arabia Slim Jeans Regular Waist 2019 D-Strukt · SAR ”."
+            }
+          ],
+          "evidence": "Description identifies 2019 D-Strukt jeans and multiple prices, not one individual variant offer."
+        },
+        {
+          "id": "88899ed41ebe8d6d9536f842",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “im Jeans | Light Blue | Diesel 2019 D-Strukt Check out 2019 D-Str”."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “ight Blue | Diesel 2019 D-Strukt Check out 2019 D-Strukt, Men's Sli”."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title/description states “Men's Slim Jeans | Light Blue | Diesel 2019 D-Struk”."
+            }
+          ],
+          "evidence": "Title/description identify Diesel 2019 D-Strukt men's slim jeans in light blue with buy listing."
+        }
+      ],
+      "judgeRationale": "Require Diesel D-Strukt specifically; broad jeans listings remain partial and explicit other cuts fail."
+    }
+  ]
+}

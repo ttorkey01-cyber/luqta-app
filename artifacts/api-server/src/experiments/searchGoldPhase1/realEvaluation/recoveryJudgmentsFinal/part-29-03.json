@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 29,
+      "candidates": [
+        {
+          "id": "26a5ffb0fb461202378727d7",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies mules."
+            }
+          ],
+          "evidence": "In-stock $119 mules; neither a sneaker nor evidence of resemblance to Air Max 270."
+        },
+        {
+          "id": "488fd09c646a0f6eb037cf85",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies sneakers."
+            }
+          ],
+          "evidence": "In-stock $119 sneakers are a shoe alternative, but packet gives no Air Max 270 resemblance or comparable price."
+        },
+        {
+          "id": "520f1a3b3d51d488ea72ad20",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies flat sandals."
+            }
+          ],
+          "evidence": "In-stock $119 sandals, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "e3f0550feb170810652a796f",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies sneakers."
+            }
+          ],
+          "evidence": "In-stock race-runner sneakers are a shoe alternative; no Air Max 270 comparison or comparable price is supplied."
+        },
+        {
+          "id": "8ab52cdd570e3a5cbb56490b",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title and description identify sandals."
+            }
+          ],
+          "evidence": "In-stock $119 sandals, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "7c3183e35b8c32d116dd7603",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies sneakers."
+            }
+          ],
+          "evidence": "In-stock race-runner sneakers are a shoe alternative; no Air Max 270 comparison or comparable price is supplied."
+        },
+        {
+          "id": "1a077cd9e6d79cbac203cd9a",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies loafers."
+            }
+          ],
+          "evidence": "In-stock $131 loafers, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "47ae0596e5724027d8aeebbd",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies pumps."
+            }
+          ],
+          "evidence": "In-stock $131 pumps, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "4b0b8765375d9879f65d9422",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies loafers."
+            }
+          ],
+          "evidence": "In-stock $119 loafers, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "64dd1aef676e96f2fe903381",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies pumps."
+            }
+          ],
+          "evidence": "In-stock $131 pumps, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "36056e322e55740b99fcabb3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies loafers."
+            }
+          ],
+          "evidence": "In-stock $119 loafers, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "428f50268163c1a7189675d7",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies loafers."
+            }
+          ],
+          "evidence": "In-stock $119 loafers, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "1f01c94b3bab837e827b0599",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies pumps."
+            }
+          ],
+          "evidence": "In-stock $119 slingback pumps, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "11a98af72523fa96f2aa5d41",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies Derby shoes."
+            }
+          ],
+          "evidence": "In-stock $515 Derby shoes, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "98913ff06c179287b079eae0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies high-top sneakers."
+            }
+          ],
+          "evidence": "In-stock $119 sneakers are a shoe alternative, but packet gives no Air Max 270 resemblance or comparable price."
+        },
+        {
+          "id": "2b77c7ac0a26edb0b4de0f0f",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies low-top sneakers."
+            }
+          ],
+          "evidence": "In-stock $183 low-top sneakers are a shoe alternative, but packet gives no Air Max 270 resemblance or comparable price."
+        },
+        {
+          "id": "1ffe8791fe1a6c1530c6e035",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies sneakers."
+            }
+          ],
+          "evidence": "In-stock $119 sneakers are a shoe alternative, but packet gives no Air Max 270 resemblance or comparable price."
+        },
+        {
+          "id": "245d45895bc386a9e82dd784",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies espadrille loafers."
+            }
+          ],
+          "evidence": "In-stock $240 loafers, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "ca46c449751b7150273553ab",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies driver loafers."
+            }
+          ],
+          "evidence": "In-stock $139 loafers, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "1d8b3a42ac384a72805321ac",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies low-top sneakers."
+            }
+          ],
+          "evidence": "In-stock $145 low-top sneakers are a shoe alternative, but packet gives no Air Max 270 resemblance or comparable price."
+        },
+        {
+          "id": "d9648682d15e71067c02fecf",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies espadrille flats."
+            }
+          ],
+          "evidence": "In-stock $119 flats, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "7bac70a1f37a450fa9b757b1",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies Nike sneakers."
+            }
+          ],
+          "evidence": "In-stock $119 Nike sneakers are an alternative, but packet does not establish Air Max 270 resemblance or a lower comparable price."
+        },
+        {
+          "id": "ffa65e6e868aa9a696a238c5",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies loafers."
+            }
+          ],
+          "evidence": "In-stock $119 loafers, not a sneaker-style alternative to Air Max 270."
+        },
+        {
+          "id": "961c7a5628fc4abaf159827b",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Category is shoes; title identifies slip-on sneakers."
+            }
+          ],
+          "evidence": "In-stock $131 sneakers are a shoe alternative, but packet gives no Air Max 270 resemblance or comparable price."
+        },
+        {
+          "id": "41e5297c3762e917619be68e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "Category says shoes, but this is a similarity-list article with no individual product offer."
+            }
+          ],
+          "evidence": "Title describes a list of similar shoes, but packet provides no specific inventory item, offer, or price."
+        },
+        {
+          "id": "9424e7cdb9cb81168736ec98",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "Category says shoes, but this is a general online-shopping page with no individual product offer."
+            }
+          ],
+          "evidence": "Arabic title references Nike Air Max 270 shopping, but packet gives no specific alternative item, offer, or price."
+        }
+      ],
+      "judgeRationale": "The packet lists many in-stock shoes, including sneakers, but gives no comparable Air Max 270 offer or evidence of lower price; sneaker alternatives are therefore only partially relevant, while other footwear styles and non-offer pages do not satisfy the alternative request."
+    }
+  ]
+}

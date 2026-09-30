@@ -1,0 +1,484 @@
+{
+  "schemaVersion": 1,
+  "packet": 2,
+  "cases": [
+    {
+      "caseId": 6,
+      "query": "Apple AirPods Pro 2",
+      "intended": "Apple AirPods Pro second generation earbuds",
+      "hard": [
+        {
+          "field": "brand",
+          "op": "eq",
+          "value": "Apple"
+        },
+        {
+          "field": "model",
+          "op": "eq",
+          "value": "AirPods Pro 2"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": "AirPods Pro second generation, not original Pro or a case",
+      "useful": "A source-backed second-generation AirPods Pro offer",
+      "irrelevant": "First generation, cases or generic earbuds labeled exact",
+      "exactRequired": true,
+      "alternativeAcceptable": false,
+      "candidates": [
+        {
+          "id": "bdfbe6d19dc6e926547e021a",
+          "title": "Apple AirPods Pro 2 Wireless Earbuds, Bluetooth Headphones, Active Noise Cancellation, Hearing Aid Feature, Transparency, Personalized Spatial Audio, High-Fidelity Sound, H2 Chip, USB-C Charging : Buy Online at Best Price in KSA - Souq is now [URL removed]: Electronics",
+          "description": "Apple AirPods Pro 2 Wireless Earbuds, Bluetooth Headphones, Active Noise Cancellation, Hearing Aid Feature, Transparency, Personalized Spatial Audio, High-Fidelity Sound, H2 Chip, USB-C Charging : <strong>Buy Online at Best Price in KSA</strong> - Souq is now ...",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:37.839Z"
+        },
+        {
+          "id": "d803a59a54038d737591e815",
+          "title": "آبل إيربودز برو الجيل الثاني مع ماج سيف ، تايب سي، أبيض - إكسترا",
+          "description": "اشتري آبل إيربودز برو الجيل الثاني مع ماج سيف ، تايب سي، أبيض من اكسترا اليوم! .",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:37.839Z"
+        },
+        {
+          "id": "c472fa230bb5dfa480e91bd1",
+          "title": "Apple AirPods Pro 2 price in Saudi Arabia | Compare Prices",
+          "description": "For those of you who would like to try something out of Apple and Samsung, there is the Sony WF-1000XM4 and Jabra Elite 7 Pro you can check out. As the Apple AirPods Pro 2 release date Saudi Arabia is <strong>not here yet</strong>, you still have some time to ...",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:37.839Z"
+        },
+        {
+          "id": "959c56ef03017e145e82b428",
+          "title": "Apple airpods pro KSA | 30-75% OFF | Riyadh, Jeddah | noon",
+          "description": "Ready to get the very best sound experience? You’ll find the Apple AirPods Pro 2nd Generation in Saudi Arabia right here at noon. Hardware and software required include supported Apple such as iPhone, iPad, Mac and Apple Watch, running the latest iOS version.",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:37.839Z"
+        },
+        {
+          "id": "6adffc52ee0f0e55e49e8a83",
+          "title": "Apple Airpods Pro 2nd Generation With Magsafe Charging Case, Bluetooth 5.3 & Apple H2 Chip, Up to 6 Hours of Power, Personalized Spatial Audio, Upgraded Active Noise Cancellation, White | MQD83QM/A Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca",
+          "description": "Apple Airpods Pro 2nd Generation With Magsafe Charging Case, Bluetooth 5.3 &amp; Apple H2 Chip, Up to 6 Hours of Power, Personalized Spatial Audio, Upgraded Active Noise Cancellation, White | <strong>MQD83QM/A model MQD83QM/A Headphones</strong>",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:37.839Z"
+        },
+        {
+          "id": "c7c6a91429ec6a22f22ea124",
+          "title": "تسوق ابل وAirPods Pro (الجيل الثاني) مع علبة MagSafe (USB–C) أونلاين في السعودية",
+          "description": "Conversation Awareness lowers media volume and enhances voices of people in front of you, all while reducing background noise to make it easier for you to engage with people nearby when wearing AirPods Pro. Up to 2x more Active Noise Cancellation than the previous-generation AirPods Pro, so you,ll h",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:37.839Z"
+        },
+        {
+          "id": "7cd968d3c2c3631040ca5f3e",
+          "title": "Apple AirPods Pro 2nd Gen Earbuds Bluetooth (Device)/MagSafe Charging Case White - Jarir Bookstore KSA",
+          "description": "Buy Apple AirPods Pro 2nd Gen Earbuds Built-in Microphone Apple H2 Chip, Cord-free Earbuds, Sweat and Water Resistant (IPX4) White Earbuds Headsets Speakers, Headsets &amp; Gadgets at <strong>Jarir Bookstore Saudi Arabia KSA</strong>.",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:37.839Z"
+        },
+        {
+          "id": "ab60a08640c1eeea756ebfa7",
+          "title": "Apple AirPods Pro 2 Wireless Earbuds, Bluetooth Headphones, Active Noise Cancellation, Hearing Aid Feature, Transparency, Personalized Spatial Audio, High-Fidelity Sound, H2 Chip, USB-C Charging White | Best Price KSA | Riyadh, Jeddah",
+          "description": "AirPods Pro 2 Wireless Earbuds, Bluetooth Headphones, Active Noise Cancellation, Hearing Aid Feature, Transparency, Personalized Spatial Audio, High-Fidelity Sound, H2 Chip, USB-C Charging White ... Home and KitchenLarge AppliancesSmall AppliancesStorageFurnitureLightingCookwareBedroom FurnitureHome",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:37.839Z"
+        },
+        {
+          "id": "c61867b1b056430633aca037",
+          "title": "Used Apple Airpods Pro 2",
+          "description": "Ready for an exceptional buying and selling experience · All devices and more on SOUM. Download the app now",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:37.839Z"
+        },
+        {
+          "id": "cf70d113ddafe282137dd853",
+          "title": "Apple AirPods Pro 2 Wireless Earbuds, Bluetooth Headphones, Active Noise Cancellation, Hearing Aid Feature, Transparency, Personalized Spatial Audio, High-Fidelity Sound, H2 Chip, USB-C Charging : Buy Online at Best Price in KSA - Souq is now [URL removed]: Electronics",
+          "description": "Apple AirPods Pro 2 Wireless Earbuds, Bluetooth Headphones, Active Noise Cancellation, Hearing Aid Feature, Transparency, Personalized Spatial Audio, High-Fidelity Sound, H2 Chip, USB-C Charging : Buy Online at Best Price in KSA - Souq is now [URL removed]: Electronics",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:37.839Z"
+        }
+      ]
+    },
+    {
+      "caseId": 7,
+      "query": "أبي شنطة سودا كبيرة أقل من 300 ريال",
+      "intended": "large black handbag",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "handbag"
+        },
+        {
+          "field": "color",
+          "op": "eq",
+          "value": "black"
+        },
+        {
+          "field": "priceSAR",
+          "op": "lt",
+          "value": 300
+        }
+      ],
+      "preferences": [
+        {
+          "field": "size",
+          "value": "large; subjective until source specifies dimensions"
+        }
+      ],
+      "expectedIdentity": null,
+      "useful": "A black bag below 300 SAR; large size supported where possible",
+      "irrelevant": "Red bag, 300+ SAR or non-bag",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": []
+    },
+    {
+      "caseId": 8,
+      "query": "أبغى ساعة رجالية بحدود 500 ريال",
+      "intended": "men's watch around 500 SAR",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "watch"
+        },
+        {
+          "field": "audience",
+          "op": "eq",
+          "value": "men"
+        }
+      ],
+      "preferences": [
+        {
+          "field": "approximatePriceSAR",
+          "value": 500
+        }
+      ],
+      "expectedIdentity": null,
+      "useful": "A men's watch around the preferred budget; farther prices clearly disclosed",
+      "irrelevant": "Women's-only watch or watch strap",
+      "exactRequired": false,
+      "alternativeAcceptable": true,
+      "candidates": [
+        {
+          "id": "83457359a2209698b1751f9e",
+          "title": "Buy Luxury Watches Online | Shop Watches for Men at AlHomaidhi Group Saudi Arabia",
+          "description": "<strong>AlHomaidhi Group delivers premium luxury watches online to major cities across Saudi Arabia</strong>, including Riyadh, Jeddah, Madina, Makkah, Tabuk, Yanbu, Taif, Qaseem, Dammam, Alkhobar, Dahran, Jubail, Al Ahsa, Hail, and Hafar Al Batin.",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:49.619Z"
+        },
+        {
+          "id": "705da1ff95c153578fe92032",
+          "title": "تسوق ساعات رجالية في السعودية | اناس",
+          "description": "الموسم الجديد لارفي <strong>ساعة PEA001RS بحركة مايوتا أوتوماتيكية، 45 × 40 مم 2,500 ر.س</strong>.",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:46.545Z"
+        },
+        {
+          "id": "f9f5b33768a249052dd539bc",
+          "title": "IWC Schaffhausen Portuguese IW5001-01 Silver Dial 18K Rose Gold Alligator Leather Men's Wristwatch 42.30 mm",
+          "description": "Rooted in nautical precision, the IWC Portuguese IW5001 01 reflects a watchmaker’s pursuit of clarity, balance, and enduring craft. Its 42.3 mm case, rendered in warm 18K rose gold, frames a silver dial that champions legibility without sacrificing elegance. Slim Arabic numerals, a railway style min",
+          "brand": "IWC",
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": 16236,
+          "currency": "USD",
+          "condition": "unknown",
+          "location": null,
+          "availability": "in_stock",
+          "updatedAt": null
+        },
+        {
+          "id": "8ff625cf536976d1fdf9f313",
+          "title": "Rolex Cosmograph Daytona 116520 Black Dial Stainless Steel Men's Wristwatch 40 mm",
+          "description": "Built for speed but made for everyday, this Rolex Daytona balances sport and style with a bold black dial and legendary precision. A true icon on the wrist.",
+          "brand": "Rolex",
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": 26810,
+          "currency": "USD",
+          "condition": "used",
+          "location": null,
+          "availability": "in_stock",
+          "updatedAt": null
+        },
+        {
+          "id": "852d10eb7a3f939ce79e5a57",
+          "title": "طقم ساعة رجالية : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed]",
+          "description": "طقم ساعة رجالية : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now [URL removed]",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:46.545Z"
+        },
+        {
+          "id": "8d9f296d385573098a18a252",
+          "title": "350 To 700 SAR - Men's Watches / Men's Fashion : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed]",
+          "description": "350 to 700 SAR - Men&#x27;s Watches / Men&#x27;s Fashion : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now [URL removed]",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:46.545Z"
+        },
+        {
+          "id": "d82f3dad37482048d34be936",
+          "title": "Watches for Men | Shop Luxury Men's Watches Online in Saudi",
+          "description": "Explore a curated collection of luxury watches for men in KSA (Kingdom of Saudi Arabia). Elevate your style with top brands and premium timepieces designed to make a statement.",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:46.545Z"
+        },
+        {
+          "id": "2d849cb72e4279a5e48b19a5",
+          "title": "Men's Watches & Accessories KSA | Best Price Offers | Riyadh, Jeddah",
+          "description": "Biggest selection of Men&#x27;s Watches &amp; Accessories in KSA ✓ Secure Shopping ✓ 100% Contactless ✓ Fast Shipping ✓ Cash on Delivery ✓ Easy Free Returns. Shop Now",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:46.545Z"
+        },
+        {
+          "id": "6daf6ea40fb8d9ba76cdc45c",
+          "title": "Buy Best Men Watches Online: 35-75% OFF, Riyadh, Jeddah KSA",
+          "description": "On the other hand, automatic and mechanical styles are known for their sleek style and longevity. Ultimately, the decision on which type to choose will be determined by your preference, budget and needs. At noon, finding the best men’s watches in Saudi Arabia is easy, whichever movement type you cho",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:46.545Z"
+        },
+        {
+          "id": "d91babacc098736c207fb7a4",
+          "title": "Watches - Men - Fashion: Buy Online at Best Prices in Saudi | Souq is now [URL removed]",
+          "description": "Shop online for Watches - Men: Fashion from a huge selection of popular items in Saudi. Souq is now [URL removed]. Free shipping &amp; Cash on delivery available on eligible purchase.",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:46.545Z"
+        }
+      ]
+    },
+    {
+      "caseId": 9,
+      "query": "أبي سماعات أصلية أقل من 400 ريال",
+      "intended": "genuine earbuds/headphones under 400 SAR",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "audio headphones or earbuds"
+        },
+        {
+          "field": "priceSAR",
+          "op": "lt",
+          "value": 400
+        },
+        {
+          "field": "authenticity",
+          "op": "eq",
+          "value": "original; source evidence required"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "Under-budget audio with verifiable genuine-brand evidence; abstain on authenticity otherwise",
+      "irrelevant": "Unverified authenticity claimed as original, 400+ SAR or a phone",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": []
+    },
+    {
+      "caseId": 10,
+      "query": "دور لي جزمة بيضاء مقاس EU 42",
+      "intended": "white shoes in EU size 42",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "shoes"
+        },
+        {
+          "field": "color",
+          "op": "eq",
+          "value": "white"
+        },
+        {
+          "field": "size",
+          "op": "eq",
+          "value": "EU 42"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "White shoes with explicitly verified EU 42 size",
+      "irrelevant": "Unknown size system, EU 41/43 or another color",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": [
+        {
+          "id": "1c888f9a0705c310d6836503",
+          "title": "White Shoes | Buy White Sneakers for Men & Women in KSA | SSS",
+          "description": "Discover the white shoes collection designed to match any outfit with a clean and timeless look. Perfect for casual wear, work, or daily activities, white sneakers offer versatility and effortless style. At Sun &amp; Sand Sports, explore a wide range of white shoes from top brands suitable for your",
+          "brand": null,
+          "productType": null,
+          "category": "shoes",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:56.000Z"
+        },
+        {
+          "id": "2fe6b99d08a95381f3c43c46",
+          "title": "حذاء ابيض رجالي | تسوق شوز ابيض للرجال اونلاين في السعودية | الشمس والرمال",
+          "description": "تسوق للرجال سنيكرز وجزمة بيضاء، وبوت وصندل ابيض، اديداس و نايك وبوما وغيرها اونلاين في الرياض والسعودية من الشمس والرمال للرياضة - الدفع عند الإستلام - إرجاع مجاني",
+          "brand": null,
+          "productType": null,
+          "category": "shoes",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:44:56.000Z"
+        }
+      ]
+    }
+  ]
+}

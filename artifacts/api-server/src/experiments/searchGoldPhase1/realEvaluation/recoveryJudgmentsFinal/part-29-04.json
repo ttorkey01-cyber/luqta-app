@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 29,
+      "candidates": [
+        {
+          "id": "d6b1356a5df20d15bf73eb8b",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies sneakers and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Nike Air Jordan sneakers, size 47.5, at $119. A distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "9b78f844d27225114a9a19b7",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies low-top sneakers and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Balenciaga Race Runner low-top sneakers, size 39, at $133. This is a distinct shoe offer, not an Air Max 270; no comparable reference price is supplied."
+        },
+        {
+          "id": "adcb8947b677de059c09196e",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies pumps and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Saint Laurent leather pumps, size 39, at $133. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "a09c1a4f11947e3dbe7bfeb0",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies pool slides and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Axel Arigato pool slides, size 42, at $119. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "faee4569323be61857bf8c45",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies ballet flats and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Roger Vivier ballet flats, size 36, at $119. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "b613b3e63ca6626f28ec1fec",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies loafers and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Tod's loafers, size 36.5, at $119. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "46d66a717a84f07320d3925d",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies pool slides and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Axel Arigato pool slides, size 44, at $119. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "fa2721d7c38bf2b9ce47cac5",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies sneakers and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Burberry Gauden sneakers, size 36, at $119. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "393fba670550f103acd7c5e7",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies sneakers and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Yeezy x Adidas Boost 350 V2 sneakers, size 39 1/3, at $131. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "784f827d10e2d1ac4ea40c80",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies sandals and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Gianvito Rossi ankle-strap sandals, size 40, at $119. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "1399666695d733173d0382b4",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies slip-on sneakers and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Giorgio Armani slip-on sneakers, size 39, at $131. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "aaf9b9b935944321367b2720",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies flat sandals and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Giuseppe Zanotti flat sandals, size 40, at $131. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "ec55ccadea48427bcdefce81",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies flat slides and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Miu Miu flat slides, size 37.5, at $131. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "3992cf34ed9ea77404a72998",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies lace-up sneakers and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Balenciaga Race Runner lace-up sneakers, size 39, at $126. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "ec9d7b04a45970a4fcc54da7",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies ballet flats and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Tory Burch ballet flats, size 39.5, at $119. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "642ddc5eae26405924abf6ff",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies pumps and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Valentino pointed-toe pumps, size 38.5, at $140. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "7099978eb0d13e1940c86e6d",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies mid-top sneakers and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Air Jordan 1 Mid sneakers, size 42, at $119. This is not the requested Air Max 270 model; no comparable reference price is supplied."
+        },
+        {
+          "id": "e43e505dbe3fce154375736e",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies slingback pumps and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Giuseppe Zanotti slingback pumps, size 37.5, at $119. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "bd578c7cebed34a59a64e1aa",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies loafers and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Giuseppe Zanotti loafers, size 43, at $119. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "0a7dc14ada831391397ba857",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies sandals and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists new Loriblu ankle-strap sandals, size 36.5, at $131. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "f752cbef80e21297b7975076",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies high-top sneakers and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Air Jordan 1 Retro OG high-top sneakers, size 45, at $119. This is not the requested Air Max 270 model; no comparable reference price is supplied."
+        },
+        {
+          "id": "1f7b73346bf4cc1285374a10",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies lace-up sneakers and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Balenciaga Race Runner lace-up sneakers, size 38, at $160. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "d7f57ec786b38a0e29d35411",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies loafers and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Gucci loafers, size 40.5, at $149. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        },
+        {
+          "id": "a9a3e68c721845b7c46e0dd3",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies ballet flats and packet category is shoes."
+            }
+          ],
+          "evidence": "Packet lists used Chloe ballet flats, size 35, at $131. This is a distinct shoe offer; no Air Max 270 identity or comparable reference price is established."
+        }
+      ],
+      "judgeRationale": "All candidates are individually listed shoe offers, satisfying the frozen useful criterion of a clearly labeled shoe alternative. No candidate is an Air Max 270, and the packet supplies no comparable Air Max 270 offer price, so no same-item savings claim is supported.",
+      "inventoryAvailabilityAssessment": "found"
+    }
+  ]
+}

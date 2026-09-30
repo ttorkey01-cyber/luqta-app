@@ -1,0 +1,1053 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 26,
+      "candidates": [
+        {
+          "id": "bab64346cb31d526f748d3ef",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "15e76c44a2886f4b861a461a",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "8ff8c1c2a73756ebee46f189",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "e29ca4cc9d4da66f6dcd1f6c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "1cf49ef0446af0f6ce926b69",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "c9dcf3095969d439e4f023f0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "96e296e7f2e07da7caabb2a7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "c62f276618a16a0171edef8c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        }
+      ],
+      "judgeRationale": "The candidates identify Diesel jeans or Diesel shopping pages, but none provides the required combined SKU; brand is evidenced while the SKU remains unverified."
+    },
+    {
+      "caseId": 27,
+      "candidates": [
+        {
+          "id": "f46a99074e55e666b233dcf3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Candidate text gives different style code DM0211-001."
+            }
+          ],
+          "evidence": "Air Force 1 title/description identifies SKU DM0211-001, a different style code from CW2288-111."
+        },
+        {
+          "id": "041489711fd683ea40e4ea21",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Candidate text gives different style code DM0211-001."
+            }
+          ],
+          "evidence": "Air Force 1 title/description identifies SKU DM0211-001, a different style code from CW2288-111."
+        },
+        {
+          "id": "ce0e56c9cbfa37ac82c43132",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly gives model/style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 and explicitly gives style code CW2288-111."
+        },
+        {
+          "id": "0a36d87ed831137888a6be20",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "60b563d02ff662b8d0afdc32",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly gives model/style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 and explicitly gives style code CW2288-111."
+        },
+        {
+          "id": "0c3f0f38a6b1afc19b866b6c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "cef6d114da616b50c93e84de",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "7098a18c09810bcdd46431e0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "4574fd19e619157b33ffcaa2",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "4f7d8334127ba17a14814e14",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "621ea3d3aaabf754bd2fd645",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly gives model/style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 and explicitly gives style code CW2288-111 (Arabic model-number text)."
+        },
+        {
+          "id": "2fec64cb3849189bb38173b9",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "90fcb2e3511263eec4b198c6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "9ea1812acd77bae3704704f7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "82727869bb76fdf92ff39b30",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "2633d690f7010ca535b11d69",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "e8a69aa56c92cc8233a8a8ac",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "2a84db71e8476cc0b800b1be",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "2d6c3e0ad6351337b52eaa41",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "51a7ac68effbbe50d1d5cf8c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "e77b3521952388967f529d86",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Candidate text gives different style code DM0211-001."
+            }
+          ],
+          "evidence": "Air Force 1 title/description identifies SKU DM0211-001, a different style code from CW2288-111."
+        },
+        {
+          "id": "421a51ee3aae24b2cf079337",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly gives model/style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 and explicitly gives style code CW2288-111."
+        },
+        {
+          "id": "14caa0f54cd7fccd06708552",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "f99a6216cda1a6988c01202b",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly gives model/style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 and explicitly gives style code CW2288-111."
+        }
+      ],
+      "judgeRationale": "Five candidates explicitly identify Nike Air Force 1 style CW2288-111; the remaining records either evidence a different style or omit the required style code."
+    },
+    {
+      "caseId": 28,
+      "candidates": [
+        {
+          "id": "26e8a5763740ae6d46168784",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Description explicitly says over-ear headphones."
+            }
+          ],
+          "evidence": "Description names Shure AONIC 50 and explicitly calls it wireless, active-noise-cancelling over-ear headphones priced similarly to Sony WH-1000XM5."
+        },
+        {
+          "id": "5e596ea8dfa682e256c8eb0f",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones (Sony headset) in Arabic."
+            }
+          ],
+          "evidence": "Title identifies a Sony WH1000XM5 shopping/search page, not a distinct comparable alternative."
+        },
+        {
+          "id": "9cda07d2c040941ca43cec47",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones (Sony headset) in Arabic."
+            }
+          ],
+          "evidence": "Arabic title identifies Sony wireless noise-cancelling headphones, but names no distinct comparable alternative."
+        }
+      ],
+      "judgeRationale": "The Shure AONIC 50 is explicitly described as comparable over-ear noise-cancelling headphones; other candidates are Sony-oriented search/product pages, not clearly labeled alternatives."
+    },
+    {
+      "caseId": 29,
+      "candidates": [
+        {
+          "id": "778f74a025aa87d8af7e45a5",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "814d56ecbe2043fb7d46caf6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "cf1353d09e3d1f7e88bf591f",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "43e1aa5b8cc48db5e175811b",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "055da451157680b0d92cdce7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "03caf63cc88fe56ee236f8dc",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 295 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "eac88a4b3960c688132d52bb",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "3a96766d627ceb776f5275ec",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "b87b4c1117da418e0c957491",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "47093d8a398d2470b295a3fd",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "41e5297c3762e917619be68e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly refers to shoes similar to Nike Air Max 270."
+            }
+          ],
+          "evidence": "Title describes shoes similar to Nike Air Max 270, but the excerpt names no specific alternative product."
+        },
+        {
+          "id": "9424e7cdb9cb81168736ec98",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "974f6238a2b1afa1a19c450d",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "e6ee41092993518e3a234fec",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "3bb87764f83e547261abdad4",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "0b0de8bf143d9d038b36a6e6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "8c06a7f320340e5e27c549e4",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        }
+      ],
+      "judgeRationale": "Candidates show Nike Air Max 270 shoes or an article about similar shoes, but the product listings identify the reference model rather than a distinct alternative; no savings comparison is established."
+    },
+    {
+      "caseId": 30,
+      "candidates": [
+        {
+          "id": "0b866757a33515dfb01c25c9",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies a hair styler or styling tool."
+            }
+          ],
+          "evidence": "Title/description identifies Shark FlexStyle as a Dyson Airwrap alternative."
+        },
+        {
+          "id": "aa8702a05df262188d8484e2",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies a hair styler or styling tool."
+            }
+          ],
+          "evidence": "Title/description identifies a Bellissima tool as a Dyson Airwrap alternative."
+        },
+        {
+          "id": "df4fe9233b3e9365a1a052fd",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies a hair styler or styling tool."
+            }
+          ],
+          "evidence": "Title/description identifies a Conair styling tool as a Dyson Airwrap alternative."
+        },
+        {
+          "id": "2590ab95238abbc3db6e62da",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies a hair styler or styling tool."
+            }
+          ],
+          "evidence": "Title/description identifies Shark FlexStyle as a Dyson Airwrap alternative."
+        },
+        {
+          "id": "60e8fca867be34395e8e4961",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies a hair styler or styling tool."
+            }
+          ],
+          "evidence": "Title/description identifies a Shark multi-styler as a Dyson Airwrap alternative."
+        },
+        {
+          "id": "4761f7c7f1fcfbaf9f6d89f5",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "Excerpt describes a roundup and tool categories, not a specific hair-styler candidate."
+            }
+          ],
+          "evidence": "Title/description describes a Dyson Airwrap dupe roundup and tool categories, but names no specific alternative product."
+        },
+        {
+          "id": "2dac3ef66d9fc3d34f2936c6",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies a hair styler or styling tool."
+            }
+          ],
+          "evidence": "Title/description identifies an FHI Heat styler as a Dyson Airwrap alternative."
+        }
+      ],
+      "judgeRationale": "Most excerpts explicitly identify hair-styling tools as Dyson Airwrap alternatives; the broad roundup names tool categories but no specific alternative product."
+    }
+  ]
+}

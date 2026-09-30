@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 31,
+      "candidates": [
+        {
+          "id": "3d472812f780551d08eb5659",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies this as a HUAWEI WATCH GT 6 Pro."
+            }
+          ],
+          "evidence": "The title identifies a Huawei GT smartwatch, a clearly labeled comparable alternative; it is GT 6 Pro, not GT 5."
+        },
+        {
+          "id": "8f16af9e6e6dcb589a5012ba",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies this as HUAWEI WATCH GT 5."
+            }
+          ],
+          "evidence": "The title explicitly names HUAWEI WATCH GT 5, and the description also identifies the GT 5 46 mm."
+        },
+        {
+          "id": "471848accab703a1edc49c45",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies this as HUAWEI WATCH GT 5 Pro."
+            }
+          ],
+          "evidence": "The title names a GT 5 Pro smartwatch, a clearly labeled related model rather than the base GT 5."
+        },
+        {
+          "id": "0044605334ea15394d4349b3",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The Arabic title identifies a Huawei WATCH GT 5 smart watch."
+            }
+          ],
+          "evidence": "The title names Huawei WATCH GT 5, but the description's color/variant text says 5Pro 46mm, making the precise variant uncertain."
+        },
+        {
+          "id": "3d662804952ecea55ff39234",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title identifies a Huawei Watch GT, though it does not specify a model."
+            }
+          ],
+          "evidence": "The listing title identifies a Huawei Watch GT, but neither title nor description establishes a specific GT model for comparison."
+        },
+        {
+          "id": "38081acb84c02640a938ea05",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies this as HUAWEI WATCH GT 6."
+            }
+          ],
+          "evidence": "The title identifies a GT 6 smartwatch and the description explicitly compares it with HUAWEI WATCH GT 5 46 mm."
+        },
+        {
+          "id": "4b1609b29b8338c44d952be7",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title calls it Huawei Watch GT 5 Pro and the description calls it a smartwatch."
+            }
+          ],
+          "evidence": "The title and description identify a Huawei Watch GT 5 Pro smartwatch, a clearly labeled related model."
+        },
+        {
+          "id": "220e6f9766590c0fac720c57",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The description explicitly identifies the product as a WATCH GT 4 smartwatch."
+            }
+          ],
+          "evidence": "The description explicitly identifies a WATCH GT 4 smartwatch, a clearly labeled related model rather than GT 5."
+        }
+      ],
+      "judgeRationale": "The packet contains several explicitly identified Huawei GT watches, including an explicit GT 5 listing and clearly named related models. The generic GT listing lacks specific-model evidence.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 32,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet; there is no literal SKU evidence to judge."
+    },
+    {
+      "caseId": 33,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet, so no fitment, side, condition, city, or price evidence is available."
+    },
+    {
+      "caseId": 34,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet, so no matching brand, heels type, color, size, or price evidence is available."
+    },
+    {
+      "caseId": 35,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet; there is no OEM or vehicle-fitment evidence to judge."
+    }
+  ]
+}

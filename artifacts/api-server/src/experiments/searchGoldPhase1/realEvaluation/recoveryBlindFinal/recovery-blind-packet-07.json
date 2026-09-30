@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "packet": 7,
+  "cases": [
+    {
+      "caseId": 31,
+      "query": "comparable to Huawei Watch GT 5",
+      "intended": "smartwatch alternative to Huawei Watch GT 5",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "watch"
+        }
+      ],
+      "preferences": [
+        {
+          "field": "referenceModel",
+          "value": "Huawei Watch GT 5"
+        }
+      ],
+      "expectedIdentity": null,
+      "useful": "Clearly labeled comparable smartwatch",
+      "irrelevant": "Watch strap or mismatched model called exact",
+      "exactRequired": false,
+      "alternativeAcceptable": true,
+      "candidates": [
+        {
+          "id": "3d472812f780551d08eb5659",
+          "title": "HUAWEI WATCH GT 6 Pro - HUAWEI KSA",
+          "description": "Data comes from Huawei labs, and is based on the comparison with <strong>HUAWEI WATCH GT 5 Pro</strong> 46 mm.",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:32.396Z"
+        },
+        {
+          "id": "8f16af9e6e6dcb589a5012ba",
+          "title": "HUAWEI WATCH GT 5 - HUAWEI KSA",
+          "description": "More watch faces, including paid watch faces, are available for download from the Watch Face Store. Data comes from Huawei labs, and is based on the comparison between HUAWEI WATCH GT 5 46 mm and <strong>HUAWEI WATCH GT 4</strong> 46 mm.",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:32.396Z"
+        },
+        {
+          "id": "471848accab703a1edc49c45",
+          "title": "HUAWEI WATCH GT 5 Pro - HUAWEI KSA",
+          "description": "Data comes from Huawei labs, and is based on the comparison between HUAWEI WATCH GT 5 Pro 42 mm Ceramic White edition and <strong>HUAWEI WATCH GT 3 Pro Ceramic edition</strong>. Weight data includes the strap.",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:32.396Z"
+        },
+        {
+          "id": "0044605334ea15394d4349b3",
+          "title": "ساعة هواوي WATCH GT 5 الذكية. - دليل سنتر",
+          "description": "ساعة هواوي WATCH GT 5 الذكية، عمر بطارية يصل إلى 14 يومًا، النسخة السعودية مع الضمان المحلي.عمر بطارية يصل إلى 14 يومًا، النسخة السعودية مع الضمان المحلي، - اللون : 5Pro 46mm Titanium - الشحن من : السعودية",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:32.396Z"
+        },
+        {
+          "id": "3d662804952ecea55ff39234",
+          "title": "Huawei Watch Gt : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed]",
+          "description": "Amazon&#x27;s Choicefor &quot;huawei watch gt&quot; 4.14.1 out of 5 stars (13) 50+ bought in past month · Price, product pageSAR 674.95SAR674.95 · FREE delivery Today by 1:12 PM · 4.14.1 out of 5 stars (13) Price, product pageSAR 649.00SAR649.00 · FREE delivery Tomorrow, 31 Jul ·",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:32.396Z"
+        },
+        {
+          "id": "38081acb84c02640a938ea05",
+          "title": "HUAWEI WATCH GT 6 - HUAWEI KSA",
+          "description": "Data comes from Huawei labs, and is based on the comparison between <strong>HUAWEI WATCH GT 6</strong> 46 mm and HUAWEI WATCH GT 5 46 mm.",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:32.396Z"
+        },
+        {
+          "id": "4b1609b29b8338c44d952be7",
+          "title": "Huawei Watch GT 5 Pro price in Saudi Arabia | Compare Prices",
+          "description": "The watch gt 5 pro 46mm smartwatch, sharp-edged design watch, up to 14 days battery life, pro-level sports, ios and android + freebuds 5i earbuds + strap + extra 3 months warranty titanium Uncategorized is manufactured by HUAWEI and was added around September 2024. This version of the Uncategorized",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:32.396Z"
+        },
+        {
+          "id": "220e6f9766590c0fac720c57",
+          "title": "Huawei Watch GT price in Saudi Arabia | Compare Prices",
+          "description": "<strong>WATCH GT 4</strong> 46 mm Smartwatch, 14 Days Battery Life, Science-based Calorie Management, Dual-Band Five-System GNSS Position, Pulse Wave Arrhythmia Analysis, Heartrate Monitor, Android &amp; iOS Green - Phoinix-B19W, PNX-B19 ...",
+          "brand": null,
+          "productType": null,
+          "category": "watches_jewelry",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:32.396Z"
+        }
+      ]
+    },
+    {
+      "caseId": 32,
+      "query": "exact SKU ABC-000-NONEXISTENT-927",
+      "intended": "literal, deliberately unlikely SKU",
+      "hard": [
+        {
+          "field": "sku",
+          "op": "eq",
+          "value": "ABC-000-NONEXISTENT-927"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": "Only the literal SKU, if independently present",
+      "useful": "A provider-backed exact SKU; otherwise honest no-confident-match",
+      "irrelevant": "Any similar token or fabricated exact match",
+      "exactRequired": true,
+      "alternativeAcceptable": false,
+      "candidates": []
+    },
+    {
+      "caseId": 33,
+      "query": "used 2008 Jaguar XF left headlight in Jeddah under 50 SAR",
+      "intended": "2008 Jaguar XF left headlight, used, Jeddah, below 50 SAR",
+      "hard": [
+        {
+          "field": "vehicle",
+          "op": "eq",
+          "value": "Jaguar XF 2008"
+        },
+        {
+          "field": "part",
+          "op": "eq",
+          "value": "left headlight"
+        },
+        {
+          "field": "condition",
+          "op": "eq",
+          "value": "used"
+        },
+        {
+          "field": "city",
+          "op": "eq",
+          "value": "Jeddah"
+        },
+        {
+          "field": "priceSAR",
+          "op": "lt",
+          "value": 50
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "Only if fitment, side, condition, city and current price independently match; otherwise honest abstention",
+      "irrelevant": "Headlight without verified fitment or mismatched side/condition",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": []
+    },
+    {
+      "caseId": 34,
+      "query": "blue size EU 47 women's Diesel heels under 100 SAR",
+      "intended": "women's blue Diesel heels EU47 below 100 SAR",
+      "hard": [
+        {
+          "field": "brand",
+          "op": "eq",
+          "value": "Diesel"
+        },
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "heels"
+        },
+        {
+          "field": "color",
+          "op": "eq",
+          "value": "blue"
+        },
+        {
+          "field": "size",
+          "op": "eq",
+          "value": "EU 47"
+        },
+        {
+          "field": "priceSAR",
+          "op": "lt",
+          "value": 100
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "Only a verified matching size/color/brand/price offer; otherwise abstain",
+      "irrelevant": "Unverified size, other brand or price mismatch",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": []
+    },
+    {
+      "caseId": 35,
+      "query": "Toyota Camry 2018 left headlight OEM 81150-06C90",
+      "intended": "Toyota Camry 2018 left headlight with OEM 81150-06C90",
+      "hard": [
+        {
+          "field": "vehicle",
+          "op": "eq",
+          "value": "Toyota Camry 2018"
+        },
+        {
+          "field": "part",
+          "op": "eq",
+          "value": "left headlight"
+        },
+        {
+          "field": "oem",
+          "op": "eq",
+          "value": "81150-06C90"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": "Exact part number and independently verified vehicle fitment",
+      "useful": "A listing with source-backed OEM and fitment; otherwise abstain",
+      "irrelevant": "Generic Camry headlight asserted compatible without OEM/fitment",
+      "exactRequired": true,
+      "alternativeAcceptable": false,
+      "candidates": []
+    }
+  ]
+}

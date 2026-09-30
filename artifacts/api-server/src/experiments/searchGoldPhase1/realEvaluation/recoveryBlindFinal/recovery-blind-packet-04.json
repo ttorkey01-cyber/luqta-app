@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "packet": 4,
+  "cases": [
+    {
+      "caseId": 16,
+      "query": "Diesel jeans رجالي",
+      "intended": "men's Diesel jeans",
+      "hard": [
+        {
+          "field": "brand",
+          "op": "eq",
+          "value": "Diesel"
+        },
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "jeans"
+        },
+        {
+          "field": "audience",
+          "op": "eq",
+          "value": "men"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "Men's Diesel jeans with source-backed brand and type",
+      "irrelevant": "Women's-only jeans or a different brand",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": [
+        {
+          "id": "e29ca4cc9d4da66f6dcd1f6c",
+          "title": "Diesel Men Jeans Saudi | Best prices",
+          "description": "Diesel Men Jeans deals and price in Saudi Arabia in hundreds of online shops. We will find the best price for you, you save!",
+          "brand": null,
+          "productType": null,
+          "category": "fashion",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:59:30.708Z"
+        },
+        {
+          "id": "15e76c44a2886f4b861a461a",
+          "title": "Shop Diesel Jeans For Men Online in Saudi | Ounass",
+          "description": "Under the creative direction of Glenn Martens since 2020, Diesel stands as a bold alternative to traditional luxury, blending innovation with iconic style. ... CYBER SALE Diesel 2023-D Finitive Jeans in Cotton-blend Denim 950 SAR1,900 SAR50% OFFShare your feedback",
+          "brand": null,
+          "productType": null,
+          "category": "fashion",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:59:30.708Z"
+        },
+        {
+          "id": "dbc37e60c27a509cfa745832",
+          "title": "Buy Diesel Men's Bootcut Jeans Online at desertcart KSA",
+          "description": "Shop Diesel Men&#x27;s Bootcut Jeans online at best prices at desertcart - the best international shopping platform in KSA. ✓FREE Delivery Across KSA. ✓EASY Returns &amp; Exchange.",
+          "brand": null,
+          "productType": null,
+          "category": "fashion",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:59:30.708Z"
+        },
+        {
+          "id": "1cf49ef0446af0f6ce926b69",
+          "title": "Diesel Saudi Arabia Men's Jeans - Skinny, Slim, Straight",
+          "description": "Innovative treatments are used to create our unique, contemporary denim range. Skinny, Slim or Tapered, there is a jeans for you! Shop now on Diesel Saudi Arabia",
+          "brand": null,
+          "productType": null,
+          "category": "fashion",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:59:30.708Z"
+        },
+        {
+          "id": "931a62bf9060d20cbbab901d",
+          "title": "DIESEL Men's Jeans KSA | 30-75% OFF | Riyadh, Jeddah",
+          "description": "Shop for DIESEL Men&#x27;s Jeans on noon. ✓ Secure Shopping ✓ 100% Contactless ✓ Fast Shipping ✓ Cash on Delivery ✓ Easy Free Returns. Shop Now",
+          "brand": null,
+          "productType": null,
+          "category": "fashion",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:59:30.708Z"
+        }
+      ]
+    },
+    {
+      "caseId": 17,
+      "query": "Huawei watch أقل من 700 ريال",
+      "intended": "Huawei watch below 700 SAR",
+      "hard": [
+        {
+          "field": "brand",
+          "op": "eq",
+          "value": "Huawei"
+        },
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "watch"
+        },
+        {
+          "field": "priceSAR",
+          "op": "lt",
+          "value": 700
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "An in-budget Huawei watch",
+      "irrelevant": "Watch accessory, another brand or 700+ SAR",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": []
+    },
+    {
+      "caseId": 18,
+      "query": "black handbag under 200 SAR",
+      "intended": "black handbag below 200 SAR",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "handbag"
+        },
+        {
+          "field": "color",
+          "op": "eq",
+          "value": "black"
+        },
+        {
+          "field": "priceSAR",
+          "op": "lt",
+          "value": 200
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "Black handbag priced strictly below 200 SAR",
+      "irrelevant": "Unknown price, non-black bag or 200+ SAR",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": []
+    },
+    {
+      "caseId": 19,
+      "query": "USB-C charger under 80 SAR",
+      "intended": "USB-C charger below 80 SAR",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "charger"
+        },
+        {
+          "field": "connector",
+          "op": "eq",
+          "value": "USB-C"
+        },
+        {
+          "field": "priceSAR",
+          "op": "lt",
+          "value": 80
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "Source-backed USB-C charger below 80 SAR",
+      "irrelevant": "Micro-USB charger or 80+ SAR",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": []
+    },
+    {
+      "caseId": 20,
+      "query": "perfume over 100 SAR under 300 SAR",
+      "intended": "perfume strictly between 100 and 300 SAR",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "perfume"
+        },
+        {
+          "field": "priceSAR",
+          "op": "gt",
+          "value": 100
+        },
+        {
+          "field": "priceSAR",
+          "op": "lt",
+          "value": 300
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "Perfume priced over 100 and below 300 SAR",
+      "irrelevant": "Non-perfume, 100 or 300 SAR boundary value",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": []
+    }
+  ]
+}

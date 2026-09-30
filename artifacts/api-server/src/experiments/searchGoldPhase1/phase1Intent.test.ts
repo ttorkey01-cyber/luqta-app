@@ -108,6 +108,77 @@ describe("Phase 1 Saudi shopping intent", () => {
     assert.equal(genericModel.model.value, "Galaxy S24");
   });
 
+  it("keeps referenced models as alternative anchors without making them exact requirements", async () => {
+    const fixtureAlternative = await parsePhase1Intent("similar to FixtureBrand ExactModel Z-4 but cheaper");
+    assert.equal(fixtureAlternative.brand.value, "FixtureBrand");
+    assert.equal(fixtureAlternative.model.value, "Z-4");
+    assert.deepEqual(fixtureAlternative.relations.value, ["similar", "cheaper"]);
+    assert.equal(fixtureAlternative.hardRequirements.some((requirement) => requirement.field === "model"), false);
+
+    const nikeAlternative = await parsePhase1Intent("cheaper alternative to Nike Air Max 270 shoes");
+    assert.equal(nikeAlternative.brand.value, "Nike");
+    assert.equal(nikeAlternative.model.value, "Air Max 270");
+    assert.equal(nikeAlternative.productType.value, "shoes");
+    assert.equal(nikeAlternative.budget.value, null);
+    assert.deepEqual(nikeAlternative.relations.value, ["similar", "cheaper"]);
+    assert.equal(nikeAlternative.hardRequirements.some((requirement) => requirement.field === "model"), false);
+
+    const dysonAlternative = await parsePhase1Intent("similar to Dyson Airwrap hair styler");
+    assert.equal(dysonAlternative.brand.value, "Dyson");
+    assert.equal(dysonAlternative.model.value, "Airwrap");
+    assert.equal(dysonAlternative.productType.value, "hair styler");
+    assert.equal(dysonAlternative.hardRequirements.some((requirement) => requirement.field === "model"), false);
+
+    const alternativeWithRequirements = await parsePhase1Intent("similar shoes black size EU 42 under $100");
+    assert.equal(alternativeWithRequirements.productType.value, "shoes");
+    assert.equal(alternativeWithRequirements.hardRequirements.some((requirement) =>
+      requirement.field === "size" && requirement.value === "EU 42",
+    ), true);
+    assert.equal(alternativeWithRequirements.hardRequirements.some((requirement) =>
+      requirement.field === "color" && requirement.value === "black",
+    ), true);
+    assert.equal(alternativeWithRequirements.hardRequirements.some((requirement) =>
+      requirement.field === "budget.max" && requirement.operator === "lt",
+    ), true);
+
+    const sameVariant = await parsePhase1Intent("same FixtureBrand ExactModel Z-4 but cheaper");
+    assert.deepEqual(sameVariant.relations.value, ["exact", "cheaper"]);
+    assert.ok(sameVariant.hardRequirements.some((requirement) =>
+      requirement.field === "model" && requirement.value === "Z-4",
+    ));
+  });
+
+  it("preserves explicitly stated numeric sizes across mixed Arabic and English", async () => {
+    const cases = [
+      { query: "Nike أسود مقاس EU 42", size: "EU 42" },
+      { query: "Nike black size 42", size: "42" },
+      { query: "جزمة Nike 42", size: "42" },
+      { query: "Diesel jeans مقاس 32", size: "32" },
+    ];
+    for (const sample of cases) {
+      const intent = await parsePhase1Intent(sample.query);
+      assert.equal(intent.size.value, sample.size, sample.query);
+      assert.equal(intent.size.evidence, "USER_EXPLICIT", sample.query);
+      assert.ok(intent.hardRequirements.some((requirement) =>
+        requirement.field === "size" && requirement.value === sample.size,
+      ), sample.query);
+    }
+
+    for (const query of ["shoes 2024", "jeans quantity 32", "shoes under 42", "shoes model 42", "shoes for 42"]) {
+      assert.equal((await parsePhase1Intent(query)).size.value, null, query);
+    }
+  });
+
+  it("does not mistake the GTIN-14 label for a model when a valid GTIN follows", async () => {
+    const intent = await parsePhase1Intent("GTIN-14 00012345678905 cheaper offer");
+    assert.equal(intent.gtin14.value, "00012345678905");
+    assert.equal(intent.model.value, null);
+    assert.equal(intent.hardRequirements.some((requirement) => requirement.field === "model"), false);
+    assert.ok(intent.hardRequirements.some((requirement) =>
+      requirement.field === "gtin14" && requirement.value === "00012345678905",
+    ));
+  });
+
   it("trusts contextual LV only through the stable parser, not low-voltage text", async () => {
     const lv = await parsePhase1Intent("دورلي LV handbag");
     assert.equal(lv.brand.value, "Louis Vuitton");

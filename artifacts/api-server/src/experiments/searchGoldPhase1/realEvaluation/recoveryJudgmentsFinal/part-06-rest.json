@@ -1,0 +1,509 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 26,
+      "candidates": [
+        {
+          "id": "bab64346cb31d526f748d3ef",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Diesel jeans."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Generic Diesel jeans page; neither code segment appears."
+            }
+          ],
+          "evidence": "Related Diesel jeans search page, but no individual item or requested SKU is identified."
+        },
+        {
+          "id": "15e76c44a2886f4b861a461a",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Diesel jeans."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No requested SKU segment appears."
+            }
+          ],
+          "evidence": "Diesel men's jeans shopping page, without a specific item or the requested code."
+        },
+        {
+          "id": "8ff8c1c2a73756ebee46f189",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify the official Diesel store and jeans."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No requested SKU segment appears."
+            }
+          ],
+          "evidence": "Diesel store assortment page mentions jeans but gives no individual item or requested SKU."
+        },
+        {
+          "id": "e29ca4cc9d4da66f6dcd1f6c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Diesel men's jeans."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No requested SKU segment appears."
+            }
+          ],
+          "evidence": "Diesel jeans price-comparison page with no specific item or requested SKU."
+        },
+        {
+          "id": "1cf49ef0446af0f6ce926b69",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Diesel men's jeans."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No requested SKU segment appears."
+            }
+          ],
+          "evidence": "General Diesel jeans range page, without a specific item or requested SKU."
+        },
+        {
+          "id": "c9dcf3095969d439e4f023f0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title and description identify Diesel jeans for men."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No requested SKU segment appears."
+            }
+          ],
+          "evidence": "General Diesel men's jeans shopping page; no specific item or requested SKU is shown."
+        },
+        {
+          "id": "96e296e7f2e07da7caabb2a7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title and description identify Diesel men's jeans."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No requested SKU segment appears."
+            }
+          ],
+          "evidence": "General Diesel men's jeans shopping page; no specific item or requested SKU is shown."
+        },
+        {
+          "id": "c62f276618a16a0171edef8c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title and description identify Diesel men's jeans."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "A Diesel jeans style is named, but neither requested SKU segment appears."
+            }
+          ],
+          "evidence": "A Diesel jeans style is named, but the requested SKU is absent and no offer details are supplied."
+        }
+      ],
+      "judgeRationale": "All candidates refer to Diesel jeans, but none source-backs both requested code segments; these are related results, not verified matches."
+    },
+    {
+      "caseId": 27,
+      "candidates": [
+        {
+          "id": "ce0e56c9cbfa37ac82c43132",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike Air Force 1."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Description gives style code CW2288-111."
+            }
+          ],
+          "evidence": "The product text identifies the requested style code and white/white colorway; an individual available offer is not established."
+        },
+        {
+          "id": "60b563d02ff662b8d0afdc32",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike Air Force 1."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description give code CW2288-111."
+            }
+          ],
+          "evidence": "The text names the requested code and white/white variant, but does not establish an individual available offer."
+        },
+        {
+          "id": "0c3f0f38a6b1afc19b866b6c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike Air Force 1."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The general Air Force 1 page does not state code CW2288-111."
+            }
+          ],
+          "evidence": "General Nike Air Force 1 shopping page without the requested style code."
+        },
+        {
+          "id": "cef6d114da616b50c93e84de",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike Air Force 1."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No style code is given; the described black/black variant differs from the requested white/white code's colorway."
+            }
+          ],
+          "evidence": "This is explicitly a black/black Air Force 1, not the requested CW2288-111 white/white variant."
+        },
+        {
+          "id": "621ea3d3aaabf754bd2fd645",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic description identifies Nike as the manufacturer."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Arabic description explicitly gives model number CW2288-111."
+            }
+          ],
+          "evidence": "The description names the requested model number and Nike, but does not establish a current individual available offer."
+        },
+        {
+          "id": "2fec64cb3849189bb38173b9",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike Air Force 1."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Generic Air Force 1 page gives no style code."
+            }
+          ],
+          "evidence": "Generic Nike Air Force 1 shopping page without the requested code or a specific variant."
+        },
+        {
+          "id": "9ea1812acd77bae3704704f7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike Air Force 1."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "General Air Force 1 page gives no style code."
+            }
+          ],
+          "evidence": "General Air Force 1 page without the requested style code or a specific variant."
+        },
+        {
+          "id": "421a51ee3aae24b2cf079337",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Nike Air Force 1."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description give style number CW2288-111."
+            }
+          ],
+          "evidence": "The product text names the requested style code and white/white variant, but does not establish an individual available offer."
+        },
+        {
+          "id": "f99a6216cda1a6988c01202b",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Nike Air Force 1."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Description gives style code CW2288-111."
+            }
+          ],
+          "evidence": "The product text names the requested style code and white/white variant, but does not establish an individual available offer."
+        }
+      ],
+      "judgeRationale": "Several product descriptions name Nike and CW2288-111 with the white/white variant. Their text supports probable identity, but availability and an individual offer are not verified; general pages and the black/black variant do not meet the exact query."
+    },
+    {
+      "caseId": 28,
+      "candidates": [
+        {
+          "id": "26e8a5763740ae6d46168784",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Description explicitly calls the Shure AONIC 50 wireless active-noise-cancelling over-ear headphones."
+            }
+          ],
+          "evidence": "The article presents Shure AONIC 50 as comparable in price to Sony WH-1000XM5 and Bose NC 700."
+        },
+        {
+          "id": "5e596ea8dfa682e256c8eb0f",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title identifies Sony WH1000XM5 headphones."
+            }
+          ],
+          "evidence": "This is a generic Sony WH1000XM5 shopping page, not a clearly labeled comparable alternative."
+        },
+        {
+          "id": "9cda07d2c040941ca43cec47",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title identifies Sony wireless headphones."
+            }
+          ],
+          "evidence": "The title describes Sony wireless noise-cancelling headphones, but does not identify a comparable alternative or model."
+        }
+      ],
+      "judgeRationale": "Only the Shure AONIC 50 article explicitly identifies a comparable over-ear headphone. The other results concern Sony headphones without establishing an alternative."
+    },
+    {
+      "caseId": 30,
+      "candidates": [
+        {
+          "id": "0b866757a33515dfb01c25c9",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Description calls Shark FlexStyle a styler that can tackle hairstyles."
+            }
+          ],
+          "evidence": "The page is explicitly about Dyson Airwrap dupes and describes Shark FlexStyle as a styler."
+        },
+        {
+          "id": "aa8702a05df262188d8484e2",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Description calls Bellissima a tool with styling attachments and a similar styling experience."
+            }
+          ],
+          "evidence": "The page is explicitly about Airwrap alternatives and describes a Bellissima styling tool."
+        },
+        {
+          "id": "df4fe9233b3e9365a1a052fd",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Description identifies a Conair styling tool for curling hair."
+            }
+          ],
+          "evidence": "The page is explicitly about Airwrap dupes and names a Conair styling tool as an option."
+        },
+        {
+          "id": "2590ab95238abbc3db6e62da",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Description identifies multi-stylers including Shark FlexStyle and says the alternatives style hair."
+            }
+          ],
+          "evidence": "The article explicitly lists Shark FlexStyle, Shark Glam, and T3 multi-styler among Airwrap alternatives."
+        },
+        {
+          "id": "60e8fca867be34395e8e4961",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Description calls the Shark item a tool and explains its hair-curling barrel action."
+            }
+          ],
+          "evidence": "The page compares the Shark multi-styler with Dyson Airwrap and describes its hair-styling function."
+        },
+        {
+          "id": "4761f7c7f1fcfbaf9f6d89f5",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Description lists multi-stylers, curling irons, and hair dryer brushes among the alternatives reviewed."
+            }
+          ],
+          "evidence": "The roundup covers hair-styling alternatives but does not name a specific candidate tool in the supplied text."
+        },
+        {
+          "id": "2dac3ef66d9fc3d34f2936c6",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Description identifies an FHI Heat styler with reversible curling barrels."
+            }
+          ],
+          "evidence": "The page is explicitly about Dyson Airwrap dupes and describes an FHI Heat styler."
+        }
+      ],
+      "judgeRationale": "The named Shark, Bellissima, Conair, and FHI Heat tools are presented as Airwrap alternatives and their styling function is stated. The broad roundup is related but does not identify a specific tool in the supplied text."
+    }
+  ]
+}

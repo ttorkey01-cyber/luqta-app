@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 1,
+      "candidates": [
+        {
+          "id": "4a25409f615807e0918c974f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Samsung."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_fail", "evidence": "Title identifies Galaxy S24 Ultra, explicitly not S24."},
+            {"field": "storage", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title specifies 256GB."}
+          ],
+          "evidence": "The title and description explicitly name the Ultra variant, not the requested Galaxy S24."
+        },
+        {
+          "id": "da1c6bd6d67fd1d79de60c3d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Samsung."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_fail", "evidence": "Title identifies Galaxy S24 Ultra, explicitly not S24."},
+            {"field": "storage", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title specifies 256GB."}
+          ],
+          "evidence": "This is explicitly an S24 Ultra 256GB listing, a different model."
+        },
+        {
+          "id": "5962103c8da7155232c62cce",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title names Samsung."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title names Galaxy S24; model code F-MS921BZKGAMA is also given."},
+            {"field": "storage", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title specifies 256GB."}
+          ],
+          "evidence": "The listing title gives Samsung Galaxy S24 256GB; its model code is stated in the description."
+        },
+        {
+          "id": "3419fb7d8359776acc784487",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies SAMSUNG."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title specifies Galaxy S24."},
+            {"field": "storage", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title specifies 256GB."}
+          ],
+          "evidence": "The title and description identify the requested variant, but describe a price-comparison page across vendors rather than a specific offer."
+        },
+        {
+          "id": "5769e72e21b0cb8cf0b6d7e0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Samsung Saudi Arabia is named in the title."},
+            {"field": "model", "constraintIndex": 1, "verdict": "unknown", "evidence": "Title covers both S24 and S24+; description does not tie the variant to a specific model."},
+            {"field": "storage", "constraintIndex": 2, "verdict": "unknown", "evidence": "Description mentions 256GB but does not link it to a specific model variant."}
+          ],
+          "evidence": "The page covers S24 and S24+ together and does not establish which model the 256GB detail describes."
+        },
+        {
+          "id": "cf5e10a37aad0d22fef69e4d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Samsung."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_fail", "evidence": "Description explicitly names the S24 Ultra and S24+, not the S24."},
+            {"field": "storage", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Description associates 256GB with the S24 Ultra."}
+          ],
+          "evidence": "The page description names Ultra and Plus models; it does not offer the requested S24 variant."
+        },
+        {
+          "id": "4bfda0f3acb92a1a1cc81d12",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies SAMSUNG."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title identifies Galaxy S24 without Plus or Ultra."},
+            {"field": "storage", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title specifies 256GB."}
+          ],
+          "evidence": "The title explicitly identifies Samsung Galaxy S24 256GB."
+        },
+        {
+          "id": "115b7e8d94cdafc8c982a854",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Samsung Saudi Arabia."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title identifies Galaxy S24."},
+            {"field": "storage", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title specifies 256 GB."}
+          ],
+          "evidence": "The title explicitly offers a Galaxy S24 Onyx Black 256 GB."
+        },
+        {
+          "id": "e4c257e568936d140df5c5bc",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Arabic title identifies Samsung."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_fail", "evidence": "Title and description explicitly identify S24 FE."},
+            {"field": "storage", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title specifies 256GB."}
+          ],
+          "evidence": "This is explicitly an S24 FE, not the requested Galaxy S24."
+        },
+        {
+          "id": "f1e5fa1c85e5d3e621a42942",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies SAMSUNG."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_fail", "evidence": "Title and description identify Galaxy S24 Ultra."},
+            {"field": "storage", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title specifies 256GB."}
+          ],
+          "evidence": "The candidate is explicitly an S24 Ultra, including the renewed description, not the requested model."
+        }
+      ],
+      "judgeRationale": "Only listings explicitly tied to the base Galaxy S24 and 256GB are qualifying; Ultra, FE, Plus ambiguity, and a comparison page without a specific offer are not equivalent evidence.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 2,
+      "candidates": [
+        {
+          "id": "cf06d1d40e62d6d6aad02757",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title explicitly names Huawei."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title explicitly names Watch GT5 and identifies it as a smartwatch."}
+          ],
+          "evidence": "The title and description give a Huawei Watch GT5 smartwatch listing."
+        },
+        {
+          "id": "e99f539780fbbe73741fcd54",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify HUAWEI."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify WATCH GT 5 and smartwatch."}
+          ],
+          "evidence": "The listing explicitly names the Huawei Watch GT 5 46mm smartwatch."
+        },
+        {
+          "id": "cd3d920886be8ec50d91efb6",
+          "relevance": "IRRELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies HUAWEI."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description name WATCH GT 5."}
+          ],
+          "evidence": "This is a repair and service support page, not a watch listing or offer."
+        },
+        {
+          "id": "fcf9284e06f8004041ef279c",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Huawei."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and shopping description name Watch GT5."}
+          ],
+          "evidence": "The title and description identify a Huawei Watch GT5 available through a shopping listing."
+        },
+        {
+          "id": "917423c97857e7bba3a52344",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Huawei."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_fail", "evidence": "Title and description explicitly identify GT 5 Pro."}
+          ],
+          "evidence": "This candidate is explicitly the GT 5 Pro, excluded by the case definition."
+        },
+        {
+          "id": "6f26c821b5045958bec008f3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Huawei."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_fail", "evidence": "Title and description explicitly identify GT5 Pro."}
+          ],
+          "evidence": "The shopping listing explicitly identifies a GT5 Pro, not the requested GT 5."
+        },
+        {
+          "id": "4b1609b29b8338c44d952be7",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Huawei."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_fail", "evidence": "Title and description specify Watch GT 5 Pro."}
+          ],
+          "evidence": "This price-comparison result is for the excluded GT 5 Pro variant."
+        },
+        {
+          "id": "2f70035564578b64a83565e8",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify HUAWEI."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify Watch GT 5 46 mm smartwatch."}
+          ],
+          "evidence": "The title explicitly identifies Huawei Watch GT 5 46 mm smartwatch."
+        },
+        {
+          "id": "cf12183e0ce0c1eacddcdfea",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Huawei."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_fail", "evidence": "Title identifies a GT 5 Pro strap, not the GT 5 watch."}
+          ],
+          "evidence": "The title identifies a Pro model strap rather than the requested watch."
+        },
+        {
+          "id": "2c18d1a09ed1c988c1a6809b",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Huawei."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description identify Watch GT 5 41."}
+          ],
+          "evidence": "It names the correct GT 5 model but describes a price result rather than a direct listing."
+        }
+      ],
+      "judgeRationale": "Exact GT 5 smartwatch listings qualify; Pro variants and the repair page are not useful offers, and the price-comparison result is less direct evidence than a product listing.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 3,
+      "candidates": [
+        {
+          "id": "91cbbf6680e72e495693494d",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Nike."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify Air Max 270."}
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 women's shoes."
+        },
+        {
+          "id": "600c5c3156a8a2c210b97cf1",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Nike."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify Air Max 270."}
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 men's shoes."
+        },
+        {
+          "id": "d4eb25becd0db0865f889fef",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Nike."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify Air Max 270."}
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 men's shoes."
+        },
+        {
+          "id": "46a80718a843d01eac530058",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Nike."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify Air Max 270."}
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 men's shoes."
+        },
+        {
+          "id": "14adf0027a34de4dff0c8361",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Nike."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify Air Max 270."}
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 men's shoes."
+        },
+        {
+          "id": "c20b7bd2c97ea32083d2e6d1",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Nike."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify Air Max 270."}
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 women's shoes."
+        },
+        {
+          "id": "f2b2a6acb8bf6c453d7adb20",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Nike."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify Air Max 270."}
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 women's shoes."
+        },
+        {
+          "id": "a925b2f0ad932e65762219b6",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Nike."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify Air Max 270."}
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 older kids' shoes."
+        },
+        {
+          "id": "52bbf831f1bc8cece86a8933",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Nike."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify Air Max 270."}
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 older kids' shoes."
+        }
+      ],
+      "judgeRationale": "Every candidate explicitly names Nike Air Max 270 shoes; the gender/age and color variants do not conflict with any frozen hard constraint.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 4,
+      "candidates": [
+        {
+          "id": "bc55248bef57d3ee1a356104",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_fail", "evidence": "Title and description name Giorgio Armani My Way, not Kérastase."},
+            {"field": "product", "constraintIndex": 1, "verdict": "verified_fail", "evidence": "Title and description identify My Way EDP, not the Genesis serum."},
+            {"field": "size", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title and description specify 90ml."}
+          ],
+          "evidence": "This is a Giorgio Armani My Way fragrance, not the requested hair serum."
+        },
+        {
+          "id": "ff85cb20f3e2455e8acdbbc1",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Kérastase."},
+            {"field": "product", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify Genesis Hair Serum Anti-Chute Fortifiant."},
+            {"field": "size", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title and description specify 90ml."}
+          ],
+          "evidence": "The listing explicitly names the requested Kérastase Genesis Anti-Chute Fortifiant serum in 90ml."
+        },
+        {
+          "id": "006463fa205c5cb8cd9e106c",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Description identifies KERASTASE."},
+            {"field": "product", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title explicitly names Genesis Serum Anti-Chute Fortifiant."},
+            {"field": "size", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title and description specify 90ml."}
+          ],
+          "evidence": "The title gives the exact named serum and 90ml; description attributes it to Kérastase."
+        },
+        {
+          "id": "459ca47e75f99a0eed034815",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Kérastase."},
+            {"field": "product", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title names Genesis Fortifying Anti Hairfall Serum, a matching anti-chute serum."},
+            {"field": "size", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title specifies 90ml."}
+          ],
+          "evidence": "The title identifies Kérastase Genesis Fortifying Anti Hairfall Serum 90ml; its wording supports the matching anti-chute serum, though the displayed product name differs."
+        },
+        {
+          "id": "819125f506f401008d923ba2",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Kérastase."},
+            {"field": "product", "constraintIndex": 1, "verdict": "unknown", "evidence": "Title names the requested serum but description instead discusses Genesis Defense Thermique fluid."},
+            {"field": "size", "constraintIndex": 2, "verdict": "unknown", "evidence": "Neither title nor description states a size."}
+          ],
+          "evidence": "Title matches the named serum, but the description points to a different Genesis product and gives no size."
+        },
+        {
+          "id": "2202e30f52eac63d10245040",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Kerastase."},
+            {"field": "product", "constraintIndex": 1, "verdict": "unknown", "evidence": "Title names Genesis Serum Fortifiant but does not specify Anti-Chute Fortifiant."},
+            {"field": "size", "constraintIndex": 2, "verdict": "unknown", "evidence": "No size is stated."}
+          ],
+          "evidence": "It is a related Kérastase Genesis serum, but the exact named formula and 90ml size are not evidenced."
+        },
+        {
+          "id": "9d04240fd0696fd9e4ccfdb5",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify KÉRASTASE."},
+            {"field": "product", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify Genesis Sérum Anti-Chute Fortifiant."},
+            {"field": "size", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title and description specify 90ml."}
+          ],
+          "evidence": "Title and description explicitly name the requested Genesis Anti-Chute Fortifiant 90ml."
+        },
+        {
+          "id": "8803c3d81458e624f7052be8",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Kérastase/Kerastase."},
+            {"field": "product", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description name Genesis Serum Anti-Chute Fortifiant."},
+            {"field": "size", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title and description specify 90ml."}
+          ],
+          "evidence": "The title and description give the requested named serum in 90ml."
+        },
+        {
+          "id": "0a29bba9134055de502983c6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Kérastase."},
+            {"field": "product", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title names Genesis serum and Anti Chute Fortifiant."},
+            {"field": "size", "constraintIndex": 2, "verdict": "unknown", "evidence": "No size is stated in title or description."}
+          ],
+          "evidence": "The Spanish-language result names the matching Genesis anti-chute fortifying serum, but does not establish the required 90ml size."
+        },
+        {
+          "id": "857dd2057af82ab0b9b4b384",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies KERASTASE."},
+            {"field": "product", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title specifies Genesis Serum Anti-Chute Fortifiant."},
+            {"field": "size", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title specifies 90ml."}
+          ],
+          "evidence": "The title explicitly gives the requested Kérastase Genesis Serum Anti-Chute Fortifiant 90ml."
+        },
+        {
+          "id": "8927e819366eb048f953afb9",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Kerastase."},
+            {"field": "product", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description specify Genesis Serum Anti-Chute Fortifiant."},
+            {"field": "size", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title and description specify 90ml."}
+          ],
+          "evidence": "The title and description explicitly give the requested Genesis Anti-Chute Fortifiant Hair Serum 90ml."
+        }
+      ],
+      "judgeRationale": "Matching named anti-chute serum offers with 90ml are qualifying; related Genesis products without size and a conflicting description remain uncertain rather than passing the hard requirements.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 5,
+      "candidates": [
+        {
+          "id": "96e296e7f2e07da7caabb2a7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Arabic title and description identify Diesel."},
+            {"field": "model", "constraintIndex": 1, "verdict": "unknown", "evidence": "Title and description say Diesel men's jeans but do not name D-Strukt."},
+            {"field": "productType", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title and description identify men's jeans."}
+          ],
+          "evidence": "This is related Diesel men's jeans inventory, but no D-Strukt model evidence is present."
+        },
+        {
+          "id": "c62f276618a16a0171edef8c",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title and description identify Diesel."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_fail", "evidence": "Arabic title identifies a D-Lister/D-Luster model, not D-Strukt."},
+            {"field": "productType", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title and description identify jeans."}
+          ],
+          "evidence": "The candidate names a different Diesel jeans model, not D-Strukt."
+        },
+        {
+          "id": "bab64346cb31d526f748d3ef",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Diesel."},
+            {"field": "model", "constraintIndex": 1, "verdict": "unknown", "evidence": "Title and description identify Diesel jeans generally, with no D-Strukt model evidence."},
+            {"field": "productType", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title and description identify jeans."}
+          ],
+          "evidence": "A general Diesel jeans shopping page is related, but does not establish the D-Strukt cut."
+        },
+        {
+          "id": "73bf6a78fb76f649a4076046",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Diesel."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Description explicitly lists 2019 D-Strukt."},
+            {"field": "productType", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title identifies men's jeans; description says Slim Jeans."}
+          ],
+          "evidence": "The title and description identify Diesel men's D-Strukt jeans."
+        },
+        {
+          "id": "c9dcf3095969d439e4f023f0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Arabic title and description identify Diesel."},
+            {"field": "model", "constraintIndex": 1, "verdict": "unknown", "evidence": "Title and description identify Diesel jeans generally but do not name D-Strukt."},
+            {"field": "productType", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title and description identify men's jeans."}
+          ],
+          "evidence": "The candidate is for Diesel jeans but gives no evidence for the requested model."
+        },
+        {
+          "id": "62b6eac21ed6ec355b1f11f5",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Diesel."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Description explicitly lists 2019 D-Strukt."},
+            {"field": "productType", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Description identifies Slim Jeans."}
+          ],
+          "evidence": "The title and description identify Diesel men's denim and explicitly list D-Strukt jeans."
+        },
+        {
+          "id": "88899ed41ebe8d6d9536f842",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {"field": "brand", "constraintIndex": 0, "verdict": "verified_pass", "evidence": "Title identifies Diesel."},
+            {"field": "model", "constraintIndex": 1, "verdict": "verified_pass", "evidence": "Title and description explicitly identify 2019 D-Strukt."},
+            {"field": "productType", "constraintIndex": 2, "verdict": "verified_pass", "evidence": "Title and description identify men's slim jeans."}
+          ],
+          "evidence": "Title and description explicitly identify Diesel 2019 D-Strukt men's jeans."
+        }
+      ],
+      "judgeRationale": "Explicit D-Strukt jeans listings qualify; generic Diesel jeans are related but lack model evidence, and the differently named Diesel cut is not the requested model.",
+      "inventoryAvailabilityAssessment": "found"
+    }
+  ]
+}

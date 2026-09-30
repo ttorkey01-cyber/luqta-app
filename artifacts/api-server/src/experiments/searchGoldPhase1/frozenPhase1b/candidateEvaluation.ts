@@ -1,4 +1,5 @@
-import type { NormalizedProduct } from "../../connectors/types";
+/** Immutable evaluation control copied from the frozen Phase 1B implementation. Do not edit behavior. */
+import type { NormalizedProduct } from "../../../connectors/types";
 import type { Phase1Intent } from "./phase1Intent";
 
 export type CandidateClassification =
@@ -496,30 +497,6 @@ function modelConflict(intentModel: string, product: NormalizedProduct) {
       MODEL_SUFFIXES.has(title.slice(title.indexOf(`${family} ${requestedVariant}`) + `${family} ${requestedVariant}`.length).trim().split(" ")[0]));
 }
 
-function requestedStorage(value: string) {
-  const match = value.match(/\b(\d{2,4})\s*(gb|tb|gigabytes?|terabytes?)\b/iu);
-  if (!match) return null;
-  return `${Number(westernDigits(match[1]))}${/^t/iu.test(match[2]) ? "tb" : "gb"}`;
-}
-
-function titleStorageValues(product: NormalizedProduct) {
-  return [...product.canonical.title.matchAll(/\b(\d{2,4})\s*(gb|tb|gigabytes?|terabytes?)\b/giu)]
-    .map((match) => `${Number(westernDigits(match[1]))}${/^t/iu.test(match[2]) ? "tb" : "gb"}`);
-}
-
-function requestedStyleCode(intent: Phase1Intent) {
-  return (intent.explicitText || intent.rawQuery).match(/\b([a-z]{2}\d{4}-\d{3})\b/iu)?.[1] ?? null;
-}
-
-function titleStyleCodes(product: NormalizedProduct) {
-  return [...product.canonical.title.matchAll(/\b([a-z]{2}\d{4}-\d{3})\b/giu)].map((match) => match[1]);
-}
-
-function isNonOfferPage(product: NormalizedProduct) {
-  const title = normalized(product.canonical.title);
-  return /(?:^| )(?:series|range|lineup|collection|comparison|compare|vs|versus|review|reviews|tested|editors|editor|guide|alternatives|alternative|dupes|dupe|best of|top \d+)(?=$| )/u.test(title);
-}
-
 function priceConstraint(
   intent: Phase1Intent,
   product: NormalizedProduct,
@@ -591,46 +568,17 @@ function evaluateHardConstraints(
 
   priceConstraint(intent, product, constraints, evidence);
 
-  if (offerSpecificRequest(intent)) {
-    const availability = canonical.availability ?? product.availability;
-    const status: ConstraintStatus = availability === "in_stock"
-      ? "verified_pass"
-      : availability === "out_of_stock"
-        ? "verified_fail"
-        : "unknown";
-    addConstraint(
-      constraints,
-      "availability",
-      status,
-      status === "verified_pass"
-        ? "Source record verifies that the requested offer is currently in stock."
-        : status === "verified_fail"
-          ? "Source record verifies that the requested offer is out of stock."
-          : "Current offer availability is unknown; purchasability is not claimed.",
-    );
-  }
-
   if (isExplicit(intent.color) && isHardRequirement(intent, "color")) {
-    const structuredColor = canonical.color ?? product.color ?? null;
-    const titleColors = normalized(canonical.title).match(
-      /(?:^| )(?:black|white|red|blue|green|navy|brown|pink|purple)(?=$| )/gu,
-    ) ?? [];
-    const color = structuredColor ?? ([...new Set(titleColors.map((value) => value.trim()))].join(" / ") || null);
-    const colorMatches = color === null
-      ? false
-      : structuredColor !== null
-        ? same(color, intent.color.value!)
-        : normalized(color).split(" / ").some((value) => same(value, intent.color.value!)) &&
-          normalized(color).split(" / ").every((value) => same(value, intent.color.value!));
+    const color = canonical.color ?? product.color ?? null;
     addConstraint(
       constraints,
       "color",
-      color === null ? "unknown" : colorMatches ? "verified_pass" : "verified_fail",
+      color === null ? "unknown" : same(color, intent.color.value!) ? "verified_pass" : "verified_fail",
       color === null
-        ? "Candidate has no source-backed color evidence."
-        : colorMatches
-          ? `${structuredColor !== null ? "Structured" : "Source-title"} color ${color} matches.`
-          : `${structuredColor !== null ? "Structured" : "Source-title"} color ${color} conflicts with requested ${intent.color.value}.`,
+        ? "Candidate has no structured color evidence."
+        : same(color, intent.color.value!)
+          ? `Structured color ${color} matches.`
+          : `Structured color ${color} conflicts with requested ${intent.color.value}.`,
     );
   }
 
@@ -786,72 +734,6 @@ function evaluateHardConstraints(
           ? `Bounded model token ${requestedModel} agrees with source-backed brand evidence.`
           : "Model is not verified: a bounded title token, matching source-backed brand, and no conflicting model are required.",
     );
-    if (modelPass) evidence.push(`Source-backed title identifies requested model/variant ${requestedModel}.`);
-  }
-
-  if (isExplicit(intent.style)) {
-    const requestedStyle = intent.style.value!;
-    const title = normalized(canonical.title);
-    const boundedStyle = textHasBoundedPhrase(title, requestedStyle);
-    const styleCodes = [...title.matchAll(/(?:^| )([a-z]{2}\d{4}-\d{3})(?=$| )/giu)].map((match) => match[1]);
-    const conflictingStyle = styleCodes.some((style) => !same(style, requestedStyle));
-    const status: ConstraintStatus = boundedStyle
-      ? "verified_pass"
-      : conflictingStyle
-        ? "verified_fail"
-        : "unknown";
-    addConstraint(
-      constraints,
-      "style",
-      status,
-      status === "verified_pass"
-        ? `Source title explicitly identifies requested style ${requestedStyle}.`
-        : status === "verified_fail"
-          ? `Source title identifies style ${styleCodes.join(", ")}, conflicting with requested ${requestedStyle}.`
-          : `Candidate has no source-backed evidence for requested style ${requestedStyle}.`,
-    );
-    if (status === "verified_pass") evidence.push(`Source-backed title identifies requested style ${requestedStyle}.`);
-  }
-
-  const styleCode = requestedStyleCode(intent);
-  if (styleCode) {
-    const foundCodes = titleStyleCodes(product);
-    const matchingCode = foundCodes.some((code) => same(code, styleCode));
-    const status: ConstraintStatus = matchingCode
-      ? "verified_pass"
-      : foundCodes.length
-        ? "verified_fail"
-        : "unknown";
-    addConstraint(
-      constraints,
-      "style_code",
-      status,
-      status === "verified_pass"
-        ? `Source title explicitly identifies requested style code ${styleCode}.`
-        : status === "verified_fail"
-          ? `Source title identifies style code ${foundCodes.join(", ")}, conflicting with requested ${styleCode}.`
-          : `Candidate has no source-title evidence for requested style code ${styleCode}.`,
-    );
-  }
-
-  const storage = requestedStorage(intent.explicitText || intent.rawQuery);
-  if (storage) {
-    const foundStorage = titleStorageValues(product);
-    const status: ConstraintStatus = foundStorage.length === 1
-      ? foundStorage[0] === storage ? "verified_pass" : "verified_fail"
-      : foundStorage.length > 1
-        ? "verified_fail"
-        : "unknown";
-    addConstraint(
-      constraints,
-      "storage",
-      status,
-      status === "verified_pass"
-        ? `Source title explicitly identifies requested storage ${storage}.`
-        : status === "verified_fail"
-          ? `Source title has conflicting or non-specific storage evidence (${foundStorage.join(", ") || "multiple capacities"}), not a single ${storage} offer.`
-          : `Candidate has no source-title evidence for requested storage ${storage}.`,
-    );
   }
 
   const idFields = [
@@ -921,7 +803,7 @@ function evaluateHardConstraints(
   const constraintFields = new Set([
     "budget", "price", "condition", "color", "city", "location", "size", "product_type",
     "brand", "model", "sku", "mpn", "oem", "gtin", "gtin14", "authenticity", "automotive",
-    "vehicle", "vehicle_fitment", "connector", "style", "availability",
+    "vehicle", "vehicle_fitment", "connector",
   ]);
   for (const requirement of intent.hardRequirements) {
     // Price constraints are evaluated above, including range and inclusive
@@ -1104,24 +986,20 @@ function identityGroups(products: NormalizedProduct[]): CandidateIdentityGroup[]
     const title = normalized(product.canonical.title);
     const color = normalized(product.canonical.color ?? product.color ?? "");
     const structuredSize = normalized(candidateWithSize.canonical.size ?? candidateWithSize.size ?? "");
-    const sourceStyleCodes = [...product.canonical.title.matchAll(/\b([a-z]{2}\d{4}-\d{3})\b/giu)]
-      .map((match) => normalized(match[1]));
     const titleVariantTokens = [
       ...title.matchAll(/\b\d+(?:\.\d+)?\s?(?:gb|tb)\b/giu),
       ...title.matchAll(/\b(?:size\s*\d{1,3}|\d{2,3}\s*(?:eu|uk|us))\b/giu),
       ...title.matchAll(/\b(?:xxs|xs|s|m|l|xl|xxl|xxxl)\b/giu),
-      ...title.matchAll(/\b[a-z]{2}\d{4}-\d{3}\b/giu),
-      ...title.matchAll(/\b(?:black|white|red|blue|green|navy|brown|pink|purple)\b/giu),
-    ].map((match) => normalized(match[0])).concat(sourceStyleCodes);
+    ].map((match) => normalized(match[0]));
     let titleWithoutVariants = title;
     for (const token of new Set([...titleVariantTokens, ...(color ? [color] : [])])) {
       titleWithoutVariants = titleWithoutVariants
-        .replace(new RegExp(`(?:^| )${token.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}(?=$| )`, "gu"), " ");
+        .replace(new RegExp(`(?:^| )${token.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}(?=$| )`, "u"), " ");
     }
     titleWithoutVariants = titleWithoutVariants.replace(/\s+/gu, " ").trim();
     const productId = `product:${brand}|${category}|${kind}|${titleWithoutVariants}`;
-    const titleVariantIdentity = [...new Set(titleVariantTokens)].sort().join(",");
-    const variantId = `variant:${productId}|color:${color}|size:${structuredSize}|title-variant:${titleVariantIdentity}`;
+    const titleSizeIdentity = [...new Set(titleVariantTokens)].sort().join(",");
+    const variantId = `variant:${productId}|color:${color}|size:${structuredSize}|title-variant:${titleSizeIdentity}`;
     const variants = groups.get(productId) ?? new Map<string, CandidateIdentityOffer[]>();
     const offers = variants.get(variantId) ?? [];
     offers.push({
@@ -1158,20 +1036,7 @@ export function evaluatePhase1Candidates(
     const relevanceResult = relevance(intent, product, evidence, constraints);
     const strategy = strategyFor(strategyById, product.canonical.id) ??
       strategyFor(strategyById, product.id);
-    // A referenced brand/model in an explicit alternative search is a
-    // discovery anchor, not a requested hard constraint. Keep its evidence
-    // verdict for ranking, but do not reject a different model on that basis.
-    const alternativeReference = intent.relations.value?.some((relation) =>
-      relation === "similar" || relation === "cheaper",
-    ) === true &&
-      !intent.relations.value.includes("exact");
-    if (alternativeReference && constraints.model?.status === "unknown") {
-      evidence.push("Referenced model is unverified; this is a discovery alternative, not an identity claim.");
-    }
-    const hardFailures = Object.entries(constraints).filter(([name, value]) =>
-      value.status !== "verified_pass" &&
-      !(alternativeReference && (name === "brand" || name === "model")),
-    );
+    const hardFailures = Object.entries(constraints).filter(([, value]) => value.status !== "verified_pass");
     const unverifiedModelAlternative =
       hardFailures.length > 0 &&
       hardFailures.every(([name]) => name === "model") &&
@@ -1179,17 +1044,32 @@ export function evaluatePhase1Candidates(
       isExplicit(intent.model) &&
       modelAppearsBounded(intent.model.value!, product) &&
       !modelConflict(intent.model.value!, product);
-    const expectedCategory = queryCategory(intent);
-    const unknownHardAlternative =
-      hardFailures.length > 0 &&
-      hardFailures.every(([, value]) => value.status === "unknown") &&
-      !relevanceResult.incompatibleCategory &&
-      relevanceResult.score >= 0.12;
-    const similarModelOnlyAlternative =
-      alternativeReference &&
+    const nearModelAlternative =
       hardFailures.length === 1 &&
       hardFailures[0]?.[0] === "model" &&
-      constraints.model?.status === "unknown" &&
+      constraints.model?.status === "verified_fail" &&
+      isExplicit(intent.model) &&
+      isExplicit(intent.brand) &&
+      modelConflict(intent.model.value!, product) &&
+      candidateBrandMatches(intent, product) &&
+      hasSourceProductOrCategoryMatch(intent, product) &&
+      Boolean(product.canonical.providerId.trim() && product.canonical.sourceType.trim()) &&
+      relevanceResult.score >= 0.12;
+    const expectedCategory = queryCategory(intent);
+    const relatedAudioAlternative =
+      hardFailures.length === 1 &&
+      hardFailures[0]?.[0] === "product_type" &&
+      constraints.product_type?.status === "verified_fail" &&
+      relatedAudioTypeMismatch(intent, product) &&
+      Boolean(expectedCategory && candidateCategory(product) === expectedCategory) &&
+      Boolean(product.canonical.providerId.trim() && product.canonical.sourceType.trim()) &&
+      relevanceResult.score >= 0.12;
+    const similarModelOnlyAlternative =
+      intent.relations.value?.includes("similar") === true &&
+      !intent.relations.value.includes("exact") &&
+      hardFailures.length === 1 &&
+      hardFailures[0]?.[0] === "model" &&
+      (constraints.model?.status === "unknown" || constraints.model?.status === "verified_fail") &&
       hasVerifiedSimilarityAnchor(intent, product, constraints) &&
       !relevanceResult.incompatibleCategory &&
       relevanceResult.score >= 0.12;
@@ -1198,14 +1078,12 @@ export function evaluatePhase1Candidates(
     let classification: CandidateClassification;
     if (similarModelOnlyAlternative) {
       classification = "SIMILAR";
+    } else if (relatedAudioAlternative) {
+      classification = "CLOSE_ALTERNATIVE";
+    } else if (nearModelAlternative) {
+      classification = "CLOSE_ALTERNATIVE";
     } else if (relevanceResult.incompatibleCategory || relevanceResult.score < 0.12) {
       classification = "IRRELEVANT";
-    } else if (unknownHardAlternative) {
-      classification = relevanceResult.score >= 0.55
-        ? "CLOSE_ALTERNATIVE"
-        : relevanceResult.score >= 0.3
-          ? "SIMILAR"
-          : "WEAK";
     } else {
       const hasStrongStableId =
         (isExplicit(intent.mpn) && constraints.mpn?.status === "verified_pass") ||
@@ -1231,7 +1109,7 @@ export function evaluatePhase1Candidates(
         constraints.model?.status === "verified_pass" &&
         hardFailures.length === 0 &&
         sourceBacked;
-      if (hasStrongStableId && hardFailures.length === 0 && categoryCompatible && typeCompatible && sourceBacked) classification = "EXACT";
+      if (hasStrongStableId && categoryCompatible && typeCompatible && sourceBacked) classification = "EXACT";
       else if (uniqueSellerSkuOffer && hardFailures.length === 0) classification = "EXACT";
       else if (explicitBrandModelIdentity) classification = "EXACT";
       else if (
@@ -1249,56 +1127,10 @@ export function evaluatePhase1Candidates(
       classification = "PROBABLE_EXACT";
     }
 
-    // A reference in an explicit alternative query is context, not a request
-    // to identify that same item. Family/editorial/comparison pages are also
-    // discovery sources rather than individual, verifiable product offers.
-    const verifiedRequestedGtin = constraints.gtin14?.status === "verified_pass";
-    if (alternativeReference && !verifiedRequestedGtin &&
-        (classification === "EXACT" || classification === "PROBABLE_EXACT")) {
-      classification = relevanceResult.score >= 0.3 ? "CLOSE_ALTERNATIVE" : "SIMILAR";
-      evidence.push("Explicit alternative intent makes the referenced product a discovery anchor, not an exact identity claim.");
-    } else if (isNonOfferPage(product) &&
-        (classification === "EXACT" || classification === "PROBABLE_EXACT")) {
-      classification = relevanceResult.score >= 0.3 ? "CLOSE_ALTERNATIVE" : "SIMILAR";
-      evidence.push("Family, editorial, or comparison page is not a verified individual product offer.");
-    }
-
-    if (classification === "EXACT") {
-      const actualCategory = candidateCategory(product);
-      const expectedKind = requestedKind(intent);
-      const actualStructuredKind = structuredCandidateKind(product);
-      const categoryCompatible = queryCategory(intent)
-        ? actualCategory === queryCategory(intent)
-        : expectedKind
-          ? actualStructuredKind === expectedKind && Boolean(actualCategory)
-          : true;
-      const typeCompatible = !expectedKind || actualStructuredKind === expectedKind;
-      const sourceBacked = Boolean(product.canonical.providerId.trim() && product.canonical.sourceType.trim());
-      const strongStableId =
-        (isExplicit(intent.mpn) && constraints.mpn?.status === "verified_pass") ||
-        (isExplicit(intent.oem) && constraints.oem?.status === "verified_pass") ||
-        constraints.gtin14?.status === "verified_pass";
-      const exactBasis = strongStableId && hardFailures.length === 0 && categoryCompatible && typeCompatible && sourceBacked
-        ? "source-backed matching labeled global/product identifier"
-        : uniqueSellerSkuOffer && hardFailures.length === 0
-          ? "source-backed seller-scoped SKU and seller identity"
-          : isExplicit(intent.brand) && isExplicit(intent.model) &&
-              constraints.brand?.status === "verified_pass" &&
-              constraints.model?.status === "verified_pass" &&
-              hardFailures.length === 0 && sourceBacked
-            ? "source-backed matching brand and explicit model/variant"
-            : null;
-      if (exactBasis) {
-        evidence.push(`EXACT authorization: ${exactBasis}.`);
-      } else {
-        classification = "PROBABLE_EXACT";
-      }
-    }
-
     const score = Math.round(relevanceResult.score * 1000) / 1000;
     const evaluated = resultFor(product, classification, score, constraints, evidence, strategy);
-    if (hardFailures.length && !unverifiedModelAlternative &&
-        !unknownHardAlternative && !similarModelOnlyAlternative) {
+    if (hardFailures.length && !unverifiedModelAlternative && !nearModelAlternative &&
+        !relatedAudioAlternative && !similarModelOnlyAlternative) {
       const diagnostics = hardFailures.map(([name, value]) => `${name}: ${value.status} — ${value.reason}`);
       rejected.push({ ...evaluated, diagnostics });
     } else if (classification === "IRRELEVANT") {
@@ -1312,14 +1144,18 @@ export function evaluatePhase1Candidates(
       if (unverifiedModelAlternative) {
         evidence.push("Exact bounded model text is relevant for discovery only; identity remains unverified and is not qualifying.");
       }
-      if (similarModelOnlyAlternative) {
-        evidence.push("The requested model is unverified; explicit similar intent allows discovery only, not identity.");
+      if (nearModelAlternative) {
+        evidence.push("Source-backed brand and product/category match; the model conflicts, so this is a close alternative only.");
       }
-      if (unknownHardAlternative) {
-        const unknowns = hardFailures
-          .filter(([, constraint]) => constraint.status === "unknown")
-          .map(([name]) => name);
-        evidence.push(`Relevant discovery alternative only: requested ${unknowns.join(", ")} evidence is unknown; no compliance or exact identity is claimed.`);
+      if (relatedAudioAlternative) {
+        evidence.push("Headphones and earbuds are related for discovery but are distinct product identities.");
+      }
+      if (similarModelOnlyAlternative) {
+        evidence.push(
+          constraints.model?.status === "verified_fail"
+            ? "The model conflicts with the request; explicit similar intent allows discovery only, not identity."
+            : "The requested model is unverified; explicit similar intent allows discovery only, not identity.",
+        );
       }
       alternatives.push(evaluated);
     }

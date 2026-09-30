@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "packet": 6,
+  "cases": [
+    {
+      "caseId": 26,
+      "query": "Diesel jeans SKU 00SW1Q 0EAXD",
+      "intended": "Diesel jeans with exact seller/source-backed code 00SW1Q 0EAXD",
+      "hard": [
+        {
+          "field": "brand",
+          "op": "eq",
+          "value": "Diesel"
+        },
+        {
+          "field": "sku",
+          "op": "eq",
+          "value": "00SW1Q 0EAXD"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": "Exact combined SKU if source confirms it; do not assume availability",
+      "useful": "A jeans offer with both code segments source-backed",
+      "irrelevant": "Another Diesel SKU labeled exact",
+      "exactRequired": true,
+      "alternativeAcceptable": false,
+      "candidates": [
+        {
+          "id": "bab64346cb31d526f748d3ef",
+          "title": "Diesel Jeans : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed]",
+          "description": "diesel jeans : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now [URL removed]",
+          "brand": null,
+          "productType": null,
+          "category": "fashion",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:03.125Z"
+        },
+        {
+          "id": "15e76c44a2886f4b861a461a",
+          "title": "Shop Diesel Jeans For Men Online in Saudi | Ounass",
+          "description": "Shop Exclusive Diesel Jeans for Men ✓ 3 Hour Delivery in Riyadh ✓ 10% OFF, Code: APP10 ✓ Buy Now, Pay Later ✓ 30-Day Free Returns.",
+          "brand": null,
+          "productType": null,
+          "category": "fashion",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:03.125Z"
+        },
+        {
+          "id": "8ff8c1c2a73756ebee46f189",
+          "title": "Diesel Saudi Arabia Online Store: jeans, clothing, shoes, bags and watches",
+          "description": "Shop at the Official Diesel Store: a vast assortment of jeans, clothing, shoes &amp; accessories. Secure payment, fast delivery and easy returns!",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:03.125Z"
+        },
+        {
+          "id": "e29ca4cc9d4da66f6dcd1f6c",
+          "title": "Diesel Men Jeans Saudi | Best prices",
+          "description": "Diesel Men Jeans deals and price in Saudi Arabia in hundreds of online shops. We will find the best price for you, you save!",
+          "brand": null,
+          "productType": null,
+          "category": "fashion",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:03.125Z"
+        },
+        {
+          "id": "1cf49ef0446af0f6ce926b69",
+          "title": "Diesel Saudi Arabia Men's Jeans - Skinny, Slim, Straight",
+          "description": "Innovative treatments are used to create our unique, contemporary denim range. Skinny, Slim or Tapered, there is a jeans for you! Shop now on Diesel Saudi Arabia",
+          "brand": null,
+          "productType": null,
+          "category": "fashion",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:03.125Z"
+        },
+        {
+          "id": "c9dcf3095969d439e4f023f0",
+          "title": "ديزل الرجال جينز في السعودية أونلاين - نمشي",
+          "description": "تسوق آحدث ديزل جينز في الرياض٬ جدة٬ وكل السعودية - ✓ احصل على 20% رصيد مرتجع باستخدام كود FIRST ✓ تسوق الآن٬ ادفع لاحقا!",
+          "brand": null,
+          "productType": null,
+          "category": "fashion",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:03.125Z"
+        },
+        {
+          "id": "96e296e7f2e07da7caabb2a7",
+          "title": "بنطلونات جينز للرجال من ديزل في السعودية | خصم 30-75% | الرياض وجدة | نون",
+          "description": "تسوق بنطلونات جينز للرجال ديزل على نون. ✓ تسوق آمن ✓ 100% دون لمس ✓ شحن سريع ✓ الدفع عند الاستلام ✓ إرجاع مجاني بسهولة. نونها الآن",
+          "brand": null,
+          "productType": null,
+          "category": "fashion",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:03.125Z"
+        },
+        {
+          "id": "c62f276618a16a0171edef8c",
+          "title": "بنطال جينز دي لستر للرجال من ديزل: اشتري اون لاين بأفضل الاسعار في السعودية - سوق.كوم الان اصبحت امازون السعودية",
+          "description": "اشتري بنطال <strong>جينز دي لستر للرجال</strong> من ديزل اون لاين على امازون السعودية بأفضل الاسعار ✓ شحن سريع و مجاني✓ ارجاع مجاني✓ الدفع عند الاستلام ...",
+          "brand": null,
+          "productType": null,
+          "category": "fashion",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:03.125Z"
+        }
+      ]
+    },
+    {
+      "caseId": 27,
+      "query": "Nike Air Force 1 CW2288-111",
+      "intended": "Nike Air Force 1 with style code CW2288-111",
+      "hard": [
+        {
+          "field": "brand",
+          "op": "eq",
+          "value": "Nike"
+        },
+        {
+          "field": "model",
+          "op": "eq",
+          "value": "CW2288-111"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": "Exact CW2288-111 style code/colorway",
+      "useful": "Listing with exact code and Nike brand",
+      "irrelevant": "Another Air Force colorway labeled exact",
+      "exactRequired": true,
+      "alternativeAcceptable": false,
+      "candidates": [
+        {
+          "id": "ce0e56c9cbfa37ac82c43132",
+          "title": "White Nike Air Force 1 '07 | SVD SAUDI ARABIA",
+          "description": "Introducing the Nike Air Force 1 &#x27;07 (CW2288-111) - <strong>a classic in the realm of classic &amp; retro sneakers</strong>. Its timeless white/white colorway paired with a fall/winter 2024 vibe ensures a sophisticated yet casual look for men.",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:05.090Z"
+        },
+        {
+          "id": "60b563d02ff662b8d0afdc32",
+          "title": "Nike Air Force 1 Low 'White' CW2288-111 (Men’s) - KICKS CREW",
+          "description": "Shop Nike Air Force 1 Low &#x27;07 &#x27;Triple White&#x27; CW2288-111 at KICKS CREW — your go-to for authentic, stylish sneakers. Whether for fashion, performance,",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:05.090Z"
+        },
+        {
+          "id": "0c3f0f38a6b1afc19b866b6c",
+          "title": "نايك اير فورس | تسوق احذية نايكي اير فورس 1 اونلاين في السعودية",
+          "description": "Nike اكتشف احذية نايكي اير فورس 1 في السعودية بتصميم أيقوني وراحة طوال اليوم.",
+          "brand": null,
+          "productType": null,
+          "category": "shoes",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:05.090Z"
+        },
+        {
+          "id": "cef6d114da616b50c93e84de",
+          "title": "Buy Nike Air Force 1 '07 Men's Shoes - Black/Black @ Nike Saudi",
+          "description": "Shop Nike Air Force 1 &#x27;07 Men&#x27;s Shoes - Black/Black Online in Saudi. Shop from trending styles and new launches from Nike&#x27;s official collection in KSA with ✓ Free Delivery &amp; Return ✓ Cash on Delivery.",
+          "brand": null,
+          "productType": null,
+          "category": "shoes",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:05.090Z"
+        },
+        {
+          "id": "621ea3d3aaabf754bd2fd645",
+          "title": "حذاء اير فورس 1 '07 للرجال من نايك رياضي برقبة منخفضة: اشتري اون لاين بأفضل الاسعار في السعودية - سوق.كوم الان اصبحت امازون السعودية",
+          "description": "حذاء اير فورس 1 &#x27;07 للرجال من نايك · شاهد أكثر معلومات عن السلعة · أبعاد المنتج ‏ : ‎ 24 x 8,5 x 9,5 سم; 500 جرام · تاريخ توفر أول منتج ‏ : ‎ 2020 ديسمبر 10 · الشركة المصنعة ‏ : ‎ نايك · ASIN ‏ : ‎ B08Q9X9PFW · رقم موديل السلعة ‏ : ‎ CW2288-111 ·",
+          "brand": null,
+          "productType": null,
+          "category": "shoes",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:05.090Z"
+        },
+        {
+          "id": "2fec64cb3849189bb38173b9",
+          "title": "Nike Air Force 1 : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed]",
+          "description": "nike air force 1 : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now [URL removed]",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:05.090Z"
+        },
+        {
+          "id": "9ea1812acd77bae3704704f7",
+          "title": "Nike Air Force 1 | Buy For Men & Women | in Riyadh, KSA",
+          "description": "Buy Nike Air Force 1 For Men &amp; Women In Riyadh, Jeddah, KSA. ?Official Nike Store ?Classic Leather Style ?Air-Sole Cushioning For Everyday Comfort.",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:05.090Z"
+        },
+        {
+          "id": "421a51ee3aae24b2cf079337",
+          "title": "Nike Air Force 1 \"07 Mens Style : Cw2288-111 - [URL removed]",
+          "description": "Product Specifications: This Men&#x27;s Nike Air Force 1 &#x27;07 shoe, style number CW2288-111, is presented in a <strong>clean and uniform White/White colorway</strong>.",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:05.090Z"
+        },
+        {
+          "id": "f99a6216cda1a6988c01202b",
+          "title": "Buy Nike Air Force 1 '07 Men's Shoes - White/White @ Nike Saudi",
+          "description": "Style: CW2288-111 · View Product Details · Size &amp; Fit · Fits large; we recommend ordering half a size down · Find your correct size by viewing our Size Guide · Free Delivery and Returns · Free returns within 30 days, either online or to any of our Nike stores.",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:05.090Z"
+        }
+      ]
+    },
+    {
+      "caseId": 28,
+      "query": "similar alternative to Sony WH-1000XM5 headphones",
+      "intended": "headphones similar to Sony WH-1000XM5",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "headphones"
+        }
+      ],
+      "preferences": [
+        {
+          "field": "referenceModel",
+          "value": "Sony WH-1000XM5"
+        }
+      ],
+      "expectedIdentity": null,
+      "useful": "Clearly labeled comparable over-ear headphones; not claimed to be the Sony model",
+      "irrelevant": "Earbuds or another type claimed exact Sony",
+      "exactRequired": false,
+      "alternativeAcceptable": true,
+      "candidates": [
+        {
+          "id": "26e8a5763740ae6d46168784",
+          "title": "Best over-ear headphones 2022 for UAE and Saudi Arabia: the top cans from Sony, Sennheiser, and more | TechRadar",
+          "description": "The <strong>Shure AONIC 50</strong> sport a wireless, active noise-cancelling over-ear design and are priced similarly to the Sony WH-1000XM5 and Bose NC 700 Headphones.",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:08.128Z"
+        },
+        {
+          "id": "5e596ea8dfa682e256c8eb0f",
+          "title": "سماعات سوني Wh1000xm5 : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed]",
+          "description": "سماعات سوني wh1000xm5 : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now [URL removed]",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:08.128Z"
+        },
+        {
+          "id": "9cda07d2c040941ca43cec47",
+          "title": "سوني سماعات رأس لاسلكية، عازلة للضجيج، أسود - إكسترا",
+          "description": "<strong>أبل سامسونج سمج كلاس برو ميكسايت إل جي هونر نيازي سوني بيسيل</strong> هواوي فيليبس قارمين",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:08.128Z"
+        }
+      ]
+    },
+    {
+      "caseId": 30,
+      "query": "similar to Dyson Airwrap hair styler",
+      "intended": "hair styling tool alternative to Dyson Airwrap",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "hair styler"
+        }
+      ],
+      "preferences": [
+        {
+          "field": "referenceModel",
+          "value": "Dyson Airwrap"
+        }
+      ],
+      "expectedIdentity": null,
+      "useful": "Labeled hair styling tool alternative; no exact Airwrap claim",
+      "irrelevant": "Hair serum or unrelated dryer labeled exact",
+      "exactRequired": false,
+      "alternativeAcceptable": true,
+      "candidates": [
+        {
+          "id": "0b866757a33515dfb01c25c9",
+          "title": "The best Dyson Airwrap dupes: affordable alternatives, tried and tested",
+          "description": "If you&#x27;re looking for one styler that can tackle almost every hairstyle, or one that&#x27;s flexible enough to share with other people in your household, the <strong>Shark FlexStyle</strong> is hard to beat.",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:28.180Z"
+        },
+        {
+          "id": "aa8702a05df262188d8484e2",
+          "title": "The 6 best Dyson Airwrap alternatives, tested by our hair experts | Woman & Home",
+          "description": "With that in mind, it was only ... than the Airwrap&#x27;s £500 price tag. ... Equipped with six styling attachments, this <strong>Bellissima tool</strong> offers the most similar experience to the well-loved Dyson Airwrap....",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:28.180Z"
+        },
+        {
+          "id": "df4fe9233b3e9365a1a052fd",
+          "title": "I Tried 4 of the Supposed ‘Best’ Affordable Dyson Airwrap Dupes—This Is What’s Actually Worth Buying | theSkimm",
+          "description": "If the <strong>Dyson curling wands were your main draw to the Airwrap, consider this styling tool from Conair</strong>. While it does not have the same functionality as the Airwrap, it does use cool air to bring the temperature down and protect your hair while ...",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:28.180Z"
+        },
+        {
+          "id": "2590ab95238abbc3db6e62da",
+          "title": "These Dyson Airwrap Alternatives Give Pro-Level Blowouts Without the $600 Price Tag",
+          "description": "The best Dyson Airwrap dupes style hair effortlessly without damaging it and give us results that rival a professional blowout (really!). We love the <strong>Shark FlexStyle</strong> (and the new Shark Glam), T3’s Aire Multi-Styler, and a ton of other affordable ...",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:28.180Z"
+        },
+        {
+          "id": "60e8fca867be34395e8e4961",
+          "title": "Best Dyson airwrap alternatives 2026, reviewed | The Independent",
+          "description": "Shark&#x27;s multi-styler was my pick of the lot (Maisie Bovingdon) Similar to the Dyson airwrap, this <strong>Shark tool</strong> uses Coanda technology, which is when the powerful airflow collects and wraps the hair around the barrel, to create a neat curl.",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:28.180Z"
+        },
+        {
+          "id": "4761f7c7f1fcfbaf9f6d89f5",
+          "title": "The 10 Best Dyson Airwrap Dupes That'll Make Your Hair Look Shiny and Expensive, Tested & Reviewed by Editors",
+          "description": "Are you better off investing in the real thing or going with a Dyson Airwrap dupe? WWD Shop editors tested and reviewed the Dyson Airwrap and over 30 top-rated alternatives — including multi-stylers, curling irons, and hair dryer brushes — to determine whether the Airwrap is truly worth the splurge…",
+          "brand": null,
+          "productType": null,
+          "category": "beauty_care",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:28.180Z"
+        },
+        {
+          "id": "2dac3ef66d9fc3d34f2936c6",
+          "title": "10 Best Dyson Airwrap Dupes of 2026, Tested by Our Beauty Experts",
+          "description": "This styler from <strong>FHI Heat</strong> is the only Dyson dupe that Butler has seen with the same direction-switching barrels as the latest Airwrap. &quot;Instead of having left and right barrels, one barrel can be twisted and curl hair both ways,&quot; she explained.",
+          "brand": null,
+          "productType": null,
+          "category": "beauty_care",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T10:00:28.180Z"
+        }
+      ]
+    }
+  ]
+}

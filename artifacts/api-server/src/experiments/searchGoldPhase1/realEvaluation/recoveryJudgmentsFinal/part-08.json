@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 36,
+      "candidates": [],
+      "judgeRationale": "No candidates were supplied in the sanitized packet."
+    },
+    {
+      "caseId": 37,
+      "candidates": [
+        {
+          "id": "9331b32228e4469b1bd0fee0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify a car battery."
+            },
+            {
+              "field": "voltage",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Description states 12V."
+            },
+            {
+              "field": "capacity",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Description states 70Ah."
+            },
+            {
+              "field": "city",
+              "constraintIndex": 3,
+              "verdict": "unknown",
+              "evidence": "Description says available across KSA cities, but does not identify Riyadh for this listing."
+            }
+          ],
+          "evidence": "The listing describes a Duracell 12V 70Ah car battery; its Riyadh location and individual availability are not established."
+        },
+        {
+          "id": "e213349db1af12383691dde5",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies car batteries."
+            },
+            {
+              "field": "voltage",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No voltage is stated."
+            },
+            {
+              "field": "capacity",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "No capacity is stated."
+            },
+            {
+              "field": "city",
+              "constraintIndex": 3,
+              "verdict": "unknown",
+              "evidence": "Title names Riyadh among covered cities, but listing location is null and no individual Riyadh offer is established."
+            }
+          ],
+          "evidence": "This is a car-battery shopping page whose title mentions Riyadh, but the packet does not verify the required battery specifications or an individual local offer."
+        }
+      ],
+      "judgeRationale": "Both candidates concern car batteries, but neither packet record verifies a qualifying individual offer in Riyadh."
+    },
+    {
+      "caseId": 38,
+      "candidates": [
+        {
+          "id": "17aa48f9d971348d398add3e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify shampoo, specifically dry shampoo."
+            }
+          ],
+          "evidence": "The title contains “Dry Hair Shampoo,” while the description specifically describes dry shampoo for reducing oil; suitability for dry hair is therefore unclear."
+        },
+        {
+          "id": "d20771a9b360767f656bbacb",
+          "relevance": "RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify a shampoo range."
+            }
+          ],
+          "evidence": "The shampoo range description explicitly says it includes options for dry hair, though this broad range listing does not identify an individual product."
+        },
+        {
+          "id": "a4139aa52d125e81ab58b70e",
+          "relevance": "RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify shampoos."
+            }
+          ],
+          "evidence": "The listing is a shampoo range and describes options for specific hair concerns, but does not specifically verify dry-hair suitability."
+        }
+      ],
+      "judgeRationale": "All records identify shampoo, the frozen hard requirement; one title-description ambiguity warrants partial relevance, while the others are relevant shampoo ranges without a specific individual dry-hair product verified."
+    },
+    {
+      "caseId": 39,
+      "candidates": [],
+      "judgeRationale": "No candidates were supplied in the sanitized packet."
+    },
+    {
+      "caseId": 40,
+      "candidates": [],
+      "judgeRationale": "No candidates were supplied in the sanitized packet."
+    }
+  ]
+}

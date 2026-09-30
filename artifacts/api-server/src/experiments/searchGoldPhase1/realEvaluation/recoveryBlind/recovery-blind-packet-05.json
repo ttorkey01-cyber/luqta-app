@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "packet": 5,
+  "cases": [
+    {
+      "caseId": 21,
+      "query": "new Huawei phone under 2000 SAR",
+      "intended": "new Huawei smartphone below 2000 SAR",
+      "hard": [
+        {
+          "field": "brand",
+          "op": "eq",
+          "value": "Huawei"
+        },
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "phone"
+        },
+        {
+          "field": "condition",
+          "op": "eq",
+          "value": "new"
+        },
+        {
+          "field": "priceSAR",
+          "op": "lt",
+          "value": 2000
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "A Huawei phone explicitly new and under budget",
+      "irrelevant": "Used/unknown condition, another brand or 2000+ SAR",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": []
+    },
+    {
+      "caseId": 22,
+      "query": "men's sneakers size EU 43 under 400 SAR",
+      "intended": "men's sneakers EU 43 below 400 SAR",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "shoes"
+        },
+        {
+          "field": "audience",
+          "op": "eq",
+          "value": "men"
+        },
+        {
+          "field": "size",
+          "op": "eq",
+          "value": "EU 43"
+        },
+        {
+          "field": "priceSAR",
+          "op": "lt",
+          "value": 400
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "Men's EU 43 sneakers under 400 SAR",
+      "irrelevant": "Unknown size system, EU 42 or 400+ SAR",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": []
+    },
+    {
+      "caseId": 23,
+      "query": "Samsung SM-S921B phone",
+      "intended": "Samsung phone with model SM-S921B",
+      "hard": [
+        {
+          "field": "brand",
+          "op": "eq",
+          "value": "Samsung"
+        },
+        {
+          "field": "model",
+          "op": "eq",
+          "value": "SM-S921B"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": "SM-S921B, not another S24 regional model",
+      "useful": "A listing explicitly containing SM-S921B with corroborating brand",
+      "irrelevant": "S24 without that model code called exact",
+      "exactRequired": true,
+      "alternativeAcceptable": false,
+      "candidates": [
+        {
+          "id": "c1403119352fa709b5e6e091",
+          "title": "SAMSUNG Galaxy S24 Smartphone, 6.2\" Dynamic AMOLED 2X FHD+ Display, Exynos 2400 for Galaxy, 8GB RAM + 128GB, 50.0 MP Camera, 4000mAh Battery, LTE/5G, Single SIM+ E SIM, Onyx Black | SM-S921BB Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca",
+          "description": "<strong>SAMSUNG Galaxy S24 Smartphone, 6.2&quot; Dynamic AMOLED 2X FHD+ Display, Exynos 2400 for Galaxy, 8GB RAM + 128GB, 50.0 MP Camera, 4000mAh Battery, LTE/5G, Single SIM+ E SIM, Onyx Black</strong> | SM-S921BB model Galaxy S24 Mobile Phones",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:51.295Z"
+        }
+      ]
+    },
+    {
+      "caseId": 24,
+      "query": "Huawei BNE-LX1 phone",
+      "intended": "Huawei phone with model BNE-LX1",
+      "hard": [
+        {
+          "field": "brand",
+          "op": "eq",
+          "value": "Huawei"
+        },
+        {
+          "field": "model",
+          "op": "eq",
+          "value": "BNE-LX1"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": "BNE-LX1, not a related Huawei phone",
+      "useful": "Source-backed exact BNE-LX1 code",
+      "irrelevant": "Unlabeled generic Huawei phone called exact",
+      "exactRequired": true,
+      "alternativeAcceptable": false,
+      "candidates": [
+        {
+          "id": "afdc47b6a1afcc207d19be45",
+          "title": "[URL removed] | (Unlocked) Huawei Nova 12 SE BNE-LX1 Dual Sim 256GB Black (8GB RAM) - Global Version- Full phone specifications",
+          "description": "[URL removed] | Buy Online- (Unlocked ) <strong>Huawei Nova 12 SE BNE-LX1 Dual Sim 256GB Black (8GB RAM)</strong> - Global Version -Latest models available, Buy MacBook/iPad/iPhone/Galaxy Android Smartphone Tablet with Bitcoin, Ethereum or other Cryptocurrencies. UPC/EAN: 6942103117398 Model Number:",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:53.449Z"
+        },
+        {
+          "id": "ba20ffef86fb89d172bdc3ae",
+          "title": "شاشة جوال هواوي نوڤا 10 SE",
+          "description": "<strong>Huawei Nova 10 SE</strong> · Nova 10 SE -BNE-LX1 · استبدال القديم ، مكسورة ، متصدع ، التالفة المزيد من المعلومات · 300.00 ر.س وفر 38% + نقطة مكتسبة بشرائك هذا المنتج ...",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:53.449Z"
+        },
+        {
+          "id": "977ac976f62428b0e1814cf0",
+          "title": "Huawei - Mobile Phones for sale in Saudi Arabia | dubizzle Saudi Arabia (OLX)",
+          "description": "Saudi Arabia · Riyadh(26) Eastern Region(7) Al Juf(3) Makkah(3) Al Baha(2) Al Qassim(1) Asir(1) Brand and Model · Huawei(42) Other brand(1) Price · to · Condition · Used (24) New (17) Back to top · Show Verified Accounts first · Sort by: Most relevant ·",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:53.449Z"
+        },
+        {
+          "id": "41db6195d6cc9a17c1506051",
+          "title": "Huawei - Mobile Phones / Mobile Phones & Communication Products : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed]",
+          "description": "huawei - Mobile Phones / Mobile Phones &amp; Communication Products : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now [URL removed]",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:53.449Z"
+        },
+        {
+          "id": "cd928b9d2e628ad1836fb1c8",
+          "title": "Buy HUAWEI BNE LX1 Cell Phone Online. Compare Prices of Latest HUAWEI BNE LX1 Cell Phone Online – Justdial Shop Online.",
+          "description": "Buy latest HUAWEI BNE LX1 Cell Phone online. Check prices, specifications, features of HUAWEI BNE LX1 Cell Phone like , , at Justdial Shop Online.",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:53.449Z"
+        }
+      ]
+    },
+    {
+      "caseId": 25,
+      "query": "Apple AirPods Pro A3047",
+      "intended": "Apple AirPods Pro model A3047",
+      "hard": [
+        {
+          "field": "brand",
+          "op": "eq",
+          "value": "Apple"
+        },
+        {
+          "field": "model",
+          "op": "eq",
+          "value": "A3047"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": "A3047 identifier, not a case or another model",
+      "useful": "AirPods Pro listing with explicit A3047 code",
+      "irrelevant": "Unidentified AirPods accessory labeled exact",
+      "exactRequired": true,
+      "alternativeAcceptable": false,
+      "candidates": [
+        {
+          "id": "f04eccda4e8f8a279e3477d0",
+          "title": "Apple AirPods Pro 3 Wireless Earbuds, Active Noise Cancellation, Live Translation, Heart Rate Sensing, Hearing Aid Feature, Bluetooth Headphones, Spatial Audio, High‑Fidelity Sound, USB‑C Charging : Buy Online at Best Price in KSA - Souq is now [URL removed]: Electronics",
+          "description": "Apple AirPods Pro 3 Wireless Earbuds, Active Noise Cancellation, Live Translation, Heart Rate Sensing, Hearing Aid Feature, Bluetooth Headphones, Spatial Audio, High‑Fidelity Sound, USB‑C Charging : Buy Online at Best Price in KSA - Souq is now [URL removed]: Electronics",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:55.487Z"
+        },
+        {
+          "id": "9e36e476ac0750275bdc7cee",
+          "title": "Apple Airpods Pro 3 Headphone, 4x Active Noise Cancellation, H2 Chip, Transparency Mode, Dual Beamforming Microphones, Bluetooth 5.3 Connectivity, Up to 8 Hours Listening Time, White | AIRPODS-PRO-3 Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca",
+          "description": "2-5 Days Delivery in Saudi Arabia We offer <strong>express delivery to Riyadh, Jeddah, Medina, Dammam, Mecca, and other cities in Saudi Arabia</strong> for Apple Airpods Pro 3 Headphone, 4x Active Noise Cancellation, H2 Chip, Transparency Mode, Dual Beamforming ...",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:55.487Z"
+        },
+        {
+          "id": "a3c6e408ae5368a976cd7777",
+          "title": "Apple AirPods Pro price in Saudi Arabia | Compare Prices",
+          "description": "The best price for the , 18 MP CMOS Full in Saudi Arabia is <strong>SAR 1799</strong> sold at Jarir and available with free shipping and delivery within Click &amp; Collect or Delivery in 1-3 Business Days to main cities.",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:55.487Z"
+        },
+        {
+          "id": "e0861f4fd22c93eb3938d2bb",
+          "title": "Apple AirPods Pro Earbuds Bluetooth (Device)/Wireless (Charging Case) White - Jarir Bookstore KSA",
+          "description": "Buy Apple AirPods Pro Earbuds Built-in Microphone Apple H1 Chip, Cord-free Earbuds, Sweat and Water Resistant (IPX4) White Earbuds Headsets Apple at <strong>Jarir Bookstore Saudi Arabia KSA</strong>.",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:55.487Z"
+        },
+        {
+          "id": "959c56ef03017e145e82b428",
+          "title": "Apple airpods pro KSA | 30-75% OFF | Riyadh, Jeddah | noon",
+          "description": "Ready to get the very best sound experience? You’ll find the Apple AirPods Pro 2nd Generation in Saudi Arabia right here at noon. Hardware and software required include supported Apple such as iPhone, iPad, Mac and Apple Watch, running the latest iOS version.",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:55.487Z"
+        },
+        {
+          "id": "c3aea378a863568283cf2bd2",
+          "title": "Apple AirPods price in Saudi Arabia | Compare Prices",
+          "description": "The Apple AirPods will cost around 600 SAR when it’s here. If you are ready to buy one even after learning about the price tag, the Apple AirPods release date Saudi Arabia is expected sometimes in <strong>October, 2016.</strong>",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:55.487Z"
+        },
+        {
+          "id": "095dac310547fbef13c3282a",
+          "title": "Buy AirPods Pro 3 - Apple (SA)",
+          "description": "AirPods Pro 3 with heart rate sensing during workouts and the world’s best in-ear Active Noise Cancellation (ANC). Free shipping and engraving at [URL removed].",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:55.487Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 29,
+      "candidates": [
+        {
+          "id": "baed10aa3b09c39bb584ecfe",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Tod's Black Leather and Suede Ballet Flats Size 37.5, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Tod's Black Leather and Suede Ballet Flats Size 37.5, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "af63658441c0db60217cfef3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Gianvito Rossi Nude/Black Patent Leather And PVC Plexi Pointed Toe Pumps Size 38, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Gianvito Rossi Nude/Black Patent Leather And PVC Plexi Pointed Toe Pumps Size 38, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "1b6534d5a91a55107b52bbe3",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Balenciaga Navy Blue Leather and Satin Race Runner Low Top Sneakers Size 39, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies this as Balenciaga Navy Blue Leather and Satin Race Runner Low Top Sneakers Size 39; it is a sneaker alternative, but the packet does not establish resemblance to Air Max 270 or a lower price versus a comparable Nike offer. Listed price: USD 154."
+        },
+        {
+          "id": "b467bfc9685bc29c3f446bb5",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Givenchy Black Zebra Calfhair and Leather Thong Sandals Size 40, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Givenchy Black Zebra Calfhair and Leather Thong Sandals Size 40, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "6af562e73f76f0b57eb02f96",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Tod's Size 40 Brown Leather, Neoprene and Suede Lace Up Sneakers, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies this as Tod's Size 40 Brown Leather, Neoprene and Suede Lace Up Sneakers; it is a sneaker alternative, but the packet does not establish resemblance to Air Max 270 or a lower price versus a comparable Nike offer. Listed price: USD 119."
+        },
+        {
+          "id": "5bb62be85246a891116bcdf5",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Lanvin Beige Leather Wedge Platform Pumps Size 39, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Lanvin Beige Leather Wedge Platform Pumps Size 39, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "94801551dafe9021fff5313f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Gianvito Rossi Black PVC and Suede Plexi Pointed Toe Pumps Size 37.5, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Gianvito Rossi Black PVC and Suede Plexi Pointed Toe Pumps Size 37.5, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "f9f1571daeeff18d39b71a5c",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Gianvito Rossi Grey Knit Fabric And Suede Katie Ankle Boots Size 36.5, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Gianvito Rossi Grey Knit Fabric And Suede Katie Ankle Boots Size 36.5, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "9762bfc340b3c25e96481bdc",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Tod's Berry Pink Nubuck Leather Bow Gommino Driving Loafers Size 37.5, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Tod's Berry Pink Nubuck Leather Bow Gommino Driving Loafers Size 37.5, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "cfe28a9886be5797dccc09e3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies J.W.Anderson Black Leather Lace Up Oxfords Size 40, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies J.W.Anderson Black Leather Lace Up Oxfords Size 40, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "0442a12d45ffe1c77ab218de",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "Packet category is shoes; title identifies Zadig & Voltaire Multicolor Suede Block Heel Ankle Booties Size 36, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Zadig & Voltaire Multicolor Suede Block Heel Ankle Booties Size 36, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "b2a3550ea594789bb6a5991d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Sergio Rossi Brown Patent Leather Wedge Pumps Size 39.5, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Sergio Rossi Brown Patent Leather Wedge Pumps Size 39.5, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "c55447826a2b0cd9d69ae624",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Balenciaga Race Runner Size 37 Black Leather, Mesh and Suede Lace Up Sneakers, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies this as Balenciaga Race Runner Size 37 Black Leather, Mesh and Suede Lace Up Sneakers; it is a sneaker alternative, but the packet does not establish resemblance to Air Max 270 or a lower price versus a comparable Nike offer. Listed price: USD 124."
+        },
+        {
+          "id": "c2540e35184f7aef4b30fa5d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Dior Light Brown Cannage Leather Bow Peep Toe Pumps Size 40, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Dior Light Brown Cannage Leather Bow Peep Toe Pumps Size 40, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "d1a5bc3da303e2e1f3a516b8",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Stuart Weitzman Brown Textured Print Leather Pumps Size 39.5, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Stuart Weitzman Brown Textured Print Leather Pumps Size 39.5, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "b6f1f1b2a6fb86f90bf82bb6",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Jimmy Choo Black Suede Crystal Embellished Cut Out Strappy Sandals Size 35.5, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Jimmy Choo Black Suede Crystal Embellished Cut Out Strappy Sandals Size 35.5, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "be68c6ac394da17a1ed5ce46",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Tod's Brown Nubuck Leather Gommino Loafers Size 39.5, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Tod's Brown Nubuck Leather Gommino Loafers Size 39.5, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "199be697cd64b16478fb6b25",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Stuart Weitzman Metallic Leather Peep Toe Pumps Size 37.5, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Stuart Weitzman Metallic Leather Peep Toe Pumps Size 37.5, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "17a4960cd827250864ee9ae9",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Gucci Blue Ombre Leather Low Top Sneakers Size 41.5, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies this as Gucci Blue Ombre Leather Low Top Sneakers Size 41.5; it is a sneaker alternative, but the packet does not establish resemblance to Air Max 270 or a lower price versus a comparable Nike offer. Listed price: USD 151."
+        },
+        {
+          "id": "b6bc7328849459292c14d749",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Tory Burch Brown/Beige Leopard Print Calf Hair Ankle Boots Size 38.5, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Tory Burch Brown/Beige Leopard Print Calf Hair Ankle Boots Size 38.5, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "6876a5f49702d33214a5954f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies CH Carolina Herrera Black Leather And Patent Leather Bow Scrunch Ballet Flats Size 39, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies CH Carolina Herrera Black Leather And Patent Leather Bow Scrunch Ballet Flats Size 39, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "c6c38d18da91a63633e57f19",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Tod's Pink Leather Penny Loafers Size 37.5, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Tod's Pink Leather Penny Loafers Size 37.5, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "a80278272e69320924474612",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Jimmy Choo Silver/Black Glitter Fabric Sache JC Monogram Smoking Slippers Size 39, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Jimmy Choo Silver/Black Glitter Fabric Sache JC Monogram Smoking Slippers Size 39, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "f2f3a7359f574cd3c126fcd8",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Gucci Light Grey Suede Peep Toe Platform Pumps Size 39, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Gucci Light Grey Suede Peep Toe Platform Pumps Size 39, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        },
+        {
+          "id": "776ef4658c5f4489820b491a",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Giorgio Armani Brown Suede and Leather Slip On Sneakers Size 39, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies this as Giorgio Armani Brown Suede and Leather Slip On Sneakers Size 39; it is a sneaker alternative, but the packet does not establish resemblance to Air Max 270 or a lower price versus a comparable Nike offer. Listed price: USD 131."
+        },
+        {
+          "id": "458ddf2b1f44bd28686406cb",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Charlotte Olympia Black Suede Dolly Platform Pumps Size 37.5, supporting the shoe requirement."
+            }
+          ],
+          "evidence": "Title identifies Charlotte Olympia Black Suede Dolly Platform Pumps Size 37.5, a different footwear style from the requested Air Max 270 sneaker; the packet provides no comparable Nike offer to verify savings."
+        }
+      ],
+      "judgeRationale": "Candidates with sneaker titles are related alternatives, but Air Max 270 resemblance and comparative savings are not established by this packet; other shoe styles are not suitable substitutes for the requested sneaker. The listed category and titles support the shoe hard requirement."
+    }
+  ]
+}

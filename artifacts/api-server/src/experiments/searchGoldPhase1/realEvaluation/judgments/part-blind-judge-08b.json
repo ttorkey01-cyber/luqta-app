@@ -1,0 +1,2011 @@
+{
+  "cases": [
+    {
+      "caseId": 39,
+      "inventoryAvailabilityAssessment": "found",
+      "judgeRationale": "The pool contains a source-backed in-stock offer from Diesel (id d1062a2e24d7027c549830b2): its displayed description explicitly calls it a women's handbag, satisfying both frozen hard requirements. Other unmarked bags are not treated as women's from brand/style alone; wallets and non-handbag bag forms are excluded. Judged 100 unique candidates: 15 relevant, 62 partially relevant, 23 irrelevant.",
+      "candidates": [
+        {
+          "id": "8f331c867bd1517b541efbb9",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "a4876159ebea345141d1531b",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "2c683caca189b1ba99d556a7",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "3e2481ca75e7523d1cf5d84e",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "a39c4dae20d8413f1eee71a4",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Hobo; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Hobo; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "d6715c6e4dd75070bf358b85",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as a top handle bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as a top handle bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "54d23b0f90ad8eb6ae61116e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "bfeff68b4cabdc03f337dee7",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Coin Purse, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Coin Purse, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "49e6e3f86c8374918757c43e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Top Handle Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Top Handle Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "f38e79891695d6d276b518e5",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Top Handle Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Top Handle Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "0854914d8a554b404770ded9",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Backpack, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Backpack, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "c883081181e52827762c0bf5",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+        },
+        {
+          "id": "839dad5f52efce037257b192",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+        },
+        {
+          "id": "3527cb71e92901fef2f751e9",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Clutch; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Clutch; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "602d9ef6c2c9100728803487",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Backpack, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Backpack, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "e80a88db5b08d6596d30256c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shoulder Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Shoulder Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "dfe8133eeae0d48b3ea6d020",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Hobo; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Hobo; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "c348205ccbacb7bc4f84b478",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+        },
+        {
+          "id": "0c6db08c6e0d4a2b59cfb2b1",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "38a9b75dd0372bb414966aaf",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shoulder Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Shoulder Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "9d299cbf81d64c15e540c46f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "7cc1db37fe98d40d8348050c",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "69f53adc253f7d6818bbc6ae",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Satchel; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Satchel; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "48a5ff5afde7fa56b7151d19",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "e97789c6e8e7cfc834032dfd",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "78858f6cea404a67f5a2ff74",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shoulder Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Shoulder Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "229444b044e871db8babe325",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "9eccb82f70f8918f5aad4635",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "b57bcb15c9b13f51d19ca235",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "7a56b9e71c07ae9830d495c6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "875780d1b5d05009c50fe6ac",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shoulder Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Shoulder Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "f4e9ccd33d716cc0a24db632",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+        },
+        {
+          "id": "974c473e6c3501bb5951d06b",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“evate your style with this red handbag. This womens tote is crafted with precision, featuring rich leather that exu”)."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. The listing explicitly describes the item as for women (“evate your style with this red handbag. This womens tote is crafted with precision, featuring rich leather that exu”)."
+        },
+        {
+          "id": "2f4232cd4983566b9470e7d7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Satchel; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Satchel; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "18d68239fcb014ce4457eee4",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "212083409ea440186cdd9d20",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "238fac77cd773e7b3f49fbdb",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Satchel; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Satchel; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "8234c8a6ed9afa36d8b99207",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Satchel; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“ork or after. Lined well, this pre loved bag for women can easily fit all your essentials. It can be held in your arm o”)."
+            }
+          ],
+          "evidence": "Title identifies this as Satchel; this is a handbag format. The listing explicitly describes the item as for women (“ork or after. Lined well, this pre loved bag for women can easily fit all your essentials. It can be held in your arm o”)."
+        },
+        {
+          "id": "74514f85af5d613e088ad2dd",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Top Handle Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Top Handle Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "b7c62b599d61d8e1c9ab2da8",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Clutches; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“This Marc by Marc Jacobs clutch for women has the kind of design that ensures high appeal, whether held in”)."
+            }
+          ],
+          "evidence": "Title identifies this as Clutches; this is a handbag format. The listing explicitly describes the item as for women (“This Marc by Marc Jacobs clutch for women has the kind of design that ensures high appeal, whether held in”)."
+        },
+        {
+          "id": "24a69cfc6b855cc494b24245",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shoulder Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Shoulder Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "9fca10ba6d1fc8f758886a52",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "4b471ee7377af75e17753f77",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Wallet on Chain; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Wallet on Chain; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "663401634a1f157baaf2d1c7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shopper Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Shopper Tote; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "9b7991cc2a78a2d92bafc100",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "d3fcd0c093097407bc9b1a64",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+        },
+        {
+          "id": "ad3138213137cc8a55d7f38c",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+        },
+        {
+          "id": "73f0809e8555d9e37cdbb97c",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+        },
+        {
+          "id": "da3ae9561c9c31a9b243a00e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Satchel; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Satchel; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "a065873ffcabbd3413ac2b52",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shoulder Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Shoulder Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "de805053dcabb0457a0ad92d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "15f170295a1a68d59d45fcef",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "00140356b7dde7d2c4029172",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Flap Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Flap Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "d1062a2e24d7027c549830b2",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as shoulder bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“Womens handbag in wrinkled nylon. Informed by utility and chain play,”)."
+            }
+          ],
+          "evidence": "Title identifies this as shoulder bag; this is a handbag format. The listing explicitly describes the item as for women (“Womens handbag in wrinkled nylon. Informed by utility and chain play,”)."
+        },
+        {
+          "id": "831e0bb022356e0d908d07a9",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Card Holder, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Card Holder, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "50158e1fcc70733e4bc33ad8",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "53b3cc3c97f2d4a633afba37",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“in coated canvas with leather accents. This womens handbag showcases a perfect balance of modern design and classi”)."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. The listing explicitly describes the item as for women (“in coated canvas with leather accents. This womens handbag showcases a perfect balance of modern design and classi”)."
+        },
+        {
+          "id": "ea8362fb820a86731719b019",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "27157c718491645e182d8f2e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "7aa633ae623b9e2c863a12a4",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Hobo; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Hobo; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "15f31620194a1777835d7a92",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Satchel; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“ork or after. Lined well, this pre loved bag for women can easily fit all your essentials. It can be held in your arm o”)."
+            }
+          ],
+          "evidence": "Title identifies this as Satchel; this is a handbag format. The listing explicitly describes the item as for women (“ork or after. Lined well, this pre loved bag for women can easily fit all your essentials. It can be held in your arm o”)."
+        },
+        {
+          "id": "eec1e85e818642421863a0aa",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shoulder Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Shoulder Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "78338fa5c6c27dcda2726a01",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "fb81dae958f805d2509e643f",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Top Handle Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Top Handle Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "e600822a4aef6205195f03f6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "75b3e879728867afb7966765",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Satchel; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Satchel; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "b6952e17bd69c4d8c08a681f",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "9558a58580fc60ed4682c8fb",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Top Handle Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Top Handle Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "216e4149b60f87663a224e20",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Hobo; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Hobo; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "7c463734fd0789678d525db2",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "35834c803195255305591e27",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shoulder Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Shoulder Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "d23587aed5b9aac541a73f3d",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "06ee5ba603125c5f65f71e9d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Belt Bag, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Belt Bag, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "a7d384d484d2aa676ba21b3a",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "0dbfce07253a3f8b3cde73b1",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. The listing explicitly describes the item as for women (“This alluring tote bag for women has been designed to assist you on any day. Convenient to carry”)."
+        },
+        {
+          "id": "17a63a2b61b073fd1e4daaaa",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "efbce1a70b9f4e20aaa25cac",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "9686c5499e3b41710ca4e3d4",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "fc79102b4e9b4fc204506668",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "2c48524db7801ff298fc139b",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "72edc2e82a6f1f826e4888a4",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "2c7e3bb2a7e8c3fb17aaaee2",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "Title says “Louis Vuitton Rose Florentine Monogram Vernis Rossmore MM Bag,” but only identifies a bag without enough detail to verify it is a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“Indulge in timeless luxury with this LV bag for women. Meticulously crafted, this exquisite accessory embodies eleganc”)."
+            }
+          ],
+          "evidence": "Title says “Louis Vuitton Rose Florentine Monogram Vernis Rossmore MM Bag,” but only identifies a bag without enough detail to verify it is a handbag. The listing explicitly describes the item as for women (“Indulge in timeless luxury with this LV bag for women. Meticulously crafted, this exquisite accessory embodies eleganc”)."
+        },
+        {
+          "id": "1cec86cee753b0277faf74c0",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shoulder Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The listing explicitly describes the item as for women (“eil the essence of luxury with this designer womens shoulder bag. Crafted to perfection, it combines premium materi”)."
+            }
+          ],
+          "evidence": "Title identifies this as Shoulder Bag; this is a handbag format. The listing explicitly describes the item as for women (“eil the essence of luxury with this designer womens shoulder bag. Crafted to perfection, it combines premium materi”)."
+        },
+        {
+          "id": "86fd88bfca233d43f79e3338",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "104a5c96cc8f820bdc3ef817",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shoulder Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Shoulder Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "fae726c53c13ab6e3e2ba405",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Clutch; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Clutch; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "53c4e1d6da754c58a817a146",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Clutch; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Clutch; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "6d7099155c32a85d2139a1ac",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "f47011de77dda4a0db443dd3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "36369455e0933675c059a51e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shoulder Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Shoulder Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "3d253259a4afcde0f8e7b1da",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "84f4a6c519bc4d939a475a82",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Tote; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Tote; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "df165c72eafb18f76fe36ec1",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as a hobo bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as a hobo bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "5f17317a10c8f31e1bd7728b",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "e34edd1a601f4991dbee7d03",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "01179208df5b4103e50c7a1f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Backpack, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Backpack, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "c410178e068054dff0c72cf6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shoulder Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Shoulder Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "0ba004744e626234d4ccc33d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a Wallet, not a handbag."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title explicitly identifies a Wallet, not a handbag. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "3b7013bb9ca8285807b97d4a",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Crossbody; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Crossbody; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        },
+        {
+          "id": "de824aa1896ef9321bcf6312",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies this as Shoulder Bag; this is a handbag format."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+            }
+          ],
+          "evidence": "Title identifies this as Shoulder Bag; this is a handbag format. Neither displayed title nor description explicitly identifies a women audience; audience is not inferred from brand, color, or style."
+        }
+      ]
+    }
+  ]
+}

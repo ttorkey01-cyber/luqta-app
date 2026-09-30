@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 16,
+      "candidates": [
+        {
+          "id": "e29ca4cc9d4da66f6dcd1f6c",
+          "relevance": "RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Diesel."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Jeans."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Men."
+            }
+          ],
+          "evidence": "Title and description identify Diesel men's jeans; structured brand and product type fields are null. No specific model identity is established."
+        },
+        {
+          "id": "15e76c44a2886f4b861a461a",
+          "relevance": "RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly name Diesel."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title says Diesel Jeans; description identifies a Diesel Finitive Jeans item."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says For Men."
+            }
+          ],
+          "evidence": "Title identifies Diesel jeans for men, and description names a specific Diesel jeans item. No expected model identity is specified."
+        },
+        {
+          "id": "dbc37e60c27a509cfa745832",
+          "relevance": "RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Diesel."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Jeans; description specifies Bootcut Jeans."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify men's jeans."
+            }
+          ],
+          "evidence": "Title and description identify Diesel men's bootcut jeans. No expected model identity is specified."
+        },
+        {
+          "id": "1cf49ef0446af0f6ce926b69",
+          "relevance": "RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Diesel."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly say men's jeans."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Men's."
+            }
+          ],
+          "evidence": "Title and description identify Diesel men's jeans, including multiple styles. No expected model identity is specified."
+        },
+        {
+          "id": "931a62bf9060d20cbbab901d",
+          "relevance": "RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says DIESEL."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly say jeans."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify men's jeans."
+            }
+          ],
+          "evidence": "Title and description identify Diesel men's jeans. No expected model identity is specified."
+        }
+      ],
+      "judgeRationale": "Each candidate's title or description explicitly supports Diesel, jeans, and men's audience. Structured brand and type fields are null, so the judgments rely on the provided text; availability is marked unknown."
+    },
+    {
+      "caseId": 17,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet to assess."
+    },
+    {
+      "caseId": 18,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet to assess."
+    },
+    {
+      "caseId": 19,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet to assess."
+    },
+    {
+      "caseId": 20,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet to assess."
+    }
+  ]
+}

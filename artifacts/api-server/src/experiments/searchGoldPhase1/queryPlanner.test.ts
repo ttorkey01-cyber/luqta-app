@@ -137,4 +137,67 @@ describe("bounded Phase 1 query planner", () => {
     assert.equal(plan[0]?.query, "أبغى شمعة");
     assert.ok(intent.clarificationReasons.length > 0);
   });
+
+  it("keeps explicit sizes in plans and separates cheaper alternatives from same-variant checks", async () => {
+    const mixedSizeQueries = [
+      { query: "Nike أسود مقاس EU 42", size: "EU 42" },
+      { query: "Nike black size 42", size: "42" },
+      { query: "جزمة Nike 42", size: "42" },
+      { query: "Diesel jeans مقاس 32", size: "32" },
+    ];
+    for (const sample of mixedSizeQueries) {
+      const intent = await parsePhase1Intent(sample.query);
+      const plan = planPhase1Queries(intent);
+      assert.equal(intent.size.value, sample.size, sample.query);
+      assert.ok(plan[0]?.query.includes(sample.size), sample.query);
+    }
+
+    const alternativeQuery = "cheaper alternative Nike black shoes size 42";
+    const alternativeIntent = await parsePhase1Intent(alternativeQuery);
+    const alternativePlan = planPhase1Queries(alternativeIntent, "LEXICAL");
+    assert.deepEqual(alternativeIntent.relations.value, ["similar", "cheaper"]);
+    assert.ok(alternativePlan.some((item) => item.stage === "LEXICAL" && /Nike.*shoes.*black.*42/i.test(item.query)));
+    assert.ok(alternativeIntent.hardRequirements.some((requirement) =>
+      requirement.field === "size" && requirement.value === "42",
+    ));
+
+    const sameVariant = await parsePhase1Intent("same Nike black shoes size 42 but cheaper");
+    assert.deepEqual(sameVariant.relations.value, ["exact", "cheaper"]);
+    assert.deepEqual(planPhase1Queries(sameVariant, "BROAD").map((item) => item.stage), ["EXACT"]);
+  });
+
+  it("uses referenced models as lexical anchors for alternatives, not exact-ID constraints", async () => {
+    const fixtureAlternative = await parsePhase1Intent("similar to FixtureBrand ExactModel Z-4 but cheaper");
+    assert.equal(fixtureAlternative.relations.value?.includes("exact"), false);
+    const fixturePlan = planPhase1Queries(fixtureAlternative, "LEXICAL");
+    assert.notEqual(fixturePlan[0]?.strategy, "EXACT_ID");
+    assert.ok(fixturePlan.some((item) =>
+      item.stage === "LEXICAL" && item.query.includes("FixtureBrand") && item.query.includes("Z-4"),
+    ));
+    assert.equal(fixtureAlternative.hardRequirements.some((requirement) => requirement.field === "model"), false);
+
+    for (const [query, brand, model, product] of [
+      ["cheaper alternative to Nike Air Max 270 shoes", "Nike", "Air Max 270", "shoes"],
+      ["similar to Dyson Airwrap hair styler", "Dyson", "Airwrap", "hair styler"],
+    ] as const) {
+      const intent = await parsePhase1Intent(query);
+      const plan = planPhase1Queries(intent, "LEXICAL");
+      assert.equal(intent.brand.value, brand, query);
+      assert.equal(intent.model.value, model, query);
+      assert.equal(intent.productType.value, product, query);
+      assert.notEqual(plan[0]?.strategy, "EXACT_ID", query);
+      assert.ok(plan.some((item) =>
+        item.stage === "LEXICAL" && item.query.includes(brand) && item.query.includes(model),
+      ), query);
+      assert.equal(intent.hardRequirements.some((requirement) => requirement.field === "model"), false, query);
+    }
+
+    const sameProduct = await parsePhase1Intent("same FixtureBrand ExactModel Z-4 but cheaper");
+    const sameProductPlan = planPhase1Queries(sameProduct, "LEXICAL");
+    assert.deepEqual(sameProduct.relations.value, ["exact", "cheaper"]);
+    assert.equal(sameProductPlan[0]?.strategy, "EXACT_ID");
+    assert.ok(sameProduct.hardRequirements.some((requirement) =>
+      requirement.field === "model" && requirement.value === "Z-4",
+    ));
+  });
 });

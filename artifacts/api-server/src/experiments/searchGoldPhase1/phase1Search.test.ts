@@ -52,9 +52,10 @@ test("bounded exact then lexical retrieval recovers separate merchant offers", a
       };
     },
   );
-  assert.equal(calls[0], "P-20");
-  assert.equal(calls[1], "FixtureBrand Shared Model P-20");
-  assert.ok(calls.length <= 4);
+  assert.equal(calls[0], "FixtureBrand Shared Model P-20");
+  assert.equal(calls[1], "P-20");
+  assert.equal(calls[2], "FixtureBrand Shared Model P-20");
+  assert.ok(calls.length <= 5);
   assert.deepEqual(result.results.map((item) => item.product.id).sort(), ["offer-a", "offer-b"]);
   assert.equal(result.executedQueries[1]?.stage, "LEXICAL");
   assert.equal(result.identityGroups.flatMap((group) =>
@@ -148,7 +149,7 @@ test("soft Saudi budget can recover a pricier alternative without relaxing hard 
   assert.equal(result.executedQueries[1]?.stage, "LEXICAL");
 });
 
-test("strict Saudi price and color reject unknown and conflicting evidence", async () => {
+test("strict Saudi price and color retain unknown as nonqualifying, reject verified conflicts", async () => {
   const result = await searchGoldPhase1(
     { query: "أبغى شنطة سوداء أقل من 300 ريال" },
     v2([
@@ -159,10 +160,42 @@ test("strict Saudi price and color reject unknown and conflicting evidence", asy
     ]),
   );
   assert.equal(result.state, "RESULTS_FOUND");
-  assert.deepEqual(result.results.map((item) => item.product.id), ["good"]);
-  assert.equal(result.rejected.length, 3);
-  assert.equal(result.rejected.find((item) => item.product.id === "unknown")?.constraints.price.status, "unknown");
+  assert.deepEqual(result.results.map((item) => item.product.id), ["good", "unknown"]);
+  assert.equal(result.results.find((item) => item.product.id === "unknown")?.constraints.price.status, "unknown");
+  assert.notEqual(result.results.find((item) => item.product.id === "unknown")?.classification, "EXACT");
+  assert.equal(result.rejected.length, 2);
   assert.equal(result.rejected.find((item) => item.product.id === "wrong-color")?.constraints.color.status, "verified_fail");
+  assert.ok(result.candidateTransitions.some((item) =>
+    item.candidateId === "unknown" && item.stage === "DISPLAY_ELIGIBLE" &&
+    item.reasonCode === "UNKNOWN_EVIDENCE_ALTERNATIVE"));
+  assert.ok(result.candidateTransitions.some((item) =>
+    item.candidateId === "wrong-color" && item.stage === "REJECTED" &&
+    item.reasonCode === "VERIFIED_HARD_CONFLICT"));
+});
+
+test("V2's original request remains a discovery floor before parsed plans", async () => {
+  const calls: string[] = [];
+  const result = await searchGoldPhase1({ query: "black handbag under 300" }, async (request) => {
+    calls.push(request.query);
+    return { products: request.intent?.maxPrice == null
+      ? [product("v2-only", "black handbag", { price: 280 })] : [] };
+  });
+  assert.equal(calls[0], "black handbag under 300");
+  assert.equal(result.results[0]?.product.id, "v2-only");
+  assert.ok(result.candidateTransitions.some((item) =>
+    item.candidateId === "v2-only" && item.stage === "RETRIEVED" && item.reasonCode === "V2_BASELINE"));
+  assert.ok(result.candidateTransitions.some((item) =>
+    item.candidateId === "v2-only" && item.stage === "RANKED"));
+});
+
+test("cheaper alternatives remain discoveries without a same-variant savings claim", async () => {
+  const result = await searchGoldPhase1(
+    { query: "similar to FixtureBrand ExactModel Z-4 but cheaper" },
+    v2([product("alternative", "FixtureBrand similar model Z-5 handbag", { price: 95 })]),
+  );
+  assert.ok(result.intent?.relations.value?.includes("similar"));
+  assert.ok(result.results.some((item) => item.product.id === "alternative"));
+  assert.deepEqual(result.comparisonEvidence, []);
 });
 
 test("unknown unrelated inventory is no confident match, not a filler result", async () => {

@@ -1,9 +1,10 @@
-import { deterministicIntentParser } from "../../connectors/intentParser";
+/** Immutable evaluation control copied from the frozen Phase 1B implementation. Do not edit behavior. */
+import { deterministicIntentParser } from "../../../connectors/intentParser";
 import {
   expandShoppingQuery,
   normalizeArabicForSearch,
-} from "../../connectors/queryExpansion";
-import type { QueryIntent } from "../../connectors/types";
+} from "../../../connectors/queryExpansion";
+import type { QueryIntent } from "../../../connectors/types";
 
 export type EvidenceLevel =
   | "USER_EXPLICIT"
@@ -152,10 +153,7 @@ function parseBudget(raw: string): { field: EvidenceValue<BudgetRange>; requirem
   const number = "([0-9][0-9,]*(?:\\.[0-9]+)?)";
   const amount = `\\s*(?:[$£€]\\s*)?${number}`;
   const range = query.match(new RegExp(`(?:\\bbetween|\\bfrom|بين|من)${amount}\\s*(?:and|to|through|حتى|الى|و)${amount}`, "iu"));
-  const maxMatch = query.match(new RegExp(`(?:under|below|less\\s+than|at\\s+most|no\\s+more\\s+than|maximum|max(?:imum)?|اقل(?:\\s+من)?|ما\\s*يتعد[ىي]|لا\\s*يتعد[ىي]|ما\\s*يتجاوز|لا\\s*يتجاوز|بحد\\s+اقصى|حد\\s+اقصى|اقصى\\s+سعر|ما\\s*يفوق)${amount}`, "iu"));
-  const max = maxMatch && !(maxMatch[0].match(/^max/iu) && /\bair\s+$/iu.test(query.slice(0, maxMatch.index ?? 0)))
-    ? maxMatch
-    : null;
+  const max = query.match(new RegExp(`(?:under|below|less\\s+than|at\\s+most|no\\s+more\\s+than|maximum|max(?:imum)?|اقل(?:\\s+من)?|ما\\s*يتعد[ىي]|لا\\s*يتعد[ىي]|ما\\s*يتجاوز|لا\\s*يتجاوز|بحد\\s+اقصى|حد\\s+اقصى|اقصى\\s+سعر|ما\\s*يفوق)${amount}`, "iu"));
   const min = query.match(new RegExp(`(?:over|above|more\\s+than|greater\\s+than|at\\s+least|no\\s+less\\s+than|minimum|min(?:imum)?|اكبر\\s+من|اكثر\\s+من|فوق)${amount}`, "iu"));
   const approximate = query.match(new RegExp(`(?:around|about|approximately|approx\\.?|بحدود|حدود|حوالي|حوالى|تقريبا|~)${amount}`, "iu"));
   // A bare "budget 300" is a soft/approximate preference, not a strict cap.
@@ -198,7 +196,7 @@ const BRAND_ALIASES: Array<[string, string[]]> = [
   ["Louis Vuitton", ["Louis Vuitton", "لويس فيتون"]], ["Chanel", ["Chanel", "شانيل"]],
   ["Sony", ["Sony", "سوني"]], ["Guess", ["Guess", "جيس"]], ["Ford", ["Ford", "فورد"]],
   ["BMW", ["BMW", "بي ام دبليو"]], ["Mercedes-Benz", ["Mercedes-Benz", "مرسيدس"]],
-  ["Jaguar", ["Jaguar"]], ["Dyson", ["Dyson"]],
+  ["Jaguar", ["Jaguar"]],
 ];
 const PRODUCT_ALIASES: Array<[string, string[]]> = [
   ["spark plug", ["spark plug", "spark plugs", "بواجي", "بوجيه", "شمعة احتراق", "شمعات احتراق", "شمعة محرك", "شمعة المحرك"]],
@@ -213,7 +211,6 @@ const PRODUCT_ALIASES: Array<[string, string[]]> = [
   ["watch", ["watch", "watches", "ساعة", "ساعات"]],
   ["bumper", ["bumper", "صدام", "صدامات"]],
   ["earbuds", ["earbuds", "earbud", "سماعات اذن", "سماعة اذن", "سماعات الأذن", "سماعة الأذن"]],
-  ["hair styler", ["hair styler", "hair styling tool"]],
   ["charger", ["charger", "USB charger", "شاحن", "شاحن USB"]],
   ["laptop", ["laptop", "لابتوب"]],
   ["perfume", ["perfume", "fragrance", "عطر"]],
@@ -280,20 +277,14 @@ export async function parsePhase1Intent(query: string, suppliedIntent?: QueryInt
   const fixtureGalaxyCode = !exactCode
     ? raw.match(/\bGalaxy\s+\p{L}+\s+(S\d{1,3})\b/iu)?.[1]
     : undefined;
-  const dysonAirwrapModel = !exactCode
-    ? raw.match(/\bDyson\s+(Airwrap)\b/iu)?.[1]
-    : undefined;
-  const labeledOrKnownModel = labeledModel ?? arabicIphoneModel ?? fixtureGalaxyCode ?? dysonAirwrapModel ??
+  const labeledOrKnownModel = labeledModel ?? arabicIphoneModel ?? fixtureGalaxyCode ??
     (!exactCode
-      ? raw.match(/(?<![\p{L}\p{N}])((?:iPhone|Galaxy|Pixel|Air\s*Force|Air\s*Max|Camry|Corolla|Land\s+Cruiser|XE|XF|F-Pace)(?:\s+[\p{L}\p{N}-]{1,12})?)/iu)?.[1]
+      ? raw.match(/(?<![\p{L}\p{N}])((?:iPhone|Galaxy|Pixel|Air\s*Force|Camry|Corolla|Land\s+Cruiser|XE|XF|F-Pace)(?:\s+[\p{L}\p{N}-]{1,12})?)/iu)?.[1]
       : undefined);
   const bareModelCode = !exactCode && !labeledOrKnownModel
     ? raw.match(/(?<![\p{L}\p{N}])(?=[\p{L}\p{N}./-]*\p{L})(?=[\p{L}\p{N}./-]*\p{N})[\p{L}\p{N}][\p{L}\p{N}./-]{1,49}(?![\p{L}\p{N}])/iu)?.[0]
     : undefined;
-  const rawModelCandidate = (labeledOrKnownModel ?? bareModelCode)?.replace(/\s+[0-9٠-٩۰-۹]{4}$/u, "");
-  const modelCandidate = gtin14.value && /^GTIN-14$/iu.test(rawModelCandidate ?? "")
-    ? undefined
-    : rawModelCandidate;
+  const modelCandidate = (labeledOrKnownModel ?? bareModelCode)?.replace(/\s+[0-9٠-٩۰-۹]{4}$/u, "");
   // Keep identifier spelling, punctuation and Arabic numerals exactly as typed.
   const sku = explicit(skuSource ? exactCode : undefined, skuSource ? exactCode : undefined);
   const mpn = explicit(partSource || mpnSource ? exactCode : undefined, partSource || mpnSource ? exactCode : undefined);
@@ -307,16 +298,9 @@ export async function parsePhase1Intent(query: string, suppliedIntent?: QueryInt
   ];
   const colorEntry = colorAliases.find(([, aliases]) => aliasMatch(query, aliases));
   const color = explicit(colorEntry?.[0], colorEntry ? sourceFor(query, colorEntry[1]) : undefined);
-  const labeledSizeMatch = raw.match(/(?:\bsize\s*[:#]?\s*|مقاس\s*|(?=(?:EU|UK|US|EURO)\s))(?:(EU|UK|US|EURO)\s*)?([\p{L}\p{N}٠-٩۰-۹.-]{1,12})(?:\s+(EU|UK|US|EURO))?/iu);
-  const bareSizeMatch = !labeledSizeMatch && /(?:shoes?|sneakers?|boots?|footwear|clothing|jeans|pants|dress|ملابس|حذاء|جزمة|جزم)/iu.test(raw) &&
-    !/(?:\b(?:qty|quantity|pack|pairs?|pcs?)\b|عدد|حبة|قطع|ريال|sar|usd|\$|€|£|under|below|less\s+than|budget|ميزانية|اقل|أقل|حوالي|حدود|تقريبا|تقريباً)/iu.test(raw)
-    && !/(?:\b(?:model|year|for|price|cost(?:ing)?)\b|موديل|سنة|سعر|بقيمة|بمبلغ)\s*[:=]?\s*[0-9٠-٩۰-۹]{1,4}\s*$/iu.test(raw)
-    ? raw.match(/(?:^|\s)([0-9٠-٩۰-۹]{1,2})(?:\s*(EU|UK|US|EURO))?\s*$/iu)
-    : null;
-  const sizeMatch = labeledSizeMatch ?? bareSizeMatch;
-  const sizeValue = labeledSizeMatch ? labeledSizeMatch[2] : bareSizeMatch?.[1];
-  const sizeSystem = labeledSizeMatch?.[1] ?? labeledSizeMatch?.[3] ?? bareSizeMatch?.[2];
-  const normalizedSize = sizeValue ? `${sizeSystem ? `${sizeSystem.toUpperCase()} ` : ""}${sizeValue}` : undefined;
+  const sizeMatch = raw.match(/(?:\b(?:size\s*[:#]?\s*|EU\s+)|مقاس\s*)([\p{L}\p{N}٠-٩۰-۹.-]{1,12})(?:\s+(EU|UK|US|EURO))?/iu);
+  const sizeSystem = sizeMatch?.[2] ?? (sizeMatch?.[0] && /^EU\s/iu.test(sizeMatch[0]) ? "EU" : undefined);
+  const normalizedSize = sizeMatch ? `${sizeSystem ? `${sizeSystem.toUpperCase()} ` : ""}${sizeMatch[1]}` : undefined;
   const materialEntry = [["leather", ["leather", "جلد"]], ["cotton", ["cotton", "قطن"]], ["wood", ["wood", "خشب"]], ["metal", ["metal", "معدن"]]].find(([, aliases]) => aliasMatch(query, aliases as string[]));
   const materialAliases = materialEntry?.[1] as string[] | undefined;
   const styleMatch = raw.match(/(?:\bstyle\s*[:=]?\s*|ستايل\s*)([\p{L}\p{N}-]{2,24})/iu);
@@ -329,15 +313,12 @@ export async function parsePhase1Intent(query: string, suppliedIntent?: QueryInt
   const cityNames: Record<string, string> = { "جدة": "Jeddah", "الرياض": "Riyadh", "مكة": "Mecca", "الدمام": "Dammam", "الخبر": "Al Khobar", "المدينة": "Medina", "أبها": "Abha", "Jeddah": "Jeddah", "Riyadh": "Riyadh", "Mecca": "Mecca", "Dammam": "Dammam", "Khobar": "Al Khobar", "Medina": "Medina", "Abha": "Abha" };
   const city = explicit(cityEntry ? cityNames[cityEntry] : undefined, cityEntry ? sourceFor(raw, [cityEntry]) : undefined);
   const relationMatches: SearchRelation[] = [];
-  if (/(?:\bexact(?:ly)?\b|\bsame(?:\s+(?:as|one|this|that|it|[\p{L}]+))?|نفس(?:\s+[\p{L}]+)?|مطابق)/iu.test(raw)) relationMatches.push("exact");
-  if (/(?:similar|like\s+(?:this|it)|زيها|مثله|شبيه|\b(?:alternative|alternatives|replacement|substitute)\b|بديل(?:ة|هم|ها)?|بدائل)/iu.test(raw)) relationMatches.push("similar");
+  if (/(?:exact(?:ly)?|same(?:\s+(?:as|one|this|that|it|[\p{L}]+))?|نفس(?:\s+[\p{L}]+)?|مطابق)/iu.test(raw)) relationMatches.push("exact");
+  if (/(?:similar|like\s+(?:this|it)|زيها|مثله|شبيه)/iu.test(raw)) relationMatches.push("similar");
   if (/(?:cheaper|less\s+expensive|ارخص|أرخص)/iu.test(raw)) relationMatches.push("cheaper");
-  const explicitAlternative = relationMatches.includes("similar") ||
-    (relationMatches.includes("cheaper") && !relationMatches.includes("exact")) ||
-    /\b(?:alternative|alternatives|replacement|substitute)\b|بديل/iu.test(raw);
   const relationSources = [
     relationMatches.includes("exact") ? sourceFor(raw, ["exact", "same as", "same this", "same that", "same", "نفس الساعة", "نفس هذا", "نفس هذي", "نفس", "مطابق"]) : undefined,
-    relationMatches.includes("similar") ? sourceFor(raw, ["similar", "like this", "like it", "زيها", "مثله", "شبيه", "alternative", "alternatives", "replacement", "substitute", "بديل", "بديلة", "بدائل"]) : undefined,
+    relationMatches.includes("similar") ? sourceFor(raw, ["similar", "like this", "like it", "زيها", "مثله", "شبيه"]) : undefined,
     relationMatches.includes("cheaper") ? sourceFor(raw, ["cheaper", "less expensive", "أرخص", "ارخص"]) : undefined,
   ].filter(Boolean).join(" + ");
   // The singular compatibility field favors the action; `relations` keeps all
@@ -385,7 +366,7 @@ export async function parsePhase1Intent(query: string, suppliedIntent?: QueryInt
     ambiguityReasons.push("Automotive part requested without vehicle make/model; compatibility is unknown.");
     clarificationReasons.push("Provide the vehicle make/model/year to check compatibility. No fitment is asserted.");
   }
-  if (labeledSizeMatch && !sizeSystem && /(?:shoes?|clothing|dress|jeans|pants|حذاء|جزمة|جزم|ملابس)/iu.test(raw)) {
+  if (sizeMatch && !sizeSystem && /(?:shoes?|clothing|dress|حذاء|جزمة|جزم|ملابس)/iu.test(raw)) {
     ambiguityReasons.push("The size value is explicit, but its sizing system is not specified.");
     clarificationReasons.push("Please specify the size system (for example EU, UK, or US).");
   }
@@ -395,11 +376,11 @@ export async function parsePhase1Intent(query: string, suppliedIntent?: QueryInt
   const preferredColor = /(?:يفضل|افضل|أفضل|تفضل|يفضّل|prefer(?:s|red)?|would\s+prefer)/iu.test(raw);
   if (color.value && !preferredColor) hardRequirements.push({ field: "color", value: color.value, operator: "eq", evidence: "USER_EXPLICIT", sourceText: color.sourceText ?? color.value });
   if (city.value) hardRequirements.push({ field: "city", value: city.value, operator: "eq", evidence: "USER_EXPLICIT", sourceText: city.sourceText ?? city.value });
-  if (sizeMatch) hardRequirements.push({ field: "size", value: normalizedSize!, operator: "eq", evidence: "USER_EXPLICIT", sourceText: sizeMatch[0] });
+  if (sizeMatch && sizeSystem) hardRequirements.push({ field: "size", value: normalizedSize!, operator: "eq", evidence: "USER_EXPLICIT", sourceText: sizeMatch[0] });
   if (exactCode) hardRequirements.push({ field: skuSource && /seller|merchant/iu.test(codeMatch![0]) ? "seller_sku" : oemSource ? "oem" : skuSource ? "sku" : "mpn", value: exactCode, operator: "eq", evidence: "USER_EXPLICIT", sourceText: codeMatch![0] });
   if (gtin14.value) hardRequirements.push({ field: "gtin14", value: gtin14.value, operator: "eq", evidence: "USER_EXPLICIT", sourceText: gtin14.sourceText ?? gtin14.value });
   const explicitPhoneModel = Boolean(modelCandidate && /^(?:iPhone|آيفون|ايفون)\s*[0-9٠-٩۰-۹]{1,3}$/iu.test(modelCandidate));
-  if (!explicitAlternative && modelCandidate && (/^(?=.*\p{L})(?=.*\p{N})[\p{L}\p{N}./-]+$/iu.test(modelCandidate) || explicitPhoneModel)) {
+  if (modelCandidate && (/^(?=.*\p{L})(?=.*\p{N})[\p{L}\p{N}./-]+$/iu.test(modelCandidate) || explicitPhoneModel)) {
     hardRequirements.push({ field: "model", value: modelCandidate, operator: "eq", evidence: "USER_EXPLICIT", sourceText: modelCandidate });
   }
   if (product.value === "charger" && usbTypeCMatch) {

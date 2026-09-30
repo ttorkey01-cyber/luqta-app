@@ -7,7 +7,7 @@ import { parsePhase1Intent } from "./phase1Intent";
 function product(
   id: string,
   values: Partial<NormalizedProduct["canonical"]> = {},
-  extras: Partial<Pick<NormalizedProduct, "isAffiliate" | "affiliateUrl" | "rankScore" | "exactMatchScore" | "providerId">> = {},
+  extras: Partial<Pick<NormalizedProduct, "isAffiliate" | "affiliateUrl" | "rankScore" | "exactMatchScore" | "providerId" | "availability">> = {},
 ): NormalizedProduct {
   const canonical: NormalizedProduct["canonical"] = {
     id,
@@ -100,7 +100,8 @@ describe("isolated Phase 1 candidate evaluation", () => {
       product("missing", { title: "handbag", category: "bags_accessories", price: null }),
     ]);
     assert.equal(capResult.rejected.find((candidate) => candidate.product.id === "equal"), undefined);
-    assert.equal(capResult.rejected.find((candidate) => candidate.product.id === "missing")?.constraints.price?.status, "unknown");
+    assert.equal(capResult.alternatives.find((candidate) => candidate.product.id === "missing")?.constraints.price?.status, "unknown");
+    assert.equal(capResult.qualifying.some((candidate) => candidate.product.id === "missing"), false);
 
     const range = await parsePhase1Intent("bag between 100 and 200 SAR");
     const rangeResult = evaluatePhase1Candidates(range, [
@@ -121,9 +122,10 @@ describe("isolated Phase 1 candidate evaluation", () => {
       currency: null,
     });
     const result = evaluatePhase1Candidates(intent, [noCurrency]);
-    const rejected = result.rejected[0];
-    assert.equal(rejected?.constraints.price.status, "unknown");
-    assert.match(rejected?.constraints.price.reason ?? "", /Saudi-market policy requires SAR/u);
+    const alternative = result.alternatives[0];
+    assert.equal(alternative?.constraints.price.status, "unknown");
+    assert.match(alternative?.constraints.price.reason ?? "", /Saudi-market policy requires SAR/u);
+    assert.equal(result.qualifying.length, 0);
   });
 
   it("keeps approximate budgets soft rather than turning them into a hard gate", async () => {
@@ -151,11 +153,11 @@ describe("isolated Phase 1 candidate evaluation", () => {
       location: null,
     });
     const result = evaluatePhase1Candidates(intent, [candidate]);
-    const rejected = result.rejected[0];
-    assert.ok(rejected);
-    assert.equal(rejected.constraints.size.status, "unknown");
-    assert.equal(rejected.constraints.condition.status, "unknown");
-    assert.equal(rejected.constraints.city.status, "unknown");
+    const alternative = result.alternatives[0];
+    assert.ok(alternative);
+    assert.equal(alternative.constraints.size.status, "unknown");
+    assert.equal(alternative.constraints.condition.status, "unknown");
+    assert.equal(alternative.constraints.city.status, "unknown");
     assert.equal(result.qualifying.length, 0);
   });
 
@@ -184,8 +186,8 @@ describe("isolated Phase 1 candidate evaluation", () => {
     assert.equal(result.qualifying[0]?.classification, "EXACT");
     assert.equal(result.qualifying[0]?.constraints.model.status, "verified_pass");
     assert.equal(result.rejected.find((candidate) => candidate.product.id === "wrong-brand")?.constraints.brand.status, "verified_fail");
-    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "near-model")?.constraints.model.status, "verified_fail");
-    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "near-model")?.classification, "CLOSE_ALTERNATIVE");
+    assert.equal(result.rejected.find((candidate) => candidate.product.id === "near-model")?.constraints.model.status, "verified_fail");
+    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "near-model"), undefined);
   });
 
   it("rejects product-type conflicts even when the broad category matches", async () => {
@@ -233,8 +235,8 @@ describe("isolated Phase 1 candidate evaluation", () => {
       brand: "Toyota",
     });
     const result = evaluatePhase1Candidates(intent, [exact, sellerIdOnly, wrongCategory]);
-    assert.equal(result.rejected.find((candidate) => candidate.product.id === "labeled")?.constraints.vehicle_fitment.status, "unknown");
-    assert.equal(result.rejected.find((candidate) => candidate.product.id === "seller-id")?.constraints.mpn.status, "unknown");
+    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "labeled")?.constraints.vehicle_fitment.status, "unknown");
+    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "seller-id")?.constraints.mpn.status, "unknown");
     assert.equal(result.rejected.find((candidate) => candidate.product.id === "wrong-category")?.constraints.vehicle_fitment.status, "unknown");
     assert.equal(result.qualifying.length, 0);
   });
@@ -255,12 +257,12 @@ describe("isolated Phase 1 candidate evaluation", () => {
     const result = evaluatePhase1Candidates(intent, [matchingMpn, skuLabeledOnly]);
     assert.equal(result.qualifying[0]?.classification, "EXACT");
     assert.equal(result.qualifying[0]?.constraints.mpn.status, "verified_pass");
-    assert.equal(result.rejected.find((candidate) => candidate.product.id === "sku-not-oem")?.constraints.mpn.status, "unknown");
+    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "sku-not-oem")?.constraints.mpn.status, "unknown");
 
     const oemIntent = await parsePhase1Intent("handbag OEM: 123/ABC");
     oemIntent.oem = { value: "123/ABC", evidence: "USER_EXPLICIT" };
     const wrongLabel = evaluatePhase1Candidates(oemIntent, [skuLabeledOnly]);
-    assert.equal(wrongLabel.rejected[0]?.constraints.oem.status, "unknown");
+    assert.equal(wrongLabel.alternatives[0]?.constraints.oem.status, "unknown");
   });
 
   it("separates source-backed EXACT from seller-SKU PROBABLE_EXACT", async () => {
@@ -272,6 +274,7 @@ describe("isolated Phase 1 candidate evaluation", () => {
     });
     const exactResult = evaluatePhase1Candidates(mpnIntent, [exact]);
     assert.equal(exactResult.qualifying[0]?.classification, "EXACT");
+    assert.ok(exactResult.qualifying[0]?.evidence.some((item) => /EXACT authorization: source-backed matching labeled/u.test(item)));
 
     const skuIntent = await parsePhase1Intent("handbag SKU: ABC-123");
     const sellerSku = product("seller-sku", {
@@ -355,7 +358,7 @@ describe("isolated Phase 1 candidate evaluation", () => {
     assert.notEqual(result.alternatives[0]?.constraints.model.status, "verified_pass");
   });
 
-  it("labels a verified near-model conflict as CLOSE_ALTERNATIVE without qualifying or hiding its failed model constraint", async () => {
+  it("rejects a verified near-model conflict without qualifying it", async () => {
     const intent = await parsePhase1Intent("same FixtureBrand Model Q-100");
     const nearModel = product("case53-near-model", {
       title: "FixtureBrand Model Q-101",
@@ -365,8 +368,8 @@ describe("isolated Phase 1 candidate evaluation", () => {
     });
     const result = evaluatePhase1Candidates(intent, [nearModel]);
     assert.equal(result.qualifying.length, 0);
-    assert.equal(result.alternatives[0]?.classification, "CLOSE_ALTERNATIVE");
-    assert.equal(result.alternatives[0]?.constraints.model.status, "verified_fail");
+    assert.equal(result.alternatives.length, 0);
+    assert.equal(result.rejected[0]?.constraints.model.status, "verified_fail");
   });
 
   it("does not allow a near-model alternative to waive a conflicting explicit color", async () => {
@@ -404,7 +407,7 @@ describe("isolated Phase 1 candidate evaluation", () => {
     assert.equal(result.alternatives[0]?.product.id, "eu-38-title");
     assert.equal(result.alternatives[0]?.constraints.size.status, "verified_pass");
     assert.equal(result.rejected.find((candidate) => candidate.product.id === "eu-39-title")?.constraints.size.status, "verified_fail");
-    assert.equal(result.rejected.find((candidate) => candidate.product.id === "unlabeled-38")?.constraints.size.status, "unknown");
+    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "unlabeled-38")?.constraints.size.status, "unknown");
   });
 
   it("rejects a watch accessory as irrelevant to an explicit watch identity request", async () => {
@@ -419,7 +422,7 @@ describe("isolated Phase 1 candidate evaluation", () => {
     assert.equal(result.rejected[0]?.classification, "IRRELEVANT");
   });
 
-  it("keeps headphones-versus-earbuds as a related alternative, not an exact identity", async () => {
+  it("rejects headphones-versus-earbuds as a verified product type conflict", async () => {
     const intent = await parsePhase1Intent("FixtureBrand headphones H-1");
     const candidate = product("earbuds-near-type", {
       title: "FixtureBrand earbuds H-1",
@@ -429,9 +432,9 @@ describe("isolated Phase 1 candidate evaluation", () => {
     });
     const result = evaluatePhase1Candidates(intent, [candidate]);
     assert.equal(result.qualifying.length, 0);
-    assert.equal(result.alternatives[0]?.classification, "CLOSE_ALTERNATIVE");
-    assert.equal(result.alternatives[0]?.constraints.product_type.status, "verified_fail");
-    assert.equal(result.alternatives[0]?.constraints.model.status, "verified_pass");
+    assert.equal(result.alternatives.length, 0);
+    assert.equal(result.rejected[0]?.constraints.product_type.status, "verified_fail");
+    assert.equal(result.rejected[0]?.constraints.model.status, "verified_pass");
   });
 
   it("does not treat a labeled SKU title as verified without seller corroboration", async () => {
@@ -442,8 +445,8 @@ describe("isolated Phase 1 candidate evaluation", () => {
     });
     const result = evaluatePhase1Candidates(intent, [noSeller]);
     assert.equal(result.qualifying.length, 0);
-    assert.equal(result.rejected[0]?.constraints.sku.status, "unknown");
-    assert.match(result.rejected[0]?.diagnostics.join(" ") ?? "", /seller and source identity/u);
+    assert.equal(result.alternatives[0]?.constraints.sku.status, "unknown");
+    assert.ok(result.alternatives[0]?.evidence.some((item) => /evidence is unknown/u.test(item)));
   });
 
   it("keeps the same seller-scoped SKU as separate offers across different merchants", async () => {
@@ -502,6 +505,173 @@ describe("isolated Phase 1 candidate evaluation", () => {
     assert.equal(shoeGroup?.variants.length, 2);
   });
 
+  it("keeps Nike style/colorways distinct while retaining every merchant offer", async () => {
+    const intent = await parsePhase1Intent("Nike");
+    const result = evaluatePhase1Candidates(intent, [
+      product("nike-white-a", {
+        title: "Nike Air Force 1 CW2288-111 white/white",
+        brand: "Nike",
+        merchant: "Shop A",
+      }),
+      product("nike-white-b", {
+        title: "Nike Air Force 1 CW2288-111 white/white",
+        brand: "Nike",
+        merchant: "Shop B",
+      }),
+      product("nike-black", {
+        title: "Nike Air Force 1 CW2288-001 black/black",
+        brand: "Nike",
+        merchant: "Shop C",
+      }),
+    ]);
+    const nikeGroup = result.identityGroups?.find((group) => group.variants.some((variant) =>
+      variant.offers.some((offer) => offer.id.includes("nike-white-a")),
+    ));
+    assert.equal(nikeGroup?.variants.length, 2);
+    assert.equal(nikeGroup?.variants.flatMap((variant) => variant.offers).length, 3);
+  });
+
+  it("retains relevant unknown hard evidence as a nonqualifying alternative, but rejects verified conflict", async () => {
+    const intent = await parsePhase1Intent("Samsung Galaxy S24 phone black");
+    const result = evaluatePhase1Candidates(intent, [
+      product("unknown-color-s24", {
+        title: "Samsung Galaxy S24 phone",
+        category: "electronics",
+        productType: "phone",
+        brand: "Samsung",
+        color: null,
+      }),
+      product("white-s24", {
+        title: "Samsung Galaxy S24 phone",
+        category: "electronics",
+        productType: "phone",
+        brand: "Samsung",
+        color: "white",
+      }),
+    ]);
+    const unknown = result.alternatives.find((candidate) => candidate.product.id === "unknown-color-s24");
+    assert.equal(unknown?.constraints.color.status, "unknown");
+    assert.notEqual(unknown?.classification, "EXACT");
+    assert.equal(result.qualifying.some((candidate) => candidate.product.id === "unknown-color-s24"), false);
+    assert.equal(result.rejected.find((candidate) => candidate.product.id === "white-s24")?.constraints.color.status, "verified_fail");
+  });
+
+  it("does not authorize an exact Nike colorway from style-only or unknown variant evidence", async () => {
+    const intent = await parsePhase1Intent("Nike style CW2288-111 white");
+    const result = evaluatePhase1Candidates(intent, [
+      product("nike-black-pink", {
+        title: "Nike Air Force 1 CW2288-111 black pink",
+        brand: "Nike",
+        category: "shoes",
+        productType: "shoes",
+      }),
+      product("nike-purple", {
+        title: "Nike Air Force 1 CW2288-111 purple",
+        brand: "Nike",
+        category: "shoes",
+        productType: "shoes",
+        color: null,
+      }),
+      product("nike-unknown-color", {
+        title: "Nike Air Force 1 CW2288-111",
+        brand: "Nike",
+        category: "shoes",
+        productType: "shoes",
+        color: null,
+      }),
+    ]);
+    assert.equal(result.qualifying.length, 0);
+    assert.equal(result.rejected.find((candidate) => candidate.product.id === "nike-black-pink")?.constraints.color.status, "verified_fail");
+    assert.equal(result.rejected.find((candidate) => candidate.product.id === "nike-purple")?.constraints.color.status, "verified_fail");
+    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "nike-unknown-color")?.constraints.color.status, "unknown");
+    assert.ok(result.alternatives.every((candidate) => candidate.classification !== "EXACT"));
+    assert.ok(result.qualifying.every((candidate) => candidate.evidence.some((item) => /EXACT authorization:/u.test(item))));
+  });
+
+  it("requires offer-title evidence for requested Samsung storage and excludes family pages from EXACT", async () => {
+    const intent = await parsePhase1Intent("Samsung Galaxy S24 256GB");
+    const result = evaluatePhase1Candidates(intent, [
+      product("s24-family", {
+        title: "Buy Samsung Galaxy S24 Series at the best prices",
+        description: "Galaxy S24 Ultra 256GB and S24 Plus models available",
+        brand: "Samsung",
+        productType: "phone",
+        category: "electronics",
+      }),
+      product("s24-storage-unknown", {
+        title: "Samsung Galaxy S24 Black smartphone",
+        brand: "Samsung",
+        productType: "phone",
+        category: "electronics",
+      }),
+      product("s24-256-offer", {
+        title: "Samsung Galaxy S24 256GB Black smartphone",
+        brand: "Samsung",
+        productType: "phone",
+        category: "electronics",
+      }),
+      product("s24-128-offer", {
+        title: "Samsung Galaxy S24 128GB Black smartphone",
+        brand: "Samsung",
+        productType: "phone",
+        category: "electronics",
+      }),
+    ]);
+    assert.equal(result.qualifying.find((candidate) => candidate.product.id === "s24-256-offer")?.classification, "EXACT");
+    assert.equal(result.qualifying.some((candidate) => candidate.product.id === "s24-family"), false);
+    assert.equal(result.qualifying.some((candidate) => candidate.product.id === "s24-storage-unknown"), false);
+    assert.equal(result.rejected.find((candidate) => candidate.product.id === "s24-128-offer")?.constraints.storage.status, "verified_fail");
+    assert.ok(result.alternatives.some((candidate) => candidate.product.id === "s24-family"));
+  });
+
+  it("requires the requested Nike style code on the source title while preserving matching offers", async () => {
+    const intent = await parsePhase1Intent("Nike Air Force 1 CW2288-111");
+    const result = evaluatePhase1Candidates(intent, [
+      product("nike-exact-code", {
+        title: "Nike Air Force 1 CW2288-111 White/White",
+        brand: "Nike",
+        category: "shoes",
+        productType: "shoes",
+      }),
+      product("nike-generic-page", {
+        title: "Nike Air Force 1 White",
+        brand: "Nike",
+        category: "shoes",
+        productType: "shoes",
+      }),
+      product("nike-other-colorway", {
+        title: "Nike Air Force 1 CW2288-001 Black/Black",
+        brand: "Nike",
+        category: "shoes",
+        productType: "shoes",
+      }),
+    ]);
+    assert.equal(result.qualifying.find((candidate) => candidate.product.id === "nike-exact-code")?.classification, "EXACT");
+    assert.equal(result.alternatives.some((candidate) => candidate.product.id === "nike-generic-page"), true);
+    assert.equal(result.rejected.find((candidate) => candidate.product.id === "nike-other-colorway")?.constraints.style_code.status, "verified_fail");
+    assert.equal(result.qualifying.some((candidate) => candidate.product.id !== "nike-exact-code"), false);
+  });
+
+  it("keeps explicit cheaper/similar reference searches in discovery, not EXACT", async () => {
+    for (const query of [
+      "cheaper alternative to Nike Air Max 270 shoes",
+      "similar to Dyson Airwrap hair styler",
+    ]) {
+      const cheaper = query.startsWith("cheaper");
+      const referenceMention = product(`reference-${cheaper ? "cheaper" : "similar"}`, {
+        title: cheaper ? "Nike Air Max 270 shoes" : "Dyson Airwrap hair styler",
+        brand: cheaper ? "Nike" : "Dyson",
+        category: cheaper ? "shoes" : "beauty_care",
+        productType: cheaper ? "shoes" : "hair styler",
+      });
+      const result = evaluatePhase1Candidates(await parsePhase1Intent(query), [referenceMention]);
+      assert.equal(result.qualifying.length, 0);
+      assert.equal(result.alternatives[0]?.product.id, referenceMention.id);
+      assert.notEqual(result.alternatives[0]?.classification, "EXACT");
+      assert.ok(result.alternatives[0]?.evidence.some((item) => /discovery anchor/u.test(item)));
+    }
+  });
+
   it("never presents a stale out-of-stock match as purchasable without a current offer", async () => {
     const intent = await parsePhase1Intent("FixtureBrand stale current offer P-51");
     const stale = product("stale-only", {
@@ -514,6 +684,19 @@ describe("isolated Phase 1 candidate evaluation", () => {
     assert.match(result.rejected[0]?.diagnostics.join(" ") ?? "", /out of stock/u);
   });
 
+  it("keeps a current-offer request with unknown availability displayable but nonqualifying", async () => {
+    const intent = await parsePhase1Intent("FixtureBrand current offer P-51");
+    const result = evaluatePhase1Candidates(intent, [
+      product("availability-unknown", {
+        title: "FixtureBrand current offer P-51",
+        availability: null,
+      }, { availability: "unknown" }),
+    ]);
+    assert.equal(result.qualifying.length, 0);
+    assert.equal(result.alternatives[0]?.constraints.availability.status, "unknown");
+    assert.ok(result.alternatives[0]?.evidence.some((item) => /availability evidence is unknown/u.test(item)));
+  });
+
   it("does not assert authenticity or automotive fitment without authoritative structured evidence", async () => {
     const authenticityIntent = await parsePhase1Intent("original perfume");
     const perfume = product("perfume", {
@@ -522,7 +705,7 @@ describe("isolated Phase 1 candidate evaluation", () => {
       productType: "perfume",
     });
     const authenticityResult = evaluatePhase1Candidates(authenticityIntent, [perfume]);
-    assert.equal(authenticityResult.rejected[0]?.constraints.authenticity.status, "unknown");
+    assert.equal(authenticityResult.alternatives[0]?.constraints.authenticity.status, "unknown");
 
     const carIntent = await parsePhase1Intent("Toyota Camry spark plug");
     const sparkPlug = product("spark", {
@@ -531,7 +714,7 @@ describe("isolated Phase 1 candidate evaluation", () => {
       brand: "Toyota",
     });
     const carResult = evaluatePhase1Candidates(carIntent, [sparkPlug]);
-    assert.equal(carResult.rejected[0]?.constraints.vehicle_fitment.status, "unknown");
+    assert.equal(carResult.alternatives[0]?.constraints.vehicle_fitment.status, "unknown");
     assert.equal(carResult.qualifying.length, 0);
   });
 
@@ -591,10 +774,10 @@ describe("isolated Phase 1 candidate evaluation", () => {
         color: null,
       }),
     ]);
-    assert.deepEqual(result.alternatives.map((candidate) => candidate.product.id), ["mixed-white-earbuds"]);
-    assert.equal(result.alternatives[0]?.constraints.color.status, "verified_pass");
+    assert.deepEqual(result.alternatives.map((candidate) => candidate.product.id), ["mixed-unknown-earbuds", "mixed-white-earbuds"]);
+    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "mixed-white-earbuds")?.constraints.color.status, "verified_pass");
     assert.equal(result.rejected.find((candidate) => candidate.product.id === "mixed-black-earbuds")?.constraints.color.status, "verified_fail");
-    assert.equal(result.rejected.find((candidate) => candidate.product.id === "mixed-unknown-earbuds")?.constraints.color.status, "unknown");
+    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "mixed-unknown-earbuds")?.constraints.color.status, "unknown");
   });
 
   it("ranks color-only results only when requested color is structured and verified", async () => {
@@ -675,12 +858,12 @@ describe("isolated Phase 1 candidate evaluation", () => {
       product("local-new-jeddah", { title: "generic item", condition: "new", location: "Jeddah" }),
       product("unknown-condition-city", { title: "generic item", condition: null, location: "Jeddah" }),
     ]);
-    assert.deepEqual(result.alternatives.map((candidate) => candidate.product.id), ["local-used-jeddah"]);
+    assert.deepEqual(result.alternatives.map((candidate) => candidate.product.id), ["local-used-jeddah", "unknown-condition-city"]);
     assert.equal(result.alternatives[0]?.constraints.condition.status, "verified_pass");
     assert.equal(result.alternatives[0]?.constraints.city.status, "verified_pass");
     assert.equal(result.rejected.find((candidate) => candidate.product.id === "remote-used-delivery-jeddah")?.constraints.city.status, "verified_fail");
     assert.equal(result.rejected.find((candidate) => candidate.product.id === "local-new-jeddah")?.constraints.condition.status, "verified_fail");
-    assert.equal(result.rejected.find((candidate) => candidate.product.id === "unknown-condition-city")?.constraints.condition.status, "unknown");
+    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "unknown-condition-city")?.constraints.condition.status, "unknown");
   });
 
   it("recovers the exact available current offer and moves stale out-of-stock copies to diagnostics", async () => {
@@ -741,8 +924,8 @@ describe("isolated Phase 1 candidate evaluation", () => {
     assert.equal(result.alternatives[0]?.product.id, "usb-c-fixture");
     assert.equal(result.alternatives[0]?.constraints.connector.status, "verified_pass");
     assert.equal(result.rejected.find((candidate) => candidate.product.id === "micro-usb-fixture")?.constraints.connector.status, "verified_fail");
-    assert.equal(result.rejected.find((candidate) => candidate.product.id === "unknown-connector")?.constraints.connector.status, "unknown");
-    assert.equal(result.alternatives.some((candidate) => candidate.product.id !== "usb-c-fixture"), false);
+    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "unknown-connector")?.constraints.connector.status, "unknown");
+    assert.equal(result.alternatives.some((candidate) => candidate.product.id === "micro-usb-fixture"), false);
   });
 
   it("recognizes explicitly labeled GTIN and MPN as exact without inferred categories", async () => {
@@ -763,6 +946,22 @@ describe("isolated Phase 1 candidate evaluation", () => {
     assert.equal(mpnResult.qualifying[0]?.product.id, "mpn-exact");
     assert.equal(mpnResult.qualifying[0]?.classification, "EXACT");
     assert.notEqual(mpnResult.rejected.find((candidate) => candidate.product.id === "mpn-close")?.classification, "EXACT");
+  });
+
+  it("preserves source-backed GTIN offer eligibility for a cheaper same-item comparison", async () => {
+    const intent = await parsePhase1Intent("GTIN-14 00012345678905 cheaper offer");
+    const result = evaluatePhase1Candidates(intent, [
+      product("gtin-cheaper-offer", {
+        title: "GTIN-14 00012345678905 handbag",
+        price: 95,
+        updatedAt: new Date().toISOString(),
+        condition: "new",
+        availability: "in_stock",
+      }),
+    ]);
+    assert.equal(result.qualifying[0]?.product.id, "gtin-cheaper-offer");
+    assert.equal(result.qualifying[0]?.constraints.gtin14.status, "verified_pass");
+    assert.notEqual(result.qualifying[0]?.classification, "CLOSE_ALTERNATIVE");
   });
 
   it("requires valid GTIN-14 checksums on both the requested and candidate identifiers", async () => {

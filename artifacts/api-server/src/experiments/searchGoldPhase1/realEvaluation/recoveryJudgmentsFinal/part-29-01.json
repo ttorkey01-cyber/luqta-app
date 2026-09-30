@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 29,
+      "candidates": [
+        {
+          "id": "cfaf6ff80ff9754f99cc316f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies loafers."
+            }
+          ],
+          "evidence": "Tod's slip-on loafers are a different shoe style from the sneaker requested."
+        },
+        {
+          "id": "a99e8d88e734c5b4ebeee827",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies low-top sneakers."
+            }
+          ],
+          "evidence": "Low-top sneakers are a related alternative, but no Air Max 270 resemblance or comparable reference price is established."
+        },
+        {
+          "id": "64761cddf5dcb040291b04d2",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies sandals."
+            }
+          ],
+          "evidence": "Embellished flat slingback sandals are a different shoe style from the sneaker requested."
+        },
+        {
+          "id": "2e567d43c7dd32b23858b21f",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies high-top sneakers."
+            }
+          ],
+          "evidence": "High-top sneakers are a related alternative, but no Air Max 270 resemblance or comparable reference price is established."
+        },
+        {
+          "id": "61ebd7ceb4da78ed0373dfbf",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Nike Dunk high-top sneakers."
+            }
+          ],
+          "evidence": "Nike Dunk sneakers are a related alternative, not the named Air Max 270; no comparable reference price is present."
+        },
+        {
+          "id": "9e504620bd73ea0f6d3c4c40",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies low-top sneakers."
+            }
+          ],
+          "evidence": "Low-top sneakers are a related alternative, but no Air Max 270 resemblance or comparable reference price is established."
+        },
+        {
+          "id": "6e4b14efa5325908b0ca4bf3",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Dunk Low sneakers."
+            }
+          ],
+          "evidence": "Dunk Low sneakers are a related alternative, not the named Air Max 270; no comparable reference price is present."
+        },
+        {
+          "id": "5d64f138f589168154b83344",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies driver loafers."
+            }
+          ],
+          "evidence": "Tod's driver loafers are a different shoe style from the sneaker requested."
+        },
+        {
+          "id": "0129dd8f4979c35ff028dab2",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies slip-on sneakers."
+            }
+          ],
+          "evidence": "Slip-on sneakers are a related alternative, but no Air Max 270 resemblance or comparable reference price is established."
+        },
+        {
+          "id": "335ea855f38cb1b611e06bbe",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies loafer pumps."
+            }
+          ],
+          "evidence": "Studded kitten-heel loafer pumps are a different shoe style from the sneaker requested."
+        },
+        {
+          "id": "3ec611bec6c7a38bbbad3262",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies slingback sandals."
+            }
+          ],
+          "evidence": "Peep-toe slingback sandals are a different shoe style from the sneaker requested."
+        },
+        {
+          "id": "127f3a67385644a5ebf8fb97",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies slip-on sneakers."
+            }
+          ],
+          "evidence": "Slip-on sneakers are a related alternative, but no Air Max 270 resemblance or comparable reference price is established."
+        },
+        {
+          "id": "4538d3c482eee9bc96241344",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies low-top sneakers."
+            }
+          ],
+          "evidence": "Low-top sneakers are a related alternative, but no Air Max 270 resemblance or comparable reference price is established."
+        },
+        {
+          "id": "45db87e39b436ba8559fde16",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies LDWaffle sneakers."
+            }
+          ],
+          "evidence": "LDWaffle sneakers are a related alternative, but no Air Max 270 resemblance or comparable reference price is established."
+        },
+        {
+          "id": "d4fbc2a763462e8039c36565",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies loafers."
+            }
+          ],
+          "evidence": "Gommino loafers are a different shoe style from the sneaker requested."
+        },
+        {
+          "id": "f3c6f866359358efd84e4970",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies pumps."
+            }
+          ],
+          "evidence": "Pointed-toe pumps are a different shoe style from the sneaker requested."
+        },
+        {
+          "id": "6716c606a2ae948eb025d1fe",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Boost 350 V2 sneakers."
+            }
+          ],
+          "evidence": "Sneakers are a related alternative, but no Air Max 270 resemblance or comparable reference price is established."
+        },
+        {
+          "id": "c7711f676dfd1d53e44a237a",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies pointed-toe pumps."
+            }
+          ],
+          "evidence": "Pointed-toe pumps are a different shoe style from the sneaker requested."
+        },
+        {
+          "id": "e6fd325d91654f3a6fd9b576",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies ballet flats."
+            }
+          ],
+          "evidence": "Ballet flats are a different shoe style from the sneaker requested."
+        },
+        {
+          "id": "25a000a64961d2617224b529",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies ballet flats."
+            }
+          ],
+          "evidence": "Ballet flats are a different shoe style from the sneaker requested."
+        },
+        {
+          "id": "b08d831110f79694c8aa310a",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies low-top sneakers."
+            }
+          ],
+          "evidence": "Low-top sneakers are a related alternative, but no Air Max 270 resemblance or comparable reference price is established."
+        },
+        {
+          "id": "bf4464174e43117d7c18df7e",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies slingback sandals."
+            }
+          ],
+          "evidence": "Slingback sandals are a different shoe style from the sneaker requested."
+        },
+        {
+          "id": "969e93842adfc53bc24ac7f3",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies slip-on sneakers."
+            }
+          ],
+          "evidence": "Slip-on sneakers are a related alternative, but no Air Max 270 resemblance or comparable reference price is established."
+        },
+        {
+          "id": "57da9811f5be42bc1d4bee26",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies mules."
+            }
+          ],
+          "evidence": "Open-toe block-heel mules are a different shoe style from the sneaker requested."
+        },
+        {
+          "id": "75afb88c2a246bef03686312",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies Nike Dunk high-top sneakers."
+            }
+          ],
+          "evidence": "Nike Dunk sneakers are a related alternative, not the named Air Max 270; no comparable reference price is present."
+        },
+        {
+          "id": "3d8d5f92b4463a533a7423e5",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Packet category is shoes; title identifies lace-up sneakers."
+            }
+          ],
+          "evidence": "Lace-up sneakers are a related alternative, but no Air Max 270 resemblance or comparable reference price is established."
+        }
+      ],
+      "judgeRationale": "The packet identifies all offers as shoes, with sneakers only a related style-level alternative to the requested Air Max 270. No candidate is identified as an Air Max 270, and the packet provides no Air Max 270 offer price for a savings comparison."
+    }
+  ]
+}

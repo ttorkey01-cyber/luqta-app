@@ -1,0 +1,165 @@
+{
+  "cases": [
+    {
+      "caseId": 16,
+      "inventoryAvailabilityAssessment": "found",
+      "judgeRationale": "The pool includes explicit men's Diesel jeans results, including a specific Diesel 2023-D Finitive jeans listing attributed to Ounass and a men's bootcut jeans listing attributed to desertcart. Titles and descriptions support all frozen brand, product-type, and audience constraints. The query specifies no particular model or variant, so exact product identity is not assessable.",
+      "candidates": [
+        {
+          "id": "e29ca4cc9d4da66f6dcd1f6c",
+          "relevance": "RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Diesel."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names jeans."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly specifies Men."
+            }
+          ],
+          "evidence": "Title identifies Diesel men's jeans and the description describes Diesel Men Jeans deals in Saudi Arabia. No specific model or variant is identified; this is a general deals result."
+        },
+        {
+          "id": "15e76c44a2886f4b861a461a",
+          "relevance": "RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly name Diesel."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title says Diesel Jeans; description identifies the item as jeans."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says For Men."
+            }
+          ],
+          "evidence": "The Ounass result names men's Diesel jeans, and the description identifies a specific 2023-D Finitive jeans product with a displayed sale price. No target model or variant was specified in the query."
+        },
+        {
+          "id": "dbc37e60c27a509cfa745832",
+          "relevance": "RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly name Diesel."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify jeans."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly specify Men's."
+            }
+          ],
+          "evidence": "The result describes Diesel men's bootcut jeans offered through desertcart in KSA. Bootcut is a style detail, not a contradiction to the broad query; no specific target model was given."
+        },
+        {
+          "id": "1cf49ef0446af0f6ce926b69",
+          "relevance": "RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Diesel."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify men's jeans."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly specifies Men's."
+            }
+          ],
+          "evidence": "The result describes Diesel Saudi Arabia's men's jeans range and names several available styles. It is a category-level result and does not identify a particular target model."
+        },
+        {
+          "id": "931a62bf9060d20cbbab901d",
+          "relevance": "RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names DIESEL."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify jeans."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly specify Men's."
+            }
+          ],
+          "evidence": "The Noon result explicitly offers men's DIESEL jeans and describes shopping and shipping in KSA. No specific target model or variant was stated."
+        }
+      ]
+    },
+    {
+      "caseId": 17,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "The packet contains no returned candidates. An empty result set is not independent evidence that no in-budget Huawei watch is available, and there is no candidate evidence to verify the brand, product type, or price requirement.",
+      "candidates": []
+    },
+    {
+      "caseId": 18,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "The packet contains no returned candidates. An empty result set is not independent evidence that no black handbag below 200 SAR is available, and there is no candidate evidence to verify product type, color, or price.",
+      "candidates": []
+    },
+    {
+      "caseId": 19,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "The packet contains no returned candidates. An empty result set is not independent evidence that no USB-C charger below 80 SAR is available, and there is no candidate evidence to verify product type, connector, or price.",
+      "candidates": []
+    },
+    {
+      "caseId": 20,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "The packet contains no returned candidates. An empty result set is not independent evidence that no perfume priced strictly between 100 and 300 SAR is available, and there is no candidate evidence to verify product type or either price bound.",
+      "candidates": []
+    }
+  ]
+}

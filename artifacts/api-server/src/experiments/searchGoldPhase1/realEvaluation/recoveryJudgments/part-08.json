@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 36,
+      "candidates": [],
+      "judgeRationale": "The packet contains no candidates to evaluate."
+    },
+    {
+      "caseId": 37,
+      "candidates": [
+        {
+          "id": "9331b32228e4469b1bd0fee0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly identifies a Duracell car battery."
+            },
+            {
+              "field": "voltage",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Description states 12V."
+            },
+            {
+              "field": "capacity",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Description states 70Ah."
+            },
+            {
+              "field": "city",
+              "constraintIndex": 3,
+              "verdict": "unknown",
+              "evidence": "Description says available across KSA cities but does not identify Riyadh."
+            }
+          ],
+          "evidence": "The battery type, voltage, and capacity match, but a Riyadh location is not specified."
+        },
+        {
+          "id": "e213349db1af12383691dde5",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies a car-battery selection."
+            },
+            {
+              "field": "voltage",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No voltage is stated."
+            },
+            {
+              "field": "capacity",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "No capacity is stated."
+            },
+            {
+              "field": "city",
+              "constraintIndex": 3,
+              "verdict": "unknown",
+              "evidence": "Title mentions Riyadh and Jeddah, but does not establish location availability for a specific battery."
+            }
+          ],
+          "evidence": "This is a general car-battery selection mentioning Riyadh, but the required battery voltage and capacity are not provided."
+        }
+      ],
+      "judgeRationale": "Neither candidate explicitly demonstrates all required specifications and Riyadh availability."
+    },
+    {
+      "caseId": 38,
+      "candidates": [
+        {
+          "id": "17aa48f9d971348d398add3e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify dry shampoo."
+            }
+          ],
+          "evidence": "It is dry shampoo described as reducing oil and buildup, not shampoo explicitly suitable for dry hair."
+        },
+        {
+          "id": "d20771a9b360767f656bbacb",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify a shampoo range."
+            }
+          ],
+          "evidence": "Description explicitly says the shampoo range includes options for dry hair."
+        },
+        {
+          "id": "a4139aa52d125e81ab58b70e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify shampoos."
+            }
+          ],
+          "evidence": "Shampoo is established, but the description does not establish suitability for dry hair."
+        }
+      ],
+      "judgeRationale": "Only the general shampoo range explicitly mentions options for dry hair; the other descriptions do not establish that suitability."
+    },
+    {
+      "caseId": 39,
+      "candidates": [],
+      "judgeRationale": "The packet contains no candidates to evaluate."
+    },
+    {
+      "caseId": 40,
+      "candidates": [],
+      "judgeRationale": "The packet contains no candidates to evaluate."
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "packet": 3,
+  "cases": [
+    {
+      "caseId": 11,
+      "query": "أبي عطر نسائي بحدود 300 ريال",
+      "intended": "women's fragrance near 300 SAR",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "perfume"
+        },
+        {
+          "field": "audience",
+          "op": "eq",
+          "value": "women"
+        }
+      ],
+      "preferences": [
+        {
+          "field": "approximatePriceSAR",
+          "value": 300
+        }
+      ],
+      "expectedIdentity": null,
+      "useful": "Women's perfume with an observed price near 300 SAR",
+      "irrelevant": "Men's-only fragrance or non-perfume",
+      "exactRequired": false,
+      "alternativeAcceptable": true,
+      "candidates": [
+        {
+          "id": "ce40b1be55cb24c505f8c322",
+          "title": "عطور نسائية | عطر نسائي | افضل عطر نسائي | سكاي سيلز السعودية",
+          "description": "تصفحي أفخم العطور النسائية المميزة في السعودية، احصلي على افضل عطر نسائي أونلاين بأفضل الأسار. ✓توصيل مجاني علي الطلبات بقيمة 300 ريال سعودي وأكثر✓إرجاع سهل",
+          "brand": null,
+          "productType": null,
+          "category": "beauty_care",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:01.044Z"
+        },
+        {
+          "id": "66cade2e3d7db17216b38229",
+          "title": "Perfume Women : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed]",
+          "description": "perfume women : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now [URL removed]",
+          "brand": null,
+          "productType": null,
+          "category": "beauty_care",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:01.044Z"
+        },
+        {
+          "id": "619b074a2a08508f7acb257c",
+          "title": "اغلى عطر نسائي - كيف تشتريه بسعر أرخص مع كوبونات الموفر؟ - Almowafir",
+          "description": "الحد الأقصى للخصم: 13 ريال سعودي. <strong>الحد الأدنى للإنفاق: 300 ريال سعودي</strong>.",
+          "brand": null,
+          "productType": null,
+          "category": "beauty_care",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:01.044Z"
+        },
+        {
+          "id": "95f2b01d4980ea15f5f3294e",
+          "title": "عطور نسائية",
+          "description": "توصيل مجاني على جميع الطلبات ما فوق 299 ريال",
+          "brand": null,
+          "productType": null,
+          "category": "beauty_care",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:01.044Z"
+        }
+      ]
+    },
+    {
+      "caseId": 12,
+      "query": "أبي جوال مستعمل في جدة",
+      "intended": "used mobile phone sold in Jeddah",
+      "hard": [
+        {
+          "field": "productType",
+          "op": "eq",
+          "value": "phone"
+        },
+        {
+          "field": "condition",
+          "op": "eq",
+          "value": "used"
+        },
+        {
+          "field": "city",
+          "op": "eq",
+          "value": "Jeddah"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "A used phone with verified Jeddah seller location",
+      "irrelevant": "New phone, unverified condition or seller outside Jeddah",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": [
+        {
+          "id": "cdb78a4093842e72fa28469b",
+          "title": "افضل عروض (mobile phone) جديد و مستعمل في السعودية",
+          "description": "Search for the best offers in Saudi Arabia",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:07.093Z"
+        },
+        {
+          "id": "b871743e60a7bc6717b2fcd8",
+          "title": "Used Phones - Mobile Phones & Accessories for sale in Saudi Arabia | dubizzle Saudi Arabia (OLX)",
+          "description": "Find the best Used Phones for sale in Saudi Arabia. dubizzle Saudi Arabia (OLX) offers online local classified ads for Used Phones. Post your classified ad for free in various categories like mobiles, tablets, cars, bikes, laptops, electronics, birds, houses, furniture, clothes, dresses for sale in",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:07.093Z"
+        }
+      ]
+    },
+    {
+      "caseId": 13,
+      "query": "Nike أسود مقاس EU 42",
+      "intended": "black Nike shoes in EU size 42",
+      "hard": [
+        {
+          "field": "brand",
+          "op": "eq",
+          "value": "Nike"
+        },
+        {
+          "field": "color",
+          "op": "eq",
+          "value": "black"
+        },
+        {
+          "field": "size",
+          "op": "eq",
+          "value": "EU 42"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": null,
+      "useful": "A matching black Nike EU 42 shoe; clarify product kind if needed",
+      "irrelevant": "Other brand/color or unknown sizing system",
+      "exactRequired": false,
+      "alternativeAcceptable": false,
+      "candidates": [
+        {
+          "id": "83b64c33ad5d10a13f2453a3",
+          "title": "Nike Men's Running Shoes, Black, 42 EU : Buy Online at Best Price in KSA - Souq is now [URL removed]: Fashion",
+          "description": "Nike Men&#x27;s Running Shoes, Black, 42 EU : Buy Online at Best Price in KSA - Souq is now [URL removed]: Fashion",
+          "brand": null,
+          "productType": null,
+          "category": "shoes",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:10.138Z"
+        },
+        {
+          "id": "467c61683847812f22b5d53d",
+          "title": "Shop Black Collection Online @ Nike Saudi",
+          "description": "EU · US · UK · 35.5 Refine by Shoe Size: 35.5 · 36 Refine by Shoe Size: 36 · 36.5 Refine by Shoe Size: 36.5 · 37.5 Refine by Shoe Size: 37.5 · 38 Refine by Shoe Size: 38 · 38.5 Refine by Shoe Size: 38.5 · 39 Refine by Shoe Size: 39 · 40 Refine by Shoe Size: 40 · 40.5 Refine by Shoe Size: 40.5 · 41 R",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:10.138Z"
+        }
+      ]
+    },
+    {
+      "caseId": 14,
+      "query": "iPhone 15 مستعمل",
+      "intended": "used Apple iPhone 15",
+      "hard": [
+        {
+          "field": "model",
+          "op": "eq",
+          "value": "iPhone 15"
+        },
+        {
+          "field": "condition",
+          "op": "eq",
+          "value": "used"
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": "Apple iPhone 15, not Plus/Pro/14",
+      "useful": "A used iPhone 15 listing with condition evidence",
+      "irrelevant": "New iPhone or another model labeled exact",
+      "exactRequired": true,
+      "alternativeAcceptable": false,
+      "candidates": [
+        {
+          "id": "5179596dab3be632228b4034",
+          "title": "للبيع ايفون 15 برو ماكس نسبة البطاريه 99 مستعمل شهر | Haraj",
+          "description": "Real Estate section in Haraj is operated by · Fal License for brokerage and marketing number 1200006871",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:12.788Z"
+        },
+        {
+          "id": "45f1fe95037e6352c41a50e9",
+          "title": "Apple iPhone 15 (128GB) (USED) - Renewed - Yas Estore in Saudi Arabia",
+          "description": "Be the first to review “Apple iPhone 15 (128GB) (USED) – Renewed” Cancel reply",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:12.788Z"
+        },
+        {
+          "id": "9983276c6fb03450c6d5ee6f",
+          "title": "Shop now iPhone 15 Used with best price in Saudi Arabia - SOUM",
+          "description": "Buy iPhone 15 Used from Soum, where we provide you with used devices from international brands with high quality, installments, and a guarantee that will put your mind at ease",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:12.788Z"
+        },
+        {
+          "id": "a30348d76c75005bd30c99a4",
+          "title": "Used Mobiles Apple iPhones with installment and quick delivery to the doorstep - Soum Saudi Arabia",
+          "description": "Find the best deals on the used mobiles Apple iPhones. Great prices on used mobiles Apple iPhones ✓ 10 days return if you change your mind ✓ Quick delivery to the doorstep ✓ Installment with 0 interest.",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:12.788Z"
+        },
+        {
+          "id": "184dd80a3d89b6735d4550d8",
+          "title": "موبايل أيفون 15 برو ماكس مستعمل للبيع في السعودية بسعر مناسب",
+          "description": "4,500 ريال سعودي · ... · <strong>موبايل أيفون 15 برو ماكس مستعمل للبيع في السعودية بأداء عالي وذاكرة 256 جيجابايت، مثالي لمن يبحث عن هاتف أيفون حديث بتقنية متطورة وسعر أقل من السوق. 🧐مواصفات جهاز أبل iphone 15 Pro Max</strong>: ✓ ...",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:12.788Z"
+        },
+        {
+          "id": "b034e4640d92a9d23a0fe4e0",
+          "title": "Apple iPhone 15 Mobiles for Sale : Best iPhone 15 Prices : Used and New in Saudi Arabia | OpenSooq",
+          "description": "Used Apple iPhone 15 Mobiles for Sale in Saudi Arabia, Join Opensooq and Enjoy a fast and easy way to buy and Sell without commission.",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:12.788Z"
+        },
+        {
+          "id": "3b7a7af5aec022545f2ee750",
+          "title": "Apple iPhone 15 Pro Mobiles for Sale : Best iPhone 15 Pro Prices : Used and New in Saudi Arabia | OpenSooq",
+          "description": "Used Apple iPhone 15 Pro Mobiles for Sale in Saudi Arabia, Join Opensooq and Enjoy a fast and easy way to buy and Sell without commission.",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:12.788Z"
+        },
+        {
+          "id": "9f611de3be6d257fc535b28f",
+          "title": "Apple iPhone 15 Pro Max Mobiles for Sale : Best iPhone 15 Pro Max Prices : Used and New in Saudi Arabia | OpenSooq",
+          "description": "Used Apple iPhone 15 Pro Max Mobiles for Sale in Saudi Arabia, Join Opensooq and Enjoy a fast and easy way to buy and Sell without commission.",
+          "brand": null,
+          "productType": null,
+          "category": "electronics",
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:12.788Z"
+        },
+        {
+          "id": "229ab78e6e24da3817f314c0",
+          "title": "Used - IPhone 15 & IPhone 15 Pro : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed]",
+          "description": "Used - iPhone 15 &amp; iPhone 15 Pro : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now [URL removed]",
+          "brand": null,
+          "productType": null,
+          "category": null,
+          "color": null,
+          "price": null,
+          "currency": "SAR",
+          "condition": null,
+          "location": null,
+          "availability": "unknown",
+          "updatedAt": "2026-09-30T09:45:12.788Z"
+        }
+      ]
+    },
+    {
+      "caseId": 15,
+      "query": "Samsung S24 أقل من 2500 ريال",
+      "intended": "Samsung Galaxy S24 below 2500 SAR",
+      "hard": [
+        {
+          "field": "brand",
+          "op": "eq",
+          "value": "Samsung"
+        },
+        {
+          "field": "model",
+          "op": "eq",
+          "value": "S24"
+        },
+        {
+          "field": "priceSAR",
+          "op": "lt",
+          "value": 2500
+        }
+      ],
+      "preferences": [],
+      "expectedIdentity": "Galaxy S24 base model, not S24 Ultra",
+      "useful": "An S24 below 2500 SAR with verified model and current price",
+      "irrelevant": "S24 Ultra or 2500+ SAR labeled qualifying",
+      "exactRequired": true,
+      "alternativeAcceptable": false,
+      "candidates": []
+    }
+  ]
+}

@@ -1,0 +1,3790 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 1,
+      "candidates": [
+        {
+          "id": "4a25409f615807e0918c974f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Samsung."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies Galaxy S24 Ultra, explicitly not S24."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies 256GB."
+            }
+          ],
+          "evidence": "The title and description explicitly name the Ultra variant, not the requested Galaxy S24."
+        },
+        {
+          "id": "da1c6bd6d67fd1d79de60c3d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Samsung."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies Galaxy S24 Ultra, explicitly not S24."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies 256GB."
+            }
+          ],
+          "evidence": "This is explicitly an S24 Ultra 256GB listing, a different model."
+        },
+        {
+          "id": "5962103c8da7155232c62cce",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title names Samsung."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title names Galaxy S24; model code F-MS921BZKGAMA is also given."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies 256GB."
+            }
+          ],
+          "evidence": "The listing title gives Samsung Galaxy S24 256GB; its model code is stated in the description."
+        },
+        {
+          "id": "3419fb7d8359776acc784487",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies SAMSUNG."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies Galaxy S24."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies 256GB."
+            }
+          ],
+          "evidence": "The title and description identify the requested variant, but describe a price-comparison page across vendors rather than a specific offer."
+        },
+        {
+          "id": "5769e72e21b0cb8cf0b6d7e0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Samsung Saudi Arabia is named in the title."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title covers both S24 and S24+; description does not tie the variant to a specific model."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Description mentions 256GB but does not link it to a specific model variant."
+            }
+          ],
+          "evidence": "The page covers S24 and S24+ together and does not establish which model the 256GB detail describes."
+        },
+        {
+          "id": "cf5e10a37aad0d22fef69e4d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Samsung."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Description explicitly names the S24 Ultra and S24+, not the S24."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Description associates 256GB with the S24 Ultra."
+            }
+          ],
+          "evidence": "The page description names Ultra and Plus models; it does not offer the requested S24 variant."
+        },
+        {
+          "id": "4bfda0f3acb92a1a1cc81d12",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies SAMSUNG."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Galaxy S24 without Plus or Ultra."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies 256GB."
+            }
+          ],
+          "evidence": "The title explicitly identifies Samsung Galaxy S24 256GB."
+        },
+        {
+          "id": "115b7e8d94cdafc8c982a854",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Samsung Saudi Arabia."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Galaxy S24."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies 256 GB."
+            }
+          ],
+          "evidence": "The title explicitly offers a Galaxy S24 Onyx Black 256 GB."
+        },
+        {
+          "id": "e4c257e568936d140df5c5bc",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title identifies Samsung."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title and description explicitly identify S24 FE."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies 256GB."
+            }
+          ],
+          "evidence": "This is explicitly an S24 FE, not the requested Galaxy S24."
+        },
+        {
+          "id": "f1e5fa1c85e5d3e621a42942",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies SAMSUNG."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title and description identify Galaxy S24 Ultra."
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies 256GB."
+            }
+          ],
+          "evidence": "The candidate is explicitly an S24 Ultra, including the renewed description, not the requested model."
+        }
+      ],
+      "judgeRationale": "Only listings explicitly tied to the base Galaxy S24 and 256GB are qualifying; Ultra, FE, Plus ambiguity, and a comparison page without a specific offer are not equivalent evidence.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 2,
+      "candidates": [
+        {
+          "id": "cf06d1d40e62d6d6aad02757",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Huawei."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Watch GT5 and identifies it as a smartwatch."
+            }
+          ],
+          "evidence": "The title and description give a Huawei Watch GT5 smartwatch listing."
+        },
+        {
+          "id": "e99f539780fbbe73741fcd54",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify HUAWEI."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify WATCH GT 5 and smartwatch."
+            }
+          ],
+          "evidence": "The listing explicitly names the Huawei Watch GT 5 46mm smartwatch."
+        },
+        {
+          "id": "cd3d920886be8ec50d91efb6",
+          "relevance": "IRRELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies HUAWEI."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description name WATCH GT 5."
+            }
+          ],
+          "evidence": "This is a repair and service support page, not a watch listing or offer."
+        },
+        {
+          "id": "fcf9284e06f8004041ef279c",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Huawei."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and shopping description name Watch GT5."
+            }
+          ],
+          "evidence": "The title and description identify a Huawei Watch GT5 available through a shopping listing."
+        },
+        {
+          "id": "917423c97857e7bba3a52344",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Huawei."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title and description explicitly identify GT 5 Pro."
+            }
+          ],
+          "evidence": "This candidate is explicitly the GT 5 Pro, excluded by the case definition."
+        },
+        {
+          "id": "6f26c821b5045958bec008f3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Huawei."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title and description explicitly identify GT5 Pro."
+            }
+          ],
+          "evidence": "The shopping listing explicitly identifies a GT5 Pro, not the requested GT 5."
+        },
+        {
+          "id": "4b1609b29b8338c44d952be7",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Huawei."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title and description specify Watch GT 5 Pro."
+            }
+          ],
+          "evidence": "This price-comparison result is for the excluded GT 5 Pro variant."
+        },
+        {
+          "id": "2f70035564578b64a83565e8",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify HUAWEI."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify Watch GT 5 46 mm smartwatch."
+            }
+          ],
+          "evidence": "The title explicitly identifies Huawei Watch GT 5 46 mm smartwatch."
+        },
+        {
+          "id": "cf12183e0ce0c1eacddcdfea",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Huawei."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a GT 5 Pro strap, not the GT 5 watch."
+            }
+          ],
+          "evidence": "The title identifies a Pro model strap rather than the requested watch."
+        },
+        {
+          "id": "2c18d1a09ed1c988c1a6809b",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Huawei."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Watch GT 5 41."
+            }
+          ],
+          "evidence": "It names the correct GT 5 model but describes a price result rather than a direct listing."
+        }
+      ],
+      "judgeRationale": "Exact GT 5 smartwatch listings qualify; Pro variants and the repair page are not useful offers, and the price-comparison result is less direct evidence than a product listing.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 3,
+      "candidates": [
+        {
+          "id": "91cbbf6680e72e495693494d",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify Air Max 270."
+            }
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 women's shoes."
+        },
+        {
+          "id": "600c5c3156a8a2c210b97cf1",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify Air Max 270."
+            }
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 men's shoes."
+        },
+        {
+          "id": "d4eb25becd0db0865f889fef",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify Air Max 270."
+            }
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 men's shoes."
+        },
+        {
+          "id": "46a80718a843d01eac530058",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify Air Max 270."
+            }
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 men's shoes."
+        },
+        {
+          "id": "14adf0027a34de4dff0c8361",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify Air Max 270."
+            }
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 men's shoes."
+        },
+        {
+          "id": "c20b7bd2c97ea32083d2e6d1",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify Air Max 270."
+            }
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 women's shoes."
+        },
+        {
+          "id": "f2b2a6acb8bf6c453d7adb20",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify Air Max 270."
+            }
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 women's shoes."
+        },
+        {
+          "id": "a925b2f0ad932e65762219b6",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify Air Max 270."
+            }
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 older kids' shoes."
+        },
+        {
+          "id": "52bbf831f1bc8cece86a8933",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify Air Max 270."
+            }
+          ],
+          "evidence": "The candidate is explicitly Nike Air Max 270 older kids' shoes."
+        }
+      ],
+      "judgeRationale": "Every candidate explicitly names Nike Air Max 270 shoes; the gender/age and color variants do not conflict with any frozen hard constraint.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 4,
+      "candidates": [
+        {
+          "id": "bc55248bef57d3ee1a356104",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title and description name Giorgio Armani My Way, not Kérastase."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title and description identify My Way EDP, not the Genesis serum."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify 90ml."
+            }
+          ],
+          "evidence": "This is a Giorgio Armani My Way fragrance, not the requested hair serum."
+        },
+        {
+          "id": "ff85cb20f3e2455e8acdbbc1",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Kérastase."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify Genesis Hair Serum Anti-Chute Fortifiant."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify 90ml."
+            }
+          ],
+          "evidence": "The listing explicitly names the requested Kérastase Genesis Anti-Chute Fortifiant serum in 90ml."
+        },
+        {
+          "id": "006463fa205c5cb8cd9e106c",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Description identifies KERASTASE."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Genesis Serum Anti-Chute Fortifiant."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify 90ml."
+            }
+          ],
+          "evidence": "The title gives the exact named serum and 90ml; description attributes it to Kérastase."
+        },
+        {
+          "id": "459ca47e75f99a0eed034815",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Kérastase."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title names Genesis Fortifying Anti Hairfall Serum, a matching anti-chute serum."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies 90ml."
+            }
+          ],
+          "evidence": "The title identifies Kérastase Genesis Fortifying Anti Hairfall Serum 90ml; its wording supports the matching anti-chute serum, though the displayed product name differs."
+        },
+        {
+          "id": "819125f506f401008d923ba2",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Kérastase."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title names the requested serum but description instead discusses Genesis Defense Thermique fluid."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Neither title nor description states a size."
+            }
+          ],
+          "evidence": "Title matches the named serum, but the description points to a different Genesis product and gives no size."
+        },
+        {
+          "id": "2202e30f52eac63d10245040",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Kerastase."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title names Genesis Serum Fortifiant but does not specify Anti-Chute Fortifiant."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "No size is stated."
+            }
+          ],
+          "evidence": "It is a related Kérastase Genesis serum, but the exact named formula and 90ml size are not evidenced."
+        },
+        {
+          "id": "9d04240fd0696fd9e4ccfdb5",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify KÉRASTASE."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify Genesis Sérum Anti-Chute Fortifiant."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify 90ml."
+            }
+          ],
+          "evidence": "Title and description explicitly name the requested Genesis Anti-Chute Fortifiant 90ml."
+        },
+        {
+          "id": "8803c3d81458e624f7052be8",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Kérastase/Kerastase."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description name Genesis Serum Anti-Chute Fortifiant."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify 90ml."
+            }
+          ],
+          "evidence": "The title and description give the requested named serum in 90ml."
+        },
+        {
+          "id": "0a29bba9134055de502983c6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Kérastase."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title names Genesis serum and Anti Chute Fortifiant."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "No size is stated in title or description."
+            }
+          ],
+          "evidence": "The Spanish-language result names the matching Genesis anti-chute fortifying serum, but does not establish the required 90ml size."
+        },
+        {
+          "id": "857dd2057af82ab0b9b4b384",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies KERASTASE."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies Genesis Serum Anti-Chute Fortifiant."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies 90ml."
+            }
+          ],
+          "evidence": "The title explicitly gives the requested Kérastase Genesis Serum Anti-Chute Fortifiant 90ml."
+        },
+        {
+          "id": "8927e819366eb048f953afb9",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Kerastase."
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify Genesis Serum Anti-Chute Fortifiant."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description specify 90ml."
+            }
+          ],
+          "evidence": "The title and description explicitly give the requested Genesis Anti-Chute Fortifiant Hair Serum 90ml."
+        }
+      ],
+      "judgeRationale": "Matching named anti-chute serum offers with 90ml are qualifying; related Genesis products without size and a conflicting description remain uncertain rather than passing the hard requirements.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 5,
+      "candidates": [
+        {
+          "id": "96e296e7f2e07da7caabb2a7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title and description identify Diesel."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title and description say Diesel men's jeans but do not name D-Strukt."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify men's jeans."
+            }
+          ],
+          "evidence": "This is related Diesel men's jeans inventory, but no D-Strukt model evidence is present."
+        },
+        {
+          "id": "c62f276618a16a0171edef8c",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Diesel."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Arabic title identifies a D-Lister/D-Luster model, not D-Strukt."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify jeans."
+            }
+          ],
+          "evidence": "The candidate names a different Diesel jeans model, not D-Strukt."
+        },
+        {
+          "id": "bab64346cb31d526f748d3ef",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Diesel."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title and description identify Diesel jeans generally, with no D-Strukt model evidence."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify jeans."
+            }
+          ],
+          "evidence": "A general Diesel jeans shopping page is related, but does not establish the D-Strukt cut."
+        },
+        {
+          "id": "73bf6a78fb76f649a4076046",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Diesel."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Description explicitly lists 2019 D-Strukt."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies men's jeans; description says Slim Jeans."
+            }
+          ],
+          "evidence": "The title and description identify Diesel men's D-Strukt jeans."
+        },
+        {
+          "id": "c9dcf3095969d439e4f023f0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title and description identify Diesel."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title and description identify Diesel jeans generally but do not name D-Strukt."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify men's jeans."
+            }
+          ],
+          "evidence": "The candidate is for Diesel jeans but gives no evidence for the requested model."
+        },
+        {
+          "id": "62b6eac21ed6ec355b1f11f5",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Diesel."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Description explicitly lists 2019 D-Strukt."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Description identifies Slim Jeans."
+            }
+          ],
+          "evidence": "The title and description identify Diesel men's denim and explicitly list D-Strukt jeans."
+        },
+        {
+          "id": "88899ed41ebe8d6d9536f842",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Diesel."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify 2019 D-Strukt."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify men's slim jeans."
+            }
+          ],
+          "evidence": "Title and description explicitly identify Diesel 2019 D-Strukt men's jeans."
+        }
+      ],
+      "judgeRationale": "Explicit D-Strukt jeans listings qualify; generic Diesel jeans are related but lack model evidence, and the differently named Diesel cut is not the requested model.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 6,
+      "candidates": [
+        {
+          "id": "bdfbe6d19dc6e926547e021a",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies AirPods Pro 2 earbuds."
+            }
+          ],
+          "evidence": "Commercial listing names Apple AirPods Pro 2 earbuds and describes USB-C charging."
+        },
+        {
+          "id": "d803a59a54038d737591e815",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title names Apple (آبل)."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title specifies AirPods Pro, second generation."
+            }
+          ],
+          "evidence": "Arabic product title and purchase text specify Apple AirPods Pro second generation with MagSafe and USB-C."
+        },
+        {
+          "id": "c472fa230bb5dfa480e91bd1",
+          "relevance": "IRRELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names AirPods Pro 2."
+            }
+          ],
+          "evidence": "Although the title names the model, the description says its Saudi release is not here yet and offers no current product."
+        },
+        {
+          "id": "959c56ef03017e145e82b428",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple AirPods Pro."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Description explicitly identifies AirPods Pro 2nd Generation."
+            }
+          ],
+          "evidence": "Noon title advertises AirPods Pro offers and its description identifies the second-generation earbuds as available in Saudi Arabia."
+        },
+        {
+          "id": "6adffc52ee0f0e55e49e8a83",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies AirPods Pro 2nd Generation and model MQD83QM/A."
+            }
+          ],
+          "evidence": "Product title and description identify second-generation AirPods Pro earbuds and give model MQD83QM/A."
+        },
+        {
+          "id": "c7c6a91429ec6a22f22ea124",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title explicitly names Apple (ابل)."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies AirPods Pro, second generation, with MagSafe USB-C case."
+            }
+          ],
+          "evidence": "Saudi shopping title identifies Apple AirPods Pro second generation with MagSafe USB-C case."
+        },
+        {
+          "id": "7cd968d3c2c3631040ca5f3e",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies AirPods Pro 2nd Gen earbuds."
+            }
+          ],
+          "evidence": "Jarir purchase title identifies Apple AirPods Pro 2nd Gen earbuds and the description specifies the H2 chip."
+        },
+        {
+          "id": "ab60a08640c1eeea756ebfa7",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title names AirPods, Apple's product line."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly identifies AirPods Pro 2 earbuds."
+            }
+          ],
+          "evidence": "Product title identifies AirPods Pro 2 wireless earbuds and describes USB-C charging."
+        },
+        {
+          "id": "c61867b1b056430633aca037",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly identifies AirPods Pro 2."
+            }
+          ],
+          "evidence": "Used-product title explicitly identifies Apple AirPods Pro 2; the stated used condition does not change the model match."
+        },
+        {
+          "id": "cf70d113ddafe282137dd853",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies AirPods Pro 2 earbuds."
+            }
+          ],
+          "evidence": "Commercial product title identifies Apple AirPods Pro 2 earbuds and USB-C charging."
+        }
+      ],
+      "judgeRationale": "Several source-described second-generation product offers explicitly match the requested Apple model; the comparison page stating the release is not yet available is not a usable offer.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 7,
+      "candidates": [],
+      "judgeRationale": "The frozen packet contains no candidates to assess."
+    },
+    {
+      "caseId": 8,
+      "candidates": [
+        {
+          "id": "83457359a2209698b1751f9e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and category describe watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says watches for men."
+            }
+          ],
+          "evidence": "Saudi men's-watch shop is relevant by product and audience, but no individual price or around-500-SAR offer is shown."
+        },
+        {
+          "id": "705da1ff95c153578fe92032",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title and category indicate watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title specifies men's watches."
+            }
+          ],
+          "evidence": "Men's watch result states 2,500 SAR, well above the preferred 500 SAR budget."
+        },
+        {
+          "id": "f9f5b33768a249052dd539bc",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies a wristwatch; category is watches and jewelry."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly describes a men's wristwatch."
+            }
+          ],
+          "evidence": "A men's wristwatch is identified, but its listed price is 16,236 USD rather than near 500 SAR."
+        },
+        {
+          "id": "8ff625cf536976d1fdf9f313",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies a wristwatch; category is watches and jewelry."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly describes a men's wristwatch."
+            }
+          ],
+          "evidence": "A men's wristwatch is identified, but its listed price is 26,810 USD, far above the preferred budget."
+        },
+        {
+          "id": "852d10eb7a3f939ce79e5a57",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title identifies a men's watch set."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title explicitly says men's."
+            }
+          ],
+          "evidence": "The title describes a men's watch set, but provides no specific item price to assess the preferred budget."
+        },
+        {
+          "id": "8d9f296d385573098a18a252",
+          "relevance": "RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly identifies men's watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly specifies men's."
+            }
+          ],
+          "evidence": "Shop listing explicitly covers men's watches priced 350–700 SAR, a range including the approximately 500 SAR preference."
+        },
+        {
+          "id": "d82f3dad37482048d34be936",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and category describe watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly specify men's watches."
+            }
+          ],
+          "evidence": "Men's watches are described, but the luxury collection gives no price to establish proximity to 500 SAR."
+        },
+        {
+          "id": "2d849cb72e4279a5e48b19a5",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly includes men's watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly specifies men's."
+            }
+          ],
+          "evidence": "Men's watches appear in the collection title, but the page also includes accessories and gives no price."
+        },
+        {
+          "id": "6daf6ea40fb8d9ba76cdc45c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and category describe men's watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says men."
+            }
+          ],
+          "evidence": "Men's watch shopping page is related, but it provides no candidate-specific price."
+        },
+        {
+          "id": "d91babacc098736c207fb7a4",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and category describe watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says watches for men."
+            }
+          ],
+          "evidence": "Men's watch category is relevant by product and audience, but no price is provided."
+        }
+      ],
+      "judgeRationale": "Only the men's-watch range of 350–700 SAR expressly contains the requested approximate budget; other male-watch results either lack prices or state prices far above it.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 9,
+      "candidates": [],
+      "judgeRationale": "The frozen packet contains no candidates to assess."
+    },
+    {
+      "caseId": 10,
+      "candidates": [
+        {
+          "id": "1c888f9a0705c310d6836503",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly describes white shoes; category is shoes."
+            },
+            {
+              "field": "color",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says white shoes."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Title and description provide no size or size system."
+            }
+          ],
+          "evidence": "White shoes are explicitly offered, but no EU 42 size evidence appears in the packet."
+        },
+        {
+          "id": "2fe6b99d08a95381f3c43c46",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title and description describe shoes and sneakers."
+            },
+            {
+              "field": "color",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title and description explicitly specify white shoes."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "No size or size system is stated in the title or description."
+            }
+          ],
+          "evidence": "The page describes men's white shoes, but the packet gives no evidence of EU 42 availability."
+        }
+      ],
+      "judgeRationale": "Both candidates describe white shoes but neither states EU 42; size is an explicit hard requirement, so no qualifying inventory is demonstrated."
+    },
+    {
+      "caseId": 11,
+      "candidates": [
+        {
+          "id": "ce40b1be55cb24c505f8c322",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title and description explicitly identify women's perfumes."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The title and description explicitly identify the perfumes as women's."
+            }
+          ],
+          "evidence": "A women's perfume category is explicit, but no product or observed price is provided."
+        },
+        {
+          "id": "66cade2e3d7db17216b38229",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly says 'Perfume Women'."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly specifies women."
+            }
+          ],
+          "evidence": "The title describes women's perfume, but this is a broad shop page with no observed product price."
+        },
+        {
+          "id": "619b074a2a08508f7acb257c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly concerns women's perfume."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies the perfume as women's."
+            }
+          ],
+          "evidence": "The page is a coupon-related article about women's perfume, not a priced perfume listing; the 300 SAR text is a minimum spend."
+        },
+        {
+          "id": "95f2b01d4980ea15f5f3294e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly says women's perfumes."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies the perfumes as women's."
+            }
+          ],
+          "evidence": "The title is a women's perfume category, but the only price-related text is a free-delivery threshold above 299 SAR, not an observed product price."
+        }
+      ],
+      "judgeRationale": "All candidates concern women's perfume, but none provides an observed perfume price near 300 SAR."
+    },
+    {
+      "caseId": 12,
+      "candidates": [
+        {
+          "id": "cdb78a4093842e72fa28469b",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly mentions mobile phones."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The title covers both new and used offers and does not establish a used listing."
+            },
+            {
+              "field": "city",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "The title only identifies Saudi Arabia; no Jeddah seller location is given."
+            }
+          ],
+          "evidence": "This is a broad Saudi phone-offers result covering new and used items, with no verified condition or Jeddah location."
+        },
+        {
+          "id": "b871743e60a7bc6717b2fcd8",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title and description explicitly identify used phones for sale."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The title and description explicitly specify used phones."
+            },
+            {
+              "field": "city",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "The page describes classified ads in Saudi Arabia but gives no Jeddah seller location."
+            }
+          ],
+          "evidence": "Used phones are explicit, but the broad Saudi category page does not verify a seller in Jeddah."
+        }
+      ],
+      "judgeRationale": "The candidates are phone-related and one is explicitly for used phones, but neither establishes a Jeddah seller location."
+    },
+    {
+      "caseId": 13,
+      "candidates": [
+        {
+          "id": "83b64c33ad5d10a13f2453a3",
+          "relevance": "RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly names Nike."
+            },
+            {
+              "field": "color",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly says black."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly gives size 42 EU."
+            }
+          ],
+          "evidence": "The title identifies Nike running shoes in black and EU size 42."
+        },
+        {
+          "id": "467c61683847812f22b5d53d",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title identifies this as Nike Saudi's collection."
+            },
+            {
+              "field": "color",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The title identifies the Black Collection."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "The truncated size text lists systems and values only through 41; EU 42 is not evidenced."
+            }
+          ],
+          "evidence": "The Nike black collection is related, but the provided size text does not establish availability in EU 42."
+        }
+      ],
+      "judgeRationale": "One candidate explicitly matches Nike, black, and EU 42; the other does not establish the required size.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 14,
+      "candidates": [
+        {
+          "id": "5179596dab3be632228b4034",
+          "relevance": "IRRELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "The title specifies iPhone 15 Pro Max, not the required base iPhone 15."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The title says it was used for a month."
+            }
+          ],
+          "evidence": "This is explicitly a used iPhone 15 Pro Max, a different model variant from the required iPhone 15."
+        },
+        {
+          "id": "45f1fe95037e6352c41a50e9",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies Apple iPhone 15 (128GB), without a Pro or Plus variant."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly says USED; the description repeats USED and Renewed."
+            }
+          ],
+          "evidence": "The title and description explicitly identify a used Apple iPhone 15 (128GB)."
+        },
+        {
+          "id": "9983276c6fb03450c6d5ee6f",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly says iPhone 15, without a Pro or Plus variant."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The title and description explicitly specify used devices."
+            }
+          ],
+          "evidence": "The title explicitly offers used iPhone 15 devices."
+        },
+        {
+          "id": "a30348d76c75005bd30c99a4",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "The title and description refer generally to Apple iPhones and do not specify iPhone 15."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The title and description explicitly identify used Apple iPhones."
+            }
+          ],
+          "evidence": "This is a used Apple iPhone category page, but the specific model is not identified."
+        },
+        {
+          "id": "184dd80a3d89b6735d4550d8",
+          "relevance": "IRRELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "The title and description explicitly specify iPhone 15 Pro Max, not the required base iPhone 15."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The title and description explicitly say used."
+            }
+          ],
+          "evidence": "This is explicitly a used iPhone 15 Pro Max, a different model variant."
+        },
+        {
+          "id": "b034e4640d92a9d23a0fe4e0",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies Apple iPhone 15 mobiles."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The description explicitly says used Apple iPhone 15 mobiles are for sale."
+            }
+          ],
+          "evidence": "The page explicitly identifies used Apple iPhone 15 mobiles for sale."
+        },
+        {
+          "id": "3b7a7af5aec022545f2ee750",
+          "relevance": "IRRELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "The title and description specify iPhone 15 Pro, not the required base iPhone 15."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The description explicitly identifies used Apple iPhone 15 Pro mobiles."
+            }
+          ],
+          "evidence": "This is a used iPhone 15 Pro, a different model variant."
+        },
+        {
+          "id": "9f611de3be6d257fc535b28f",
+          "relevance": "IRRELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "The title and description specify iPhone 15 Pro Max, not the required base iPhone 15."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The description explicitly identifies used Apple iPhone 15 Pro Max mobiles."
+            }
+          ],
+          "evidence": "This is a used iPhone 15 Pro Max, a different model variant."
+        },
+        {
+          "id": "229ab78e6e24da3817f314c0",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly includes iPhone 15 alongside the distinct iPhone 15 Pro."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly labels the page Used and the description repeats Used."
+            }
+          ],
+          "evidence": "The used-products page explicitly includes iPhone 15 as well as the separately named iPhone 15 Pro."
+        }
+      ],
+      "judgeRationale": "Several candidates explicitly identify used base iPhone 15 devices; Pro and Pro Max variants do not match, and general iPhone pages lack model evidence.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 15,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet."
+    },
+    {
+      "caseId": 16,
+      "candidates": [
+        {
+          "id": "e29ca4cc9d4da66f6dcd1f6c",
+          "relevance": "RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Diesel."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Jeans."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Men."
+            }
+          ],
+          "evidence": "Title and description identify Diesel men's jeans; structured brand and product type fields are null. No specific model identity is established."
+        },
+        {
+          "id": "15e76c44a2886f4b861a461a",
+          "relevance": "RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly name Diesel."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title says Diesel Jeans; description identifies a Diesel Finitive Jeans item."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says For Men."
+            }
+          ],
+          "evidence": "Title identifies Diesel jeans for men, and description names a specific Diesel jeans item. No expected model identity is specified."
+        },
+        {
+          "id": "dbc37e60c27a509cfa745832",
+          "relevance": "RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Diesel."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Jeans; description specifies Bootcut Jeans."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify men's jeans."
+            }
+          ],
+          "evidence": "Title and description identify Diesel men's bootcut jeans. No expected model identity is specified."
+        },
+        {
+          "id": "1cf49ef0446af0f6ce926b69",
+          "relevance": "RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Diesel."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly say men's jeans."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Men's."
+            }
+          ],
+          "evidence": "Title and description identify Diesel men's jeans, including multiple styles. No expected model identity is specified."
+        },
+        {
+          "id": "931a62bf9060d20cbbab901d",
+          "relevance": "RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says DIESEL."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly say jeans."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify men's jeans."
+            }
+          ],
+          "evidence": "Title and description identify Diesel men's jeans. No expected model identity is specified."
+        }
+      ],
+      "judgeRationale": "Each candidate's title or description explicitly supports Diesel, jeans, and men's audience. Structured brand and type fields are null, so the judgments rely on the provided text; availability is marked unknown."
+    },
+    {
+      "caseId": 17,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet to assess."
+    },
+    {
+      "caseId": 18,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet to assess."
+    },
+    {
+      "caseId": 19,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet to assess."
+    },
+    {
+      "caseId": 20,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet to assess."
+    },
+    {
+      "caseId": 21,
+      "candidates": [],
+      "judgeRationale": "No candidates are included in the packet."
+    },
+    {
+      "caseId": 22,
+      "candidates": [],
+      "judgeRationale": "No candidates are included in the packet."
+    },
+    {
+      "caseId": 23,
+      "candidates": [
+        {
+          "id": "c1403119352fa709b5e6e091",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify the product as Samsung."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "The explicit code is SM-S921BB, not the required SM-S921B."
+            }
+          ],
+          "evidence": "This is a Samsung Galaxy S24 phone, but its listed model code has an extra trailing B and does not establish the required exact model."
+        }
+      ],
+      "judgeRationale": "The listing is for the requested brand and product family, but its explicit model code differs from the required code."
+    },
+    {
+      "caseId": 24,
+      "candidates": [
+        {
+          "id": "afdc47b6a1afcc207d19be45",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly name Huawei."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly list model BNE-LX1."
+            }
+          ],
+          "evidence": "The title identifies a Huawei Nova 12 SE phone and explicitly gives model BNE-LX1."
+        },
+        {
+          "id": "ba20ffef86fb89d172bdc3ae",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Huawei."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Description explicitly associates BNE-LX1 with Huawei Nova 10 SE."
+            }
+          ],
+          "evidence": "The title and description describe a Huawei phone screen/replacement part, not the phone itself."
+        },
+        {
+          "id": "977ac976f62428b0e1814cf0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The result describes Huawei mobile phones."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The aggregate listing gives no BNE-LX1 model evidence."
+            }
+          ],
+          "evidence": "This is an aggregate Huawei mobile-phone result, with no specific phone or required model code identified."
+        },
+        {
+          "id": "41db6195d6cc9a17c1506051",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Huawei mobile phones."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The generic category text does not identify model BNE-LX1."
+            }
+          ],
+          "evidence": "The result is a generic Huawei mobile-phone category, with no specific phone or required model code identified."
+        },
+        {
+          "id": "cd928b9d2e628ad1836fb1c8",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names HUAWEI."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly gives HUAWEI BNE LX1 Cell Phone; description repeats HUAWEI BNE LX1."
+            }
+          ],
+          "evidence": "The title and description explicitly identify a Huawei BNE LX1 cell phone."
+        }
+      ],
+      "judgeRationale": "Two candidates explicitly identify Huawei phones with the required BNE-LX1 code. The screen/replacement part is not the phone, and the generic category results do not establish the model.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 25,
+      "candidates": [
+        {
+          "id": "f04eccda4e8f8a279e3477d0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Apple AirPods Pro."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No A3047 model code appears in the title or description."
+            }
+          ],
+          "evidence": "The title identifies Apple AirPods Pro 3 earbuds, but neither title nor description gives the required A3047 code."
+        },
+        {
+          "id": "9e36e476ac0750275bdc7cee",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Apple AirPods Pro."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The title and description do not state model A3047."
+            }
+          ],
+          "evidence": "The listing is for Apple AirPods Pro 3 headphones, but no required A3047 code is provided."
+        },
+        {
+          "id": "a3c6e408ae5368a976cd7777",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Apple AirPods Pro."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The title and description do not state model A3047."
+            }
+          ],
+          "evidence": "The comparison result mentions Apple AirPods Pro but does not identify a specific model code."
+        },
+        {
+          "id": "e0861f4fd22c93eb3938d2bb",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Apple AirPods Pro."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The title and description do not state model A3047."
+            }
+          ],
+          "evidence": "The listing describes Apple AirPods Pro earbuds but provides no model code."
+        },
+        {
+          "id": "959c56ef03017e145e82b428",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Apple AirPods Pro."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The description identifies 2nd Generation but does not give model A3047."
+            }
+          ],
+          "evidence": "The result mentions Apple AirPods Pro 2nd Generation but does not provide the required A3047 code."
+        },
+        {
+          "id": "c3aea378a863568283cf2bd2",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Apple AirPods."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The title and description do not state model A3047."
+            }
+          ],
+          "evidence": "This is a generic Apple AirPods result, not an AirPods Pro listing, and it provides no required model code."
+        },
+        {
+          "id": "095dac310547fbef13c3282a",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify Apple AirPods Pro."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The title and description do not state model A3047."
+            }
+          ],
+          "evidence": "The result identifies AirPods Pro 3 but does not give the required A3047 model code."
+        }
+      ],
+      "judgeRationale": "The AirPods Pro-related results do not explicitly establish model A3047. The generic AirPods result does not identify the requested Pro product."
+    },
+    {
+      "caseId": 26,
+      "candidates": [
+        {
+          "id": "bab64346cb31d526f748d3ef",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "15e76c44a2886f4b861a461a",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "8ff8c1c2a73756ebee46f189",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "e29ca4cc9d4da66f6dcd1f6c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "1cf49ef0446af0f6ce926b69",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "c9dcf3095969d439e4f023f0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "96e296e7f2e07da7caabb2a7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        },
+        {
+          "id": "c62f276618a16a0171edef8c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly names Diesel."
+            },
+            {
+              "field": "sku",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Neither SKU segment 00SW1Q 0EAXD appears in the candidate text."
+            }
+          ],
+          "evidence": "Title/description identifies Diesel jeans or a Diesel jeans source, but neither contains both SKU segments 00SW1Q 0EAXD."
+        }
+      ],
+      "judgeRationale": "The candidates identify Diesel jeans or Diesel shopping pages, but none provides the required combined SKU; brand is evidenced while the SKU remains unverified."
+    },
+    {
+      "caseId": 27,
+      "candidates": [
+        {
+          "id": "f46a99074e55e666b233dcf3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Candidate text gives different style code DM0211-001."
+            }
+          ],
+          "evidence": "Air Force 1 title/description identifies SKU DM0211-001, a different style code from CW2288-111."
+        },
+        {
+          "id": "041489711fd683ea40e4ea21",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Candidate text gives different style code DM0211-001."
+            }
+          ],
+          "evidence": "Air Force 1 title/description identifies SKU DM0211-001, a different style code from CW2288-111."
+        },
+        {
+          "id": "ce0e56c9cbfa37ac82c43132",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly gives model/style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 and explicitly gives style code CW2288-111."
+        },
+        {
+          "id": "0a36d87ed831137888a6be20",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "60b563d02ff662b8d0afdc32",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly gives model/style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 and explicitly gives style code CW2288-111."
+        },
+        {
+          "id": "0c3f0f38a6b1afc19b866b6c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "cef6d114da616b50c93e84de",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "7098a18c09810bcdd46431e0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "4574fd19e619157b33ffcaa2",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "4f7d8334127ba17a14814e14",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "621ea3d3aaabf754bd2fd645",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly gives model/style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 and explicitly gives style code CW2288-111 (Arabic model-number text)."
+        },
+        {
+          "id": "2fec64cb3849189bb38173b9",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "90fcb2e3511263eec4b198c6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "9ea1812acd77bae3704704f7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "82727869bb76fdf92ff39b30",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "2633d690f7010ca535b11d69",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "e8a69aa56c92cc8233a8a8ac",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "2a84db71e8476cc0b800b1be",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "2d6c3e0ad6351337b52eaa41",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "51a7ac68effbbe50d1d5cf8c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "e77b3521952388967f529d86",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Candidate text gives different style code DM0211-001."
+            }
+          ],
+          "evidence": "Air Force 1 title/description identifies SKU DM0211-001, a different style code from CW2288-111."
+        },
+        {
+          "id": "421a51ee3aae24b2cf079337",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly gives model/style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 and explicitly gives style code CW2288-111."
+        },
+        {
+          "id": "14caa0f54cd7fccd06708552",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No source text provides the required style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 footwear, but does not provide style code CW2288-111."
+        },
+        {
+          "id": "f99a6216cda1a6988c01202b",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies Nike."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly gives model/style code CW2288-111."
+            }
+          ],
+          "evidence": "Title/description identifies Nike Air Force 1 and explicitly gives style code CW2288-111."
+        }
+      ],
+      "judgeRationale": "Five candidates explicitly identify Nike Air Force 1 style CW2288-111; the remaining records either evidence a different style or omit the required style code."
+    },
+    {
+      "caseId": 28,
+      "candidates": [
+        {
+          "id": "26e8a5763740ae6d46168784",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Description explicitly says over-ear headphones."
+            }
+          ],
+          "evidence": "Description names Shure AONIC 50 and explicitly calls it wireless, active-noise-cancelling over-ear headphones priced similarly to Sony WH-1000XM5."
+        },
+        {
+          "id": "5e596ea8dfa682e256c8eb0f",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones (Sony headset) in Arabic."
+            }
+          ],
+          "evidence": "Title identifies a Sony WH1000XM5 shopping/search page, not a distinct comparable alternative."
+        },
+        {
+          "id": "9cda07d2c040941ca43cec47",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones (Sony headset) in Arabic."
+            }
+          ],
+          "evidence": "Arabic title identifies Sony wireless noise-cancelling headphones, but names no distinct comparable alternative."
+        }
+      ],
+      "judgeRationale": "The Shure AONIC 50 is explicitly described as comparable over-ear noise-cancelling headphones; other candidates are Sony-oriented search/product pages, not clearly labeled alternatives."
+    },
+    {
+      "caseId": 29,
+      "candidates": [
+        {
+          "id": "778f74a025aa87d8af7e45a5",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "814d56ecbe2043fb7d46caf6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "cf1353d09e3d1f7e88bf591f",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "43e1aa5b8cc48db5e175811b",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "055da451157680b0d92cdce7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "03caf63cc88fe56ee236f8dc",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 295 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "eac88a4b3960c688132d52bb",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "3a96766d627ceb776f5275ec",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "b87b4c1117da418e0c957491",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "47093d8a398d2470b295a3fd",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "41e5297c3762e917619be68e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly refers to shoes similar to Nike Air Max 270."
+            }
+          ],
+          "evidence": "Title describes shoes similar to Nike Air Max 270, but the excerpt names no specific alternative product."
+        },
+        {
+          "id": "9424e7cdb9cb81168736ec98",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "974f6238a2b1afa1a19c450d",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "e6ee41092993518e3a234fec",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "3bb87764f83e547261abdad4",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "0b0de8bf143d9d038b36a6e6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 345 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        },
+        {
+          "id": "8c06a7f320340e5e27c549e4",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/category identifies Nike Air Max 270 sneakers (shoes)."
+            }
+          ],
+          "evidence": "Title identifies Nike Air Max 270 sneakers at 225 SAR; this is the reference model, not a distinct alternative, and no comparison baseline is provided."
+        }
+      ],
+      "judgeRationale": "Candidates show Nike Air Max 270 shoes or an article about similar shoes, but the product listings identify the reference model rather than a distinct alternative; no savings comparison is established."
+    },
+    {
+      "caseId": 30,
+      "candidates": [
+        {
+          "id": "0b866757a33515dfb01c25c9",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies a hair styler or styling tool."
+            }
+          ],
+          "evidence": "Title/description identifies Shark FlexStyle as a Dyson Airwrap alternative."
+        },
+        {
+          "id": "aa8702a05df262188d8484e2",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies a hair styler or styling tool."
+            }
+          ],
+          "evidence": "Title/description identifies a Bellissima tool as a Dyson Airwrap alternative."
+        },
+        {
+          "id": "df4fe9233b3e9365a1a052fd",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies a hair styler or styling tool."
+            }
+          ],
+          "evidence": "Title/description identifies a Conair styling tool as a Dyson Airwrap alternative."
+        },
+        {
+          "id": "2590ab95238abbc3db6e62da",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies a hair styler or styling tool."
+            }
+          ],
+          "evidence": "Title/description identifies Shark FlexStyle as a Dyson Airwrap alternative."
+        },
+        {
+          "id": "60e8fca867be34395e8e4961",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies a hair styler or styling tool."
+            }
+          ],
+          "evidence": "Title/description identifies a Shark multi-styler as a Dyson Airwrap alternative."
+        },
+        {
+          "id": "4761f7c7f1fcfbaf9f6d89f5",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "Excerpt describes a roundup and tool categories, not a specific hair-styler candidate."
+            }
+          ],
+          "evidence": "Title/description describes a Dyson Airwrap dupe roundup and tool categories, but names no specific alternative product."
+        },
+        {
+          "id": "2dac3ef66d9fc3d34f2936c6",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title/description explicitly identifies a hair styler or styling tool."
+            }
+          ],
+          "evidence": "Title/description identifies an FHI Heat styler as a Dyson Airwrap alternative."
+        }
+      ],
+      "judgeRationale": "Most excerpts explicitly identify hair-styling tools as Dyson Airwrap alternatives; the broad roundup names tool categories but no specific alternative product."
+    },
+    {
+      "caseId": 31,
+      "candidates": [
+        {
+          "id": "3d472812f780551d08eb5659",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies this as a HUAWEI WATCH GT 6 Pro."
+            }
+          ],
+          "evidence": "The title identifies a Huawei GT smartwatch, a clearly labeled comparable alternative; it is GT 6 Pro, not GT 5."
+        },
+        {
+          "id": "8f16af9e6e6dcb589a5012ba",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies this as HUAWEI WATCH GT 5."
+            }
+          ],
+          "evidence": "The title explicitly names HUAWEI WATCH GT 5, and the description also identifies the GT 5 46 mm."
+        },
+        {
+          "id": "471848accab703a1edc49c45",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies this as HUAWEI WATCH GT 5 Pro."
+            }
+          ],
+          "evidence": "The title names a GT 5 Pro smartwatch, a clearly labeled related model rather than the base GT 5."
+        },
+        {
+          "id": "0044605334ea15394d4349b3",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The Arabic title identifies a Huawei WATCH GT 5 smart watch."
+            }
+          ],
+          "evidence": "The title names Huawei WATCH GT 5, but the description's color/variant text says 5Pro 46mm, making the precise variant uncertain."
+        },
+        {
+          "id": "3d662804952ecea55ff39234",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title identifies a Huawei Watch GT, though it does not specify a model."
+            }
+          ],
+          "evidence": "The listing title identifies a Huawei Watch GT, but neither title nor description establishes a specific GT model for comparison."
+        },
+        {
+          "id": "38081acb84c02640a938ea05",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies this as HUAWEI WATCH GT 6."
+            }
+          ],
+          "evidence": "The title identifies a GT 6 smartwatch and the description explicitly compares it with HUAWEI WATCH GT 5 46 mm."
+        },
+        {
+          "id": "4b1609b29b8338c44d952be7",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title calls it Huawei Watch GT 5 Pro and the description calls it a smartwatch."
+            }
+          ],
+          "evidence": "The title and description identify a Huawei Watch GT 5 Pro smartwatch, a clearly labeled related model."
+        },
+        {
+          "id": "220e6f9766590c0fac720c57",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The description explicitly identifies the product as a WATCH GT 4 smartwatch."
+            }
+          ],
+          "evidence": "The description explicitly identifies a WATCH GT 4 smartwatch, a clearly labeled related model rather than GT 5."
+        }
+      ],
+      "judgeRationale": "The packet contains several explicitly identified Huawei GT watches, including an explicit GT 5 listing and clearly named related models. The generic GT listing lacks specific-model evidence.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 32,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet; there is no literal SKU evidence to judge."
+    },
+    {
+      "caseId": 33,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet, so no fitment, side, condition, city, or price evidence is available."
+    },
+    {
+      "caseId": 34,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet, so no matching brand, heels type, color, size, or price evidence is available."
+    },
+    {
+      "caseId": 35,
+      "candidates": [],
+      "judgeRationale": "No candidates are present in the packet; there is no OEM or vehicle-fitment evidence to judge."
+    },
+    {
+      "caseId": 36,
+      "candidates": [],
+      "judgeRationale": "The packet contains no candidates to evaluate."
+    },
+    {
+      "caseId": 37,
+      "candidates": [
+        {
+          "id": "9331b32228e4469b1bd0fee0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly identifies a Duracell car battery."
+            },
+            {
+              "field": "voltage",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Description states 12V."
+            },
+            {
+              "field": "capacity",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Description states 70Ah."
+            },
+            {
+              "field": "city",
+              "constraintIndex": 3,
+              "verdict": "unknown",
+              "evidence": "Description says available across KSA cities but does not identify Riyadh."
+            }
+          ],
+          "evidence": "The battery type, voltage, and capacity match, but a Riyadh location is not specified."
+        },
+        {
+          "id": "e213349db1af12383691dde5",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies a car-battery selection."
+            },
+            {
+              "field": "voltage",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No voltage is stated."
+            },
+            {
+              "field": "capacity",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "No capacity is stated."
+            },
+            {
+              "field": "city",
+              "constraintIndex": 3,
+              "verdict": "unknown",
+              "evidence": "Title mentions Riyadh and Jeddah, but does not establish location availability for a specific battery."
+            }
+          ],
+          "evidence": "This is a general car-battery selection mentioning Riyadh, but the required battery voltage and capacity are not provided."
+        }
+      ],
+      "judgeRationale": "Neither candidate explicitly demonstrates all required specifications and Riyadh availability."
+    },
+    {
+      "caseId": 38,
+      "candidates": [
+        {
+          "id": "17aa48f9d971348d398add3e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify dry shampoo."
+            }
+          ],
+          "evidence": "It is dry shampoo described as reducing oil and buildup, not shampoo explicitly suitable for dry hair."
+        },
+        {
+          "id": "d20771a9b360767f656bbacb",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify a shampoo range."
+            }
+          ],
+          "evidence": "Description explicitly says the shampoo range includes options for dry hair."
+        },
+        {
+          "id": "a4139aa52d125e81ab58b70e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify shampoos."
+            }
+          ],
+          "evidence": "Shampoo is established, but the description does not establish suitability for dry hair."
+        }
+      ],
+      "judgeRationale": "Only the general shampoo range explicitly mentions options for dry hair; the other descriptions do not establish that suitability."
+    },
+    {
+      "caseId": 39,
+      "candidates": [],
+      "judgeRationale": "The packet contains no candidates to evaluate."
+    },
+    {
+      "caseId": 40,
+      "candidates": [],
+      "judgeRationale": "The packet contains no candidates to evaluate."
+    }
+  ]
+}

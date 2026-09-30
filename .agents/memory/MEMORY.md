@@ -17,3 +17,6 @@
 - [Luxury Closet image transport](luxury-closet-image-transport.md) — feed product photos use HTTP URLs that redirect to identical HTTPS JPEGs; the separate store icon is not a product photo.
 - [Deal Outlet mobile redirects](deal-outlet-mobile-redirects.md) — mobile affiliate redirects go through Adjust to Play; the feed embeds exact web product URLs without a verified tracking route.
 - [GitHub API pushes](github-api-pushes.md) — when no GitHub git remote is configured, connector commits can advance main without sharing the local commit SHA.
+- [Expo build access](expo-build-access.md) — a readable EAS project may still reject build submissions; Git-linked builds and CLI uploads have different access requirements.
+- [Fixture baseline integrity](fixture-baseline-integrity.md) — freeze fixture corpus identity with baseline outputs; an output JSON hash alone cannot prove identical benchmark inputs.
+- [Live evaluation label reuse](live-evaluation-label-reuse.md) — opaque candidate IDs alone do not make earlier hard-constraint judgments reusable after product evidence changes.

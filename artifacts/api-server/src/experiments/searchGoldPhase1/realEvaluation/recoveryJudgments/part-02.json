@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 6,
+      "candidates": [
+        {
+          "id": "bdfbe6d19dc6e926547e021a",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies AirPods Pro 2 earbuds."
+            }
+          ],
+          "evidence": "Commercial listing names Apple AirPods Pro 2 earbuds and describes USB-C charging."
+        },
+        {
+          "id": "d803a59a54038d737591e815",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title names Apple (آبل)."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title specifies AirPods Pro, second generation."
+            }
+          ],
+          "evidence": "Arabic product title and purchase text specify Apple AirPods Pro second generation with MagSafe and USB-C."
+        },
+        {
+          "id": "c472fa230bb5dfa480e91bd1",
+          "relevance": "IRRELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names AirPods Pro 2."
+            }
+          ],
+          "evidence": "Although the title names the model, the description says its Saudi release is not here yet and offers no current product."
+        },
+        {
+          "id": "959c56ef03017e145e82b428",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple AirPods Pro."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Description explicitly identifies AirPods Pro 2nd Generation."
+            }
+          ],
+          "evidence": "Noon title advertises AirPods Pro offers and its description identifies the second-generation earbuds as available in Saudi Arabia."
+        },
+        {
+          "id": "6adffc52ee0f0e55e49e8a83",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies AirPods Pro 2nd Generation and model MQD83QM/A."
+            }
+          ],
+          "evidence": "Product title and description identify second-generation AirPods Pro earbuds and give model MQD83QM/A."
+        },
+        {
+          "id": "c7c6a91429ec6a22f22ea124",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title explicitly names Apple (ابل)."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies AirPods Pro, second generation, with MagSafe USB-C case."
+            }
+          ],
+          "evidence": "Saudi shopping title identifies Apple AirPods Pro second generation with MagSafe USB-C case."
+        },
+        {
+          "id": "7cd968d3c2c3631040ca5f3e",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title specifies AirPods Pro 2nd Gen earbuds."
+            }
+          ],
+          "evidence": "Jarir purchase title identifies Apple AirPods Pro 2nd Gen earbuds and the description specifies the H2 chip."
+        },
+        {
+          "id": "ab60a08640c1eeea756ebfa7",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title names AirPods, Apple's product line."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly identifies AirPods Pro 2 earbuds."
+            }
+          ],
+          "evidence": "Product title identifies AirPods Pro 2 wireless earbuds and describes USB-C charging."
+        },
+        {
+          "id": "c61867b1b056430633aca037",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly identifies AirPods Pro 2."
+            }
+          ],
+          "evidence": "Used-product title explicitly identifies Apple AirPods Pro 2; the stated used condition does not change the model match."
+        },
+        {
+          "id": "cf70d113ddafe282137dd853",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly names Apple."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies AirPods Pro 2 earbuds."
+            }
+          ],
+          "evidence": "Commercial product title identifies Apple AirPods Pro 2 earbuds and USB-C charging."
+        }
+      ],
+      "judgeRationale": "Several source-described second-generation product offers explicitly match the requested Apple model; the comparison page stating the release is not yet available is not a usable offer.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 7,
+      "candidates": [],
+      "judgeRationale": "The frozen packet contains no candidates to assess."
+    },
+    {
+      "caseId": 8,
+      "candidates": [
+        {
+          "id": "83457359a2209698b1751f9e",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and category describe watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says watches for men."
+            }
+          ],
+          "evidence": "Saudi men's-watch shop is relevant by product and audience, but no individual price or around-500-SAR offer is shown."
+        },
+        {
+          "id": "705da1ff95c153578fe92032",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title and category indicate watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title specifies men's watches."
+            }
+          ],
+          "evidence": "Men's watch result states 2,500 SAR, well above the preferred 500 SAR budget."
+        },
+        {
+          "id": "f9f5b33768a249052dd539bc",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies a wristwatch; category is watches and jewelry."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly describes a men's wristwatch."
+            }
+          ],
+          "evidence": "A men's wristwatch is identified, but its listed price is 16,236 USD rather than near 500 SAR."
+        },
+        {
+          "id": "8ff625cf536976d1fdf9f313",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies a wristwatch; category is watches and jewelry."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly describes a men's wristwatch."
+            }
+          ],
+          "evidence": "A men's wristwatch is identified, but its listed price is 26,810 USD, far above the preferred budget."
+        },
+        {
+          "id": "852d10eb7a3f939ce79e5a57",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title identifies a men's watch set."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title explicitly says men's."
+            }
+          ],
+          "evidence": "The title describes a men's watch set, but provides no specific item price to assess the preferred budget."
+        },
+        {
+          "id": "8d9f296d385573098a18a252",
+          "relevance": "RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly identifies men's watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly specifies men's."
+            }
+          ],
+          "evidence": "Shop listing explicitly covers men's watches priced 350–700 SAR, a range including the approximately 500 SAR preference."
+        },
+        {
+          "id": "d82f3dad37482048d34be936",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and category describe watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly specify men's watches."
+            }
+          ],
+          "evidence": "Men's watches are described, but the luxury collection gives no price to establish proximity to 500 SAR."
+        },
+        {
+          "id": "2d849cb72e4279a5e48b19a5",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly includes men's watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly specifies men's."
+            }
+          ],
+          "evidence": "Men's watches appear in the collection title, but the page also includes accessories and gives no price."
+        },
+        {
+          "id": "6daf6ea40fb8d9ba76cdc45c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and category describe men's watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says men."
+            }
+          ],
+          "evidence": "Men's watch shopping page is related, but it provides no candidate-specific price."
+        },
+        {
+          "id": "d91babacc098736c207fb7a4",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and category describe watches."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says watches for men."
+            }
+          ],
+          "evidence": "Men's watch category is relevant by product and audience, but no price is provided."
+        }
+      ],
+      "judgeRationale": "Only the men's-watch range of 350–700 SAR expressly contains the requested approximate budget; other male-watch results either lack prices or state prices far above it.",
+      "inventoryAvailabilityAssessment": "found"
+    },
+    {
+      "caseId": 9,
+      "candidates": [],
+      "judgeRationale": "The frozen packet contains no candidates to assess."
+    },
+    {
+      "caseId": 10,
+      "candidates": [
+        {
+          "id": "1c888f9a0705c310d6836503",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly describes white shoes; category is shoes."
+            },
+            {
+              "field": "color",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says white shoes."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Title and description provide no size or size system."
+            }
+          ],
+          "evidence": "White shoes are explicitly offered, but no EU 42 size evidence appears in the packet."
+        },
+        {
+          "id": "2fe6b99d08a95381f3c43c46",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title and description describe shoes and sneakers."
+            },
+            {
+              "field": "color",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title and description explicitly specify white shoes."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "No size or size system is stated in the title or description."
+            }
+          ],
+          "evidence": "The page describes men's white shoes, but the packet gives no evidence of EU 42 availability."
+        }
+      ],
+      "judgeRationale": "Both candidates describe white shoes but neither states EU 42; size is an explicit hard requirement, so no qualifying inventory is demonstrated."
+    }
+  ]
+}

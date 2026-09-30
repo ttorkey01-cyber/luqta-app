@@ -1,4 +1,5 @@
-import { expandShoppingQuery, normalizeArabicForSearch } from "../../connectors/queryExpansion";
+/** Immutable evaluation control copied from the frozen Phase 1B implementation. Do not edit behavior. */
+import { expandShoppingQuery, normalizeArabicForSearch } from "../../../connectors/queryExpansion";
 import type { Phase1Intent } from "./phase1Intent";
 
 export type QueryStrategy =
@@ -35,20 +36,15 @@ export function planPhase1Queries(
   throughStage: PlannerStage = "EXACT",
 ): PlannedQuery[] {
   const original = intent.explicitText.trim() || intent.rawQuery.trim();
-  const relationValues = intent.relations.value ?? [];
-  const explicitAlternativeIntent = relationValues.includes("similar") ||
-    (relationValues.includes("cheaper") && !relationValues.includes("exact")) ||
-    /\b(?:alternative|alternatives|replacement|substitute)\b|بديل/iu.test(original);
   const modelCode = intent.model.value &&
     /^(?=.*\p{L})(?=.*\p{N})[\p{L}\p{N}./-]+$/iu.test(intent.model.value)
     ? intent.model.value
     : undefined;
   const explicitModelIdentifier = Boolean(
-    modelCode && intent.model.evidence === "USER_EXPLICIT" && intent.model.sourceText && !explicitAlternativeIntent,
+    modelCode && intent.model.evidence === "USER_EXPLICIT" && intent.model.sourceText,
   );
   const exactIdentifier = intent.gtin14.value ?? intent.oem.value ?? intent.mpn.value ?? intent.sku.value ??
-    intent.vehicle.oemNumber.value ?? intent.vehicle.partNumber.value ??
-    (!explicitAlternativeIntent ? modelCode : undefined);
+    intent.vehicle.oemNumber.value ?? intent.vehicle.partNumber.value ?? modelCode;
   const core = clean(
     intent.brand.value,
     intent.model.value,
@@ -68,8 +64,6 @@ export function planPhase1Queries(
   ];
   const idRegex = /(?:\b(?:sku|mpn|part|oem)\b|رقم\s*(?:القطعة|القطعه|المنتج)|اوي\s*ام)/iu;
   const rawContainsIdentifier = Boolean(exactIdentifier && idRegex.test(original));
-  const explicitAlternativeRetrieval = explicitAlternativeIntent && !exactIdentifier &&
-    intent.ambiguityReasons.every((reason) => reason.includes("The size value is explicit, but its sizing system is not specified."));
 
   let primaryStrategy: QueryStrategy;
   if (exactIdentifier || rawContainsIdentifier) primaryStrategy = "EXACT_ID";
@@ -97,18 +91,11 @@ export function planPhase1Queries(
   // An explicit model code may get one contextual lexical pass using the exact
   // original wording. Evaluation still enforces the stated requirements.
   const restrictedExpansion = intent.hardRequirements.length > 0 || intent.ambiguityReasons.length > 0;
-  if (restrictedExpansion && !explicitModelIdentifier && !explicitAlternativeRetrieval) return planned;
+  if (restrictedExpansion && !explicitModelIdentifier) return planned;
 
   if (requestedStageIndex >= 1) {
     if (explicitModelIdentifier) {
       add(original, "BRAND_MODEL", "LEXICAL");
-    } else if (explicitAlternativeRetrieval && lexicalQuery) {
-      // This is a separate alternative retrieval pass. Explicit requirements
-      // remain on the intent for downstream filtering; same-variant requests
-      // (exact + cheaper) never enter this branch.
-      const strategy = intent.brand.value && intent.model.value ? "BRAND_MODEL"
-        : attributes ? "ATTRIBUTE" : hasArabic(lexicalQuery) ? "ARABIC_LEXICAL" : "ENGLISH_LEXICAL";
-      add(lexicalQuery, strategy, "LEXICAL");
     } else if (exactIdentifier) {
       // Preserve identifier bytes in every plan that carries it.
       add(clean(exactIdentifier, intent.brand.value, intent.model.value, intent.productType.value, attributes), "BRAND_MODEL", "LEXICAL");

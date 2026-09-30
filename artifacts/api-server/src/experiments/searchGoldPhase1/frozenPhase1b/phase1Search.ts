@@ -1,8 +1,9 @@
+/** Immutable evaluation control copied from the frozen Phase 1B implementation. Do not edit behavior. */
 import {
   InventoryUnavailableError,
   type SearchOrchestrationResult,
-} from "../../connectors/searchOrchestrator";
-import type { NormalizedProduct, ProviderSearchRequest, QueryIntent } from "../../connectors/types";
+} from "../../../connectors/searchOrchestrator";
+import type { NormalizedProduct, ProviderSearchRequest, QueryIntent } from "../../../connectors/types";
 import { evaluatePhase1Candidates, type CandidateIdentityGroup, type EvaluatedPhase1Candidate, type RejectedPhase1Candidate } from "./candidateEvaluation";
 import { parsePhase1Intent, type Phase1Intent } from "./phase1Intent";
 import { planPhase1Queries, type PlannedQuery } from "./queryPlanner";
@@ -28,12 +29,6 @@ export type Phase1SearchResult = {
   providerErrors: string[];
   partialCoverage: boolean;
   clarificationReasons: string[];
-  /** Source-independent, offer-level lifecycle; never implies verified constraints. */
-  candidateTransitions: Array<{
-    candidateId: string;
-    stage: "RETRIEVED" | "NORMALIZED" | "REJECTED" | "DISPLAY_ELIGIBLE" | "RANKED";
-    reasonCode: string;
-  }>;
 };
 
 /** An injected V2 instance keeps this experiment off the production search route. */
@@ -67,7 +62,7 @@ function empty(
   return {
     state, intent, plannedQueries, executedQueries: [], results: [],
     alternatives: [], rejected: [], identityGroups: [], comparisonEvidence: [], providerErrors: [],
-    partialCoverage: false, clarificationReasons, candidateTransitions: [],
+    partialCoverage: false, clarificationReasons,
   };
 }
 
@@ -93,40 +88,8 @@ export async function searchGoldPhase1(
   const candidates = new Map<string, NormalizedProduct>();
   const strategyById = new Map<string, string>();
   const providerErrors = new Set<string>();
-  const candidateTransitions: Phase1SearchResult["candidateTransitions"] = [];
   let partialCoverage = false;
   let evaluated = evaluatePhase1Candidates(intent, []);
-  const rememberResponse = (response: SearchOrchestrationResult, strategy: string) => {
-    for (const timing of response.__timings?.providerTimings ?? []) {
-      if (timing.timedOut || timing.errorType || timing.ready === false) {
-        partialCoverage = true;
-        providerErrors.add(timing.providerId);
-      }
-    }
-    for (const product of response.products) {
-      const key = `${product.providerId}:${product.canonical.id}`;
-      if (candidates.has(key)) continue;
-      candidates.set(key, product);
-      candidateTransitions.push(
-        { candidateId: product.id, stage: "RETRIEVED", reasonCode: strategy },
-        { candidateId: product.id, stage: "NORMALIZED", reasonCode: "PROVIDER_NORMALIZED" },
-      );
-      strategyById.set(product.canonical.id, strategy);
-    }
-    evaluated = evaluatePhase1Candidates(intent, [...candidates.values()], strategyById);
-  };
-
-  // Run stable V2 with its original request as the discovery floor. A parsed
-  // budget, size or inferred variant must not narrow this first source cohort.
-  try {
-    rememberResponse(await searchV2(request), "V2_BASELINE");
-  } catch (error) {
-    if (!(error instanceof InventoryUnavailableError)) throw error;
-    partialCoverage = true;
-    for (const id of error.providerIds.length ? error.providerIds : ["provider_unavailable"]) {
-      providerErrors.add(id);
-    }
-  }
 
   // V2 itself uses bounded variants. At most four outer plans are permitted;
   // later stages run only when exact/lexical evidence remains insufficient.
@@ -148,8 +111,24 @@ export async function searchGoldPhase1(
         searchMode: "intent",
         intent: { ...request.intent, ...v2Intent },
       });
-      // The strategy names the OUTER plan, not V2's internal subquery.
-      rememberResponse(response, `${plan.stage}:${plan.strategy}`);
+      for (const timing of response.__timings?.providerTimings ?? []) {
+        if (timing.timedOut || timing.errorType || timing.ready === false) {
+          partialCoverage = true;
+          providerErrors.add(timing.providerId);
+        }
+      }
+      // V2 reports "unavailable" even when its optional Brave fallback is
+      // deliberately disabled by preferredProviderIds (as in these isolated
+      // fixtures). It is not evidence that a selected provider failed.
+      for (const product of response.products) {
+        const key = `${product.providerId}:${product.canonical.id}`;
+        if (candidates.has(key)) continue;
+        candidates.set(key, product);
+        // This names the OUTER plan yielding the candidate. V2 may expand
+        // that query internally; do not claim its specific subquery is known.
+        strategyById.set(product.canonical.id, `${plan.stage}:${plan.strategy}`);
+      }
+      evaluated = evaluatePhase1Candidates(intent, [...candidates.values()], strategyById);
       const relevantAlternative = evaluated.alternatives.some(
         (candidate) => candidate.classification !== "WEAK",
       );
@@ -231,39 +210,21 @@ export async function searchGoldPhase1(
     }
   }
   const cheaperIds = new Set(comparisonEvidence.map((item) => item.cheaperOfferId));
-  // "Cheaper alternative" is discovery, not a same-variant savings claim.
-  // Only a same-product cheaper request requires verified comparison evidence.
-  const alternativeComparison = intent.relations.value?.includes("similar") === true;
-  const results = intent.relations.value?.includes("cheaper") && !alternativeComparison
+  const results = intent.relations.value?.includes("cheaper")
     ? [...evaluated.qualifying, ...alternatives].filter((candidate) => cheaperIds.has(candidate.product.id))
     : [...evaluated.qualifying, ...alternatives];
-  const sourceConflicts = new Map<string, Map<string, Set<string>>>();
-  for (const group of identityGroups) {
-    for (const variant of group.variants) {
-      for (const offer of variant.offers) {
-        const candidate = byOffer.get(offer.id);
-        if (!candidate) continue;
-        const product = candidate.product;
-        const key = `${group.id}|${variant.id}|${product.canonical.merchant ?? product.merchant ?? ""}|${product.canonical.title}`;
-        const offers = sourceConflicts.get(key) ?? new Map<string, Set<string>>();
-        const condition = product.canonical.condition;
-        if (condition) {
-          const ids = offers.get(condition) ?? new Set<string>();
-          ids.add(product.id);
-          offers.set(condition, ids);
-        }
-        sourceConflicts.set(key, offers);
-      }
-    }
+  const sourceConflicts = new Map<string, Set<string>>();
+  for (const product of candidates.values()) {
+    const key = `${product.canonical.merchant ?? product.merchant ?? ""}|${product.canonical.title}`;
+    const conditions = sourceConflicts.get(key) ?? new Set<string>();
+    if (product.canonical.condition) conditions.add(product.canonical.condition);
+    sourceConflicts.set(key, conditions);
   }
-  const conflictingIds = new Set([...sourceConflicts.values()]
-    .filter((conditions) => conditions.size > 1)
-    .flatMap((conditions) => [...conditions.values()].flatMap((ids) => [...ids])));
-  const conflicting = conflictingIds.size > 0;
+  const conflicting = [...sourceConflicts.values()].some((conditions) => conditions.size > 1);
   // Source disagreement about the same merchant/listing means product-level
   // identity is at most probable until the offer's condition is reconciled.
   const visibleResults = results.map((candidate) => {
-    if (conflictingIds.has(candidate.product.id) && candidate.classification === "EXACT") {
+    if (conflicting && candidate.classification === "EXACT") {
       return {
         ...candidate,
         classification: "PROBABLE_EXACT" as const,
@@ -279,24 +240,6 @@ export async function searchGoldPhase1(
     : partialCoverage
       ? "PROVIDER_UNAVAILABLE"
       : "NO_CONFIDENT_MATCH";
-  for (const candidate of evaluated.rejected) {
-    candidateTransitions.push({
-      candidateId: candidate.product.id, stage: "REJECTED",
-      reasonCode: Object.values(candidate.constraints).some((item) => item.status === "verified_fail")
-        ? "VERIFIED_HARD_CONFLICT"
-        : candidate.classification === "IRRELEVANT" ? "IRRELEVANT" : "EVALUATOR_REJECTED",
-    });
-  }
-  for (const candidate of [...evaluated.qualifying, ...alternatives]) {
-    candidateTransitions.push({
-      candidateId: candidate.product.id, stage: "DISPLAY_ELIGIBLE",
-      reasonCode: Object.values(candidate.constraints).some((item) => item.status === "unknown")
-        ? "UNKNOWN_EVIDENCE_ALTERNATIVE" : candidate.classification,
-    });
-  }
-  visibleResults.forEach((candidate, rank) => candidateTransitions.push({
-    candidateId: candidate.product.id, stage: "RANKED", reasonCode: `RANK_${rank + 1}`,
-  }));
 
   return {
     state, intent, plannedQueries, executedQueries, results: visibleResults, alternatives,
@@ -305,9 +248,8 @@ export async function searchGoldPhase1(
     partialCoverage, clarificationReasons: [
       ...intent.clarificationReasons,
       ...(conflicting ? ["Listings with the same merchant and title report conflicting conditions; verify the offer."] : []),
-      ...(intent.relations.value?.includes("cheaper") && !alternativeComparison && !comparisonEvidence.length
+      ...(intent.relations.value?.includes("cheaper") && !comparisonEvidence.length
         ? ["No verified lower-priced same-variant offer is available; provide a comparable reference offer if needed."] : []),
     ],
-    candidateTransitions,
   };
 }

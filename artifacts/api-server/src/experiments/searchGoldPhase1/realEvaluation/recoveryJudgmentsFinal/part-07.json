@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": 31,
+      "candidates": [
+        {
+          "id": "3d472812f780551d08eb5659",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies a HUAWEI WATCH GT 6 Pro."
+            }
+          ],
+          "evidence": "The title identifies a GT 6 Pro watch; the description explicitly compares it with WATCH GT 5 Pro 46 mm."
+        },
+        {
+          "id": "8f16af9e6e6dcb589a5012ba",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies HUAWEI WATCH GT 5."
+            }
+          ],
+          "evidence": "The title identifies WATCH GT 5, but no candidate-specific variant or individual offer is established."
+        },
+        {
+          "id": "471848accab703a1edc49c45",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies HUAWEI WATCH GT 5 Pro."
+            }
+          ],
+          "evidence": "The title identifies a WATCH GT 5 Pro, a different clearly labeled watch model; the description specifies its 42 mm Ceramic White edition."
+        },
+        {
+          "id": "0044605334ea15394d4349b3",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Arabic title identifies a Huawei WATCH GT 5 smartwatch."
+            }
+          ],
+          "evidence": "The Arabic title says WATCH GT 5, while the description specifies '5Pro 46mm Titanium'; the candidate's model/variant is inconsistent in the packet."
+        },
+        {
+          "id": "3d662804952ecea55ff39234",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies a Huawei Watch GT and its category is watches_jewelry."
+            }
+          ],
+          "evidence": "The title says Huawei Watch GT but does not identify a specific GT model; the description contains shopping snippets without resolving its version."
+        },
+        {
+          "id": "38081acb84c02640a938ea05",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies HUAWEI WATCH GT 6."
+            }
+          ],
+          "evidence": "The title identifies a WATCH GT 6, and the description explicitly compares it with HUAWEI WATCH GT 5 46 mm."
+        },
+        {
+          "id": "4b1609b29b8338c44d952be7",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Huawei Watch GT 5 Pro."
+            }
+          ],
+          "evidence": "The title identifies a GT 5 Pro smartwatch; the description specifies a 46 mm bundle, not the requested GT 5 model."
+        },
+        {
+          "id": "220e6f9766590c0fac720c57",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Description identifies a WATCH GT 4 46 mm smartwatch; category is watches_jewelry."
+            }
+          ],
+          "evidence": "The description identifies a WATCH GT 4 46 mm smartwatch, a different clearly labeled model."
+        }
+      ],
+      "judgeRationale": "The packet contains clearly labeled GT-series watches, including GT 5 itself and other comparable models. No candidate establishes both a specific variant and an individual offer."
+    },
+    {
+      "caseId": 32,
+      "candidates": [],
+      "judgeRationale": "The packet provides no candidates for the literal SKU query."
+    },
+    {
+      "caseId": 33,
+      "candidates": [],
+      "judgeRationale": "The packet provides no candidates to verify vehicle fitment, side, condition, city, or price."
+    },
+    {
+      "caseId": 34,
+      "candidates": [],
+      "judgeRationale": "The packet provides no candidates to verify brand, heel type, color, size, or price."
+    },
+    {
+      "caseId": 35,
+      "candidates": [],
+      "judgeRationale": "The packet provides no candidates to verify the OEM number and vehicle fitment."
+    }
+  ]
+}
