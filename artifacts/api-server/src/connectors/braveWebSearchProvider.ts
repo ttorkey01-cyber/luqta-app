@@ -1,5 +1,11 @@
 import { createHash } from "node:crypto";
 import { CacheService } from "./cacheService";
+import { deterministicIntentParser } from "./intentParser";
+import {
+  MAX_EXTERNAL_RETRIEVAL_QUERIES,
+  planRetrievalQueries,
+} from "./retrievalQueryPlanner";
+import { webPageQuality } from "./relevanceGate";
 import {
   getBilingualShoppingConcepts,
   hasConfidentLouisVuittonShoppingContext,
@@ -15,6 +21,7 @@ import type {
 const DEFAULT_CACHE_TTL_MS = 8 * 60 * 60 * 1_000;
 const DEFAULT_TIMEOUT_MS = 4_000;
 const MAX_RESULTS = 10;
+export const MAX_RETRIEVAL_CANDIDATES = MAX_RESULTS * MAX_EXTERNAL_RETRIEVAL_QUERIES;
 const BLOCKED_HOSTS = new Set([
   "facebook.com",
   "instagram.com",
@@ -103,6 +110,19 @@ function reliabilityScore(host: string) {
 
 function stableId(url: string) {
   return createHash("sha256").update(url).digest("hex").slice(0, 20);
+}
+
+// Deduplicate navigation/tracking aliases, not distinct SKU or size variants.
+export function retrievalCandidateUrlKey(value: URL): string {
+  const url = new URL(value);
+  url.hash = "";
+  for (const key of [...url.searchParams.keys()]) {
+    if (/^utm_/iu.test(key) || /^(?:gclid|fbclid|msclkid)$/iu.test(key)) {
+      url.searchParams.delete(key);
+    }
+  }
+  url.searchParams.sort();
+  return url.toString();
 }
 
 export function buildBraveShoppingQuery(query: string) {
@@ -195,15 +215,21 @@ export class BraveWebSearchProvider implements SearchProvider {
     if (!this.apiKey || request.imageUri) return [];
 
     const query = request.intent?.raw?.trim() || request.query.trim();
+    const parsedIntent = await deterministicIntentParser.parse(query);
+    const suppliedIntent = Object.fromEntries(
+      Object.entries(request.intent ?? {}).filter(([, value]) => value !== undefined),
+    );
+    const intent = { ...parsedIntent, ...suppliedIntent };
     const concepts = getBilingualShoppingConcepts(query);
-    const queries = buildBraveShoppingQueries(query);
+    const queries = planRetrievalQueries(query, intent)
+      .slice(0, MAX_EXTERNAL_RETRIEVAL_QUERIES);
     if (!queries.length) return [];
     const relevanceQueries = [
       ...concepts.arabic,
       ...concepts.english,
       request.query,
     ];
-    const cacheKey = queries
+    const cacheKey = "retrieval-v2.2:" + queries
       .map(normalizeArabicForSearch)
       .sort()
       .join("|");
@@ -226,6 +252,7 @@ export class BraveWebSearchProvider implements SearchProvider {
           url.searchParams.set("safesearch", "moderate");
 
           const response = await this.fetchImpl(url, {
+            redirect: "error",
             headers: {
               Accept: "application/json",
               "X-Subscription-Token": this.apiKey,
@@ -235,7 +262,7 @@ export class BraveWebSearchProvider implements SearchProvider {
           if (!response.ok) return [];
 
           const payload = (await response.json()) as BraveResponse;
-          return payload.web?.results ?? [];
+          return (payload.web?.results ?? []).slice(0, MAX_RESULTS);
         } catch {
           return [];
         } finally {
@@ -262,8 +289,9 @@ export class BraveWebSearchProvider implements SearchProvider {
       }
 
       const url = productUrl.toString();
+      const urlKey = retrievalCandidateUrlKey(productUrl);
       const candidate: ProviderProduct = {
-        id: `brave-${stableId(url)}`,
+        id: `brave-${stableId(urlKey)}`,
         title,
         description: result.description?.trim() || undefined,
         productUrl: url,
@@ -278,30 +306,28 @@ export class BraveWebSearchProvider implements SearchProvider {
         exactMatchScore: matchScore,
         reliabilityScore: reliabilityScore(merchant),
       };
-      const existing = productsByUrl.get(url);
+      const existing = productsByUrl.get(urlKey);
+      // Keep one coherent snippet; do not combine conflicting variant evidence.
+      const preferExisting = existing && (
+        webPageQuality(existing) < webPageQuality(candidate) ||
+        (webPageQuality(existing) === webPageQuality(candidate) &&
+          (existing.exactMatchScore ?? 0) >= matchScore)
+      );
+      const winner = preferExisting ? existing : candidate;
       productsByUrl.set(
-        url,
-        existing
-          ? {
-              ...existing,
-              ...candidate,
-              imageUrl: existing.imageUrl ?? candidate.imageUrl,
-              exactMatchScore: Math.max(
-                existing.exactMatchScore ?? 0,
-                matchScore,
-              ),
-            }
-          : candidate,
+        urlKey,
+        winner,
       );
     }
 
     const products = [...productsByUrl.values()]
       .sort(
         (left, right) =>
+          webPageQuality(left) - webPageQuality(right) ||
           (right.exactMatchScore ?? 0) - (left.exactMatchScore ?? 0) ||
           (right.reliabilityScore ?? 0) - (left.reliabilityScore ?? 0),
       )
-      .slice(0, MAX_RESULTS);
+      .slice(0, MAX_RETRIEVAL_CANDIDATES);
     this.cache.set(cacheKey, products);
     return products;
   }

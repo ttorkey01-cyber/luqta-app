@@ -5,6 +5,7 @@ import {
   buildBraveShoppingQuery,
   buildBraveShoppingQueries,
 } from "./braveWebSearchProvider";
+import { MAX_EXTERNAL_RETRIEVAL_QUERIES } from "./retrievalQueryPlanner";
 
 test("builds focused Arabic and English Saudi shopping queries", () => {
   const watchQuery = buildBraveShoppingQuery("ساعة جيس رجالية سوداء");
@@ -78,8 +79,9 @@ test("merges and deduplicates bilingual web results and caches them", async () =
   const second = await provider.search({ query: "Sony WH-1000XM5" });
   const metrics = provider.getUsageMetrics();
 
-  assert.equal(fetchCalls, 2);
-  assert.equal(searchQueries.length, 2);
+  assert.ok(fetchCalls > 0 && fetchCalls <= MAX_EXTERNAL_RETRIEVAL_QUERIES);
+  assert.equal(searchQueries.length, fetchCalls);
+  assert.equal(new Set(searchQueries).size, fetchCalls);
   assert.ok(searchQueries.some((query) => /[\u0600-\u06ff]/u.test(query)));
   assert.ok(searchQueries.some((query) => /[a-z]/iu.test(query)));
   assert.equal(first.length, 1);
@@ -90,7 +92,7 @@ test("merges and deduplicates bilingual web results and caches them", async () =
   assert.equal(first[0]?.merchant, "shop.example.sa");
   assert.equal(first[0]?.price, undefined);
   assert.equal(first[0]?.availability, "unknown");
-  assert.equal(metrics.braveRequests, 2);
+  assert.equal(metrics.braveRequests, fetchCalls);
   assert.equal(metrics.braveCacheHits, 1);
 });
 
@@ -103,5 +105,6 @@ test("isolates Brave failures", async () => {
   );
 
   assert.deepEqual(await provider.search({ query: "Nike Air Max" }), []);
-  assert.equal(provider.getUsageMetrics().braveRequests, 2);
+  assert.ok(provider.getUsageMetrics().braveRequests > 0);
+  assert.ok(provider.getUsageMetrics().braveRequests <= MAX_EXTERNAL_RETRIEVAL_QUERIES);
 });

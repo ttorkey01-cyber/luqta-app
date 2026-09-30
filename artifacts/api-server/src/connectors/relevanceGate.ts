@@ -402,7 +402,7 @@ function isEditorialWebResult(product: ProviderProduct, exactModelRequest: boole
 
 // This is ranking evidence about a page, not evidence of a product's identity,
 // price, stock, or variant availability. Non-web feed entries are product rows.
-function webPageQuality(product: ProviderProduct): number {
+export function webPageQuality(product: ProviderProduct): number {
   if (!/^web(?:_search)?$/iu.test(product.sourceType)) return 1;
   const title = normalizeText(product.title);
   const url = normalizeText(product.productUrl ?? "");

@@ -9,6 +9,7 @@ import {
   SearchOrchestrator,
 } from "./searchOrchestrator";
 import { BraveWebSearchProvider } from "./braveWebSearchProvider";
+import { MAX_EXTERNAL_RETRIEVAL_QUERIES } from "./retrievalQueryPlanner";
 import {
   getCategoryFilterFacets,
   getCategoryFilterIds,
@@ -398,7 +399,7 @@ test("uses bilingual Brave fallback only when fewer than five strong matches exi
 
   const results = await orchestrator.search({ query: "Sony WH-1000XM5" });
 
-  assert.equal(braveCalls, 2);
+  assert.ok(braveCalls > 0 && braveCalls <= MAX_EXTERNAL_RETRIEVAL_QUERIES);
   assert.ok(results.some((result) => result.providerId === "brave-web"));
   assert.equal(
     results.find((result) => result.providerId === "brave-web")?.isAffiliate,
@@ -480,7 +481,7 @@ test("triggers Brave when many watches miss the requested Guess brand", async ()
     query: "Guess men's black watch",
   });
 
-  assert.equal(braveCalls, 2);
+  assert.ok(braveCalls > 0 && braveCalls <= MAX_EXTERNAL_RETRIEVAL_QUERIES);
   assert.equal(fallback.getUsageMetrics().braveFallbackTriggered, 1);
   assert.ok(results.some((result) => result.providerId === "brave-web"));
 });
@@ -635,7 +636,7 @@ test("triggers Brave for Arabic Guess intent when catalog results miss the brand
     query: "ساعة Guess رجالية سوداء",
   });
 
-  assert.equal(braveCalls, 2);
+  assert.ok(braveCalls > 0 && braveCalls <= MAX_EXTERNAL_RETRIEVAL_QUERIES);
   assert.ok(braveQueries.some((query) => /guess/iu.test(query)));
   assert.ok(braveQueries.some((query) => /black/iu.test(query)));
   assert.ok(braveQueries.some((query) => /men/iu.test(query)));
@@ -681,7 +682,7 @@ test("triggers Brave when many headlights miss the requested Camry year", async 
 
   const results = await orchestrator.search({ query: "Camry 2022 headlight" });
 
-  assert.equal(braveCalls, 2);
+  assert.ok(braveCalls > 0 && braveCalls <= MAX_EXTERNAL_RETRIEVAL_QUERIES);
   assert.ok(results.some((result) => result.providerId === "brave-web"));
 });
 
@@ -2254,7 +2255,7 @@ test("explicit category-context intent can use Brave without category filtering"
 
   assert.equal(calls[0]?.category, "beauty_care");
   assert.equal(calls[0]?.searchMode, "intent");
-  assert.equal(braveCalls, 2);
+  assert.ok(braveCalls > 0 && braveCalls <= MAX_EXTERNAL_RETRIEVAL_QUERIES);
   assert.equal(response.categoryState, undefined);
   assert.deepEqual(response.products, []);
   assert.equal(response.exactMatches, 0);
