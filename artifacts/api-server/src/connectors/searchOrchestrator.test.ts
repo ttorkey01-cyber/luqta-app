@@ -1225,6 +1225,46 @@ test("Samsung S24 Ultra and iPhone 15 Pro Max preserve complete models and rejec
   }
 });
 
+test("fallback ranks a specific iPhone model listing above a broad classifieds page", async () => {
+  const broadTitle = "Apple iPhone 15 Pro Max Mobiles for Sale : Best iPhone 15 Pro Max Prices | OpenSooq";
+  const listingTitle = "Apple iPhone 15 Pro Max, 5G, 6.7 inch, 256GB, Blue Titanium - eXtra";
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [];
+    },
+  };
+  const fallback = new BraveWebSearchProvider("test-key", async () =>
+    new Response(JSON.stringify({
+      web: {
+        results: [
+          {
+            title: broadTitle,
+            url: "https://classifieds.example/en/mobile-phones/mobiles-apple/iphone-15-pro-max",
+          },
+          {
+            title: listingTitle,
+            url: "https://merchant.example/mobiles/smartphone/iphone-15-pro-max/p/100345804",
+          },
+        ],
+      },
+    }), { status: 200 }),
+  );
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    fallback,
+  ).searchWithMetadata({ query: "iPhone 15 Pro Max" });
+
+  assert.equal(response.fallbackStatus, "used");
+  assert.deepEqual(response.products.map((item) => item.title), [listingTitle, broadTitle]);
+  assert.equal(response.exactMatches, undefined, "page quality cannot establish exact SKU identity");
+});
+
 test("soft Arabic watch budget cannot make a nearby-priced grooming product outrank relevance", async () => {
   const provider: SearchProvider = {
     metadata,

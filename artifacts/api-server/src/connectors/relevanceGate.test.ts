@@ -7,6 +7,7 @@ import {
   preserveDistinctiveFallbackQuery,
   sortSearchRelevance,
 } from "./relevanceGate";
+import { RankingService } from "./rankingService";
 import type { NormalizedProduct } from "./types";
 
 function product(
@@ -380,4 +381,103 @@ test("web page quality prefers actual listings without inventing price or exact 
   });
   assert.equal(sortSearchRelevance([modelPage, specificSamsung], samsung)[0], specificSamsung);
   assert.equal(evaluateSearchRelevance(modelPage, samsung).identifier, "MATCH");
+});
+
+test("an exact-model product listing outranks a classified page with weak category evidence", () => {
+  const gate = createSearchRelevanceGate("iPhone 15 Pro Max");
+  const classified = product(
+    "Apple iPhone 15 Pro Max Mobiles for Sale : Best iPhone 15 Pro Max Prices | OpenSooq",
+    {
+      sourceType: "web",
+      category: "electronics",
+      productUrl: "https://classifieds.example/en/mobile-phones/mobiles-apple/iphone-15-pro-max",
+      rankScore: 100,
+    },
+  );
+  const specific = product(
+    "Apple iPhone 15 Pro Max, 5G, 6.7 inch, 256GB, Blue Titanium - eXtra",
+    {
+      sourceType: "web",
+      productUrl: "https://merchant.example/mobiles/smartphone/iphone-15-pro-max/p/100345804",
+      rankScore: 1,
+    },
+  );
+  const used = product("Buy Secondhand iPhone 15 Pro Max with FaceTime", {
+    sourceType: "web",
+    productUrl: "https://reseller.example/products/iphone-15-pro-max",
+    rankScore: 90,
+  });
+  assert.equal(evaluateSearchRelevance(classified, gate).productType, "POSSIBLE");
+  assert.equal(evaluateSearchRelevance(specific, gate).productType, "UNKNOWN");
+  assert.deepEqual(
+    sortSearchRelevance(filterSearchRelevance([classified, used, specific], gate), gate)
+      .map((item) => item.title),
+    [specific.title, used.title, classified.title],
+  );
+  assert.deepEqual(filterSearchRelevance([product("iPhone 15 Pro")], gate), []);
+});
+
+test("specific Diesel waist-32 evidence beats market and category pages without trusting inseam 32", () => {
+  const gate = createSearchRelevanceGate("Diesel jeans مقاس 32");
+  const market = product("Diesel Jeans 32 - Etsy", {
+    sourceType: "web",
+    productUrl: "https://market.example/market/diesel_jeans_32",
+    rankScore: 100,
+  });
+  const category = product("Men's Jeans - Diesel Online Store", {
+    sourceType: "web",
+    productUrl: "https://merchant.example/man/denim.html",
+    rankScore: 90,
+  });
+  const specific = product("Diesel jeans waist 32", {
+    sourceType: "web",
+    productUrl: "https://merchant.example/products/diesel-jeans-waist-32",
+    rankScore: 1,
+  });
+  const inseamOnly = product("Diesel jeans waist 34 inseam 32", {
+    sourceType: "web",
+    productUrl: "https://merchant.example/products/diesel-jeans-waist-34",
+  });
+  assert.equal(evaluateSearchRelevance(market, gate).size, "UNKNOWN");
+  assert.equal(evaluateSearchRelevance(category, gate).size, "UNKNOWN");
+  assert.equal(evaluateSearchRelevance(specific, gate).size, "MATCH");
+  assert.equal(evaluateSearchRelevance(inseamOnly, gate).size, "CONFLICT");
+  assert.deepEqual(
+    sortSearchRelevance(filterSearchRelevance([market, category, specific, inseamOnly], gate), gate)
+      .map((item) => item.title),
+    [specific.title, market.title, category.title],
+  );
+});
+
+test("web watch pages follow detail, buy, used, model, market, category, classified, history, editorial order", () => {
+  const gate = createSearchRelevanceGate("ساعة حدود 500 ريال");
+  const webWatch = (title: string, path: string, rankScore: number) =>
+    product(title, {
+      sourceType: "web",
+      productType: "watch",
+      productUrl: `https://shop.example${path}`,
+      rankScore,
+    });
+  const ordered = [
+    webWatch("Casio GA-2100 watch", "/products/casio-ga-2100", 1),
+    webWatch("Buy now Casio GA-2100 watch", "/watches/ga-2100/buy/", 2),
+    webWatch("Used Casio GA-2100 watch", "/products/used-casio-ga-2100", 3),
+    webWatch("Casio GA-2100 watch", "/watches/ga-2100/", 4),
+    webWatch("Casio GA-2100 watches", "/market/casio-ga-2100", 5),
+    webWatch("Men's Watches", "/watches/", 6),
+    webWatch("Watches for Sale : Best Prices", "/classifieds/watches", 7),
+    webWatch("Casio watch price history", "/price-history/casio-watch", 8),
+    webWatch("Best 10 watches review", "/blog/best-watches", 10),
+    webWatch("أفضل 6 أنواع ساعات ذكية في السعودية", "/watch-choices", 9),
+  ];
+  assert.deepEqual(
+    sortSearchRelevance([...ordered].reverse(), gate),
+    ordered,
+  );
+  const [nearby, unknown] = new RankingService().rank([
+    product("Casio watch unknown price", { price: null, currency: "SAR" }),
+    product("Casio watch 520 SAR", { price: 520, currency: "SAR" }),
+  ], { approximatePrice: 500, currency: "SAR" });
+  assert.equal(unknown?.priceScore, 0.5, "unknown price stays neutral, without proximity credit");
+  assert.ok(nearby!.priceScore > unknown!.priceScore, "known near-budget price earns a soft preference");
 });

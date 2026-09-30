@@ -372,14 +372,27 @@ function webPageQuality(product: ProviderProduct): number {
   if (!/^web(?:_search)?$/iu.test(product.sourceType)) return 1;
   const title = normalizeText(product.title);
   const url = normalizeText(product.productUrl ?? "");
-  if (/\b(review|reviews|comparison|compare|vs\.?|article|guide|best\s+\d+|top\s+\d+|price history)\b|أفضل|مقارنة|كان بكام|تاريخ السعر/iu.test(title) ||
-      /\/(?:compare|article|blog|reviews?|price-history)(?:\/|[?#]|$)/iu.test(url)) return 5;
-  if (/\b(for sale|deals|best prices?|shop all|collection|category|search results|prices? (?:in|for|of))\b|للبيع|أسعار|افضل سعر/iu.test(title) ||
-      /\/(?:category|categories|collections?|search|prices?)(?:\/|[?#]|$)/iu.test(url)) return 4;
-  if (/\/(?:product|products|item|items|p|itm|listing)(?:\/|[?#]|$)/iu.test(url)) return 1;
-  if (/\b(?:\d{2,4}\s*(?:gb|tb)|(?:eu|uk|us|waist|size)\s*\d{1,3})\b/iu.test(title)) return 3;
-  if (/\b(?:buy|shop|order|تسوق|اشتري)\b/iu.test(title)) return 2;
-  return 3;
+  if (/\b(?:price history|price comparison|compare prices?)\b|كان بكام|تاريخ السعر|مقارنة الأسعار/iu.test(title) ||
+      /\/(?:compare|comparison|price-history|prices?)(?:\/|[?#]|$)/iu.test(url)) return 8;
+  if (/\b(?:review|reviews|comparison|compare|vs\.?|article|guide|best\s+\d+|top\s+\d+)\b|أفضل\s+(?:\d+\s+)?(?:أنواع?\s+)?(?:ساعات|الساعات)|مقارنة|دليل شامل/iu.test(title) ||
+      /\/(?:article|blog|post|reviews?)(?:\/|[?#]|$)/iu.test(url)) return 9;
+  // A detail URL is stronger page evidence than a merchant's general "buy" wording.
+  if (/\/(?:product|products|item|items|p|itm|listing|dp|pdp)\/[^/?#]+/iu.test(url) ||
+      /\/[^/?#]*\d{5,}\.html(?:[?#]|$)/iu.test(url)) {
+    return /\b(?:used|secondhand|second-hand|pre-owned|refurbished)\b|مستعمل/iu.test(title) ? 3 : 1;
+  }
+  if (/\/buy\/?(?:[?#]|$)/iu.test(url) || /\bbuy now\b|اشتري الآن/iu.test(title)) return 2;
+  if (/\/(?:market|b)(?:\/|[?#]|$)/iu.test(url)) return 5;
+  if (/\b(?:for sale|classifieds|search results|best prices?|all products|all phones)\b|للبيع|أفضل سعر|افضل سعر/iu.test(title) ||
+      /\/(?:search|results|s|browse|classifieds)(?:\/|[?#]|$)/iu.test(url)) return 7;
+  if (/\b(?:shop all|collection|category|prices? (?:in|for|of))\b|أسعار/iu.test(title) ||
+      /\/(?:category|categories|collections?)(?:\/|[?#]|$)/iu.test(url) ||
+      /\/(?:denim|joggjeans|jeans|shoes|watches)(?:\.html)?\/?(?:[?#]|$)/iu.test(url) ||
+      /(?:^|[-/])(?:jeans|denim|shoes|watches)\/?(?:[?#]|$)/iu.test(url)) return 6;
+  // Without a detail or buying signal, a named model can be a merchant model
+  // page, not proof of a purchasable variant.
+  if (/\b(?:[a-z]{1,5}[-\s]?\d{3,}[a-z0-9-]*|\d{2,4}\s*(?:gb|tb))\b/iu.test(title)) return 4;
+  return 6;
 }
 
 function identifierCompatibility(product: ProviderProduct, gate: SearchRelevanceGate): RelevanceState {
@@ -442,16 +455,32 @@ export function sortSearchRelevance(
       product,
       index,
       evidence: evaluateSearchRelevance(product, gate),
+      pageQuality: webPageQuality(product),
     }))
-    .sort(
-      (a, b) =>
-        STATE_ORDER[a.evidence.productType] -
-          STATE_ORDER[b.evidence.productType] ||
+    .sort((a, b) => {
+      // For the same preserved model, weak category evidence ("POSSIBLE")
+      // must not let a classifieds collection beat a specific listing whose
+      // product type is merely unknown. Neither is an identity assertion.
+      const comparableModelPages =
+        gate.requiresExactModel &&
+        a.evidence.identifier === "MATCH" &&
+        b.evidence.identifier === "MATCH" &&
+        a.evidence.size === b.evidence.size &&
+        a.evidence.productType !== "MATCH" &&
+        b.evidence.productType !== "MATCH" &&
+        a.evidence.productType !== "CONFLICT" &&
+        b.evidence.productType !== "CONFLICT" &&
+        /^web(?:_search)?$/iu.test(a.product.sourceType) &&
+        /^web(?:_search)?$/iu.test(b.product.sourceType);
+      return (
+        (comparableModelPages ? a.pageQuality - b.pageQuality : 0) ||
+        STATE_ORDER[a.evidence.productType] - STATE_ORDER[b.evidence.productType] ||
         STATE_ORDER[a.evidence.size] - STATE_ORDER[b.evidence.size] ||
-        webPageQuality(a.product) - webPageQuality(b.product) ||
+        a.pageQuality - b.pageQuality ||
         (b.product.rankScore - a.product.rankScore) ||
-        a.index - b.index,
-    )
+        a.index - b.index
+      );
+    })
     .map(({ product }) => product);
 }
 
