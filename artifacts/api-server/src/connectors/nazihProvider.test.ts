@@ -489,18 +489,20 @@ test("provider refresh timing diagnostics omit feed and product details", async 
 
     const expectedEvents = [
       ["Provider feed download and parse complete", ["feedDownloadParseDurationMs"]],
+      ["Provider category-index build queued", ["feedDownloadParseDurationMs"]],
       [
         "Provider category-index build started",
-        ["feedDownloadParseDurationMs", "categoryIndexBuildDurationMs"],
+        ["feedDownloadParseDurationMs", "categoryIndexBuildWaitDurationMs", "categoryIndexBuildDurationMs"],
       ],
       [
         "Provider category-index build finished",
-        ["feedDownloadParseDurationMs", "categoryIndexBuildDurationMs"],
+        ["feedDownloadParseDurationMs", "categoryIndexBuildWaitDurationMs", "categoryIndexBuildDurationMs"],
       ],
       [
         "Provider product-index published",
         [
           "feedDownloadParseDurationMs",
+          "categoryIndexBuildWaitDurationMs",
           "categoryIndexBuildDurationMs",
           "totalRefreshDurationMs",
         ],

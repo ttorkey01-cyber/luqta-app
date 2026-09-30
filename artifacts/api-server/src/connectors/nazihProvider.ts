@@ -1,6 +1,7 @@
 import { logger } from "../lib/logger";
 import { CacheService } from "./cacheService";
 import { CategoryProductIndex } from "./categoryProductIndex";
+import { withCategoryBuildSlot } from "./categoryBuildCoordinator";
 import { collectFeedImageUrls } from "./feedImageUrls";
 import {
   FEED_REQUEST_RECOVERY_COOLDOWN_MS,
@@ -32,6 +33,7 @@ type RefreshTiming = {
   startedAt: number;
   feedDownloadParseStartedAt?: number;
   feedDownloadParseCompletedAt?: number;
+  categoryIndexBuildQueuedAt?: number;
   categoryIndexBuildStartedAt?: number;
   categoryIndexBuildCompletedAt?: number;
   productIndexPublishedAt?: number;
@@ -557,7 +559,7 @@ export class AdmitadFeedProvider implements SearchProvider {
           );
           return this.productIndex.length;
         }
-        timing.categoryIndexBuildStartedAt = Date.now();
+        timing.categoryIndexBuildQueuedAt = Date.now();
         logger.info(
           {
             providerId: this.metadata.id,
@@ -565,25 +567,57 @@ export class AdmitadFeedProvider implements SearchProvider {
             feedDownloadParseDurationMs:
               timing.feedDownloadParseCompletedAt! -
               timing.feedDownloadParseStartedAt!,
-            categoryIndexBuildDurationMs: 0,
           },
-          "Provider category-index build started",
+          "Provider category-index build queued",
         );
-        await this.categoryProductIndex.setProductsYielding(products);
-        timing.categoryIndexBuildCompletedAt = Date.now();
-        logger.info(
-          {
-            providerId: this.metadata.id,
-            indexedProductCount: products.length,
-            feedDownloadParseDurationMs:
-              timing.feedDownloadParseCompletedAt! -
-              timing.feedDownloadParseStartedAt!,
-            categoryIndexBuildDurationMs:
-              timing.categoryIndexBuildCompletedAt! -
-              timing.categoryIndexBuildStartedAt!,
-          },
-          "Provider category-index build finished",
-        );
+        await withCategoryBuildSlot(async () => {
+          timing.categoryIndexBuildStartedAt = Date.now();
+          logger.info(
+            {
+              providerId: this.metadata.id,
+              indexedProductCount: products.length,
+              feedDownloadParseDurationMs:
+                timing.feedDownloadParseCompletedAt! -
+                timing.feedDownloadParseStartedAt!,
+              categoryIndexBuildWaitDurationMs:
+                timing.categoryIndexBuildStartedAt -
+                timing.categoryIndexBuildQueuedAt!,
+              categoryIndexBuildDurationMs: 0,
+            },
+            "Provider category-index build started",
+          );
+          try {
+            await this.categoryProductIndex.setProductsYielding(products);
+          } catch (error) {
+            logger.warn(
+              {
+                providerId: this.metadata.id,
+                categoryIndexBuildDurationMs:
+                  Date.now() - timing.categoryIndexBuildStartedAt,
+                error: error instanceof Error ? error.message : "Unknown build error",
+              },
+              "Provider category-index build failed",
+            );
+            throw error;
+          }
+          timing.categoryIndexBuildCompletedAt = Date.now();
+          logger.info(
+            {
+              providerId: this.metadata.id,
+              indexedProductCount: products.length,
+              feedDownloadParseDurationMs:
+                timing.feedDownloadParseCompletedAt! -
+                timing.feedDownloadParseStartedAt!,
+              categoryIndexBuildWaitDurationMs:
+                timing.categoryIndexBuildStartedAt -
+                timing.categoryIndexBuildQueuedAt!,
+              categoryIndexBuildDurationMs:
+                timing.categoryIndexBuildCompletedAt -
+                timing.categoryIndexBuildStartedAt,
+            },
+            "Provider category-index build finished",
+          );
+        });
         this.productIndex = products;
         timing.productIndexPublishedAt = Date.now();
         this.indexRefreshedAt = Date.now();
@@ -608,6 +642,9 @@ export class AdmitadFeedProvider implements SearchProvider {
             categoryIndexBuildDurationMs:
               timing.categoryIndexBuildCompletedAt! -
               timing.categoryIndexBuildStartedAt!,
+            categoryIndexBuildWaitDurationMs:
+              timing.categoryIndexBuildStartedAt! -
+              timing.categoryIndexBuildQueuedAt!,
             totalRefreshDurationMs:
               timing.productIndexPublishedAt! - timing.startedAt,
             indexedProductCount: products.length,

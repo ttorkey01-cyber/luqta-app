@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { HuaweiProvider } from "./huaweiProvider";
+import { withFeedRefreshSlot } from "./feedRefreshCoordinator";
 
 const FEED_URL = "https://feeds.example.test/huawei-main-ar.csv";
 const HEADER = "available;categoryId;country;currency;currencyId;description;id;language;modified_time;name;oldprice;param;picture;price;type;url;vendor";
@@ -30,7 +31,77 @@ function categoryIndexBuildStub(instance: object) {
   };
 }
 
-test("Huawei's valid header-only feed is ready and does not repeatedly refresh or block categories", async () => {
+type FakeTimer = {
+  callback: () => void;
+  delay: number;
+  active: boolean;
+};
+
+function useFakeTimeouts() {
+  const originalSetTimeout = globalThis.setTimeout;
+  const originalClearTimeout = globalThis.clearTimeout;
+  const timers: FakeTimer[] = [];
+  globalThis.setTimeout = ((callback: () => void, delay = 0) => {
+    const timer = { callback, delay, active: true };
+    timers.push(timer);
+    return timer as unknown as ReturnType<typeof setTimeout>;
+  }) as typeof globalThis.setTimeout;
+  globalThis.clearTimeout = ((handle: ReturnType<typeof setTimeout>) => {
+    const timer = handle as unknown as FakeTimer;
+    timer.active = false;
+  }) as typeof globalThis.clearTimeout;
+  return {
+    timers,
+    restore() {
+      globalThis.setTimeout = originalSetTimeout;
+      globalThis.clearTimeout = originalClearTimeout;
+    },
+  };
+}
+
+async function waitFor(predicate: () => boolean) {
+  for (let attempt = 0; attempt < 50; attempt += 1) {
+    if (predicate()) return;
+    await new Promise<void>((resolve) => setImmediate(resolve));
+  }
+  assert.fail("Condition was not reached");
+}
+
+async function fireTimer(timers: FakeTimer[], delay: number) {
+  await waitFor(() => timers.some((timer) => timer.active && timer.delay === delay));
+  const timer = timers.find((candidate) => candidate.active && candidate.delay === delay)!;
+  timer.active = false;
+  timer.callback();
+  await new Promise<void>((resolve) => setImmediate(resolve));
+}
+
+function deferred<T>() {
+  let resolve!: (value: T) => void;
+  const promise = new Promise<T>((done) => {
+    resolve = done;
+  });
+  return { promise, resolve };
+}
+
+let testLock = Promise.resolve();
+
+function serialTest(name: string, run: () => Promise<void>) {
+  test(name, async () => {
+    const previous = testLock;
+    let release!: () => void;
+    testLock = new Promise<void>((resolve) => {
+      release = resolve;
+    });
+    await previous;
+    try {
+      await run();
+    } finally {
+      release();
+    }
+  });
+}
+
+serialTest("Huawei's valid header-only feed is ready and does not repeatedly refresh or block categories", async () => {
   const originalFetch = globalThis.fetch;
   let feedRequests = 0;
   globalThis.fetch = (async (input) => {
@@ -86,7 +157,131 @@ test("Huawei's valid header-only feed is ready and does not repeatedly refresh o
   }
 });
 
-test("Huawei ingests future real products, preserves deeplinks, and retains the index after a failed refresh", async () => {
+serialTest("Huawei starts its fetch timeout only after a download slot is acquired and cleans up after success", async () => {
+  const originalFetch = globalThis.fetch;
+  const fakeTimeouts = useFakeTimeouts();
+  const firstSlot = deferred<void>();
+  const secondSlot = deferred<void>();
+  const fetchResponse = deferred<Response>();
+  const firstHolder = withFeedRefreshSlot(() => firstSlot.promise);
+  const secondHolder = withFeedRefreshSlot(() => secondSlot.promise);
+  let feedRequests = 0;
+  let fetchSignal: AbortSignal | undefined;
+  globalThis.fetch = (async (input, init) => {
+    assert.equal(String(input), FEED_URL);
+    feedRequests += 1;
+    fetchSignal = init?.signal as AbortSignal;
+    return fetchResponse.promise;
+  }) as typeof fetch;
+
+  try {
+    await new Promise<void>((resolve) => setImmediate(resolve));
+    const provider = new HuaweiProvider(FEED_URL, false);
+    const refresh = provider.refreshIndex();
+    await new Promise<void>((resolve) => setImmediate(resolve));
+    assert.equal(feedRequests, 0, "waiting for a slot must not start a fetch");
+    assert.equal(fakeTimeouts.timers.some((timer) => timer.active && timer.delay === 30_000), false);
+
+    firstSlot.resolve();
+    await waitFor(() => feedRequests === 1);
+    assert.equal(fakeTimeouts.timers.some((timer) => timer.active && timer.delay === 30_000), true);
+    fetchResponse.resolve(new Response(`${HEADER}\n`));
+    assert.equal(await refresh, 0);
+    assert.equal(fetchSignal?.aborted, false, "successful fetch leaves its controller un-aborted");
+    assert.equal(fakeTimeouts.timers.some((timer) => timer.active && timer.delay === 30_000), false);
+  } finally {
+    firstSlot.resolve();
+    secondSlot.resolve();
+    fetchResponse.resolve(new Response(`${HEADER}\n`));
+    await Promise.all([firstHolder, secondHolder]);
+    globalThis.fetch = originalFetch;
+    fakeTimeouts.restore();
+  }
+});
+
+serialTest("Huawei retries a timed-out fetch and succeeds, preserving the AbortError message and cleaning up attempts", async () => {
+  const originalFetch = globalThis.fetch;
+  const fakeTimeouts = useFakeTimeouts();
+  const signals: AbortSignal[] = [];
+  let feedRequests = 0;
+  globalThis.fetch = (async (input, init) => {
+    assert.equal(String(input), FEED_URL);
+    feedRequests += 1;
+    const signal = init?.signal as AbortSignal;
+    signals.push(signal);
+    if (feedRequests === 1) {
+      return new Promise<Response>((_resolve, reject) => {
+        signal.addEventListener("abort", () => {
+          reject(new DOMException("This operation was aborted", "AbortError"));
+        }, { once: true });
+      });
+    }
+    return new Response(`${HEADER}\n`);
+  }) as typeof fetch;
+
+  try {
+    const provider = new HuaweiProvider(FEED_URL, false);
+    const refresh = provider.refreshIndex();
+    await fireTimer(fakeTimeouts.timers, 30_000);
+    await fireTimer(fakeTimeouts.timers, 250);
+    await waitFor(() => feedRequests === 2);
+    assert.equal(await refresh, 0);
+    assert.equal(feedRequests, 2);
+    assert.equal(signals[0]?.aborted, true);
+    assert.equal(signals[1]?.aborted, false);
+    assert.equal(fakeTimeouts.timers.some((timer) => timer.active && timer.delay === 30_000), false);
+    assert.equal(provider.getSearchIndexReadiness().refreshing, false);
+  } finally {
+    globalThis.fetch = originalFetch;
+    fakeTimeouts.restore();
+  }
+});
+
+serialTest("Huawei repeated fetch timeouts reject with the exact AbortError and clear refreshing state", async () => {
+  const originalFetch = globalThis.fetch;
+  const fakeTimeouts = useFakeTimeouts();
+  const signals: AbortSignal[] = [];
+  let feedRequests = 0;
+  globalThis.fetch = (async (input, init) => {
+    assert.equal(String(input), FEED_URL);
+    feedRequests += 1;
+    const signal = init?.signal as AbortSignal;
+    signals.push(signal);
+    return new Promise<Response>((_resolve, reject) => {
+      signal.addEventListener("abort", () => {
+        reject(new DOMException("This operation was aborted", "AbortError"));
+      }, { once: true });
+    });
+  }) as typeof fetch;
+
+  try {
+    const provider = new HuaweiProvider(FEED_URL, false);
+    const refresh = provider.refreshIndex();
+    const rejection = assert.rejects(refresh, (error: unknown) => {
+      assert.ok(error instanceof DOMException);
+      assert.equal(error.name, "AbortError");
+      assert.equal(error.message, "This operation was aborted");
+      return true;
+    });
+    await fireTimer(fakeTimeouts.timers, 30_000);
+    await fireTimer(fakeTimeouts.timers, 250);
+    await waitFor(() => feedRequests === 2);
+    await fireTimer(fakeTimeouts.timers, 30_000);
+    await fireTimer(fakeTimeouts.timers, 1_000);
+    await waitFor(() => feedRequests === 3);
+    await fireTimer(fakeTimeouts.timers, 30_000);
+    await rejection;
+    assert.equal(feedRequests, 3);
+    assert.equal(signals.every((signal) => signal.aborted), true);
+    assert.equal(fakeTimeouts.timers.some((timer) => timer.active && timer.delay === 30_000), false);
+    assert.equal(provider.getSearchIndexReadiness().refreshing, false);
+  } finally {
+    globalThis.fetch = originalFetch;
+    fakeTimeouts.restore();
+  }
+});
+
+serialTest("Huawei ingests future real products, preserves deeplinks, and retains the index after a failed refresh", async () => {
   const originalFetch = globalThis.fetch;
   let feedRequests = 0;
   globalThis.fetch = (async (input) => {
@@ -136,7 +331,7 @@ test("Huawei ingests future real products, preserves deeplinks, and retains the 
   }
 });
 
-test("Huawei rejects malformed or non-empty-but-invalid feeds instead of treating them as valid empty inventory", async () => {
+serialTest("Huawei rejects malformed or non-empty-but-invalid feeds instead of treating them as valid empty inventory", async () => {
   const originalFetch = globalThis.fetch;
   let requests = 0;
   globalThis.fetch = (async () => {
@@ -154,7 +349,7 @@ test("Huawei rejects malformed or non-empty-but-invalid feeds instead of treatin
   }
 });
 
-test("a subsequent valid empty Huawei feed does not erase an already usable index", async () => {
+serialTest("a subsequent valid empty Huawei feed does not erase an already usable index", async () => {
   const originalFetch = globalThis.fetch;
   let feedRequests = 0;
   globalThis.fetch = (async (input) => {
