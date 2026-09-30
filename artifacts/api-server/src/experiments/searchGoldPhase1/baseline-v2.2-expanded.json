@@ -1,0 +1,2322 @@
+{
+  "schemaVersion": 2,
+  "baselineVersion": "v2.2.0-expanded-baseline-2026-09-30",
+  "generatedAt": "2026-09-30T07:38:39.550Z",
+  "adapter": "current SearchOrchestrator.searchWithMetadata",
+  "networkCalls": false,
+  "realProductsOrOffers": false,
+  "fixtureNotice": "All product, offer, identifier, attribute, and gold-label data in this report is synthetic controlled fixture data; it is not real inventory or a real measurement.",
+  "counts": {
+    "executableControlledCases": 39,
+    "pass": 10,
+    "fail": 29
+  },
+  "cases": [
+    {
+      "caseId": 1,
+      "title": "Exact GTIN versus a different GTIN",
+      "query": "00012345678905",
+      "goldLabels": {
+        "exactProductId": "gtin-exact",
+        "identifier": "synthetic GTIN-14",
+        "nearProductId": "gtin-near"
+      },
+      "status": "FAIL",
+      "elapsedMs": 517.62,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "gtin-exact",
+            "title": "CONTROLLED FIXTURE item GTIN 00012345678905",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "gtin-near",
+            "title": "CONTROLLED FIXTURE item GTIN 00012345678906",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "00012345678905",
+          "normalized": "00012345678905",
+          "keywords": [
+            "00012345678905"
+          ]
+        }
+      },
+      "error": "classification for gtin-exact must be exact; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'exact'\n"
+    },
+    {
+      "caseId": 2,
+      "title": "Exact brand plus model ahead of close model",
+      "query": "FixtureBrand Model AB-120",
+      "goldLabels": {
+        "exactProductId": "brand-model-exact",
+        "closeProductId": "brand-model-close"
+      },
+      "status": "FAIL",
+      "elapsedMs": 95.03,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "brand-model-exact",
+            "title": "CONTROLLED FIXTURE FixtureBrand Model AB-120",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": "FixtureBrand",
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "brand-model-close",
+            "title": "CONTROLLED FIXTURE FixtureBrand Model AB-121",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": "FixtureBrand",
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "FixtureBrand Model AB-120",
+          "normalized": "fixturebrand model ab-120",
+          "keywords": [
+            "fixturebrand",
+            "model",
+            "ab-120"
+          ]
+        }
+      },
+      "error": "classification for brand-model-exact must be exact; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'exact'\n"
+    },
+    {
+      "caseId": 3,
+      "title": "Seller-scoped SKU matches only its seller offer",
+      "query": "Fixture Seller SKU FS-4401",
+      "goldLabels": {
+        "seller": "Fixture Seller A",
+        "sku": "FS-4401",
+        "exactProductId": "sku-scoped-match",
+        "sameSkuOtherSellerMustNotMatch": "sku-other-seller"
+      },
+      "status": "FAIL",
+      "elapsedMs": 3.31,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "sku-scoped-match",
+            "title": "CONTROLLED FIXTURE Fixture Seller SKU FS-4401",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Seller A",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "sku-other-seller",
+            "title": "CONTROLLED FIXTURE Fixture Seller SKU FS-4401",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Seller B",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "Fixture Seller SKU FS-4401",
+          "normalized": "fixture seller sku fs-4401",
+          "keywords": [
+            "fixture",
+            "seller",
+            "sku",
+            "fs-4401"
+          ]
+        }
+      },
+      "error": "classification for sku-scoped-match must be exact; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'exact'\n"
+    },
+    {
+      "caseId": 4,
+      "title": "Exact MPN distinct from a near MPN",
+      "query": "Fixture MPN ZX-8842",
+      "goldLabels": {
+        "exactProductId": "mpn-exact",
+        "nearProductId": "mpn-close"
+      },
+      "status": "FAIL",
+      "elapsedMs": 2.93,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "mpn-exact",
+            "title": "CONTROLLED FIXTURE Fixture MPN ZX-8842",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "mpn-close",
+            "title": "CONTROLLED FIXTURE Fixture MPN ZX-8843",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "Fixture MPN ZX-8842",
+          "normalized": "fixture mpn zx-8842",
+          "keywords": [
+            "fixture",
+            "mpn",
+            "zx-8842"
+          ]
+        }
+      },
+      "error": "classification for mpn-exact must be exact; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'exact'\n"
+    },
+    {
+      "caseId": 5,
+      "title": "One exact product retains two distinct merchant offers",
+      "query": "FixtureBrand Shared Model P-20",
+      "goldLabels": {
+        "identity": "synthetic-product-P20",
+        "offerIds": [
+          "shared-offer-a",
+          "shared-offer-b"
+        ]
+      },
+      "status": "FAIL",
+      "elapsedMs": 5.05,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "shared-offer-a",
+            "title": "CONTROLLED FIXTURE FixtureBrand Shared Model P-20",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant A",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "shared-offer-b",
+            "title": "CONTROLLED FIXTURE FixtureBrand Shared Model P-20",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant B",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "FixtureBrand Shared Model P-20",
+          "normalized": "fixturebrand shared model p-20",
+          "keywords": [
+            "fixturebrand",
+            "shared",
+            "model",
+            "p-20"
+          ]
+        }
+      },
+      "error": "offers must remain distinct within the shared identity group\n+ actual - expected\n\n+ undefined\n- [\n-   'shared-offer-a',\n-   'shared-offer-b'\n- ]\n"
+    },
+    {
+      "caseId": 6,
+      "title": "Exact model outranks a one-character-different model",
+      "query": "FixtureBrand XR-9A",
+      "goldLabels": {
+        "exactProductId": "one-char-exact",
+        "closeProductId": "one-char-close"
+      },
+      "status": "FAIL",
+      "elapsedMs": 2.92,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "one-char-exact",
+            "title": "CONTROLLED FIXTURE FixtureBrand XR-9A",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "one-char-close",
+            "title": "CONTROLLED FIXTURE FixtureBrand XR-9B",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "FixtureBrand XR-9A",
+          "normalized": "fixturebrand xr-9a",
+          "keywords": [
+            "fixturebrand",
+            "xr-9a"
+          ]
+        }
+      },
+      "error": "classification for one-char-exact must be exact; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'exact'\n"
+    },
+    {
+      "caseId": 7,
+      "title": "Arabic Bluetooth-audio category relevance",
+      "query": "أبي سماعة بلوتوث",
+      "goldLabels": {
+        "relevantIds": [
+          "arabic-audio"
+        ],
+        "irrelevantIds": [
+          "arabic-irrelevant"
+        ]
+      },
+      "status": "FAIL",
+      "elapsedMs": 399.59,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "arabic-audio",
+            "title": "CONTROLLED FIXTURE Bluetooth سماعة صوت",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "headphones",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "arabic-irrelevant",
+            "title": "CONTROLLED FIXTURE Desk lamp",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "lamp",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "أبي سماعة بلوتوث",
+          "normalized": "بلوتوث headphones",
+          "keywords": [
+            "سماعه",
+            "بلوتوث"
+          ],
+          "productType": "headphones",
+          "category": "electronics"
+        }
+      },
+      "error": "irrelevant result must not be presented as relevant\n\ntrue !== false\n"
+    },
+    {
+      "caseId": 10,
+      "title": "Arabic soft budget is not converted into a hard cap",
+      "query": "أبي شنطة بحدود 250 ريال",
+      "goldLabels": {
+        "approximateBudgetSAR": 250,
+        "hardCap": false,
+        "bothOffersCanRemain": true
+      },
+      "status": "FAIL",
+      "elapsedMs": 22.02,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "soft-budget-near",
+            "title": "CONTROLLED FIXTURE handbag",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": 250,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": "black",
+            "productType": "handbag",
+            "condition": "new",
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "أبي شنطة بحدود 250 ريال",
+          "normalized": "بحدود ريال handbag",
+          "keywords": [
+            "شنطه",
+            "بحدود",
+            "250",
+            "ريال"
+          ],
+          "productType": "handbag",
+          "category": "bags_accessories"
+        }
+      },
+      "error": "Expected values to be strictly equal:\n\nundefined !== 250\n"
+    },
+    {
+      "caseId": 13,
+      "title": "Mixed English/Arabic wireless-earbud query keeps verified white color",
+      "query": "wireless earbuds أبيها أبيض",
+      "goldLabels": {
+        "qualifyingIds": [
+          "mixed-white-earbuds"
+        ],
+        "color": "white"
+      },
+      "status": "PASS",
+      "elapsedMs": 36.48,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "mixed-white-earbuds",
+            "title": "CONTROLLED FIXTURE wireless earbuds",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": "white",
+            "productType": "earbuds",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "wireless earbuds أبيها أبيض",
+          "normalized": "white wireless earbuds ابيها",
+          "keywords": [
+            "wireless",
+            "earbuds",
+            "ابيها",
+            "ابيض"
+          ],
+          "color": "white"
+        }
+      }
+    },
+    {
+      "caseId": 14,
+      "title": "Arabic request preserves Latin brand/model identity",
+      "query": "أبغى FixtureBrand model QX-750",
+      "goldLabels": {
+        "exactProductId": "mixed-brand-model",
+        "exactModel": "QX-750"
+      },
+      "status": "FAIL",
+      "elapsedMs": 6.03,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "mixed-brand-model",
+            "title": "CONTROLLED FIXTURE FixtureBrand QX-750",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": "FixtureBrand",
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "mixed-brand-near",
+            "title": "CONTROLLED FIXTURE FixtureBrand QX-751",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": "FixtureBrand",
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "أبغى FixtureBrand model QX-750",
+          "normalized": "fixturebrand model qx-750",
+          "keywords": [
+            "fixturebrand",
+            "model",
+            "qx-750"
+          ]
+        }
+      },
+      "error": "classification for mixed-brand-model must be exact; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'exact'\n"
+    },
+    {
+      "caseId": 17,
+      "title": "Dialect USB-C charger query retrieves connector-matched fixture",
+      "query": "ابي شاحن تايب سي",
+      "goldLabels": {
+        "relevantIds": [
+          "usb-c-fixture"
+        ],
+        "unsupportedWattage": null
+      },
+      "status": "FAIL",
+      "elapsedMs": 2.99,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "usb-c-fixture",
+            "title": "CONTROLLED FIXTURE USB-C charger",
+            "description": "Controlled fixture connector: USB-C; wattage unspecified.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "charger",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "micro-usb-fixture",
+            "title": "CONTROLLED FIXTURE Micro-USB charger",
+            "description": "Controlled fixture connector: Micro-USB.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "charger",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "ابي شاحن تايب سي",
+          "normalized": "شاحن تايب سي",
+          "keywords": [
+            "شاحن",
+            "تايب",
+            "سي"
+          ]
+        }
+      },
+      "error": "classification for usb-c-fixture must be exact; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'exact'\n"
+    },
+    {
+      "caseId": 18,
+      "title": "Arabic synonym جوال retrieves the phone fixture",
+      "query": "أبي جوال",
+      "goldLabels": {
+        "canonicalIntent": "phone",
+        "relevantIds": [
+          "arabic-phone-synonym"
+        ]
+      },
+      "status": "FAIL",
+      "elapsedMs": 16.68,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "arabic-phone-synonym",
+            "title": "CONTROLLED FIXTURE هاتف ذكي phone",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "phone",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "arabic-synonym-irrelevant",
+            "title": "CONTROLLED FIXTURE Handbag",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "handbag",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "أبي جوال",
+          "normalized": "phone",
+          "keywords": [
+            "جوال"
+          ],
+          "productType": "phone",
+          "category": "electronics"
+        }
+      },
+      "error": "Expected values to be strictly equal:\n\ntrue !== false\n"
+    },
+    {
+      "caseId": 19,
+      "title": "Arabic numerals preserve Latin phone model",
+      "query": "أبي آيفون ١٥",
+      "goldLabels": {
+        "exactProductId": "arabic-numeral-iphone15",
+        "modelNumber": 15
+      },
+      "status": "FAIL",
+      "elapsedMs": 9.19,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "arabic-numeral-iphone15",
+            "title": "CONTROLLED FIXTURE iPhone 15",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": "FixturePhone",
+            "color": null,
+            "productType": "phone",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "arabic-numeral-iphone14",
+            "title": "CONTROLLED FIXTURE iPhone 14",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": "FixturePhone",
+            "color": null,
+            "productType": "phone",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "أبي آيفون ١٥",
+          "normalized": "ايفون",
+          "keywords": [
+            "ايفون",
+            "15"
+          ]
+        }
+      },
+      "error": "classification for arabic-numeral-iphone15 must be exact; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'exact'\n"
+    },
+    {
+      "caseId": 20,
+      "title": "Unique supported brand typo correction",
+      "query": "Samsng Galaxy Fixture S24",
+      "goldLabels": {
+        "inputTypo": "Samsng",
+        "onlySupportedCorrection": "Samsung",
+        "exactProductId": "brand-typo-correction"
+      },
+      "status": "FAIL",
+      "elapsedMs": 6.6,
+      "fixtureProductCount": 1,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "brand-typo-correction",
+            "title": "CONTROLLED FIXTURE Samsung Galaxy Fixture S24",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": "Samsung",
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "Samsng Galaxy Fixture S24",
+          "normalized": "samsng galaxy fixture s24",
+          "keywords": [
+            "samsng",
+            "galaxy",
+            "fixture",
+            "s24"
+          ]
+        }
+      },
+      "error": "classification for brand-typo-correction must be exact; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'exact'\n"
+    },
+    {
+      "caseId": 21,
+      "title": "Ambiguous Jaguar query requests clarification",
+      "query": "Jaguar",
+      "goldLabels": {
+        "interpretations": [
+          "automobile",
+          "animal"
+        ],
+        "expected": "clarification"
+      },
+      "status": "FAIL",
+      "elapsedMs": 9.36,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "ambiguous-jaguar-auto",
+            "title": "CONTROLLED FIXTURE Jaguar car",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "ambiguous-jaguar-animal",
+            "title": "CONTROLLED FIXTURE Jaguar animal",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "Jaguar",
+          "normalized": "jaguar",
+          "keywords": [
+            "jaguar"
+          ]
+        }
+      },
+      "error": "interaction state must be clarification; a bare product/empty array is not a pass\n+ actual - expected\n\n+ undefined\n- 'clarification'\n"
+    },
+    {
+      "caseId": 22,
+      "title": "Unsupported Arabic misspelling does not invent a correction",
+      "query": "حقيبة مرزفنة",
+      "goldLabels": {
+        "exhaustiveFixtureSnapshot": true,
+        "supportedCorrection": null,
+        "expectedState": "no_match"
+      },
+      "status": "FAIL",
+      "elapsedMs": 11.1,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "unsupported-typo-chair",
+            "title": "CONTROLLED FIXTURE office chair",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "unsupported-typo-phone",
+            "title": "CONTROLLED FIXTURE mobile phone",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "حقيبة مرزفنة",
+          "normalized": "مرزفنه handbag",
+          "keywords": [
+            "حقيبه",
+            "مرزفنه"
+          ],
+          "productType": "handbag",
+          "category": "bags_accessories"
+        }
+      },
+      "error": "interaction state must be no_match; a bare product/empty array is not a pass\n+ actual - expected\n\n+ undefined\n- 'no_match'\n"
+    },
+    {
+      "caseId": 23,
+      "title": "Generic charger query asks for device or connector",
+      "query": "أبي شاحن",
+      "goldLabels": {
+        "ambiguity": "device/connector unspecified",
+        "expected": "clarification",
+        "noCompatibilityClaims": true
+      },
+      "status": "FAIL",
+      "elapsedMs": 2.94,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "generic-charger-usbc",
+            "title": "CONTROLLED FIXTURE USB-C charger",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "charger",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "generic-charger-lightning",
+            "title": "CONTROLLED FIXTURE Lightning charger",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "charger",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "أبي شاحن",
+          "normalized": "شاحن",
+          "keywords": [
+            "شاحن"
+          ]
+        }
+      },
+      "error": "interaction state must be clarification; a bare product/empty array is not a pass\n+ actual - expected\n\n+ undefined\n- 'clarification'\n"
+    },
+    {
+      "caseId": 33,
+      "title": "Strict maximum-price boundary is strictly less than SAR 300",
+      "query": "شنطة أقل من 300 ريال",
+      "goldLabels": {
+        "qualifyingIds": [
+          "strict-under-300"
+        ],
+        "operator": "<",
+        "capSAR": 300
+      },
+      "status": "PASS",
+      "elapsedMs": 9.63,
+      "fixtureProductCount": 3,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "strict-under-300",
+            "title": "CONTROLLED FIXTURE handbag",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": 299.99,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": "black",
+            "productType": "handbag",
+            "condition": "new",
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "exactMatches": 1,
+        "constraintRelaxationAvailable": false,
+        "structuredIntent": {
+          "raw": "شنطة أقل من 300 ريال",
+          "normalized": "اقل ريال handbag under 300",
+          "keywords": [
+            "شنطه",
+            "اقل",
+            "300",
+            "ريال"
+          ],
+          "productType": "handbag",
+          "category": "bags_accessories",
+          "maxPrice": 300,
+          "currency": "SAR"
+        }
+      }
+    },
+    {
+      "caseId": 34,
+      "title": "Unknown price never qualifies under strict price cap",
+      "query": "شنطة أقل من 300 ريال",
+      "goldLabels": {
+        "qualifyingIds": [
+          "unknown-price-qualifying"
+        ],
+        "unknownPriceQualifies": false
+      },
+      "status": "PASS",
+      "elapsedMs": 6.7,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "unknown-price-qualifying",
+            "title": "CONTROLLED FIXTURE handbag",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": 299,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": "black",
+            "productType": "handbag",
+            "condition": "new",
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "exactMatches": 1,
+        "constraintRelaxationAvailable": false,
+        "structuredIntent": {
+          "raw": "شنطة أقل من 300 ريال",
+          "normalized": "اقل ريال handbag under 300",
+          "keywords": [
+            "شنطه",
+            "اقل",
+            "300",
+            "ريال"
+          ],
+          "productType": "handbag",
+          "category": "bags_accessories",
+          "maxPrice": 300,
+          "currency": "SAR"
+        }
+      }
+    },
+    {
+      "caseId": 35,
+      "title": "Requested blue color excludes navy and black",
+      "query": "أزرق",
+      "goldLabels": {
+        "qualifyingIds": [
+          "color-blue"
+        ],
+        "navyEquivalentToBlue": false
+      },
+      "status": "PASS",
+      "elapsedMs": 3.6,
+      "fixtureProductCount": 3,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "color-blue",
+            "title": "CONTROLLED FIXTURE handbag",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": 100,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": "blue",
+            "productType": "handbag",
+            "condition": "new",
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "أزرق",
+          "normalized": "blue",
+          "keywords": [
+            "ازرق"
+          ],
+          "color": "blue"
+        }
+      }
+    },
+    {
+      "caseId": 36,
+      "title": "Absent requested color yields explicit no-match",
+      "query": "أبي شنطة خضراء",
+      "goldLabels": {
+        "qualifyingIds": [],
+        "expectedState": "no_match"
+      },
+      "status": "FAIL",
+      "elapsedMs": 5.85,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "absent-color-black",
+            "title": "CONTROLLED FIXTURE handbag",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": 80,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": "black",
+            "productType": "handbag",
+            "condition": "new",
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "أبي شنطة خضراء",
+          "normalized": "green handbag",
+          "keywords": [
+            "شنطه",
+            "خضراء"
+          ],
+          "productType": "handbag",
+          "category": "bags_accessories",
+          "color": "green"
+        }
+      },
+      "error": "interaction state must be no_match; a bare product/empty array is not a pass\n+ actual - expected\n\n+ undefined\n- 'no_match'\n"
+    },
+    {
+      "caseId": 37,
+      "title": "Exact shoe size 38 in explicitly labeled EU system",
+      "query": "حذاء مقاس 38 EU",
+      "goldLabels": {
+        "qualifyingIds": [
+          "size-38-eu"
+        ],
+        "size": 38,
+        "sizeSystem": "EU"
+      },
+      "status": "FAIL",
+      "elapsedMs": 5.61,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "size-38-eu",
+            "title": "CONTROLLED FIXTURE running shoe size 38 EU",
+            "description": "Controlled fixture size=38, sizeSystem=EU.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "shoe",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "size-39-eu",
+            "title": "CONTROLLED FIXTURE running shoe size 39 EU",
+            "description": "Controlled fixture size=39, sizeSystem=EU.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "shoe",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "حذاء مقاس 38 EU",
+          "normalized": "مقاس eu shoes",
+          "keywords": [
+            "حذاء",
+            "مقاس",
+            "38",
+            "eu"
+          ],
+          "productType": "shoes",
+          "category": "shoes"
+        }
+      },
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    'size-38-eu',\n+   'size-39-eu'\n  ]\n"
+    },
+    {
+      "caseId": 38,
+      "title": "Missing size system requests clarification",
+      "query": "shoe size 38",
+      "goldLabels": {
+        "systems": [
+          "EU",
+          "US"
+        ],
+        "expectedState": "clarification"
+      },
+      "status": "FAIL",
+      "elapsedMs": 5.55,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "size-system-eu",
+            "title": "CONTROLLED FIXTURE running shoe size 38",
+            "description": "Controlled fixture size=38; system=EU.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "shoe",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "shoe size 38",
+          "normalized": "size shoes",
+          "keywords": [
+            "shoe",
+            "size",
+            "38"
+          ],
+          "productType": "shoes",
+          "category": "shoes"
+        }
+      },
+      "error": "interaction state must be clarification; a bare product/empty array is not a pass\n+ actual - expected\n\n+ undefined\n- 'clarification'\n"
+    },
+    {
+      "caseId": 39,
+      "title": "New-only excludes used and unknown condition",
+      "query": "new fixture handbag only",
+      "goldLabels": {
+        "qualifyingIds": [
+          "condition-new"
+        ],
+        "condition": "new"
+      },
+      "status": "PASS",
+      "elapsedMs": 8.09,
+      "fixtureProductCount": 3,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "condition-new",
+            "title": "CONTROLLED FIXTURE handbag",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": 50,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": "black",
+            "productType": "handbag",
+            "condition": "new",
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "new fixture handbag only",
+          "normalized": "new new fixture only handbag",
+          "keywords": [
+            "new",
+            "fixture",
+            "handbag",
+            "only"
+          ],
+          "productType": "handbag",
+          "category": "bags_accessories",
+          "condition": "new"
+        }
+      }
+    },
+    {
+      "caseId": 40,
+      "title": "Used-only excludes new and unknown condition",
+      "query": "مستعمل شنطة fixture",
+      "goldLabels": {
+        "qualifyingIds": [
+          "used-only-used"
+        ],
+        "condition": "used"
+      },
+      "status": "PASS",
+      "elapsedMs": 8.65,
+      "fixtureProductCount": 3,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "used-only-used",
+            "title": "CONTROLLED FIXTURE handbag",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": 40,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": "black",
+            "productType": "handbag",
+            "condition": "used",
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "مستعمل شنطة fixture",
+          "normalized": "used مستعمل fixture handbag",
+          "keywords": [
+            "مستعمل",
+            "شنطه",
+            "fixture"
+          ],
+          "productType": "handbag",
+          "category": "bags_accessories",
+          "condition": "used"
+        }
+      }
+    },
+    {
+      "caseId": 41,
+      "title": "Used in Jeddah means seller location, not shipping destination",
+      "query": "مستعمل في جدة",
+      "goldLabels": {
+        "qualifyingIds": [
+          "local-used-jeddah"
+        ],
+        "sellerLocality": "Jeddah",
+        "deliveryIsNotLocality": true
+      },
+      "status": "PASS",
+      "elapsedMs": 5.15,
+      "fixtureProductCount": 3,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "local-used-jeddah",
+            "title": "CONTROLLED FIXTURE handbag",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": 100,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": "black",
+            "productType": "handbag",
+            "condition": "used",
+            "location": "Jeddah",
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "مستعمل في جدة",
+          "normalized": "used مستعمل جده",
+          "keywords": [
+            "مستعمل",
+            "جده"
+          ],
+          "condition": "used"
+        }
+      }
+    },
+    {
+      "caseId": 49,
+      "title": "Cheaper offer is same identity, not merely a lookalike",
+      "query": "FixtureBrand ExactModel Z-4 cheaper offer",
+      "goldLabels": {
+        "identity": "synthetic-Z4",
+        "cheaperSameIdentityOffer": "cheaper-same-identity",
+        "closeAlternative": "cheaper-lookalike"
+      },
+      "status": "FAIL",
+      "elapsedMs": 3.43,
+      "fixtureProductCount": 3,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "cheaper-same-identity",
+            "title": "CONTROLLED FIXTURE FixtureBrand ExactModel Z-4",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant B",
+            "price": 95,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "reference-price-same-identity",
+            "title": "CONTROLLED FIXTURE FixtureBrand ExactModel Z-4",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant A",
+            "price": 120,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "cheaper-lookalike",
+            "title": "CONTROLLED FIXTURE FixtureBrand ExactModel Z-5",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant C",
+            "price": 70,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "FixtureBrand ExactModel Z-4 cheaper offer",
+          "normalized": "fixturebrand exactmodel z-4 cheaper offer",
+          "keywords": [
+            "fixturebrand",
+            "exactmodel",
+            "z-4",
+            "cheaper",
+            "offer"
+          ]
+        }
+      },
+      "error": "classification for cheaper-same-identity must be exact; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'exact'\n"
+    },
+    {
+      "caseId": 51,
+      "title": "Stale/out-of-stock low offer is not called currently purchasable",
+      "query": "FixtureBrand stale current offer P-51",
+      "goldLabels": {
+        "purchasableOfferIds": [
+          "current-available-offer"
+        ],
+        "staleUnavailableOfferId": "stale-cheaper-offer"
+      },
+      "status": "PASS",
+      "elapsedMs": 2.49,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "current-available-offer",
+            "title": "CONTROLLED FIXTURE FixtureBrand current offer P-51",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": 95,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": "2026-09-29T00:00:00.000Z",
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "stale-cheaper-offer",
+            "title": "CONTROLLED FIXTURE FixtureBrand stale current offer P-51",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": 70,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "out_of_stock",
+            "updatedAt": "2024-01-01T00:00:00.000Z",
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "FixtureBrand stale current offer P-51",
+          "normalized": "fixturebrand stale current offer p-51",
+          "keywords": [
+            "fixturebrand",
+            "stale",
+            "current",
+            "offer",
+            "p-51"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": 52,
+      "title": "Similar alternative is explicitly distinguished from exact",
+      "query": "similar alternative to FixtureBrand Camera M10",
+      "goldLabels": {
+        "resultId": "similar-camera",
+        "identity": "similar",
+        "expectedState": "similar_alternative"
+      },
+      "status": "FAIL",
+      "elapsedMs": 1.93,
+      "fixtureProductCount": 1,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "similar-camera",
+            "title": "CONTROLLED FIXTURE FixtureBrand Camera M11",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "camera",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "similar alternative to FixtureBrand Camera M10",
+          "normalized": "similar alternative fixturebrand camera m10",
+          "keywords": [
+            "similar",
+            "alternative",
+            "fixturebrand",
+            "camera",
+            "m10"
+          ]
+        }
+      },
+      "error": "classification for similar-camera must be similar; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'similar'\n"
+    },
+    {
+      "caseId": 53,
+      "title": "Only close model exists; it must not be called the same item",
+      "query": "same FixtureBrand Model Q-100",
+      "goldLabels": {
+        "exactIdentityExists": false,
+        "closeProductId": "same-only-close",
+        "expectedClassification": "close"
+      },
+      "status": "FAIL",
+      "elapsedMs": 1.88,
+      "fixtureProductCount": 1,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "same-only-close",
+            "title": "CONTROLLED FIXTURE FixtureBrand Model Q-101",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": "FixtureBrand",
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "same FixtureBrand Model Q-100",
+          "normalized": "same fixturebrand model q-100",
+          "keywords": [
+            "same",
+            "fixturebrand",
+            "model",
+            "q-100"
+          ]
+        }
+      },
+      "error": "classification for same-only-close must be close; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'close'\n"
+    },
+    {
+      "caseId": 55,
+      "title": "Unique nonexistent token returns explicit no-match",
+      "query": "unmatchable-fixture-token-55",
+      "goldLabels": {
+        "exhaustiveFixtureSnapshot": true,
+        "matchingFixtureIds": [],
+        "expectedState": "no_match"
+      },
+      "status": "FAIL",
+      "elapsedMs": 2.43,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "no-match-blue-chair",
+            "title": "CONTROLLED FIXTURE blue office chair",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "no-match-usb-charger",
+            "title": "CONTROLLED FIXTURE USB-C charger",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "unmatchable-fixture-token-55",
+          "normalized": "unmatchable-fixture-token-55",
+          "keywords": [
+            "unmatchable-fixture-token-55"
+          ]
+        }
+      },
+      "error": "interaction state must be no_match; a bare product/empty array is not a pass\n+ actual - expected\n\n+ undefined\n- 'no_match'\n"
+    },
+    {
+      "caseId": 56,
+      "title": "Absent category yields no match, not adjacent products",
+      "query": "refrigerator",
+      "goldLabels": {
+        "exhaustiveFixtureSnapshot": true,
+        "absentCategory": "refrigerator",
+        "expectedState": "no_match"
+      },
+      "status": "FAIL",
+      "elapsedMs": 2.13,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "absent-category-chair",
+            "title": "CONTROLLED FIXTURE office chair",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "absent-category-phone",
+            "title": "CONTROLLED FIXTURE mobile phone",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "refrigerator",
+          "normalized": "refrigerator",
+          "keywords": [
+            "refrigerator"
+          ]
+        }
+      },
+      "error": "interaction state must be no_match; a bare product/empty array is not a pass\n+ actual - expected\n\n+ undefined\n- 'no_match'\n"
+    },
+    {
+      "caseId": 57,
+      "title": "Relevance outranks popular synthetic affiliate",
+      "query": "FixtureBrand exact headphones H-1",
+      "goldLabels": {
+        "relevantId": "affiliate-neutral-relevant",
+        "irrelevantPopularAffiliateId": "affiliate-irrelevant-popular",
+        "monetizationDoesNotChangeRelevance": true
+      },
+      "status": "FAIL",
+      "elapsedMs": 7.41,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "affiliate-neutral-relevant",
+            "title": "CONTROLLED FIXTURE FixtureBrand exact headphones H-1",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "headphones",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "affiliate-irrelevant-popular",
+            "title": "CONTROLLED FIXTURE viral phone case",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": 5,
+            "reviewCount": 100000,
+            "isAffiliate": true
+          }
+        ],
+        "structuredIntent": {
+          "raw": "FixtureBrand exact headphones H-1",
+          "normalized": "fixturebrand exact h-1 headphones",
+          "keywords": [
+            "fixturebrand",
+            "exact",
+            "headphones",
+            "h-1"
+          ],
+          "productType": "headphones",
+          "category": "electronics"
+        }
+      },
+      "error": "classification for affiliate-irrelevant-popular must be irrelevant; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'irrelevant'\n"
+    },
+    {
+      "caseId": 58,
+      "title": "Strict color and price empty intersection remains empty",
+      "query": "شنطة زرقاء أقل من 300 ريال",
+      "goldLabels": {
+        "qualifyingIds": [],
+        "color": "blue",
+        "priceOperator": "<",
+        "capSAR": 300
+      },
+      "status": "PASS",
+      "elapsedMs": 8.56,
+      "fixtureProductCount": 3,
+      "fixtureOnly": true,
+      "response": {
+        "products": [],
+        "exactMatches": 0,
+        "constraintRelaxationAvailable": true,
+        "structuredIntent": {
+          "raw": "شنطة زرقاء أقل من 300 ريال",
+          "normalized": "blue اقل ريال handbag under 300",
+          "keywords": [
+            "شنطه",
+            "زرقاء",
+            "اقل",
+            "300",
+            "ريال"
+          ],
+          "productType": "handbag",
+          "category": "bags_accessories",
+          "color": "blue",
+          "maxPrice": 300,
+          "currency": "SAR"
+        }
+      }
+    },
+    {
+      "caseId": 59,
+      "title": "Duplicate indexed copies of one offer deduplicate",
+      "query": "USB-C charger",
+      "goldLabels": {
+        "canonicalOfferId": "fixture-canonical-offer",
+        "duplicateRecordCount": 2
+      },
+      "status": "PASS",
+      "elapsedMs": 2.46,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "duplicate-copy-a",
+            "title": "CONTROLLED FIXTURE USB-C charger",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "USB-C charger",
+          "normalized": "usb-c charger",
+          "keywords": [
+            "usb-c",
+            "charger"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": 60,
+      "title": "Same product across merchants preserves both distinct offers",
+      "query": "FixtureBrand Shared Model S-60",
+      "goldLabels": {
+        "identity": "synthetic-S60",
+        "offerIds": [
+          "multi-merchant-a",
+          "multi-merchant-b"
+        ]
+      },
+      "status": "FAIL",
+      "elapsedMs": 2.45,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "multi-merchant-a",
+            "title": "CONTROLLED FIXTURE FixtureBrand Shared Model S-60",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant A",
+            "price": 120,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "multi-merchant-b",
+            "title": "CONTROLLED FIXTURE FixtureBrand Shared Model S-60",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant B",
+            "price": 110,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "FixtureBrand Shared Model S-60",
+          "normalized": "fixturebrand shared model s-60",
+          "keywords": [
+            "fixturebrand",
+            "shared",
+            "model",
+            "s-60"
+          ]
+        }
+      },
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ undefined\n- [\n-   'multi-merchant-a',\n-   'multi-merchant-b'\n- ]\n"
+    },
+    {
+      "caseId": 61,
+      "title": "Conflicting synthetic evidence is surfaced as uncertainty",
+      "query": "FixtureBrand Conflicted Product C-61",
+      "goldLabels": {
+        "conflictingFields": [
+          "price",
+          "condition"
+        ],
+        "expectedState": "conflicting_evidence",
+        "bothSourcesAreSynthetic": true
+      },
+      "status": "FAIL",
+      "elapsedMs": 2.59,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "conflict-price-source-a",
+            "title": "CONTROLLED FIXTURE FixtureBrand Conflicted Product C-61",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": 100,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": "new",
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": "2026-01-01T00:00:00.000Z",
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "conflict-price-source-b",
+            "title": "CONTROLLED FIXTURE FixtureBrand Conflicted Product C-61",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": 80,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": null,
+            "condition": "used",
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": "2026-01-02T00:00:00.000Z",
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          }
+        ],
+        "structuredIntent": {
+          "raw": "FixtureBrand Conflicted Product C-61",
+          "normalized": "fixturebrand conflicted product c-61",
+          "keywords": [
+            "fixturebrand",
+            "conflicted",
+            "product",
+            "c-61"
+          ]
+        }
+      },
+      "error": "interaction state must be conflicting_evidence; a bare product/empty array is not a pass\n+ actual - expected\n\n+ undefined\n- 'conflicting_evidence'\n"
+    },
+    {
+      "caseId": 62,
+      "title": "Affiliate metadata does not displace exact relevant result",
+      "query": "FixtureBrand exact watch W-62",
+      "goldLabels": {
+        "exactRelevantId": "affiliate-neutral-exact-watch",
+        "irrelevantAffiliateId": "affiliate-irrelevant-watch"
+      },
+      "status": "FAIL",
+      "elapsedMs": 7.92,
+      "fixtureProductCount": 2,
+      "fixtureOnly": true,
+      "response": {
+        "products": [
+          {
+            "id": "affiliate-neutral-exact-watch",
+            "title": "CONTROLLED FIXTURE FixtureBrand exact watch W-62",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "watch",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": null,
+            "reviewCount": null,
+            "isAffiliate": false
+          },
+          {
+            "id": "affiliate-irrelevant-watch",
+            "title": "CONTROLLED FIXTURE popular unrelated smartwatch strap",
+            "description": "Synthetic gold-labeled fixture; not a real listing or offer.",
+            "merchant": "Fixture Merchant",
+            "price": null,
+            "currency": "SAR",
+            "sourceType": "controlled_fixture",
+            "brand": null,
+            "color": null,
+            "productType": "accessory",
+            "condition": null,
+            "location": null,
+            "availability": "in_stock",
+            "updatedAt": null,
+            "rating": 5,
+            "reviewCount": 50000,
+            "isAffiliate": true
+          }
+        ],
+        "structuredIntent": {
+          "raw": "FixtureBrand exact watch W-62",
+          "normalized": "fixturebrand exact w-62 watch",
+          "keywords": [
+            "fixturebrand",
+            "exact",
+            "watch",
+            "w-62"
+          ],
+          "productType": "watch",
+          "category": "watches_jewelry"
+        }
+      },
+      "error": "classification for affiliate-irrelevant-watch must be irrelevant; missing classification is not a pass\n+ actual - expected\n\n+ undefined\n- 'irrelevant'\n"
+    },
+    {
+      "caseId": 63,
+      "title": "Provider retrieval failure is not represented as verified no-match",
+      "query": "FixtureBrand failure sentinel",
+      "goldLabels": {
+        "providerThrows": true,
+        "expectedState": "retrieval_failure",
+        "distinctFromNoMatch": true
+      },
+      "status": "FAIL",
+      "elapsedMs": 1.5,
+      "fixtureProductCount": 1,
+      "fixtureOnly": true,
+      "response": {
+        "products": [],
+        "exactMatches": 0,
+        "constraintRelaxationAvailable": false,
+        "retrievalError": {
+          "name": "InventoryUnavailableError",
+          "message": "Product inventory is still warming or temporarily unavailable"
+        }
+      },
+      "error": "interaction state must be retrieval_failure; a bare product/empty array is not a pass\n+ actual - expected\n\n+ undefined\n- 'retrieval_failure'\n"
+    }
+  ]
+}
