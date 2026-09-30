@@ -1,0 +1,2434 @@
+{
+  "packetId": "identity-replay-blind",
+  "part": 1,
+  "cases": [
+    {
+      "caseId": "10",
+      "query": "دور لي جزمة بيضاء مقاس EU 42",
+      "observations": [
+        {
+          "observationId": "obs-b0828c6e253a24546d17ff387a9678066c104e79473a18a4fab884cb3a14cd3d",
+          "title": "White Shoes | Buy White Sneakers for Men & Women in KSA | SSS",
+          "description": "Discover the white shoes collection designed to match any outfit with a clean and timeless look. Perfect for casual wear, work, or daily activities, white sneakers offer versatility and effortless style. At Sun &amp; Sand Sports, explore a wide range of white shoes from top brands suitable for your lifestyle in Saudi Arabia.",
+          "category": "shoes",
+          "merchant": "en-sa.sssports.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "color": "white"
+          },
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-19def21435092154b10d360f349e83e87791454058b4a04d598ac1abbcbacbef",
+          "title": "حذاء ابيض رجالي | تسوق شوز ابيض للرجال اونلاين في السعودية | الشمس والرمال",
+          "description": "تسوق للرجال سنيكرز وجزمة بيضاء، وبوت وصندل ابيض، اديداس و نايك وبوما وغيرها اونلاين في الرياض والسعودية من الشمس والرمال للرياضة - الدفع عند الإستلام - إرجاع مجاني",
+          "category": "shoes",
+          "merchant": "ar-sa.sssports.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "24",
+      "query": "Huawei BNE-LX1 phone",
+      "observations": [
+        {
+          "observationId": "obs-fb83a54491708e9350e1f7b91ae50a405fa02b61c3094ae54cb5a208e76dffb6",
+          "title": "Etoren.com | (Unlocked) Huawei Nova 12 SE BNE-LX1 Dual Sim 256GB Black (8GB RAM) - Global Version- Full phone specifications",
+          "description": "Etoren.com | Buy Online- (Unlocked ) <strong>Huawei Nova 12 SE BNE-LX1 Dual Sim 256GB Black (8GB RAM)</strong> - Global Version -Latest models available, Buy MacBook/iPad/iPhone/Galaxy Android Smartphone Tablet with Bitcoin, Ethereum or other Cryptocurrencies. UPC/EAN: 6942103117398 Model Number: BNE-LX1",
+          "category": "electronics",
+          "merchant": "etoren.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "color": "black"
+          },
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web",
+            "model": "BNE-LX1",
+            "identifiers": [
+              {
+                "kind": "EAN",
+                "value": "6942103117398"
+              },
+              {
+                "kind": "MODEL",
+                "value": "BNE-LX1",
+                "scope": "brand:Huawei"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-4893b665c4ad871b0c13305885f3147eab0bf6dcdff42a0029e9e5667f1cda42",
+          "title": "Huawei - Mobile Phones for sale in Saudi Arabia | dubizzle Saudi Arabia (OLX)",
+          "description": "Saudi Arabia · Riyadh(26) Eastern Region(7) Al Juf(3) Makkah(3) Al Baha(2) Al Qassim(1) Asir(1) Brand and Model · Huawei(42) Other brand(1) Price · to · Condition · Used (24) New (17) Back to top · Show Verified Accounts first · Sort by: Most relevant ·",
+          "category": "electronics",
+          "merchant": "dubizzle.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-b37376495569678910662bce7174b6e466f176a998581efc796f023900a0cbdb",
+          "title": "شاشة جوال هواوي نوڤا 10 SE",
+          "description": "<strong>Huawei Nova 10 SE</strong> · Nova 10 SE -BNE-LX1 · استبدال القديم ، مكسورة ، متصدع ، التالفة المزيد من المعلومات · 300.00 ر.س وفر 38% + نقطة مكتسبة بشرائك هذا المنتج ...",
+          "category": "electronics",
+          "merchant": "mobilehousestore.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-b0ae10423a40687645203e8789307f6260c0a4d00e8907efee896e62cd66082e",
+          "title": "Huawei - Mobile Phones / Mobile Phones & Communication Products : Shop Online At Best Prices In Saudi | Souq Is Now Amazon.sa",
+          "description": "huawei - Mobile Phones / Mobile Phones &amp; Communication Products : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now Amazon.sa",
+          "category": "electronics",
+          "merchant": "amazon.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-6b2ee0b2ee2c2686a1805cb9dbf7798bf230ef9a9962a06a42fb6edb3460dcb2",
+          "title": "Buy HUAWEI BNE LX1 Cell Phone Online. Compare Prices of Latest HUAWEI BNE LX1 Cell Phone Online – Justdial Shop Online.",
+          "description": "Buy latest HUAWEI BNE LX1 Cell Phone online. Check prices, specifications, features of HUAWEI BNE LX1 Cell Phone like , , at Justdial Shop Online.",
+          "category": "electronics",
+          "merchant": "justdial.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "25",
+      "query": "Apple AirPods Pro A3047",
+      "observations": [
+        {
+          "observationId": "obs-f41558eb075ec08f786ebd5dda02198673155b06ebb25b17a39aed4ea827e23e",
+          "title": "Apple AirPods price in Saudi Arabia | Compare Prices",
+          "description": "The Apple AirPods will cost around 600 SAR when it’s here. If you are ready to buy one even after learning about the price tag, the Apple AirPods release date Saudi Arabia is expected sometimes in <strong>October, 2016.</strong>",
+          "merchant": "sa.pricena.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "size": "S"
+          },
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-1b3aff741af314725b8553a699163fd2004c140376dc22656f973bc3a3ef3150",
+          "title": "Apple AirPods Pro price in Saudi Arabia | Compare Prices",
+          "description": "The best price for the , 18 MP CMOS Full in Saudi Arabia is <strong>SAR 1799</strong> sold at Jarir and available with free shipping and delivery within Click &amp; Collect or Delivery in 1-3 Business Days to main cities.",
+          "merchant": "sa.pricena.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-0c746d9ec2e027e991d5e878d631c9cf0230f3812d16316289cb0c1c2dc5edc2",
+          "title": "Apple airpods pro KSA | 30-75% OFF | Riyadh, Jeddah | noon",
+          "description": "Ready to get the very best sound experience? You’ll find the Apple AirPods Pro 2nd Generation in Saudi Arabia right here at noon. Hardware and software required include supported Apple such as iPhone, iPad, Mac and Apple Watch, running the latest iOS version.",
+          "merchant": "noon.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-65a5a17679e89530901ba99881e4f97255e595bc50e7653f0ef538fe0454a3c8",
+          "title": "Apple AirPods Pro Earbuds Bluetooth (Device)/Wireless (Charging Case) White - Jarir Bookstore KSA",
+          "description": "Buy Apple AirPods Pro Earbuds Built-in Microphone Apple H1 Chip, Cord-free Earbuds, Sweat and Water Resistant (IPX4) White Earbuds Headsets Apple at <strong>Jarir Bookstore Saudi Arabia KSA</strong>.",
+          "category": "electronics",
+          "merchant": "jarir.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "color": "white"
+          },
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-b898f54c9869489e0647e7474fe5fa1c820ec2d92e260bbc7a3d0535b7d00768",
+          "title": "Apple AirPods Pro 3 Wireless Earbuds, Active Noise Cancellation, Live Translation, Heart Rate Sensing, Hearing Aid Feature, Bluetooth Headphones, Spatial Audio, High‑Fidelity Sound, USB‑C Charging : Buy Online at Best Price in KSA - Souq is now Amazon.sa: Electronics",
+          "description": "Apple AirPods Pro 3 Wireless Earbuds, Active Noise Cancellation, Live Translation, Heart Rate Sensing, Hearing Aid Feature, Bluetooth Headphones, Spatial Audio, High‑Fidelity Sound, USB‑C Charging : Buy Online at Best Price in KSA - Souq is now Amazon.sa: Electronics",
+          "category": "electronics",
+          "merchant": "amazon.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-80d4278c40f9a80102d17ded8bce9f111db651ebee3c40e9b92f5bcb3e80af7e",
+          "title": "Buy AirPods Pro 3 - Apple (SA)",
+          "description": "AirPods Pro 3 with heart rate sensing during workouts and the world’s best in-ear Active Noise Cancellation (ANC). Free shipping and engraving at apple.com.",
+          "merchant": "apple.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "size": "S"
+          },
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-950677f915437b8227daecb1a916902eddc4db654cfa863d9decd397190e09ac",
+          "title": "Apple Airpods Pro 3 Headphone, 4x Active Noise Cancellation, H2 Chip, Transparency Mode, Dual Beamforming Microphones, Bluetooth 5.3 Connectivity, Up to 8 Hours Listening Time, White | AIRPODS-PRO-3 Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca",
+          "description": "2-5 Days Delivery in Saudi Arabia We offer <strong>express delivery to Riyadh, Jeddah, Medina, Dammam, Mecca, and other cities in Saudi Arabia</strong> for Apple Airpods Pro 3 Headphone, 4x Active Noise Cancellation, H2 Chip, Transparency Mode, Dual Beamforming ...",
+          "category": "electronics",
+          "merchant": "saudi.microless.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "color": "white"
+          },
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "32",
+      "query": "exact SKU ABC-000-NONEXISTENT-927",
+      "observations": [
+        {
+          "observationId": "obs-4f77bc476dcef07366a56cd8b06526f280a9149f582ee0ac6322d4d5f06921f3",
+          "title": "نيو بالانس أبيض 9060 Sneakers for للنساء",
+          "description": "The 9060 sneakers from new balance feature exaggerated design elements taken from the classic 990 series in a bold yet futuristic look. This y2k-inspired design features a mesh and suede upper with a signature n logo, classic abzorb cushioning and eva technology. | sku: u9060wht-108 | white suede | made in: vietnam | fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 900,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "u9060wht-108",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-ae00ff856048cfa707e4b98f147029f62393cf5e04a145e382d1095b89551dce",
+          "title": "نايك وردي Dunk Low Sneakers for للبنات",
+          "description": "Nike goes bold with its latest take on the dunk low retro sneakers in a 'white/phantom/light silver' colorway. Comprised of leather, the rubber sole and contrasting overlays add brightness to this design. A lace-up closure, embroidered heel tab, and soft lining complete the pair. | sku: fb9109-109 | white leather | lining: fabric lining | closure: lace-up fastening | toe style: round-toe | made in: vietnam | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 145,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "fb9109-109",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-00155541ca3146d4c910f28b00923610121b8f8ea5d1f43698bb4461649c7eea",
+          "title": "نايك أسود Jordan 1 Low Alt Sneakers for للأولاد",
+          "description": "Your little one is sure to be the coolest kid on the street with their new pair of jordans. With an all black design and a hook-and-loop system for easy wear, these jordans provide all-day comfort—you might need to force them off their feet. Features include a heel pull for getting shoes on easily and rubber outsoles for added traction and grip. | sku: dr9747-093 | black leather | lining: fabric lining | closure: hook-and-loop fastening | toe style: round-toe | made in: indonesia | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 125,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "dr9747-093",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-a385839dc6bfd7bb0f74e1630a3083a964e1d4c26793139630fc0a8017312826",
+          "title": "اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال",
+          "description": "A timeless adidas icon, the gazelle sneakers are crafted from ultra-soft suede with sleek lines of the low-profile build from the '90s, rubber outsole, and metallic gold details. Sku: bb5476-cbwhgo black suede lining: leather lining closure: lace-up fastening toe style: round-toe made in: belgium fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 560,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "bb5476-cbwhgo",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-ff09f4f188c850c1c18f7b75f2fae2eac72b69edf317790b7de6bda076d234de",
+          "title": "Skull Rose Sports and Leisure Style Gym Running Training Sleeveless Quick Drying Minimalist Summer Slim Fit Tank Top",
+          "category": "Tops & Tees",
+          "price": 33.62,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-45a48deeeebf41fd3da035de5f5a82ec696e4f8514771d75572589a0d06650a5",
+          "title": "Mistic Skull Tank Top tops basketball clothing gym Men's t-shirts Sleeveless men",
+          "category": "Tops & Tees",
+          "price": 12.72,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-a5d4fbf1038abc512523fda8f02f9aae26a24a1443cc95f724d7d19fd003e2a2",
+          "title": "اديداس أخضر Adidas Samba Og Sneakers for للنساء والرجال",
+          "description": "Born on the pitch, the samba og sneakers from adidas are a timeless and iconic shoe you can style with your favourite loungewear or denim. Staying true to their legacy, these sneakers are designed with a low-top silhouette, green 3-stripes detail, logo-embossed detail in gold, and a gum rubber cupsole. Sku: ig1024-ftgrsu white leather made in: vietnam fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 245,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "ig1024-ftgrsu",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-b87879309a928c55c988cf928c4d40e0f847a58f01e479bc0d58916c2be008bd",
+          "title": "MAJESTIK Heavy Industry Full-Print Direct-Injection Engraved Diamond-Studded Skull Loose Trendy Vintage Short-Sleeved T-Shirt",
+          "category": "Tops & Tees",
+          "price": 38.07,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-a00b1febf0554378c963ee55bc25b802a3ab9f6536264a7764982fca615f98e4",
+          "title": "نايك وردي Dunk Low Sneakers for للبنات",
+          "description": "Nike goes bold with its latest take on the dunk low retro sneakers in a 'white/phantom/light silver' colorway. Comprised of leather, the rubber sole and contrasting overlays add brightness to this design. A lace-up closure, embroidered heel tab, and soft lining complete the pair. | sku: fb9109-109 | white leather | lining: fabric lining | closure: lace-up fastening | toe style: round-toe | made in: vietnam | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 145,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "fb9109-109",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-823b501c84f39034b22d43ba5a90577ee3be6be99c396c05cfd30621a95d60c9",
+          "title": "اديداس أخضر Adidas Gazelle Indoor Sneakers for للرجال",
+          "description": "Embodying a vintage era, these adidas gazelle indoor sneakers are constructed in soft suede with a translucent gum rubber outsole. The iconic 3-stripes create an unmistakable contrast against the rich green colourway, while the cushioned textile lining adds to the comfort factor of the shoes. Sku: ji2062-cgftgu green leather lining: fabric lining closure: lace-up fastening toe style: round-toe made in: indonesia fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 600,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "ji2062-cgftgu",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-d8625fc28682c80e097134b2d5297854290dff3ae99e2ae9abeb4a91b9bfd384",
+          "title": "MAJESTIK Hip-Hop Street Skull Print Polo Neck Short Sleeve T-shirt Loose Stripe Beaded Top Trendy",
+          "category": "Tops & Tees",
+          "price": 42.01,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-7b16ee5b7524f261cf4ee97723a5f5df73b32e5b0f90d44dbcdd2a6b9237d7f8",
+          "title": "Alexander McQueen White Skull Print Cotton Crew Neck T-Shirt XS",
+          "description": "Perfect for casual outings or errands, this T shirt is the best piece to feel comfortable and stylish in. It flaunts a catchy shade and a relaxed fit.",
+          "brand": "Alexander McQueen",
+          "category": "Men, Men's Clothes, T-Shirts & Polos",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "white",
+            "size": "XS",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-2437c512a6e292406d286a4ca596e876a76340af9e9ca2e9ff5b00486b380295",
+          "title": "Majestik Skull Denim Crew Neck T-Shirt 100% Cotton Men's Women's Summer Loose-Fit Casual Short-Sleeve T-Shirt With Tag",
+          "category": "Tops & Tees",
+          "price": 22.97,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-448d6b7d81eac0ddd7d36212fe7d656c3bcd7dd569f7619ac1ff36bf9800809b",
+          "title": "اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال",
+          "description": "A timeless adidas icon, the gazelle sneakers are crafted from ultra-soft suede with sleek lines of the low-profile build from the '90s, rubber outsole, and metallic gold details. Sku: bb5476-cbwhgo black suede lining: leather lining closure: lace-up fastening toe style: round-toe made in: belgium fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 560,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "bb5476-cbwhgo",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-7ca247baa744198c211718e48f4a7b2d0f38a78327559d64b99b0b1d74dd4c52",
+          "title": "US Special Forces Combat Diver Skull Design Military T-shirt Short Sleeve Casual O-Neck Cotton Shirts",
+          "category": "Tops & Tees",
+          "price": 11.88,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-633f937efa8e9762d3d6b44a2be9622159bf347521e4ac36507547fd1661d369",
+          "title": "نايك أخضر Air force 1 '07 'fresh' Sneakers for للرجال",
+          "description": "Designed to last longer, nike's all-black air force 1 '07 'fresh' sneakers by nike are crafted from soft leather to combat and conceal creasing. This tonal pair features a cushioned eva midsole, perforated toe box and comfortable sockliner. | sku: dm0211-001 | black leather | made in: vietnam | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 195,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "size": "S"
+          },
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "dm0211-001",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-b7cdb65a2ed15f4029259b152c1bafd1bcb6138d21c31e59e6b80a4e39203699",
+          "title": "Dark Skull Skeleton Graphic T-Shirt, Black Grey Horror Bone Print Short Sleeve Tee, Cool Gothic Streetwear Casual Top For Men",
+          "category": "Tops & Tees",
+          "price": 2.32,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-dfc38a69e43f2d79268922d8f295676115573528678745056096f703f3747fc1",
+          "title": "MAJESTIK Embroidered Diamond Skull Print Short-Sleeved T-Shirt, Washed and Weathered Loose Retro Top",
+          "category": "Tops & Tees",
+          "price": 39.19,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-20f53f49f4b0efbdf2190f8a0b0cd6da53fb3562d5a4443a2fa8bc5a9248fb81",
+          "title": "Trend Skull Pattern 3D Print Vest Summer Fashion Sleeveless Abstract Vest Cool Streetwear Hip Hop Top",
+          "category": "Tops & Tees",
+          "price": 2.25,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-9c85cc60d803cc67406cd062e46e2c92d45360141c27ddf7ce24d8c928461584",
+          "title": "Skullgirls(Peacock)-Flip the Birdie T-Shirt Work Daily Short Sleeve Top",
+          "category": "Tops & Tees",
+          "price": 20.38,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-5fdd23e499b4460121ec18bd82fa4eba4dea319030e805bdcc6e748f1d7b49b1",
+          "title": "Plus Size 2025 Fashion Skull Rhinestones T Shirts Men Brand Short Sleeve Man Streetwear O Neck Slim Tshirts Calaveras Camiseta",
+          "category": "Tops & Tees",
+          "price": 24.99,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-5737df824feb79a259d562fa01c872705f665b6322555a825c0cbafea49b628c",
+          "title": "DX1585040 JEWEL",
+          "description": "Steel your look with Diesels stainless steel stud earring. This grunge, silve earring features a classic skull and is crafted from high-quality stainless steel. Featuring a post closure and sold as a single, this earring reflects Diesels signature blend of modernity and edge, making it a must-have accessory for any fashion-forward wardrobe.",
+          "brand": "DIESEL",
+          "category": "Sale EGY/Non Sale Simples EGY",
+          "merchant": "Diesel",
+          "price": 1130,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "variant": {},
+          "source": {
+            "providerId": "diesel",
+            "providerName": "Diesel",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-3c630ecd8e69fb1dcf4fc51194c084f2916bf75a7154f7b6085714272917bf45",
+          "title": "Skull Bowling Patriotic Custom Name 3D Printed Mens Polo Shirt Summer Street Casual Bowling Jersey Gift For Bowling Players WK50",
+          "category": "Tops & Tees",
+          "price": 12.59,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-76ed258657c1ba45cf8121a4d0a8d6f7b84d934ff3d68d2a619cbee94740d0ca",
+          "title": "West Coast Choppers 26SS Retro West Coast Motorcycle Rider Skull Pattern Collarless Jacket",
+          "category": "Tops & Tees",
+          "price": 36.74,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-369d47f22209154679f3ea782b8fb9d70a1dd914eb50da16f6aba1aaccfcbcde",
+          "title": "MAJESTIK Street Skull Beaded Print Short-Sleeved T-Shirt - Loose Fit Weathered High Street Style Men's and Women's Top - Summer",
+          "category": "Tops & Tees",
+          "price": 39.76,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-f6efc1e7350eae514e02b7a412b5cd519e6188c195850236e8ec0c56126c022a",
+          "title": "Men's Long Sleeve Zipper Polo Shirt Halloween Skull 3D Printed Polo Long Sleeve T Shirt Casual Tops",
+          "category": "Tops & Tees",
+          "price": 6.34,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-cc5d0fe3429a77016c7553fe6e6a1721c4d84700da29e80e0c980378e460976a",
+          "title": "Plus Size 2025 Fashion Skull Rhinestones T Shirts Men Brand Short Sleeve Man Streetwear O Neck Slim Tshirts Calaveras Camiseta",
+          "category": "Tops & Tees",
+          "price": 29.67,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-4d43aa451653a348767ac7e09680bd99541876432efd7ac9fd44a2bab04f7c88",
+          "title": "اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال",
+          "description": "A timeless adidas icon, the gazelle sneakers are crafted from ultra-soft suede with sleek lines of the low-profile build from the '90s, rubber outsole, and metallic gold details. Sku: bb5476-cbwhgo black suede lining: leather lining closure: lace-up fastening toe style: round-toe made in: belgium fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 560,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "bb5476-cbwhgo",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-7d618928e56a8e7e9e000d625e696088fff78ae6424d98df15a915bed284a1fc",
+          "title": "Thug Club Korean street hip-hop style motorcycle skull rider print loose short-sleeved shirt for both men and women",
+          "category": "Tops & Tees",
+          "price": 34.98,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-878052749f5ac686b5bd14645268ddec1bd182eabe398813ccbb72f6b3258f79",
+          "title": "MAJESTIK Retro Graffiti Street Skull Directly Printed Denim Blouse Weathered Loose Beaded Sleeveless T-shirt",
+          "category": "Tops & Tees",
+          "price": 33.03,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-1cb9e54f0ea33ccac43af8e3af6cea65e0734274aa9bf5b9052e0efbb4894f6a",
+          "title": "Alexander McQueen Skull Grey Leather and Leather Wallets",
+          "description": "This continental wallet designed is a luxurious accessory that will prove to be super functional. It is made using durable materials on the exterior and unveils a well organized interior.",
+          "brand": "Alexander McQueen",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "grey",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-b589536ea1ecba69409a3a69cdf603c251673d4d60d85c30d974e2e664d3a9a4",
+          "title": "اديداس أبيض Samba Decon Sneakers for للنساء والرجال",
+          "description": "Classic and sporty, the samba sneakers from adidas take on a deconstructed aesthetic with a modern influence. Made from super soft leather, this versatile style is designed with iconic detailing like the 3-stripes, logo-embossing, and t-shaped toe box. Sku: if0642-greone white leather lining: leather lining closure: lace-up fastening toe style: round-toe made in: vietnam fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 345,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "if0642-greone",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-894df3f17e372a5e4e5d87033d950e6771b864e2fb1b5c11e951685ab0b08c66",
+          "title": "Thug Club Korean-style street hip-hop style skull embroidery loose men's and women's matching short-sleeved T-shirt trend",
+          "category": "Tops & Tees",
+          "price": 36.74,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-e5c9516bb57b9947964099ef1b7e4aeae3bc783b070f525c200e59996d7df5b9",
+          "title": "Chanel CC Pink Patent Leather and Leather Coin Purse",
+          "description": "Keep all your change in one place so you do not have to go to the depths of your bag in search for it every time. Chanel brings you this stunning coin purse for exactly that purpose. Crafted from stunning quilted Caviar leather, this purse makes for an extremely stylish look with the timeless CC logo on the front.",
+          "brand": "Chanel",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 335,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "pink",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-66c58ceac777856e3e0bc344a13721c230b557edc3294daeea35b65ef88c7596",
+          "title": "Alexander McQueen Blue Suede Skull Peep Toe Pumps Size 36.5",
+          "description": "Step into sophistication with these stunning blue suede peep toe pumps. Crafted in Italy, these Alexander McQueen beauties showcase impeccable craftsmanship and luxury. The exquisite suede exterior pairs flawlessly with a smooth leather lining and insole, offering comfort with every step. Featuring an iconic skull detail, these slip on shoes boast a chic 2 cm platform, perfect for elevating any ensemble. Perfectly combining elegance and edginess, these pumps are an avant garde statement piece for the discerning fashionista.",
+          "brand": "Alexander McQueen",
+          "category": "Women, Women's Shoes, Pumps",
+          "merchant": "The Luxury Closet",
+          "price": 125,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "blue",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-1f7b7d18a504329d319651d9111f22f3fe30e214c5a98a4c4fce21759aaa846f",
+          "title": "Shiny Rhinestone Creative Skull Men's Summer Short-Sleeved T-Shirt Casual Fashion Loose Cotton High Quality T-Shirt",
+          "category": "Tops & Tees",
+          "price": 15.46,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-5ec570cf922f4a1f550692162e7c9e9416c2e652f0c43969cad33b7f4c44d794",
+          "title": "Givenchy Black Skull Printed Cotton Pique Polo T-Shirt XL",
+          "description": "Elevate your casual wardrobe with this black polo, featuring skull artwork that echoes Givenchys bold aesthetic. Crafted from cotton, it promises softness and comfort for day long style.",
+          "brand": "Givenchy",
+          "category": "Men, Men's Clothes, T-Shirts & Polos",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "size": "XL",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-220768101f05cf0772aca5c9a897800f1598bb3e4fddff8baf7f9aec9c77b9d0",
+          "title": "Skull Spartan Warrior Spartan warrior helmet ancient greece this is sparta T Shirt for men Large size Adult tops S-6XL",
+          "category": "Tops & Tees",
+          "price": 18.21,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-ff42865bb42cd3dc615f7128e3b59717dec0ca89d0ec63810c68931db93c925e",
+          "title": "Lmyer NumberNine Archive ECG Retro Destruction Black Washed Skull T-shirt Men Summer Tees",
+          "category": "Tops & Tees",
+          "price": 58.8,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "color": "black",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-d1418186a8e1b63c279bdb2615e1df9c634375dbb613b380aa22d8f08cb5e539",
+          "title": "نايك وردي Dunk Low Sneakers for للبنات",
+          "description": "Nike goes bold with its latest take on the dunk low retro sneakers in a 'white/phantom/light silver' colorway. Comprised of leather, the rubber sole and contrasting overlays add brightness to this design. A lace-up closure, embroidered heel tab, and soft lining complete the pair. | sku: fb9109-109 | white leather | lining: fabric lining | closure: lace-up fastening | toe style: round-toe | made in: vietnam | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 145,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "fb9109-109",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-f9d322453d9204af970c2bab9abb1dc92ff7fce7246ba4cd9de6a27b1b8170c6",
+          "title": "Philipp Plein Black/Gold Leather and Suede Low Top Sneakers Size 38",
+          "description": "Make a bold entrance with these Philipp Plein low top sneakers, crafted in luxe black leather and suede with gleaming gold accents. The signature skull embellishment and metallic detailing exude edgy glamour, while the chunky sole adds streetwear credibility to this head turning pair.",
+          "brand": "Philipp Plein",
+          "category": "Women, Women's Shoes, Sneakers",
+          "merchant": "The Luxury Closet",
+          "price": 120,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-8a0138380b0a84630282487cd04eaf4daff894b715ee30bac0c59aaf3ad227b1",
+          "title": "Custom Name Halloween Skull Dragon Graffiti Gradient Retro Tattoo 3DPrint Summer Casual Harajuku Funny Baseball Shirts Jersey V7",
+          "category": "Tops & Tees",
+          "price": 5.9,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-234b21cda3f01fca1b75280fb6662f4f23cf523b7120bdf09eb5efff988164fd",
+          "title": "MAJESTIK Street Streetwear Retro Skull Print Washed Vintage Stained Beaded Loose Casual Short-Sleeved T-shirt ins",
+          "category": "Tops & Tees",
+          "price": 41.45,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-b4d6bda7df5e2f352ef777d1c81ed15e66cc0b94191f0e1acafcf98c06d33a74",
+          "title": "نايك أسود Air Jordan 1 'triple Black' Sneakers for للأولاد",
+          "description": "Air jordan 1 low sneakers by nike pair the classic design of the original aj1 with premium materials for an iconic look in a 'triple black' colourway. A rubber sole, perforated toe box and lace-up closure complete this leather pair. | sku: 553560-093 | black leather | lining: fabric lining | closure: lace-up fastening | toe style: round-toe | made in: vietnam | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 245,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "color": "black"
+          },
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "553560-093",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-ccf75392cfa087bbb2db46d6449838357cc1cf0961bc9ef04c19654ccccbec94",
+          "title": "Alexander McQueen Light Orange Leather Embellished Skull Peep Toe Pumps Size 40",
+          "description": "Make a chic style statement with these designer pumps. They showcase sturdy heels and durable soles, perfect for your fashionable outings",
+          "brand": "Alexander McQueen",
+          "category": "Women, Women's Shoes, Pumps",
+          "merchant": "The Luxury Closet",
+          "price": 125,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "orange",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-dcea2e3965964e534ed613cc82cc3a6dc367a9c146cfefd31769e95e497a57cd",
+          "title": "Zac Brown Band - Skull New T-Shirt blacks football t shirt men workout shirt",
+          "category": "Tops & Tees",
+          "price": 14.58,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "color": "brown",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-a5b4ed2180c536db2399784b78dd4b5a2cd3a11b818a5d6f14cb451e7dd3644b",
+          "title": "نايك أخضر Air force 1 '07 'fresh' Sneakers for للرجال",
+          "description": "Designed to last longer, nike's all-black air force 1 '07 'fresh' sneakers by nike are crafted from soft leather to combat and conceal creasing. This tonal pair features a cushioned eva midsole, perforated toe box and comfortable sockliner. | sku: dm0211-001 | black leather | made in: vietnam | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 195,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "size": "S"
+          },
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "dm0211-001",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-2066e17a6031673070c8943929cd4e2320a88b69050468af28a20312ad21421e",
+          "title": "2026 New Men T-shirt Heavyweight Dirty Washed Dark Short Sleeve Shirts High Street Skull Print Unisex American Couple Tops",
+          "category": "Tops & Tees",
+          "price": 35.09,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-4081f3e4083b711dab3b8c389c90c3d3b9f88457cdbeebe1d69094e27b556f39",
+          "title": "اديداس أخضر Adidas Gazelle Indoor Sneakers for للرجال",
+          "description": "Embodying a vintage era, these adidas gazelle indoor sneakers are constructed in soft suede with a translucent gum rubber outsole. The iconic 3-stripes create an unmistakable contrast against the rich green colourway, while the cushioned textile lining adds to the comfort factor of the shoes. Sku: ji2062-cgftgu green leather lining: fabric lining closure: lace-up fastening toe style: round-toe made in: indonesia fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 600,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "ji2062-cgftgu",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-fbda823d530e6023ac9c038ab38e4d44a61431f518549f74861d8bcfb0cfc25c",
+          "title": "KK11 Number Nine N9 Skull Print Distressed Cracked Short Sleeved T-shirt Antique Black and White Style Tees",
+          "category": "Tops & Tees",
+          "price": 53.48,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-c249e6777f96e43f1c22257c4f3eea745d466b87c53fe81f9c11ca1b3f0201b0",
+          "title": "YAMAMOTO-Style T-shirt ,HighQuality Dark Theme \"Red Skull\" Pattern Print,100% Cotton Loose Short-Sleeved",
+          "category": "Tops & Tees",
+          "price": 42.14,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "color": "red",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-9b87bcdd18c7b5014adf533ee8095b0ef07204e860a789f1011e33efed3d41de",
+          "title": "Yao Fashion Mx6 SS26 Vintage Cotton Outdoor Hip Hop Casual Tee Luminous Skull Pattern Tops Streetwear Hip Hop T-shrit for Men",
+          "category": "Tops & Tees",
+          "price": 35.25,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-0b590c104c1eafed33ecbce456fdfa98e3568c4fc296410f5438521ad2444766",
+          "title": "اديداس أخضر Adidas Gazelle Indoor Sneakers for للرجال",
+          "description": "Embodying a vintage era, these adidas gazelle indoor sneakers are constructed in soft suede with a translucent gum rubber outsole. The iconic 3-stripes create an unmistakable contrast against the rich green colourway, while the cushioned textile lining adds to the comfort factor of the shoes. Sku: ji2062-cgftgu green leather lining: fabric lining closure: lace-up fastening toe style: round-toe made in: indonesia fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 600,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "ji2062-cgftgu",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-c56c7e10e9f354eee1971dcd300631603c32c9596f45e56d0fd7d5a08b74a91e",
+          "title": "اديداس أخضر Handball Spezial Sneakers for للرجال",
+          "description": "First released in 1979 for pro indoor courts and since adopted as street style icons, these handball spezial sneakers from adidas bring a retro vibe in a free-spirited design. The premium suede upper, 3-stripe design, and durable rubber outsole complete the sneaker. Sku: ig6192-prcrcr green suede lining: leather lining closure: lace-up fastening toe style: round-toe made in: vietnam fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 550,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "ig6192-prcrcr",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-c9208b6a97edcb43cc7e66282718bd3343ed151c746f2dbb0b1a085d0987f0da",
+          "title": "Wehrmacht Skull Helmet MG42 Bullet Belt & StG 44 Iron Cross Sword T Shirt. Short Sleeve 100% Cotton Casual T-shirts Loose Top",
+          "category": "Tops & Tees",
+          "price": 11.4,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-936cd5c1fc93ed97da7e4b34c6ff52471c35d63cd12ddb8c80e9461310b59c99",
+          "title": "MAJESTIK Trendy Boxing Skull Print Beaded Letter Washed Antique Men's and Women's Loose Short-Sleeved T-Shirt",
+          "category": "Tops & Tees",
+          "price": 47.04,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-95fa61943680388c54a66df39143ba22cff8be53fc1bbb9da894d586b596ec44",
+          "title": "نايك بيج Dunk Low Sneakers for للنساء",
+          "description": "Dressed in the compelling 'light orewood brown and sesame' colorways, these dunk low sneakers by nike continue to be the ultimate streetwear icon. They feature contrast overlays on reptile-textured inserts and a coordinating swoosh, as well as the signature two-tone rubber sole, a perforated toe box, and a fabric tongue tag. | sku: hj5777-101 | beige fabric | lining: fabric lining | closure: lace-up fastening | toe style: round-toe | made in: vietnam | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 245,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "hj5777-101",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-741c6c228d185887f9674da15978f93216e0e6349be2b72bf3f9696f7a591906",
+          "title": "نايك أخضر Air force 1 '07 'fresh' Sneakers for للرجال",
+          "description": "Designed to last longer, nike's all-black air force 1 '07 'fresh' sneakers by nike are crafted from soft leather to combat and conceal creasing. This tonal pair features a cushioned eva midsole, perforated toe box and comfortable sockliner. | sku: dm0211-001 | black leather | made in: vietnam | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 195,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "size": "S"
+          },
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "dm0211-001",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-da64ed5571659ea132e255db375da5cd414b9386135a2e4a7776e981efdac415",
+          "title": "Summer black skull see through men fitness Ttank top Ultra thin sexy plus size knitted t shirt streetwear",
+          "category": "Tops & Tees",
+          "price": 23.53,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "color": "black",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-0fccdba6c6a9082a518912ba487a7f2ffb8a2cdb5b14475bc09df8e54f22dd89",
+          "title": "26SS KAPITAL HH Hirata and Hongri Casual Cotton Lightning Denim Skull Print Short Sleeved T-shirt for Men",
+          "category": "Tops & Tees",
+          "price": 68.66,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-d9792ac79e66a36f4dea06d0c6f7f57db64f18709b000997080577a30a493152",
+          "title": "نايك أسود Air Jordan 1 'triple Black' Sneakers for للأولاد",
+          "description": "Air jordan 1 low sneakers by nike pair the classic design of the original aj1 with premium materials for an iconic look in a 'triple black' colourway. A rubber sole, perforated toe box and lace-up closure complete this leather pair. | sku: 553560-093 | black leather | lining: fabric lining | closure: lace-up fastening | toe style: round-toe | made in: vietnam | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 245,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "color": "black"
+          },
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "553560-093",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-7cc39a91f9006103b188deb8ffbba1d86ff41056b4b67c44298acaf2b0433dd6",
+          "title": "اديداس أبيض Samba Decon Sneakers for للنساء والرجال",
+          "description": "Classic and sporty, the samba sneakers from adidas take on a deconstructed aesthetic with a modern influence. Made from super soft leather, this versatile style is designed with iconic detailing like the 3-stripes, logo-embossing, and t-shaped toe box. Sku: if0642-greone white leather lining: leather lining closure: lace-up fastening toe style: round-toe made in: vietnam fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 345,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "if0642-greone",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-3c7df72ee2a441fb6a174e5d0f53b3f43e57ec66b2f51c817af7880eae38ff40",
+          "title": "Thug Club Street Hip Hop Skull Demonstration Embroidered Dirty Vintage Loose Men's and Women's Short-Sleeved T-Shirt Trendy",
+          "category": "Tops & Tees",
+          "price": 42.57,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-0ad8a8b57a8f4d2b54dc89bd2cab826855b6b80524bef47214bfecdab5b4e569",
+          "title": "اديداس أبيض Adidad Samba Decon Sneakers for للنساء والرجال",
+          "description": "Classic and sporty, the samba sneakers from adidas take on a deconstructed aesthetic with a modern influence. Made from super soft leather, this versatile style is designed with iconic detailing like the 3-stripes, logo-embossing, and t-shaped toe box. Sku: if0642-greone white leather lining: leather lining closure: lace-up fastening toe style: round-toe made in: vietnam fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 345,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "if0642-greone",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-5feb87153c19c6ad0ebff0600e572a6e96de2958e153c74780a3d2ffcf752b8f",
+          "title": "Yao Fashion Streetwear Hip Hop Tops Saint Tee New Vintage Kanye West Hip Hop Splashing ink skull T-shirt For Men Clothing",
+          "category": "Tops & Tees",
+          "price": 33.26,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-66ef32c8782870297523472d82a8b91dab0b4e9db264794fd2c4c9b6e7d0ada1",
+          "title": "اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال",
+          "description": "A timeless adidas icon, the gazelle sneakers are crafted from ultra-soft suede with sleek lines of the low-profile build from the '90s, rubber outsole, and metallic gold details. Sku: bb5476-cbwhgo black suede lining: leather lining closure: lace-up fastening toe style: round-toe made in: belgium fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 560,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "bb5476-cbwhgo",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-617484171ea52ebb38bb4c51d91cd1a04fbc660657034678ebfd0ad8679d62fc",
+          "title": "نيو بالانس أبيض 9060 Sneakers for للنساء",
+          "description": "The 9060 sneakers from new balance feature exaggerated design elements taken from the classic 990 series in a bold yet futuristic look. This y2k-inspired design features a mesh and suede upper with a signature n logo, classic abzorb cushioning and eva technology. | sku: u9060wht-108 | white suede | made in: vietnam | fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 900,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "u9060wht-108",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-ac4b2e389c4629c32ee24ec6a7bde109f92cf7e517151a8d279f18ed51aa4947",
+          "title": "MAJESTIK Retro Wild Leopard Skull Print T-Shirt - Loose Fit, Weathered, Beaded Short Sleeve for Men and Women",
+          "category": "Tops & Tees",
+          "price": 41.45,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-e0aa2be0272b8e115a2af38d217afe3ad3381294328c180c94025ae5e795f77d",
+          "title": "MAJESTIK Hip-Hop Style Beaded Short-Sleeved T-Shirt for Men and Women, Loose-Fitting Street Casual Skull-Head Printed Top",
+          "category": "Tops & Tees",
+          "price": 35.84,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-200513f85b68cc6c2a40d0644f3f1cf3eedfb7a9cfc36bf2ad79c98bf929853a",
+          "title": "نيو بالانس أبيض 530 Sneakers for للنساء",
+          "description": "New balance presents to you the classic running shoe in a 1990s-2000s influenced design. Take note of the unique abzorb® footbed and breathable mesh upper for freshness and comfort. This throwback-inspired pair is perfect for everyday wear. | sku: mr530lg-041 | grey fabric | made in: vietnam | fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 635,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "mr530lg-041",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-e4ea41de6d5881e8a8a49eb195929c6f9b150b0b75cbaf13e8ee09e8bd9f7128",
+          "title": "Rare Naval SEALs Team Skull Combat Diver Tactical T-Shirt 100% Cotton O-Neck Short Sleeve Casual Mens T-shirt Size S-3XL",
+          "category": "Tops & Tees",
+          "price": 16.97,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-6240dd5cc526527cc08d43a80cda1c3959d12fee0b618c6b1950274b19bbd9b4",
+          "title": "اديداس أبيض Adidas Dropset 3 Training Shoes for للنساء والرجال",
+          "description": "Built for stability during your toughest strength training sessions, these sneakers feature a dual-density midsole for cushioning and a tpu sidewall that locks the midfoot in place, providing the support you need. A breathable upper and adidas heat.rdy helps regulate temperature, keeping your feet cool throughout your workout, while the wider fit comfortably accommodates foot swelling from exertion. Sku: ih8289-ftcrcr white fabric lining: fabric lining closure: lace-up fastening toe style: round-toe made in: vietnam fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 295,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "ih8289-ftcrcr",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-de25c9b566b1daba3651edf17a4aa6c1e8b2579d3af051d621788bc3cb7e3850",
+          "title": "Men's Bull Skull and Typography Print Graphic Tee, Western Style Short Sleeve T-Shirt for Casual Daily Wear",
+          "category": "Tops & Tees",
+          "price": 7.67,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-2e4ac94e493e9037f036f66eec60224c358f2394890b5f775528426fbd68c1fd",
+          "title": "Grailz PROJECT G/R Summer New Style Skull Letter Print Round-neck Short-sleeved Washed Black Loose T-shirt Protocol Index",
+          "category": "Tops & Tees",
+          "price": 55.2,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "color": "black",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-024ea77091cc007bd22a3bdce71f6cd4e7d698bd1a3ec1ecbb3b3b84ca3387b3",
+          "title": "نايك وردي Dunk Low Sneakers for للبنات",
+          "description": "Nike goes bold with its latest take on the dunk low retro sneakers in a 'white/phantom/light silver' colorway. Comprised of leather, the rubber sole and contrasting overlays add brightness to this design. A lace-up closure, embroidered heel tab, and soft lining complete the pair. | sku: fb9109-109 | white leather | lining: fabric lining | closure: lace-up fastening | toe style: round-toe | made in: vietnam | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 145,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "fb9109-109",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-d38021974e2ae4612dd6a8bbbd47a5d9ebb39e1b0e7a5009a4b65be1ff18aca6",
+          "title": "نايك أسود Air Max Craze Sneakers for للنساء",
+          "description": "A silhouette that first debuted in the early 2000s, these air max craze sneakers are dressed in a 'black/bright citrus' colorway, combining futuristic appeal with retro aesthetics to add flair, style, and comfort to your edits. Take note of the cushioning air units, neoprene upper secured by a zipper system, and tpu strap with padded slingback. | sku: fz2089-001 | black fabric | lining: fabric lining | closure: zip fastening | toe style: round-toe | hardware: gunmetal-tone hardware | made in: vietnam | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 445,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "fz2089-001",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-00742c18ba7099db48a5b03523fe2fa6a5b753c98c8e72cf0ab8001f82f127a7",
+          "title": "نيو بالانس رمادي 2002r Sneakers for للنساء",
+          "description": "Inspired by running shoes from the 2000s, these retro and modern styles 2002r sneakers from new balance are super comfortable and cool. They feature an abzorb midsole and abzorb sbs heel cushioning that delivers limitless comfort while the stability web and n-ergy outsole that offers arch support and shock absorption. | sku: ml2002r0-137 | grey mesh | lining: fabric lining | closure: lace-up fastening | toe style: round-toe | made in: vietnam | fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 395,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "ml2002r0-137",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-871aa756373f184c2f53be244eb6a78cf2fbe04b3a3b160179173ca98ade387f",
+          "title": "اديداس أخضر Adidas Gazelle Indoor Sneakers for للرجال",
+          "description": "Embodying a vintage era, these adidas gazelle indoor sneakers are constructed in soft suede with a translucent gum rubber outsole. The iconic 3-stripes create an unmistakable contrast against the rich green colourway, while the cushioned textile lining adds to the comfort factor of the shoes. Sku: ji2062-cgftgu green leather lining: fabric lining closure: lace-up fastening toe style: round-toe made in: indonesia fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 600,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "ji2062-cgftgu",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-df0601ec2baf5104d00772fab060ac0ee1a797d3587451207a26b002f1da6fa1",
+          "title": "MAJESTIK Boxing Skull Print Men's and Women's Loose Vintage Retro Beaded Lettering Casual Short-Sleeved T-Shirt for Summer",
+          "category": "Tops & Tees",
+          "price": 36.41,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-ecdafdc7a8827a0b9f99a838046840cd849324c8eba81ecbbde296f5acf9ab38",
+          "title": "MAJESTIK High Street Skull Print Beaded Short-Sleeved T-Shirt - Loose-Fitting, Retro-Washed, Casual, Trendy for Men and Women",
+          "category": "Tops & Tees",
+          "price": 38.62,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-05f670815a00740c4c409171f4ac08b4ba852e03e395f55a4eaa85c238308f7e",
+          "title": "أمينة معادي بني Amina Muaddi Camelia Slingback Pumps for للنساء",
+          "description": "Product details be the belle of the ball with these classic amina muaddi camelia slingback pumps. Crafted in luxe satin featuring an elegant crystal brooch, they come with a high stiletto heel and sling-back strap, so you're sure to dance the night away in style. Sku: cameliasling90-sachbr brown satin lining: leather lining toe style: pointed-toe heel height: 9cm made in: italy fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 2195,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "pointed-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "cameliasling90-sachbr",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "pointed-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-5dc6864794e248f95cafb06d5c399186f9620f3991d6794e7ab3b03fdc8fe68a",
+          "title": "Hoist The Black Flag. The Most Infamous Pirates Blackbeard Skull T-Shirt. Summer Cotton Short Sleeve O-Neck Mens T Shirt New",
+          "category": "Tops & Tees",
+          "price": 12.64,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "color": "black",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-1dcf483a6fdb34683c57815144836c1e96d06cf78fad4abc28114eedb03c79a3",
+          "title": "Men's summer casual sports loose fit skull letter pattern print comfortable and breathable round neck sleeveless vest",
+          "category": "Tops & Tees",
+          "price": 11.46,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-e8ca3479ccddadaf2e4f344622a6f93a9c9426685c4f56a7d49e0814589f4cec",
+          "title": "اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال",
+          "description": "A timeless adidas icon, the gazelle sneakers are crafted from ultra-soft suede with sleek lines of the low-profile build from the '90s, rubber outsole, and metallic gold details. Sku: bb5476-cbwhgo black suede lining: leather lining closure: lace-up fastening toe style: round-toe made in: belgium fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 560,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "bb5476-cbwhgo",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-b7a9b94f0eb984e62733984457e4e29d224517eb28b5e923f180d89284b1e6bf",
+          "title": "نايك أسود Air Max Craze Sneakers for للنساء",
+          "description": "A silhouette that first debuted in the early 2000s, these air max craze sneakers are dressed in a 'black/bright citrus' colorway, combining futuristic appeal with retro aesthetics to add flair, style, and comfort to your edits. Take note of the cushioning air units, neoprene upper secured by a zipper system, and tpu strap with padded slingback. | sku: fz2089-001 | black fabric | lining: fabric lining | closure: zip fastening | toe style: round-toe | hardware: gunmetal-tone hardware | made in: vietnam | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 445,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "fz2089-001",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-58165aa793bbe75b9e4f38d3085a7a242e388cdb7f524b2da54050348e052ca2",
+          "title": "نيو بالانس أبيض 9060 Sneakers for للنساء",
+          "description": "The 9060 sneakers from new balance feature exaggerated design elements taken from the classic 990 series in a bold yet futuristic look. This y2k-inspired design features a mesh and suede upper with a signature n logo, classic abzorb cushioning and eva technology. | sku: u9060wht-108 | white suede | made in: vietnam | fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 900,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "u9060wht-108",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-1fc6bb133f8a361075ca7d4880114839e3cb0c79f8ff804ee2d09ca87dd43663",
+          "title": "اديداس أخضر Adidas Gazelle Indoor Sneakers for للرجال",
+          "description": "Embodying a vintage era, these adidas gazelle indoor sneakers are constructed in soft suede with a translucent gum rubber outsole. The iconic 3-stripes create an unmistakable contrast against the rich green colourway, while the cushioned textile lining adds to the comfort factor of the shoes. Sku: ji2062-cgftgu green leather lining: fabric lining closure: lace-up fastening toe style: round-toe made in: indonesia fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 600,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "ji2062-cgftgu",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-4c214efe6f8010ae7899d72c96e618fd0c6ca13531e68a6114c9c03c87b47b27",
+          "title": "Alexander McQueen Brown Leather Skull Peep Toe Pumps Size 38",
+          "description": "Exhibit an elegant style with this pair of pumps. These elegant shoes are crafted from quality materials. They are set on durable soles and sleek heels.",
+          "brand": "Alexander McQueen",
+          "category": "Women, Women's Shoes, Pumps",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "brown",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-9575ffd3e8e280d191d9059ee13ede38afa33e2df9eeb5baa0eed03cb6ce3b76",
+          "title": "Alexander McQueen Beige Leather Skull Detail Studded Platform Peep Toe Pumps Size 37.5",
+          "description": "These pumps from Alexander McQueen are crafted from leather into a peep toe silhouette. They flaunt a gold tone skull motif on the uppers and are equipped with comfortable leather lined insoles, platforms and 14cm heels. Grab these statement pumps today",
+          "brand": "Alexander McQueen",
+          "category": "Women, Women's Shoes, Pumps",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "beige",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-76d6fe8efcf1bfb46e95d32ff33eff3f05980cbcabc10f6c3338f32a3c55fb17",
+          "title": "MAJESTIK Skull Print Short-Sleeve T-Shirt - Men's and Women's Pink Beaded Rock Loose Casual Top - Summer",
+          "category": "Tops & Tees",
+          "price": 38.62,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "color": "pink",
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-74ed239108a23d004b09bad8ffe52c2c856404d369508624fd0e2061f6075d26",
+          "title": "MAJESTIK High Street Style Skull Print Beaded Short-Sleeved T-Shirt for Men and Women Trendy Loose-Fitting Casual Top for Summer",
+          "category": "Tops & Tees",
+          "price": 38.62,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-77ea15b1f2d97681a81d86f97c48559c20d60cfe84eefdaabb7c7a21b2069751",
+          "title": "نايك أسود Air Jordan 1 'triple Black' Sneakers for للأولاد",
+          "description": "Air jordan 1 low sneakers by nike pair the classic design of the original aj1 with premium materials for an iconic look in a 'triple black' colourway. A rubber sole, perforated toe box and lace-up closure complete this leather pair. | sku: 553560-093 | black leather | lining: fabric lining | closure: lace-up fastening | toe style: round-toe | made in: vietnam | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 245,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "color": "black"
+          },
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "553560-093",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-b6f5d055cc4908c3364e97d3d45293d857a569f1ba41ecf22a14d724818ece08",
+          "title": "نايك أسود Jordan 1 Low Alt Sneakers for للأولاد",
+          "description": "Your little one is sure to be the coolest kid on the street with their new pair of jordans. With an all black design and a hook-and-loop system for easy wear, these jordans provide all-day comfort—you might need to force them off their feet. Features include a heel pull for getting shoes on easily and rubber outsoles for added traction and grip. | sku: dr9747-093 | black leather | lining: fabric lining | closure: hook-and-loop fastening | toe style: round-toe | made in: indonesia | fits true to size, take your normal size",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 125,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "dr9747-093",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-e3117cc2fc84bf6e4fe6c3c6ccfb4adda6be8508015516b515ecca2875cae458",
+          "title": "MAJESTIK Retro Graffiti Skull Print Beaded Sleeveless T-Shirt - Loose Fit, Versatile, Rock Style Blouse for Men and Women",
+          "category": "Tops & Tees",
+          "price": 41.45,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-26991ee468f60f5e5ff0e7e17439712e7e23418217aef0c616547bf7ada10c1a",
+          "title": "Russian Army SKULL T-Shirts Russia Putin Military MARINES Men's Clothing",
+          "category": "Tops & Tees",
+          "price": 12.92,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "size": "S",
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-a5acdae4df5e9af4488f8efad4bea974905cde8337a94c70ecaac90793017971",
+          "title": "Alexander McQueen Multicolor Skull Print Crew Neck T-Shirt M",
+          "description": "A perfect combination of comfort, luxury, and style, this designer t shirt is a must have piece Made from quality materials, the creation can be styled with denim pants and sneakers for a cool look.",
+          "brand": "Alexander McQueen",
+          "category": "Women, Women's Clothes, Tops",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "size": "M",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-26e7a7438bf3f8d153db70bc2ff936fd8713bbe26a24d2d6fd39e12c5a6f89bb",
+          "title": "2025 Summer Rhinestones Skull T Shirts Men Fashion Streetwear O Neck Short Sleeve Slim Mercerized Cotton Tshirts Plus Size 6XL",
+          "category": "Tops & Tees",
+          "price": 27.55,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-9a3c1e1daa9c9ad72d700f51e104dbd80511d7e67901488a1191a79ae5d22106",
+          "title": "نيو بالانس أبيض 9060 Sneakers for للنساء",
+          "description": "The 9060 sneakers from new balance feature exaggerated design elements taken from the classic 990 series in a bold yet futuristic look. This y2k-inspired design features a mesh and suede upper with a signature n logo, classic abzorb cushioning and eva technology. | sku: u9060wht-108 | white suede | made in: vietnam | fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 900,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "u9060wht-108",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-8cbc90062cfde188679bebcf4fe27d2ee4f25f18f74cbc031dd168a0941545b2",
+          "title": "اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال",
+          "description": "A timeless adidas icon, the gazelle sneakers are crafted from ultra-soft suede with sleek lines of the low-profile build from the '90s, rubber outsole, and metallic gold details. Sku: bb5476-cbwhgo black suede lining: leather lining closure: lace-up fastening toe style: round-toe made in: belgium fits small to size, take ½ or a full size larger",
+          "category": "Fashion",
+          "merchant": "The Deal Outlet",
+          "price": 560,
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "deal-outlet",
+            "providerName": "The Deal Outlet",
+            "sourceType": "affiliate_feed",
+            "styleCode": "round-toe",
+            "identifiers": [
+              {
+                "kind": "SKU",
+                "value": "bb5476-cbwhgo",
+                "scope": "provider:deal-outlet"
+              },
+              {
+                "kind": "STYLE",
+                "value": "round-toe",
+                "scope": "provider:deal-outlet"
+              }
+            ]
+          }
+        },
+        {
+          "observationId": "obs-6e77e349e2e39042337af75102fcf7681d0dfce1b121d9b8b917bfb1677e03a2",
+          "title": "Thug Club Street Star Moon Skull Print High Street Summer New Loose Casual Short-Sleeved T-Shirt for Men",
+          "category": "Tops & Tees",
+          "price": 31.5,
+          "currency": "USD",
+          "availability": "unknown",
+          "variant": {
+            "condition": "unknown"
+          },
+          "source": {
+            "providerId": "aliexpress",
+            "providerName": "AliExpress",
+            "sourceType": "affiliate_feed"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "37",
+      "query": "بطارية سيارة 12V 70Ah الرياض",
+      "observations": [
+        {
+          "observationId": "obs-e8a861673ebd7266a85f004a107b314410cdb339c52a86ca38172292ad730cf7",
+          "title": "Duracell Car Battery in Saudi | Duracell Car Battery Supplier Saudi",
+          "description": "Duracell Car Battery in Saudi delivers 12V 70Ah reliable starting power for cars and SUVs, available from Nassguard across KSA cities",
+          "merchant": "nassguard.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-8f4f6c70da9c53c20c83965b8b0a03c0201a70fd0cd54d7df0dce5b78853f226",
+          "title": "Car Batteries KSA | Best Price Offers | Riyadh, Jeddah",
+          "description": "Biggest selection of Car Batteries in KSA ✓ Secure Shopping ✓ 100% Contactless ✓ Fast Shipping ✓ Cash on Delivery ✓ Easy Free Returns. Shop Now",
+          "category": "automotive",
+          "merchant": "noon.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        }
+      ]
+    }
+  ]
+}

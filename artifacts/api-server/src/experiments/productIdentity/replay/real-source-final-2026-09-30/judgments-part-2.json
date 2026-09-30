@@ -1,0 +1,248 @@
+[
+  {
+    "caseId": "7",
+    "coverage": "ABSTAINED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {},
+    "reason": "No candidate observations were returned; coverage is abstained and the empty response cannot establish inventory absence."
+  },
+  {
+    "caseId": "8",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {
+      "obs-07eee4843f0fbd7a1c5749c64cfb4dc08afcbb64c7003e6aebbc23314524e707": "RELEVANT",
+      "obs-b03565dfa900cda476f2d6e6b86d10738fcfbee672b019b1d124f0bf05a99771": "IRRELEVANT",
+      "obs-2274007e58ee3c4004acf53ee479c42bc5dffe31c443f6788c5dd10d51d18c08": "RELEVANT",
+      "obs-5b5cedac3bf6271903e055520982dd55ea27699cf2a16b864cdcedc49ce3fce8": "RELEVANT",
+      "obs-29468eca8b16e3a19f27c3a3082a44d407b7e0a24a285e94ad42c8d9c6327bb8": "RELEVANT",
+      "obs-21ead4539dd0403704362ba079f7a90a74ddcc68e7d441d4769ca1e6b1d3490d": "RELEVANT",
+      "obs-a50c9ea85112cafc5b7f7ecdd58da4b7656247098634c8558524a1364b12166f": "RELEVANT"
+    },
+    "reason": "Men's-watch category/search pages and the 350–700 SAR range are useful matches for a men's watch around 500 SAR but do not verify an individual eligible exact item; the Ounass result describes a 2,500 SAR watch, outside budget."
+  },
+  {
+    "caseId": "9",
+    "coverage": "ABSTAINED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {},
+    "reason": "No candidate observations were returned; coverage is abstained and the empty response cannot establish inventory absence."
+  },
+  {
+    "caseId": "11",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {
+      "obs-12824dc0706bc1c781813cde477300f2d1586cc9527cfeefad9788600d89d8c4": "RELEVANT",
+      "obs-e14e05626efff381a25fe8536d8c70e047750c8ee02bc90be52f7ac44bbdac20": "RELEVANT",
+      "obs-85776aed5c30640ccc8039cc9bb90911c449f2ddf62a69d33f8b2860726badae": "RELEVANT",
+      "obs-294f229e8a9701f5c6377abfdc713422879185bb7d6ea9037f24a3f1be4f99f5": "IRRELEVANT"
+    },
+    "reason": "Women's perfume category listings are useful for the requested product and approximate budget, but none verifies a specific product at about 300 SAR; the remaining coupon article is editorial rather than a product listing."
+  },
+  {
+    "caseId": "15",
+    "coverage": "ABSTAINED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {},
+    "reason": "No candidate observations were returned; coverage is abstained and the empty response cannot establish inventory absence."
+  },
+  {
+    "caseId": "17",
+    "coverage": "ABSTAINED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {},
+    "reason": "No candidate observations were returned; coverage is abstained and the empty response cannot establish inventory absence."
+  },
+  {
+    "caseId": "18",
+    "coverage": "ABSTAINED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {},
+    "reason": "No candidate observations were returned; coverage is abstained and the empty response cannot establish inventory absence."
+  },
+  {
+    "caseId": "19",
+    "coverage": "ABSTAINED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {},
+    "reason": "No candidate observations were returned; coverage is abstained and the empty response cannot establish inventory absence."
+  },
+  {
+    "caseId": "20",
+    "coverage": "ABSTAINED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {},
+    "reason": "No candidate observations were returned; coverage is abstained and the empty response cannot establish inventory absence."
+  },
+  {
+    "caseId": "21",
+    "coverage": "ABSTAINED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {},
+    "reason": "No candidate observations were returned; coverage is abstained and the empty response cannot establish inventory absence."
+  },
+  {
+    "caseId": "22",
+    "coverage": "ABSTAINED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {},
+    "reason": "No candidate observations were returned; coverage is abstained and the empty response cannot establish inventory absence."
+  },
+  {
+    "caseId": "23",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-e805f26aeb53711d94981eac7ae284a511658506e6b7bee610492c8754e9a19d": "RELEVANT"
+    },
+    "reason": "The result is a Galaxy S24 phone, relevant to the requested Samsung phone, but the visible model is SM-S921BB rather than the requested SM-S921B, so exact identity is not established."
+  },
+  {
+    "caseId": "33",
+    "coverage": "ABSTAINED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {},
+    "reason": "No candidate observations were returned; coverage is abstained and the empty response cannot establish inventory absence."
+  },
+  {
+    "caseId": "34",
+    "coverage": "ABSTAINED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {},
+    "reason": "No candidate observations were returned; coverage is abstained and the empty response cannot establish inventory absence."
+  },
+  {
+    "caseId": "35",
+    "coverage": "ABSTAINED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {},
+    "reason": "No candidate observations were returned; coverage is abstained and the empty response cannot establish inventory absence."
+  },
+  {
+    "caseId": "36",
+    "coverage": "ABSTAINED",
+    "inventoryAvailabilityAssessment": "unknown",
+    "candidateJudgments": {},
+    "reason": "No candidate observations were returned; coverage is abstained and the empty response cannot establish inventory absence."
+  },
+  {
+    "caseId": "38",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-670fea280e13e6caef07201f127d1530d14f93faa9cc38faf7c8b375248b56d7": "RELEVANT",
+      "obs-c9ab70f3273181505f387795748750c51e3b8672dd72097882e717e08bd07e53": "RELEVANT",
+      "obs-d64fa25726370d8a562e5975bdd52ce42d4d6eb47f52ec12b58d626426a2da48": "IRRELEVANT"
+    },
+    "reason": "The Body Shop shampoo range explicitly includes dry-hair needs; Faces is a general shampoo range. The GK result is dry shampoo (a different product type), not shampoo for dry hair."
+  },
+  {
+    "caseId": "39",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-05901a785d638c80c59167d6089fd953322763510e4b02168d6c7d3fc0fecab4": "IRRELEVANT",
+      "obs-6544623cb68d9fa0086d760fd416fe3aa1cfdf3b0c6c06a86accf62cefb23663": "RELEVANT",
+      "obs-858fad4f28f463ebb7ba4a7da7656a2006708a1f8ce44b811f08a30276870717": "IRRELEVANT",
+      "obs-911a189032e2186b8ae73c289b8fa12045cb12609825f26f3935957ed3c2e830": "RELEVANT",
+      "obs-35a690a60475b231b51e4527ccad7ac6cc2e5215713fc0ab43e90e9df47b685b": "RELEVANT",
+      "obs-736e81b84cded46167794543ab3551957adf1fa58e448acef831608367997c5a": "IRRELEVANT",
+      "obs-d7e8d1c5554fe1d8ae64af8a93ae70d3233c2659aaa1308fb8909fd857d79679": "RELEVANT",
+      "obs-2bc2e26fc33fc414806e13e89ceb274ad2b943e56ad82422a368d54719e5f072": "IRRELEVANT",
+      "obs-7afafe22c2ecbdaea4a149d79a30afde4078386525cd191e01513ae578f107c0": "RELEVANT",
+      "obs-6477428b67688c65f439cc75c8e088af0511220bb3e37c16b3e84a3421b95dcb": "RELEVANT",
+      "obs-b42a706207e587e6afc3fb5e854bfdb25dec8f091356257cdbb6108c11cd2244": "RELEVANT",
+      "obs-314c71591f0a21661e126932633dc8748b7b3dddeb1b1196d8a6b62e5d03dff0": "RELEVANT",
+      "obs-ff512fa0345318ce9029f162691e832365855a99c8ba740b882211b2c167de66": "RELEVANT",
+      "obs-cb5ec7b49361935ff83e3753a9cbeaf1f2fa030005e066afcd5bc96cf652908f": "RELEVANT",
+      "obs-8ca893dfcacc052ddf8e1c468e97f10e2126d13491f3f9eeb59b05defacbbf70": "RELEVANT",
+      "obs-23903b05c5345eea441c1f26ff99f4e4a6d04ce9b944bc6001c803cdedce50a0": "IRRELEVANT",
+      "obs-61bbbe5b6e76bed55885c70733347b19ed52a0f8b3aec76e0b483b02e7bcf5b2": "RELEVANT",
+      "obs-8b358e7606491ac360e2c6130f2ecc82fde719ed9c61c6be8f01886f40a5f8c7": "RELEVANT",
+      "obs-feb0087444db8fee5979de5f83e1a840686e3679b564b54bd884ef6bb7eab9c5": "RELEVANT",
+      "obs-d175fa3d928a925c027f7472ee2be3e50311024d1ad902001808db4f5efe502d": "RELEVANT",
+      "obs-163def974f9105aade5412d2a391ff2a642ecf3ccf4bf79631ca9072a2423f4a": "RELEVANT",
+      "obs-bb4736b32dd73a0f67774ac2a14676f4182647feae87f73f6701199af5b4aa5d": "IRRELEVANT",
+      "obs-b6c8a409ccf204099a8edc57c456e438ed4f079486d5d3ab1ef2cb0ecc8d34f9": "IRRELEVANT",
+      "obs-b43b507bee64eb31fb62e4fdfd267e3f60bb8fd4b3a31c941d6b060c579242ab": "RELEVANT",
+      "obs-1543c99f52de78a9c1e78c99099d5e2dbb82728b911bb7a374f85cef6b252f15": "RELEVANT",
+      "obs-4c9d5825a21d35ba703903c4d397eade4ddf8f0d7d98ad66dcaa5110b2af4c74": "RELEVANT",
+      "obs-5cff6bd5b13f513b23c67cbe429fd1868629da873ab5f278a069762f7a673adc": "RELEVANT",
+      "obs-f7282581e216219031d7736aa7882cc8fdbdadf14128da5dbfe1ff774860fad0": "IRRELEVANT",
+      "obs-947625a180ae46d8d5f13063ad0853dcd794e074d72bb041e27623baf89ef7a6": "RELEVANT",
+      "obs-fad6442407f28636836592b3496eb34ff95399bf5c2b71578dd9982c043d4273": "RELEVANT",
+      "obs-a32713b1998a3f2f966738972834252beb9488c16d487652e2b14dd48b425776": "RELEVANT",
+      "obs-2d45b429b00a708fbf2f1effd5bfe469144eeb1f5b2b7c76cbe23c6920577960": "RELEVANT",
+      "obs-ca12116e4290fb9aad269c1e527f1d2582d1f54c401068a30a05a9cee24a65d0": "IRRELEVANT",
+      "obs-766eaa01f1f220f4aacc7cc721c815a8304275cfb36cb4290fa42beb3752d92a": "IRRELEVANT",
+      "obs-d813d93d1a21bc10e944992fd1ff8873c5fe896622cb8b84f725897806d16621": "RELEVANT",
+      "obs-19e170e830516e2069bdf385ceef18f2a15e0607bcd4b4e2d3a2dab658bddfd3": "IRRELEVANT",
+      "obs-fc48cebe758eab22a69ad18f9db204e704593f5255546eed198a35ac83f7df6f": "RELEVANT",
+      "obs-504bb01fa89ec31e9ee656ec86b29d0f9183fa16595c7fd56d55dbe52815efef": "RELEVANT",
+      "obs-f610f1ae489a5ab86874a6d4300b0415ceeb329ee64a1bc1741916a73c312b39": "RELEVANT",
+      "obs-ceb1e174ce0c7097ed212bc93470e2c82325b06ff0cfbb5b55c3408d5869c221": "IRRELEVANT",
+      "obs-d5432a71ab31371a8baaf69b2e37a0990cec048c309bb1c256530ace747e6ec6": "RELEVANT",
+      "obs-0cc1e2ba62e94831e681e0213c94776453a3cb3794587cd85cb8e05296d79147": "RELEVANT",
+      "obs-f30b8fb62df62f9e5cbf61f157913cf98b56699879d074f5c39c29ac5612cdff": "RELEVANT",
+      "obs-b1920de23aac2036817c2049cedba3da0125c0ec2e9e141fe0d46b48eeaf21d7": "RELEVANT",
+      "obs-808f55e96f0aa509ba3d15eb82a1e41d013efe73ddac4debaaeae52617500da8": "IRRELEVANT",
+      "obs-94d948b21b2d5930c2c684fecc16d30eeeebf68b38557ab2e562fa0430fc3d75": "RELEVANT",
+      "obs-1e115cbb4c35de358a9f837b4302e9969db7c2c25060f1547968613d38f80cea": "RELEVANT",
+      "obs-f5aab08693f1184ab142c20f5b613ebd427c01b42451b5098b1f18116ebdf10c": "RELEVANT",
+      "obs-70f29ffe935f7a62713bd4f14fc3f39b1be4c0619f1f4b8af6abe393aa5ecce0": "RELEVANT",
+      "obs-65063d4ff789a4100e7d129cd6d6b994a915444bed8542bd16ec98f883056577": "RELEVANT",
+      "obs-8696966df017395bf04704bb5d91aa182299abc41ebdcd9f89e908447dac8f75": "IRRELEVANT",
+      "obs-e0925caae57561008ff112acc48028984175c28bbd09c91442842a5857a6d666": "RELEVANT",
+      "obs-b9369e07e6b1e95d7b2bd528cf233359068fe63db125c1787131b654ec2d5951": "RELEVANT",
+      "obs-68d045a868bedbb48635e4c209766c03a71b04babf47b795e01f2313f788203c": "RELEVANT",
+      "obs-7df7cf6e87e9166575039ce52f49703eef881bfc11280bdc6d573ac902929f53": "RELEVANT",
+      "obs-0c7ab945b7197a373299d6720b85d5a840b2ff4c37b1924b87d2b5f5b89bcd8f": "RELEVANT",
+      "obs-c49775776c0257e6c47fe67f3505d93fd35f861cccb7f7e30ccc791bb08e4a78": "RELEVANT",
+      "obs-3fcb0feb95f1d9f69fc085898a51d06ffa24915442ca263d0528a9d05a194e17": "IRRELEVANT",
+      "obs-2e7aacba8df83e231a275612d4858e11302fcd71718f1645e9bdccba094e01e1": "RELEVANT",
+      "obs-607f2e745e433a8b28a8bbf796c79f0e260f184ba9dc9c32afa2d30db3959996": "RELEVANT",
+      "obs-1d0c979d17d32bf96b614017b863e6ab2b919d7decdc76aebfb6f82c2e656015": "RELEVANT",
+      "obs-8ed1b1eb929c698dcce9e2442a4ccfb4aae67f8986af52e650814c3cc29ef01b": "RELEVANT",
+      "obs-ca14aa5efff62bbc923d2f0610ff4184d3bcd0aad4cecee9628c2a8aca854697": "RELEVANT",
+      "obs-b85d44ddb80474738fc3461ab963498e7d890a1431a3fab8b1ffb512c2d76527": "RELEVANT",
+      "obs-2c19ff34fb2a67e229f4210e4806ece4b084cbeea9126e16d95f4c8e3398030c": "IRRELEVANT",
+      "obs-22642136147cfcb726f7687a393919ed554d565697c1362a3f3adcc8beac049e": "RELEVANT",
+      "obs-2021f0ca9ac1bb244161089879558a2107e8c2933cef2aa8c7ca3c72ccafeb42": "RELEVANT",
+      "obs-f7dc3f800f63fadd158267d6131f9980fc8e57efc4ff8bb140a6f2605cb53b10": "IRRELEVANT",
+      "obs-dac5c2ad0cd49dbcd45620039dd01952ab4c3e58e9e350a1b420a7bf9b8fc449": "RELEVANT",
+      "obs-a7dbd1c028dc462549518c7e92be23e92990ff60a796883f015e3d3932ead2fa": "RELEVANT",
+      "obs-1fc41e29800771839c9c900f896dcb2a79b14610f32ced24827b5050e39ece09": "RELEVANT",
+      "obs-cfd5df244ec8cdbc5c695b11cdf2977c9767ee3467fcb1f57346596b2300a40c": "RELEVANT",
+      "obs-286dd4d7c163e0aeee6459c56b9edac045a1f746930f2a110f99cf78407548e6": "RELEVANT",
+      "obs-fe5fc71d1115596a1978e3f5a3220e5110c68ecba2ea3062abda5c79254f8c8a": "RELEVANT",
+      "obs-5d93c279fb177a0329a6a9f2d6ee725c43c56c0f1b9eb404e3e50de9967bfe92": "RELEVANT",
+      "obs-46dc7b448ab2acdc7010c5a06fd75c495ec5e46d7624f9f1b956c81e5b486a54": "IRRELEVANT",
+      "obs-221aa3c5206c8bd9bb69447d1155a21cd8ae0909490262b89b48dd24c60f9171": "RELEVANT",
+      "obs-4209c6f0a723ae76c837f371d3c18d0e3298868c57a8db5fc1457b938fb4fd28": "RELEVANT",
+      "obs-60b4cab076b7d042c23af97adae54b7c88a838f8cfa9396d64e7611c4c351253": "RELEVANT",
+      "obs-0a3cae811df4579dd1b34b85537bc5bea5f41360f614664f3a52f1e4c6437d78": "RELEVANT",
+      "obs-f55f5981477dec7442c1d1d8c71a6db4122999e4a2ee9d74f35886ebba4852c2": "RELEVANT",
+      "obs-9a097071ae3f92dc31a01549c19737b1906bb22dc68412c31274d07fe95c3635": "RELEVANT",
+      "obs-64605385b68027ce64ec617ff16ee869a9ab9dffcdeac972e7437f13b8d45657": "IRRELEVANT",
+      "obs-b3c7342a25b3682aaaf4f4960f19c80188bb33ae4e86c0f55a4bdd189e13a400": "RELEVANT",
+      "obs-727e80d44cd33cc5925b935a8db0a0376c0765b2241c2c4d1af5db7290e24d44": "RELEVANT",
+      "obs-5be1c9964b010d693e40098f98cd2f6a545b00fd943623ba7886e84f067af71d": "RELEVANT",
+      "obs-fba7c6c00f53c10537cfb0459da5873819cb0d7235b4260cddc146aea0c942a9": "RELEVANT",
+      "obs-864e0b63a3adf2ae4809fbcd0a7101f7136aa058815bf9e6bcae01ecc456c3c1": "RELEVANT",
+      "obs-1adc0434895b92c091ea1781766a6906160ee8082d308a71e74fd55c3a385a23": "RELEVANT",
+      "obs-e72fee9da4f840b17097e95c4134fc59d6ab639007e00edc9c08012a19f2f72e": "RELEVANT",
+      "obs-55331787f4253cac47185679e21e20f0e35866fdcdbcd7b0cec83e9cfa751b6a": "RELEVANT",
+      "obs-83a19eefc5c9a3d19ab62f45c479b5067684a61abf5f6f8c06bd2fba244a87f6": "RELEVANT",
+      "obs-fcb42e2d87f07769cfd05caaa84d1ea8dc45d859d7318319629effe867e5718c": "RELEVANT",
+      "obs-b7c4f0822c3ce5c9fdf3ec598789dc81c4342e03e2a94f7d1e2a3c313c0b085d": "RELEVANT",
+      "obs-8b97f93d102b7c3c8d71e1ac1c9627401cb195e32446a448dff832c690c914d2": "IRRELEVANT",
+      "obs-8ffbb6b1fe5c991e88e0308f60452cc91539577e3103ca807ca598092e209006": "RELEVANT",
+      "obs-f63c4a26a8bf0a51eb4aa1bdf628190fdb0c9343781e520fa9f24412e6b3f4c1": "RELEVANT",
+      "obs-7a0191e253730c42fd608d5fca282b0c5867a7512a3303100a96560caf230a11": "RELEVANT",
+      "obs-76a594a5f5a0c5a9d8a538c3647f8071b0d9009da73e1a8419f42700b2eec6a9": "RELEVANT",
+      "obs-118cebcd042ba7031988aafcf19045a6dd0192d9a356e2992c565aa9161c86cd": "RELEVANT"
+    },
+    "reason": "The feed contains women's handbag products in multiple bag styles, which are relevant to this broad query. Wallets and a card holder are accessories rather than handbags and are excluded."
+  }
+]

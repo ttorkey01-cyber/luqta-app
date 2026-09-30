@@ -1,0 +1,2418 @@
+{
+  "packetId": "identity-replay-blind",
+  "part": 2,
+  "cases": [
+    {
+      "caseId": "7",
+      "query": "أبي شنطة سودا كبيرة أقل من 300 ريال",
+      "observations": []
+    },
+    {
+      "caseId": "8",
+      "query": "أبغى ساعة رجالية بحدود 500 ريال",
+      "observations": [
+        {
+          "observationId": "obs-07eee4843f0fbd7a1c5749c64cfb4dc08afcbb64c7003e6aebbc23314524e707",
+          "title": "Buy Best Men Watches Online: 35-75% OFF, Riyadh, Jeddah KSA",
+          "description": "On the other hand, automatic and mechanical styles are known for their sleek style and longevity. Ultimately, the decision on which type to choose will be determined by your preference, budget and needs. At noon, finding the best men’s watches in Saudi Arabia is easy, whichever movement type you choose.",
+          "category": "watches_jewelry",
+          "merchant": "noon.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "size": "S"
+          },
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-b03565dfa900cda476f2d6e6b86d10738fcfbee672b019b1d124f0bf05a99771",
+          "title": "تسوق ساعات رجالية في السعودية | اناس",
+          "description": "الموسم الجديد لارفي <strong>ساعة PEA001RS بحركة مايوتا أوتوماتيكية، 45 × 40 مم 2,500 ر.س</strong>.",
+          "category": "watches_jewelry",
+          "merchant": "saudi.ounass.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-2274007e58ee3c4004acf53ee479c42bc5dffe31c443f6788c5dd10d51d18c08",
+          "title": "Watches for Men | Shop Luxury Men's Watches Online in Saudi",
+          "description": "Explore a curated collection of luxury watches for men in KSA (Kingdom of Saudi Arabia). Elevate your style with top brands and premium timepieces designed to make a statement.",
+          "category": "watches_jewelry",
+          "merchant": "en.bloomingdales.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "size": "S"
+          },
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-5b5cedac3bf6271903e055520982dd55ea27699cf2a16b864cdcedc49ce3fce8",
+          "title": "طقم ساعة رجالية : Shop Online At Best Prices In Saudi | Souq Is Now Amazon.sa",
+          "description": "طقم ساعة رجالية : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now Amazon.sa",
+          "category": "watches_jewelry",
+          "merchant": "amazon.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-29468eca8b16e3a19f27c3a3082a44d407b7e0a24a285e94ad42c8d9c6327bb8",
+          "title": "Watches - Men - Fashion: Buy Online at Best Prices in Saudi | Souq is now Amazon.sa",
+          "description": "Shop online for Watches - Men: Fashion from a huge selection of popular items in Saudi. Souq is now Amazon.sa. Free shipping &amp; Cash on delivery available on eligible purchase.",
+          "category": "watches_jewelry",
+          "merchant": "amazon.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-21ead4539dd0403704362ba079f7a90a74ddcc68e7d441d4769ca1e6b1d3490d",
+          "title": "350 To 700 SAR - Men's Watches / Men's Fashion : Shop Online At Best Prices In Saudi | Souq Is Now Amazon.sa",
+          "description": "350 to 700 SAR - Men&#x27;s Watches / Men&#x27;s Fashion : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now Amazon.sa",
+          "category": "watches_jewelry",
+          "merchant": "amazon.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "size": "S"
+          },
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-a50c9ea85112cafc5b7f7ecdd58da4b7656247098634c8558524a1364b12166f",
+          "title": "Men's Watches & Accessories KSA | Best Price Offers | Riyadh, Jeddah",
+          "description": "Biggest selection of Men&#x27;s Watches &amp; Accessories in KSA ✓ Secure Shopping ✓ 100% Contactless ✓ Fast Shipping ✓ Cash on Delivery ✓ Easy Free Returns. Shop Now",
+          "category": "watches_jewelry",
+          "merchant": "noon.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "size": "S"
+          },
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "9",
+      "query": "أبي سماعات أصلية أقل من 400 ريال",
+      "observations": []
+    },
+    {
+      "caseId": "11",
+      "query": "أبي عطر نسائي بحدود 300 ريال",
+      "observations": [
+        {
+          "observationId": "obs-12824dc0706bc1c781813cde477300f2d1586cc9527cfeefad9788600d89d8c4",
+          "title": "عطور نسائية",
+          "description": "توصيل مجاني على جميع الطلبات ما فوق 299 ريال",
+          "category": "beauty_care",
+          "merchant": "faces.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-e14e05626efff381a25fe8536d8c70e047750c8ee02bc90be52f7ac44bbdac20",
+          "title": "Perfume Women : Shop Online At Best Prices In Saudi | Souq Is Now Amazon.sa",
+          "description": "perfume women : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now Amazon.sa",
+          "category": "beauty_care",
+          "merchant": "amazon.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-85776aed5c30640ccc8039cc9bb90911c449f2ddf62a69d33f8b2860726badae",
+          "title": "عطور نسائية | عطر نسائي | افضل عطر نسائي | سكاي سيلز السعودية",
+          "description": "تصفحي أفخم العطور النسائية المميزة في السعودية، احصلي على افضل عطر نسائي أونلاين بأفضل الأسار. ✓توصيل مجاني علي الطلبات بقيمة 300 ريال سعودي وأكثر✓إرجاع سهل",
+          "category": "beauty_care",
+          "merchant": "skysalesonline.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-294f229e8a9701f5c6377abfdc713422879185bb7d6ea9037f24a3f1be4f99f5",
+          "title": "اغلى عطر نسائي - كيف تشتريه بسعر أرخص مع كوبونات الموفر؟ - Almowafir",
+          "description": "الحد الأقصى للخصم: 13 ريال سعودي. <strong>الحد الأدنى للإنفاق: 300 ريال سعودي</strong>.",
+          "category": "beauty_care",
+          "merchant": "almowafir.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "15",
+      "query": "Samsung S24 أقل من 2500 ريال",
+      "observations": []
+    },
+    {
+      "caseId": "17",
+      "query": "Huawei watch أقل من 700 ريال",
+      "observations": []
+    },
+    {
+      "caseId": "18",
+      "query": "black handbag under 200 SAR",
+      "observations": []
+    },
+    {
+      "caseId": "19",
+      "query": "USB-C charger under 80 SAR",
+      "observations": []
+    },
+    {
+      "caseId": "20",
+      "query": "perfume over 100 SAR under 300 SAR",
+      "observations": []
+    },
+    {
+      "caseId": "21",
+      "query": "new Huawei phone under 2000 SAR",
+      "observations": []
+    },
+    {
+      "caseId": "22",
+      "query": "men's sneakers size EU 43 under 400 SAR",
+      "observations": []
+    },
+    {
+      "caseId": "23",
+      "query": "Samsung SM-S921B phone",
+      "observations": [
+        {
+          "observationId": "obs-e805f26aeb53711d94981eac7ae284a511658506e6b7bee610492c8754e9a19d",
+          "title": "SAMSUNG Galaxy S24 Smartphone, 6.2\" Dynamic AMOLED 2X FHD+ Display, Exynos 2400 for Galaxy, 8GB RAM + 128GB, 50.0 MP Camera, 4000mAh Battery, LTE/5G, Single SIM+ E SIM, Onyx Black | SM-S921BB Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca",
+          "description": "<strong>SAMSUNG Galaxy S24 Smartphone, 6.2&quot; Dynamic AMOLED 2X FHD+ Display, Exynos 2400 for Galaxy, 8GB RAM + 128GB, 50.0 MP Camera, 4000mAh Battery, LTE/5G, Single SIM+ E SIM, Onyx Black</strong> | SM-S921BB model Galaxy S24 Mobile Phones",
+          "category": "electronics",
+          "merchant": "saudi.microless.com",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {
+            "color": "black"
+          },
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web",
+            "model": "Galaxy S24"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "33",
+      "query": "used 2008 Jaguar XF left headlight in Jeddah under 50 SAR",
+      "observations": []
+    },
+    {
+      "caseId": "34",
+      "query": "blue size EU 47 women's Diesel heels under 100 SAR",
+      "observations": []
+    },
+    {
+      "caseId": "35",
+      "query": "Toyota Camry 2018 left headlight OEM 81150-06C90",
+      "observations": []
+    },
+    {
+      "caseId": "36",
+      "query": "هوندا أكورد 2015 بواجي أصلية",
+      "observations": []
+    },
+    {
+      "caseId": "38",
+      "query": "shampoo for dry hair",
+      "observations": [
+        {
+          "observationId": "obs-670fea280e13e6caef07201f127d1530d14f93faa9cc38faf7c8b375248b56d7",
+          "title": "Shampoo - Hair",
+          "description": "Shop our shampoo range, we have something for every hair type: dry, dull, dandruff and more.",
+          "category": "beauty_care",
+          "merchant": "thebodyshop.com.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-c9ab70f3273181505f387795748750c51e3b8672dd72097882e717e08bd07e53",
+          "title": "Shampoo | Faces KSA",
+          "description": "shampoo, Experience the ultimate cleanse and refreshment for your hair with our top-tier shampoos and dry shampoos. cater to your haircare needs. From revitalizing shampoos that address specific hair concerns to convenient dry shampoos that provide on-the-go freshness, we have the perfect solutions to keep your hair looking its best.",
+          "category": "beauty_care",
+          "merchant": "faces.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        },
+        {
+          "observationId": "obs-d64fa25726370d8a562e5975bdd52ce42d4d6eb47f52ec12b58d626426a2da48",
+          "title": "Buy Dry Hair Shampoo - GK Hair Best Dry Shampoo – GK Hair KSA",
+          "description": "Buy the best dry shampoo, fortified with Juvexin, reduces oil and product accumulation on the scalp, restoring that fresh, just washed look.",
+          "category": "beauty_care",
+          "merchant": "gkhair.sa",
+          "currency": "SAR",
+          "availability": "unknown",
+          "variant": {},
+          "source": {
+            "providerId": "brave-web",
+            "providerName": "Brave Web Search",
+            "sourceType": "web"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "39",
+      "query": "women's handbags",
+      "observations": [
+        {
+          "observationId": "obs-05901a785d638c80c59167d6089fd953322763510e4b02168d6c7d3fc0fecab4",
+          "title": "Michael Kors Blue Leather Zip Around Wallet",
+          "description": "Compact and stylish, this wallet will be your favorite grab and go companion. Designed from quality materials, its interior is divided into different compartments to store your cards and cash perfectly.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "blue",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-6544623cb68d9fa0086d760fd416fe3aa1cfdf3b0c6c06a86accf62cefb23663",
+          "title": "MICHAEL Michael Kors Black Saffiano Leather Tote Bag",
+          "description": "This Cynthia tote by MICHAEL Michael Kors will provide you with the utmost comfort and a classy look. Crafted from leather, it is paired with dual handles, and a branded charm. The fabric lined interior of the bag has the optimum storage capacity to store everything you need.",
+          "brand": "MICHAEL Michael Kors",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-858fad4f28f463ebb7ba4a7da7656a2006708a1f8ce44b811f08a30276870717",
+          "title": "Aigner Blue Leather Logo Charm Flap Continental Wallet",
+          "description": "This Aigner blue wallet effortlessly combines meticulous construction with ageless style, making it a symbol of refined taste. Elevate your accessory collection with this designer piece.",
+          "brand": "Aigner",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "blue",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-911a189032e2186b8ae73c289b8fa12045cb12609825f26f3935957ed3c2e830",
+          "title": "Furla Blue Leather Mini Metropolis Crossbody Bag",
+          "description": "Express your personal style with this high end crossbody bag. Crafted from quality materials, it has been added with fine details and is finished perfectly. It features a well sized interior.",
+          "brand": "Furla",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "blue",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-35a690a60475b231b51e4527ccad7ac6cc2e5215713fc0ab43e90e9df47b685b",
+          "title": "Dior Black/Silver Tweed and Leather Small Diorissimo Patch Tote",
+          "description": "This Diorissimo tote from the House of Dior is a timeless creation that will never go out of style. It is meticulously made from tweed along with leather and showcases gold toned D.i.o.r charms on the front. Two dual handles, a spacious leather lined interior, and a chic silhouette are some of the perks of this tote. Flaunt this amazing Dior creation by owning it today",
+          "brand": "Dior",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 1425,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-736e81b84cded46167794543ab3551957adf1fa58e448acef831608367997c5a",
+          "title": "Prada Grey Saffiano Leather Flap French Wallet",
+          "description": "This Prada grey wallet is conveniently designed for everyday use. It comes with a well structured interior for you to neatly arrange your cards and cash. The front logo detail adds a grand finish.",
+          "brand": "Prada",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "grey",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-d7e8d1c5554fe1d8ae64af8a93ae70d3233c2659aaa1308fb8909fd857d79679",
+          "title": "Michael Kors Two Tone Blue Signature Coated Canvas and Leather Crossbody Bag",
+          "description": "Designed to be durable, this lovely crossbody bag is a prized buy. Chic and easy to carry, the creation comes with a long shoulder strap and a spacious interior to keep your essentials safe.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "blue",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-2bc2e26fc33fc414806e13e89ceb274ad2b943e56ad82422a368d54719e5f072",
+          "title": "CH Carolina Herrera Orange Leather Wallets",
+          "description": "This designer wallet is an immaculate balance of sophistication and rational utility. It has been designed using prime quality materials and elevated by a sleek finish. The creation is equipped with ample space for your monetary essentials.",
+          "brand": "CH Carolina Herrera",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "orange",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-7afafe22c2ecbdaea4a149d79a30afde4078386525cd191e01513ae578f107c0",
+          "title": "DKNY Black Leather Envelope Flap Shoulder Bag",
+          "description": "Designer bags are ideal companions for ample occasions Here we have a fashion meets functionality piece crafted with precision. It has been equipped with a well sized interior that can easily fit your small essentials.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-6477428b67688c65f439cc75c8e088af0511220bb3e37c16b3e84a3421b95dcb",
+          "title": "DKNY Black Pinstripe Quilted Leather Gansevoort Top Handle Bag",
+          "description": "A timeless creation, this bag perfectly balances simplicity with sophistication. It is created from high quality materials with a top handle to carry it around effortlessly. The perfectly sized interior of this creation will house your belongings in a luxurious way.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Satchels",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-b42a706207e587e6afc3fb5e854bfdb25dec8f091356257cdbb6108c11cd2244",
+          "title": "Michael Kors Brown Leather Jet Set Flap Crossbody Bag",
+          "description": "Express your personal style with this high end crossbody bag. Crafted from quality materials, it has been added with fine details and is finished perfectly. It features a well sized interior.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "brown",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-314c71591f0a21661e126932633dc8748b7b3dddeb1b1196d8a6b62e5d03dff0",
+          "title": "Michael Kors Black Leather Jet Set Flap Crossbody Bag",
+          "description": "Designed to be durable, this lovely crossbody bag is a prized buy. Chic and easy to carry, the creation comes with a long shoulder strap and a spacious interior to keep your essentials safe.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-ff512fa0345318ce9029f162691e832365855a99c8ba740b882211b2c167de66",
+          "title": "Dkny Beige Leather Crossbody Bags",
+          "description": "Express your personal style with this high end crossbody bag. Crafted from quality materials, it has been added with fine details and is finished perfectly. It features a well sized interior.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "beige",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-cb5ec7b49361935ff83e3753a9cbeaf1f2fa030005e066afcd5bc96cf652908f",
+          "title": "DKNY Ivory Leather Top Zip Chain Tote",
+          "description": "Know to create stylish, sophisticated, and timeless designs, this is a brand worth investing in. The bags that come from this labels atelier are exquisite. This tote bag is no different. It has been made from quality materials and comes with an interior that is equipped with enough space for all essentials.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-8ca893dfcacc052ddf8e1c468e97f10e2126d13491f3f9eeb59b05defacbbf70",
+          "title": "DKNY Pink Leather Logo Flap Top Handle Bag",
+          "description": "Exuding unparalleled elegance and sophistication, this bag is made from the finest material in a gorgeous hue. While the roomy interior offers ample space, the top handle allows you to carry it with much elegance.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Satchels",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "pink",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-23903b05c5345eea441c1f26ff99f4e4a6d04ce9b944bc6001c803cdedce50a0",
+          "title": "Burberry Brown/Beige Haymarket PVC and Leather Buckle Flap Continental Wallet",
+          "description": "This wallet is a great everyday accessory. It is made from quality materials on the exterior and features a compartmentalized interior.",
+          "brand": "Burberry",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-61bbbe5b6e76bed55885c70733347b19ed52a0f8b3aec76e0b483b02e7bcf5b2",
+          "title": "Michael Kors Brown/Tan Signature Coated Canvas and Leather Mae Tote",
+          "description": "Created from high quality materials, this tote is enriched with functional and classic elements. It can be carried around conveniently, and its interior is perfectly sized to keep your belongings with ease.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "brown",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-8b358e7606491ac360e2c6130f2ecc82fde719ed9c61c6be8f01886f40a5f8c7",
+          "title": "DKNY Brown Signature Coated Canvas and Leather Top Handle Bag",
+          "description": "This bag from DKNY is ideal for everyday use. It is made from signature coated canvas and leather on the exterior. It showcases a single handle, a sturdy shape, and gold toned hardware. It is provided with a spacious fabric lined interior. This bag will make you look classy",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Satchels",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "brown",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-feb0087444db8fee5979de5f83e1a840686e3679b564b54bd884ef6bb7eab9c5",
+          "title": "Michael Kors Beige/Brown Signature Coated Canvas and Leather Fulton Crossbody Bag",
+          "description": "Deserving a very special place in your closet is this Fulton crossbody bag from Michael Kors It flaunts the brand logo on the front flap and opens to a spacious fabric lined interior capable of holding all your daily essentials. It is complete with a shoulder strap.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-d175fa3d928a925c027f7472ee2be3e50311024d1ad902001808db4f5efe502d",
+          "title": "Michael Kors Multicolor Signature Coated Canvas and Leather Shoulder Bag",
+          "description": "Designer bags are ideal companions for ample occasions Here we have a fashion meets functionality piece crafted with precision. It has been equipped with a well sized interior that can easily fit your essentials.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-163def974f9105aade5412d2a391ff2a642ecf3ccf4bf79631ca9072a2423f4a",
+          "title": "Michael Kors White/Tan Signature Coated Canvas and Leather Medium Rhea Backpack",
+          "description": "This Michael Kors backpack is made from signature canvas and leather in a functional design. The bag will also effortlessly complement your style.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Backpacks",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "white",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-bb4736b32dd73a0f67774ac2a14676f4182647feae87f73f6701199af5b4aa5d",
+          "title": "Miu Miu Grey Crocodile Embossed Leather Zip around Wallet",
+          "description": "Miu Miu creates feminine and practical designs and this wallet is one example. Crafted from crocodile embossed leather, it features a zip around fastening. The interior comes with a zip pocket, credit card slots and two bill compartments.",
+          "brand": "Miu Miu",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 135,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "grey",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-b6c8a409ccf204099a8edc57c456e438ed4f079486d5d3ab1ef2cb0ecc8d34f9",
+          "title": "Bally Pink Leather Logo Flap Continental Wallet",
+          "description": "This wallet is conveniently designed for everyday use. It comes with a well structured interior for you to neatly arrange your cards and cash. This stylish piece is complete with a sleek appeal.",
+          "brand": "Bally",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "pink",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-b43b507bee64eb31fb62e4fdfd267e3f60bb8fd4b3a31c941d6b060c579242ab",
+          "title": "Dior Blue/Black Oblique Canvas and Leather Saddle Belt Bag",
+          "description": "The iconic Dior Saddle design gets a contemporary update with this belt bag. Crafted from the signature blue and black Oblique canvas with leather trims, it features the distinctive Saddle silhouette and D charm detail.",
+          "brand": "Dior",
+          "category": "Women, Women's Handbags, Belt Bags",
+          "merchant": "The Luxury Closet",
+          "price": 1085,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-1543c99f52de78a9c1e78c99099d5e2dbb82728b911bb7a374f85cef6b252f15",
+          "title": "DKNY Red Leather Logo Flap Shoulder Bag",
+          "description": "Carry everything you need in style thanks to this DKNY red bag. Crafted from the best materials, this is an accessory that promises enduring style and usage.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "red",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-4c9d5825a21d35ba703903c4d397eade4ddf8f0d7d98ad66dcaa5110b2af4c74",
+          "title": "DKNY Black Leather Top Zip Crossbody Bag",
+          "description": "Designed to last, this beautiful crossbody bag is a smart buy. Comfortable and easy to carry, this handy creation comes with an interior lined to keep your essentials organized and safe.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-5cff6bd5b13f513b23c67cbe429fd1868629da873ab5f278a069762f7a673adc",
+          "title": "Dkny Blue Leather Hobos",
+          "description": "This hobo is tailored to exude finesse and functionality while completing your ensemble with style. It features a well crafted exterior adorned in a lovely hue and a spacious interior. Add some extra style to your everyday looks with this marvelous creation.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "blue",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-f7282581e216219031d7736aa7882cc8fdbdadf14128da5dbfe1ff774860fad0",
+          "title": "CH Carolina Herrera Black Quilted Leather Card Holder",
+          "description": "This stylish and functional cardholder is a must have in your collection. It is equipped with multiple, well lined slots to hold your cards.",
+          "brand": "CH Carolina Herrera",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-947625a180ae46d8d5f13063ad0853dcd794e074d72bb041e27623baf89ef7a6",
+          "title": "Dkny Black Saffiano Leather Tote Bag",
+          "description": "This alluring tote bag for women has been designed to assist you on any day. Convenient to carry and fashionably designed, the tote is cut with skill and sewn into a great shape. It is well equipped to be a reliable accessory.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-fad6442407f28636836592b3496eb34ff95399bf5c2b71578dd9982c043d4273",
+          "title": "MICHAEL Michael Kors Off White Leather Charm Shoulder Bag",
+          "description": "Unveil the essence of luxury with this designer womens shoulder bag. Crafted to perfection, it combines premium materials, intricate detailing, and practicality, setting a new standard in elegant and functional accessories.",
+          "brand": "MICHAEL Michael Kors",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "white",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-a32713b1998a3f2f966738972834252beb9488c16d487652e2b14dd48b425776",
+          "title": "Furla Black Leather Camera Crossbody Bag",
+          "description": "Designed to last, this beautiful crossbody bag is a smart buy. Comfortable and easy to carry, this handy creation comes with an interior lined to keep your essentials organized and safe.",
+          "brand": "Furla",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-2d45b429b00a708fbf2f1effd5bfe469144eeb1f5b2b7c76cbe23c6920577960",
+          "title": "Kate Spade Light Beige Leather Way Lilah Top Handle Bag",
+          "description": "A timeless creation, this bag perfectly balances simplicity with sophistication. It is created from high quality materials with a top handle to carry it around effortlessly. The perfectly sized interior of this creation will house your belongings in a luxurious way.",
+          "brand": "Kate Spade",
+          "category": "Women, Women's Handbags, Satchels",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "beige",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-ca12116e4290fb9aad269c1e527f1d2582d1f54c401068a30a05a9cee24a65d0",
+          "title": "Aigner Black Monogram Fabric and Leather Trifold Wallet",
+          "description": "This designer wallet is an immaculate balance of sophistication and rational utility. It has been designed using prime quality materials and elevated by a sleek finish. The creation is equipped with ample space for your monetary essentials.",
+          "brand": "Aigner",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-766eaa01f1f220f4aacc7cc721c815a8304275cfb36cb4290fa42beb3752d92a",
+          "title": "Prada Beige Leather Coin Purse",
+          "description": "This Prada coin purse is conveniently designed for everyday use. Crafted from beige leather, the purse has a flap closure and a front brand logo.",
+          "brand": "Prada",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "beige",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-d813d93d1a21bc10e944992fd1ff8873c5fe896622cb8b84f725897806d16621",
+          "title": "DKNY Black Saffiano Leather Flap Chain Shoulder Bag",
+          "description": "Designer bags are ideal companions for ample occasions Here we have a fashion meets functionality piece crafted with precision. It has been equipped with a well sized interior that can easily fit your essentials.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-19e170e830516e2069bdf385ceef18f2a15e0607bcd4b4e2d3a2dab658bddfd3",
+          "title": "Prada Sky Blue Saffiano Leather Flap Continental Wallet",
+          "description": "This designer wallet is an immaculate balance of sophistication and rational utility. It has been designed using prime quality materials and elevated by a sleek finish. The creation is equipped with ample space for your monetary essentials.",
+          "brand": "Prada",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "blue",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-fc48cebe758eab22a69ad18f9db204e704593f5255546eed198a35ac83f7df6f",
+          "title": "Michael Kors Metallic Grey Textured Patent and Leather Logo Charm Shoulder Bag",
+          "description": "Get style and carry your essentials with ease using this designer shoulder bag. It has been crafted using high quality materials to be a standout accessory.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "grey",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-504bb01fa89ec31e9ee656ec86b29d0f9183fa16595c7fd56d55dbe52815efef",
+          "title": "Marc Jacobs Yellow Green Alligator Mini Stam Satchel",
+          "description": "Special days call for special bags This gorgeous Marc Jacobs mini Stam satchel is constructed very carefully using alligator leather and gold tone hardware. Inside the leather interior, theres enough space to house the essentials you would require. Two handles and a long strap are provided for you to carry the bag on the shoulder or arm.",
+          "brand": "Marc Jacobs",
+          "category": "Women, Women's Handbags, Satchels",
+          "merchant": "The Luxury Closet",
+          "price": 6395,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-f610f1ae489a5ab86874a6d4300b0415ceeb329ee64a1bc1741916a73c312b39",
+          "title": "MICHAEL Michael Kors Off White Leather Middle Zip Tote",
+          "description": "This alluring tote bag for women has been designed to assist you on any day. Convenient to carry and fashionably designed, the tote is cut with skill and sewn into a great shape. It is well equipped to be a reliable accessory.",
+          "brand": "MICHAEL Michael Kors",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "white",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-ceb1e174ce0c7097ed212bc93470e2c82325b06ff0cfbb5b55c3408d5869c221",
+          "title": "Coach Beige Siganture Coated Canvas and Leather Zip Around Wristlet Wallet",
+          "description": "This classy Coach signature canvas wallet brings along a touch of luxury and immense style. It comes perfectly crafted to neatly carry your cards and cash.",
+          "brand": "Coach",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "beige",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-d5432a71ab31371a8baaf69b2e37a0990cec048c309bb1c256530ace747e6ec6",
+          "title": "Michael Kors Brown Leather Logo Camera Crossbody Bag",
+          "description": "Michael Kors ensures you have a wonderful accessory to accompany you every day with this well crafted bag. It has a signature look and a practical size.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "brown",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-0cc1e2ba62e94831e681e0213c94776453a3cb3794587cd85cb8e05296d79147",
+          "title": "Chanel Beige Quilted Patent Leather Large Boy Flap Bag",
+          "description": "Designer bags are ideal companions for ample occasions Here we have a fashion meets functionality piece crafted with precision. It has been equipped with a well sized interior that can easily fit your essentials.",
+          "brand": "Chanel",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 1822,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "beige",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-f30b8fb62df62f9e5cbf61f157913cf98b56699879d074f5c39c29ac5612cdff",
+          "title": "Aigner Dark Brown/Blue Signature Coated Canvas and Leather Tote",
+          "description": "Embrace a fusion of style and elegance with this Aigner tote, marrying dark brown and blue tones in coated canvas with leather accents. This womens handbag showcases a perfect balance of modern design and classic allure.",
+          "brand": "Aigner",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-b1920de23aac2036817c2049cedba3da0125c0ec2e9e141fe0d46b48eeaf21d7",
+          "title": "Cole Haan Purple Leather Flap Crossbody Bag",
+          "description": "Express your personal style with this high end crossbody bag. Crafted from quality materials, it has been added with fine details and is finished perfectly. It features a well sized interior.",
+          "brand": "Cole Haan",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "purple",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-808f55e96f0aa509ba3d15eb82a1e41d013efe73ddac4debaaeae52617500da8",
+          "title": "Kate Spade Black Glitter Leather New York Joeley Zip Continental Wallet",
+          "description": "This designer wallet is an immaculate balance of sophistication and rational utility. It has been designed using prime quality materials and elevated by a sleek finish. The creation is equipped with ample space for your monetary essentials.",
+          "brand": "Kate Spade",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-94d948b21b2d5930c2c684fecc16d30eeeebf68b38557ab2e562fa0430fc3d75",
+          "title": "Michael Kors Kenly Large White Coated Canvas and Faux Leather Tote Bag",
+          "description": "Know to create stylish, sophisticated, and timeless designs, this is a brand worth investing in. The bags that come from this labels atelier are exquisite. This tote bag is no different. It has been made from quality materials and comes with an interior that is equipped with enough space for all essentials.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "white",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-1e115cbb4c35de358a9f837b4302e9969db7c2c25060f1547968613d38f80cea",
+          "title": "Dkny Black/Beige Monogram Coated Canvas and Leather Zip Top Handle Bag",
+          "description": "Exuding unparalleled elegance and sophistication, this bag is made from the finest material in a gorgeous hue. While the roomy interior offers ample space, the top handle allows you to carry it with much elegance.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Satchels",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-f5aab08693f1184ab142c20f5b613ebd427c01b42451b5098b1f18116ebdf10c",
+          "title": "DKNY Brown Leather Dome Crossbody Bag",
+          "description": "Designed to last, this beautiful crossbody bag is a smart buy. Comfortable and easy to carry, this handy creation comes with an interior lined to keep your essentials organized and safe.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "brown",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-70f29ffe935f7a62713bd4f14fc3f39b1be4c0619f1f4b8af6abe393aa5ecce0",
+          "title": "MICHAEL Michael Kors Beige Leather Gladstone Satchel",
+          "description": "This satchel is rendered in the finest quality materials into an elegant design. Versatile and functional, it is well sized for your daily use.",
+          "brand": "MICHAEL Michael Kors",
+          "category": "Women, Women's Handbags, Satchels",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "beige",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-65063d4ff789a4100e7d129cd6d6b994a915444bed8542bd16ec98f883056577",
+          "title": "Dkny Bryant Park Red Leather Tote Bag",
+          "description": "This alluring tote bag for women has been designed to assist you on any day. Convenient to carry and fashionably designed, the tote is cut with skill and sewn into a great shape. It is well equipped to be a reliable accessory.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "red",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-8696966df017395bf04704bb5d91aa182299abc41ebdcd9f89e908447dac8f75",
+          "title": "Valentino Red Leather Rockstud Zip Around Continental Wallet",
+          "description": "This classy wallet brings along a touch of luxury and immense style. It comes perfectly crafted to neatly carry your cards and cash.",
+          "brand": "Valentino",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "red",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-e0925caae57561008ff112acc48028984175c28bbd09c91442842a5857a6d666",
+          "title": "Alviero Martini 1A Classe Grey Coated Canvas and Leather Shoulder Bag",
+          "description": "If you are looking for something that reflects chic and luxury, then this bag is a fine choice. Crafted from premium materials, it can be conveniently carried around, and its interior is spaciously sized to house your belongings with ease.",
+          "brand": "Alviero Martini 1A Classe",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "grey",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-b9369e07e6b1e95d7b2bd528cf233359068fe63db125c1787131b654ec2d5951",
+          "title": "Michael Kors Hamilton North South Large Black Leather Tote Bag",
+          "description": "This alluring tote bag for women has been designed to assist you on any day. Convenient to carry and fashionably designed, the tote is cut with skill and sewn into a great shape. It is well equipped to be a reliable accessory.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-68d045a868bedbb48635e4c209766c03a71b04babf47b795e01f2313f788203c",
+          "title": "Michael Kors Bedford Grey Snakeskin Embossed Leather Shoulder Bags",
+          "description": "Stunning in appeal and high on style, this Bedford crossbody bag from Michael Kors is a must have accessory It is created using grey snakeskin embossed leather and exhibits a handle drop, silver tone hardware, and a fabric lined interior. Elevate your style and look classy as you carry this bag.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "grey",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-7df7cf6e87e9166575039ce52f49703eef881bfc11280bdc6d573ac902929f53",
+          "title": "Kate Spade Newbury Lane Brown Leather Tote Bag",
+          "description": "This stately Newbury Lane tote from Kate Spade comes in a lovely brown shade. This trendy piece is crafted from leather and is a perfect pick for the season. It also has a spacious fabric interior and two zip compartments. Carry the bag using the dual handles.",
+          "brand": "Kate Spade",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "brown",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-0c7ab945b7197a373299d6720b85d5a840b2ff4c37b1924b87d2b5f5b89bcd8f",
+          "title": "Dkny Grey Leather Satchel",
+          "description": "This satchel is rendered in the finest quality materials into an elegant design. Versatile and functional, it is well sized for your daily use.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Satchels",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "grey",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-c49775776c0257e6c47fe67f3505d93fd35f861cccb7f7e30ccc791bb08e4a78",
+          "title": "Michael Kors Beige/White Signature Coated Canvas and Leather Charm Satchel",
+          "description": "Stylish and easy to carry, this designer satchel will be a fine choice for work or after. Lined well, this pre loved bag for women can easily fit all your essentials. It can be held in your arm or hand.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Satchels",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-3fcb0feb95f1d9f69fc085898a51d06ffa24915442ca263d0528a9d05a194e17",
+          "title": "Chanel Gold Charm Icon Leather CC Bifold Wallet",
+          "description": "This classy Chanel bifold wallet brings along a touch of luxury and immense style. It comes perfectly crafted to neatly carry your cards and cash.",
+          "brand": "Chanel",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 411,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "gold",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-2e7aacba8df83e231a275612d4858e11302fcd71718f1645e9bdccba094e01e1",
+          "title": "MICHAEL Michael Kors Red Leather Satchel",
+          "description": "This satchel is built to hold your essentials in the most fashionable way Easy to style, well made using best materials, and coming from the top brand, the satchel will add immense style to your ensemble.",
+          "brand": "MICHAEL Michael Kors",
+          "category": "Women, Women's Handbags, Satchels",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "red",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-607f2e745e433a8b28a8bbf796c79f0e260f184ba9dc9c32afa2d30db3959996",
+          "title": "Kate Spade Nora XS Pink Leather Top Handle Bags",
+          "description": "This Kate Spade beauty arrives in a gorgeous shape and design. It has a pink leather body, a top handle, and a flap to secure the fabric interior. Overall, the bag looks ready to lift your effortless style.",
+          "brand": "Kate Spade",
+          "category": "Women, Women's Handbags, Satchels",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "pink",
+            "size": "XS",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-1d0c979d17d32bf96b614017b863e6ab2b919d7decdc76aebfb6f82c2e656015",
+          "title": "Kate Spade Black Leather Zip Satchel",
+          "description": "Stylish and easy to carry, this designer satchel will be a fine choice for work or after. Lined well, this pre loved bag for women can easily fit all your essentials. It can be held in your arm or hand.",
+          "brand": "Kate Spade",
+          "category": "Women, Women's Handbags, Satchels",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-8ed1b1eb929c698dcce9e2442a4ccfb4aae67f8986af52e650814c3cc29ef01b",
+          "title": "Furla Silver Leather Hobos",
+          "description": "This hobo is tailored to exude finesse and functionality while completing your ensemble with style. It features a well crafted exterior adorned in a lovely hue and a spacious interior. Add some extra style to your everyday looks with this marvelous creation.",
+          "brand": "Furla",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "silver",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-ca14aa5efff62bbc923d2f0610ff4184d3bcd0aad4cecee9628c2a8aca854697",
+          "title": "Tory Burch Black/White Stripe Leather Kerrington Crossbody Bag",
+          "description": "Designed to last, this beautiful crossbody bag is a smart buy. Comfortable and easy to carry, this handy creation comes with an interior lined to keep your essentials organized and safe.",
+          "brand": "Tory Burch",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-b85d44ddb80474738fc3461ab963498e7d890a1431a3fab8b1ffb512c2d76527",
+          "title": "DKNY Beige Quilted Leather Flap Shoulder Bag",
+          "description": "If you are looking for something that reflects chic and luxury, then this DKNY bag is a perfect choice. Crafted from premium materials, it can be conveniently carried around, and its interior is spaciously sized to house your belongings with ease.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "beige",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-2c19ff34fb2a67e229f4210e4806ece4b084cbeea9126e16d95f4c8e3398030c",
+          "title": "Aigner Blue Leather Logo Flap Continental Wallet",
+          "description": "This designer wallet is an immaculate balance of sophistication and rational utility. It has been designed using prime quality materials and elevated by a sleek finish. The creation is equipped with ample space for your monetary essentials.",
+          "brand": "Aigner",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "blue",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-22642136147cfcb726f7687a393919ed554d565697c1362a3f3adcc8beac049e",
+          "title": "Aigner Brown/Beige Monogram Canvas and Leather Logo Flap Hobo",
+          "description": "This hobo is tailored to exude finesse and functionality while completing your ensemble with style. It features a well crafted exterior adorned in a lovely hue and a spacious interior. Add some extra style to your everyday looks with this marvelous creation.",
+          "brand": "Aigner",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-2021f0ca9ac1bb244161089879558a2107e8c2933cef2aa8c7ca3c72ccafeb42",
+          "title": "DKNY Beige/Brown Monogram Canvas and Leather Front Zip Tote",
+          "description": "Carry everything you need in style thanks to this DKNY monogram canvas and leather tote. Presented in beige and brown, this is an accessory that promises enduring style and usage.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-f7dc3f800f63fadd158267d6131f9980fc8e57efc4ff8bb140a6f2605cb53b10",
+          "title": "Yves Saint Laurent Pink Leather Ligne Y Flap Wallet",
+          "description": "This classy Yves Saint Laurent wallet comes in a stunning pink color with a gold tone Y logo. It comes perfectly crafted to neatly carry your cards and cash.",
+          "brand": "Yves Saint Laurent",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 141,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "pink",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-dac5c2ad0cd49dbcd45620039dd01952ab4c3e58e9e350a1b420a7bf9b8fc449",
+          "title": "Dkny Brown Lizard Embossed Leather Chain Clutch",
+          "description": "This clutch is just the right accessory to compliment your chic ensemble. It comes crafted in quality material featuring a well sized interior that can comfortably hold all your little essentials.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Clutches",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "brown",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-a7dbd1c028dc462549518c7e92be23e92990ff60a796883f015e3d3932ead2fa",
+          "title": "Dkny Brown Saffiano Leather Shoulder Bags",
+          "description": "Designer bags are ideal companions for ample occasions Here we have a fashion meets functionality piece crafted with precision. It has been equipped with a well sized interior that can easily fit your small essentials.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "brown",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-1fc41e29800771839c9c900f896dcb2a79b14610f32ced24827b5050e39ece09",
+          "title": "Michael Kors Brown Leather Cecelia Crossbody Bag",
+          "description": "Marked by flawless craftsmanship and enduring appeal, this MK bag is bound to be a versatile and durable accessory. It has a spacious size.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "brown",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-cfd5df244ec8cdbc5c695b11cdf2977c9767ee3467fcb1f57346596b2300a40c",
+          "title": "MICHAEL Michael Kors Grey Leather Small Selma Crossbody Bag",
+          "description": "The shoulder strap of this MICHAEL Michael Kors bag makes it a comfortable carry option. Made from leather, it features silver tone hardware, brand detailing on the front, and a grey shade. The nylon interior of the bag is equipped with enough space to keep your belongings hassle free.",
+          "brand": "MICHAEL Michael Kors",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "grey",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-286dd4d7c163e0aeee6459c56b9edac045a1f746930f2a110f99cf78407548e6",
+          "title": "Dkny Blue Leather Chain Crossbody Bag",
+          "description": "Designed to be durable, this lovely crossbody bag is a prized buy. Chic and easy to carry, the creation comes with a long shoulder strap and a spacious interior to keep your essentials safe.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "blue",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-fe5fc71d1115596a1978e3f5a3220e5110c68ecba2ea3062abda5c79254f8c8a",
+          "title": "Tory Burch Robinson Pink Leather Crossbody Bags",
+          "description": "This Tory Burch leather bag has been crafted with attention to detail. Lined with nylon, the interior is secured with flap closure and is equipped with a slip pocket. While the shoulder strap makes it comfortable to carry, the brand logo on the front gives the bag a luxe finish.",
+          "brand": "Tory Burch",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "pink",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-5d93c279fb177a0329a6a9f2d6ee725c43c56c0f1b9eb404e3e50de9967bfe92",
+          "title": "MICHAEL Michael Kors Selma Beige Leather Tote Bag",
+          "description": "Know to create stylish, sophisticated, and timeless designs, this is a brand worth investing in. The bags that come from this labels atelier are exquisite. This tote bag is no different. It has been made from quality materials and comes with an interior that is equipped with enough space for all essentials.",
+          "brand": "MICHAEL Michael Kors",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "beige",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-46dc7b448ab2acdc7010c5a06fd75c495ec5e46d7624f9f1b956c81e5b486a54",
+          "title": "Emilio Pucci Multicolor Printed Leather Zip Compact Wallet",
+          "description": "This designer wallet is an immaculate balance of sophistication and rational utility. It has been designed using prime quality materials and elevated by a sleek finish. The creation is equipped with ample space for your monetary essentials.",
+          "brand": "Emilio Pucci",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-221aa3c5206c8bd9bb69447d1155a21cd8ae0909490262b89b48dd24c60f9171",
+          "title": "Aigner Black Monogram Canvas and Leather Logo Handle Hobo",
+          "description": "Take your style a notch higher with this understated yet fashionable hobo. Cut skillfully, the bag features a spacious interior. It is perfect for daily use",
+          "brand": "Aigner",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-4209c6f0a723ae76c837f371d3c18d0e3298868c57a8db5fc1457b938fb4fd28",
+          "title": "MICHAEL Michael Kors Turnlock Black Python Embossed Leather Shoulder Bags",
+          "description": "Functional and stylish, this designer labels collections capture the effortless, elegant finesse of the modern woman. Crafted from quality materials, this chic bag is easy to carry and can fit in your daily essentials effortlessly.",
+          "brand": "MICHAEL Michael Kors",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-60b4cab076b7d042c23af97adae54b7c88a838f8cfa9396d64e7611c4c351253",
+          "title": "Furla White Leather Tote Bag",
+          "description": "This alluring tote bag for women has been designed to assist you on any day. Convenient to carry and fashionably designed, the tote is cut with skill and sewn into a great shape. It is well equipped to be a reliable accessory.",
+          "brand": "Furla",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "white",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-0a3cae811df4579dd1b34b85537bc5bea5f41360f614664f3a52f1e4c6437d78",
+          "title": "MICHAEL Michael Kors Beige/Brown Signature Coated Canvas and Leather Mini Camera Crossbody Bag",
+          "description": "Perfect for conveniently housing your essentials in one place, this MK bag is a worthy investment. It is super functional and offers a look of luxury.",
+          "brand": "MICHAEL Michael Kors",
+          "category": "Women, Women's Handbags, Crossbody Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-f55f5981477dec7442c1d1d8c71a6db4122999e4a2ee9d74f35886ebba4852c2",
+          "title": "DKNY Red Leather Front Dome Satchel",
+          "description": "This satchel is rendered in the finest quality materials into an elegant design. Versatile and functional, it is well sized for your daily use.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Satchels",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "red",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-9a097071ae3f92dc31a01549c19737b1906bb22dc68412c31274d07fe95c3635",
+          "title": "Lanvin White Leather Miss Sartorial Wristlet Clutch",
+          "description": "This clutch is just the right accessory to compliment your chic ensemble. It comes crafted in quality material featuring a well sized interior that can comfortably hold all your little essentials.",
+          "brand": "Lanvin",
+          "category": "Women, Women's Handbags, Clutches",
+          "merchant": "The Luxury Closet",
+          "price": 145,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "white",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-64605385b68027ce64ec617ff16ee869a9ab9dffcdeac972e7437f13b8d45657",
+          "title": "CH Carolina Herrera Yellow Embossed Leather Wallet",
+          "description": "This designer wallet is an immaculate balance of sophistication and rational utility. It has been designed using prime quality materials and elevated by a sleek finish. The creation is equipped with ample space for your monetary essentials.",
+          "brand": "CH Carolina Herrera",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "yellow",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-b3c7342a25b3682aaaf4f4960f19c80188bb33ae4e86c0f55a4bdd189e13a400",
+          "title": "Furla Beige Leather, Ostrich Embossed Leather and Suede Hobos",
+          "description": "Indulge in luxury with this designer bag. Meticulously crafted from premium materials, it combines exquisite design, impeccable craftsmanship, and timeless elegance. Elevate your style with this fashion accessory.",
+          "brand": "Furla",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "beige",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-727e80d44cd33cc5925b935a8db0a0376c0765b2241c2c4d1af5db7290e24d44",
+          "title": "DKNY Old Rose Leather Zippy Wristlet Clutch",
+          "description": "Functional and fashionable, this clutch is a classy styling choice. It is crafted from quality materials, and its lined interior will keep your evening essentials in a neat way.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Clutches",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-5be1c9964b010d693e40098f98cd2f6a545b00fd943623ba7886e84f067af71d",
+          "title": "Michael Kors Jet Set Large Gold Leather Shopper Tote",
+          "description": "Be it your daily commute to work, shopping sprees, and vacations, a tote bag will never fail you. This MK creation is made to last and assist you in your fashion filled days.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "gold",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-fba7c6c00f53c10537cfb0459da5873819cb0d7235b4260cddc146aea0c942a9",
+          "title": "Charm-D S-Small shoulder bag in quilted nylon",
+          "description": "Womens handbag in wrinkled nylon. Informed by utility and chain play, this compact bag has a soft, padded construction quilted and stitched in argyle diamonds. A matte rubberised chain with dangling logo charms drapes over the flap, adding a playful touch-the accessory also doubles as a necklace or bracelet. Can be carried over the shoulder, crossbody or as a clutch.",
+          "brand": "DIESEL",
+          "category": "Sale/Sale Simples",
+          "merchant": "Diesel",
+          "price": 1230,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "variant": {
+            "size": "S"
+          },
+          "source": {
+            "providerId": "diesel",
+            "providerName": "Diesel",
+            "sourceType": "affiliate_feed"
+          }
+        },
+        {
+          "observationId": "obs-864e0b63a3adf2ae4809fbcd0a7101f7136aa058815bf9e6bcae01ecc456c3c1",
+          "title": "Michael Kors Beige/Off White Signature Coated Canvas and Leather East/West Hamilton Tote",
+          "description": "This alluring tote bag for women has been designed to assist you on any day. Convenient to carry and fashionably designed, the tote is cut with skill and sewn into a great shape. It is well equipped to be a reliable accessory.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-1adc0434895b92c091ea1781766a6906160ee8082d308a71e74fd55c3a385a23",
+          "title": "Michael Kors Hamilton North South Red Leather Tote Bag",
+          "description": "Elevate your style with this red handbag. This womens tote is crafted with precision, featuring rich leather that exudes both elegance and durability.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "red",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-e72fee9da4f840b17097e95c4134fc59d6ab639007e00edc9c08012a19f2f72e",
+          "title": "Louis Vuitton Rose Florentine Monogram Vernis Rossmore MM Bag",
+          "description": "Indulge in timeless luxury with this LV bag for women. Meticulously crafted, this exquisite accessory embodies elegance, functionality, and style, making it the ultimate companion for every sophisticated individual.",
+          "brand": "Louis Vuitton",
+          "category": "Women, Women's Handbags, Clutches",
+          "merchant": "The Luxury Closet",
+          "price": 279,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-55331787f4253cac47185679e21e20f0e35866fdcdbcd7b0cec83e9cfa751b6a",
+          "title": "Marc by Marc Jacobs Katie Pink Leather Clutches",
+          "description": "This Marc by Marc Jacobs clutch for women has the kind of design that ensures high appeal, whether held in your hand or tucked under your arm. It is a meticulously crafted piece bound to last a long time.",
+          "brand": "Marc by Marc Jacobs",
+          "category": "Women, Women's Handbags, Clutches",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "pink",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-83a19eefc5c9a3d19ab62f45c479b5067684a61abf5f6f8c06bd2fba244a87f6",
+          "title": "Dior Green Crackle Leather Large Diorama Flap Shoulder Bag",
+          "description": "Swap that regular everyday tote with this charming Diorama shoulder bag from the house of Dior. Sewn and assembled with care and love, the bag promises to boost your style and hold your daily essentials with great ease.",
+          "brand": "Dior",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 972,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "green",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-fcb42e2d87f07769cfd05caaa84d1ea8dc45d859d7318319629effe867e5718c",
+          "title": "Furla Green Leather Tote Bag",
+          "description": "This alluring tote bag for women has been designed to assist you on any day. Convenient to carry and fashionably designed, the tote is cut with skill and sewn into a great shape. It is well equipped to be a reliable accessory.",
+          "brand": "Furla",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "green",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-b7c4f0822c3ce5c9fdf3ec598789dc81c4342e03e2a94f7d1e2a3c313c0b085d",
+          "title": "Michael Kors Fuchsia Pink Quilted Leather Micro Selma Tote",
+          "description": "Michael Kors ensures you have a wonderful accessory to accompany you every day with this well crafted bag. It has a fuchsia pink hue and a practical size.",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "pink",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-8b97f93d102b7c3c8d71e1ac1c9627401cb195e32446a448dff832c690c914d2",
+          "title": "DKNY Pink Saffiano Leather Flap Wallet on Chain",
+          "description": "Crafted from durable saffiano leather, this DKNY WOC bag features a soft pink hue that adds a pop of color to your look. Its structured design includes a flap closure, keeping your essentials secure, while the strap offers hands free convenience.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Wallets",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "pink",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-8ffbb6b1fe5c991e88e0308f60452cc91539577e3103ca807ca598092e209006",
+          "title": "DKNY Blue Leather Chain Zip Tote",
+          "description": "DKNY ensures you have a wonderful accessory to accompany you every day with this well crafted bag. It has a signature look and a practical size.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "blue",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-f63c4a26a8bf0a51eb4aa1bdf628190fdb0c9343781e520fa9f24412e6b3f4c1",
+          "title": "MICHAEL Michael Kors Pink Signature Coated Canvas and Leather Backpack",
+          "description": "This practical and fashionable backpack will come in handy for daily use or as a style statement. It is designed using coated canvas and leather and sized perfectly to house your belongings.",
+          "brand": "MICHAEL Michael Kors",
+          "category": "Women, Women's Handbags, Backpacks",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "pink",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-7a0191e253730c42fd608d5fca282b0c5867a7512a3303100a96560caf230a11",
+          "title": "Dkny Black Monogram Canvas and Leather Envelope Flap Shoulder Bag",
+          "description": "Designer bags are ideal companions for ample occasions Here we have a fashion meets functionality piece crafted with precision. It has been equipped with a well sized interior that can easily fit your small essentials.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Shoulder Bags",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-76a594a5f5a0c5a9d8a538c3647f8071b0d9009da73e1a8419f42700b2eec6a9",
+          "title": "Michael Kors Rhea Beige Leather Backpacks",
+          "description": "Get set to look uber stylish with this beige backpack from Michael Kors. It has been crafted from leather it flaunts zippers that reveal a spacious fabric lined interior, a zip pocket on the front and shoulder straps. This piece is very much in vogue, so get your hands on this today",
+          "brand": "Michael Kors",
+          "category": "Women, Women's Handbags, Backpacks",
+          "merchant": "The Luxury Closet",
+          "price": 119,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "beige",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        },
+        {
+          "observationId": "obs-118cebcd042ba7031988aafcf19045a6dd0192d9a356e2992c565aa9161c86cd",
+          "title": "DKNY Black Saffiano Leather Bryant Park Zip Tote",
+          "description": "This alluring tote bag for women has been designed to assist you on any day. Convenient to carry and fashionably designed, the tote is cut with skill and sewn into a great shape. It is well equipped to be a reliable accessory.",
+          "brand": "Dkny",
+          "category": "Women, Women's Handbags, Totes Bag",
+          "merchant": "The Luxury Closet",
+          "price": 131,
+          "currency": "USD",
+          "availability": "in_stock",
+          "variant": {
+            "color": "black",
+            "condition": "used"
+          },
+          "source": {
+            "providerId": "luxury-closet",
+            "providerName": "The Luxury Closet",
+            "sourceType": "affiliate_feed",
+            "condition": "used"
+          }
+        }
+      ]
+    }
+  ]
+}

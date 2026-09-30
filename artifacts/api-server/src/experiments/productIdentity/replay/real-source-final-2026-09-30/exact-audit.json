@@ -1,0 +1,290 @@
+[
+  {
+    "caseId": "24",
+    "observationId": "obs-fb83a54491708e9350e1f7b91ae50a405fa02b61c3094ae54cb5a208e76dffb6",
+    "decision": "KEEP_EXACT",
+    "reason": "Etoren title and description identify an individual Huawei Nova 12 SE BNE-LX1 phone; Huawei-scoped MODEL identifier also states BNE-LX1, matching the query."
+  },
+  {
+    "caseId": "1",
+    "observationId": "obs-74c35b0fab40d255f36d4b2a2f655b1dfb4294dbc1236b3e29b11d0c4656af92",
+    "decision": "KEEP_EXACT",
+    "reason": "Samsung's individual Galaxy S24 product page is titled Onyx Black 256 GB and variant data confirms 256GB; page text notes out of stock, which does not negate its product identity."
+  },
+  {
+    "caseId": "1",
+    "observationId": "obs-b8a57e42d4187ee07b963d556b1c1b00ba0922d2805b631aef784397549f18ae",
+    "decision": "KEEP_EXACT",
+    "reason": "Amazon listing title identifies an individual Samsung Galaxy S24 with 256GB; the model matches and query imposes no color constraint."
+  },
+  {
+    "caseId": "1",
+    "observationId": "obs-b2815c53b4a7a31559ff625b901a533e1ee4d64f57281ee79325d95b5dbc9657",
+    "decision": "KEEP_EXACT",
+    "reason": "Microless title and description identify an individual Galaxy S24 256GB; the displayed model code is product-level evidence, not title similarity alone."
+  },
+  {
+    "caseId": "2",
+    "observationId": "obs-4676212a7eb695e9b0dac65273ee6b8483dc66e54314a0fe1138b21e84a9876e",
+    "decision": "KEEP_EXACT",
+    "reason": "Amazon title and description identify an individual Huawei Watch GT 5 46mm listing; the Pro suffix is absent and the model matches."
+  },
+  {
+    "caseId": "2",
+    "observationId": "obs-3fd152c576d6db6063adf0744accff4da4b7760427efa6deea11df476b9730b4",
+    "decision": "DOWNGRADE_RELEVANT",
+    "reason": "Pricena is explicitly a price-comparison page, not an individual listing. Its snippet identifies a GT 5 41 model and price, so it is relevant but does not meet the individual-product evidence requirement."
+  },
+  {
+    "caseId": "2",
+    "observationId": "obs-c0b0b2f8ae784d6de1286c53596090d662f3bfc8d205c8b45dc7e6b193eef466",
+    "decision": "KEEP_EXACT",
+    "reason": "Sharaf DG title and description describe buying a specific Huawei Watch GT5 41mm smartwatch in brown; this is an individual product listing, not the broad GT5 browse pages."
+  },
+  {
+    "caseId": "3",
+    "observationId": "obs-c331689e9949404ecbec4de0097ebd242f949c885621e988656f82f1806212b4",
+    "decision": "KEEP_EXACT",
+    "reason": "Nike Saudi title identifies an individual Air Max 270 women's shoe item; no gender or color constraint is present in the query."
+  },
+  {
+    "caseId": "3",
+    "observationId": "obs-1ae83100f167de5563d481e7a61d7c75b67d7ff50d7ef0f4b4aeb7e36c4a8e3f",
+    "decision": "KEEP_EXACT",
+    "reason": "Nike Saudi identifies an individual Air Max 270 women's shoe product and names its Black/White/Anthracite colorway; model and shoe type match."
+  },
+  {
+    "caseId": "3",
+    "observationId": "obs-3b75616adc95ba2e146c174ac217266cd2e636d93410ae15c41446f5345fae10",
+    "decision": "KEEP_EXACT",
+    "reason": "Nike Saudi identifies an individual Air Max 270 women's shoe product with a specific White/Pale Ivory/Muslin/Black colorway; no variant constraint is requested."
+  },
+  {
+    "caseId": "3",
+    "observationId": "obs-ab468a3d829a1bcb86bf4d8041bbe166449b97f906fd755c3d7f6f354561b0d3",
+    "decision": "KEEP_EXACT",
+    "reason": "Nike Saudi title and description identify an individual men's Air Max 270 shoe item; the query does not constrain gender or color."
+  },
+  {
+    "caseId": "3",
+    "observationId": "obs-c49d66cb9efc017b1d45d78cb867340385742a52fc7ed623a038659856e04366",
+    "decision": "KEEP_EXACT",
+    "reason": "Nike Saudi identifies an individual men's Air Max 270 shoe product in Black/Black/Black, matching the requested model and product type."
+  },
+  {
+    "caseId": "3",
+    "observationId": "obs-196491740c99fb957e8582c2e2a64d144e3eb112fa0f3a570d66838e6516de48",
+    "decision": "KEEP_EXACT",
+    "reason": "Nike Saudi title explicitly identifies an individual Air Max 270 Older Kids' shoe item; query specifies model and shoes only, not adult sizing."
+  },
+  {
+    "caseId": "3",
+    "observationId": "obs-ddba8886695cf767034fdb05f2330dedbc272f7321db16f46349a384c1b35671",
+    "decision": "KEEP_EXACT",
+    "reason": "Nike Saudi title identifies an individual men's Air Max 270 shoe item and names its Black/White/Solar Red/Anthracite colorway; no variant constraint conflicts."
+  },
+  {
+    "caseId": "4",
+    "observationId": "obs-c6a6a74241c79ee97e30a5282899c35eb14e6de066005264d89e3c75e9c41d1b",
+    "decision": "KEEP_EXACT",
+    "reason": "The product title identifies Kérastase Genesis Fortifying Anti Hairfall Serum 90ml, with 90ml in the variant; the snippet's mention of another bottle size does not change the titled item."
+  },
+  {
+    "caseId": "4",
+    "observationId": "obs-1eb5162a1bf898845317efba8665e851237f712f7d9bb0ce1274d64ca8655d63",
+    "decision": "KEEP_EXACT",
+    "reason": "Title and shipping text identify the individual Kérastase Genesis Sérum Anti-Chute Fortifiant 90ml product."
+  },
+  {
+    "caseId": "4",
+    "observationId": "obs-a8239c442992892ab9347196ed34dc8451c3800e6bbe6f4b06fea856b970a519",
+    "decision": "KEEP_EXACT",
+    "reason": "Superbalist product title, volume details and review/delivery snippet identify the individual Genesis Serum Anti-Chute Fortifiant 90ml."
+  },
+  {
+    "caseId": "4",
+    "observationId": "obs-e3eddf31a484576df7116930ee2bafdb468ca9594d457571f13d6c76f0ec4c97",
+    "decision": "KEEP_EXACT",
+    "reason": "FACES product title and buy text explicitly identify Kerastase Genesis Serum Anti-Chute Fortifiant Hair Serum 90ml."
+  },
+  {
+    "caseId": "4",
+    "observationId": "obs-4338d06c8374cb4ef922c7a04ba27e05ba3bd0eb0bf16dc44a865a810c2a2b44",
+    "decision": "KEEP_EXACT",
+    "reason": "Voga Closet title and product text name the individual Kérastase Genesis Serum Anti-Chute Fortifiant 90ml."
+  },
+  {
+    "caseId": "4",
+    "observationId": "obs-1eece85cd6dd826cd596a6274c42287d30fbe525cbfd5f1f35c5812305a390d9",
+    "decision": "KEEP_EXACT",
+    "reason": "Noon title identifies the specific Kérastase Genesis Serum Anti-Chute Fortifiant 90ml product; the query's model/name and volume are present."
+  },
+  {
+    "caseId": "4",
+    "observationId": "obs-a0b5555530f974dd4cd6c4a6c08e8f27b7986682b9d30e8637dfffac70e00090",
+    "decision": "KEEP_EXACT",
+    "reason": "Lookfantastic title and buy text identify Kérastase Genesis Hair Serum with Anti-Chute Fortifiant and 90ml."
+  },
+  {
+    "caseId": "5",
+    "observationId": "obs-b82951058a53565b327e006083dc1a27d6616e895eeb8acf36433ef80c3c3134",
+    "decision": "KEEP_EXACT",
+    "reason": "Diesel product-feed item title explicitly identifies 2019 D-Strukt slim jeans, with Diesel as brand and merchant."
+  },
+  {
+    "caseId": "5",
+    "observationId": "obs-28a56f228eb1d94b9ed684086deeef38a2cc55a9d45ed35d6105eea02544e43a",
+    "decision": "KEEP_EXACT",
+    "reason": "Diesel product-feed item title identifies Slim Jeans - 2019 D-Strukt; product description supplies individual garment details."
+  },
+  {
+    "caseId": "5",
+    "observationId": "obs-ca10773470b23e7403a6b7f3bca45e5d136fbdc7578cae604c3e7d154dcd5ef1",
+    "decision": "KEEP_EXACT",
+    "reason": "Diesel feed title and description identify a specific 2019 D-Strukt slim-jeans product."
+  },
+  {
+    "caseId": "5",
+    "observationId": "obs-adf8959238328c709bad449c5be5452b6fbe22176895e681add6ab46caf187b8",
+    "decision": "KEEP_EXACT",
+    "reason": "Diesel feed item title specifies 2019 D-Strukt slim jeans and its description details the garment; gray wash is not a query constraint."
+  },
+  {
+    "caseId": "5",
+    "observationId": "obs-9b7588c17d544d3c9a75ce6ddcd7b813f532ff106e1d5c3ce3dc74bc63508a23",
+    "decision": "KEEP_EXACT",
+    "reason": "Diesel feed item title specifies Slim Jeans - 2019 D-Strukt; no wash, size, or gender constraint is in the query."
+  },
+  {
+    "caseId": "5",
+    "observationId": "obs-59d006c792cb40296db956e356d5a325c52bbaa69c3a050a03f4466471b22a20",
+    "decision": "KEEP_EXACT",
+    "reason": "Diesel feed item title specifies Slim Jeans - 2019 D-Strukt; description confirms a specific denim garment."
+  },
+  {
+    "caseId": "5",
+    "observationId": "obs-da15de895f7933110757f3585355f511ff1386b665bb5bdac0cdb301e08ffd6c",
+    "decision": "KEEP_EXACT",
+    "reason": "Diesel.com title and description identify a specific men's 2019 D-Strukt slim-jeans item."
+  },
+  {
+    "caseId": "5",
+    "observationId": "obs-a284b6698753e1a3a11256b7dcb65db432c1787ff8f2984504d5b29e19f76f6e",
+    "decision": "KEEP_EXACT",
+    "reason": "Diesel feed title explicitly specifies 2019 D-Strukt slim jeans and description provides individual wash/material details."
+  },
+  {
+    "caseId": "5",
+    "observationId": "obs-9e11d9b30a5cebc168860d7244806bf9d6e3b0937a1c1ab7338052a0dacb126f",
+    "decision": "KEEP_EXACT",
+    "reason": "Diesel feed title specifies the 2019 D-Strukt model and slim jeans; query imposes no further variant constraints."
+  },
+  {
+    "caseId": "5",
+    "observationId": "obs-1993fc11502377aa68698129746a81dbebe94368d60489f20ed961fdcea4967e",
+    "decision": "KEEP_EXACT",
+    "reason": "Diesel product-feed record is titled Slim Jeans - 2019 D-Strukt and has Diesel brand/merchant evidence; missing description does not undermine the explicit item title."
+  },
+  {
+    "caseId": "5",
+    "observationId": "obs-9d56b7adac27ee3ae01ca9cffe47ffe98a98c4aceb9633b6ce17e5c3162444b9",
+    "decision": "KEEP_EXACT",
+    "reason": "Diesel feed item title explicitly names 2019 D-Strukt slim jeans and description gives garment details."
+  },
+  {
+    "caseId": "6",
+    "observationId": "obs-c03821e1244b150a787fd11b4015213728fe05bab148cc8e4ccee9978f0bd572",
+    "decision": "KEEP_EXACT",
+    "reason": "Noon title identifies an individual Apple AirPods Pro 2 wireless-earbud product; no more specific generation or connector is required by the query."
+  },
+  {
+    "caseId": "6",
+    "observationId": "obs-234a1885b7a2e711d182ae45b7e16401bcfac97c1b3bf8d7773e120a6b6ef9c0",
+    "decision": "KEEP_EXACT",
+    "reason": "Jarir title and description identify an individual Apple AirPods Pro 2nd-generation earbuds item."
+  },
+  {
+    "caseId": "6",
+    "observationId": "obs-9e263a4038725f312e7c3abdb22577ebac6063cc52b6f8a93aa831397455ab52",
+    "decision": "KEEP_EXACT",
+    "reason": "Noon Arabic title names AirPods Pro (second generation) with MagSafe charging case; product text describes the Pro generation, matching the requested Pro 2."
+  },
+  {
+    "caseId": "6",
+    "observationId": "obs-adcd316e188d457b6510364fc332ff3da5f4a3c444334faa61983b0cae44b76a",
+    "decision": "KEEP_EXACT",
+    "reason": "Microless title and description identify AirPods Pro 2nd Generation and the specific MQD83QM/A product model."
+  },
+  {
+    "caseId": "6",
+    "observationId": "obs-70a69f8833c54ad709ee657afb954db31782a1d1c8d92de177a588f64ee6ee7d",
+    "decision": "KEEP_EXACT",
+    "reason": "Amazon listing title and description identify an individual Apple AirPods Pro 2 product."
+  },
+  {
+    "caseId": "6",
+    "observationId": "obs-4a5e44bbb445de4f342dbf11c4398c407555051d2ea861b7da1d12dfa85c5f27",
+    "decision": "KEEP_EXACT",
+    "reason": "Extra Arabic title and buy text identify an individual white Apple AirPods Pro second-generation MagSafe product."
+  },
+  {
+    "caseId": "6",
+    "observationId": "obs-16224838aaa31b6e487df2b1fb12e8e17978084614d5af337267febe834cfed1",
+    "decision": "KEEP_EXACT",
+    "reason": "Amazon title and description identify the individual AirPods Pro 2 wireless earbuds product."
+  },
+  {
+    "caseId": "13",
+    "observationId": "obs-f39eb0dde448238b1afbe3ce6a68c504b3756fdd574ee13e4e45b0fd92a85e9d",
+    "decision": "KEEP_EXACT",
+    "reason": "Amazon listing title identifies men's Nike running shoes in black and explicitly gives EU 42; these satisfy all query constraints without relying on inferred model identity."
+  },
+  {
+    "caseId": "14",
+    "observationId": "obs-83ca047444c4c93550f0ebc96d254b2f5ef5be36824ef35869e7a2bbfe2ded19",
+    "decision": "DOWNGRADE_RELEVANT",
+    "reason": "Soum title and copy advertise its used-iPhone-15 offering generally and do not identify an individual device/listing or its variant; it is relevant browse/landing-page evidence only."
+  },
+  {
+    "caseId": "14",
+    "observationId": "obs-b78d68a6de71a047575ab5896032c15f4f418b49eee9fd1a045afea6f861a928",
+    "decision": "KEEP_EXACT",
+    "reason": "Yas Estore identifies an individual Apple iPhone 15 listing marked USED/Renewed and specifies 128GB; query does not require a storage size."
+  },
+  {
+    "caseId": "16",
+    "observationId": "obs-741e4a9d0a8a709f25583f16585d3b6d56034f2300107b4d98af0f1f61b6c151",
+    "decision": "DOWNGRADE_RELEVANT",
+    "reason": "Desertcart title and copy say only 'Diesel Men's Bootcut Jeans' and provide no individual product name or item-specific evidence; this reads as a broad product/category page, relevant to the query but not exact under the listing requirement."
+  },
+  {
+    "caseId": "16",
+    "observationId": "obs-686418271418996f34bdd322f2cbac63f4444b027c8d57c53ce874987e1dea87",
+    "decision": "KEEP_EXACT",
+    "reason": "Although the Ounass title is a men's Diesel jeans browse heading, its source-visible snippet identifies a specific 2023-D Finitive cotton-blend jeans item and price, matching this broad men's Diesel-jeans query."
+  },
+  {
+    "caseId": "27",
+    "observationId": "obs-0847f3d0e99b66c42721e001eeca322e48ca6f6bb96b0814c766c57fe28d4c96",
+    "decision": "KEEP_EXACT",
+    "reason": "Amazon product metadata explicitly gives model number CW2288-111 for the individual men's Air Force 1 '07 item; this is code-level evidence, not a generic AF1 page."
+  },
+  {
+    "caseId": "27",
+    "observationId": "obs-89a494eebe0cb4c9b84d309ef381168bc0b5ab50f27111296bdc33f269a3ae3e",
+    "decision": "KEEP_EXACT",
+    "reason": "SVD title identifies an individual white Air Force 1 '07 item and description explicitly states CW2288-111."
+  },
+  {
+    "caseId": "27",
+    "observationId": "obs-41114bfc00d10dbf6271fc5a2ec01b95cfaeb4af7c3e7aee005bf46f0c79048c",
+    "decision": "KEEP_EXACT",
+    "reason": "KICKS CREW title names the individual men's white Air Force 1 CW2288-111; source styleCode and Nike-scoped STYLE identifier independently repeat the exact required code."
+  },
+  {
+    "caseId": "27",
+    "observationId": "obs-9fabd8ba0abfb31a4132523489ab472d45fed2179e1dd17e1d03e84926a16254",
+    "decision": "KEEP_EXACT",
+    "reason": "Nike Saudi identifies an individual white/white Air Force 1 '07 men's shoe and explicitly states Style: CW2288-111, matching the required SKU."
+  }
+]

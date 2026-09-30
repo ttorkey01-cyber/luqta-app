@@ -1,0 +1,3875 @@
+{
+  "schemaVersion": 1,
+  "pairs": [
+    {
+      "id": "real-observed-001",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "115b7e8d94cdafc8c982a854",
+        "title": "Buy Galaxy S24 Onyx Black 256 GB | Samsung Saudi Arabia",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "3419fb7d8359776acc784487",
+        "title": "SAMSUNG Galaxy S24 256GB price in Saudi Arabia - . best price, where to buy in KSA",
+        "providerId": "brave-web"
+      },
+      "query": "Samsung Galaxy S24 256GB",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 1,
+        "candidateIds": [
+          "115b7e8d94cdafc8c982a854",
+          "3419fb7d8359776acc784487"
+        ],
+        "evidence": [
+          {
+            "candidateId": "115b7e8d94cdafc8c982a854",
+            "providerId": "brave-web",
+            "title": "Buy Galaxy S24 Onyx Black 256 GB | Samsung Saudi Arabia"
+          },
+          {
+            "candidateId": "3419fb7d8359776acc784487",
+            "providerId": "brave-web",
+            "title": "SAMSUNG Galaxy S24 256GB price in Saudi Arabia - . best price, where to buy in KSA"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-002",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "2c18d1a09ed1c988c1a6809b",
+        "title": "Huawei Watch GT 5 price in Saudi Arabia | Compare Prices",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "2f70035564578b64a83565e8",
+        "title": "HUAWEI Watch GT 5 46 mm Smartwatch, 1.43\" AMOLED 326 PPI display, New Running and Cycling Mode, GPS, Health Monitor, 14 Days Battery Life, iOS and Android, Brown | Watch GT 5 Br Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca",
+        "providerId": "brave-web"
+      },
+      "query": "Huawei Watch GT 5",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 2,
+        "candidateIds": [
+          "2c18d1a09ed1c988c1a6809b",
+          "2f70035564578b64a83565e8"
+        ],
+        "evidence": [
+          {
+            "candidateId": "2c18d1a09ed1c988c1a6809b",
+            "providerId": "brave-web",
+            "title": "Huawei Watch GT 5 price in Saudi Arabia | Compare Prices"
+          },
+          {
+            "candidateId": "2f70035564578b64a83565e8",
+            "providerId": "brave-web",
+            "title": "HUAWEI Watch GT 5 46 mm Smartwatch, 1.43\" AMOLED 326 PPI display, New Running and Cycling Mode, GPS, Health Monitor, 14 Days Battery Life, iOS and Android, Brown | Watch GT 5 Br Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-003",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "03caf63cc88fe56ee236f8dc",
+        "title": "نايك رمادي Air Max 270 Sneakers for للأولاد",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "right": {
+        "id": "055da451157680b0d92cdce7",
+        "title": "نايك رمادي Air Max 270 Sneakers for للأولاد",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "query": "Nike Air Max 270 shoes",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 3,
+        "candidateIds": [
+          "03caf63cc88fe56ee236f8dc",
+          "055da451157680b0d92cdce7"
+        ],
+        "evidence": [
+          {
+            "candidateId": "03caf63cc88fe56ee236f8dc",
+            "providerId": "deal-outlet",
+            "title": "نايك رمادي Air Max 270 Sneakers for للأولاد"
+          },
+          {
+            "candidateId": "055da451157680b0d92cdce7",
+            "providerId": "deal-outlet",
+            "title": "نايك رمادي Air Max 270 Sneakers for للأولاد"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-004",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "006463fa205c5cb8cd9e106c",
+        "title": "Genesis Serum Anti-Chute Fortifiant - 90ml",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "00c4ee290b4347583443fa64",
+        "title": "فيكتور اند رولف Flowerbomb Nectar Eau De Parfum, 90ml for للنساء",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "query": "Kerastase Genesis Serum Anti-Chute Fortifiant 90ml",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 4,
+        "candidateIds": [
+          "006463fa205c5cb8cd9e106c",
+          "00c4ee290b4347583443fa64"
+        ],
+        "evidence": [
+          {
+            "candidateId": "006463fa205c5cb8cd9e106c",
+            "providerId": "brave-web",
+            "title": "Genesis Serum Anti-Chute Fortifiant - 90ml"
+          },
+          {
+            "candidateId": "00c4ee290b4347583443fa64",
+            "providerId": "deal-outlet",
+            "title": "فيكتور اند رولف Flowerbomb Nectar Eau De Parfum, 90ml for للنساء"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-005",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "05d875b6e21406a324f11e90",
+        "title": "Slim Jeans - 2019 D-Strukt",
+        "brand": "DIESEL",
+        "providerId": "diesel",
+        "offer": {
+          "merchant": "Diesel"
+        }
+      },
+      "right": {
+        "id": "1c1caf8dc2f5723b9ee9a41f",
+        "title": "Slim Jeans - 2019 D-Strukt",
+        "brand": "DIESEL",
+        "providerId": "diesel",
+        "offer": {
+          "merchant": "Diesel"
+        }
+      },
+      "query": "Diesel D-Strukt jeans",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 5,
+        "candidateIds": [
+          "05d875b6e21406a324f11e90",
+          "1c1caf8dc2f5723b9ee9a41f"
+        ],
+        "evidence": [
+          {
+            "candidateId": "05d875b6e21406a324f11e90",
+            "providerId": "diesel",
+            "title": "Slim Jeans - 2019 D-Strukt"
+          },
+          {
+            "candidateId": "1c1caf8dc2f5723b9ee9a41f",
+            "providerId": "diesel",
+            "title": "Slim Jeans - 2019 D-Strukt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-006",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "6adffc52ee0f0e55e49e8a83",
+        "title": "Apple Airpods Pro 2nd Generation With Magsafe Charging Case, Bluetooth 5.3 & Apple H2 Chip, Up to 6 Hours of Power, Personalized Spatial Audio, Upgraded Active Noise Cancellation, White | MQD83QM/A Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "7cd968d3c2c3631040ca5f3e",
+        "title": "Apple AirPods Pro 2nd Gen Earbuds Bluetooth (Device)/MagSafe Charging Case White - Jarir Bookstore KSA",
+        "providerId": "brave-web"
+      },
+      "query": "Apple AirPods Pro 2",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 6,
+        "candidateIds": [
+          "6adffc52ee0f0e55e49e8a83",
+          "7cd968d3c2c3631040ca5f3e"
+        ],
+        "evidence": [
+          {
+            "candidateId": "6adffc52ee0f0e55e49e8a83",
+            "providerId": "brave-web",
+            "title": "Apple Airpods Pro 2nd Generation With Magsafe Charging Case, Bluetooth 5.3 & Apple H2 Chip, Up to 6 Hours of Power, Personalized Spatial Audio, Upgraded Active Noise Cancellation, White | MQD83QM/A Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca"
+          },
+          {
+            "candidateId": "7cd968d3c2c3631040ca5f3e",
+            "providerId": "brave-web",
+            "title": "Apple AirPods Pro 2nd Gen Earbuds Bluetooth (Device)/MagSafe Charging Case White - Jarir Bookstore KSA"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-007",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "2d849cb72e4279a5e48b19a5",
+        "title": "Men's Watches & Accessories KSA | Best Price Offers | Riyadh, Jeddah",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "6daf6ea40fb8d9ba76cdc45c",
+        "title": "Buy Best Men Watches Online: 35-75% OFF, Riyadh, Jeddah KSA",
+        "providerId": "brave-web"
+      },
+      "query": "أبغى ساعة رجالية بحدود 500 ريال",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 8,
+        "candidateIds": [
+          "2d849cb72e4279a5e48b19a5",
+          "6daf6ea40fb8d9ba76cdc45c"
+        ],
+        "evidence": [
+          {
+            "candidateId": "2d849cb72e4279a5e48b19a5",
+            "providerId": "brave-web",
+            "title": "Men's Watches & Accessories KSA | Best Price Offers | Riyadh, Jeddah"
+          },
+          {
+            "candidateId": "6daf6ea40fb8d9ba76cdc45c",
+            "providerId": "brave-web",
+            "title": "Buy Best Men Watches Online: 35-75% OFF, Riyadh, Jeddah KSA"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-008",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "1c888f9a0705c310d6836503",
+        "title": "White Shoes | Buy White Sneakers for Men & Women in KSA | SSS",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "2fe6b99d08a95381f3c43c46",
+        "title": "حذاء ابيض رجالي | تسوق شوز ابيض للرجال اونلاين في السعودية | الشمس والرمال",
+        "providerId": "brave-web"
+      },
+      "query": "دور لي جزمة بيضاء مقاس EU 42",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 10,
+        "candidateIds": [
+          "1c888f9a0705c310d6836503",
+          "2fe6b99d08a95381f3c43c46"
+        ],
+        "evidence": [
+          {
+            "candidateId": "1c888f9a0705c310d6836503",
+            "providerId": "brave-web",
+            "title": "White Shoes | Buy White Sneakers for Men & Women in KSA | SSS"
+          },
+          {
+            "candidateId": "2fe6b99d08a95381f3c43c46",
+            "providerId": "brave-web",
+            "title": "حذاء ابيض رجالي | تسوق شوز ابيض للرجال اونلاين في السعودية | الشمس والرمال"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-009",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "619b074a2a08508f7acb257c",
+        "title": "اغلى عطر نسائي - كيف تشتريه بسعر أرخص مع كوبونات الموفر؟ - Almowafir",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "66cade2e3d7db17216b38229",
+        "title": "Perfume Women : Shop Online At Best Prices In Saudi | Souq Is Now",
+        "providerId": "brave-web"
+      },
+      "query": "أبي عطر نسائي بحدود 300 ريال",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 11,
+        "candidateIds": [
+          "619b074a2a08508f7acb257c",
+          "66cade2e3d7db17216b38229"
+        ],
+        "evidence": [
+          {
+            "candidateId": "619b074a2a08508f7acb257c",
+            "providerId": "brave-web",
+            "title": "اغلى عطر نسائي - كيف تشتريه بسعر أرخص مع كوبونات الموفر؟ - Almowafir"
+          },
+          {
+            "candidateId": "66cade2e3d7db17216b38229",
+            "providerId": "brave-web",
+            "title": "Perfume Women : Shop Online At Best Prices In Saudi | Souq Is Now"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-010",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "b871743e60a7bc6717b2fcd8",
+        "title": "Used Phones - Mobile Phones & Accessories for sale in Saudi Arabia | dubizzle Saudi Arabia (OLX)",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "cdb78a4093842e72fa28469b",
+        "title": "افضل عروض (mobile phone) جديد و مستعمل في السعودية",
+        "providerId": "brave-web"
+      },
+      "query": "أبي جوال مستعمل في جدة",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 12,
+        "candidateIds": [
+          "b871743e60a7bc6717b2fcd8",
+          "cdb78a4093842e72fa28469b"
+        ],
+        "evidence": [
+          {
+            "candidateId": "b871743e60a7bc6717b2fcd8",
+            "providerId": "brave-web",
+            "title": "Used Phones - Mobile Phones & Accessories for sale in Saudi Arabia | dubizzle Saudi Arabia (OLX)"
+          },
+          {
+            "candidateId": "cdb78a4093842e72fa28469b",
+            "providerId": "brave-web",
+            "title": "افضل عروض (mobile phone) جديد و مستعمل في السعودية"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-011",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "467c61683847812f22b5d53d",
+        "title": "Shop Black Collection Online @ Nike Saudi",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "83b64c33ad5d10a13f2453a3",
+        "title": "Nike Men's Running Shoes, Black, 42 EU : Buy Online at Best Price in KSA - Souq is now : Fashion",
+        "providerId": "brave-web"
+      },
+      "query": "Nike أسود مقاس EU 42",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 13,
+        "candidateIds": [
+          "467c61683847812f22b5d53d",
+          "83b64c33ad5d10a13f2453a3"
+        ],
+        "evidence": [
+          {
+            "candidateId": "467c61683847812f22b5d53d",
+            "providerId": "brave-web",
+            "title": "Shop Black Collection Online @ Nike Saudi"
+          },
+          {
+            "candidateId": "83b64c33ad5d10a13f2453a3",
+            "providerId": "brave-web",
+            "title": "Nike Men's Running Shoes, Black, 42 EU : Buy Online at Best Price in KSA - Souq is now : Fashion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-012",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "184dd80a3d89b6735d4550d8",
+        "title": "موبايل أيفون 15 برو ماكس مستعمل للبيع في السعودية بسعر مناسب",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "229ab78e6e24da3817f314c0",
+        "title": "Used - IPhone 15 & IPhone 15 Pro : Shop Online At Best Prices In Saudi | Souq Is Now",
+        "providerId": "brave-web"
+      },
+      "query": "iPhone 15 مستعمل",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 14,
+        "candidateIds": [
+          "184dd80a3d89b6735d4550d8",
+          "229ab78e6e24da3817f314c0"
+        ],
+        "evidence": [
+          {
+            "candidateId": "184dd80a3d89b6735d4550d8",
+            "providerId": "brave-web",
+            "title": "موبايل أيفون 15 برو ماكس مستعمل للبيع في السعودية بسعر مناسب"
+          },
+          {
+            "candidateId": "229ab78e6e24da3817f314c0",
+            "providerId": "brave-web",
+            "title": "Used - IPhone 15 & IPhone 15 Pro : Shop Online At Best Prices In Saudi | Souq Is Now"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-013",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "15e76c44a2886f4b861a461a",
+        "title": "Shop Diesel Jeans For Men Online in Saudi | Ounass",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "1cf49ef0446af0f6ce926b69",
+        "title": "Diesel Saudi Arabia Men's Jeans - Skinny, Slim, Straight",
+        "providerId": "brave-web"
+      },
+      "query": "Diesel jeans رجالي",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 16,
+        "candidateIds": [
+          "15e76c44a2886f4b861a461a",
+          "1cf49ef0446af0f6ce926b69"
+        ],
+        "evidence": [
+          {
+            "candidateId": "15e76c44a2886f4b861a461a",
+            "providerId": "brave-web",
+            "title": "Shop Diesel Jeans For Men Online in Saudi | Ounass"
+          },
+          {
+            "candidateId": "1cf49ef0446af0f6ce926b69",
+            "providerId": "brave-web",
+            "title": "Diesel Saudi Arabia Men's Jeans - Skinny, Slim, Straight"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-014",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "41db6195d6cc9a17c1506051",
+        "title": "Huawei - Mobile Phones / Mobile Phones & Communication Products : Shop Online At Best Prices In Saudi | Souq Is Now",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "977ac976f62428b0e1814cf0",
+        "title": "Huawei - Mobile Phones for sale in Saudi Arabia | dubizzle Saudi Arabia (OLX)",
+        "providerId": "brave-web"
+      },
+      "query": "Huawei BNE-LX1 phone",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 24,
+        "candidateIds": [
+          "41db6195d6cc9a17c1506051",
+          "977ac976f62428b0e1814cf0"
+        ],
+        "evidence": [
+          {
+            "candidateId": "41db6195d6cc9a17c1506051",
+            "providerId": "brave-web",
+            "title": "Huawei - Mobile Phones / Mobile Phones & Communication Products : Shop Online At Best Prices In Saudi | Souq Is Now"
+          },
+          {
+            "candidateId": "977ac976f62428b0e1814cf0",
+            "providerId": "brave-web",
+            "title": "Huawei - Mobile Phones for sale in Saudi Arabia | dubizzle Saudi Arabia (OLX)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-015",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "095dac310547fbef13c3282a",
+        "title": "Buy AirPods Pro 3 - Apple (SA)",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "959c56ef03017e145e82b428",
+        "title": "Apple airpods pro KSA | 30-75% OFF | Riyadh, Jeddah | noon",
+        "providerId": "brave-web"
+      },
+      "query": "Apple AirPods Pro A3047",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 25,
+        "candidateIds": [
+          "095dac310547fbef13c3282a",
+          "959c56ef03017e145e82b428"
+        ],
+        "evidence": [
+          {
+            "candidateId": "095dac310547fbef13c3282a",
+            "providerId": "brave-web",
+            "title": "Buy AirPods Pro 3 - Apple (SA)"
+          },
+          {
+            "candidateId": "959c56ef03017e145e82b428",
+            "providerId": "brave-web",
+            "title": "Apple airpods pro KSA | 30-75% OFF | Riyadh, Jeddah | noon"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-016",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "15e76c44a2886f4b861a461a",
+        "title": "Shop Diesel Jeans For Men Online in Saudi | Ounass",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "1cf49ef0446af0f6ce926b69",
+        "title": "Diesel Saudi Arabia Men's Jeans - Skinny, Slim, Straight",
+        "providerId": "brave-web"
+      },
+      "query": "Diesel jeans SKU 00SW1Q 0EAXD",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 26,
+        "candidateIds": [
+          "15e76c44a2886f4b861a461a",
+          "1cf49ef0446af0f6ce926b69"
+        ],
+        "evidence": [
+          {
+            "candidateId": "15e76c44a2886f4b861a461a",
+            "providerId": "brave-web",
+            "title": "Shop Diesel Jeans For Men Online in Saudi | Ounass"
+          },
+          {
+            "candidateId": "1cf49ef0446af0f6ce926b69",
+            "providerId": "brave-web",
+            "title": "Diesel Saudi Arabia Men's Jeans - Skinny, Slim, Straight"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-017",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "0252a1159b2cf2d53dd4d758",
+        "title": "نايك وردي Nike Air force 1 for للبنات",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "right": {
+        "id": "041489711fd683ea40e4ea21",
+        "title": "نايك أخضر Air force 1 '07 'fresh' Sneakers for للرجال",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "query": "Nike Air Force 1 CW2288-111",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 27,
+        "candidateIds": [
+          "0252a1159b2cf2d53dd4d758",
+          "041489711fd683ea40e4ea21"
+        ],
+        "evidence": [
+          {
+            "candidateId": "0252a1159b2cf2d53dd4d758",
+            "providerId": "deal-outlet",
+            "title": "نايك وردي Nike Air force 1 for للبنات"
+          },
+          {
+            "candidateId": "041489711fd683ea40e4ea21",
+            "providerId": "deal-outlet",
+            "title": "نايك أخضر Air force 1 '07 'fresh' Sneakers for للرجال"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-018",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "26e8a5763740ae6d46168784",
+        "title": "Best over-ear headphones 2022 for UAE and Saudi Arabia: the top cans from Sony, Sennheiser, and more | TechRadar",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "5e596ea8dfa682e256c8eb0f",
+        "title": "سماعات سوني Wh1000xm5 : Shop Online At Best Prices In Saudi | Souq Is Now",
+        "providerId": "brave-web"
+      },
+      "query": "similar alternative to Sony WH-1000XM5 headphones",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 28,
+        "candidateIds": [
+          "26e8a5763740ae6d46168784",
+          "5e596ea8dfa682e256c8eb0f"
+        ],
+        "evidence": [
+          {
+            "candidateId": "26e8a5763740ae6d46168784",
+            "providerId": "brave-web",
+            "title": "Best over-ear headphones 2022 for UAE and Saudi Arabia: the top cans from Sony, Sennheiser, and more | TechRadar"
+          },
+          {
+            "candidateId": "5e596ea8dfa682e256c8eb0f",
+            "providerId": "brave-web",
+            "title": "سماعات سوني Wh1000xm5 : Shop Online At Best Prices In Saudi | Souq Is Now"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-019",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "0129dd8f4979c35ff028dab2",
+        "title": "Jimmy Choo Beige Python Embossed Leather Slip On Sneakers Size 35",
+        "brand": "Jimmy Choo",
+        "providerId": "luxury-closet",
+        "offer": {
+          "merchant": "The Luxury Closet"
+        }
+      },
+      "right": {
+        "id": "03caf63cc88fe56ee236f8dc",
+        "title": "نايك رمادي Air Max 270 Sneakers for للأولاد",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "query": "cheaper alternative to Nike Air Max 270 shoes",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 29,
+        "candidateIds": [
+          "0129dd8f4979c35ff028dab2",
+          "03caf63cc88fe56ee236f8dc"
+        ],
+        "evidence": [
+          {
+            "candidateId": "0129dd8f4979c35ff028dab2",
+            "providerId": "luxury-closet",
+            "title": "Jimmy Choo Beige Python Embossed Leather Slip On Sneakers Size 35"
+          },
+          {
+            "candidateId": "03caf63cc88fe56ee236f8dc",
+            "providerId": "deal-outlet",
+            "title": "نايك رمادي Air Max 270 Sneakers for للأولاد"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-020",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "0b866757a33515dfb01c25c9",
+        "title": "The best Dyson Airwrap dupes: affordable alternatives, tried and tested",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "2590ab95238abbc3db6e62da",
+        "title": "These Dyson Airwrap Alternatives Give Pro-Level Blowouts Without the $600 Price Tag",
+        "providerId": "brave-web"
+      },
+      "query": "similar to Dyson Airwrap hair styler",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 30,
+        "candidateIds": [
+          "0b866757a33515dfb01c25c9",
+          "2590ab95238abbc3db6e62da"
+        ],
+        "evidence": [
+          {
+            "candidateId": "0b866757a33515dfb01c25c9",
+            "providerId": "brave-web",
+            "title": "The best Dyson Airwrap dupes: affordable alternatives, tried and tested"
+          },
+          {
+            "candidateId": "2590ab95238abbc3db6e62da",
+            "providerId": "brave-web",
+            "title": "These Dyson Airwrap Alternatives Give Pro-Level Blowouts Without the $600 Price Tag"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-021",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "0044605334ea15394d4349b3",
+        "title": "ساعة هواوي WATCH GT 5 الذكية. - دليل سنتر",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "220e6f9766590c0fac720c57",
+        "title": "Huawei Watch GT price in Saudi Arabia | Compare Prices",
+        "providerId": "brave-web"
+      },
+      "query": "comparable to Huawei Watch GT 5",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 31,
+        "candidateIds": [
+          "0044605334ea15394d4349b3",
+          "220e6f9766590c0fac720c57"
+        ],
+        "evidence": [
+          {
+            "candidateId": "0044605334ea15394d4349b3",
+            "providerId": "brave-web",
+            "title": "ساعة هواوي WATCH GT 5 الذكية. - دليل سنتر"
+          },
+          {
+            "candidateId": "220e6f9766590c0fac720c57",
+            "providerId": "brave-web",
+            "title": "Huawei Watch GT price in Saudi Arabia | Compare Prices"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-022",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "0079049bb5fa8e24fee5cdf5",
+        "title": "اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "right": {
+        "id": "02dd0a224b1264b4fcba7b4c",
+        "title": "اديداس أبيض Adidad Samba Decon Sneakers for للنساء والرجال",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "query": "exact SKU ABC-000-NONEXISTENT-927",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 32,
+        "candidateIds": [
+          "0079049bb5fa8e24fee5cdf5",
+          "02dd0a224b1264b4fcba7b4c"
+        ],
+        "evidence": [
+          {
+            "candidateId": "0079049bb5fa8e24fee5cdf5",
+            "providerId": "deal-outlet",
+            "title": "اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال"
+          },
+          {
+            "candidateId": "02dd0a224b1264b4fcba7b4c",
+            "providerId": "deal-outlet",
+            "title": "اديداس أبيض Adidad Samba Decon Sneakers for للنساء والرجال"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-023",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "9331b32228e4469b1bd0fee0",
+        "title": "Duracell Car Battery in Saudi | Duracell Car Battery Supplier Saudi",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "e213349db1af12383691dde5",
+        "title": "Car Batteries KSA | Best Price Offers | Riyadh, Jeddah",
+        "providerId": "brave-web"
+      },
+      "query": "بطارية سيارة 12V 70Ah الرياض",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 37,
+        "candidateIds": [
+          "9331b32228e4469b1bd0fee0",
+          "e213349db1af12383691dde5"
+        ],
+        "evidence": [
+          {
+            "candidateId": "9331b32228e4469b1bd0fee0",
+            "providerId": "brave-web",
+            "title": "Duracell Car Battery in Saudi | Duracell Car Battery Supplier Saudi"
+          },
+          {
+            "candidateId": "e213349db1af12383691dde5",
+            "providerId": "brave-web",
+            "title": "Car Batteries KSA | Best Price Offers | Riyadh, Jeddah"
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-observed-024",
+      "sourceClass": "REAL_OBSERVED",
+      "category": "observed-candidate-comparison",
+      "left": {
+        "id": "17aa48f9d971348d398add3e",
+        "title": "Buy Dry Hair Shampoo - GK Hair Best Dry Shampoo – GK Hair KSA",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "a4139aa52d125e81ab58b70e",
+        "title": "Shampoo | Faces KSA",
+        "providerId": "brave-web"
+      },
+      "query": "shampoo for dry hair",
+      "sourceEvidence": {
+        "source": "experiment/search-core-recovery:artifacts/api-server/src/experiments/searchGoldPhase1/realEvaluation/recovery-observations-final.json",
+        "caseId": 38,
+        "candidateIds": [
+          "17aa48f9d971348d398add3e",
+          "a4139aa52d125e81ab58b70e"
+        ],
+        "evidence": [
+          {
+            "candidateId": "17aa48f9d971348d398add3e",
+            "providerId": "brave-web",
+            "title": "Buy Dry Hair Shampoo - GK Hair Best Dry Shampoo – GK Hair KSA"
+          },
+          {
+            "candidateId": "a4139aa52d125e81ab58b70e",
+            "providerId": "brave-web",
+            "title": "Shampoo | Faces KSA"
+          }
+        ]
+      }
+    },
+    {
+      "id": "controlled-001",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-same-variant",
+      "left": {
+        "id": "synthetic-001-left",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-001-right",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-002",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-same-variant",
+      "left": {
+        "id": "synthetic-002-left",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-002-right",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-003",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-same-variant",
+      "left": {
+        "id": "synthetic-003-left",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-003-right",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-004",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-same-variant",
+      "left": {
+        "id": "synthetic-004-left",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-004-right",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-005",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-same-variant",
+      "left": {
+        "id": "synthetic-005-left",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-005-right",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-006",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-same-variant",
+      "left": {
+        "id": "synthetic-006-left",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-006-right",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-007",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-same-variant",
+      "left": {
+        "id": "synthetic-007-left",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-007-right",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-008",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-same-variant",
+      "left": {
+        "id": "synthetic-008-left",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-008-right",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-009",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-color",
+      "left": {
+        "id": "synthetic-009-left",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-009-right",
+        "title": "Northstar Pace 1 running shoe White size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "White",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-010",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-color",
+      "left": {
+        "id": "synthetic-010-left",
+        "title": "Northstar Pace 1 running shoe Navy size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Navy",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-010-right",
+        "title": "Northstar Pace 1 running shoe Cream size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Cream",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-011",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-color",
+      "left": {
+        "id": "synthetic-011-left",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-011-right",
+        "title": "Northstar Pace 1 running shoe White size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "White",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-012",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-color",
+      "left": {
+        "id": "synthetic-012-left",
+        "title": "Northstar Pace 1 running shoe Navy size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Navy",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-012-right",
+        "title": "Northstar Pace 1 running shoe Cream size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Cream",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-013",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-color",
+      "left": {
+        "id": "synthetic-013-left",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-013-right",
+        "title": "Northstar Pace 1 running shoe White size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "White",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-014",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-color",
+      "left": {
+        "id": "synthetic-014-left",
+        "title": "Northstar Pace 1 running shoe Navy size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Navy",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-014-right",
+        "title": "Northstar Pace 1 running shoe Cream size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Cream",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-015",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-color",
+      "left": {
+        "id": "synthetic-015-left",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-015-right",
+        "title": "Northstar Pace 1 running shoe White size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "White",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-016",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-color",
+      "left": {
+        "id": "synthetic-016-left",
+        "title": "Northstar Pace 1 running shoe Navy size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Navy",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-016-right",
+        "title": "Northstar Pace 1 running shoe Cream size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Cream",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-017",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-size",
+      "left": {
+        "id": "synthetic-017-left",
+        "title": "Northstar Pace 1 running shoe Black size US 8",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 8"
+        }
+      },
+      "right": {
+        "id": "synthetic-017-right",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-018",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-size",
+      "left": {
+        "id": "synthetic-018-left",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-018-right",
+        "title": "Northstar Pace 1 running shoe Black size US 10",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 10"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-019",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-size",
+      "left": {
+        "id": "synthetic-019-left",
+        "title": "Northstar Pace 1 running shoe Black size US 10",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 10"
+        }
+      },
+      "right": {
+        "id": "synthetic-019-right",
+        "title": "Northstar Pace 1 running shoe Black size US 11",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 11"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-020",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-size",
+      "left": {
+        "id": "synthetic-020-left",
+        "title": "Northstar Pace 1 running shoe Black size US 11",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 11"
+        }
+      },
+      "right": {
+        "id": "synthetic-020-right",
+        "title": "Northstar Pace 1 running shoe Black size US 12",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 12"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-021",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-size",
+      "left": {
+        "id": "synthetic-021-left",
+        "title": "Northstar Pace 1 running shoe Black size US 12",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 12"
+        }
+      },
+      "right": {
+        "id": "synthetic-021-right",
+        "title": "Northstar Pace 1 running shoe Black size US 13",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 13"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-022",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-size",
+      "left": {
+        "id": "synthetic-022-left",
+        "title": "Northstar Pace 1 running shoe Black size US 13",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 13"
+        }
+      },
+      "right": {
+        "id": "synthetic-022-right",
+        "title": "Northstar Pace 1 running shoe Black size US 14",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 14"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-023",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-size",
+      "left": {
+        "id": "synthetic-023-left",
+        "title": "Northstar Pace 1 running shoe Black size US 14",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 14"
+        }
+      },
+      "right": {
+        "id": "synthetic-023-right",
+        "title": "Northstar Pace 1 running shoe Black size US 15",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 15"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-024",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-size",
+      "left": {
+        "id": "synthetic-024-left",
+        "title": "Northstar Pace 1 running shoe Black size US 15",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 15"
+        }
+      },
+      "right": {
+        "id": "synthetic-024-right",
+        "title": "Northstar Pace 1 running shoe Black size US 16",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 16"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "controlled-025",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-storage",
+      "left": {
+        "id": "synthetic-025-left",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-025-right",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 512 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "512 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-026",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-storage",
+      "left": {
+        "id": "synthetic-026-left",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-026-right",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-027",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-storage",
+      "left": {
+        "id": "synthetic-027-left",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-027-right",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 512 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "512 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-028",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-storage",
+      "left": {
+        "id": "synthetic-028-left",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-028-right",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-029",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-storage",
+      "left": {
+        "id": "synthetic-029-left",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-029-right",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 512 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "512 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-030",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-storage",
+      "left": {
+        "id": "synthetic-030-left",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-030-right",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-031",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-storage",
+      "left": {
+        "id": "synthetic-031-left",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-031-right",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 512 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "512 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-032",
+      "sourceClass": "CONTROLLED",
+      "category": "same-product-different-storage",
+      "left": {
+        "id": "synthetic-032-left",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-032-right",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-033",
+      "sourceClass": "CONTROLLED",
+      "category": "different-model-same-family",
+      "left": {
+        "id": "synthetic-033-left",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-033-right",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-034",
+      "sourceClass": "CONTROLLED",
+      "category": "different-model-same-family",
+      "left": {
+        "id": "synthetic-034-left",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-034-right",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-035",
+      "sourceClass": "CONTROLLED",
+      "category": "different-model-same-family",
+      "left": {
+        "id": "synthetic-035-left",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-035-right",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-036",
+      "sourceClass": "CONTROLLED",
+      "category": "different-model-same-family",
+      "left": {
+        "id": "synthetic-036-left",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-036-right",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-037",
+      "sourceClass": "CONTROLLED",
+      "category": "different-model-same-family",
+      "left": {
+        "id": "synthetic-037-left",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-037-right",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-038",
+      "sourceClass": "CONTROLLED",
+      "category": "different-model-same-family",
+      "left": {
+        "id": "synthetic-038-left",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-038-right",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-039",
+      "sourceClass": "CONTROLLED",
+      "category": "different-model-same-family",
+      "left": {
+        "id": "synthetic-039-left",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-039-right",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-040",
+      "sourceClass": "CONTROLLED",
+      "category": "different-model-same-family",
+      "left": {
+        "id": "synthetic-040-left",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "synthetic-040-right",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "controlled-041",
+      "sourceClass": "CONTROLLED",
+      "category": "style-code-gtin-conflict",
+      "left": {
+        "id": "synthetic-041-left",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-41-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-041-right",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-41-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "controlled-042",
+      "sourceClass": "CONTROLLED",
+      "category": "style-code-gtin-conflict",
+      "left": {
+        "id": "synthetic-042-left",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-42-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-042-right",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-42-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "controlled-043",
+      "sourceClass": "CONTROLLED",
+      "category": "style-code-gtin-conflict",
+      "left": {
+        "id": "synthetic-043-left",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-43-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-043-right",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-43-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "controlled-044",
+      "sourceClass": "CONTROLLED",
+      "category": "style-code-gtin-conflict",
+      "left": {
+        "id": "synthetic-044-left",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-44-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-044-right",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-44-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "controlled-045",
+      "sourceClass": "CONTROLLED",
+      "category": "style-code-gtin-conflict",
+      "left": {
+        "id": "synthetic-045-left",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-45-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-045-right",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-45-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "controlled-046",
+      "sourceClass": "CONTROLLED",
+      "category": "style-code-gtin-conflict",
+      "left": {
+        "id": "synthetic-046-left",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-46-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-046-right",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-46-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "controlled-047",
+      "sourceClass": "CONTROLLED",
+      "category": "style-code-gtin-conflict",
+      "left": {
+        "id": "synthetic-047-left",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-47-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-047-right",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-47-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "controlled-048",
+      "sourceClass": "CONTROLLED",
+      "category": "style-code-gtin-conflict",
+      "left": {
+        "id": "synthetic-048-left",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-48-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-048-right",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-48-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "controlled-049",
+      "sourceClass": "CONTROLLED",
+      "category": "nike-model-and-variant",
+      "left": {
+        "id": "synthetic-049-left",
+        "title": "Nike Air Max 270 running shoe Black/White size US 8",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 8"
+        }
+      },
+      "right": {
+        "id": "synthetic-049-right",
+        "title": "Nike Air Max 270 running shoe Black/White size US 9",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 9"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "controlled-050",
+      "sourceClass": "CONTROLLED",
+      "category": "nike-model-and-variant",
+      "left": {
+        "id": "synthetic-050-left",
+        "title": "Nike Air Max 270 running shoe White/Black size US 9",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "synthetic-050-right",
+        "title": "Nike Air Max 270 running shoe White/Black size US 10",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 10"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "controlled-051",
+      "sourceClass": "CONTROLLED",
+      "category": "nike-model-and-variant",
+      "left": {
+        "id": "synthetic-051-left",
+        "title": "Nike Air Max 270 running shoe Black/White size US 10",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 10"
+        }
+      },
+      "right": {
+        "id": "synthetic-051-right",
+        "title": "Nike Air Max 270 running shoe Black/White size US 11",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 11"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "controlled-052",
+      "sourceClass": "CONTROLLED",
+      "category": "nike-model-and-variant",
+      "left": {
+        "id": "synthetic-052-left",
+        "title": "Nike Air Max 270 running shoe White/Black size US 11",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 11"
+        }
+      },
+      "right": {
+        "id": "synthetic-052-right",
+        "title": "Nike Air Max 270 running shoe White/Black size US 12",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 12"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "controlled-053",
+      "sourceClass": "CONTROLLED",
+      "category": "nike-model-and-variant",
+      "left": {
+        "id": "synthetic-053-left",
+        "title": "Nike Air Max 270 running shoe Black/White size US 12",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 12"
+        }
+      },
+      "right": {
+        "id": "synthetic-053-right",
+        "title": "Nike Air Max 270 running shoe Black/White size US 13",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 13"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "controlled-054",
+      "sourceClass": "CONTROLLED",
+      "category": "nike-model-and-variant",
+      "left": {
+        "id": "synthetic-054-left",
+        "title": "Nike Air Max 270 running shoe White/Black size US 13",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 13"
+        }
+      },
+      "right": {
+        "id": "synthetic-054-right",
+        "title": "Nike Air Max 270 running shoe White/Black size US 14",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 14"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "controlled-055",
+      "sourceClass": "CONTROLLED",
+      "category": "nike-model-and-variant",
+      "left": {
+        "id": "synthetic-055-left",
+        "title": "Nike Air Max 270 running shoe Black/White size US 14",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 14"
+        }
+      },
+      "right": {
+        "id": "synthetic-055-right",
+        "title": "Nike Air Max 270 running shoe Black/White size US 15",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 15"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "controlled-056",
+      "sourceClass": "CONTROLLED",
+      "category": "nike-model-and-variant",
+      "left": {
+        "id": "synthetic-056-left",
+        "title": "Nike Air Max 270 running shoe White/Black size US 15",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 15"
+        }
+      },
+      "right": {
+        "id": "synthetic-056-right",
+        "title": "Nike Air Max 270 running shoe White/Black size US 16",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 16"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "controlled-057",
+      "sourceClass": "CONTROLLED",
+      "category": "electronics-model-variant-and-bundle",
+      "left": {
+        "id": "synthetic-057-left",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-057-right",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "controlled-058",
+      "sourceClass": "CONTROLLED",
+      "category": "electronics-model-variant-and-bundle",
+      "left": {
+        "id": "synthetic-058-left",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-058-right",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "controlled-059",
+      "sourceClass": "CONTROLLED",
+      "category": "electronics-model-variant-and-bundle",
+      "left": {
+        "id": "synthetic-059-left",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-059-right",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "controlled-060",
+      "sourceClass": "CONTROLLED",
+      "category": "electronics-model-variant-and-bundle",
+      "left": {
+        "id": "synthetic-060-left",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-060-right",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "controlled-061",
+      "sourceClass": "CONTROLLED",
+      "category": "electronics-model-variant-and-bundle",
+      "left": {
+        "id": "synthetic-061-left",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-061-right",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "controlled-062",
+      "sourceClass": "CONTROLLED",
+      "category": "electronics-model-variant-and-bundle",
+      "left": {
+        "id": "synthetic-062-left",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-062-right",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "controlled-063",
+      "sourceClass": "CONTROLLED",
+      "category": "electronics-model-variant-and-bundle",
+      "left": {
+        "id": "synthetic-063-left",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-063-right",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "controlled-064",
+      "sourceClass": "CONTROLLED",
+      "category": "electronics-model-variant-and-bundle",
+      "left": {
+        "id": "synthetic-064-left",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-064-right",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "controlled-065",
+      "sourceClass": "CONTROLLED",
+      "category": "beauty-volume-and-pack",
+      "left": {
+        "id": "synthetic-065-left",
+        "title": "Lumen Dew Serum facial serum Dew Serum 30 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "30 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-065-right",
+        "title": "Lumen Dew Serum facial serum Dew Serum 60 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "60 ml",
+          "packQuantity": 1
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "controlled-066",
+      "sourceClass": "CONTROLLED",
+      "category": "beauty-volume-and-pack",
+      "left": {
+        "id": "synthetic-066-left",
+        "title": "Lumen Dew Serum facial serum Dew Serum 35 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "35 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-066-right",
+        "title": "Lumen Dew Serum facial serum Dew Serum 65 ml pack of 2",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "65 ml",
+          "packQuantity": 2
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "controlled-067",
+      "sourceClass": "CONTROLLED",
+      "category": "beauty-volume-and-pack",
+      "left": {
+        "id": "synthetic-067-left",
+        "title": "Lumen Dew Serum facial serum Dew Serum 40 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "40 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-067-right",
+        "title": "Lumen Dew Serum facial serum Dew Serum 70 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "70 ml",
+          "packQuantity": 1
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "controlled-068",
+      "sourceClass": "CONTROLLED",
+      "category": "beauty-volume-and-pack",
+      "left": {
+        "id": "synthetic-068-left",
+        "title": "Lumen Dew Serum facial serum Dew Serum 45 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "45 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-068-right",
+        "title": "Lumen Dew Serum facial serum Dew Serum 75 ml pack of 2",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "75 ml",
+          "packQuantity": 2
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "controlled-069",
+      "sourceClass": "CONTROLLED",
+      "category": "beauty-volume-and-pack",
+      "left": {
+        "id": "synthetic-069-left",
+        "title": "Lumen Dew Serum facial serum Dew Serum 50 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "50 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-069-right",
+        "title": "Lumen Dew Serum facial serum Dew Serum 80 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "80 ml",
+          "packQuantity": 1
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "controlled-070",
+      "sourceClass": "CONTROLLED",
+      "category": "beauty-volume-and-pack",
+      "left": {
+        "id": "synthetic-070-left",
+        "title": "Lumen Dew Serum facial serum Dew Serum 55 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "55 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-070-right",
+        "title": "Lumen Dew Serum facial serum Dew Serum 85 ml pack of 2",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "85 ml",
+          "packQuantity": 2
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "controlled-071",
+      "sourceClass": "CONTROLLED",
+      "category": "beauty-volume-and-pack",
+      "left": {
+        "id": "synthetic-071-left",
+        "title": "Lumen Dew Serum facial serum Dew Serum 60 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "60 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-071-right",
+        "title": "Lumen Dew Serum facial serum Dew Serum 90 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "90 ml",
+          "packQuantity": 1
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "controlled-072",
+      "sourceClass": "CONTROLLED",
+      "category": "beauty-volume-and-pack",
+      "left": {
+        "id": "synthetic-072-left",
+        "title": "Lumen Dew Serum facial serum Dew Serum 65 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "65 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "synthetic-072-right",
+        "title": "Lumen Dew Serum facial serum Dew Serum 95 ml pack of 2",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "95 ml",
+          "packQuantity": 2
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "controlled-073",
+      "sourceClass": "CONTROLLED",
+      "category": "automotive-oem-part-and-fitment",
+      "left": {
+        "id": "synthetic-073-left",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-73-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "synthetic-073-right",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-73-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "controlled-074",
+      "sourceClass": "CONTROLLED",
+      "category": "automotive-oem-part-and-fitment",
+      "left": {
+        "id": "synthetic-074-left",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-74-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "synthetic-074-right",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-74-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "controlled-075",
+      "sourceClass": "CONTROLLED",
+      "category": "automotive-oem-part-and-fitment",
+      "left": {
+        "id": "synthetic-075-left",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-75-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "synthetic-075-right",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-75-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "controlled-076",
+      "sourceClass": "CONTROLLED",
+      "category": "automotive-oem-part-and-fitment",
+      "left": {
+        "id": "synthetic-076-left",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-76-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "synthetic-076-right",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-76-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "controlled-077",
+      "sourceClass": "CONTROLLED",
+      "category": "automotive-oem-part-and-fitment",
+      "left": {
+        "id": "synthetic-077-left",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-77-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "synthetic-077-right",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-77-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "controlled-078",
+      "sourceClass": "CONTROLLED",
+      "category": "automotive-oem-part-and-fitment",
+      "left": {
+        "id": "synthetic-078-left",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-78-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "synthetic-078-right",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-78-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "controlled-079",
+      "sourceClass": "CONTROLLED",
+      "category": "automotive-oem-part-and-fitment",
+      "left": {
+        "id": "synthetic-079-left",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-79-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "synthetic-079-right",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-79-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "controlled-080",
+      "sourceClass": "CONTROLLED",
+      "category": "automotive-oem-part-and-fitment",
+      "left": {
+        "id": "synthetic-080-left",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-80-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "synthetic-080-right",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-80-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "controlled-081",
+      "sourceClass": "CONTROLLED",
+      "category": "merchant-duplicates-and-stale-offers",
+      "left": {
+        "id": "synthetic-081-left",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-02T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "synthetic-081-right",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-02T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "controlled-082",
+      "sourceClass": "CONTROLLED",
+      "category": "merchant-duplicates-and-stale-offers",
+      "left": {
+        "id": "synthetic-082-left",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-03T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "synthetic-082-right",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-03T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "controlled-083",
+      "sourceClass": "CONTROLLED",
+      "category": "merchant-duplicates-and-stale-offers",
+      "left": {
+        "id": "synthetic-083-left",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-04T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "synthetic-083-right",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-04T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "controlled-084",
+      "sourceClass": "CONTROLLED",
+      "category": "merchant-duplicates-and-stale-offers",
+      "left": {
+        "id": "synthetic-084-left",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-05T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "synthetic-084-right",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-05T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "controlled-085",
+      "sourceClass": "CONTROLLED",
+      "category": "merchant-duplicates-and-stale-offers",
+      "left": {
+        "id": "synthetic-085-left",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-06T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "synthetic-085-right",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-06T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "controlled-086",
+      "sourceClass": "CONTROLLED",
+      "category": "merchant-duplicates-and-stale-offers",
+      "left": {
+        "id": "synthetic-086-left",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-07T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "synthetic-086-right",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-07T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "controlled-087",
+      "sourceClass": "CONTROLLED",
+      "category": "merchant-duplicates-and-stale-offers",
+      "left": {
+        "id": "synthetic-087-left",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-08T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "synthetic-087-right",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-08T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "controlled-088",
+      "sourceClass": "CONTROLLED",
+      "category": "merchant-duplicates-and-stale-offers",
+      "left": {
+        "id": "synthetic-088-left",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-09T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "synthetic-088-right",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-09T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "controlled-089",
+      "sourceClass": "CONTROLLED",
+      "category": "insufficient-evidence",
+      "left": {
+        "id": "synthetic-089-left",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "synthetic-089-right",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "controlled-090",
+      "sourceClass": "CONTROLLED",
+      "category": "insufficient-evidence",
+      "left": {
+        "id": "synthetic-090-left",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "synthetic-090-right",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "controlled-091",
+      "sourceClass": "CONTROLLED",
+      "category": "insufficient-evidence",
+      "left": {
+        "id": "synthetic-091-left",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "synthetic-091-right",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "controlled-092",
+      "sourceClass": "CONTROLLED",
+      "category": "insufficient-evidence",
+      "left": {
+        "id": "synthetic-092-left",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "synthetic-092-right",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "controlled-093",
+      "sourceClass": "CONTROLLED",
+      "category": "insufficient-evidence",
+      "left": {
+        "id": "synthetic-093-left",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "synthetic-093-right",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "controlled-094",
+      "sourceClass": "CONTROLLED",
+      "category": "insufficient-evidence",
+      "left": {
+        "id": "synthetic-094-left",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "synthetic-094-right",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "controlled-095",
+      "sourceClass": "CONTROLLED",
+      "category": "insufficient-evidence",
+      "left": {
+        "id": "synthetic-095-left",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "synthetic-095-right",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "controlled-096",
+      "sourceClass": "CONTROLLED",
+      "category": "insufficient-evidence",
+      "left": {
+        "id": "synthetic-096-left",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "synthetic-096-right",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "unverifiable-001",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-01-left",
+        "title": "Wireless earbuds"
+      },
+      "right": {
+        "id": "unverifiable-01-right",
+        "title": "Wireless earbuds"
+      },
+      "query": "Wireless earbuds"
+    },
+    {
+      "id": "unverifiable-002",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-02-left",
+        "title": "Replacement filter"
+      },
+      "right": {
+        "id": "unverifiable-02-right",
+        "title": "Replacement filter"
+      },
+      "query": "Replacement filter"
+    },
+    {
+      "id": "unverifiable-003",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-03-left",
+        "title": "Phone case",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "right": {
+        "id": "unverifiable-03-right",
+        "title": "Phone case",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "query": "Phone case"
+    },
+    {
+      "id": "unverifiable-004",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-04-left",
+        "title": "Serum"
+      },
+      "right": {
+        "id": "unverifiable-04-right",
+        "title": "Serum"
+      },
+      "query": "Serum"
+    },
+    {
+      "id": "unverifiable-005",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-05-left",
+        "title": "Running shoe"
+      },
+      "right": {
+        "id": "unverifiable-05-right",
+        "title": "Running shoe"
+      },
+      "query": "Running shoe"
+    },
+    {
+      "id": "unverifiable-006",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-06-left",
+        "title": "Car lamp",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "right": {
+        "id": "unverifiable-06-right",
+        "title": "Car lamp",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "query": "Car lamp"
+    },
+    {
+      "id": "unverifiable-007",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-07-left",
+        "title": "Smart watch"
+      },
+      "right": {
+        "id": "unverifiable-07-right",
+        "title": "Smart watch"
+      },
+      "query": "Smart watch"
+    },
+    {
+      "id": "unverifiable-008",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-08-left",
+        "title": "Charging cable"
+      },
+      "right": {
+        "id": "unverifiable-08-right",
+        "title": "Charging cable"
+      },
+      "query": "Charging cable"
+    },
+    {
+      "id": "unverifiable-009",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-09-left",
+        "title": "Wireless earbuds",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "right": {
+        "id": "unverifiable-09-right",
+        "title": "Wireless earbuds",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "query": "Wireless earbuds"
+    },
+    {
+      "id": "unverifiable-010",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-10-left",
+        "title": "Replacement filter"
+      },
+      "right": {
+        "id": "unverifiable-10-right",
+        "title": "Replacement filter"
+      },
+      "query": "Replacement filter"
+    },
+    {
+      "id": "unverifiable-011",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-11-left",
+        "title": "Phone case"
+      },
+      "right": {
+        "id": "unverifiable-11-right",
+        "title": "Phone case"
+      },
+      "query": "Phone case"
+    },
+    {
+      "id": "unverifiable-012",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-12-left",
+        "title": "Serum",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "right": {
+        "id": "unverifiable-12-right",
+        "title": "Serum",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "query": "Serum"
+    },
+    {
+      "id": "unverifiable-013",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-13-left",
+        "title": "Running shoe"
+      },
+      "right": {
+        "id": "unverifiable-13-right",
+        "title": "Running shoe"
+      },
+      "query": "Running shoe"
+    },
+    {
+      "id": "unverifiable-014",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-14-left",
+        "title": "Car lamp"
+      },
+      "right": {
+        "id": "unverifiable-14-right",
+        "title": "Car lamp"
+      },
+      "query": "Car lamp"
+    },
+    {
+      "id": "unverifiable-015",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-15-left",
+        "title": "Smart watch",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "right": {
+        "id": "unverifiable-15-right",
+        "title": "Smart watch",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "query": "Smart watch"
+    },
+    {
+      "id": "unverifiable-016",
+      "sourceClass": "UNVERIFIABLE",
+      "category": "insufficient-evidence-unverifiable",
+      "left": {
+        "id": "unverifiable-16-left",
+        "title": "Charging cable"
+      },
+      "right": {
+        "id": "unverifiable-16-right",
+        "title": "Charging cable"
+      },
+      "query": "Charging cable"
+    }
+  ]
+}

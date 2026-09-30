@@ -1,0 +1,3123 @@
+{
+  "schemaVersion": 1,
+  "pairs": [
+    {
+      "id": "PI-001",
+      "left": {
+        "id": "PI-001-L",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-001-R",
+        "title": "Northstar Pace 1 running shoe White size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "White",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-002",
+      "left": {
+        "id": "PI-002-L",
+        "title": "Northstar Pace 1 running shoe Navy size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Navy",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-002-R",
+        "title": "Northstar Pace 1 running shoe Cream size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Cream",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-003",
+      "left": {
+        "id": "PI-003-L",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-003-R",
+        "title": "Northstar Pace 1 running shoe White size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "White",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-004",
+      "left": {
+        "id": "PI-004-L",
+        "title": "Northstar Pace 1 running shoe Navy size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Navy",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-004-R",
+        "title": "Northstar Pace 1 running shoe Cream size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Cream",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-005",
+      "left": {
+        "id": "PI-005-L",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-005-R",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "PI-006",
+      "left": {
+        "id": "PI-006-L",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-006-R",
+        "title": "Northstar Pace 1 running shoe White size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "White",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-007",
+      "left": {
+        "id": "PI-007-L",
+        "title": "Lumen Dew Serum facial serum Dew Serum 30 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "30 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-007-R",
+        "title": "Lumen Dew Serum facial serum Dew Serum 60 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "60 ml",
+          "packQuantity": 1
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "PI-008",
+      "left": {
+        "id": "PI-008-L",
+        "title": "Northstar Pace 1 running shoe Navy size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Navy",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-008-R",
+        "title": "Northstar Pace 1 running shoe Cream size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Cream",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-009",
+      "left": {
+        "id": "PI-009-L",
+        "title": "Lumen Dew Serum facial serum Dew Serum 35 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "35 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-009-R",
+        "title": "Lumen Dew Serum facial serum Dew Serum 65 ml pack of 2",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "65 ml",
+          "packQuantity": 2
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "PI-010",
+      "left": {
+        "id": "PI-010-L",
+        "title": "Northstar Pace 1 running shoe Black size US 8",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 8"
+        }
+      },
+      "right": {
+        "id": "PI-010-R",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-011",
+      "left": {
+        "id": "PI-011-L",
+        "title": "Lumen Dew Serum facial serum Dew Serum 40 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "40 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-011-R",
+        "title": "Lumen Dew Serum facial serum Dew Serum 70 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "70 ml",
+          "packQuantity": 1
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "PI-012",
+      "left": {
+        "id": "PI-012-L",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-77-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "PI-012-R",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-77-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "PI-013",
+      "left": {
+        "id": "PI-013-L",
+        "title": "Northstar Pace 1 running shoe Navy size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Navy",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-013-R",
+        "title": "Northstar Pace 1 running shoe Cream size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Cream",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-014",
+      "left": {
+        "id": "PI-014-L",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-014-R",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "PI-015",
+      "left": {
+        "id": "PI-015-L",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-76-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "PI-015-R",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-76-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "PI-016",
+      "left": {
+        "id": "PI-016-L",
+        "title": "Northstar Pace 1 running shoe Black size US 10",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 10"
+        }
+      },
+      "right": {
+        "id": "PI-016-R",
+        "title": "Northstar Pace 1 running shoe Black size US 11",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 11"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-017",
+      "left": {
+        "id": "PI-017-L",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-017-R",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "PI-018",
+      "left": {
+        "id": "PI-018-L",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-75-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "PI-018-R",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-75-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "PI-019",
+      "left": {
+        "id": "PI-019-L",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-019-R",
+        "title": "Northstar Pace 1 running shoe Black size US 10",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 10"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-020",
+      "left": {
+        "id": "PI-020-L",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-020-R",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "PI-021",
+      "left": {
+        "id": "PI-021-L",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-74-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "PI-021-R",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-74-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "PI-022",
+      "left": {
+        "id": "PI-022-L",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-022-R",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "PI-023",
+      "left": {
+        "id": "PI-023-L",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-73-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "PI-023-R",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-73-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "PI-024",
+      "left": {
+        "id": "PI-024-L",
+        "title": "Lumen Dew Serum facial serum Dew Serum 65 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "65 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-024-R",
+        "title": "Lumen Dew Serum facial serum Dew Serum 95 ml pack of 2",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "95 ml",
+          "packQuantity": 2
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "PI-025",
+      "left": {
+        "id": "PI-025-L",
+        "title": "Lumen Dew Serum facial serum Dew Serum 60 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "60 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-025-R",
+        "title": "Lumen Dew Serum facial serum Dew Serum 90 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "90 ml",
+          "packQuantity": 1
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "PI-026",
+      "left": {
+        "id": "PI-026-L",
+        "title": "Lumen Dew Serum facial serum Dew Serum 55 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "55 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-026-R",
+        "title": "Lumen Dew Serum facial serum Dew Serum 85 ml pack of 2",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "85 ml",
+          "packQuantity": 2
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "PI-027",
+      "left": {
+        "id": "PI-027-L",
+        "title": "Lumen Dew Serum facial serum Dew Serum 45 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "45 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-027-R",
+        "title": "Lumen Dew Serum facial serum Dew Serum 75 ml pack of 2",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "75 ml",
+          "packQuantity": 2
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "PI-028",
+      "left": {
+        "id": "PI-028-L",
+        "title": "Lumen Dew Serum facial serum Dew Serum 50 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "50 ml",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-028-R",
+        "title": "Lumen Dew Serum facial serum Dew Serum 80 ml",
+        "brand": "Lumen",
+        "model": "Dew Serum",
+        "variant": {
+          "capacity": "80 ml",
+          "packQuantity": 1
+        }
+      },
+      "query": "Lumen Dew Serum facial serum"
+    },
+    {
+      "id": "PI-029",
+      "left": {
+        "id": "PI-029-L",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-79-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "PI-029-R",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-79-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "PI-030",
+      "left": {
+        "id": "PI-030-L",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-78-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "PI-030-R",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-78-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "PI-031",
+      "left": {
+        "id": "PI-031-L",
+        "title": "Car lamp",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "right": {
+        "id": "PI-031-R",
+        "title": "Car lamp",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "query": "Car lamp"
+    },
+    {
+      "id": "PI-032",
+      "left": {
+        "id": "PI-032-L",
+        "title": "Smart watch"
+      },
+      "right": {
+        "id": "PI-032-R",
+        "title": "Smart watch"
+      },
+      "query": "Smart watch"
+    },
+    {
+      "id": "PI-033",
+      "left": {
+        "id": "PI-033-L",
+        "title": "Serum"
+      },
+      "right": {
+        "id": "PI-033-R",
+        "title": "Serum"
+      },
+      "query": "Serum"
+    },
+    {
+      "id": "PI-034",
+      "left": {
+        "id": "PI-034-L",
+        "title": "Running shoe"
+      },
+      "right": {
+        "id": "PI-034-R",
+        "title": "Running shoe"
+      },
+      "query": "Running shoe"
+    },
+    {
+      "id": "PI-035",
+      "left": {
+        "id": "PI-035-L",
+        "title": "Replacement filter"
+      },
+      "right": {
+        "id": "PI-035-R",
+        "title": "Replacement filter"
+      },
+      "query": "Replacement filter"
+    },
+    {
+      "id": "PI-036",
+      "left": {
+        "id": "PI-036-L",
+        "title": "Phone case",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "right": {
+        "id": "PI-036-R",
+        "title": "Phone case",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "query": "Phone case"
+    },
+    {
+      "id": "PI-037",
+      "left": {
+        "id": "PI-037-L",
+        "title": "Wireless earbuds"
+      },
+      "right": {
+        "id": "PI-037-R",
+        "title": "Wireless earbuds"
+      },
+      "query": "Wireless earbuds"
+    },
+    {
+      "id": "PI-038",
+      "left": {
+        "id": "PI-038-L",
+        "title": "Huawei - Mobile Phones / Mobile Phones & Communication Products : Shop Online At Best Prices In Saudi | Souq Is Now",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-038-R",
+        "title": "Huawei - Mobile Phones for sale in Saudi Arabia | dubizzle Saudi Arabia (OLX)",
+        "providerId": "brave-web"
+      },
+      "query": "Huawei BNE-LX1 phone"
+    },
+    {
+      "id": "PI-039",
+      "left": {
+        "id": "PI-039-L",
+        "title": "Phone case"
+      },
+      "right": {
+        "id": "PI-039-R",
+        "title": "Phone case"
+      },
+      "query": "Phone case"
+    },
+    {
+      "id": "PI-040",
+      "left": {
+        "id": "PI-040-L",
+        "title": "Buy AirPods Pro 3 - Apple (SA)",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-040-R",
+        "title": "Apple airpods pro KSA | 30-75% OFF | Riyadh, Jeddah | noon",
+        "providerId": "brave-web"
+      },
+      "query": "Apple AirPods Pro A3047"
+    },
+    {
+      "id": "PI-041",
+      "left": {
+        "id": "PI-041-L",
+        "title": "Replacement filter"
+      },
+      "right": {
+        "id": "PI-041-R",
+        "title": "Replacement filter"
+      },
+      "query": "Replacement filter"
+    },
+    {
+      "id": "PI-042",
+      "left": {
+        "id": "PI-042-L",
+        "title": "Shop Diesel Jeans For Men Online in Saudi | Ounass",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-042-R",
+        "title": "Diesel Saudi Arabia Men's Jeans - Skinny, Slim, Straight",
+        "providerId": "brave-web"
+      },
+      "query": "Diesel jeans SKU 00SW1Q 0EAXD"
+    },
+    {
+      "id": "PI-043",
+      "left": {
+        "id": "PI-043-L",
+        "title": "Running shoe"
+      },
+      "right": {
+        "id": "PI-043-R",
+        "title": "Running shoe"
+      },
+      "query": "Running shoe"
+    },
+    {
+      "id": "PI-044",
+      "left": {
+        "id": "PI-044-L",
+        "title": "نايك وردي Nike Air force 1 for للبنات",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "right": {
+        "id": "PI-044-R",
+        "title": "نايك أخضر Air force 1 '07 'fresh' Sneakers for للرجال",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "query": "Nike Air Force 1 CW2288-111"
+    },
+    {
+      "id": "PI-045",
+      "left": {
+        "id": "PI-045-L",
+        "title": "Men's Watches & Accessories KSA | Best Price Offers | Riyadh, Jeddah",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-045-R",
+        "title": "Buy Best Men Watches Online: 35-75% OFF, Riyadh, Jeddah KSA",
+        "providerId": "brave-web"
+      },
+      "query": "أبغى ساعة رجالية بحدود 500 ريال"
+    },
+    {
+      "id": "PI-046",
+      "left": {
+        "id": "PI-046-L",
+        "title": "Charging cable"
+      },
+      "right": {
+        "id": "PI-046-R",
+        "title": "Charging cable"
+      },
+      "query": "Charging cable"
+    },
+    {
+      "id": "PI-047",
+      "left": {
+        "id": "PI-047-L",
+        "title": "Serum",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "right": {
+        "id": "PI-047-R",
+        "title": "Serum",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "query": "Serum"
+    },
+    {
+      "id": "PI-048",
+      "left": {
+        "id": "PI-048-L",
+        "title": "Used Phones - Mobile Phones & Accessories for sale in Saudi Arabia | dubizzle Saudi Arabia (OLX)",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-048-R",
+        "title": "افضل عروض (mobile phone) جديد و مستعمل في السعودية",
+        "providerId": "brave-web"
+      },
+      "query": "أبي جوال مستعمل في جدة"
+    },
+    {
+      "id": "PI-049",
+      "left": {
+        "id": "PI-049-L",
+        "title": "Apple Airpods Pro 2nd Generation With Magsafe Charging Case, Bluetooth 5.3 & Apple H2 Chip, Up to 6 Hours of Power, Personalized Spatial Audio, Upgraded Active Noise Cancellation, White | MQD83QM/A Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-049-R",
+        "title": "Apple AirPods Pro 2nd Gen Earbuds Bluetooth (Device)/MagSafe Charging Case White - Jarir Bookstore KSA",
+        "providerId": "brave-web"
+      },
+      "query": "Apple AirPods Pro 2"
+    },
+    {
+      "id": "PI-050",
+      "left": {
+        "id": "PI-050-L",
+        "title": "Wireless earbuds",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "right": {
+        "id": "PI-050-R",
+        "title": "Wireless earbuds",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "query": "Wireless earbuds"
+    },
+    {
+      "id": "PI-051",
+      "left": {
+        "id": "PI-051-L",
+        "title": "Smart watch",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "right": {
+        "id": "PI-051-R",
+        "title": "Smart watch",
+        "description": "Listing title and attributes are unavailable."
+      },
+      "query": "Smart watch"
+    },
+    {
+      "id": "PI-052",
+      "left": {
+        "id": "PI-052-L",
+        "title": "Shop Black Collection Online @ Nike Saudi",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-052-R",
+        "title": "Nike Men's Running Shoes, Black, 42 EU : Buy Online at Best Price in KSA - Souq is now : Fashion",
+        "providerId": "brave-web"
+      },
+      "query": "Nike أسود مقاس EU 42"
+    },
+    {
+      "id": "PI-053",
+      "left": {
+        "id": "PI-053-L",
+        "title": "Slim Jeans - 2019 D-Strukt",
+        "brand": "DIESEL",
+        "providerId": "diesel",
+        "offer": {
+          "merchant": "Diesel"
+        }
+      },
+      "right": {
+        "id": "PI-053-R",
+        "title": "Slim Jeans - 2019 D-Strukt",
+        "brand": "DIESEL",
+        "providerId": "diesel",
+        "offer": {
+          "merchant": "Diesel"
+        }
+      },
+      "query": "Diesel D-Strukt jeans"
+    },
+    {
+      "id": "PI-054",
+      "left": {
+        "id": "PI-054-L",
+        "title": "Car lamp"
+      },
+      "right": {
+        "id": "PI-054-R",
+        "title": "Car lamp"
+      },
+      "query": "Car lamp"
+    },
+    {
+      "id": "PI-055",
+      "left": {
+        "id": "PI-055-L",
+        "title": "موبايل أيفون 15 برو ماكس مستعمل للبيع في السعودية بسعر مناسب",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-055-R",
+        "title": "Used - IPhone 15 & IPhone 15 Pro : Shop Online At Best Prices In Saudi | Souq Is Now",
+        "providerId": "brave-web"
+      },
+      "query": "iPhone 15 مستعمل"
+    },
+    {
+      "id": "PI-056",
+      "left": {
+        "id": "PI-056-L",
+        "title": "Genesis Serum Anti-Chute Fortifiant - 90ml",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-056-R",
+        "title": "فيكتور اند رولف Flowerbomb Nectar Eau De Parfum, 90ml for للنساء",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "query": "Kerastase Genesis Serum Anti-Chute Fortifiant 90ml"
+    },
+    {
+      "id": "PI-057",
+      "left": {
+        "id": "PI-057-L",
+        "title": "Shop Diesel Jeans For Men Online in Saudi | Ounass",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-057-R",
+        "title": "Diesel Saudi Arabia Men's Jeans - Skinny, Slim, Straight",
+        "providerId": "brave-web"
+      },
+      "query": "Diesel jeans رجالي"
+    },
+    {
+      "id": "PI-058",
+      "left": {
+        "id": "PI-058-L",
+        "title": "نايك رمادي Air Max 270 Sneakers for للأولاد",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "right": {
+        "id": "PI-058-R",
+        "title": "نايك رمادي Air Max 270 Sneakers for للأولاد",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "query": "Nike Air Max 270 shoes"
+    },
+    {
+      "id": "PI-059",
+      "left": {
+        "id": "PI-059-L",
+        "title": "Charging cable"
+      },
+      "right": {
+        "id": "PI-059-R",
+        "title": "Charging cable"
+      },
+      "query": "Charging cable"
+    },
+    {
+      "id": "PI-060",
+      "left": {
+        "id": "PI-060-L",
+        "title": "Huawei Watch GT 5 price in Saudi Arabia | Compare Prices",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-060-R",
+        "title": "HUAWEI Watch GT 5 46 mm Smartwatch, 1.43\" AMOLED 326 PPI display, New Running and Cycling Mode, GPS, Health Monitor, 14 Days Battery Life, iOS and Android, Brown | Watch GT 5 Br Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca",
+        "providerId": "brave-web"
+      },
+      "query": "Huawei Watch GT 5"
+    },
+    {
+      "id": "PI-061",
+      "left": {
+        "id": "PI-061-L",
+        "title": "Buy Galaxy S24 Onyx Black 256 GB | Samsung Saudi Arabia",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-061-R",
+        "title": "SAMSUNG Galaxy S24 256GB price in Saudi Arabia - . best price, where to buy in KSA",
+        "providerId": "brave-web"
+      },
+      "query": "Samsung Galaxy S24 256GB"
+    },
+    {
+      "id": "PI-062",
+      "left": {
+        "id": "PI-062-L",
+        "title": "Best over-ear headphones 2022 for UAE and Saudi Arabia: the top cans from Sony, Sennheiser, and more | TechRadar",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-062-R",
+        "title": "سماعات سوني Wh1000xm5 : Shop Online At Best Prices In Saudi | Souq Is Now",
+        "providerId": "brave-web"
+      },
+      "query": "similar alternative to Sony WH-1000XM5 headphones"
+    },
+    {
+      "id": "PI-063",
+      "left": {
+        "id": "PI-063-L",
+        "title": "Jimmy Choo Beige Python Embossed Leather Slip On Sneakers Size 35",
+        "brand": "Jimmy Choo",
+        "providerId": "luxury-closet",
+        "offer": {
+          "merchant": "The Luxury Closet"
+        }
+      },
+      "right": {
+        "id": "PI-063-R",
+        "title": "نايك رمادي Air Max 270 Sneakers for للأولاد",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "query": "cheaper alternative to Nike Air Max 270 shoes"
+    },
+    {
+      "id": "PI-064",
+      "left": {
+        "id": "PI-064-L",
+        "title": "اغلى عطر نسائي - كيف تشتريه بسعر أرخص مع كوبونات الموفر؟ - Almowafir",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-064-R",
+        "title": "Perfume Women : Shop Online At Best Prices In Saudi | Souq Is Now",
+        "providerId": "brave-web"
+      },
+      "query": "أبي عطر نسائي بحدود 300 ريال"
+    },
+    {
+      "id": "PI-065",
+      "left": {
+        "id": "PI-065-L",
+        "title": "White Shoes | Buy White Sneakers for Men & Women in KSA | SSS",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-065-R",
+        "title": "حذاء ابيض رجالي | تسوق شوز ابيض للرجال اونلاين في السعودية | الشمس والرمال",
+        "providerId": "brave-web"
+      },
+      "query": "دور لي جزمة بيضاء مقاس EU 42"
+    },
+    {
+      "id": "PI-066",
+      "left": {
+        "id": "PI-066-L",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-07T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "PI-066-R",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-07T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "PI-067",
+      "left": {
+        "id": "PI-067-L",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-08T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "PI-067-R",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-08T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "PI-068",
+      "left": {
+        "id": "PI-068-L",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-05T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "PI-068-R",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-05T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "PI-069",
+      "left": {
+        "id": "PI-069-L",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "PI-069-R",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-070",
+      "left": {
+        "id": "PI-070-L",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-06T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "PI-070-R",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-06T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "PI-071",
+      "left": {
+        "id": "PI-071-L",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "right": {
+        "id": "PI-071-R",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 512 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "512 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-072",
+      "left": {
+        "id": "PI-072-L",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-03T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "PI-072-R",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-03T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "PI-073",
+      "left": {
+        "id": "PI-073-L",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-04T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "PI-073-R",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-04T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "PI-074",
+      "left": {
+        "id": "PI-074-L",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-80-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "US",
+          "material": "OEM replacement"
+        }
+      },
+      "right": {
+        "id": "PI-074-R",
+        "title": "Toyota Camry 2018 left headlamp Camry 2018 left headlamp",
+        "brand": "Toyota",
+        "model": "Camry 2018 left headlamp",
+        "identifiers": [
+          {
+            "kind": "OEM_PART",
+            "value": "SYN-OEM-80-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "region": "EU",
+          "material": "OEM replacement"
+        }
+      },
+      "query": "Toyota Camry 2018 left headlamp"
+    },
+    {
+      "id": "PI-075",
+      "left": {
+        "id": "PI-075-L",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-48-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-075-R",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-48-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "PI-076",
+      "left": {
+        "id": "PI-076-L",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-02T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "PI-076-R",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-02T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "PI-077",
+      "left": {
+        "id": "PI-077-L",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "PI-077-R",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-078",
+      "left": {
+        "id": "PI-078-L",
+        "title": "Nike Air Max 270 running shoe Black/White size US 8",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 8"
+        }
+      },
+      "right": {
+        "id": "PI-078-R",
+        "title": "Nike Air Max 270 running shoe Black/White size US 9",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 9"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "PI-079",
+      "left": {
+        "id": "PI-079-L",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "PI-079-R",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-080",
+      "left": {
+        "id": "PI-080-L",
+        "title": "Northstar Pace 1 running shoe Black size US 11",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 11"
+        }
+      },
+      "right": {
+        "id": "PI-080-R",
+        "title": "Northstar Pace 1 running shoe Black size US 12",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 12"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-081",
+      "left": {
+        "id": "PI-081-L",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "PI-081-R",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "PI-082",
+      "left": {
+        "id": "PI-082-L",
+        "title": "Northstar Pace 1 running shoe Black size US 12",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 12"
+        }
+      },
+      "right": {
+        "id": "PI-082-R",
+        "title": "Northstar Pace 1 running shoe Black size US 13",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 13"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-083",
+      "left": {
+        "id": "PI-083-L",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-083-R",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "PI-084",
+      "left": {
+        "id": "PI-084-L",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "PI-084-R",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "PI-085",
+      "left": {
+        "id": "PI-085-L",
+        "title": "Northstar Pace 1 running shoe Black size US 13",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 13"
+        }
+      },
+      "right": {
+        "id": "PI-085-R",
+        "title": "Northstar Pace 1 running shoe Black size US 14",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 14"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-086",
+      "left": {
+        "id": "PI-086-L",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-42-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-086-R",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-42-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "PI-087",
+      "left": {
+        "id": "PI-087-L",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-087-R",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "PI-088",
+      "left": {
+        "id": "PI-088-L",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "PI-088-R",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "PI-089",
+      "left": {
+        "id": "PI-089-L",
+        "title": "Northstar Pace 1 running shoe Black size US 14",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 14"
+        }
+      },
+      "right": {
+        "id": "PI-089-R",
+        "title": "Northstar Pace 1 running shoe Black size US 15",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 15"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-090",
+      "left": {
+        "id": "PI-090-L",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "PI-090-R",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-091",
+      "left": {
+        "id": "PI-091-L",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-43-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-091-R",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-43-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "PI-092",
+      "left": {
+        "id": "PI-092-L",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant A (synthetic)",
+          "price": 199,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2020-01-09T00:00:00Z"
+        }
+      },
+      "right": {
+        "id": "PI-092-R",
+        "title": "NovaTel Atlas X 256 GB smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        },
+        "offer": {
+          "merchant": "Merchant B (synthetic)",
+          "price": 179,
+          "currency": "SAR",
+          "availability": "in_stock",
+          "updatedAt": "2025-06-09T00:00:00Z"
+        }
+      },
+      "query": "NovaTel Atlas X 256 GB smartphone"
+    },
+    {
+      "id": "PI-093",
+      "left": {
+        "id": "PI-093-L",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "PI-093-R",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "PI-094",
+      "left": {
+        "id": "PI-094-L",
+        "title": "Northstar Pace 1 running shoe Black size US 15",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 15"
+        }
+      },
+      "right": {
+        "id": "PI-094-R",
+        "title": "Northstar Pace 1 running shoe Black size US 16",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 16"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-095",
+      "left": {
+        "id": "PI-095-L",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "PI-095-R",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-096",
+      "left": {
+        "id": "PI-096-L",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-096-R",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-097",
+      "left": {
+        "id": "PI-097-L",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "PI-097-R",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-098",
+      "left": {
+        "id": "PI-098-L",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "PI-098-R",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "PI-099",
+      "left": {
+        "id": "PI-099-L",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "PI-099-R",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "PI-100",
+      "left": {
+        "id": "PI-100-L",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "right": {
+        "id": "PI-100-R",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 512 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "512 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-101",
+      "left": {
+        "id": "PI-101-L",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "right": {
+        "id": "PI-101-R",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 512 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "512 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-102",
+      "left": {
+        "id": "PI-102-L",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-102-R",
+        "title": "Northstar Pace 1 running shoe White size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "White",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-103",
+      "left": {
+        "id": "PI-103-L",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-41-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-103-R",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-41-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "PI-104",
+      "left": {
+        "id": "PI-104-L",
+        "title": "Nike Air Max 270 running shoe Black/White size US 14",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 14"
+        }
+      },
+      "right": {
+        "id": "PI-104-R",
+        "title": "Nike Air Max 270 running shoe Black/White size US 15",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 15"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "PI-105",
+      "left": {
+        "id": "PI-105-L",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "PI-105-R",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "PI-106",
+      "left": {
+        "id": "PI-106-L",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "PI-106-R",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-107",
+      "left": {
+        "id": "PI-107-L",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "PI-107-R",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-108",
+      "left": {
+        "id": "PI-108-L",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-108-R",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-109",
+      "left": {
+        "id": "PI-109-L",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-46-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-109-R",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-46-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "PI-110",
+      "left": {
+        "id": "PI-110-L",
+        "title": "Nike Air Max 270 running shoe White/Black size US 13",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 13"
+        }
+      },
+      "right": {
+        "id": "PI-110-R",
+        "title": "Nike Air Max 270 running shoe White/Black size US 14",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 14"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "PI-111",
+      "left": {
+        "id": "PI-111-L",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "256 GB"
+        }
+      },
+      "right": {
+        "id": "PI-111-R",
+        "title": "NovaTel Atlas smartphone Atlas X Graphite 512 GB",
+        "brand": "NovaTel",
+        "model": "Atlas X",
+        "variant": {
+          "color": "Graphite",
+          "storage": "512 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-112",
+      "left": {
+        "id": "PI-112-L",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "PI-112-R",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-113",
+      "left": {
+        "id": "PI-113-L",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-113-R",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-114",
+      "left": {
+        "id": "PI-114-L",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-47-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-114-R",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-47-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "PI-115",
+      "left": {
+        "id": "PI-115-L",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 1
+        }
+      },
+      "right": {
+        "id": "PI-115-R",
+        "title": "Orion Wave Buds 2 wireless earbuds Wave Buds 2 Black pack of 2",
+        "brand": "Orion",
+        "model": "Wave Buds 2",
+        "variant": {
+          "color": "Black",
+          "packQuantity": 2
+        }
+      },
+      "query": "Orion Wave Buds 2 wireless earbuds"
+    },
+    {
+      "id": "PI-116",
+      "left": {
+        "id": "PI-116-L",
+        "title": "Wireless accessory"
+      },
+      "right": {
+        "id": "PI-116-R",
+        "title": "Wireless accessory"
+      },
+      "query": "Wireless accessory"
+    },
+    {
+      "id": "PI-117",
+      "left": {
+        "id": "PI-117-L",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "PI-117-R",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-118",
+      "left": {
+        "id": "PI-118-L",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-118-R",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-119",
+      "left": {
+        "id": "PI-119-L",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-44-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-119-R",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-44-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "PI-120",
+      "left": {
+        "id": "PI-120-L",
+        "title": "Nike Air Max 270 running shoe White/Black size US 15",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 15"
+        }
+      },
+      "right": {
+        "id": "PI-120-R",
+        "title": "Nike Air Max 270 running shoe White/Black size US 16",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 16"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "PI-121",
+      "left": {
+        "id": "PI-121-L",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "PI-121-R",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-122",
+      "left": {
+        "id": "PI-122-L",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-122-R",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-123",
+      "left": {
+        "id": "PI-123-L",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-45-left",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-123-R",
+        "title": "Northstar Stride 2 shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Stride 2",
+        "styleCode": "SYN-STYLE-STRIDE-02",
+        "identifiers": [
+          {
+            "kind": "GTIN",
+            "value": "SYN-GTIN-45-right",
+            "scope": "controlled-fixture"
+          }
+        ],
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Stride 2 shoe"
+    },
+    {
+      "id": "PI-124",
+      "left": {
+        "id": "PI-124-L",
+        "title": "Nike Air Max 270 running shoe Black/White size US 10",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 10"
+        }
+      },
+      "right": {
+        "id": "PI-124-R",
+        "title": "Nike Air Max 270 running shoe Black/White size US 11",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 11"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "PI-125",
+      "left": {
+        "id": "PI-125-L",
+        "title": "NovaTel Atlas smartphone Atlas Lite 128 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Lite",
+        "variant": {
+          "storage": "128 GB"
+        }
+      },
+      "right": {
+        "id": "PI-125-R",
+        "title": "NovaTel Atlas smartphone Atlas Pro 256 GB",
+        "brand": "NovaTel",
+        "model": "Atlas Pro",
+        "variant": {
+          "storage": "256 GB"
+        }
+      },
+      "query": "NovaTel Atlas smartphone"
+    },
+    {
+      "id": "PI-126",
+      "left": {
+        "id": "PI-126-L",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-126-R",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-127",
+      "left": {
+        "id": "PI-127-L",
+        "title": "Nike Air Max 270 running shoe White/Black size US 9",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-127-R",
+        "title": "Nike Air Max 270 running shoe White/Black size US 10",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 10"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "PI-128",
+      "left": {
+        "id": "PI-128-L",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-128-R",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-129",
+      "left": {
+        "id": "PI-129-L",
+        "title": "Nike Air Max 270 running shoe Black/White size US 12",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 12"
+        }
+      },
+      "right": {
+        "id": "PI-129-R",
+        "title": "Nike Air Max 270 running shoe Black/White size US 13",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "Black/White",
+          "size": "US 13"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "PI-130",
+      "left": {
+        "id": "PI-130-L",
+        "title": "Nike Air Max 270 running shoe White/Black size US 11",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 11"
+        }
+      },
+      "right": {
+        "id": "PI-130-R",
+        "title": "Nike Air Max 270 running shoe White/Black size US 12",
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "variant": {
+          "color": "White/Black",
+          "size": "US 12"
+        }
+      },
+      "query": "Nike Air Max 270 running shoe"
+    },
+    {
+      "id": "PI-131",
+      "left": {
+        "id": "PI-131-L",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "right": {
+        "id": "PI-131-R",
+        "title": "Northstar Pace 1 running shoe Black size US 9",
+        "brand": "Northstar",
+        "model": "Pace 1",
+        "variant": {
+          "color": "Black",
+          "size": "US 9"
+        }
+      },
+      "query": "Northstar Pace 1 running shoe"
+    },
+    {
+      "id": "PI-132",
+      "left": {
+        "id": "PI-132-L",
+        "title": "Buy Dry Hair Shampoo - GK Hair Best Dry Shampoo – GK Hair KSA",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-132-R",
+        "title": "Shampoo | Faces KSA",
+        "providerId": "brave-web"
+      },
+      "query": "shampoo for dry hair"
+    },
+    {
+      "id": "PI-133",
+      "left": {
+        "id": "PI-133-L",
+        "title": "ساعة هواوي WATCH GT 5 الذكية. - دليل سنتر",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-133-R",
+        "title": "Huawei Watch GT price in Saudi Arabia | Compare Prices",
+        "providerId": "brave-web"
+      },
+      "query": "comparable to Huawei Watch GT 5"
+    },
+    {
+      "id": "PI-134",
+      "left": {
+        "id": "PI-134-L",
+        "title": "The best Dyson Airwrap dupes: affordable alternatives, tried and tested",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-134-R",
+        "title": "These Dyson Airwrap Alternatives Give Pro-Level Blowouts Without the $600 Price Tag",
+        "providerId": "brave-web"
+      },
+      "query": "similar to Dyson Airwrap hair styler"
+    },
+    {
+      "id": "PI-135",
+      "left": {
+        "id": "PI-135-L",
+        "title": "Duracell Car Battery in Saudi | Duracell Car Battery Supplier Saudi",
+        "providerId": "brave-web"
+      },
+      "right": {
+        "id": "PI-135-R",
+        "title": "Car Batteries KSA | Best Price Offers | Riyadh, Jeddah",
+        "providerId": "brave-web"
+      },
+      "query": "بطارية سيارة 12V 70Ah الرياض"
+    },
+    {
+      "id": "PI-136",
+      "left": {
+        "id": "PI-136-L",
+        "title": "اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "right": {
+        "id": "PI-136-R",
+        "title": "اديداس أبيض Adidad Samba Decon Sneakers for للنساء والرجال",
+        "providerId": "deal-outlet",
+        "offer": {
+          "merchant": "The Deal Outlet"
+        }
+      },
+      "query": "exact SKU ABC-000-NONEXISTENT-927"
+    }
+  ]
+}

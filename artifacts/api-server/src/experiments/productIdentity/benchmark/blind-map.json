@@ -1,0 +1,549 @@
+{
+  "schemaVersion": 1,
+  "mapping": [
+    {
+      "blindId": "PI-001",
+      "originalId": "controlled-011"
+    },
+    {
+      "blindId": "PI-002",
+      "originalId": "controlled-010"
+    },
+    {
+      "blindId": "PI-003",
+      "originalId": "controlled-013"
+    },
+    {
+      "blindId": "PI-004",
+      "originalId": "controlled-012"
+    },
+    {
+      "blindId": "PI-005",
+      "originalId": "controlled-064"
+    },
+    {
+      "blindId": "PI-006",
+      "originalId": "controlled-015"
+    },
+    {
+      "blindId": "PI-007",
+      "originalId": "controlled-065"
+    },
+    {
+      "blindId": "PI-008",
+      "originalId": "controlled-014"
+    },
+    {
+      "blindId": "PI-009",
+      "originalId": "controlled-066"
+    },
+    {
+      "blindId": "PI-010",
+      "originalId": "controlled-017"
+    },
+    {
+      "blindId": "PI-011",
+      "originalId": "controlled-067"
+    },
+    {
+      "blindId": "PI-012",
+      "originalId": "controlled-077"
+    },
+    {
+      "blindId": "PI-013",
+      "originalId": "controlled-016"
+    },
+    {
+      "blindId": "PI-014",
+      "originalId": "controlled-060"
+    },
+    {
+      "blindId": "PI-015",
+      "originalId": "controlled-076"
+    },
+    {
+      "blindId": "PI-016",
+      "originalId": "controlled-019"
+    },
+    {
+      "blindId": "PI-017",
+      "originalId": "controlled-061"
+    },
+    {
+      "blindId": "PI-018",
+      "originalId": "controlled-075"
+    },
+    {
+      "blindId": "PI-019",
+      "originalId": "controlled-018"
+    },
+    {
+      "blindId": "PI-020",
+      "originalId": "controlled-062"
+    },
+    {
+      "blindId": "PI-021",
+      "originalId": "controlled-074"
+    },
+    {
+      "blindId": "PI-022",
+      "originalId": "controlled-063"
+    },
+    {
+      "blindId": "PI-023",
+      "originalId": "controlled-073"
+    },
+    {
+      "blindId": "PI-024",
+      "originalId": "controlled-072"
+    },
+    {
+      "blindId": "PI-025",
+      "originalId": "controlled-071"
+    },
+    {
+      "blindId": "PI-026",
+      "originalId": "controlled-070"
+    },
+    {
+      "blindId": "PI-027",
+      "originalId": "controlled-068"
+    },
+    {
+      "blindId": "PI-028",
+      "originalId": "controlled-069"
+    },
+    {
+      "blindId": "PI-029",
+      "originalId": "controlled-079"
+    },
+    {
+      "blindId": "PI-030",
+      "originalId": "controlled-078"
+    },
+    {
+      "blindId": "PI-031",
+      "originalId": "unverifiable-006"
+    },
+    {
+      "blindId": "PI-032",
+      "originalId": "unverifiable-007"
+    },
+    {
+      "blindId": "PI-033",
+      "originalId": "unverifiable-004"
+    },
+    {
+      "blindId": "PI-034",
+      "originalId": "unverifiable-005"
+    },
+    {
+      "blindId": "PI-035",
+      "originalId": "unverifiable-002"
+    },
+    {
+      "blindId": "PI-036",
+      "originalId": "unverifiable-003"
+    },
+    {
+      "blindId": "PI-037",
+      "originalId": "unverifiable-001"
+    },
+    {
+      "blindId": "PI-038",
+      "originalId": "real-observed-014"
+    },
+    {
+      "blindId": "PI-039",
+      "originalId": "unverifiable-011"
+    },
+    {
+      "blindId": "PI-040",
+      "originalId": "real-observed-015"
+    },
+    {
+      "blindId": "PI-041",
+      "originalId": "unverifiable-010"
+    },
+    {
+      "blindId": "PI-042",
+      "originalId": "real-observed-016"
+    },
+    {
+      "blindId": "PI-043",
+      "originalId": "unverifiable-013"
+    },
+    {
+      "blindId": "PI-044",
+      "originalId": "real-observed-017"
+    },
+    {
+      "blindId": "PI-045",
+      "originalId": "real-observed-007"
+    },
+    {
+      "blindId": "PI-046",
+      "originalId": "unverifiable-008"
+    },
+    {
+      "blindId": "PI-047",
+      "originalId": "unverifiable-012"
+    },
+    {
+      "blindId": "PI-048",
+      "originalId": "real-observed-010"
+    },
+    {
+      "blindId": "PI-049",
+      "originalId": "real-observed-006"
+    },
+    {
+      "blindId": "PI-050",
+      "originalId": "unverifiable-009"
+    },
+    {
+      "blindId": "PI-051",
+      "originalId": "unverifiable-015"
+    },
+    {
+      "blindId": "PI-052",
+      "originalId": "real-observed-011"
+    },
+    {
+      "blindId": "PI-053",
+      "originalId": "real-observed-005"
+    },
+    {
+      "blindId": "PI-054",
+      "originalId": "unverifiable-014"
+    },
+    {
+      "blindId": "PI-055",
+      "originalId": "real-observed-012"
+    },
+    {
+      "blindId": "PI-056",
+      "originalId": "real-observed-004"
+    },
+    {
+      "blindId": "PI-057",
+      "originalId": "real-observed-013"
+    },
+    {
+      "blindId": "PI-058",
+      "originalId": "real-observed-003"
+    },
+    {
+      "blindId": "PI-059",
+      "originalId": "unverifiable-016"
+    },
+    {
+      "blindId": "PI-060",
+      "originalId": "real-observed-002"
+    },
+    {
+      "blindId": "PI-061",
+      "originalId": "real-observed-001"
+    },
+    {
+      "blindId": "PI-062",
+      "originalId": "real-observed-018"
+    },
+    {
+      "blindId": "PI-063",
+      "originalId": "real-observed-019"
+    },
+    {
+      "blindId": "PI-064",
+      "originalId": "real-observed-009"
+    },
+    {
+      "blindId": "PI-065",
+      "originalId": "real-observed-008"
+    },
+    {
+      "blindId": "PI-066",
+      "originalId": "controlled-086"
+    },
+    {
+      "blindId": "PI-067",
+      "originalId": "controlled-087"
+    },
+    {
+      "blindId": "PI-068",
+      "originalId": "controlled-084"
+    },
+    {
+      "blindId": "PI-069",
+      "originalId": "controlled-028"
+    },
+    {
+      "blindId": "PI-070",
+      "originalId": "controlled-085"
+    },
+    {
+      "blindId": "PI-071",
+      "originalId": "controlled-029"
+    },
+    {
+      "blindId": "PI-072",
+      "originalId": "controlled-082"
+    },
+    {
+      "blindId": "PI-073",
+      "originalId": "controlled-083"
+    },
+    {
+      "blindId": "PI-074",
+      "originalId": "controlled-080"
+    },
+    {
+      "blindId": "PI-075",
+      "originalId": "controlled-048"
+    },
+    {
+      "blindId": "PI-076",
+      "originalId": "controlled-081"
+    },
+    {
+      "blindId": "PI-077",
+      "originalId": "controlled-039"
+    },
+    {
+      "blindId": "PI-078",
+      "originalId": "controlled-049"
+    },
+    {
+      "blindId": "PI-079",
+      "originalId": "controlled-038"
+    },
+    {
+      "blindId": "PI-080",
+      "originalId": "controlled-020"
+    },
+    {
+      "blindId": "PI-081",
+      "originalId": "controlled-091"
+    },
+    {
+      "blindId": "PI-082",
+      "originalId": "controlled-021"
+    },
+    {
+      "blindId": "PI-083",
+      "originalId": "controlled-059"
+    },
+    {
+      "blindId": "PI-084",
+      "originalId": "controlled-090"
+    },
+    {
+      "blindId": "PI-085",
+      "originalId": "controlled-022"
+    },
+    {
+      "blindId": "PI-086",
+      "originalId": "controlled-042"
+    },
+    {
+      "blindId": "PI-087",
+      "originalId": "controlled-058"
+    },
+    {
+      "blindId": "PI-088",
+      "originalId": "controlled-093"
+    },
+    {
+      "blindId": "PI-089",
+      "originalId": "controlled-023"
+    },
+    {
+      "blindId": "PI-090",
+      "originalId": "controlled-033"
+    },
+    {
+      "blindId": "PI-091",
+      "originalId": "controlled-043"
+    },
+    {
+      "blindId": "PI-092",
+      "originalId": "controlled-088"
+    },
+    {
+      "blindId": "PI-093",
+      "originalId": "controlled-092"
+    },
+    {
+      "blindId": "PI-094",
+      "originalId": "controlled-024"
+    },
+    {
+      "blindId": "PI-095",
+      "originalId": "controlled-032"
+    },
+    {
+      "blindId": "PI-096",
+      "originalId": "controlled-008"
+    },
+    {
+      "blindId": "PI-097",
+      "originalId": "controlled-040"
+    },
+    {
+      "blindId": "PI-098",
+      "originalId": "controlled-089"
+    },
+    {
+      "blindId": "PI-099",
+      "originalId": "controlled-095"
+    },
+    {
+      "blindId": "PI-100",
+      "originalId": "controlled-025"
+    },
+    {
+      "blindId": "PI-101",
+      "originalId": "controlled-031"
+    },
+    {
+      "blindId": "PI-102",
+      "originalId": "controlled-009"
+    },
+    {
+      "blindId": "PI-103",
+      "originalId": "controlled-041"
+    },
+    {
+      "blindId": "PI-104",
+      "originalId": "controlled-055"
+    },
+    {
+      "blindId": "PI-105",
+      "originalId": "controlled-094"
+    },
+    {
+      "blindId": "PI-106",
+      "originalId": "controlled-026"
+    },
+    {
+      "blindId": "PI-107",
+      "originalId": "controlled-030"
+    },
+    {
+      "blindId": "PI-108",
+      "originalId": "controlled-006"
+    },
+    {
+      "blindId": "PI-109",
+      "originalId": "controlled-046"
+    },
+    {
+      "blindId": "PI-110",
+      "originalId": "controlled-054"
+    },
+    {
+      "blindId": "PI-111",
+      "originalId": "controlled-027"
+    },
+    {
+      "blindId": "PI-112",
+      "originalId": "controlled-037"
+    },
+    {
+      "blindId": "PI-113",
+      "originalId": "controlled-007"
+    },
+    {
+      "blindId": "PI-114",
+      "originalId": "controlled-047"
+    },
+    {
+      "blindId": "PI-115",
+      "originalId": "controlled-057"
+    },
+    {
+      "blindId": "PI-116",
+      "originalId": "controlled-096"
+    },
+    {
+      "blindId": "PI-117",
+      "originalId": "controlled-036"
+    },
+    {
+      "blindId": "PI-118",
+      "originalId": "controlled-004"
+    },
+    {
+      "blindId": "PI-119",
+      "originalId": "controlled-044"
+    },
+    {
+      "blindId": "PI-120",
+      "originalId": "controlled-056"
+    },
+    {
+      "blindId": "PI-121",
+      "originalId": "controlled-035"
+    },
+    {
+      "blindId": "PI-122",
+      "originalId": "controlled-005"
+    },
+    {
+      "blindId": "PI-123",
+      "originalId": "controlled-045"
+    },
+    {
+      "blindId": "PI-124",
+      "originalId": "controlled-051"
+    },
+    {
+      "blindId": "PI-125",
+      "originalId": "controlled-034"
+    },
+    {
+      "blindId": "PI-126",
+      "originalId": "controlled-002"
+    },
+    {
+      "blindId": "PI-127",
+      "originalId": "controlled-050"
+    },
+    {
+      "blindId": "PI-128",
+      "originalId": "controlled-003"
+    },
+    {
+      "blindId": "PI-129",
+      "originalId": "controlled-053"
+    },
+    {
+      "blindId": "PI-130",
+      "originalId": "controlled-052"
+    },
+    {
+      "blindId": "PI-131",
+      "originalId": "controlled-001"
+    },
+    {
+      "blindId": "PI-132",
+      "originalId": "real-observed-024"
+    },
+    {
+      "blindId": "PI-133",
+      "originalId": "real-observed-021"
+    },
+    {
+      "blindId": "PI-134",
+      "originalId": "real-observed-020"
+    },
+    {
+      "blindId": "PI-135",
+      "originalId": "real-observed-023"
+    },
+    {
+      "blindId": "PI-136",
+      "originalId": "real-observed-022"
+    }
+  ]
+}

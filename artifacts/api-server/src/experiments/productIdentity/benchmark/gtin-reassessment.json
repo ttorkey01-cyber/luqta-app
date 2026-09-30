@@ -1,0 +1,226 @@
+[
+  {
+    "blindId": "PI-075",
+    "identifierValidation": [
+      {
+        "side": "left",
+        "raw": "SYN-GTIN-48-left",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      },
+      {
+        "side": "right",
+        "raw": "SYN-GTIN-48-right",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      }
+    ],
+    "classification": "match",
+    "adequatelyAdjudicated": true,
+    "rationale": "The displayed GTIN claims are unusable as identifiers and establish neither a match nor a conflict. Independent source-visible product and variant evidence is identical across both sides and is sufficient to classify the pair as the same product variant.",
+    "positiveEvidence": [
+      "Both titles identify a Northstar Stride 2 shoe in Black, size US 9.",
+      "Both records have brand Northstar, model Stride 2, style code SYN-STYLE-STRIDE-02, color Black, and size US 9."
+    ],
+    "conflictingEvidence": [],
+    "unknownEvidence": [
+      "No valid GTIN is provided for either side; the invalid displayed strings cannot establish whether authoritative GTINs match or differ."
+    ]
+  },
+  {
+    "blindId": "PI-086",
+    "identifierValidation": [
+      {
+        "side": "left",
+        "raw": "SYN-GTIN-42-left",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      },
+      {
+        "side": "right",
+        "raw": "SYN-GTIN-42-right",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      }
+    ],
+    "classification": "match",
+    "adequatelyAdjudicated": true,
+    "rationale": "The displayed GTIN claims are unusable as identifiers and establish neither a match nor a conflict. Independent source-visible product and variant evidence is identical across both sides and is sufficient to classify the pair as the same product variant.",
+    "positiveEvidence": [
+      "Both titles identify a Northstar Stride 2 shoe in Black, size US 9.",
+      "Both records have brand Northstar, model Stride 2, style code SYN-STYLE-STRIDE-02, color Black, and size US 9."
+    ],
+    "conflictingEvidence": [],
+    "unknownEvidence": [
+      "No valid GTIN is provided for either side; the invalid displayed strings cannot establish whether authoritative GTINs match or differ."
+    ]
+  },
+  {
+    "blindId": "PI-091",
+    "identifierValidation": [
+      {
+        "side": "left",
+        "raw": "SYN-GTIN-43-left",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      },
+      {
+        "side": "right",
+        "raw": "SYN-GTIN-43-right",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      }
+    ],
+    "classification": "match",
+    "adequatelyAdjudicated": true,
+    "rationale": "The displayed GTIN claims are unusable as identifiers and establish neither a match nor a conflict. Independent source-visible product and variant evidence is identical across both sides and is sufficient to classify the pair as the same product variant.",
+    "positiveEvidence": [
+      "Both titles identify a Northstar Stride 2 shoe in Black, size US 9.",
+      "Both records have brand Northstar, model Stride 2, style code SYN-STYLE-STRIDE-02, color Black, and size US 9."
+    ],
+    "conflictingEvidence": [],
+    "unknownEvidence": [
+      "No valid GTIN is provided for either side; the invalid displayed strings cannot establish whether authoritative GTINs match or differ."
+    ]
+  },
+  {
+    "blindId": "PI-103",
+    "identifierValidation": [
+      {
+        "side": "left",
+        "raw": "SYN-GTIN-41-left",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      },
+      {
+        "side": "right",
+        "raw": "SYN-GTIN-41-right",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      }
+    ],
+    "classification": "match",
+    "adequatelyAdjudicated": true,
+    "rationale": "The displayed GTIN claims are unusable as identifiers and establish neither a match nor a conflict. Independent source-visible product and variant evidence is identical across both sides and is sufficient to classify the pair as the same product variant.",
+    "positiveEvidence": [
+      "Both titles identify a Northstar Stride 2 shoe in Black, size US 9.",
+      "Both records have brand Northstar, model Stride 2, style code SYN-STYLE-STRIDE-02, color Black, and size US 9."
+    ],
+    "conflictingEvidence": [],
+    "unknownEvidence": [
+      "No valid GTIN is provided for either side; the invalid displayed strings cannot establish whether authoritative GTINs match or differ."
+    ]
+  },
+  {
+    "blindId": "PI-109",
+    "identifierValidation": [
+      {
+        "side": "left",
+        "raw": "SYN-GTIN-46-left",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      },
+      {
+        "side": "right",
+        "raw": "SYN-GTIN-46-right",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      }
+    ],
+    "classification": "match",
+    "adequatelyAdjudicated": true,
+    "rationale": "The displayed GTIN claims are unusable as identifiers and establish neither a match nor a conflict. Independent source-visible product and variant evidence is identical across both sides and is sufficient to classify the pair as the same product variant.",
+    "positiveEvidence": [
+      "Both titles identify a Northstar Stride 2 shoe in Black, size US 9.",
+      "Both records have brand Northstar, model Stride 2, style code SYN-STYLE-STRIDE-02, color Black, and size US 9."
+    ],
+    "conflictingEvidence": [],
+    "unknownEvidence": [
+      "No valid GTIN is provided for either side; the invalid displayed strings cannot establish whether authoritative GTINs match or differ."
+    ]
+  },
+  {
+    "blindId": "PI-114",
+    "identifierValidation": [
+      {
+        "side": "left",
+        "raw": "SYN-GTIN-47-left",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      },
+      {
+        "side": "right",
+        "raw": "SYN-GTIN-47-right",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      }
+    ],
+    "classification": "match",
+    "adequatelyAdjudicated": true,
+    "rationale": "The displayed GTIN claims are unusable as identifiers and establish neither a match nor a conflict. Independent source-visible product and variant evidence is identical across both sides and is sufficient to classify the pair as the same product variant.",
+    "positiveEvidence": [
+      "Both titles identify a Northstar Stride 2 shoe in Black, size US 9.",
+      "Both records have brand Northstar, model Stride 2, style code SYN-STYLE-STRIDE-02, color Black, and size US 9."
+    ],
+    "conflictingEvidence": [],
+    "unknownEvidence": [
+      "No valid GTIN is provided for either side; the invalid displayed strings cannot establish whether authoritative GTINs match or differ."
+    ]
+  },
+  {
+    "blindId": "PI-119",
+    "identifierValidation": [
+      {
+        "side": "left",
+        "raw": "SYN-GTIN-44-left",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      },
+      {
+        "side": "right",
+        "raw": "SYN-GTIN-44-right",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      }
+    ],
+    "classification": "match",
+    "adequatelyAdjudicated": true,
+    "rationale": "The displayed GTIN claims are unusable as identifiers and establish neither a match nor a conflict. Independent source-visible product and variant evidence is identical across both sides and is sufficient to classify the pair as the same product variant.",
+    "positiveEvidence": [
+      "Both titles identify a Northstar Stride 2 shoe in Black, size US 9.",
+      "Both records have brand Northstar, model Stride 2, style code SYN-STYLE-STRIDE-02, color Black, and size US 9."
+    ],
+    "conflictingEvidence": [],
+    "unknownEvidence": [
+      "No valid GTIN is provided for either side; the invalid displayed strings cannot establish whether authoritative GTINs match or differ."
+    ]
+  },
+  {
+    "blindId": "PI-123",
+    "identifierValidation": [
+      {
+        "side": "left",
+        "raw": "SYN-GTIN-45-left",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      },
+      {
+        "side": "right",
+        "raw": "SYN-GTIN-45-right",
+        "status": "invalid",
+        "reason": "Contains letters and hyphens; it is not a numeric 8-, 12-, 13-, or 14-digit value, so no GTIN check digit can be validated."
+      }
+    ],
+    "classification": "match",
+    "adequatelyAdjudicated": true,
+    "rationale": "The displayed GTIN claims are unusable as identifiers and establish neither a match nor a conflict. Independent source-visible product and variant evidence is identical across both sides and is sufficient to classify the pair as the same product variant.",
+    "positiveEvidence": [
+      "Both titles identify a Northstar Stride 2 shoe in Black, size US 9.",
+      "Both records have brand Northstar, model Stride 2, style code SYN-STYLE-STRIDE-02, color Black, and size US 9."
+    ],
+    "conflictingEvidence": [],
+    "unknownEvidence": [
+      "No valid GTIN is provided for either side; the invalid displayed strings cannot establish whether authoritative GTINs match or differ."
+    ]
+  }
+]

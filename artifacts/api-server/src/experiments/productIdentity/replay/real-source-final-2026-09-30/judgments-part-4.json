@@ -1,0 +1,213 @@
+[
+  {
+    "caseId": "1",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-74c35b0fab40d255f36d4b2a2f655b1dfb4294dbc1236b3e29b11d0c4656af92": "EXACT",
+      "obs-1091bfa8e766cf46caecac003f816449f4ab361a9ef2d8e74cc002395dcc78f3": "IRRELEVANT",
+      "obs-5c804182eb81d11c44e3357cda5c154b84e1a6b132eb237013d813ce7addb492": "IRRELEVANT",
+      "obs-4e2add2ea3e46d80826ffffdbb9e3583609ac0936158097c7775c65ae138ffbf": "RELEVANT",
+      "obs-af1a1f41020d159ba0cf5e73cc8a4d3d5cce17af9b1bf3d3a47f674973bd5099": "IRRELEVANT",
+      "obs-f45ab8afd7bfc3093a6078dcc06a06d2e66ea4e9bc7ba28b3b2622b2b59da9a5": "RELEVANT",
+      "obs-b8a57e42d4187ee07b963d556b1c1b00ba0922d2805b631aef784397549f18ae": "EXACT",
+      "obs-e75566676cbdbe7bb97d769efe44aeb0f1f2ff7fa0bb6d06cc4e597404e7dcbc": "RELEVANT",
+      "obs-f9d1375a75d7208d7ace3d4ef2d145c713bb307c23cdd8397705cef47bf04a97": "IRRELEVANT",
+      "obs-b2815c53b4a7a31559ff625b901a533e1ee4d64f57281ee79325d95b5dbc9657": "EXACT"
+    },
+    "reason": "Visible listings establish Galaxy S24 256GB (Samsung official item, Amazon item, and Microless item). FE/Ultra models conflict; Samsung/eXtra family/series pages and price comparison are useful but not exact individual-product evidence."
+  },
+  {
+    "caseId": "2",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-f7002915e48e5c9f8044ba8d57a39aeacb20e2e7c4eecdd145eb43b6bb42ca0a": "IRRELEVANT",
+      "obs-8cc92b2a89840fb04b947a09cc2a690c3f0314cd03a247ba52b12f8df6ee61e6": "IRRELEVANT",
+      "obs-4676212a7eb695e9b0dac65273ee6b8483dc66e54314a0fe1138b21e84a9876e": "EXACT",
+      "obs-8e85fb0f72957ef68719313eb74e8ee3ebd69423153228f9be43dee98d0fdd8d": "IRRELEVANT",
+      "obs-3fd152c576d6db6063adf0744accff4da4b7760427efa6deea11df476b9730b4": "EXACT",
+      "obs-049d59fa7fd52d58e2429ea241a7fc16800cee218ee0c586e1d2ffe05732649f": "RELEVANT",
+      "obs-59b014d29db2956560a5a3cf8c6ebf2fccf24e2c1f022b9ceaf095b166f62d80": "RELEVANT",
+      "obs-52f7ec1f36cc095ea4efb5b023935688a06ef8449cba2b0ee45f36868c4a81e4": "IRRELEVANT",
+      "obs-c0b0b2f8ae784d6de1286c53596090d662f3bfc8d205c8b45dc7e6b193eef466": "EXACT",
+      "obs-19d87cc74d60c1b84e5fee74332fcf50e66c4e89a783d30d3d319cfa877a607f": "IRRELEVANT"
+    },
+    "reason": "The Amazon GT 5 46mm and Sharaf DG GT5 41mm evidence identifies the base GT 5; the Pricena result also explicitly describes a GT 5 41. GT5 Pro results conflict with the requested model; Huawei support is a service page and noon results are broad category pages."
+  },
+  {
+    "caseId": "3",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-c331689e9949404ecbec4de0097ebd242f949c885621e988656f82f1806212b4": "EXACT",
+      "obs-693722b973507c4074f6e6210989b0885bb254e1e62529cf5b5d72171afdf83e": "RELEVANT",
+      "obs-fff203ebdf1f97ff0fa19597e6781d32d2b415a62d9f88fbb4b91effb46e0170": "RELEVANT",
+      "obs-1ae83100f167de5563d481e7a61d7c75b67d7ff50d7ef0f4b4aeb7e36c4a8e3f": "EXACT",
+      "obs-8172c7851e4efa9ca9b76d5f9cadefb226ec24567bbd1206bf527e3f4e8fdc4d": "RELEVANT",
+      "obs-fd90e3f157f515d0f7a907a97243d64c8ccf35bfb4f3cf1d615e5d78e975aea3": "RELEVANT",
+      "obs-0273263266f1e7ca4f016781c23bb9afcefadb3321a546bdbd11509a46e51b7f": "RELEVANT",
+      "obs-ed3e30e92cda85a14d263de9e9fbfca1b6944c66a8578166147cc525bb3ea56b": "RELEVANT",
+      "obs-678c8ad8dd92683c7cba9e13cbd65850ee9d1d28edb0a136d68a383c53184bcb": "RELEVANT",
+      "obs-d53be70999f582e677fdb5458bd7b36796f5b2c0f0bade5cb44ca843992be92a": "RELEVANT",
+      "obs-dbf1a08b1bb8cdc0dca3be13619ccc9cbb4b11018797e3a8f4d5989c31a140e4": "RELEVANT",
+      "obs-efacff4ed0da48d737a6c086c216591397e94cb318788ea69baafff6d01b9f9d": "RELEVANT",
+      "obs-3b75616adc95ba2e146c174ac217266cd2e636d93410ae15c41446f5345fae10": "EXACT",
+      "obs-1282f6724983a346ab7e9fed57363f261f6a4b3e9d3e49060953f1df407c606e": "RELEVANT",
+      "obs-f16fc95ddc0b38a4ec9f7c5cb948ffe640739921f89764e745e3e9ee76a6261c": "RELEVANT",
+      "obs-ab468a3d829a1bcb86bf4d8041bbe166449b97f906fd755c3d7f6f354561b0d3": "EXACT",
+      "obs-7fdfe923f0a726637ff78f64d916a326b6d3d21886c887f7df9ffc8c18995f73": "RELEVANT",
+      "obs-c49d66cb9efc017b1d45d78cb867340385742a52fc7ed623a038659856e04366": "EXACT",
+      "obs-196491740c99fb957e8582c2e2a64d144e3eb112fa0f3a570d66838e6516de48": "EXACT",
+      "obs-0a0290eaba822bbc57b39882e3b667ffbcf074c633da866bc66093f43619353c": "RELEVANT",
+      "obs-eb8f1b8bcd81f25a3e5d542b966ae3789d65a445d7c22205cb63c33df4a24bd3": "RELEVANT",
+      "obs-ddba8886695cf767034fdb05f2330dedbc272f7321db16f46349a384c1b35671": "EXACT",
+      "obs-5bafe345c6835dcf4afbb6463bd183ac9d6e63b640af76f41d91441447e9f659": "RELEVANT"
+    },
+    "reason": "Official Nike product pages identify Air Max 270 shoe items and support exact model identity. Affiliate feed entries name Air Max 270 but give ambiguous/child-oriented descriptions, so remain relevant rather than exact; all are matching shoe intent."
+  },
+  {
+    "caseId": "4",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-9b3e3957802b9aaf9716bb7474e75940337c89ffb1cd1b258d3c204cd73238c1": "IRRELEVANT",
+      "obs-c6a6a74241c79ee97e30a5282899c35eb14e6de066005264d89e3c75e9c41d1b": "EXACT",
+      "obs-bfadf8e60879e34cbe5232c693c718a1f3f84f0142ea83b479298b161136c53d": "RELEVANT",
+      "obs-1eb5162a1bf898845317efba8665e851237f712f7d9bb0ce1274d64ca8655d63": "EXACT",
+      "obs-a8239c442992892ab9347196ed34dc8451c3800e6bbe6f4b06fea856b970a519": "EXACT",
+      "obs-e3eddf31a484576df7116930ee2bafdb468ca9594d457571f13d6c76f0ec4c97": "EXACT",
+      "obs-4338d06c8374cb4ef922c7a04ba27e05ba3bd0eb0bf16dc44a865a810c2a2b44": "EXACT",
+      "obs-1eece85cd6dd826cd596a6274c42287d30fbe525cbfd5f1f35c5812305a390d9": "EXACT",
+      "obs-a0b5555530f974dd4cd6c4a6c08e8f27b7986682b9d30e8637dfffac70e00090": "EXACT",
+      "obs-5ba9a3fce3ffa386c4e1356c3f8c6b0173fc6c48e983fe377b3b6660c3bdf7d5": "RELEVANT"
+    },
+    "reason": "Exact judgments have product identity plus 90ml evidence in titles, descriptions, or variant fields. The Keshop serum lacks supported 90ml; the Fortifiant-only item lacks size; Bellaffair text describes Defense Thermique rather than the requested serum."
+  },
+  {
+    "caseId": "5",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-b82951058a53565b327e006083dc1a27d6616e895eeb8acf36433ef80c3c3134": "EXACT",
+      "obs-db462c5b82bad8e2562579f1bbd3e18f4e22a3ff1aee2b3db54b44163cfd4c9c": "RELEVANT",
+      "obs-4797e01bda6fcb305d08df7e1c2b22d6b24ddd88c370407555027a8221bfe0b0": "RELEVANT",
+      "obs-28a56f228eb1d94b9ed684086deeef38a2cc55a9d45ed35d6105eea02544e43a": "EXACT",
+      "obs-ca10773470b23e7403a6b7f3bca45e5d136fbdc7578cae604c3e7d154dcd5ef1": "EXACT",
+      "obs-adf8959238328c709bad449c5be5452b6fbe22176895e681add6ab46caf187b8": "EXACT",
+      "obs-9b7588c17d544d3c9a75ce6ddcd7b813f532ff106e1d5c3ce3dc74bc63508a23": "EXACT",
+      "obs-59d006c792cb40296db956e356d5a325c52bbaa69c3a050a03f4466471b22a20": "EXACT",
+      "obs-a3dbf88949247580451680d2c466174980c2f38c4542f3eb4b8105f15c066a13": "RELEVANT",
+      "obs-da15de895f7933110757f3585355f511ff1386b665bb5bdac0cdb301e08ffd6c": "EXACT",
+      "obs-d11ee17a0ef1aa1e3537e7f8c17de338bf401a28a62ed7d524b348cbfed1fc37": "RELEVANT",
+      "obs-a284b6698753e1a3a11256b7dcb65db432c1787ff8f2984504d5b29e19f76f6e": "EXACT",
+      "obs-9e11d9b30a5cebc168860d7244806bf9d6e3b0937a1c1ab7338052a0dacb126f": "EXACT",
+      "obs-1993fc11502377aa68698129746a81dbebe94368d60489f20ed961fdcea4967e": "EXACT",
+      "obs-9d56b7adac27ee3ae01ca9cffe47ffe98a98c4aceb9633b6ce17e5c3162444b9": "EXACT",
+      "obs-5b5a437c8265869d0a3e1b47ca4c512b59edc7e4c3650f712ecc60a064afd18d": "RELEVANT"
+    },
+    "reason": "Diesel source product records identify 2019 D-Strukt and carry Diesel merchant/brand evidence; the direct Diesel product page likewise identifies 2019 D-Strukt. Generic Diesel jeans/category pages do not establish that fit/model."
+  },
+  {
+    "caseId": "6",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-c03821e1244b150a787fd11b4015213728fe05bab148cc8e4ccee9978f0bd572": "EXACT",
+      "obs-234a1885b7a2e711d182ae45b7e16401bcfac97c1b3bf8d7773e120a6b6ef9c0": "EXACT",
+      "obs-9e263a4038725f312e7c3abdb22577ebac6063cc52b6f8a93aa831397455ab52": "EXACT",
+      "obs-adcd316e188d457b6510364fc332ff3da5f4a3c444334faa61983b0cae44b76a": "EXACT",
+      "obs-0c746d9ec2e027e991d5e878d631c9cf0230f3812d16316289cb0c1c2dc5edc2": "RELEVANT",
+      "obs-70a69f8833c54ad709ee657afb954db31782a1d1c8d92de177a588f64ee6ee7d": "EXACT",
+      "obs-4a5e44bbb445de4f342dbf11c4398c407555051d2ea861b7da1d12dfa85c5f27": "EXACT",
+      "obs-c04787e19c865218268192c1b37bba4a42712d8f46b11b550f292b4020e967f6": "IRRELEVANT",
+      "obs-cd0b71d61fd399f07d547508645d457484e058d2429e967ee1339bb24684c61e": "RELEVANT",
+      "obs-16224838aaa31b6e487df2b1fb12e8e17978084614d5af337267febe834cfed1": "EXACT"
+    },
+    "reason": "Retail listings identify AirPods Pro 2 / second generation; the Microless entry also supplies model code MQD83QM/A. The used-marketplace result is a relevant matching product but does not establish listing-level identity beyond its title; the Pricena result is stale editorial/release-date content, not a product listing."
+  },
+  {
+    "caseId": "13",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-e7b7e912d0e2fc84fb2e0763b7d76292361b266085e647ab4c2cd223cb0f62fb": "RELEVANT",
+      "obs-f39eb0dde448238b1afbe3ce6a68c504b3756fdd574ee13e4e45b0fd92a85e9d": "EXACT"
+    },
+    "reason": "The black collection is a broad browse page, not a specific shoe. Amazon explicitly identifies Nike men’s running shoes, black, EU 42, matching the complete generic query."
+  },
+  {
+    "caseId": "14",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-83ca047444c4c93550f0ebc96d254b2f5ef5be36824ef35869e7a2bbfe2ded19": "EXACT",
+      "obs-f726441e02a903737dc1eab1a984474517881e50867544862a7e5d9c6bb2e153": "IRRELEVANT",
+      "obs-6e7a94361aaef30d2375137612090c996520af0ea8f37a7f37b5e9e267c218e5": "IRRELEVANT",
+      "obs-aad1bf350a3ab0a9c524da5647aae851c865b956f1277d2eb967a3c3016aeb16": "RELEVANT",
+      "obs-b78d68a6de71a047575ab5896032c15f4f418b49eee9fd1a045afea6f861a928": "EXACT",
+      "obs-08fd88d7b67a03ec1e049472efa7f3d1e92eab01b1639f159fa91307a46fdd1f": "RELEVANT",
+      "obs-005acf71132b074817e397b0fae38ef3a82474422f73525fba89a865a5006b90": "IRRELEVANT",
+      "obs-8062fe1d1314b8702fa40d5fedf83ba53cdd9944f1c5f42d4a1624979397802f": "IRRELEVANT",
+      "obs-cdd132413bb05c2c557e97b87404c6b888c737557a8ae54c27e647536bb01eba": "RELEVANT"
+    },
+    "reason": "Soum and Yas Estore evidence identifies used base iPhone 15 devices (Yas also specifies 128GB). Pro and Pro Max results conflict; broad used-iPhone/catalog pages are relevant but do not verify an individual base-model listing."
+  },
+  {
+    "caseId": "16",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-741e4a9d0a8a709f25583f16585d3b6d56034f2300107b4d98af0f1f61b6c151": "EXACT",
+      "obs-fc0d738c3e9935a1d60930705b7be48605d71ad4ef4fa10ae2b30c6ef755b564": "RELEVANT",
+      "obs-686418271418996f34bdd322f2cbac63f4444b027c8d57c53ce874987e1dea87": "EXACT",
+      "obs-e751cb5ad9e9135e04fa0b5c5bc1a43c65183e1ed4c43449230a044606a90560": "RELEVANT",
+      "obs-4cd3ca584d758cd670a9ef759dfda6b60943b8fe5962b4636e4e341e1c6d9b14": "RELEVANT"
+    },
+    "reason": "The desertcart result identifies Diesel men’s bootcut jeans, and Ounass supplies a specific Diesel men’s jeans item, both matching the broad male Diesel-jeans intent. Brand-category/price pages are relevant but do not establish a specific product."
+  },
+  {
+    "caseId": "26",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-db462c5b82bad8e2562579f1bbd3e18f4e22a3ff1aee2b3db54b44163cfd4c9c": "RELEVANT",
+      "obs-4797e01bda6fcb305d08df7e1c2b22d6b24ddd88c370407555027a8221bfe0b0": "RELEVANT",
+      "obs-cebb0b81daa245a52c8c5e45126d3218f70f6eb05ad693d7e3a1bd858e9e9be1": "RELEVANT",
+      "obs-686418271418996f34bdd322f2cbac63f4444b027c8d57c53ce874987e1dea87": "RELEVANT",
+      "obs-4cd3ca584d758cd670a9ef759dfda6b60943b8fe5962b4636e4e341e1c6d9b14": "RELEVANT",
+      "obs-cf2ba69df6763798ebdba54acbed1e6aa31d5d1fd32c4bb0881ced38d49aaa71": "RELEVANT",
+      "obs-d11ee17a0ef1aa1e3537e7f8c17de338bf401a28a62ed7d524b348cbfed1fc37": "RELEVANT",
+      "obs-2163a946aec6743364754c7b4139921ab22dfe8a4829302b61db6e318dc08796": "RELEVANT"
+    },
+    "reason": "All entries are Diesel jeans or broad Diesel-men’s-jeans results, useful for the broad product intent, but none visibly supports requested SKU 00SW1Q 0EAXD; therefore none is exact."
+  },
+  {
+    "caseId": "27",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-77cb5a8f4d0f50c8a7d62413ae3f8cb150c65517f89daba01b2e51fa82ff23f1": "RELEVANT",
+      "obs-1f3c6b0ac8a9ee61aa863926a10c4722af8ffc39af0cfaf88fa7637eae5d4afe": "RELEVANT",
+      "obs-2f0173dfe6308b56cf6660fa0f31aef7a0d4c4f955a3fde565bc27760d1a0c7e": "RELEVANT",
+      "obs-58f250ebc571149ca0f61c96298ba90b5ab7efb9d18b5249e01c6c58ae88fbb2": "RELEVANT",
+      "obs-0847f3d0e99b66c42721e001eeca322e48ca6f6bb96b0814c766c57fe28d4c96": "EXACT",
+      "obs-89a494eebe0cb4c9b84d309ef381168bc0b5ab50f27111296bdc33f269a3ae3e": "EXACT",
+      "obs-41114bfc00d10dbf6271fc5a2ec01b95cfaeb4af7c3e7aee005bf46f0c79048c": "EXACT",
+      "obs-9fabd8ba0abfb31a4132523489ab472d45fed2179e1dd17e1d03e84926a16254": "EXACT",
+      "obs-6ce2a89904c73d85daf223295c1969860f7a754b54dcb1319e816f472c68f8af": "IRRELEVANT"
+    },
+    "reason": "Exact evidence includes the requested CW2288-111 style code in the Amazon item description, SVD product description, KICKS CREW title/source identifiers, and Nike official product description/source identifier; these identify the white Air Force 1 ’07. Black Nike product is a variant conflict; generic AF1 pages do not verify this SKU."
+  },
+  {
+    "caseId": "28",
+    "coverage": "JUDGED",
+    "inventoryAvailabilityAssessment": "found",
+    "candidateJudgments": {
+      "obs-afcdb0a61cd2b26bcfab0390d2edbf6c07a7834af0042c1e10d0ff183e490e9e": "IRRELEVANT",
+      "obs-69a209770a9142fe9f87b63e64742cd99b089bca6aeff7d3f714e1d11e2f4cca": "RELEVANT",
+      "obs-f2fa0680b4f593bf9b86f8dc25d59ec3831c9c61362c58fa05f70aa2369d17a5": "UNVERIFIABLE"
+    },
+    "reason": "The TechRadar article identifies Shure AONIC 50 as a similarly priced comparator to Sony WH-1000XM5, useful for alternative intent. Amazon returns the requested Sony itself, not an alternative. The generic Sony headphones item does not establish whether it is distinct from the target model."
+  }
+]
