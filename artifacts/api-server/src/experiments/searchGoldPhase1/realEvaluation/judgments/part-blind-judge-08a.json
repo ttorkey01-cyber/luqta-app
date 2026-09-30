@@ -1,0 +1,130 @@
+{
+  "cases": [
+    {
+      "caseId": 36,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "The packet contains no returned candidates for this case. An empty result set is not independent evidence that compatible, original spark plugs are unavailable, so availability cannot be determined.",
+      "candidates": []
+    },
+    {
+      "caseId": 37,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "Neither listing independently verifies all four requirements for a Riyadh 12V 70Ah car battery: the first gives voltage and capacity but no specific Riyadh location; the second names Riyadh but omits voltage and capacity. The packet does not establish that qualifying stock is absent.",
+      "candidates": [
+        {
+          "id": "9331b32228e4469b1bd0fee0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title says Car Battery and the description identifies it as a car battery."
+            },
+            {
+              "field": "voltage",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The description explicitly states 12V."
+            },
+            {
+              "field": "capacity",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "The description explicitly states 70Ah."
+            },
+            {
+              "field": "city",
+              "constraintIndex": 3,
+              "verdict": "unknown",
+              "evidence": "The description says available across KSA cities but does not specifically verify availability in Riyadh."
+            }
+          ],
+          "evidence": "The title and description support a car battery with the requested voltage and capacity. Location is only stated broadly as KSA cities, leaving Riyadh unverified."
+        },
+        {
+          "id": "e213349db1af12383691dde5",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies car batteries and the category is automotive."
+            },
+            {
+              "field": "voltage",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No voltage is stated in the displayed title, description, or metadata."
+            },
+            {
+              "field": "capacity",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "No capacity is stated in the displayed title, description, or metadata."
+            },
+            {
+              "field": "city",
+              "constraintIndex": 3,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly names Riyadh among the markets for the car-battery offers."
+            }
+          ],
+          "evidence": "This is a car-battery offers page whose title names Riyadh, but it does not identify voltage or capacity for any offered battery."
+        }
+      ]
+    },
+    {
+      "caseId": 38,
+      "inventoryAvailabilityAssessment": "found",
+      "judgeRationale": "The packet includes shampoo listings. One source-backed shampoo-range description explicitly says it offers options for dry hair, satisfying the sole hard requirement of shampoo and supporting usefulness for the stated dry-hair preference.",
+      "candidates": [
+        {
+          "id": "17aa48f9d971348d398add3e",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title says Dry Hair Shampoo, and the description identifies it as dry shampoo."
+            }
+          ],
+          "evidence": "The listing is explicitly for dry shampoo, which meets the shampoo product-type requirement. Its description focuses on reducing oil and buildup, so it does not independently establish suitability as a wash shampoo for dry hair; the title and description can be read in two ways."
+        },
+        {
+          "id": "d20771a9b360767f656bbacb",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title identifies a shampoo range, and the description explicitly says it is a shampoo range."
+            }
+          ],
+          "evidence": "The description says the range includes options for every hair type, explicitly including dry hair. This supports the requested preference, although no individual shampoo SKU is identified."
+        },
+        {
+          "id": "a4139aa52d125e81ab58b70e",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title is Shampoo and the description explicitly describes a shampoo assortment."
+            }
+          ],
+          "evidence": "The listing is for shampoo and mentions both shampoos addressing hair concerns and dry shampoos, but does not specifically confirm that a listed regular shampoo is suitable for dry hair."
+        }
+      ]
+    }
+  ]
+}

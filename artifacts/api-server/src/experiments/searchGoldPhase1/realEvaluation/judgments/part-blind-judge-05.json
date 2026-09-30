@@ -1,0 +1,297 @@
+{
+  "cases": [
+    {
+      "caseId": 21,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "No candidates are present in this packet for this case. An empty returned pool does not establish that no qualifying Huawei phone exists in inventory.",
+      "candidates": []
+    },
+    {
+      "caseId": 22,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "No candidates are present in this packet for this case. An empty returned pool does not establish that no qualifying men's EU 43 sneakers are available.",
+      "candidates": []
+    },
+    {
+      "caseId": 23,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "The only candidate explicitly names a Samsung Galaxy S24 phone, but the displayed model code is SM-S921BB rather than the required SM-S921B. This is evidence of a different model identifier, and the packet provides no qualifying offer; the candidate pool is not sufficient to establish market-wide absence.",
+      "candidates": [
+        {
+          "id": "c1403119352fa709b5e6e091",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify the phone as SAMSUNG."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "The displayed model identifier is SM-S921BB, not the required SM-S921B."
+            }
+          ],
+          "evidence": "A Samsung Galaxy S24 phone is the intended broad product category, but the explicitly displayed model identifier differs from the required identifier."
+        }
+      ]
+    },
+    {
+      "caseId": 24,
+      "inventoryAvailabilityAssessment": "found",
+      "judgeRationale": "The packet contains source-backed product listings that explicitly identify Huawei phones with the BNE-LX1 code, satisfying both frozen brand and model requirements. Other generic or accessory listings do not independently establish an additional exact phone offer.",
+      "candidates": [
+        {
+          "id": "afdc47b6a1afcc207d19be45",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify Huawei."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify the phone as Nova 12 SE BNE-LX1."
+            }
+          ],
+          "evidence": "The listing explicitly describes an unlocked Huawei Nova 12 SE BNE-LX1 phone and says it is available to buy online."
+        },
+        {
+          "id": "ba20ffef86fb89d172bdc3ae",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title and description identify Huawei."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "The description explicitly associates the BNE-LX1 code with Huawei Nova 10 SE."
+            }
+          ],
+          "evidence": "This is explicitly a replacement screen for Huawei Nova 10 SE, not a phone listing; matching the phone's model code does not make the accessory the intended product."
+        },
+        {
+          "id": "977ac976f62428b0e1814cf0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title and description identify Huawei mobile phones."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "This is a general Huawei phones-for-sale page and does not identify any listing as model BNE-LX1."
+            }
+          ],
+          "evidence": "The page concerns Huawei phones for sale, but gives no candidate-specific model code."
+        },
+        {
+          "id": "41db6195d6cc9a17c1506051",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title and description identify Huawei mobile phones."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The general Huawei mobile-phone shopping page does not identify model BNE-LX1."
+            }
+          ],
+          "evidence": "This is a general Huawei mobile-phone shopping page with no exact model identifier."
+        },
+        {
+          "id": "cd928b9d2e628ad1836fb1c8",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly name HUAWEI."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify a HUAWEI BNE LX1 cell phone; the displayed spacing variation preserves the BNE-LX1 identifier."
+            }
+          ],
+          "evidence": "The source-backed page explicitly offers a HUAWEI BNE LX1 cell phone, with the same model identifier written with a space instead of a hyphen."
+        }
+      ]
+    },
+    {
+      "caseId": 25,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "None of the packet's candidates explicitly identifies an Apple AirPods Pro listing with model code A3047. The candidate pool does not establish that no such offer exists elsewhere, so availability is unknown rather than none.",
+      "candidates": [
+        {
+          "id": "f04eccda4e8f8a279e3477d0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title and description explicitly identify Apple AirPods Pro 3."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The listing names AirPods Pro 3 but does not display the required A3047 identifier."
+            }
+          ],
+          "evidence": "This is an Apple AirPods Pro product, but the displayed Pro 3 variant and absence of A3047 do not verify the requested exact model."
+        },
+        {
+          "id": "9e36e476ac0750275bdc7cee",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title and description explicitly identify Apple AirPods Pro."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "The title explicitly gives the product identifier AIRPODS-PRO-3, not the required A3047."
+            }
+          ],
+          "evidence": "The listing explicitly identifies AirPods Pro 3 and gives AIRPODS-PRO-3 as its product identifier rather than A3047."
+        },
+        {
+          "id": "a3c6e408ae5368a976cd7777",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title identifies Apple AirPods Pro."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No A3047 identifier appears; the description contains unrelated camera specifications and does not establish the AirPods model."
+            }
+          ],
+          "evidence": "The generic comparison-page title names AirPods Pro, but provides no specific model identifier; the accompanying price/specification text does not corroborate the product."
+        },
+        {
+          "id": "e0861f4fd22c93eb3938d2bb",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title and description explicitly identify Apple AirPods Pro earbuds."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The listing gives no A3047 model identifier."
+            }
+          ],
+          "evidence": "This is an Apple AirPods Pro earbuds listing, but the displayed information does not establish the exact A3047 model."
+        },
+        {
+          "id": "959c56ef03017e145e82b428",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title and description explicitly identify Apple AirPods."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "The description explicitly identifies the product as AirPods Pro 2nd Generation, not the requested A3047 model."
+            }
+          ],
+          "evidence": "The listing explicitly specifies AirPods Pro 2nd Generation, a different named variant from the requested exact model."
+        },
+        {
+          "id": "c3aea378a863568283cf2bd2",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title and description identify Apple AirPods."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "No A3047 identifier is given; the title names standard AirPods without identifying a Pro product."
+            }
+          ],
+          "evidence": "The title and description concern Apple AirPods generally and specifically do not identify AirPods Pro, so this is the wrong product line."
+        },
+        {
+          "id": "095dac310547fbef13c3282a",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title and description explicitly identify Apple AirPods Pro 3."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "The listing names AirPods Pro 3 but does not state the required A3047 identifier."
+            }
+          ],
+          "evidence": "The listing explicitly offers AirPods Pro 3, but does not provide A3047 or other source evidence establishing that code as its model."
+        }
+      ]
+    }
+  ]
+}

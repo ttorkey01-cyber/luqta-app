@@ -1,0 +1,1951 @@
+{
+  "cases": [
+    {
+      "caseId": 40,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "The returned pool has several plausible wireless/Bluetooth headset and headphone titles, but their availability is marked unknown and the packet provides no independent stock confirmation or source detail sufficient to establish a currently useful offer. The pool does not establish absence either, so availability is unknown.",
+      "candidates": [
+        {
+          "id": "fdc7ad1b4594c5fedcffe0ea",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones, earphones, or an audio headset as the offered listening product."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless mini sleep bluetooth headset in-ear super long battery life multi-function vibration massage)."
+            }
+          ],
+          "evidence": "A generic alternative in the requested headphone category: Wireless mini sleep bluetooth headset in-ear super long battery life multi-function vibration massage. The title supports wireless/Bluetooth connectivity; no specific model or identity was requested."
+        },
+        {
+          "id": "898e064a10d91e179ad90710",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless collar clip microphone, one to two mobile phone live outdoor interview recording noise reduction microphone)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless collar clip microphone, one to two mobile phone live outdoor interview recording noise reduction microphone)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless collar clip microphone, one to two mobile phone live outdoor interview recording noise reduction microphone."
+        },
+        {
+          "id": "4d41799f5ffb128d2faca24f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (10PCS Open/Closed Stop Gate Receiver Switch 315/433mhz Wireless Remote Control 3 Relay Channel DC12V Max Voltage 24V\")."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (10PCS Open/Closed Stop Gate Receiver Switch 315/433mhz Wireless Remote Control 3 Relay Channel DC12V Max Voltage 24V\")."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: 10PCS Open/Closed Stop Gate Receiver Switch 315/433mhz Wireless Remote Control 3 Relay Channel DC12V Max Voltage 24V\"."
+        },
+        {
+          "id": "72f94658eac20672e3cfb850",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (4MP dual lens IP65 waterproof wireless automatic track pan title wireless outdoor camera, two-way audio support 256G tf card)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (4MP dual lens IP65 waterproof wireless automatic track pan title wireless outdoor camera, two-way audio support 256G tf card)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: 4MP dual lens IP65 waterproof wireless automatic track pan title wireless outdoor camera, two-way audio support 256G tf card."
+        },
+        {
+          "id": "357cd4dd25b4e7b43a480839",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Dual speaker transparent mecha wireless bluetooth speaker RGB light small steel cannon bass diaphragm audio)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Dual speaker transparent mecha wireless bluetooth speaker RGB light small steel cannon bass diaphragm audio)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Dual speaker transparent mecha wireless bluetooth speaker RGB light small steel cannon bass diaphragm audio."
+        },
+        {
+          "id": "395b59a082072af66fac1554",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Waterproof Bluetooth Speaker Portable Shower Wireless Speaker Suitable for Outdoor Swimming Pool)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Waterproof Bluetooth Speaker Portable Shower Wireless Speaker Suitable for Outdoor Swimming Pool)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Waterproof Bluetooth Speaker Portable Shower Wireless Speaker Suitable for Outdoor Swimming Pool."
+        },
+        {
+          "id": "b43b2aa0c495d1c5dc8fd47f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (5pcs Earphone Headset Jack Socket Seat Connector For Motorola XIR P3688 DEP450 DP1400 CP200d Radio Walkie Talkies Accessories)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title does not state whether this product is wireless; connectivity is not inferred from silence."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: 5pcs Earphone Headset Jack Socket Seat Connector For Motorola XIR P3688 DEP450 DP1400 CP200d Radio Walkie Talkies Accessories."
+        },
+        {
+          "id": "e8f671109ac784bd42a749df",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Smart life, PTZ indoor wireless network camera 4MP PTZ network camera with two-way function)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Smart life, PTZ indoor wireless network camera 4MP PTZ network camera with two-way function)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Smart life, PTZ indoor wireless network camera 4MP PTZ network camera with two-way function."
+        },
+        {
+          "id": "aed5bff6e09e78d6b543f2ca",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (MaAnt DianBa No. 1 PD 8-Port LCD Multi-Function Charger Mobile Phone Data Line HISEECON 220W USB Wireless Fast Flash Charging)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (MaAnt DianBa No. 1 PD 8-Port LCD Multi-Function Charger Mobile Phone Data Line HISEECON 220W USB Wireless Fast Flash Charging)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: MaAnt DianBa No. 1 PD 8-Port LCD Multi-Function Charger Mobile Phone Data Line HISEECON 220W USB Wireless Fast Flash Charging."
+        },
+        {
+          "id": "4fae4d8bd3655b037f1d273c",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (transformer outdoor wireless bluetooth mini bluetooth speaker enlarged bookshelf hifi bass party box speaker with bracket)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (transformer outdoor wireless bluetooth mini bluetooth speaker enlarged bookshelf hifi bass party box speaker with bracket)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: transformer outdoor wireless bluetooth mini bluetooth speaker enlarged bookshelf hifi bass party box speaker with bracket."
+        },
+        {
+          "id": "299b376c4c1d12d039c4de59",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones, earphones, or an audio headset as the offered listening product."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (P959 Wireless for Bluetooth Over-Ear Headphone Gaming Headset with Noise Cancelling Feature TWS Earphones & Headphones)."
+            }
+          ],
+          "evidence": "A generic alternative in the requested headphone category: P959 Wireless for Bluetooth Over-Ear Headphone Gaming Headset with Noise Cancelling Feature TWS Earphones & Headphones. The title supports wireless/Bluetooth connectivity; no specific model or identity was requested."
+        },
+        {
+          "id": "cfdd947acd3603765dc79a90",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (UR30 Detector Replacement Headphone, Noise‑Isolating Over‑Ear Headset 6.35mm Jack For 4500 5000 GFX7000 Gold Detecting Tool)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a 6.35mm jack or spring/coiled cord for the headphone/headset, indicating wired rather than wireless connectivity."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: UR30 Detector Replacement Headphone, Noise‑Isolating Over‑Ear Headset 6.35mm Jack For 4500 5000 GFX7000 Gold Detecting Tool."
+        },
+        {
+          "id": "5a4e4b46b388f6b1a2947d73",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless microphone collar clip type, mobile phone clip recording radio one for two)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless microphone collar clip type, mobile phone clip recording radio one for two)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless microphone collar clip type, mobile phone clip recording radio one for two."
+        },
+        {
+          "id": "96f3231ab12f32e4815a26e0",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (FM FM Stereo Digital Transmitter Module Board, Wireless Microphone Circuit Board)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (FM FM Stereo Digital Transmitter Module Board, Wireless Microphone Circuit Board)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: FM FM Stereo Digital Transmitter Module Board, Wireless Microphone Circuit Board."
+        },
+        {
+          "id": "bfd37e247f30a4c1e938c0e1",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Vintage vinyl gramophone, microphone, aromatherapy warm light, Bluetooth speaker, wireless karaoke subwoofer, creative gift)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Vintage vinyl gramophone, microphone, aromatherapy warm light, Bluetooth speaker, wireless karaoke subwoofer, creative gift)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Vintage vinyl gramophone, microphone, aromatherapy warm light, Bluetooth speaker, wireless karaoke subwoofer, creative gift."
+        },
+        {
+          "id": "2aee064fc3594a8e6cc2165b",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (6000W Portable Speaker, Wireless Stereo, TWS, Color Lights, USB/TF Card, for Outdoor, Camping, Backyard Party, Bluetooth Speaker)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (6000W Portable Speaker, Wireless Stereo, TWS, Color Lights, USB/TF Card, for Outdoor, Camping, Backyard Party, Bluetooth Speaker)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: 6000W Portable Speaker, Wireless Stereo, TWS, Color Lights, USB/TF Card, for Outdoor, Camping, Backyard Party, Bluetooth Speaker."
+        },
+        {
+          "id": "e3a4d84c9cc8283c604b2941",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Mini electric battery usb charging air cushion camping air with deflation camp portable cordless wireless)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Mini electric battery usb charging air cushion camping air with deflation camp portable cordless wireless)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Mini electric battery usb charging air cushion camping air with deflation camp portable cordless wireless."
+        },
+        {
+          "id": "5532e91d7778f5eeb0d31396",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Kaisi USB Rechargeable Electric Polishing Sharpening Mini Carving Tools Set DIY Jade Engraving Grinding PCB Cutting Wireless Pen)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Kaisi USB Rechargeable Electric Polishing Sharpening Mini Carving Tools Set DIY Jade Engraving Grinding PCB Cutting Wireless Pen)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Kaisi USB Rechargeable Electric Polishing Sharpening Mini Carving Tools Set DIY Jade Engraving Grinding PCB Cutting Wireless Pen."
+        },
+        {
+          "id": "6ff415743766a263cf1e661d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless Charging Underwear Laundry Cup Portable Small Mini Underwear Special Washing Socks Dormitory Travel Laundry)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless Charging Underwear Laundry Cup Portable Small Mini Underwear Special Washing Socks Dormitory Travel Laundry)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless Charging Underwear Laundry Cup Portable Small Mini Underwear Special Washing Socks Dormitory Travel Laundry."
+        },
+        {
+          "id": "ca33853a334a673e42a6013e",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless bluetooth triple folding touch keyboard mouse set mobile phone ipad tablet laptop portable)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless bluetooth triple folding touch keyboard mouse set mobile phone ipad tablet laptop portable)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless bluetooth triple folding touch keyboard mouse set mobile phone ipad tablet laptop portable."
+        },
+        {
+          "id": "270657d53900dc1c9e3f056f",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones, earphones, or an audio headset as the offered listening product."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title does not state whether this product is wireless; connectivity is not inferred from silence."
+            }
+          ],
+          "evidence": "The title is in or adjacent to the headphone category (Best K0SS UR30 Headphones for Gold Metal Detectors Headphones for 4500 5000 GFX7000 Gold Detectors), but a hard requirement is not established: product type or wireless connectivity remains unverified."
+        },
+        {
+          "id": "f1cefd41197cb4543f840e00",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless Bluetooth Portable Speaker System High Power Audio Speaker Wired Wireless Surround Sound Home Theater TV Projector)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless Bluetooth Portable Speaker System High Power Audio Speaker Wired Wireless Surround Sound Home Theater TV Projector)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless Bluetooth Portable Speaker System High Power Audio Speaker Wired Wireless Surround Sound Home Theater TV Projector."
+        },
+        {
+          "id": "5090d3eb09a4cc25447fb8e6",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (2.4G Rechargeable Wireless Mute 1600DPI Mouse 6 Buttons for PC Laptop Computer Gaming Office Home Waterproof Mouse)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (2.4G Rechargeable Wireless Mute 1600DPI Mouse 6 Buttons for PC Laptop Computer Gaming Office Home Waterproof Mouse)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: 2.4G Rechargeable Wireless Mute 1600DPI Mouse 6 Buttons for PC Laptop Computer Gaming Office Home Waterproof Mouse."
+        },
+        {
+          "id": "343d90dc0981a661da8a4e1c",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Mobile APP Wireless Bluetooth Barbecue Thermometer Kitchen Food Digital Display Barbecue)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Mobile APP Wireless Bluetooth Barbecue Thermometer Kitchen Food Digital Display Barbecue)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Mobile APP Wireless Bluetooth Barbecue Thermometer Kitchen Food Digital Display Barbecue."
+        },
+        {
+          "id": "9e2854be267b8a4317d3caca",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless collar microphone M29 small bee charging compartment teacher-specific lectures with Bluetooth speaker)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless collar microphone M29 small bee charging compartment teacher-specific lectures with Bluetooth speaker)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless collar microphone M29 small bee charging compartment teacher-specific lectures with Bluetooth speaker."
+        },
+        {
+          "id": "3458cc1c25e37c89b4e0c303",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (WNDA3100 V2 USB WiFi Wireless-N Dual Band N600 300 Mbps Network Adapter For Netgear)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (WNDA3100 V2 USB WiFi Wireless-N Dual Band N600 300 Mbps Network Adapter For Netgear)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: WNDA3100 V2 USB WiFi Wireless-N Dual Band N600 300 Mbps Network Adapter For Netgear."
+        },
+        {
+          "id": "31994ce3e6953d6a7ff4c58c",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (K52 full screen colorful LED light bluetooth speaker portable wireless microphone)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (K52 full screen colorful LED light bluetooth speaker portable wireless microphone)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: K52 full screen colorful LED light bluetooth speaker portable wireless microphone."
+        },
+        {
+          "id": "785f33bf70e39b862baf23a2",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Mini Portable Bluetooth Speaker Wireless Surround Sound TF Card Slot for Outdoor Use MP3 Music Player Built-in FM Radio)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Mini Portable Bluetooth Speaker Wireless Surround Sound TF Card Slot for Outdoor Use MP3 Music Player Built-in FM Radio)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Mini Portable Bluetooth Speaker Wireless Surround Sound TF Card Slot for Outdoor Use MP3 Music Player Built-in FM Radio."
+        },
+        {
+          "id": "17fea6f32c38df969be0e2f3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless audio receiver Wireless earphone monitor tape)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless audio receiver Wireless earphone monitor tape)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless audio receiver Wireless earphone monitor tape."
+        },
+        {
+          "id": "bdd7d4041a8acc705aa6b822",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Universal Portable CarPlay Adapter with 5GHz Wireless Network and Bluetooth Anti-Lock Brake System Personal Computer)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Universal Portable CarPlay Adapter with 5GHz Wireless Network and Bluetooth Anti-Lock Brake System Personal Computer)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Universal Portable CarPlay Adapter with 5GHz Wireless Network and Bluetooth Anti-Lock Brake System Personal Computer."
+        },
+        {
+          "id": "4ab4f17978f373fa2464a8e4",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (The Best K0SS UR30 Earphones for 4500 5000 GFX7000 Gold Detectors Are Suitable for Metal Detector Headphones)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title does not state whether this product is wireless; connectivity is not inferred from silence."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: The Best K0SS UR30 Earphones for 4500 5000 GFX7000 Gold Detectors Are Suitable for Metal Detector Headphones."
+        },
+        {
+          "id": "aa237217024d71d8c76e8805",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless Bluetooth dual-mode mechanical keyboard and mouse set with display and knob, three-color color)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless Bluetooth dual-mode mechanical keyboard and mouse set with display and knob, three-color color)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless Bluetooth dual-mode mechanical keyboard and mouse set with display and knob, three-color color."
+        },
+        {
+          "id": "b6d8e8249c01d40398b52b6d",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones, earphones, or an audio headset as the offered listening product."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title does not state whether this product is wireless; connectivity is not inferred from silence."
+            }
+          ],
+          "evidence": "The title is in or adjacent to the headphone category (Elite Headset Replaceable Adjustable Length Without Charging), but a hard requirement is not established: product type or wireless connectivity remains unverified."
+        },
+        {
+          "id": "f6ebbc95e75a17263e723c74",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Xincode 2.4G Wireless QR Code Scanner USB Wired Barcode Reader 2D Handheld Barcode Scanner for Quick Accurate Barcode Reading)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Xincode 2.4G Wireless QR Code Scanner USB Wired Barcode Reader 2D Handheld Barcode Scanner for Quick Accurate Barcode Reading)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Xincode 2.4G Wireless QR Code Scanner USB Wired Barcode Reader 2D Handheld Barcode Scanner for Quick Accurate Barcode Reading."
+        },
+        {
+          "id": "a86448fd86dff541a3b8fda5",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (433Mhz DC 3.6V-24V 1CH Mini Wireless RF Remote Control Switch Relay Receiver Transmitter LED Lamp Controller)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (433Mhz DC 3.6V-24V 1CH Mini Wireless RF Remote Control Switch Relay Receiver Transmitter LED Lamp Controller)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: 433Mhz DC 3.6V-24V 1CH Mini Wireless RF Remote Control Switch Relay Receiver Transmitter LED Lamp Controller."
+        },
+        {
+          "id": "78fe6dcd43bf40a351800446",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (10 Years Battery Powered Hotel Smart Wireless Tuya Wifi Interconnected Cigarette Smoke Detector)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (10 Years Battery Powered Hotel Smart Wireless Tuya Wifi Interconnected Cigarette Smoke Detector)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: 10 Years Battery Powered Hotel Smart Wireless Tuya Wifi Interconnected Cigarette Smoke Detector."
+        },
+        {
+          "id": "9366c056e840be983a2bed8e",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Keyboard PLUS mini wireless, three-color backlight 2.4G multimedia, remote control mini)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Keyboard PLUS mini wireless, three-color backlight 2.4G multimedia, remote control mini)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Keyboard PLUS mini wireless, three-color backlight 2.4G multimedia, remote control mini."
+        },
+        {
+          "id": "3a686f8991cdab0fa8f0b876",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Factory Price Blue Tooth Barcode Scanning USB 2D QR Code Scanner Wireless Barcode Scanner With Charge Cradle)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Factory Price Blue Tooth Barcode Scanning USB 2D QR Code Scanner Wireless Barcode Scanner With Charge Cradle)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Factory Price Blue Tooth Barcode Scanning USB 2D QR Code Scanner Wireless Barcode Scanner With Charge Cradle."
+        },
+        {
+          "id": "12612208a24f9ba61dbc090b",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Dorham High-precision LCD Display Dynamometer 100t Wireless Dynamometers for Sale)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Dorham High-precision LCD Display Dynamometer 100t Wireless Dynamometers for Sale)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Dorham High-precision LCD Display Dynamometer 100t Wireless Dynamometers for Sale."
+        },
+        {
+          "id": "7cdcad1e55040e5f67f6582d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Replacement Accessories for Pairing USB 2.4G Receiver with Razer Nari Ultimate/Essential/iridescence Wireless Gaming Headsets)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Replacement Accessories for Pairing USB 2.4G Receiver with Razer Nari Ultimate/Essential/iridescence Wireless Gaming Headsets)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Replacement Accessories for Pairing USB 2.4G Receiver with Razer Nari Ultimate/Essential/iridescence Wireless Gaming Headsets."
+        },
+        {
+          "id": "4c9566d2d23a663e0907dce9",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (High definition wireless WiFi digital electronic mobile phone microscope 1000 times USB portable circuit board repair microscope)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (High definition wireless WiFi digital electronic mobile phone microscope 1000 times USB portable circuit board repair microscope)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: High definition wireless WiFi digital electronic mobile phone microscope 1000 times USB portable circuit board repair microscope."
+        },
+        {
+          "id": "2f98c6d3d1bcccc4c5775ba3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless bluetooth gamepad, compatible with PC360/Android /TVbox/iOS)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless bluetooth gamepad, compatible with PC360/Android /TVbox/iOS)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless bluetooth gamepad, compatible with PC360/Android /TVbox/iOS."
+        },
+        {
+          "id": "d3ca1f1cc3fd8a018c58f395",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Ferrite Composite Absorbing Sheet EMI Noise Suppression Plate for NFC RFID Wireless Charging Module Electronic DIY Modification)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Ferrite Composite Absorbing Sheet EMI Noise Suppression Plate for NFC RFID Wireless Charging Module Electronic DIY Modification)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Ferrite Composite Absorbing Sheet EMI Noise Suppression Plate for NFC RFID Wireless Charging Module Electronic DIY Modification."
+        },
+        {
+          "id": "f20a02abfa7bd83de205fded",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Pet monitoring robot can move indoor mobile phone remote without network wireless photography plug-in camera)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Pet monitoring robot can move indoor mobile phone remote without network wireless photography plug-in camera)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Pet monitoring robot can move indoor mobile phone remote without network wireless photography plug-in camera."
+        },
+        {
+          "id": "c130f664b198a57f80bbaa3f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Retro Portable Radio Bluetooth Wireless Super Bass MP3 Player)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Retro Portable Radio Bluetooth Wireless Super Bass MP3 Player)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Retro Portable Radio Bluetooth Wireless Super Bass MP3 Player."
+        },
+        {
+          "id": "e021039c2d73ce609342d244",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Bluetooth Speaker IPX7 Wireless Outdoor Floating Small Audio Subwoofer with RGB)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Bluetooth Speaker IPX7 Wireless Outdoor Floating Small Audio Subwoofer with RGB)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Bluetooth Speaker IPX7 Wireless Outdoor Floating Small Audio Subwoofer with RGB."
+        },
+        {
+          "id": "79ece475a39041e1d6d1f425",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones, earphones, or an audio headset as the offered listening product."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Motorcycle helmet wireless bluetooth headset)."
+            }
+          ],
+          "evidence": "A generic alternative in the requested headphone category: Motorcycle helmet wireless bluetooth headset. The title supports wireless/Bluetooth connectivity; no specific model or identity was requested."
+        },
+        {
+          "id": "a6f4f06b5b4e45b57e2ed005",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Foldable wet towel heater, wireless USB wet towel heater, with 3-gear adjustable temperature, suitable for family outdoor travel)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Foldable wet towel heater, wireless USB wet towel heater, with 3-gear adjustable temperature, suitable for family outdoor travel)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Foldable wet towel heater, wireless USB wet towel heater, with 3-gear adjustable temperature, suitable for family outdoor travel."
+        },
+        {
+          "id": "67e1961e16a73f82bfb94ab5",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Ultra-thin, Magnetic Wireless Power Bank 20W Two-way Fast Charging Convenient and Compact Aluminum Alloy Mobile Power Supply)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Ultra-thin, Magnetic Wireless Power Bank 20W Two-way Fast Charging Convenient and Compact Aluminum Alloy Mobile Power Supply)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Ultra-thin, Magnetic Wireless Power Bank 20W Two-way Fast Charging Convenient and Compact Aluminum Alloy Mobile Power Supply."
+        },
+        {
+          "id": "97b7b11a014936629f4625a4",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Motorcycle Helmet Bluetooth Headset 600m Intercom HD Camera, Long-Battery Photography All-in-One)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Motorcycle Helmet Bluetooth Headset 600m Intercom HD Camera, Long-Battery Photography All-in-One)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Motorcycle Helmet Bluetooth Headset 600m Intercom HD Camera, Long-Battery Photography All-in-One."
+        },
+        {
+          "id": "9743fae909990552d7b27fd3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Multifunctional wireless charging bluetooth audio night light bedside bedroom gift speaker)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Multifunctional wireless charging bluetooth audio night light bedside bedroom gift speaker)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Multifunctional wireless charging bluetooth audio night light bedside bedroom gift speaker."
+        },
+        {
+          "id": "b847ef7bf0e079fe01fea907",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless bluetooth gamepad S11 mobile phone SwitchPC with wake-up vibration somatosensory)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless bluetooth gamepad S11 mobile phone SwitchPC with wake-up vibration somatosensory)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless bluetooth gamepad S11 mobile phone SwitchPC with wake-up vibration somatosensory."
+        },
+        {
+          "id": "e3e78fe6e8dfe7691cd6d0fb",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Fuallwin 2-in-1 Wired and Wireless CarPlay Adapter Mini USB Design Dongle for Android & Auto Apple CarPlay Integration)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Fuallwin 2-in-1 Wired and Wireless CarPlay Adapter Mini USB Design Dongle for Android & Auto Apple CarPlay Integration)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Fuallwin 2-in-1 Wired and Wireless CarPlay Adapter Mini USB Design Dongle for Android & Auto Apple CarPlay Integration."
+        },
+        {
+          "id": "53d2d29c9becea3e944cb913",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (4G Mobile Phone Eight Soil Nutrient Temperature and Humidity Detection Instrument Wireless Remote Control Fertility Nitrogen)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (4G Mobile Phone Eight Soil Nutrient Temperature and Humidity Detection Instrument Wireless Remote Control Fertility Nitrogen)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: 4G Mobile Phone Eight Soil Nutrient Temperature and Humidity Detection Instrument Wireless Remote Control Fertility Nitrogen."
+        },
+        {
+          "id": "1e6e32ab31dac14de893ed60",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Suitable for Ford Focus/Fiesta/Mondeo MK3 AUX Wireless Bluetooth Audio Cable)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Suitable for Ford Focus/Fiesta/Mondeo MK3 AUX Wireless Bluetooth Audio Cable)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Suitable for Ford Focus/Fiesta/Mondeo MK3 AUX Wireless Bluetooth Audio Cable."
+        },
+        {
+          "id": "3e22fcb4328440cc2b481000",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Plug UR30 Headphone, Coiled Spring Cord Headset Compatible With 4500 5000 GFX7000 Metal Gold Detector Spare Part)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a 6.35mm jack or spring/coiled cord for the headphone/headset, indicating wired rather than wireless connectivity."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Plug UR30 Headphone, Coiled Spring Cord Headset Compatible With 4500 5000 GFX7000 Metal Gold Detector Spare Part."
+        },
+        {
+          "id": "9f087d0924f57f4bd1025b51",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (2pcs APP Wireless Connectivity Smart kwh Energy Circuit Earth Leakage Over Under Voltage Protector Relay Device Switch Breaker)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (2pcs APP Wireless Connectivity Smart kwh Energy Circuit Earth Leakage Over Under Voltage Protector Relay Device Switch Breaker)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: 2pcs APP Wireless Connectivity Smart kwh Energy Circuit Earth Leakage Over Under Voltage Protector Relay Device Switch Breaker."
+        },
+        {
+          "id": "4b79b022a3bab2516d252cef",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones, earphones, or an audio headset as the offered listening product."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (2.4GHz Wireless Earphone Monitor Transmission System Stage Audio Headphone Rechargeable Transmitter & Receiver)."
+            }
+          ],
+          "evidence": "The title is in or adjacent to the headphone category (2.4GHz Wireless Earphone Monitor Transmission System Stage Audio Headphone Rechargeable Transmitter & Receiver), but a hard requirement is not established: product type or wireless connectivity remains unverified."
+        },
+        {
+          "id": "ef378f30f3629cbe0e873366",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (New Oculus Quest2/quest3/3s Elite Headset Replaceable Adjustable Length Without Charging)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title does not state whether this product is wireless; connectivity is not inferred from silence."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: New Oculus Quest2/quest3/3s Elite Headset Replaceable Adjustable Length Without Charging."
+        },
+        {
+          "id": "4fc5d1bca2dc4b23335bb2a5",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Genie 1 Genie 2 wireless receiver, model aircraft 2.4g5.8g wireless receiver board)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Genie 1 Genie 2 wireless receiver, model aircraft 2.4g5.8g wireless receiver board)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Genie 1 Genie 2 wireless receiver, model aircraft 2.4g5.8g wireless receiver board."
+        },
+        {
+          "id": "e067edc9eb4a69d67fb9ce28",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Strong Bass Portable Wireless, Minimalist Bluetooth Speaker, Metal Grill Retro Futuristic Design, Fast Shipping)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Strong Bass Portable Wireless, Minimalist Bluetooth Speaker, Metal Grill Retro Futuristic Design, Fast Shipping)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Strong Bass Portable Wireless, Minimalist Bluetooth Speaker, Metal Grill Retro Futuristic Design, Fast Shipping."
+        },
+        {
+          "id": "634efdb5d855bb3f88001330",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Professional UR30 Detector Headphone, Replacement Headset With Spring Cord For 4500 5000 GFX7000 Gold Metal Detector Equipment)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a 6.35mm jack or spring/coiled cord for the headphone/headset, indicating wired rather than wireless connectivity."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Professional UR30 Detector Headphone, Replacement Headset With Spring Cord For 4500 5000 GFX7000 Gold Metal Detector Equipment."
+        },
+        {
+          "id": "c1eeb7b6f3d53ea4ee6a3f80",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Emergency Radio LED Display Solar Panel Radios Receiver Wireless Bluetooth Speaker Recorder with TF Card USB Slot)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Emergency Radio LED Display Solar Panel Radios Receiver Wireless Bluetooth Speaker Recorder with TF Card USB Slot)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Emergency Radio LED Display Solar Panel Radios Receiver Wireless Bluetooth Speaker Recorder with TF Card USB Slot."
+        },
+        {
+          "id": "b15bb61e281bfc5ab91d5ca1",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (433MHz remote access control system with scroll code wireless keyboard, enhanced security through security remote control)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (433MHz remote access control system with scroll code wireless keyboard, enhanced security through security remote control)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: 433MHz remote access control system with scroll code wireless keyboard, enhanced security through security remote control."
+        },
+        {
+          "id": "e7032232f8a1fa07a16ca96d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (New Oculus Quest2/quest3/3s Elite Headset Replaceable Adjustable Length Without Charging)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title does not state whether this product is wireless; connectivity is not inferred from silence."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: New Oculus Quest2/quest3/3s Elite Headset Replaceable Adjustable Length Without Charging."
+        },
+        {
+          "id": "609f28cc098476dc94a23cf3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (F11 wireless collar microphone multi-function shooting live broadcast one to two mobile phone live broadcast small microphone)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (F11 wireless collar microphone multi-function shooting live broadcast one to two mobile phone live broadcast small microphone)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: F11 wireless collar microphone multi-function shooting live broadcast one to two mobile phone live broadcast small microphone."
+        },
+        {
+          "id": "ee5bbec4f2cee49bf369a2f5",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (BTS07 Light Emitting Diode Wireless Bluetooth Speaker Portable Waterproof Sucker Mini Shower Speaker)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (BTS07 Light Emitting Diode Wireless Bluetooth Speaker Portable Waterproof Sucker Mini Shower Speaker)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: BTS07 Light Emitting Diode Wireless Bluetooth Speaker Portable Waterproof Sucker Mini Shower Speaker."
+        },
+        {
+          "id": "4410de2862304669bc01735f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Violin Piezoelectric 2-segment Pickup CV-210E 6.35 Audio Cable and 3.5 Earphones Dual Output Black High Quality Discounted)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title does not state whether this product is wireless; connectivity is not inferred from silence."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Violin Piezoelectric 2-segment Pickup CV-210E 6.35 Audio Cable and 3.5 Earphones Dual Output Black High Quality Discounted."
+        },
+        {
+          "id": "c0df2098abda899d224c028d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (High-precision Temperature And Humidity Transmitter Sensor Rs485 Wireless Wall-mounted Industrial 0-5v 0-10v 4-20ma)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (High-precision Temperature And Humidity Transmitter Sensor Rs485 Wireless Wall-mounted Industrial 0-5v 0-10v 4-20ma)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: High-precision Temperature And Humidity Transmitter Sensor Rs485 Wireless Wall-mounted Industrial 0-5v 0-10v 4-20ma."
+        },
+        {
+          "id": "a7a474736aa104e07830e444",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless three-mode keyboard Bluetooth mechanical feel e-sports game computer office)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless three-mode keyboard Bluetooth mechanical feel e-sports game computer office)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless three-mode keyboard Bluetooth mechanical feel e-sports game computer office."
+        },
+        {
+          "id": "22f52e74d38945b59832bb18",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless Bluetooth-compatible 5.0 Decoder Stereo Audio HD Video Player MP3 FLAC WAV APE Decoding FM Radio USB TF Music player)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless Bluetooth-compatible 5.0 Decoder Stereo Audio HD Video Player MP3 FLAC WAV APE Decoding FM Radio USB TF Music player)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless Bluetooth-compatible 5.0 Decoder Stereo Audio HD Video Player MP3 FLAC WAV APE Decoding FM Radio USB TF Music player."
+        },
+        {
+          "id": "a8bf48123efd0b7586544907",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones, earphones, or an audio headset as the offered listening product."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Smart sunglasses, hands-free calls, music earphones, anti-blue glasses, wireless bluetooth voice, smart glasses.)."
+            }
+          ],
+          "evidence": "The title is in or adjacent to the headphone category (Smart sunglasses, hands-free calls, music earphones, anti-blue glasses, wireless bluetooth voice, smart glasses.), but a hard requirement is not established: product type or wireless connectivity remains unverified."
+        },
+        {
+          "id": "ba919c125cd088fe6c2a864d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (M9 knob transparent simple bluetooth speaker wireless stereo plug TF card colorful ambient light desktop bass)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (M9 knob transparent simple bluetooth speaker wireless stereo plug TF card colorful ambient light desktop bass)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: M9 knob transparent simple bluetooth speaker wireless stereo plug TF card colorful ambient light desktop bass."
+        },
+        {
+          "id": "fcac1672be3dc9017a17ab75",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (5pcs New Arrival Wireless Connectivity Smart Energy Meter Multifunctional Protector Colorful Display Over UnderVoltage Protector)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (5pcs New Arrival Wireless Connectivity Smart Energy Meter Multifunctional Protector Colorful Display Over UnderVoltage Protector)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: 5pcs New Arrival Wireless Connectivity Smart Energy Meter Multifunctional Protector Colorful Display Over UnderVoltage Protector."
+        },
+        {
+          "id": "0c713df042260e49b89b998d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Suitable for HD25PlusHD560HD540HD480 Headphones Connect Spring Cable Headphone Cable)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title does not state whether this product is wireless; connectivity is not inferred from silence."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Suitable for HD25PlusHD560HD540HD480 Headphones Connect Spring Cable Headphone Cable."
+        },
+        {
+          "id": "c347ab2de85e90796e21139b",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (UR30 Detector Replacement Headphone, Noise‑Isolating Over‑Ear Headset 6.35mm Jack For 4500 5000 GFX7000 Gold Detecting Tool)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a 6.35mm jack or spring/coiled cord for the headphone/headset, indicating wired rather than wireless connectivity."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: UR30 Detector Replacement Headphone, Noise‑Isolating Over‑Ear Headset 6.35mm Jack For 4500 5000 GFX7000 Gold Detecting Tool."
+        },
+        {
+          "id": "a1ad23fe0845c8fe887ffd29",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless Smart Wall Switch Computer V0 Fireproof Tempered Glass Panel Voice Control 6/8/10 Smart Group Light Switch 10A)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless Smart Wall Switch Computer V0 Fireproof Tempered Glass Panel Voice Control 6/8/10 Smart Group Light Switch 10A)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless Smart Wall Switch Computer V0 Fireproof Tempered Glass Panel Voice Control 6/8/10 Smart Group Light Switch 10A."
+        },
+        {
+          "id": "0edb2e6c92297eb366363adb",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Mini Portable Underwear Socks Washer Wireless USB Charging Compact Laundry Device for Apartment Camping)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Mini Portable Underwear Socks Washer Wireless USB Charging Compact Laundry Device for Apartment Camping)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Mini Portable Underwear Socks Washer Wireless USB Charging Compact Laundry Device for Apartment Camping."
+        },
+        {
+          "id": "8f2b773b3e6af9b58cec29c0",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless foot pedal automatic translator bluetooth silent electronic sheet music mobile phone pedal page flipper)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless foot pedal automatic translator bluetooth silent electronic sheet music mobile phone pedal page flipper)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless foot pedal automatic translator bluetooth silent electronic sheet music mobile phone pedal page flipper."
+        },
+        {
+          "id": "2fde250505b60b37ec6d2e71",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (DC 12V 433Mhz RF Wireless Remote Control Switch Relay 1CH Receiver Module For LED Door Electromagnetic Lock Smart home DIY)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (DC 12V 433Mhz RF Wireless Remote Control Switch Relay 1CH Receiver Module For LED Door Electromagnetic Lock Smart home DIY)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: DC 12V 433Mhz RF Wireless Remote Control Switch Relay 1CH Receiver Module For LED Door Electromagnetic Lock Smart home DIY."
+        },
+        {
+          "id": "e53c32d8148f68ed8bf71cac",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (RTL3070L ALFA AWUS036NH Support Kali Linux Monitoring Mode Drive-free USB Wireless Network Interface Card01)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (RTL3070L ALFA AWUS036NH Support Kali Linux Monitoring Mode Drive-free USB Wireless Network Interface Card01)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: RTL3070L ALFA AWUS036NH Support Kali Linux Monitoring Mode Drive-free USB Wireless Network Interface Card01."
+        },
+        {
+          "id": "eaac4700e12b3ee1aeb43d97",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (The best new portable 10W Bluetooth wireless speaker delivers powerful sound for parties and family gatherings)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (The best new portable 10W Bluetooth wireless speaker delivers powerful sound for parties and family gatherings)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: The best new portable 10W Bluetooth wireless speaker delivers powerful sound for parties and family gatherings."
+        },
+        {
+          "id": "95df94ce78f1441609b0ba8b",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (PS4 Gamepad PC Bluetooth Wireless iOS Mobile Controller)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (PS4 Gamepad PC Bluetooth Wireless iOS Mobile Controller)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: PS4 Gamepad PC Bluetooth Wireless iOS Mobile Controller."
+        },
+        {
+          "id": "945c5392e1b3f8cccad200bd",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones, earphones, or an audio headset as the offered listening product."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title does not state whether this product is wireless; connectivity is not inferred from silence."
+            }
+          ],
+          "evidence": "The title is in or adjacent to the headphone category (Suitable for 4500/5000/GFX7000 gold detectors: KOSS UR30 dedicated earphones), but a hard requirement is not established: product type or wireless connectivity remains unverified."
+        },
+        {
+          "id": "0680fdbd4d3438609a8e2821",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Mini Electric Charging Portable Wireless Juicer Cup 4 Blades Fruit Smoothie Blender)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Mini Electric Charging Portable Wireless Juicer Cup 4 Blades Fruit Smoothie Blender)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Mini Electric Charging Portable Wireless Juicer Cup 4 Blades Fruit Smoothie Blender."
+        },
+        {
+          "id": "a90d311ccd532a1499ecc22c",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (New Wireless Karaoke Smart Bluetooth Speaker Car Audio Subwoofer Gift Computer)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (New Wireless Karaoke Smart Bluetooth Speaker Car Audio Subwoofer Gift Computer)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: New Wireless Karaoke Smart Bluetooth Speaker Car Audio Subwoofer Gift Computer."
+        },
+        {
+          "id": "954b8d43edcb0347fb333b7c",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Charging wireless keyboard Mouse set Bluetooth dual-mode color matching girls laptop keyboard)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Charging wireless keyboard Mouse set Bluetooth dual-mode color matching girls laptop keyboard)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Charging wireless keyboard Mouse set Bluetooth dual-mode color matching girls laptop keyboard."
+        },
+        {
+          "id": "4a6bdf46445596e69889c2c9",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Router Wall Frame Household Wireless Speaker Bracket Wall Display Storage Rack-[Qahk])."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Router Wall Frame Household Wireless Speaker Bracket Wall Display Storage Rack-[Qahk])."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Router Wall Frame Household Wireless Speaker Bracket Wall Display Storage Rack-[Qahk]."
+        },
+        {
+          "id": "9413555fa6b0967922784986",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones, earphones, or an audio headset as the offered listening product."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Headset wireless bluetooth headset sound effects are available on site)."
+            }
+          ],
+          "evidence": "A generic alternative in the requested headphone category: Headset wireless bluetooth headset sound effects are available on site. The title supports wireless/Bluetooth connectivity; no specific model or identity was requested."
+        },
+        {
+          "id": "c9410807ac287ddb85b221b6",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Electric smart cup, wireless self-heating cup, heater, wireless charger cup heater)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Electric smart cup, wireless self-heating cup, heater, wireless charger cup heater)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Electric smart cup, wireless self-heating cup, heater, wireless charger cup heater."
+        },
+        {
+          "id": "75e710c44717688fe8be32af",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (X11 Four-in-one 180-degree Touch Rotation Adjustment with Clock Wireless Charging)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (X11 Four-in-one 180-degree Touch Rotation Adjustment with Clock Wireless Charging)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: X11 Four-in-one 180-degree Touch Rotation Adjustment with Clock Wireless Charging."
+        },
+        {
+          "id": "e17745c8cf437c7f2fbd2e18",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (APTX HD QCC5125 LDAC Wireless Adapter Bluetooth 5.1 Receiver Board DAC Audio Decoder Board 24Bit/96Khz LDAC)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (APTX HD QCC5125 LDAC Wireless Adapter Bluetooth 5.1 Receiver Board DAC Audio Decoder Board 24Bit/96Khz LDAC)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: APTX HD QCC5125 LDAC Wireless Adapter Bluetooth 5.1 Receiver Board DAC Audio Decoder Board 24Bit/96Khz LDAC."
+        },
+        {
+          "id": "7c232eb942d3d17daaab0e33",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies headphones, earphones, or an audio headset as the offered listening product."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Motorcycle S3 bluetooth headset waterproof noise reduction high definition voice headset)."
+            }
+          ],
+          "evidence": "A generic alternative in the requested headphone category: Motorcycle S3 bluetooth headset waterproof noise reduction high definition voice headset. The title supports wireless/Bluetooth connectivity; no specific model or identity was requested."
+        },
+        {
+          "id": "f74e2f6eb788237737ecb4e2",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Lavalier Microphone Mini Recording Karaoke Microphone Mobile Phone Computer Dual Use 3m Sound Card Lavalier Wireless)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Lavalier Microphone Mini Recording Karaoke Microphone Mobile Phone Computer Dual Use 3m Sound Card Lavalier Wireless)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Lavalier Microphone Mini Recording Karaoke Microphone Mobile Phone Computer Dual Use 3m Sound Card Lavalier Wireless."
+        },
+        {
+          "id": "7aab9544341c8de45c34a3d3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (UR30 Detector Replacement Headphone, Noise‑Isolating Over‑Ear Headset 6.35mm Jack for 4500 5000 GFX7000 Gold Detecting Tool)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly identifies a 6.35mm jack or spring/coiled cord for the headphone/headset, indicating wired rather than wireless connectivity."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: UR30 Detector Replacement Headphone, Noise‑Isolating Over‑Ear Headset 6.35mm Jack for 4500 5000 GFX7000 Gold Detecting Tool."
+        },
+        {
+          "id": "9b77e600b54b5c3531f41c8e",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Home surveillance camera wireless mobile phone remote wifi indoor and outdoor ultra-high definition long-distance control)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Home surveillance camera wireless mobile phone remote wifi indoor and outdoor ultra-high definition long-distance control)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Home surveillance camera wireless mobile phone remote wifi indoor and outdoor ultra-high definition long-distance control."
+        },
+        {
+          "id": "32fd14fb6547a555f0128d19",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title identifies a different product or accessory, not headphones (Wireless Bluetooth Custom Keypad Shortcut Copy Paste Green Axis Red Sound Mechanical Hot Plug)."
+            },
+            {
+              "field": "connectivity",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says wireless or Bluetooth (Wireless Bluetooth Custom Keypad Shortcut Copy Paste Green Axis Red Sound Mechanical Hot Plug)."
+            }
+          ],
+          "evidence": "Title describes a different product/accessory rather than a wireless headphone: Wireless Bluetooth Custom Keypad Shortcut Copy Paste Green Axis Red Sound Mechanical Hot Plug."
+        }
+      ]
+    }
+  ]
+}

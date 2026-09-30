@@ -1,0 +1,877 @@
+{
+  "schemaVersion": 1,
+  "evaluation": {
+    "classification": "DESCRIPTIVE_REAL_SOURCE_EVALUATION",
+    "preregisteredCaseCount": 40,
+    "observedCaseCount": 40,
+    "independentlyLabeledCaseCount": 40,
+    "firstArmCounts": {
+      "v2": 20,
+      "phase1b": 20
+    },
+    "productionClaims": false,
+    "labelsGeneratedByCalculator": false,
+    "blindJudgmentRequirement": "Adjudication must be completed independently without source-arm identity/rank; labels are joined to observations by case and candidate IDs only afterward."
+  },
+  "independentAdjudication": {
+    "failureCategoryCounts": {
+      "v2": {},
+      "phase1b": {}
+    },
+    "inventoryAssessmentCounts": {
+      "found": 14,
+      "none": 0,
+      "unknown": 26
+    }
+  },
+  "arms": {
+    "v2": {
+      "metrics": {
+        "precisionAt1": {
+          "numerator": 9,
+          "denominator": 14,
+          "value": 0.6428571428571429,
+          "status": "SCORED"
+        },
+        "precisionAt3": {
+          "numerator": 33,
+          "denominator": 42,
+          "value": 0.7857142857142857,
+          "status": "SCORED"
+        },
+        "successAt5": {
+          "numerator": 14,
+          "denominator": 14,
+          "value": 1,
+          "status": "SCORED"
+        },
+        "exactProductIdentificationRank1": {
+          "numerator": 6,
+          "denominator": 9,
+          "value": 0.6666666666666666,
+          "status": "SCORED"
+        },
+        "exactProductIdentificationSuccessAt5": {
+          "numerator": 9,
+          "denominator": 9,
+          "value": 1,
+          "status": "SCORED"
+        },
+        "hardConstraintCompliance": {
+          "queryLevel": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null,
+            "status": "NOT_SCOREABLE"
+          },
+          "displayedResultsLevel": {
+            "numerator": 134,
+            "denominator": 463,
+            "value": 0.2894168466522678,
+            "status": "SCORED"
+          },
+          "casesWithHardConstraints": 40,
+          "note": "Unknown verdicts fail. Missing or incomplete verdict sets are excluded; only complete verdicts are scored, and a pass requires every constraint to be verified_pass."
+        },
+        "irrelevantResultRateAt5": {
+          "numerator": 6,
+          "denominator": 65,
+          "value": 0.09230769230769231,
+          "status": "SCORED"
+        },
+        "irrelevantResultRateAllDisplayed": {
+          "numerator": 39,
+          "denominator": 221,
+          "value": 0.17647058823529413,
+          "status": "SCORED"
+        },
+        "correctNoMatch": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null,
+          "status": "NOT_SCOREABLE",
+          "note": "Denominator includes only cases independently assessed as inventoryAvailabilityAssessment=none. Empty outputs or missing availability labels are not treated as proof of no match."
+        },
+        "intendedMeaningPreservation": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null,
+          "status": "NOT_SCOREABLE"
+        }
+      },
+      "assertedExactFalseRate": null,
+      "operational": {
+        "casesObserved": 40,
+        "zeroResultCases": 13,
+        "providerFailureCases": 0,
+        "providerContribution": {
+          "brave": {
+            "requests": 41,
+            "calls": 41,
+            "attributedProducts": null,
+            "returnedProducts": null,
+            "callCountAvailable": true
+          },
+          "webSearch": {
+            "returnedProducts": 141
+          },
+          "feed": {
+            "calls": null,
+            "attributedProducts": 322,
+            "returnedProducts": 322,
+            "callCountAvailable": false
+          },
+          "providerProductCounts": {
+            "brave-web": 141,
+            "deal-outlet": 54,
+            "diesel": 12,
+            "luxury-closet": 109,
+            "aliexpress": 147
+          }
+        },
+        "latencyMs": {
+          "samples": 40,
+          "median": 1785.105,
+          "p95": 3164.9305
+        }
+      },
+      "subgroups": {
+        "arabicSuccessAt5": {
+          "numerator": 3,
+          "denominator": 3,
+          "value": 1,
+          "status": "SCORED"
+        },
+        "identifierSuccessAt5": {
+          "numerator": 2,
+          "denominator": 2,
+          "value": 1,
+          "status": "SCORED"
+        },
+        "automotiveEvidenceSafety": {
+          "queryLevel": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null,
+            "status": "NOT_SCOREABLE"
+          },
+          "displayedResultsLevel": {
+            "numerator": 0,
+            "denominator": 2,
+            "value": 0,
+            "status": "SCORED"
+          },
+          "casesWithHardConstraints": 3,
+          "note": "Unknown verdicts fail. Missing or incomplete verdict sets are excluded; only complete verdicts are scored, and a pass requires every constraint to be verified_pass."
+        }
+      }
+    },
+    "phase1b": {
+      "metrics": {
+        "precisionAt1": {
+          "numerator": 9,
+          "denominator": 14,
+          "value": 0.6428571428571429,
+          "status": "SCORED"
+        },
+        "precisionAt3": {
+          "numerator": 26,
+          "denominator": 42,
+          "value": 0.6190476190476191,
+          "status": "SCORED"
+        },
+        "successAt5": {
+          "numerator": 11,
+          "denominator": 14,
+          "value": 0.7857142857142857,
+          "status": "SCORED"
+        },
+        "exactProductIdentificationRank1": {
+          "numerator": 5,
+          "denominator": 9,
+          "value": 0.5555555555555556,
+          "status": "SCORED"
+        },
+        "exactProductIdentificationSuccessAt5": {
+          "numerator": 7,
+          "denominator": 9,
+          "value": 0.7777777777777778,
+          "status": "SCORED"
+        },
+        "hardConstraintCompliance": {
+          "queryLevel": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null,
+            "status": "NOT_SCOREABLE"
+          },
+          "displayedResultsLevel": {
+            "numerator": 91,
+            "denominator": 214,
+            "value": 0.4252336448598131,
+            "status": "SCORED"
+          },
+          "casesWithHardConstraints": 40,
+          "note": "Unknown verdicts fail. Missing or incomplete verdict sets are excluded; only complete verdicts are scored, and a pass requires every constraint to be verified_pass."
+        },
+        "irrelevantResultRateAt5": {
+          "numerator": 3,
+          "denominator": 50,
+          "value": 0.06,
+          "status": "SCORED"
+        },
+        "irrelevantResultRateAllDisplayed": {
+          "numerator": 42,
+          "denominator": 182,
+          "value": 0.23076923076923078,
+          "status": "SCORED"
+        },
+        "correctNoMatch": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null,
+          "status": "NOT_SCOREABLE",
+          "note": "Denominator includes only cases independently assessed as inventoryAvailabilityAssessment=none. Empty outputs or missing availability labels are not treated as proof of no match."
+        },
+        "intendedMeaningPreservation": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null,
+          "status": "NOT_SCOREABLE"
+        }
+      },
+      "assertedExactFalseRate": {
+        "numerator": 7,
+        "denominator": 14,
+        "value": 0.5,
+        "status": "SCORED",
+        "adjudicatedExactAssertions": 14,
+        "unadjudicatedExactAssertions": 4,
+        "unverifiedAssertions": 4,
+        "audit": [
+          {
+            "caseId": 1,
+            "id": "cf5e10a37aad0d22fef69e4d",
+            "classification": "EXACT",
+            "independentIdentity": "UNVERIFIABLE",
+            "evidenceReference": "PARTIALLY_RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Samsung Galaxy S24 Series at the best prices | eXtra Saudi” Description: “Order now Samsung Galaxy S24 Ultra 5G that comes with titanium frame, 6.8 screen, 256gb storage, along with S24 plus. Get the latest Samsung S24 from eXtra.”"
+          },
+          {
+            "caseId": 1,
+            "id": "5962103c8da7155232c62cce",
+            "classification": "EXACT",
+            "independentIdentity": "EXACT",
+            "evidenceReference": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Smartphone, 50MP Camera, (International Version) Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca” Description: “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Smartphone, 50MP Camera, (International Version) model F-MS921BZKGAMA Mobile Phones”"
+          },
+          {
+            "caseId": 1,
+            "id": "115b7e8d94cdafc8c982a854",
+            "classification": "EXACT",
+            "independentIdentity": "EXACT",
+            "evidenceReference": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Galaxy S24 Onyx Black 256 GB | Samsung Saudi Arabia” Description: “Saudi Arabia / English · UK / English · Other Countries or location · Continue Close · Close · Samsung Wallet. The secured payment method in your Galaxy. Samsung Wallet. The secured payment method in your Galaxy. Learn more · Learn more Cli”"
+          },
+          {
+            "caseId": 1,
+            "id": "4bfda0f3acb92a1a1cc81d12",
+            "classification": "EXACT",
+            "independentIdentity": "EXACT",
+            "evidenceReference": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android Smartphone, 50MP Camera, No Manufacturer Warranty (International Version) : Buy Online at Best Price in KSA - Souq is now [URL removed]: Electronics” Description: “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android Smartphone, 50MP Camera, No Manufacturer Warranty (International Version) : Buy Online at Best Price in KSA - Souq is now [URL removed]: Electronics”"
+          },
+          {
+            "caseId": 1,
+            "id": "5769e72e21b0cb8cf0b6d7e0",
+            "classification": "EXACT",
+            "independentIdentity": "UNVERIFIABLE",
+            "evidenceReference": "PARTIALLY_RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy now Galaxy S24 & S24+ | Price & Offers | Samsung Saudi Arabia” Description: “If you need any assistance, please contact our customer service team at: (Inside Saudi Arabia: 8002474357 | Outside Saudi Arabia: +966115026111) or via WhatsApp: +966558474355 / Technical Support. tubk · Product Ratings : 5 · 2025-07-13 Col”"
+          },
+          {
+            "caseId": 27,
+            "id": "f99a6216cda1a6988c01202b",
+            "classification": "EXACT",
+            "independentIdentity": "EXACT",
+            "evidenceReference": "Nike Saudi product listing for Air Force 1 '07 White/White with the exact style code."
+          },
+          {
+            "caseId": 27,
+            "id": "60b563d02ff662b8d0afdc32",
+            "classification": "EXACT",
+            "independentIdentity": "EXACT",
+            "evidenceReference": "Nike Air Force 1 Low 'White' product listing names the exact code."
+          },
+          {
+            "caseId": 27,
+            "id": "421a51ee3aae24b2cf079337",
+            "classification": "EXACT",
+            "independentIdentity": "EXACT",
+            "evidenceReference": "Nike Air Force 1 '07 listing with matching code and white/white colorway."
+          },
+          {
+            "caseId": 27,
+            "id": "9ea1812acd77bae3704704f7",
+            "classification": "EXACT",
+            "independentIdentity": "UNVERIFIABLE",
+            "evidenceReference": "General Nike Air Force 1 page for men and women; no style code is shown."
+          },
+          {
+            "caseId": 27,
+            "id": "ce0e56c9cbfa37ac82c43132",
+            "classification": "EXACT",
+            "independentIdentity": "EXACT",
+            "evidenceReference": "White Nike Air Force 1 '07 product page with the exact requested style code."
+          },
+          {
+            "caseId": 27,
+            "id": "2fec64cb3849189bb38173b9",
+            "classification": "EXACT",
+            "independentIdentity": "UNVERIFIABLE",
+            "evidenceReference": "Generic Air Force 1 shopping page without the requested code."
+          },
+          {
+            "caseId": 27,
+            "id": "cef6d114da616b50c93e84de",
+            "classification": "EXACT",
+            "independentIdentity": "ALTERNATIVE",
+            "evidenceReference": "Nike Air Force 1 '07 in an explicitly different Black/Black colorway."
+          },
+          {
+            "caseId": 27,
+            "id": "2687f606c65f9bcb3ac985d2",
+            "classification": "EXACT",
+            "independentIdentity": "ALTERNATIVE",
+            "evidenceReference": "A pink girls' Air Force 1 listing, not the exact requested style."
+          },
+          {
+            "caseId": 27,
+            "id": "9592424bbd5e4c60e92a28e9",
+            "classification": "EXACT",
+            "independentIdentity": "ALTERNATIVE",
+            "evidenceReference": "A pink girls' Air Force 1 listing, not the exact requested style."
+          },
+          {
+            "caseId": 27,
+            "id": "a26cf970ec1460d891a590ad",
+            "classification": "EXACT",
+            "independentIdentity": "ALTERNATIVE",
+            "evidenceReference": "A pink girls' Air Force 1 listing, not the exact requested style."
+          },
+          {
+            "caseId": 27,
+            "id": "ec7917f4b0257e858ec371d6",
+            "classification": "EXACT",
+            "independentIdentity": "ALTERNATIVE",
+            "evidenceReference": "A pink girls' Air Force 1 listing, not the exact requested style."
+          },
+          {
+            "caseId": 27,
+            "id": "0252a1159b2cf2d53dd4d758",
+            "classification": "EXACT",
+            "independentIdentity": "ALTERNATIVE",
+            "evidenceReference": "A pink girls' Air Force 1 listing, not the exact requested style."
+          },
+          {
+            "caseId": 27,
+            "id": "7bac70a1f37a450fa9b757b1",
+            "classification": "EXACT",
+            "independentIdentity": "ALTERNATIVE",
+            "evidenceReference": "Nike Air Force 1 in an explicitly different white/purple colorway."
+          }
+        ],
+        "note": "Phase1B uppercase/lowercase EXACT assertions only. An assertion is adequately adjudicated only when independent identity is present and not UNVERIFIABLE."
+      },
+      "operational": {
+        "casesObserved": 40,
+        "zeroResultCases": 24,
+        "providerFailureCases": 0,
+        "providerContribution": {
+          "brave": {
+            "requests": 35,
+            "calls": 35,
+            "attributedProducts": null,
+            "returnedProducts": null,
+            "callCountAvailable": true
+          },
+          "webSearch": {
+            "returnedProducts": 154
+          },
+          "feed": {
+            "calls": null,
+            "attributedProducts": 494,
+            "returnedProducts": 494,
+            "callCountAvailable": false
+          },
+          "providerProductCounts": {
+            "brave-web": 154,
+            "deal-outlet": 114,
+            "diesel": 33,
+            "nazih": 18,
+            "aliexpress": 158,
+            "luxury-closet": 168,
+            "stylewe": 3
+          }
+        },
+        "latencyMs": {
+          "samples": 40,
+          "median": 1564.63,
+          "p95": 3444.464499999999
+        }
+      },
+      "subgroups": {
+        "arabicSuccessAt5": {
+          "numerator": 1,
+          "denominator": 3,
+          "value": 0.3333333333333333,
+          "status": "SCORED"
+        },
+        "identifierSuccessAt5": {
+          "numerator": 2,
+          "denominator": 2,
+          "value": 1,
+          "status": "SCORED"
+        },
+        "automotiveEvidenceSafety": {
+          "queryLevel": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null,
+            "status": "NOT_SCOREABLE"
+          },
+          "displayedResultsLevel": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null,
+            "status": "NOT_SCOREABLE"
+          },
+          "casesWithHardConstraints": 3,
+          "note": "Unknown verdicts fail. Missing or incomplete verdict sets are excluded; only complete verdicts are scored, and a pass requires every constraint to be verified_pass."
+        }
+      }
+    }
+  },
+  "assertedExactFalseRatePhase1b": {
+    "numerator": 7,
+    "denominator": 14,
+    "value": 0.5,
+    "status": "SCORED",
+    "adjudicatedExactAssertions": 14,
+    "unadjudicatedExactAssertions": 4,
+    "unverifiedAssertions": 4,
+    "audit": [
+      {
+        "caseId": 1,
+        "id": "cf5e10a37aad0d22fef69e4d",
+        "classification": "EXACT",
+        "independentIdentity": "UNVERIFIABLE",
+        "evidenceReference": "PARTIALLY_RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Samsung Galaxy S24 Series at the best prices | eXtra Saudi” Description: “Order now Samsung Galaxy S24 Ultra 5G that comes with titanium frame, 6.8 screen, 256gb storage, along with S24 plus. Get the latest Samsung S24 from eXtra.”"
+      },
+      {
+        "caseId": 1,
+        "id": "5962103c8da7155232c62cce",
+        "classification": "EXACT",
+        "independentIdentity": "EXACT",
+        "evidenceReference": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Smartphone, 50MP Camera, (International Version) Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca” Description: “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Smartphone, 50MP Camera, (International Version) model F-MS921BZKGAMA Mobile Phones”"
+      },
+      {
+        "caseId": 1,
+        "id": "115b7e8d94cdafc8c982a854",
+        "classification": "EXACT",
+        "independentIdentity": "EXACT",
+        "evidenceReference": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Galaxy S24 Onyx Black 256 GB | Samsung Saudi Arabia” Description: “Saudi Arabia / English · UK / English · Other Countries or location · Continue Close · Close · Samsung Wallet. The secured payment method in your Galaxy. Samsung Wallet. The secured payment method in your Galaxy. Learn more · Learn more Cli”"
+      },
+      {
+        "caseId": 1,
+        "id": "4bfda0f3acb92a1a1cc81d12",
+        "classification": "EXACT",
+        "independentIdentity": "EXACT",
+        "evidenceReference": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android Smartphone, 50MP Camera, No Manufacturer Warranty (International Version) : Buy Online at Best Price in KSA - Souq is now [URL removed]: Electronics” Description: “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android Smartphone, 50MP Camera, No Manufacturer Warranty (International Version) : Buy Online at Best Price in KSA - Souq is now [URL removed]: Electronics”"
+      },
+      {
+        "caseId": 1,
+        "id": "5769e72e21b0cb8cf0b6d7e0",
+        "classification": "EXACT",
+        "independentIdentity": "UNVERIFIABLE",
+        "evidenceReference": "PARTIALLY_RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy now Galaxy S24 & S24+ | Price & Offers | Samsung Saudi Arabia” Description: “If you need any assistance, please contact our customer service team at: (Inside Saudi Arabia: 8002474357 | Outside Saudi Arabia: +966115026111) or via WhatsApp: +966558474355 / Technical Support. tubk · Product Ratings : 5 · 2025-07-13 Col”"
+      },
+      {
+        "caseId": 27,
+        "id": "f99a6216cda1a6988c01202b",
+        "classification": "EXACT",
+        "independentIdentity": "EXACT",
+        "evidenceReference": "Nike Saudi product listing for Air Force 1 '07 White/White with the exact style code."
+      },
+      {
+        "caseId": 27,
+        "id": "60b563d02ff662b8d0afdc32",
+        "classification": "EXACT",
+        "independentIdentity": "EXACT",
+        "evidenceReference": "Nike Air Force 1 Low 'White' product listing names the exact code."
+      },
+      {
+        "caseId": 27,
+        "id": "421a51ee3aae24b2cf079337",
+        "classification": "EXACT",
+        "independentIdentity": "EXACT",
+        "evidenceReference": "Nike Air Force 1 '07 listing with matching code and white/white colorway."
+      },
+      {
+        "caseId": 27,
+        "id": "9ea1812acd77bae3704704f7",
+        "classification": "EXACT",
+        "independentIdentity": "UNVERIFIABLE",
+        "evidenceReference": "General Nike Air Force 1 page for men and women; no style code is shown."
+      },
+      {
+        "caseId": 27,
+        "id": "ce0e56c9cbfa37ac82c43132",
+        "classification": "EXACT",
+        "independentIdentity": "EXACT",
+        "evidenceReference": "White Nike Air Force 1 '07 product page with the exact requested style code."
+      },
+      {
+        "caseId": 27,
+        "id": "2fec64cb3849189bb38173b9",
+        "classification": "EXACT",
+        "independentIdentity": "UNVERIFIABLE",
+        "evidenceReference": "Generic Air Force 1 shopping page without the requested code."
+      },
+      {
+        "caseId": 27,
+        "id": "cef6d114da616b50c93e84de",
+        "classification": "EXACT",
+        "independentIdentity": "ALTERNATIVE",
+        "evidenceReference": "Nike Air Force 1 '07 in an explicitly different Black/Black colorway."
+      },
+      {
+        "caseId": 27,
+        "id": "2687f606c65f9bcb3ac985d2",
+        "classification": "EXACT",
+        "independentIdentity": "ALTERNATIVE",
+        "evidenceReference": "A pink girls' Air Force 1 listing, not the exact requested style."
+      },
+      {
+        "caseId": 27,
+        "id": "9592424bbd5e4c60e92a28e9",
+        "classification": "EXACT",
+        "independentIdentity": "ALTERNATIVE",
+        "evidenceReference": "A pink girls' Air Force 1 listing, not the exact requested style."
+      },
+      {
+        "caseId": 27,
+        "id": "a26cf970ec1460d891a590ad",
+        "classification": "EXACT",
+        "independentIdentity": "ALTERNATIVE",
+        "evidenceReference": "A pink girls' Air Force 1 listing, not the exact requested style."
+      },
+      {
+        "caseId": 27,
+        "id": "ec7917f4b0257e858ec371d6",
+        "classification": "EXACT",
+        "independentIdentity": "ALTERNATIVE",
+        "evidenceReference": "A pink girls' Air Force 1 listing, not the exact requested style."
+      },
+      {
+        "caseId": 27,
+        "id": "0252a1159b2cf2d53dd4d758",
+        "classification": "EXACT",
+        "independentIdentity": "ALTERNATIVE",
+        "evidenceReference": "A pink girls' Air Force 1 listing, not the exact requested style."
+      },
+      {
+        "caseId": 27,
+        "id": "7bac70a1f37a450fa9b757b1",
+        "classification": "EXACT",
+        "independentIdentity": "ALTERNATIVE",
+        "evidenceReference": "Nike Air Force 1 in an explicitly different white/purple colorway."
+      }
+    ],
+    "note": "Phase1B uppercase/lowercase EXACT assertions only. An assertion is adequately adjudicated only when independent identity is present and not UNVERIFIABLE."
+  },
+  "providerContributionNote": "Contribution counts follow the runner's per-response/per-call accounting and may count the same product more than once; they are not deduplicated unique-product counts.",
+  "comparison": {
+    "betterCaseCounts": {
+      "v2": 7,
+      "phase1b": 1
+    },
+    "betterCaseIds": {
+      "v2": [
+        "2",
+        "3",
+        "5",
+        "11",
+        "13",
+        "14",
+        "27"
+      ],
+      "phase1b": [
+        "1"
+      ]
+    },
+    "qualityByCase": [
+      {
+        "caseId": "1",
+        "v2RelevantTop5": 1,
+        "phase1bRelevantTop5": 3,
+        "better": "phase1b"
+      },
+      {
+        "caseId": "2",
+        "v2RelevantTop5": 3,
+        "phase1bRelevantTop5": 2,
+        "better": "v2"
+      },
+      {
+        "caseId": "3",
+        "v2RelevantTop5": 5,
+        "phase1bRelevantTop5": 0,
+        "better": "v2"
+      },
+      {
+        "caseId": "4",
+        "v2RelevantTop5": 5,
+        "phase1bRelevantTop5": 5,
+        "better": "tie"
+      },
+      {
+        "caseId": "5",
+        "v2RelevantTop5": 5,
+        "phase1bRelevantTop5": 4,
+        "better": "v2"
+      },
+      {
+        "caseId": "6",
+        "v2RelevantTop5": 5,
+        "phase1bRelevantTop5": 5,
+        "better": "tie"
+      },
+      {
+        "caseId": "7",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "8",
+        "v2RelevantTop5": 1,
+        "phase1bRelevantTop5": 1,
+        "better": "tie"
+      },
+      {
+        "caseId": "9",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "10",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "11",
+        "v2RelevantTop5": 4,
+        "phase1bRelevantTop5": 3,
+        "better": "v2"
+      },
+      {
+        "caseId": "12",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "13",
+        "v2RelevantTop5": 1,
+        "phase1bRelevantTop5": 0,
+        "better": "v2"
+      },
+      {
+        "caseId": "14",
+        "v2RelevantTop5": 1,
+        "phase1bRelevantTop5": 0,
+        "better": "v2"
+      },
+      {
+        "caseId": "15",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "16",
+        "v2RelevantTop5": 5,
+        "phase1bRelevantTop5": 5,
+        "better": "tie"
+      },
+      {
+        "caseId": "17",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "18",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "19",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "20",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "21",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "22",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "23",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "tie"
+      },
+      {
+        "caseId": "24",
+        "v2RelevantTop5": 2,
+        "phase1bRelevantTop5": 2,
+        "better": "tie"
+      },
+      {
+        "caseId": "25",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "26",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "27",
+        "v2RelevantTop5": 5,
+        "phase1bRelevantTop5": 4,
+        "better": "v2"
+      },
+      {
+        "caseId": "28",
+        "v2RelevantTop5": 1,
+        "phase1bRelevantTop5": 1,
+        "better": "tie"
+      },
+      {
+        "caseId": "29",
+        "v2RelevantTop5": 1,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "30",
+        "v2RelevantTop5": 4,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "31",
+        "v2RelevantTop5": 4,
+        "phase1bRelevantTop5": 4,
+        "better": "tie"
+      },
+      {
+        "caseId": "32",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "33",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "34",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "35",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "36",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "37",
+        "v2RelevantTop5": 0,
+        "phase1bRelevantTop5": 0,
+        "better": "not_comparable"
+      },
+      {
+        "caseId": "38",
+        "v2RelevantTop5": 3,
+        "phase1bRelevantTop5": 3,
+        "better": "tie"
+      },
+      {
+        "caseId": "39",
+        "v2RelevantTop5": 5,
+        "phase1bRelevantTop5": 5,
+        "better": "tie"
+      },
+      {
+        "caseId": "40",
+        "v2RelevantTop5": 3,
+        "phase1bRelevantTop5": 3,
+        "better": "tie"
+      }
+    ],
+    "filtering": {
+      "usefulV2ResultsAbsentFromPhase1b": 39,
+      "casesWithUsefulV2ResultsFilteredByPhase1b": [
+        "3",
+        "6",
+        "11",
+        "13",
+        "14",
+        "27",
+        "29",
+        "30",
+        "40"
+      ],
+      "irrelevantV2ResultsAbsentFromPhase1b": 187,
+      "casesWithIrrelevantV2ResultsRemovedByPhase1b": [
+        "1",
+        "5",
+        "14",
+        "24",
+        "25",
+        "32",
+        "40"
+      ],
+      "note": "Removal comparisons are ID-based: V2 results absent from Phase1B. An unjudged result is neither useful nor garbage."
+    },
+    "comparisonRule": "A case is called better only when both arms' displayed top-five candidates have complete independent relevance labels; the winner has more useful results in that window, where PARTIALLY_RELEVANT requires an allowed alternative on a non-exactRequired case."
+  }
+}

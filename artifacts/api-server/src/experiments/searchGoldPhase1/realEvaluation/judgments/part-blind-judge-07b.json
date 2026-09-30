@@ -1,0 +1,1411 @@
+{
+  "cases": [
+    {
+      "caseId": 32,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "The pool contains 100 provider-backed listings, but none displays the literal requested SKU ABC-000-NONEXISTENT-927; several instead display different SKUs, while the remaining listings do not show a SKU. This returned pool is not sufficient independent inventory evidence to conclude that the item does not exist, so availability is unknown rather than none.",
+      "candidates": [
+        {
+          "id": "900ebfb6d74dba5cd0d47b2f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is u9060wht-108, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نيو بالانس أبيض 9060 Sneakers for للنساء”; its explicit SKU u9060wht-108 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "cac0ae42345d4f73bae81a7c",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Men's summer casual sports loose fit skull letter pattern print comfortable and breathable round neck sleeveless vest”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "99f17866d5fdb32696dc6157",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Zac Brown Band - Skull New T-Shirt blacks football t shirt men workout shirt”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "cf1d5cff519ac5c0681111bf",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك أسود Air Max Craze Sneakers for للنساء”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "7afebf6482b2a30803cc9448",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Skull Rose Sports and Leisure Style Gym Running Training Sleeveless Quick Drying Minimalist Summer Slim Fit Tank Top”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "c3698117a771689258b925a5",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Givenchy Black Skull Printed Cotton Pique Polo T-Shirt XL”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "b8dc5941884cbda745c81dba",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is mr530lg-041, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نيو بالانس أبيض 530 Sneakers for للنساء”; its explicit SKU mr530lg-041 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "d812863b54e61d5c403d776a",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK Boxing Skull Print Men's and Women's Loose Vintage Retro Beaded Lettering Casual Short-Sleeved T-Shirt for Summer”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "dfebbd7410d80e959bee0d63",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Men's Long Sleeve Zipper Polo Shirt Halloween Skull 3D Printed Polo Long Sleeve T Shirt Casual Tops”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "81bab221ea4d9bd40dcf1a45",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK Retro Wild Leopard Skull Print T-Shirt - Loose Fit, Weathered, Beaded Short Sleeve for Men and Women”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "ff2d75854c5f7f0f7c991225",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Alexander McQueen Beige Leather Skull Detail Studded Platform Peep Toe Pumps Size 37.5”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "f7a8a8fb699a236f5026a7fd",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Thug Club Korean-style street hip-hop style skull embroidery loose men's and women's matching short-sleeved T-shirt trend”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "96d5c31bff624d1a1727e0e7",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Yao Fashion Mx6 SS26 Vintage Cotton Outdoor Hip Hop Casual Tee Luminous Skull Pattern Tops Streetwear Hip Hop T-shrit for Men”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "23c6bf3a8b229068d90529db",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is bb5476-cbwhgo, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال”; its explicit SKU bb5476-cbwhgo contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "4287ab00fc05986121068ffc",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Wehrmacht Skull Helmet MG42 Bullet Belt & StG 44 Iron Cross Sword T Shirt. Short Sleeve 100% Cotton Casual T-shirts Loose Top”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "ac931af733d5947fbc0fa76b",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Alexander McQueen Light Orange Leather Embellished Skull Peep Toe Pumps Size 40”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "797fbeb137185146c79f8330",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is j, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أخضر Adidas Gazelle Indoor Sneakers for للرجال”; its explicit SKU j contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "91678970ad97fbf4ad917830",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is bb5476-cbwhgo, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال”; its explicit SKU bb5476-cbwhgo contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "be42b3db34716b400148f900",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “US Special Forces Combat Diver Skull Design Military T-shirt Short Sleeve Casual O-Neck Cotton Shirts”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "7a18fd4755ad4e4d02a11caa",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Yao Fashion Streetwear Hip Hop Tops Saint Tee New Vintage Kanye West Hip Hop Splashing ink skull T-shirt For Men Clothing”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "3a4db6a98d9a00b8c28c33e8",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is 553560-093, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك أسود Air Jordan 1 'triple Black' Sneakers for للأولاد”; its explicit SKU 553560-093 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "785ff4c3406526f90b159052",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Hoist The Black Flag. The Most Infamous Pirates Blackbeard Skull T-Shirt. Summer Cotton Short Sleeve O-Neck Mens T Shirt New”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "4c2671bfbd29af0281ffcf19",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Plus Size 2025 Fashion Skull Rhinestones T Shirts Men Brand Short Sleeve Man Streetwear O Neck Slim Tshirts Calaveras Camiseta”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "a9d43937210ea78d5e0f2fbd",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “DX1585040 JEWEL”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "9ef90123814043a42d825971",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is bb5476-cbwhgo, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال”; its explicit SKU bb5476-cbwhgo contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "c61da0f2b07c44dd7030a1ff",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK High Street Skull Print Beaded Short-Sleeved T-Shirt - Loose-Fitting, Retro-Washed, Casual, Trendy for Men and Women”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "f47f477995991e0ad037dcfa",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is fb9109-109, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك وردي Dunk Low Sneakers for للبنات”; its explicit SKU fb9109-109 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "041489711fd683ea40e4ea21",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is dm0211-001, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك أخضر Air force 1 '07 'fresh' Sneakers for للرجال”; its explicit SKU dm0211-001 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "23fdb57d383268a9cc3964f9",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is fb9109-109, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك وردي Dunk Low Sneakers for للبنات”; its explicit SKU fb9109-109 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "b505800fed9b6f85af4acedb",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is u9060wht-108, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نيو بالانس أبيض 9060 Sneakers for للنساء”; its explicit SKU u9060wht-108 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "529d01b5b3908ea3ca56993e",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is 553560-093, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك أسود Air Jordan 1 'triple Black' Sneakers for للأولاد”; its explicit SKU 553560-093 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "509c536f56925f3d6f2180d3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is if0642-greone, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أبيض Samba Decon Sneakers for للنساء والرجال”; its explicit SKU if0642-greone contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "1a6235ec509f541fe94dfbe9",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK Street Skull Beaded Print Short-Sleeved T-Shirt - Loose Fit Weathered High Street Style Men's and Women's Top - Summer”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "60e1150ffd9a0fa90e8a12e6",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK Heavy Industry Full-Print Direct-Injection Engraved Diamond-Studded Skull Loose Trendy Vintage Short-Sleeved T-Shirt”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "8c63ccf00e6a3b34b9bdc4f8",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK Hip-Hop Style Beaded Short-Sleeved T-Shirt for Men and Women, Loose-Fitting Street Casual Skull-Head Printed Top”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "9bae1f4ab2d64c4055114cc1",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK Retro Graffiti Street Skull Directly Printed Denim Blouse Weathered Loose Beaded Sleeveless T-shirt”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "dd6e215d87fb517b9eac6df9",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Skull Spartan Warrior Spartan warrior helmet ancient greece this is sparta T Shirt for men Large size Adult tops S-6XL”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "58371a661a09e27dfa151a4b",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is u9060wht-108, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نيو بالانس أبيض 9060 Sneakers for للنساء”; its explicit SKU u9060wht-108 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "8c8b0461cd262d9625a75168",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “2025 Summer Rhinestones Skull T Shirts Men Fashion Streetwear O Neck Short Sleeve Slim Mercerized Cotton Tshirts Plus Size 6XL”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "bf30efd59440bf7f3eed76ee",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Mistic Skull Tank Top tops basketball clothing gym Men's t-shirts Sleeveless men”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "40cd3d8697317479f417ad30",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نيو بالانس رمادي 2002r Sneakers for للنساء”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "fa974816a523f6b950a81799",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Trend Skull Pattern 3D Print Vest Summer Fashion Sleeveless Abstract Vest Cool Streetwear Hip Hop Top”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "053d72dc46ef124f992404eb",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is j, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أخضر Adidas Gazelle Indoor Sneakers for للرجال”; its explicit SKU j contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "0aa1487f5834a9b9daf77799",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Thug Club Korean street hip-hop style motorcycle skull rider print loose short-sleeved shirt for both men and women”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "52ad5a9dab25338e7b1e5e77",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Alexander McQueen White Skull Print Cotton Crew Neck T-Shirt XS”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "02eebaade2e96dd3dc28605d",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Skull Bowling Patriotic Custom Name 3D Printed Mens Polo Shirt Summer Street Casual Bowling Jersey Gift For Bowling Players WK50”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "ac3205b0eef6a9f0c81e0e79",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Alexander McQueen Brown Leather Skull Peep Toe Pumps Size 38”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "9f72332cac7be427ed701999",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK High Street Style Skull Print Beaded Short-Sleeved T-Shirt for Men and Women Trendy Loose-Fitting Casual Top for Summer”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "f46a99074e55e666b233dcf3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is dm0211-001, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك أخضر Air force 1 '07 'fresh' Sneakers for للرجال”; its explicit SKU dm0211-001 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "4733ebc28eff486968435193",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك بيج Dunk Low Sneakers for للنساء”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "730551c0cae96d243da1d26f",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK Trendy Boxing Skull Print Beaded Letter Washed Antique Men's and Women's Loose Short-Sleeved T-Shirt”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "040b557b6f1620b2cc013a65",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is u9060wht-108, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نيو بالانس أبيض 9060 Sneakers for للنساء”; its explicit SKU u9060wht-108 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "55304e8ea6406fc07f3713e4",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Thug Club Street Hip Hop Skull Demonstration Embroidered Dirty Vintage Loose Men's and Women's Short-Sleeved T-Shirt Trendy”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "20ca4bdf274f699c8913d8a3",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Grailz PROJECT G/R Summer New Style Skull Letter Print Round-neck Short-sleeved Washed Black Loose T-shirt Protocol Index”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "32eac68d94281e730fa75015",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is j, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أخضر Adidas Gazelle Indoor Sneakers for للرجال”; its explicit SKU j contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "9d7dd0f16f831498836c75b7",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is bb5476-cbwhgo, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال”; its explicit SKU bb5476-cbwhgo contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "7f86728ab858d670af008eef",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Alexander McQueen Multicolor Skull Print Crew Neck T-Shirt M”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "e73d4851a6e4d3904919a7f2",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Summer black skull see through men fitness Ttank top Ultra thin sexy plus size knitted t shirt streetwear”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "8dd66a67f406d2ff3e469753",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Philipp Plein Black/Gold Leather and Suede Low Top Sneakers Size 38”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "357db125dc9c4cc51ed46e75",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Majestik Skull Denim Crew Neck T-Shirt 100% Cotton Men's Women's Summer Loose-Fit Casual Short-Sleeve T-Shirt With Tag”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "72764c42a80fc25301b3cac6",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is bb5476-cbwhgo, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال”; its explicit SKU bb5476-cbwhgo contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "2f69d2ca3e36f4eeefa369ef",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is fb9109-109, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك وردي Dunk Low Sneakers for للبنات”; its explicit SKU fb9109-109 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "729f168ed7aeb9cf6e232b38",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أبيض Adidas Dropset 3 Training Shoes for للنساء والرجال”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "267d26e1b0c9f42bb1679f5d",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK Hip-Hop Street Skull Print Polo Neck Short Sleeve T-shirt Loose Stripe Beaded Top Trendy”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "5c7ed6b9a2bc5f1f83d2c74a",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Alexander McQueen Skull Grey Leather and Leather Wallets”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "16732d3d6fe6f2a767f3d3b4",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك أسود Air Max Craze Sneakers for للنساء”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "45e3819545781f48f6de765e",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK Embroidered Diamond Skull Print Short-Sleeved T-Shirt, Washed and Weathered Loose Retro Top”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "e696765d28a815e9c599696c",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Chanel CC Pink Patent Leather and Leather Coin Purse”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "92432f110efdc1a35871524b",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Thug Club Street Star Moon Skull Print High Street Summer New Loose Casual Short-Sleeved T-Shirt for Men”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "5a875f709e5ba11a73044378",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK Skull Print Short-Sleeve T-Shirt - Men's and Women's Pink Beaded Rock Loose Casual Top - Summer”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "9f73d97a43921f49eddf3a62",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “26SS KAPITAL HH Hirata and Hongri Casual Cotton Lightning Denim Skull Print Short Sleeved T-shirt for Men”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "565ce4226b4a2fede8a76611",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك أسود Jordan 1 Low Alt Sneakers for للأولاد”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "6fa3e79937c4288976c2e83e",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is if0642-greone, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أبيض Samba Decon Sneakers for للنساء والرجال”; its explicit SKU if0642-greone contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "bd09e8861b22c9f8a350eed9",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “2026 New Men T-shirt Heavyweight Dirty Washed Dark Short Sleeve Shirts High Street Skull Print Unisex American Couple Tops”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "91b679ac7f89a6fba8ac4f11",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is 553560-093, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك أسود Air Jordan 1 'triple Black' Sneakers for للأولاد”; its explicit SKU 553560-093 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "0863bd9884573f2fa7c66225",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Custom Name Halloween Skull Dragon Graffiti Gradient Retro Tattoo 3DPrint Summer Casual Harajuku Funny Baseball Shirts Jersey V7”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "99a225731b866f4cb46b4df4",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Rare Naval SEALs Team Skull Combat Diver Tactical T-Shirt 100% Cotton O-Neck Short Sleeve Casual Mens T-shirt Size S-3XL”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "0079049bb5fa8e24fee5cdf5",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is bb5476-cbwhgo, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أسود Adidas Gazelle Sneakers for للنساء والرجال”; its explicit SKU bb5476-cbwhgo contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "631729f9bbe27bd79e723ed7",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Dark Skull Skeleton Graphic T-Shirt, Black Grey Horror Bone Print Short Sleeve Tee, Cool Gothic Streetwear Casual Top For Men”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "b84a9bd129bc83ac5b2b5ee6",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is j, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أخضر Adidas Gazelle Indoor Sneakers for للرجال”; its explicit SKU j contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "32cb3d09ab7514b0f6283f45",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is j, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أخضر Adidas Gazelle Indoor Sneakers for للرجال”; its explicit SKU j contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "d1257ad316a0104e3f371968",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is cameliasling90-sachbr, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “أمينة معادي بني Amina Muaddi Camelia Slingback Pumps for للنساء”; its explicit SKU cameliasling90-sachbr contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "5b7c1371c826239ea684d842",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is fb9109-109, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك وردي Dunk Low Sneakers for للبنات”; its explicit SKU fb9109-109 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "5066ec57f2e7c6ea7c734b74",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Russian Army SKULL T-Shirts Russia Putin Military MARINES Men's Clothing”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "cc3571f63b45a7b645aab985",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “KK11 Number Nine N9 Skull Print Distressed Cracked Short Sleeved T-shirt Antique Black and White Style Tees”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "6a755933e5eb6df40ad4d79c",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Men's Bull Skull and Typography Print Graphic Tee, Western Style Short Sleeve T-Shirt for Casual Daily Wear”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "e77b3521952388967f529d86",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is dm0211-001, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك أخضر Air force 1 '07 'fresh' Sneakers for للرجال”; its explicit SKU dm0211-001 contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "5e0f7f7e00b898e7962de97b",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Lmyer NumberNine Archive ECG Retro Destruction Black Washed Skull T-shirt Men Summer Tees”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "35fdcc6b724e3410d51a9ce5",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Shiny Rhinestone Creative Skull Men's Summer Short-Sleeved T-Shirt Casual Fashion Loose Cotton High Quality T-Shirt”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "94ff1c9d6f88b9715917630c",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “West Coast Choppers 26SS Retro West Coast Motorcycle Rider Skull Pattern Collarless Jacket”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "ad2ea3b6c6706fa6a38f930f",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “YAMAMOTO-Style T-shirt ,HighQuality Dark Theme \"Red Skull\" Pattern Print,100% Cotton Loose Short-Sleeved”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "02dd0a224b1264b4fcba7b4c",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is if0642-greone, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أبيض Adidad Samba Decon Sneakers for للنساء والرجال”; its explicit SKU if0642-greone contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "a6b75e68828a00711b53a6b9",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Alexander McQueen Blue Suede Skull Peep Toe Pumps Size 36.5”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "8fe8fe42ca6edd58c2751cde",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Plus Size 2025 Fashion Skull Rhinestones T Shirts Men Brand Short Sleeve Man Streetwear O Neck Slim Tshirts Calaveras Camiseta”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "dc5c7a483ead73c95d0d2fc3",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “نايك أسود Jordan 1 Low Alt Sneakers for للأولاد”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "f8ba10c0fb8e5a6c0f22a349",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أخضر Adidas Samba Og Sneakers for للنساء والرجال”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "14d230399865775f960d17d6",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “Skullgirls(Peacock)-Flip the Birdie T-Shirt Work Daily Short Sleeve Top”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "4d218d2f34b2cac8d6a9f6f1",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Displayed SKU is ig6192-prcrcr, which differs from required literal SKU ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “اديداس أخضر Handball Spezial Sneakers for للرجال”; its explicit SKU ig6192-prcrcr contradicts the requested literal SKU ABC-000-NONEXISTENT-927."
+        },
+        {
+          "id": "4ce5c83d1d04365175a656e1",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK Street Streetwear Retro Skull Print Washed Vintage Stained Beaded Loose Casual Short-Sleeved T-shirt ins”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        },
+        {
+          "id": "0c4e42c5e3908bde35886a4c",
+          "relevance": "IRRELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "sku",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "No SKU is displayed in the candidate's title, description, or SKU metadata; absence of a displayed SKU cannot establish a match or mismatch with ABC-000-NONEXISTENT-927."
+            }
+          ],
+          "evidence": "The displayed listing is “MAJESTIK Retro Graffiti Skull Print Beaded Sleeveless T-Shirt - Loose Fit, Versatile, Rock Style Blouse for Men and Women”, but it does not show the requested literal SKU ABC-000-NONEXISTENT-927 or another basis for identifying it as that exact-SKU item."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "cases": [
+    {
+      "caseId": 31,
+      "inventoryAvailabilityAssessment": "found",
+      "judgeRationale": "The pool contains source-backed Huawei smartwatch pages/listings for GT6 and GT5-family models, which are clearly comparable watches and satisfy the case's sole hard requirement. A GT5 listing is also present. No price, condition, or location claim is needed for the frozen constraint. The generic Huawei Watch GT result is less specific, but does not negate the useful clearly identified smartwatch offers.",
+      "candidates": [
+        {
+          "id": "3d472812f780551d08eb5659",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies HUAWEI WATCH GT 6 Pro, a watch."
+            }
+          ],
+          "evidence": "The Huawei KSA title identifies GT 6 Pro, and the description explicitly compares it with HUAWEI WATCH GT 5 Pro; it is a clearly labeled comparable smartwatch, not the intended GT 5 model."
+        },
+        {
+          "id": "8f16af9e6e6dcb589a5012ba",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies HUAWEI WATCH GT 5."
+            }
+          ],
+          "evidence": "The title explicitly names HUAWEI WATCH GT 5; the description further specifies the 46 mm version. It is the reference watch itself rather than an alternative, but is directly relevant to a comparison query."
+        },
+        {
+          "id": "471848accab703a1edc49c45",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies HUAWEI WATCH GT 5 Pro."
+            }
+          ],
+          "evidence": "The title identifies GT 5 Pro and the description specifies its 42 mm Ceramic White edition. This is a clearly labeled watch in the same product family, but a distinct Pro variant."
+        },
+        {
+          "id": "0044605334ea15394d4349b3",
+          "relevance": "RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The Arabic title explicitly describes a Huawei WATCH GT 5 smart watch."
+            }
+          ],
+          "evidence": "The Arabic title identifies a Huawei WATCH GT 5 smart watch, while the description's color text says '5Pro 46mm'; that variant inconsistency prevents a fully confident exact identity judgment."
+        },
+        {
+          "id": "3d662804952ecea55ff39234",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title says Huawei Watch GT and the category is watches_jewelry."
+            }
+          ],
+          "evidence": "The result is in the Huawei Watch GT family, but its generic title and description do not establish a particular model or its comparability to GT 5."
+        },
+        {
+          "id": "38081acb84c02640a938ea05",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title explicitly identifies HUAWEI WATCH GT 6."
+            }
+          ],
+          "evidence": "The Huawei KSA title identifies GT 6, and the description explicitly compares it with HUAWEI WATCH GT 5 46 mm; it is a clearly labeled comparable smartwatch."
+        },
+        {
+          "id": "4b1609b29b8338c44d952be7",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The title identifies Huawei Watch GT 5 Pro, and the description calls it a smartwatch."
+            }
+          ],
+          "evidence": "The title and description identify a Huawei GT 5 Pro 46 mm smartwatch, a distinct but clearly comparable Pro model."
+        },
+        {
+          "id": "220e6f9766590c0fac720c57",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "The description explicitly identifies WATCH GT 4 46 mm as a smartwatch."
+            }
+          ],
+          "evidence": "Although the title is generic, the description explicitly identifies a Huawei WATCH GT 4 46 mm smartwatch, a distinct comparable model."
+        }
+      ]
+    },
+    {
+      "caseId": 33,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "The packet has no returned candidates for this case. An empty result set does not establish that suitable inventory is absent, and the packet supplies no independent inventory evidence; availability is therefore unknown.",
+      "candidates": []
+    },
+    {
+      "caseId": 34,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "The packet has no returned candidates for this case. An empty result set does not establish that a matching Diesel heel offer is unavailable, and no independent inventory evidence is supplied; availability is therefore unknown.",
+      "candidates": []
+    },
+    {
+      "caseId": 35,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "The packet has no returned candidates for this case. An empty result set does not establish that the specified OEM part and vehicle fitment are unavailable, and no independent inventory evidence is supplied; availability is therefore unknown.",
+      "candidates": []
+    }
+  ]
+}

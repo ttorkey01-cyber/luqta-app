@@ -1,0 +1,1785 @@
+{
+  "cases": [
+    {
+      "caseId": 1,
+      "inventoryAvailabilityAssessment": "found",
+      "judgeRationale": "The pool includes source-text-supported Samsung Galaxy S24 256GB offers (including listings naming the base S24 rather than S24+/Ultra). Other results explicitly identify Ultra/FE/Fold variants or are ambiguous series pages. No price, condition, or stock is inferred from blank fields.",
+      "candidates": [
+        {
+          "id": "4a25409f615807e0918c974f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Samsung. Title: “Samsung Galaxy S24 Ultra, AI Phone, 256GB Storage, Titanium Black, 12GB RAM, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) ” Description: “Samsung Galaxy S24 Ultra, AI Phone, 256GB Storage, Titanium Black, 12GB RAM, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) : Buy Online at Best Price in KSA - Souq”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting model for the requested item. Title: “Samsung Galaxy S24 Ultra, AI Phone, 256GB Storage, Titanium Black, 12GB RAM, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) ” Description: “Samsung Galaxy S24 Ultra, AI Phone, 256GB Storage, Titanium Black, 12GB RAM, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) : Buy Online at Best Price in KSA - Souq”"
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports storage=256GB. Title: “Samsung Galaxy S24 Ultra, AI Phone, 256GB Storage, Titanium Black, 12GB RAM, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) ” Description: “Samsung Galaxy S24 Ultra, AI Phone, 256GB Storage, Titanium Black, 12GB RAM, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) : Buy Online at Best Price in KSA - Souq”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Samsung Galaxy S24 Ultra, AI Phone, 256GB Storage, Titanium Black, 12GB RAM, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) : Buy Online at Best Price in KSA - Souq is now [U” Description: “Samsung Galaxy S24 Ultra, AI Phone, 256GB Storage, Titanium Black, 12GB RAM, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) : Buy Online at Best Price in KSA - Souq is now [URL removed]: Electronics”"
+        },
+        {
+          "id": "da1c6bd6d67fd1d79de60c3d",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Samsung. Title: “Samsung Galaxy S24 Ultra, 256GB, Gray, 12GB RAM, Android Smartphone, 200MP Camera, (International Version) Buy, Best Price in Saudi Arabia, Riyadh, Je” Description: “Samsung Galaxy S24 Ultra, 256GB, Gray, 12GB RAM, Android Smartphone, 2 Buy Online with Best Price. Express delivery to Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting model for the requested item. Title: “Samsung Galaxy S24 Ultra, 256GB, Gray, 12GB RAM, Android Smartphone, 200MP Camera, (International Version) Buy, Best Price in Saudi Arabia, Riyadh, Je” Description: “Samsung Galaxy S24 Ultra, 256GB, Gray, 12GB RAM, Android Smartphone, 2 Buy Online with Best Price. Express delivery to Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca”"
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports storage=256GB. Title: “Samsung Galaxy S24 Ultra, 256GB, Gray, 12GB RAM, Android Smartphone, 200MP Camera, (International Version) Buy, Best Price in Saudi Arabia, Riyadh, Je” Description: “Samsung Galaxy S24 Ultra, 256GB, Gray, 12GB RAM, Android Smartphone, 2 Buy Online with Best Price. Express delivery to Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Samsung Galaxy S24 Ultra, 256GB, Gray, 12GB RAM, Android Smartphone, 200MP Camera, (International Version) Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca” Description: “Samsung Galaxy S24 Ultra, 256GB, Gray, 12GB RAM, Android Smartphone, 2 Buy Online with Best Price. Express delivery to Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca”"
+        },
+        {
+          "id": "5962103c8da7155232c62cce",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Samsung. Title: “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Smartphone, 50MP Camera, (International Version) Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, M” Description: “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Smartphone, 50MP Camera, (International Version) model F-MS921BZKGAMA Mobile Phones”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Galaxy S24. Title: “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Smartphone, 50MP Camera, (International Version) Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, M” Description: “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Smartphone, 50MP Camera, (International Version) model F-MS921BZKGAMA Mobile Phones”"
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports storage=256GB. Title: “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Smartphone, 50MP Camera, (International Version) Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, M” Description: “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Smartphone, 50MP Camera, (International Version) model F-MS921BZKGAMA Mobile Phones”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Smartphone, 50MP Camera, (International Version) Buy, Best Price in Saudi Arabia, Riyadh, Jeddah, Medina, Dammam, Mecca” Description: “Samsung Galaxy S24, 256GB, Black, 8GB RAM, Android Smartphone, 50MP Camera, (International Version) model F-MS921BZKGAMA Mobile Phones”"
+        },
+        {
+          "id": "5769e72e21b0cb8cf0b6d7e0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Samsung. Title: “Buy now Galaxy S24 & S24+ | Price & Offers | Samsung Saudi Arabia” Description: “If you need any assistance, please contact our customer service team at: (Inside Saudi Arabia: 8002474357 | Outside Saudi Arabia: +966115026111) or via WhatsApp: +966558474355 / Technical Su”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Unknown: displayed text/metadata does not reliably establish model=Galaxy S24 for a single offer; no inference from omitted fields. Title: “Buy now Galaxy S24 & S24+ | Price & Offers | Samsung Saudi Arabia” Description: “If you need any assistance, please contact our customer service team at: (Inside Saudi Arabia: 8002474357 | Outside Saudi Arabia: +966115026111) or via WhatsApp: +966558474355 / Technical Su”"
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports storage=256GB. Title: “Buy now Galaxy S24 & S24+ | Price & Offers | Samsung Saudi Arabia” Description: “If you need any assistance, please contact our customer service team at: (Inside Saudi Arabia: 8002474357 | Outside Saudi Arabia: +966115026111) or via WhatsApp: +966558474355 / Technical Su”"
+            }
+          ],
+          "evidence": "PARTIALLY_RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy now Galaxy S24 & S24+ | Price & Offers | Samsung Saudi Arabia” Description: “If you need any assistance, please contact our customer service team at: (Inside Saudi Arabia: 8002474357 | Outside Saudi Arabia: +966115026111) or via WhatsApp: +966558474355 / Technical Support. tubk · Product Ratings : 5 · 2025-07-13 Col”"
+        },
+        {
+          "id": "cf5e10a37aad0d22fef69e4d",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Samsung. Title: “Buy Samsung Galaxy S24 Series at the best prices | eXtra Saudi” Description: “Order now Samsung Galaxy S24 Ultra 5G that comes with titanium frame, 6.8 screen, 256gb storage, along with S24 plus. Get the latest Samsung S24 from eXtra.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Unknown: displayed text/metadata does not reliably establish model=Galaxy S24 for a single offer; no inference from omitted fields. Title: “Buy Samsung Galaxy S24 Series at the best prices | eXtra Saudi” Description: “Order now Samsung Galaxy S24 Ultra 5G that comes with titanium frame, 6.8 screen, 256gb storage, along with S24 plus. Get the latest Samsung S24 from eXtra.”"
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Unknown: displayed text/metadata does not reliably establish storage=256GB for a single offer; no inference from omitted fields. Title: “Buy Samsung Galaxy S24 Series at the best prices | eXtra Saudi” Description: “Order now Samsung Galaxy S24 Ultra 5G that comes with titanium frame, 6.8 screen, 256gb storage, along with S24 plus. Get the latest Samsung S24 from eXtra.”"
+            }
+          ],
+          "evidence": "PARTIALLY_RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Samsung Galaxy S24 Series at the best prices | eXtra Saudi” Description: “Order now Samsung Galaxy S24 Ultra 5G that comes with titanium frame, 6.8 screen, 256gb storage, along with S24 plus. Get the latest Samsung S24 from eXtra.”"
+        },
+        {
+          "id": "e13e477de0075dc9754476a8",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Samsung. Title: “New Galaxy Smartphone Lineup | Samsung Saudi Arabia” Description: “Explore Samsung new Galaxy AI-powered models like the Galaxy Z Fold7, designed to deliver seamless technology and style at Samsung Saudi Arabia.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting model for the requested item. Title: “New Galaxy Smartphone Lineup | Samsung Saudi Arabia” Description: “Explore Samsung new Galaxy AI-powered models like the Galaxy Z Fold7, designed to deliver seamless technology and style at Samsung Saudi Arabia.”"
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Unknown: displayed text/metadata does not reliably establish storage=256GB for a single offer; no inference from omitted fields. Title: “New Galaxy Smartphone Lineup | Samsung Saudi Arabia” Description: “Explore Samsung new Galaxy AI-powered models like the Galaxy Z Fold7, designed to deliver seamless technology and style at Samsung Saudi Arabia.”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “New Galaxy Smartphone Lineup | Samsung Saudi Arabia” Description: “Explore Samsung new Galaxy AI-powered models like the Galaxy Z Fold7, designed to deliver seamless technology and style at Samsung Saudi Arabia.”"
+        },
+        {
+          "id": "4bfda0f3acb92a1a1cc81d12",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Samsung. Title: “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android Smartphone, 50MP Camera, No Manufacturer Warranty (International Version) : Buy Online at Best Pri” Description: “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android Smartphone, 50MP Camera, No Manufacturer Warranty (International Version) : Buy Online at Best Price in KSA - Souq is now [URL removed]: E”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Galaxy S24. Title: “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android Smartphone, 50MP Camera, No Manufacturer Warranty (International Version) : Buy Online at Best Pri” Description: “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android Smartphone, 50MP Camera, No Manufacturer Warranty (International Version) : Buy Online at Best Price in KSA - Souq is now [URL removed]: E”"
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports storage=256GB. Title: “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android Smartphone, 50MP Camera, No Manufacturer Warranty (International Version) : Buy Online at Best Pri” Description: “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android Smartphone, 50MP Camera, No Manufacturer Warranty (International Version) : Buy Online at Best Price in KSA - Souq is now [URL removed]: E”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android Smartphone, 50MP Camera, No Manufacturer Warranty (International Version) : Buy Online at Best Price in KSA - Souq is now [URL removed]: Electronics” Description: “SAMSUNG Galaxy S24, 256GB, Violet, 8GB RAM, Android Smartphone, 50MP Camera, No Manufacturer Warranty (International Version) : Buy Online at Best Price in KSA - Souq is now [URL removed]: Electronics”"
+        },
+        {
+          "id": "115b7e8d94cdafc8c982a854",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Samsung. Title: “Buy Galaxy S24 Onyx Black 256 GB | Samsung Saudi Arabia” Description: “Saudi Arabia / English · UK / English · Other Countries or location · Continue Close · Close · Samsung Wallet. The secured payment method in your Galaxy. Samsung Wallet. The secured payment ”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Galaxy S24. Title: “Buy Galaxy S24 Onyx Black 256 GB | Samsung Saudi Arabia” Description: “Saudi Arabia / English · UK / English · Other Countries or location · Continue Close · Close · Samsung Wallet. The secured payment method in your Galaxy. Samsung Wallet. The secured payment ”"
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports storage=256GB. Title: “Buy Galaxy S24 Onyx Black 256 GB | Samsung Saudi Arabia” Description: “Saudi Arabia / English · UK / English · Other Countries or location · Continue Close · Close · Samsung Wallet. The secured payment method in your Galaxy. Samsung Wallet. The secured payment ”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Galaxy S24 Onyx Black 256 GB | Samsung Saudi Arabia” Description: “Saudi Arabia / English · UK / English · Other Countries or location · Continue Close · Close · Samsung Wallet. The secured payment method in your Galaxy. Samsung Wallet. The secured payment method in your Galaxy. Learn more · Learn more Cli”"
+        },
+        {
+          "id": "e4c257e568936d140df5c5bc",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Samsung. Title: “اشتر جالكسي S24 FE 256GB - أزرق | سامسونج السعودية” Description: “اشتر جالكسي S24 FE 256GB بلون أزرق، يقدم تجربة استخدام متميزة تجمع بين أداء قوي وتصميم أنيق وشاشة متطورة تلائم جميع الاحتياجات.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting model for the requested item. Title: “اشتر جالكسي S24 FE 256GB - أزرق | سامسونج السعودية” Description: “اشتر جالكسي S24 FE 256GB بلون أزرق، يقدم تجربة استخدام متميزة تجمع بين أداء قوي وتصميم أنيق وشاشة متطورة تلائم جميع الاحتياجات.”"
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports storage=256GB. Title: “اشتر جالكسي S24 FE 256GB - أزرق | سامسونج السعودية” Description: “اشتر جالكسي S24 FE 256GB بلون أزرق، يقدم تجربة استخدام متميزة تجمع بين أداء قوي وتصميم أنيق وشاشة متطورة تلائم جميع الاحتياجات.”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “اشتر جالكسي S24 FE 256GB - أزرق | سامسونج السعودية” Description: “اشتر جالكسي S24 FE 256GB بلون أزرق، يقدم تجربة استخدام متميزة تجمع بين أداء قوي وتصميم أنيق وشاشة متطورة تلائم جميع الاحتياجات.”"
+        },
+        {
+          "id": "f1e5fa1c85e5d3e621a42942",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Samsung. Title: “SAMSUNG Galaxy S24 Ultra, 256GB, Black, 12GB RAM, Android Smartphone, 200MP Camera, No Manufacturer Warranty (International Version) : Buy Online at B” Description: “SAMSUNG Galaxy S24 Ultra, AI Phone, 256GB Storage, Titanium Gray, 12GB RAM, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) (Renewed)”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting model for the requested item. Title: “SAMSUNG Galaxy S24 Ultra, 256GB, Black, 12GB RAM, Android Smartphone, 200MP Camera, No Manufacturer Warranty (International Version) : Buy Online at B” Description: “SAMSUNG Galaxy S24 Ultra, AI Phone, 256GB Storage, Titanium Gray, 12GB RAM, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) (Renewed)”"
+            },
+            {
+              "field": "storage",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports storage=256GB. Title: “SAMSUNG Galaxy S24 Ultra, 256GB, Black, 12GB RAM, Android Smartphone, 200MP Camera, No Manufacturer Warranty (International Version) : Buy Online at B” Description: “SAMSUNG Galaxy S24 Ultra, AI Phone, 256GB Storage, Titanium Gray, 12GB RAM, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) (Renewed)”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “SAMSUNG Galaxy S24 Ultra, 256GB, Black, 12GB RAM, Android Smartphone, 200MP Camera, No Manufacturer Warranty (International Version) : Buy Online at Best Price in KSA - Souq is now [URL removed]: Elec” Description: “SAMSUNG Galaxy S24 Ultra, AI Phone, 256GB Storage, Titanium Gray, 12GB RAM, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) (Renewed)”"
+        }
+      ]
+    },
+    {
+      "caseId": 2,
+      "inventoryAvailabilityAssessment": "found",
+      "judgeRationale": "The pool contains direct Watch GT5 product listings with explicit Huawei/GT5 wording. GT5 Pro results are distinct models; the support page is relevant to the model but is not a shopping offer. Missing price/condition/stock fields remain unassumed.",
+      "candidates": [
+        {
+          "id": "cf06d1d40e62d6d6aad02757",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Huawei. Title: “Buy Huawei Watch GT5 – 41mm AMOLED Display, Fitness Tracking, Smartwatch, Brown in Saudi Arabia. Huawei Watch GT5 – 41mm AMOLED Display, Fitness Track” Description: “Buy Huawei Watch GT5 – 41mm AMOLED Display, Fitness Tracking, Smartwatch, Brown from Sharaf DG Online at Best Prices in KSA. Check Huawei Watch GT5 – 41mm AMOLED Display, Fitness Tracking, S”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Watch GT 5. Title: “Buy Huawei Watch GT5 – 41mm AMOLED Display, Fitness Tracking, Smartwatch, Brown in Saudi Arabia. Huawei Watch GT5 – 41mm AMOLED Display, Fitness Track” Description: “Buy Huawei Watch GT5 – 41mm AMOLED Display, Fitness Tracking, Smartwatch, Brown from Sharaf DG Online at Best Prices in KSA. Check Huawei Watch GT5 – 41mm AMOLED Display, Fitness Tracking, S”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Huawei Watch GT5 – 41mm AMOLED Display, Fitness Tracking, Smartwatch, Brown in Saudi Arabia. Huawei Watch GT5 – 41mm AMOLED Display, Fitness Tracking, Smartwatch, Brown price in KSA | [URL removed” Description: “Buy Huawei Watch GT5 – 41mm AMOLED Display, Fitness Tracking, Smartwatch, Brown from Sharaf DG Online at Best Prices in KSA. Check Huawei Watch GT5 – 41mm AMOLED Display, Fitness Tracking, Smartwatch, Brown prices, ratings, reviews, specifi”"
+        },
+        {
+          "id": "e99f539780fbbe73741fcd54",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Huawei. Title: “HUAWEI WATCH GT 5 46mm Smartwatch, up to 14 Days Battery Life, All-new Running and Cycling Experience, Sharp-Edged Design, iOS and Android + FreeBuds ” Description: “HUAWEI WATCH GT 5 46mm Smartwatch, up to 14 Days Battery Life, All-new Running and Cycling Experience, Sharp-Edged Design, iOS and Android + FreeBuds 5i Earbuds and Extra 3 Months Warranty, ”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Watch GT 5. Title: “HUAWEI WATCH GT 5 46mm Smartwatch, up to 14 Days Battery Life, All-new Running and Cycling Experience, Sharp-Edged Design, iOS and Android + FreeBuds ” Description: “HUAWEI WATCH GT 5 46mm Smartwatch, up to 14 Days Battery Life, All-new Running and Cycling Experience, Sharp-Edged Design, iOS and Android + FreeBuds 5i Earbuds and Extra 3 Months Warranty, ”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “HUAWEI WATCH GT 5 46mm Smartwatch, up to 14 Days Battery Life, All-new Running and Cycling Experience, Sharp-Edged Design, iOS and Android + FreeBuds 5i Earbuds and Extra 3 Months Warranty, Blue : Buy” Description: “HUAWEI WATCH GT 5 46mm Smartwatch, up to 14 Days Battery Life, All-new Running and Cycling Experience, Sharp-Edged Design, iOS and Android + FreeBuds 5i Earbuds and Extra 3 Months Warranty, Blue : Buy Online at Best Price in KSA - Souq is n”"
+        },
+        {
+          "id": "cd3d920886be8ec50d91efb6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Huawei. Title: “HUAWEI WATCH GT 5 Repair and Service | HUAWEI Support Saudi Arabia” Description: “Get HUAWEI WATCH GT 5 user manuals, FAQs, find Service Center, warranty period query, spare parts price query and other services.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Watch GT 5. Title: “HUAWEI WATCH GT 5 Repair and Service | HUAWEI Support Saudi Arabia” Description: “Get HUAWEI WATCH GT 5 user manuals, FAQs, find Service Center, warranty period query, spare parts price query and other services.”"
+            }
+          ],
+          "evidence": "PARTIALLY_RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “HUAWEI WATCH GT 5 Repair and Service | HUAWEI Support Saudi Arabia” Description: “Get HUAWEI WATCH GT 5 user manuals, FAQs, find Service Center, warranty period query, spare parts price query and other services.”"
+        },
+        {
+          "id": "fcf9284e06f8004041ef279c",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Huawei. Title: “Huawei Watch GT5 في السعودية | خصم 30-75% | الرياض وجدة | نون” Description: “تسوق Huawei Watch GT5 من نون. ✓ تسوق آمن ✓ 100% دون لمس ✓ شحن سريع ✓ الدفع عند الاستلام ✓ إرجاع مجاني بسهولة. نوّنها الآن”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Watch GT 5. Title: “Huawei Watch GT5 في السعودية | خصم 30-75% | الرياض وجدة | نون” Description: “تسوق Huawei Watch GT5 من نون. ✓ تسوق آمن ✓ 100% دون لمس ✓ شحن سريع ✓ الدفع عند الاستلام ✓ إرجاع مجاني بسهولة. نوّنها الآن”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Huawei Watch GT5 في السعودية | خصم 30-75% | الرياض وجدة | نون” Description: “تسوق Huawei Watch GT5 من نون. ✓ تسوق آمن ✓ 100% دون لمس ✓ شحن سريع ✓ الدفع عند الاستلام ✓ إرجاع مجاني بسهولة. نوّنها الآن”"
+        },
+        {
+          "id": "917423c97857e7bba3a52344",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Huawei. Title: “Huawei Watch GT 5 Pro Price in Saudi Arabia 2025 with Specs and Features - Phoneaqua” Description: “Huawei Watch GT 5 Pro Price In Saudi Arabia starting from SAR 1,500 to SAR 1,650.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting model for the requested item. Title: “Huawei Watch GT 5 Pro Price in Saudi Arabia 2025 with Specs and Features - Phoneaqua” Description: “Huawei Watch GT 5 Pro Price In Saudi Arabia starting from SAR 1,500 to SAR 1,650.”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Huawei Watch GT 5 Pro Price in Saudi Arabia 2025 with Specs and Features - Phoneaqua” Description: “Huawei Watch GT 5 Pro Price In Saudi Arabia starting from SAR 1,500 to SAR 1,650.”"
+        },
+        {
+          "id": "6f26c821b5045958bec008f3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Huawei. Title: “Huawei Watch GT5 Pro KSA | 30-75% OFF | Riyadh, Jeddah | noon” Description: “Shop for Huawei Watch GT5 Pro on noon. ✓ Secure Shopping ✓ 100% Contactless ✓ Fast Shipping ✓ Cash on Delivery ✓ Easy Free Returns. Shop Now”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting model for the requested item. Title: “Huawei Watch GT5 Pro KSA | 30-75% OFF | Riyadh, Jeddah | noon” Description: “Shop for Huawei Watch GT5 Pro on noon. ✓ Secure Shopping ✓ 100% Contactless ✓ Fast Shipping ✓ Cash on Delivery ✓ Easy Free Returns. Shop Now”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Huawei Watch GT5 Pro KSA | 30-75% OFF | Riyadh, Jeddah | noon” Description: “Shop for Huawei Watch GT5 Pro on noon. ✓ Secure Shopping ✓ 100% Contactless ✓ Fast Shipping ✓ Cash on Delivery ✓ Easy Free Returns. Shop Now”"
+        },
+        {
+          "id": "16fa4ca9016b54d359a9bc60",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Huawei. Title: “Huawei Watch GT5 KSA | 30-75% OFF | Riyadh, Jeddah | noon” Description: “Shop for Huawei Watch GT5 on noon. ✓ Secure Shopping ✓ 100% Contactless ✓ Fast Shipping ✓ Cash on Delivery ✓ Easy Free Returns. Shop Now”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Watch GT 5. Title: “Huawei Watch GT5 KSA | 30-75% OFF | Riyadh, Jeddah | noon” Description: “Shop for Huawei Watch GT5 on noon. ✓ Secure Shopping ✓ 100% Contactless ✓ Fast Shipping ✓ Cash on Delivery ✓ Easy Free Returns. Shop Now”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Huawei Watch GT5 KSA | 30-75% OFF | Riyadh, Jeddah | noon” Description: “Shop for Huawei Watch GT5 on noon. ✓ Secure Shopping ✓ 100% Contactless ✓ Fast Shipping ✓ Cash on Delivery ✓ Easy Free Returns. Shop Now”"
+        },
+        {
+          "id": "4b1609b29b8338c44d952be7",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Huawei. Title: “Huawei Watch GT 5 Pro price in Saudi Arabia | Compare Prices” Description: “The watch gt 5 pro 46mm smartwatch, ... comes in Color : Steel , Millimiters : 46 mm. The product is sold at 1 online shop in Saudi Arabia in Riyadh, Jeddah, Dammam....”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting model for the requested item. Title: “Huawei Watch GT 5 Pro price in Saudi Arabia | Compare Prices” Description: “The watch gt 5 pro 46mm smartwatch, ... comes in Color : Steel , Millimiters : 46 mm. The product is sold at 1 online shop in Saudi Arabia in Riyadh, Jeddah, Dammam....”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Huawei Watch GT 5 Pro price in Saudi Arabia | Compare Prices” Description: “The watch gt 5 pro 46mm smartwatch, ... comes in Color : Steel , Millimiters : 46 mm. The product is sold at 1 online shop in Saudi Arabia in Riyadh, Jeddah, Dammam....”"
+        },
+        {
+          "id": "cf12183e0ce0c1eacddcdfea",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Huawei. Title: “Huawei Watch GT 5 Pro 46mm - Black Fluoroelastomer Strap” Description: “Notifications: The watch syncs with your phone to display notifications for calls, messages, emails, and apps. ... For orders of 300 riyals and more. ... We serve you from inside Saudi Arabi”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting model for the requested item. Title: “Huawei Watch GT 5 Pro 46mm - Black Fluoroelastomer Strap” Description: “Notifications: The watch syncs with your phone to display notifications for calls, messages, emails, and apps. ... For orders of 300 riyals and more. ... We serve you from inside Saudi Arabi”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Huawei Watch GT 5 Pro 46mm - Black Fluoroelastomer Strap” Description: “Notifications: The watch syncs with your phone to display notifications for calls, messages, emails, and apps. ... For orders of 300 riyals and more. ... We serve you from inside Saudi Arabia.”"
+        },
+        {
+          "id": "2c18d1a09ed1c988c1a6809b",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Huawei. Title: “Huawei Watch GT 5 price in Saudi Arabia | Compare Prices” Description: “The best price for the Huawei Watch GT 5 41 in Saudi Arabia is SAR 799 sold at Jarir and available with free shipping and delivery within Click &amp; Collect or Delivery in 1-3 Business Days”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Watch GT 5. Title: “Huawei Watch GT 5 price in Saudi Arabia | Compare Prices” Description: “The best price for the Huawei Watch GT 5 41 in Saudi Arabia is SAR 799 sold at Jarir and available with free shipping and delivery within Click &amp; Collect or Delivery in 1-3 Business Days”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Huawei Watch GT 5 price in Saudi Arabia | Compare Prices” Description: “The best price for the Huawei Watch GT 5 41 in Saudi Arabia is SAR 799 sold at Jarir and available with free shipping and delivery within Click &amp; Collect or Delivery in 1-3 Business Days to main cities.”"
+        }
+      ]
+    },
+    {
+      "caseId": 3,
+      "inventoryAvailabilityAssessment": "found",
+      "judgeRationale": "The pool contains multiple Nike Air Max 270 shoe listings, with exact model and shoe language in the displayed titles/descriptions. The generic affiliate descriptions do not establish size, condition, or stock beyond their displayed information.",
+      "candidates": [
+        {
+          "id": "cf1353d09e3d1f7e88bf591f",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on-off wear, and plenty of see-through foam cushioni” Displayed price: 345 SAR."
+        },
+        {
+          "id": "91cbbf6680e72e495693494d",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “Buy Nike Air Max 270 Women's Shoes - Black/Black/Black @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Women&#x27;s Shoes - Black/Black/Black Online in Saudi.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “Buy Nike Air Max 270 Women's Shoes - Black/Black/Black @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Women&#x27;s Shoes - Black/Black/Black Online in Saudi.”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Nike Air Max 270 Women's Shoes - Black/Black/Black @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Women&#x27;s Shoes - Black/Black/Black Online in Saudi.”"
+        },
+        {
+          "id": "0b0de8bf143d9d038b36a6e6",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on-off wear, and plenty of see-through foam cushioni” Displayed price: 345 SAR."
+        },
+        {
+          "id": "600c5c3156a8a2c210b97cf1",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “Buy Nike Air Max 270 Men's Shoes - Black/White/Solar Red/Anthracite @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Men&#x27;s Shoes - Black/White/Solar Red/Anthracite Online in Saudi.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “Buy Nike Air Max 270 Men's Shoes - Black/White/Solar Red/Anthracite @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Men&#x27;s Shoes - Black/White/Solar Red/Anthracite Online in Saudi.”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Nike Air Max 270 Men's Shoes - Black/White/Solar Red/Anthracite @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Men&#x27;s Shoes - Black/White/Solar Red/Anthracite Online in Saudi.”"
+        },
+        {
+          "id": "e6ee41092993518e3a234fec",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “Resting on a big, bold wraparound 270 air unit, these lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber ”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “Resting on a big, bold wraparound 270 air unit, these lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber ”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “Resting on a big, bold wraparound 270 air unit, these lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on-o” Displayed price: 345 SAR."
+        },
+        {
+          "id": "eac88a4b3960c688132d52bb",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and grooves in the rubber sole.” Displayed price: 225 SAR."
+        },
+        {
+          "id": "d4eb25becd0db0865f889fef",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “Buy Nike Air Max 270 Men's Shoes - Black/Black/Black @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Men&#x27;s Shoes - Black/Black/Black Online in Saudi.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “Buy Nike Air Max 270 Men's Shoes - Black/Black/Black @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Men&#x27;s Shoes - Black/Black/Black Online in Saudi.”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Nike Air Max 270 Men's Shoes - Black/Black/Black @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Men&#x27;s Shoes - Black/Black/Black Online in Saudi.”"
+        },
+        {
+          "id": "974f6238a2b1afa1a19c450d",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on-off wear, and plenty of see-through foam cushioni” Displayed price: 345 SAR."
+        },
+        {
+          "id": "03caf63cc88fe56ee236f8dc",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “Resting on a big, bold wraparound 270 air unit, these lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber ”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “Resting on a big, bold wraparound 270 air unit, these lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber ”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “Resting on a big, bold wraparound 270 air unit, these lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on-o” Displayed price: 295 SAR."
+        },
+        {
+          "id": "778f74a025aa87d8af7e45a5",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and grooves in the rubber sole.” Displayed price: 225 SAR."
+        },
+        {
+          "id": "43e1aa5b8cc48db5e175811b",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and grooves in the rubber sole.” Displayed price: 225 SAR."
+        },
+        {
+          "id": "46a80718a843d01eac530058",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “Buy Nike Air Max 270 Men's Shoes - Cargo Khaki/Obsidian/Light Bone @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Men&#x27;s Shoes - Cargo Khaki/Obsidian/Light Bone Online in Saudi.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “Buy Nike Air Max 270 Men's Shoes - Cargo Khaki/Obsidian/Light Bone @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Men&#x27;s Shoes - Cargo Khaki/Obsidian/Light Bone Online in Saudi.”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Nike Air Max 270 Men's Shoes - Cargo Khaki/Obsidian/Light Bone @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Men&#x27;s Shoes - Cargo Khaki/Obsidian/Light Bone Online in Saudi.”"
+        },
+        {
+          "id": "14adf0027a34de4dff0c8361",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “Buy Nike Air Max 270 Men's Shoes - White/White/Black | Nike Saudi Official” Description: “Nike Shop Nike Air Max 270 Men&#x27;s Shoes - White/White/Black Online in Saudi.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “Buy Nike Air Max 270 Men's Shoes - White/White/Black | Nike Saudi Official” Description: “Nike Shop Nike Air Max 270 Men&#x27;s Shoes - White/White/Black Online in Saudi.”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Nike Air Max 270 Men's Shoes - White/White/Black | Nike Saudi Official” Description: “Nike Shop Nike Air Max 270 Men&#x27;s Shoes - White/White/Black Online in Saudi.”"
+        },
+        {
+          "id": "055da451157680b0d92cdce7",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and grooves in the rubber sole.” Displayed price: 225 SAR."
+        },
+        {
+          "id": "47093d8a398d2470b295a3fd",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on-off wear, and plenty of see-through foam cushioni” Displayed price: 345 SAR."
+        },
+        {
+          "id": "b87b4c1117da418e0c957491",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on-off wear, and plenty of see-through foam cushioni” Displayed price: 345 SAR."
+        },
+        {
+          "id": "c20b7bd2c97ea32083d2e6d1",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “Buy Nike Air Max 270 Women's Shoes - Black/White/Anthracite @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Women&#x27;s Shoes - Black/White/Anthracite Online in Saudi.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “Buy Nike Air Max 270 Women's Shoes - Black/White/Anthracite @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Women&#x27;s Shoes - Black/White/Anthracite Online in Saudi.”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Nike Air Max 270 Women's Shoes - Black/White/Anthracite @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Women&#x27;s Shoes - Black/White/Anthracite Online in Saudi.”"
+        },
+        {
+          "id": "814d56ecbe2043fb7d46caf6",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك أبيض Air Max 270 Sneakers for للنساء والرجال” Description: “These lightweight sneakers by nike will have your little one looking and feeling fresh all day long. They feature an airy woven upper, rubber outsole for traction, heel pull tabs for easy on-off wear, and plenty of see-through foam cushioni” Displayed price: 345 SAR."
+        },
+        {
+          "id": "3a96766d627ceb776f5275ec",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and grooves in the rubber sole.” Displayed price: 225 SAR."
+        },
+        {
+          "id": "f2b2a6acb8bf6c453d7adb20",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “Buy Nike Air Max 270 Women's Shoes - White/Pale Ivory/Muslin/Black @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Women&#x27;s Shoes - White/Pale Ivory/Muslin/Black Online in Saudi.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “Buy Nike Air Max 270 Women's Shoes - White/Pale Ivory/Muslin/Black @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Women&#x27;s Shoes - White/Pale Ivory/Muslin/Black Online in Saudi.”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Nike Air Max 270 Women's Shoes - White/Pale Ivory/Muslin/Black @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Women&#x27;s Shoes - White/Pale Ivory/Muslin/Black Online in Saudi.”"
+        },
+        {
+          "id": "8c06a7f320340e5e27c549e4",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and grooves in the rubber sole.” Displayed price: 225 SAR."
+        },
+        {
+          "id": "a925b2f0ad932e65762219b6",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “Buy Nike Air Max 270 Older Kids' Shoes | Nike Saudi Official” Description: “Nike Shop Nike Air Max 270 Older Kids&#x27; Shoes Online in Saudi.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “Buy Nike Air Max 270 Older Kids' Shoes | Nike Saudi Official” Description: “Nike Shop Nike Air Max 270 Older Kids&#x27; Shoes Online in Saudi.”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Nike Air Max 270 Older Kids' Shoes | Nike Saudi Official” Description: “Nike Shop Nike Air Max 270 Older Kids&#x27; Shoes Online in Saudi.”"
+        },
+        {
+          "id": "3bb87764f83e547261abdad4",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and groov”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “نايك رمادي Air Max 270 Sneakers for للأولاد” Description: “These nike air max 270 sneakers offer cushioning on the sides to the back allowing them to be perfect for everyday wear. Take note of their large air unit, a breathable mesh upper, and grooves in the rubber sole.” Displayed price: 225 SAR."
+        },
+        {
+          "id": "52bbf831f1bc8cece86a8933",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Nike. Title: “Buy Nike Air Max 270 Older Kids' Shoes - Black/Lightning/White/Volt @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Older Kids&#x27; Shoes - Black/Lightning/White/Volt Online in Saudi.”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=Air Max 270. Title: “Buy Nike Air Max 270 Older Kids' Shoes - Black/Lightning/White/Volt @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Older Kids&#x27; Shoes - Black/Lightning/White/Volt Online in Saudi.”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Buy Nike Air Max 270 Older Kids' Shoes - Black/Lightning/White/Volt @ Nike Saudi” Description: “Nike Shop Nike Air Max 270 Older Kids&#x27; Shoes - Black/Lightning/White/Volt Online in Saudi.”"
+        }
+      ]
+    },
+    {
+      "caseId": 4,
+      "inventoryAvailabilityAssessment": "found",
+      "judgeRationale": "The pool contains listings explicitly naming the Genesis Anti-Chute Fortifiant serum in 90ml, including direct retail offer text. Other Genesis treatments have incomplete product/size evidence, while perfume candidates explicitly identify unrelated brands/products.",
+      "candidates": [
+        {
+          "id": "ff85cb20f3e2455e8acdbbc1",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Kerastase. Title: “Kérastase Genesis Hair Serum, Leave-In Conditioner, For Hair Fall, With Caffeine, Anti-Chute Fortifiant, 90ml | LOOKFANTASTIC” Description: “Buy Kérastase Genesis Hair Serum, Leave-In Conditioner, For Hair Fall, With Caffeine, Anti-Chute Fortifiant, 90ml - Join Beauty+ Rewards &amp; earn points today! Free delivery available.”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports product=Genesis Serum Anti-Chute Fortifiant. Title: “Kérastase Genesis Hair Serum, Leave-In Conditioner, For Hair Fall, With Caffeine, Anti-Chute Fortifiant, 90ml | LOOKFANTASTIC” Description: “Buy Kérastase Genesis Hair Serum, Leave-In Conditioner, For Hair Fall, With Caffeine, Anti-Chute Fortifiant, 90ml - Join Beauty+ Rewards &amp; earn points today! Free delivery available.”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports size=90ml. Title: “Kérastase Genesis Hair Serum, Leave-In Conditioner, For Hair Fall, With Caffeine, Anti-Chute Fortifiant, 90ml | LOOKFANTASTIC” Description: “Buy Kérastase Genesis Hair Serum, Leave-In Conditioner, For Hair Fall, With Caffeine, Anti-Chute Fortifiant, 90ml - Join Beauty+ Rewards &amp; earn points today! Free delivery available.”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Kérastase Genesis Hair Serum, Leave-In Conditioner, For Hair Fall, With Caffeine, Anti-Chute Fortifiant, 90ml | LOOKFANTASTIC” Description: “Buy Kérastase Genesis Hair Serum, Leave-In Conditioner, For Hair Fall, With Caffeine, Anti-Chute Fortifiant, 90ml - Join Beauty+ Rewards &amp; earn points today! Free delivery available.”"
+        },
+        {
+          "id": "1962dae5606c54cb133778af",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting brand for the requested item. Title: “ايسي مياكي ألوان أخرى A Drop D'issey Essentielle, 90ml for للنساء” Description: “Make heads turn with the enchanting aroma of this perfume that is designed to make an impression. With its signature blend and high quality ingredients that render it longevity and projectio”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting product for the requested item. Title: “ايسي مياكي ألوان أخرى A Drop D'issey Essentielle, 90ml for للنساء” Description: “Make heads turn with the enchanting aroma of this perfume that is designed to make an impression. With its signature blend and high quality ingredients that render it longevity and projectio”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports size=90ml. Title: “ايسي مياكي ألوان أخرى A Drop D'issey Essentielle, 90ml for للنساء” Description: “Make heads turn with the enchanting aroma of this perfume that is designed to make an impression. With its signature blend and high quality ingredients that render it longevity and projectio”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “ايسي مياكي ألوان أخرى A Drop D'issey Essentielle, 90ml for للنساء” Description: “Make heads turn with the enchanting aroma of this perfume that is designed to make an impression. With its signature blend and high quality ingredients that render it longevity and projection, you can rely on its performance to get you thro” Displayed price: 195 SAR."
+        },
+        {
+          "id": "006463fa205c5cb8cd9e106c",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Kerastase. Title: “Genesis Serum Anti-Chute Fortifiant - 90ml” Description: “KERASTASE · Volume · 90ml · When will I get it? FREE Standard delivery. Faster options available. FREE Collection. Open 7 days a week. FAQs · Non-returnable: may not be refunded or exchanged”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports product=Genesis Serum Anti-Chute Fortifiant. Title: “Genesis Serum Anti-Chute Fortifiant - 90ml” Description: “KERASTASE · Volume · 90ml · When will I get it? FREE Standard delivery. Faster options available. FREE Collection. Open 7 days a week. FAQs · Non-returnable: may not be refunded or exchanged”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports size=90ml. Title: “Genesis Serum Anti-Chute Fortifiant - 90ml” Description: “KERASTASE · Volume · 90ml · When will I get it? FREE Standard delivery. Faster options available. FREE Collection. Open 7 days a week. FAQs · Non-returnable: may not be refunded or exchanged”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Genesis Serum Anti-Chute Fortifiant - 90ml” Description: “KERASTASE · Volume · 90ml · When will I get it? FREE Standard delivery. Faster options available. FREE Collection. Open 7 days a week. FAQs · Non-returnable: may not be refunded or exchanged · 8/19/2025 · ★★★★★ · Excellent product But too e”"
+        },
+        {
+          "id": "459ca47e75f99a0eed034815",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Kerastase. Title: “Kérastase Genesis Fortifying Anti Hairfall Serum 90ml” Description: “Kérastase Genesis Fortifying Anti Hairfall Serum comes in a standard full-size 90ml retail bottle or a downsized 30ml travel-size bottle.”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports product=Genesis Serum Anti-Chute Fortifiant. Title: “Kérastase Genesis Fortifying Anti Hairfall Serum 90ml” Description: “Kérastase Genesis Fortifying Anti Hairfall Serum comes in a standard full-size 90ml retail bottle or a downsized 30ml travel-size bottle.”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports size=90ml. Title: “Kérastase Genesis Fortifying Anti Hairfall Serum 90ml” Description: “Kérastase Genesis Fortifying Anti Hairfall Serum comes in a standard full-size 90ml retail bottle or a downsized 30ml travel-size bottle.”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Kérastase Genesis Fortifying Anti Hairfall Serum 90ml” Description: “Kérastase Genesis Fortifying Anti Hairfall Serum comes in a standard full-size 90ml retail bottle or a downsized 30ml travel-size bottle.”"
+        },
+        {
+          "id": "b3025b9f39efb0a47ce8dfd3",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting brand for the requested item. Title: “فيكتور اند رولف Spicebomb Infrared Eau De Parfum, 90ml for للرجال” Description: “Top notes: a hot blend of cinnamon, chili pepper, and pink pepper.heart notes: continued chili pepper combined with rugged, smooth leather.base notes: rich resins and warm woody accords.”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting product for the requested item. Title: “فيكتور اند رولف Spicebomb Infrared Eau De Parfum, 90ml for للرجال” Description: “Top notes: a hot blend of cinnamon, chili pepper, and pink pepper.heart notes: continued chili pepper combined with rugged, smooth leather.base notes: rich resins and warm woody accords.”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports size=90ml. Title: “فيكتور اند رولف Spicebomb Infrared Eau De Parfum, 90ml for للرجال” Description: “Top notes: a hot blend of cinnamon, chili pepper, and pink pepper.heart notes: continued chili pepper combined with rugged, smooth leather.base notes: rich resins and warm woody accords.”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “فيكتور اند رولف Spicebomb Infrared Eau De Parfum, 90ml for للرجال” Description: “Top notes: a hot blend of cinnamon, chili pepper, and pink pepper.heart notes: continued chili pepper combined with rugged, smooth leather.base notes: rich resins and warm woody accords.” Displayed price: 345 SAR."
+        },
+        {
+          "id": "819125f506f401008d923ba2",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Kerastase. Title: “Kérastase Genesis Serum Anti-Chute Fortifiant | [URL removed]” Description: “The hair feels silky smooth after using this product and it protects the hair from the heat of up to 220°C. Application recommendation Kérastase Genesis Defense Thermique Apply the fluid to ”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports product=Genesis Serum Anti-Chute Fortifiant. Title: “Kérastase Genesis Serum Anti-Chute Fortifiant | [URL removed]” Description: “The hair feels silky smooth after using this product and it protects the hair from the heat of up to 220°C. Application recommendation Kérastase Genesis Defense Thermique Apply the fluid to ”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Unknown: displayed text/metadata does not reliably establish size=90ml for a single offer; no inference from omitted fields. Title: “Kérastase Genesis Serum Anti-Chute Fortifiant | [URL removed]” Description: “The hair feels silky smooth after using this product and it protects the hair from the heat of up to 220°C. Application recommendation Kérastase Genesis Defense Thermique Apply the fluid to ”"
+            }
+          ],
+          "evidence": "PARTIALLY_RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Kérastase Genesis Serum Anti-Chute Fortifiant | [URL removed]” Description: “The hair feels silky smooth after using this product and it protects the hair from the heat of up to 220°C. Application recommendation Kérastase Genesis Defense Thermique Apply the fluid to wet hair and focus on lengths and ends.”"
+        },
+        {
+          "id": "7ba4e86063131d97f7a5587a",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting brand for the requested item. Title: “ايسي مياكي ألوان أخرى A Drop D'issey Fraiche, 90ml for للنساء” Description: “Top notes : rain accord heart notes : lilac accord base notes : sandalwood accord”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting product for the requested item. Title: “ايسي مياكي ألوان أخرى A Drop D'issey Fraiche, 90ml for للنساء” Description: “Top notes : rain accord heart notes : lilac accord base notes : sandalwood accord”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports size=90ml. Title: “ايسي مياكي ألوان أخرى A Drop D'issey Fraiche, 90ml for للنساء” Description: “Top notes : rain accord heart notes : lilac accord base notes : sandalwood accord”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “ايسي مياكي ألوان أخرى A Drop D'issey Fraiche, 90ml for للنساء” Description: “Top notes : rain accord heart notes : lilac accord base notes : sandalwood accord” Displayed price: 195 SAR."
+        },
+        {
+          "id": "2202e30f52eac63d10245040",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Kerastase. Title: “Genesis Serum Fortifiant Hair Serum - Kerastase” Description: “97% LESS HAIR FALL DUE TO BREAKAGE FROM BRUSHING* +89% MORE NOURISHED HAIR** Genesis Serum Fortifiant by Kérastase is a silicone-free scalp serum that targets hair weakness at the source.”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Unknown: displayed text/metadata does not reliably establish product=Genesis Serum Anti-Chute Fortifiant for a single offer; no inference from omitted fields. Title: “Genesis Serum Fortifiant Hair Serum - Kerastase” Description: “97% LESS HAIR FALL DUE TO BREAKAGE FROM BRUSHING* +89% MORE NOURISHED HAIR** Genesis Serum Fortifiant by Kérastase is a silicone-free scalp serum that targets hair weakness at the source.”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Unknown: displayed text/metadata does not reliably establish size=90ml for a single offer; no inference from omitted fields. Title: “Genesis Serum Fortifiant Hair Serum - Kerastase” Description: “97% LESS HAIR FALL DUE TO BREAKAGE FROM BRUSHING* +89% MORE NOURISHED HAIR** Genesis Serum Fortifiant by Kérastase is a silicone-free scalp serum that targets hair weakness at the source.”"
+            }
+          ],
+          "evidence": "PARTIALLY_RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Genesis Serum Fortifiant Hair Serum - Kerastase” Description: “97% LESS HAIR FALL DUE TO BREAKAGE FROM BRUSHING* +89% MORE NOURISHED HAIR** Genesis Serum Fortifiant by Kérastase is a silicone-free scalp serum that targets hair weakness at the source.”"
+        },
+        {
+          "id": "00c4ee290b4347583443fa64",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting brand for the requested item. Title: “فيكتور اند رولف Flowerbomb Nectar Eau De Parfum, 90ml for للنساء” Description: “Top notes: a striking and explosive burst of gunpowder, cassis (blackcurrant), and bergamot.heart notes: a dense, sweet floral liqueur bouquet featuring orange blossom, osmanthus, and jasmin”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting product for the requested item. Title: “فيكتور اند رولف Flowerbomb Nectar Eau De Parfum, 90ml for للنساء” Description: “Top notes: a striking and explosive burst of gunpowder, cassis (blackcurrant), and bergamot.heart notes: a dense, sweet floral liqueur bouquet featuring orange blossom, osmanthus, and jasmin”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports size=90ml. Title: “فيكتور اند رولف Flowerbomb Nectar Eau De Parfum, 90ml for للنساء” Description: “Top notes: a striking and explosive burst of gunpowder, cassis (blackcurrant), and bergamot.heart notes: a dense, sweet floral liqueur bouquet featuring orange blossom, osmanthus, and jasmin”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “فيكتور اند رولف Flowerbomb Nectar Eau De Parfum, 90ml for للنساء” Description: “Top notes: a striking and explosive burst of gunpowder, cassis (blackcurrant), and bergamot.heart notes: a dense, sweet floral liqueur bouquet featuring orange blossom, osmanthus, and jasmine sambac.base notes: a warm, sensual dry-down of v” Displayed price: 445 SAR."
+        },
+        {
+          "id": "9d04240fd0696fd9e4ccfdb5",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Kerastase. Title: “KÉRASTASE Genesis Sérum Anti-Chute Fortifiant - 90ml USA” Description: “Available for shipping: Hair Loss Treatment KÉRASTASE Genesis Sérum Anti-Chute Fortifiant - 90ml. Discover all KÉRASTASEproducts at unbeatable prices at Loja Galmourosa”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports product=Genesis Serum Anti-Chute Fortifiant. Title: “KÉRASTASE Genesis Sérum Anti-Chute Fortifiant - 90ml USA” Description: “Available for shipping: Hair Loss Treatment KÉRASTASE Genesis Sérum Anti-Chute Fortifiant - 90ml. Discover all KÉRASTASEproducts at unbeatable prices at Loja Galmourosa”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports size=90ml. Title: “KÉRASTASE Genesis Sérum Anti-Chute Fortifiant - 90ml USA” Description: “Available for shipping: Hair Loss Treatment KÉRASTASE Genesis Sérum Anti-Chute Fortifiant - 90ml. Discover all KÉRASTASEproducts at unbeatable prices at Loja Galmourosa”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “KÉRASTASE Genesis Sérum Anti-Chute Fortifiant - 90ml USA” Description: “Available for shipping: Hair Loss Treatment KÉRASTASE Genesis Sérum Anti-Chute Fortifiant - 90ml. Discover all KÉRASTASEproducts at unbeatable prices at Loja Galmourosa”"
+        },
+        {
+          "id": "8803c3d81458e624f7052be8",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Kerastase. Title: “Shop Kérastase Genesis Serum Anti-Chute Fortifiant 90ml Online in United Arab Emirates” Description: “Kerastase, Hair Treatments Trending Kérastase Genesis Serum Anti-Chute Fortifiant 90ml ✓ Free Delivery ✓ Cash on Delivery ✓ Tabby ✓ Tamara”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports product=Genesis Serum Anti-Chute Fortifiant. Title: “Shop Kérastase Genesis Serum Anti-Chute Fortifiant 90ml Online in United Arab Emirates” Description: “Kerastase, Hair Treatments Trending Kérastase Genesis Serum Anti-Chute Fortifiant 90ml ✓ Free Delivery ✓ Cash on Delivery ✓ Tabby ✓ Tamara”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports size=90ml. Title: “Shop Kérastase Genesis Serum Anti-Chute Fortifiant 90ml Online in United Arab Emirates” Description: “Kerastase, Hair Treatments Trending Kérastase Genesis Serum Anti-Chute Fortifiant 90ml ✓ Free Delivery ✓ Cash on Delivery ✓ Tabby ✓ Tamara”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Shop Kérastase Genesis Serum Anti-Chute Fortifiant 90ml Online in United Arab Emirates” Description: “Kerastase, Hair Treatments Trending Kérastase Genesis Serum Anti-Chute Fortifiant 90ml ✓ Free Delivery ✓ Cash on Delivery ✓ Tabby ✓ Tamara”"
+        },
+        {
+          "id": "0a29bba9134055de502983c6",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "PROBABLE_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Kerastase. Title: “Sérum Anti Chute Fortifiant - Kérastase Genesis Serum” Description: “Resultados: de producto(s) - · Fortifying serum to prevent hair loss”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports product=Genesis Serum Anti-Chute Fortifiant. Title: “Sérum Anti Chute Fortifiant - Kérastase Genesis Serum” Description: “Resultados: de producto(s) - · Fortifying serum to prevent hair loss”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Unknown: displayed text/metadata does not reliably establish size=90ml for a single offer; no inference from omitted fields. Title: “Sérum Anti Chute Fortifiant - Kérastase Genesis Serum” Description: “Resultados: de producto(s) - · Fortifying serum to prevent hair loss”"
+            }
+          ],
+          "evidence": "PARTIALLY_RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Sérum Anti Chute Fortifiant - Kérastase Genesis Serum” Description: “Resultados: de producto(s) - · Fortifying serum to prevent hair loss”"
+        },
+        {
+          "id": "857dd2057af82ab0b9b4b384",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Kerastase. Title: “KERASTASE Genesis Serum Anti-Chute Fortifiant 90ml” Description: “Shop online from noon UAE – your one-stop shop for mobiles, electronics, fashion, beauty, groceries &amp; more. Enjoy great deals! ✓ Buy Now, Pay Later ✓ Same Day Delivery ✓ Cash on Delivery”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports product=Genesis Serum Anti-Chute Fortifiant. Title: “KERASTASE Genesis Serum Anti-Chute Fortifiant 90ml” Description: “Shop online from noon UAE – your one-stop shop for mobiles, electronics, fashion, beauty, groceries &amp; more. Enjoy great deals! ✓ Buy Now, Pay Later ✓ Same Day Delivery ✓ Cash on Delivery”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports size=90ml. Title: “KERASTASE Genesis Serum Anti-Chute Fortifiant 90ml” Description: “Shop online from noon UAE – your one-stop shop for mobiles, electronics, fashion, beauty, groceries &amp; more. Enjoy great deals! ✓ Buy Now, Pay Later ✓ Same Day Delivery ✓ Cash on Delivery”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “KERASTASE Genesis Serum Anti-Chute Fortifiant 90ml” Description: “Shop online from noon UAE – your one-stop shop for mobiles, electronics, fashion, beauty, groceries &amp; more. Enjoy great deals! ✓ Buy Now, Pay Later ✓ Same Day Delivery ✓ Cash on Delivery ✓ Easy Free Returns ✓”"
+        },
+        {
+          "id": "0d9731ad97e6df3f28831170",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting brand for the requested item. Title: “تييري موغلر Mu Ali Edp Suprasenses Spry 90ml R for للنساء” Description: “Mu ali edp suprasenses spry 90ml r”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting product for the requested item. Title: “تييري موغلر Mu Ali Edp Suprasenses Spry 90ml R for للنساء” Description: “Mu ali edp suprasenses spry 90ml r”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports size=90ml. Title: “تييري موغلر Mu Ali Edp Suprasenses Spry 90ml R for للنساء” Description: “Mu ali edp suprasenses spry 90ml r”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “تييري موغلر Mu Ali Edp Suprasenses Spry 90ml R for للنساء” Description: “Mu ali edp suprasenses spry 90ml r” Displayed price: 395 SAR."
+        },
+        {
+          "id": "8927e819366eb048f953afb9",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Kerastase. Title: “Kerastase Genesis Serum Anti-Chute Fortifiant Hair Serum 90ml” Description: “Buy Genesis Serum Anti-Chute Fortifiant Hair Serum 90ml by Kerastase at FACES KSA ✓ Free samples with every order ✓ Fast shipping in KSA ✓ Easy returns ✓ 100% authentic products.”"
+            },
+            {
+              "field": "product",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports product=Genesis Serum Anti-Chute Fortifiant. Title: “Kerastase Genesis Serum Anti-Chute Fortifiant Hair Serum 90ml” Description: “Buy Genesis Serum Anti-Chute Fortifiant Hair Serum 90ml by Kerastase at FACES KSA ✓ Free samples with every order ✓ Fast shipping in KSA ✓ Easy returns ✓ 100% authentic products.”"
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports size=90ml. Title: “Kerastase Genesis Serum Anti-Chute Fortifiant Hair Serum 90ml” Description: “Buy Genesis Serum Anti-Chute Fortifiant Hair Serum 90ml by Kerastase at FACES KSA ✓ Free samples with every order ✓ Fast shipping in KSA ✓ Easy returns ✓ 100% authentic products.”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Kerastase Genesis Serum Anti-Chute Fortifiant Hair Serum 90ml” Description: “Buy Genesis Serum Anti-Chute Fortifiant Hair Serum 90ml by Kerastase at FACES KSA ✓ Free samples with every order ✓ Fast shipping in KSA ✓ Easy returns ✓ 100% authentic products.”"
+        }
+      ]
+    },
+    {
+      "caseId": 5,
+      "inventoryAvailabilityAssessment": "found",
+      "judgeRationale": "The pool contains Diesel-branded in-stock listings titled Slim Jeans / 2019 D-Strukt, with displayed prices and descriptions corroborating the model and jeans category. Generic Diesel-jeans pages do not verify D-Strukt; no unstated size/location is assumed.",
+      "candidates": [
+        {
+          "id": "be95b7d1f71640733dbf3891",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “Slim Jeans - 2019 D-Strukt” Description: “This light blue comfort denim showcases Diesels DNA through time-intensive techniques and hand-finished details. A pre-wash binding process creates vertical streaks, enhanced by bleach effec” Structured brand: DIESEL."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=D-Strukt. Title: “Slim Jeans - 2019 D-Strukt” Description: “This light blue comfort denim showcases Diesels DNA through time-intensive techniques and hand-finished details. A pre-wash binding process creates vertical streaks, enhanced by bleach effec” Structured brand: DIESEL."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “Slim Jeans - 2019 D-Strukt” Description: “This light blue comfort denim showcases Diesels DNA through time-intensive techniques and hand-finished details. A pre-wash binding process creates vertical streaks, enhanced by bleach effec” Structured brand: DIESEL."
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Slim Jeans - 2019 D-Strukt” Description: “This light blue comfort denim showcases Diesels DNA through time-intensive techniques and hand-finished details. A pre-wash binding process creates vertical streaks, enhanced by bleach effects and ozone treatments. Hand-sanded whiskers, bru” Structured brand: DIESEL. Displayed price: 649.5 SAR."
+        },
+        {
+          "id": "96e296e7f2e07da7caabb2a7",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “بنطلونات جينز للرجال من ديزل في السعودية | خصم 30-75% | الرياض وجدة | نون” Description: “تسوق بنطلونات جينز للرجال ديزل على نون. ✓ تسوق آمن ✓ 100% دون لمس ✓ شحن سريع ✓ الدفع عند الاستلام ✓ إرجاع مجاني بسهولة. نونها الآن”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Unknown: displayed text/metadata does not reliably establish model=D-Strukt for a single offer; no inference from omitted fields. Title: “بنطلونات جينز للرجال من ديزل في السعودية | خصم 30-75% | الرياض وجدة | نون” Description: “تسوق بنطلونات جينز للرجال ديزل على نون. ✓ تسوق آمن ✓ 100% دون لمس ✓ شحن سريع ✓ الدفع عند الاستلام ✓ إرجاع مجاني بسهولة. نونها الآن”"
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “بنطلونات جينز للرجال من ديزل في السعودية | خصم 30-75% | الرياض وجدة | نون” Description: “تسوق بنطلونات جينز للرجال ديزل على نون. ✓ تسوق آمن ✓ 100% دون لمس ✓ شحن سريع ✓ الدفع عند الاستلام ✓ إرجاع مجاني بسهولة. نونها الآن”"
+            }
+          ],
+          "evidence": "PARTIALLY_RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “بنطلونات جينز للرجال من ديزل في السعودية | خصم 30-75% | الرياض وجدة | نون” Description: “تسوق بنطلونات جينز للرجال ديزل على نون. ✓ تسوق آمن ✓ 100% دون لمس ✓ شحن سريع ✓ الدفع عند الاستلام ✓ إرجاع مجاني بسهولة. نونها الآن”"
+        },
+        {
+          "id": "05d875b6e21406a324f11e90",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “Slim Jeans - 2019 D-Strukt” Description: “This comfort denim is made using organic cotton. The dark blue cast is treated to achieve a naturally irregular, worn-in look, enriched with light abrasions. Its part of Diesels DNA collecti” Structured brand: DIESEL."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=D-Strukt. Title: “Slim Jeans - 2019 D-Strukt” Description: “This comfort denim is made using organic cotton. The dark blue cast is treated to achieve a naturally irregular, worn-in look, enriched with light abrasions. Its part of Diesels DNA collecti” Structured brand: DIESEL."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “Slim Jeans - 2019 D-Strukt” Description: “This comfort denim is made using organic cotton. The dark blue cast is treated to achieve a naturally irregular, worn-in look, enriched with light abrasions. Its part of Diesels DNA collecti” Structured brand: DIESEL."
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Slim Jeans - 2019 D-Strukt” Description: “This comfort denim is made using organic cotton. The dark blue cast is treated to achieve a naturally irregular, worn-in look, enriched with light abrasions. Its part of Diesels DNA collection.” Structured brand: DIESEL. Displayed price: 599.4 SAR."
+        },
+        {
+          "id": "3504cd39c6ebeccbb8bd078c",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “Slim Jeans Regular Waist 2019 D-Strukt” Description: “The comfort denim showcases a dimensional, worn-in wash in shades of grey, enriched by Diesel's trademark destroyed detailing. Crafted using regenerative cotton, the garment undergoes multip” Structured brand: DIESEL."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=D-Strukt. Title: “Slim Jeans Regular Waist 2019 D-Strukt” Description: “The comfort denim showcases a dimensional, worn-in wash in shades of grey, enriched by Diesel's trademark destroyed detailing. Crafted using regenerative cotton, the garment undergoes multip” Structured brand: DIESEL."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “Slim Jeans Regular Waist 2019 D-Strukt” Description: “The comfort denim showcases a dimensional, worn-in wash in shades of grey, enriched by Diesel's trademark destroyed detailing. Crafted using regenerative cotton, the garment undergoes multip” Structured brand: DIESEL."
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Slim Jeans Regular Waist 2019 D-Strukt” Description: “The comfort denim showcases a dimensional, worn-in wash in shades of grey, enriched by Diesel's trademark destroyed detailing. Crafted using regenerative cotton, the garment undergoes multiple treatments – including whiskering, sanding, was” Structured brand: DIESEL. Displayed price: 1550 SAR."
+        },
+        {
+          "id": "c62f276618a16a0171edef8c",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “بنطال جينز دي لستر للرجال من ديزل: اشتري اون لاين بأفضل الاسعار في السعودية - سوق.كوم الان اصبحت امازون السعودية” Description: “اشتري بنطال جينز دي لستر للرجال من ديزل اون لاين على امازون السعودية بأفضل الاسعار ✓ شحن سريع و مجاني✓ ارجاع مجاني✓ الدفع عند الاستلام متوفر”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_fail",
+              "evidence": "Verified fail: displayed text explicitly identifies a conflicting model for the requested item. Title: “بنطال جينز دي لستر للرجال من ديزل: اشتري اون لاين بأفضل الاسعار في السعودية - سوق.كوم الان اصبحت امازون السعودية” Description: “اشتري بنطال جينز دي لستر للرجال من ديزل اون لاين على امازون السعودية بأفضل الاسعار ✓ شحن سريع و مجاني✓ ارجاع مجاني✓ الدفع عند الاستلام متوفر”"
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “بنطال جينز دي لستر للرجال من ديزل: اشتري اون لاين بأفضل الاسعار في السعودية - سوق.كوم الان اصبحت امازون السعودية” Description: “اشتري بنطال جينز دي لستر للرجال من ديزل اون لاين على امازون السعودية بأفضل الاسعار ✓ شحن سريع و مجاني✓ ارجاع مجاني✓ الدفع عند الاستلام متوفر”"
+            }
+          ],
+          "evidence": "IRRELEVANT assessment based on displayed title/description and explicit metadata only. Title: “بنطال جينز دي لستر للرجال من ديزل: اشتري اون لاين بأفضل الاسعار في السعودية - سوق.كوم الان اصبحت امازون السعودية” Description: “اشتري بنطال جينز دي لستر للرجال من ديزل اون لاين على امازون السعودية بأفضل الاسعار ✓ شحن سريع و مجاني✓ ارجاع مجاني✓ الدفع عند الاستلام متوفر”"
+        },
+        {
+          "id": "bab64346cb31d526f748d3ef",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “Diesel Jeans : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed]” Description: “diesel jeans : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now [URL remo”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Unknown: displayed text/metadata does not reliably establish model=D-Strukt for a single offer; no inference from omitted fields. Title: “Diesel Jeans : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed]” Description: “diesel jeans : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now [URL remo”"
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “Diesel Jeans : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed]” Description: “diesel jeans : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now [URL remo”"
+            }
+          ],
+          "evidence": "PARTIALLY_RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Diesel Jeans : Shop Online At Best Prices In Saudi | Souq Is Now [URL removed]” Description: “diesel jeans : Shop online for a large selection of top brands in Saudi at best price ✓ Free Shipping ✓ Free Returns ✓ Cash on Delivery available on eligible purchase | Souq is now [URL removed]”"
+        },
+        {
+          "id": "f6ac796826e404f34622ec5e",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “Slim Jeans - 2019 D-Strukt” Description: “This comfort denim is made using organic cotton. The dark blue cast is treated to achieve a naturally irregular, worn-in look, enriched with light abrasions. Its part of Diesels DNA collecti” Structured brand: DIESEL."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=D-Strukt. Title: “Slim Jeans - 2019 D-Strukt” Description: “This comfort denim is made using organic cotton. The dark blue cast is treated to achieve a naturally irregular, worn-in look, enriched with light abrasions. Its part of Diesels DNA collecti” Structured brand: DIESEL."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “Slim Jeans - 2019 D-Strukt” Description: “This comfort denim is made using organic cotton. The dark blue cast is treated to achieve a naturally irregular, worn-in look, enriched with light abrasions. Its part of Diesels DNA collecti” Structured brand: DIESEL."
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Slim Jeans - 2019 D-Strukt” Description: “This comfort denim is made using organic cotton. The dark blue cast is treated to achieve a naturally irregular, worn-in look, enriched with light abrasions. Its part of Diesels DNA collection.” Structured brand: DIESEL. Displayed price: 599.4 SAR."
+        },
+        {
+          "id": "656a1934c586efc3b2f6b21c",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “Slim Jeans - 2019 D-Strukt” Description: “This comfort denim is made using organic cotton. The dark blue cast is treated to achieve a naturally irregular, worn-in look, enriched with light abrasions. Its part of Diesels DNA collecti” Structured brand: DIESEL."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=D-Strukt. Title: “Slim Jeans - 2019 D-Strukt” Description: “This comfort denim is made using organic cotton. The dark blue cast is treated to achieve a naturally irregular, worn-in look, enriched with light abrasions. Its part of Diesels DNA collecti” Structured brand: DIESEL."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “Slim Jeans - 2019 D-Strukt” Description: “This comfort denim is made using organic cotton. The dark blue cast is treated to achieve a naturally irregular, worn-in look, enriched with light abrasions. Its part of Diesels DNA collecti” Structured brand: DIESEL."
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Slim Jeans - 2019 D-Strukt” Description: “This comfort denim is made using organic cotton. The dark blue cast is treated to achieve a naturally irregular, worn-in look, enriched with light abrasions. Its part of Diesels DNA collection.” Structured brand: DIESEL. Displayed price: 599.4 SAR."
+        },
+        {
+          "id": "73bf6a78fb76f649a4076046",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “Diesel UAE Men's dstrukt fit Jeans” Description: “Slim Jeans - 2019 D-Strukt · AED 725.00 · Add to Wish List · New · Slim Jeans - 2019 D-Strukt · AED 905.00 · Add to Wish List · New · Slim Jeans - 2019 D-Strukt · AED 1,810.00 · Add to Wish ”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=D-Strukt. Title: “Diesel UAE Men's dstrukt fit Jeans” Description: “Slim Jeans - 2019 D-Strukt · AED 725.00 · Add to Wish List · New · Slim Jeans - 2019 D-Strukt · AED 905.00 · Add to Wish List · New · Slim Jeans - 2019 D-Strukt · AED 1,810.00 · Add to Wish ”"
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “Diesel UAE Men's dstrukt fit Jeans” Description: “Slim Jeans - 2019 D-Strukt · AED 725.00 · Add to Wish List · New · Slim Jeans - 2019 D-Strukt · AED 905.00 · Add to Wish List · New · Slim Jeans - 2019 D-Strukt · AED 1,810.00 · Add to Wish ”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Diesel UAE Men's dstrukt fit Jeans” Description: “Slim Jeans - 2019 D-Strukt · AED 725.00 · Add to Wish List · New · Slim Jeans - 2019 D-Strukt · AED 905.00 · Add to Wish List · New · Slim Jeans - 2019 D-Strukt · AED 1,810.00 · Add to Wish List · New · Slim 2060 D-Strukt Joggjeans 0670M · ”"
+        },
+        {
+          "id": "3d30ff6b53aa505dca042ee7",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “Slim Jeans - 2019 D-Strukt” Description: “This light blue comfort denim showcases Diesel’s DNA through time-intensive techniques and hand-finished details. A pre-wash binding process creates vertical streaks, enhanced by bleach effe” Structured brand: DIESEL."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=D-Strukt. Title: “Slim Jeans - 2019 D-Strukt” Description: “This light blue comfort denim showcases Diesel’s DNA through time-intensive techniques and hand-finished details. A pre-wash binding process creates vertical streaks, enhanced by bleach effe” Structured brand: DIESEL."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “Slim Jeans - 2019 D-Strukt” Description: “This light blue comfort denim showcases Diesel’s DNA through time-intensive techniques and hand-finished details. A pre-wash binding process creates vertical streaks, enhanced by bleach effe” Structured brand: DIESEL."
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Slim Jeans - 2019 D-Strukt” Description: “This light blue comfort denim showcases Diesel’s DNA through time-intensive techniques and hand-finished details. A pre-wash binding process creates vertical streaks, enhanced by bleach effects and ozone treatments. Hand-sanded whiskers, br” Structured brand: DIESEL. Displayed price: 649.5 SAR."
+        },
+        {
+          "id": "76189cf7867f61256268714f",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “Slim Jeans Regular Waist 2019 D-Strukt” Description: “Crafted from comfort denim using 61% organic cotton, this medium blue wash retains a clean appearance. Barely-there whiskering and a soft, natural fade perfectly capture Diesel’s DNA aesthet” Structured brand: DIESEL."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=D-Strukt. Title: “Slim Jeans Regular Waist 2019 D-Strukt” Description: “Crafted from comfort denim using 61% organic cotton, this medium blue wash retains a clean appearance. Barely-there whiskering and a soft, natural fade perfectly capture Diesel’s DNA aesthet” Structured brand: DIESEL."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “Slim Jeans Regular Waist 2019 D-Strukt” Description: “Crafted from comfort denim using 61% organic cotton, this medium blue wash retains a clean appearance. Barely-there whiskering and a soft, natural fade perfectly capture Diesel’s DNA aesthet” Structured brand: DIESEL."
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Slim Jeans Regular Waist 2019 D-Strukt” Description: “Crafted from comfort denim using 61% organic cotton, this medium blue wash retains a clean appearance. Barely-there whiskering and a soft, natural fade perfectly capture Diesel’s DNA aesthetic.” Structured brand: DIESEL. Displayed price: 799 SAR."
+        },
+        {
+          "id": "851b2787a4c4327298681cd7",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “Slim Jeans - 2019 D-Strukt” Structured brand: DIESEL."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=D-Strukt. Title: “Slim Jeans - 2019 D-Strukt” Structured brand: DIESEL."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “Slim Jeans - 2019 D-Strukt” Structured brand: DIESEL."
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Slim Jeans - 2019 D-Strukt” Structured brand: DIESEL. Displayed price: 450 SAR."
+        },
+        {
+          "id": "526fea0e979ac3b6d3930582",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “Slim Jeans Regular Waist 2019 D-Strukt” Description: “Part of Diesel's DNA selection, this light grey wash is designed for those who appreciate a softer worn-in effect, with faded shading and whiskers. The comfort denim is made with a percentag” Structured brand: DIESEL."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=D-Strukt. Title: “Slim Jeans Regular Waist 2019 D-Strukt” Description: “Part of Diesel's DNA selection, this light grey wash is designed for those who appreciate a softer worn-in effect, with faded shading and whiskers. The comfort denim is made with a percentag” Structured brand: DIESEL."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “Slim Jeans Regular Waist 2019 D-Strukt” Description: “Part of Diesel's DNA selection, this light grey wash is designed for those who appreciate a softer worn-in effect, with faded shading and whiskers. The comfort denim is made with a percentag” Structured brand: DIESEL."
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Slim Jeans Regular Waist 2019 D-Strukt” Description: “Part of Diesel's DNA selection, this light grey wash is designed for those who appreciate a softer worn-in effect, with faded shading and whiskers. The comfort denim is made with a percentage of organic cotton, and finished with black stitc” Structured brand: DIESEL. Displayed price: 899 SAR."
+        },
+        {
+          "id": "1c1caf8dc2f5723b9ee9a41f",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “Slim Jeans - 2019 D-Strukt” Description: “This light blue comfort denim showcases Diesel’s DNA through time-intensive techniques and hand-finished details. A pre-wash binding process creates vertical streaks, enhanced by bleach effe” Structured brand: DIESEL."
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=D-Strukt. Title: “Slim Jeans - 2019 D-Strukt” Description: “This light blue comfort denim showcases Diesel’s DNA through time-intensive techniques and hand-finished details. A pre-wash binding process creates vertical streaks, enhanced by bleach effe” Structured brand: DIESEL."
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “Slim Jeans - 2019 D-Strukt” Description: “This light blue comfort denim showcases Diesel’s DNA through time-intensive techniques and hand-finished details. A pre-wash binding process creates vertical streaks, enhanced by bleach effe” Structured brand: DIESEL."
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Slim Jeans - 2019 D-Strukt” Description: “This light blue comfort denim showcases Diesel’s DNA through time-intensive techniques and hand-finished details. A pre-wash binding process creates vertical streaks, enhanced by bleach effects and ozone treatments. Hand-sanded whiskers, br” Structured brand: DIESEL. Displayed price: 649.5 SAR."
+        },
+        {
+          "id": "c9dcf3095969d439e4f023f0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “ديزل الرجال جينز في السعودية أونلاين - نمشي” Description: “تسوق آحدث ديزل جينز في الرياض٬ جدة٬ وكل السعودية - ✓ احصل على 20% رصيد مرتجع باستخدام كود FIRST ✓ تسوق الآن٬ ادفع لاحقا!”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Unknown: displayed text/metadata does not reliably establish model=D-Strukt for a single offer; no inference from omitted fields. Title: “ديزل الرجال جينز في السعودية أونلاين - نمشي” Description: “تسوق آحدث ديزل جينز في الرياض٬ جدة٬ وكل السعودية - ✓ احصل على 20% رصيد مرتجع باستخدام كود FIRST ✓ تسوق الآن٬ ادفع لاحقا!”"
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “ديزل الرجال جينز في السعودية أونلاين - نمشي” Description: “تسوق آحدث ديزل جينز في الرياض٬ جدة٬ وكل السعودية - ✓ احصل على 20% رصيد مرتجع باستخدام كود FIRST ✓ تسوق الآن٬ ادفع لاحقا!”"
+            }
+          ],
+          "evidence": "PARTIALLY_RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “ديزل الرجال جينز في السعودية أونلاين - نمشي” Description: “تسوق آحدث ديزل جينز في الرياض٬ جدة٬ وكل السعودية - ✓ احصل على 20% رصيد مرتجع باستخدام كود FIRST ✓ تسوق الآن٬ ادفع لاحقا!”"
+        },
+        {
+          "id": "62b6eac21ed6ec355b1f11f5",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports brand=Diesel. Title: “Diesel Men's Denim online | Saudi Arabia” Description: “Slim Jeans Regular Waist 2019 D-Strukt · SAR 1,550.00 · Slim Jeans Regular Waist 2019 D-Strukt · SAR 1,550.00 · Add to Wish List · Slim Jeans Regular Waist 2019 D-Strukt · SAR 799.00 · Slim ”"
+            },
+            {
+              "field": "model",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports model=D-Strukt. Title: “Diesel Men's Denim online | Saudi Arabia” Description: “Slim Jeans Regular Waist 2019 D-Strukt · SAR 1,550.00 · Slim Jeans Regular Waist 2019 D-Strukt · SAR 1,550.00 · Add to Wish List · Slim Jeans Regular Waist 2019 D-Strukt · SAR 799.00 · Slim ”"
+            },
+            {
+              "field": "productType",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Verified pass: displayed text/structured metadata explicitly supports productType=jeans. Title: “Diesel Men's Denim online | Saudi Arabia” Description: “Slim Jeans Regular Waist 2019 D-Strukt · SAR 1,550.00 · Slim Jeans Regular Waist 2019 D-Strukt · SAR 1,550.00 · Add to Wish List · Slim Jeans Regular Waist 2019 D-Strukt · SAR 799.00 · Slim ”"
+            }
+          ],
+          "evidence": "RELEVANT assessment based on displayed title/description and explicit metadata only. Title: “Diesel Men's Denim online | Saudi Arabia” Description: “Slim Jeans Regular Waist 2019 D-Strukt · SAR 1,550.00 · Slim Jeans Regular Waist 2019 D-Strukt · SAR 1,550.00 · Add to Wish List · Slim Jeans Regular Waist 2019 D-Strukt · SAR 799.00 · Slim Jeans Regular Waist 2019 D-Strukt · SAR 799.00 · A”"
+        }
+      ]
+    }
+  ]
+}

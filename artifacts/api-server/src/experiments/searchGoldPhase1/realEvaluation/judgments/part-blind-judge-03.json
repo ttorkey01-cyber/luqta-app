@@ -1,0 +1,402 @@
+{
+  "cases": [
+    {
+      "caseId": 11,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "The pool contains women's-fragrance category pages and a coupon article, but none shows an individual perfume offer with an observed price near 300 SAR. The displayed content does not establish inventory at the requested price.",
+      "candidates": [
+        {
+          "id": "ce40b1be55cb24c505f8c322",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly describe women's perfumes/fragrances."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify the fragrances as women's."
+            }
+          ],
+          "evidence": "A general women's perfume shopping page; relevant category, but no specific product or observed item price."
+        },
+        {
+          "id": "66cade2e3d7db17216b38229",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says perfume for women."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly specifies women."
+            }
+          ],
+          "evidence": "A women's perfume shopping page, but it gives no specific product or observed price."
+        },
+        {
+          "id": "619b074a2a08508f7acb257c",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies women's perfume."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly identifies the perfume as women's."
+            }
+          ],
+          "evidence": "This is a coupon/article result about women's perfume rather than a specific perfume offer; its 300 SAR figure is a minimum-spend condition, not the product's price."
+        },
+        {
+          "id": "95f2b01d4980ea15f5f3294e",
+          "relevance": "RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says women's perfumes."
+            },
+            {
+              "field": "audience",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly specifies women's."
+            }
+          ],
+          "evidence": "A general women's perfume page; the free-delivery threshold is not an observed product price."
+        }
+      ]
+    },
+    {
+      "caseId": 12,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "Both results concern used-phone categories in Saudi Arabia, but neither provides evidence that a seller is located in Jeddah. The pool is insufficient to establish either qualifying inventory or its absence.",
+      "candidates": [
+        {
+          "id": "cdb78a4093842e72fa28469b",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly refers to mobile phones."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Title mentions both new and used offers; no particular phone is identified as used."
+            },
+            {
+              "field": "city",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "Only Saudi Arabia is mentioned; no Jeddah seller location is shown."
+            }
+          ],
+          "evidence": "A broad Saudi phone-offers result; neither a specific used item nor its seller's city is established."
+        },
+        {
+          "id": "b871743e60a7bc6717b2fcd8",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "ALTERNATIVE",
+          "hardConstraints": [
+            {
+              "field": "productType",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly identifies used phones."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description identify the category as used phones."
+            },
+            {
+              "field": "city",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "The displayed location is Saudi Arabia, with no Jeddah seller location."
+            }
+          ],
+          "evidence": "A used-phone classified category for Saudi Arabia, but no Jeddah-specific seller or item is shown."
+        }
+      ]
+    },
+    {
+      "caseId": 13,
+      "inventoryAvailabilityAssessment": "found",
+      "judgeRationale": "The Souq result explicitly describes a black Nike men's running shoe in EU size 42, satisfying the requested brand, color, and size. The other result is a broad collection page and does not establish size 42.",
+      "candidates": [
+        {
+          "id": "83b64c33ad5d10a13f2453a3",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly identifies Nike."
+            },
+            {
+              "field": "color",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly identifies the shoe as black."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly states 42 EU."
+            }
+          ],
+          "evidence": "The title identifies a Nike men's running shoe, black, size 42 EU, and presents it as an online purchase offer."
+        },
+        {
+          "id": "467c61683847812f22b5d53d",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "brand",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies Nike."
+            },
+            {
+              "field": "color",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title identifies the collection as black."
+            },
+            {
+              "field": "size",
+              "constraintIndex": 2,
+              "verdict": "unknown",
+              "evidence": "The truncated description lists shoe sizes only through a partial entry beginning with 41; it does not establish that EU 42 is available."
+            }
+          ],
+          "evidence": "A Nike black collection page with a truncated size list; the displayed text does not verify EU 42 for an item."
+        }
+      ]
+    },
+    {
+      "caseId": 14,
+      "inventoryAvailabilityAssessment": "found",
+      "judgeRationale": "The pool includes direct product-page results titled Apple iPhone 15 (128GB) USED/Renewed and iPhone 15 Used. These explicitly identify the base iPhone 15 and used condition; Pro and Pro Max variants are excluded.",
+      "candidates": [
+        {
+          "id": "5179596dab3be632228b4034",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title explicitly says iPhone 15 Pro Max, not the base iPhone 15."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title says the device was used for a month."
+            }
+          ],
+          "evidence": "The used condition matches, but this is explicitly an iPhone 15 Pro Max."
+        },
+        {
+          "id": "45f1fe95037e6352c41a50e9",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says Apple iPhone 15 (128GB), without a Plus or Pro designation."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly say USED/Renewed."
+            }
+          ],
+          "evidence": "A product page explicitly identifies the base Apple iPhone 15, 128GB, as used/renewed."
+        },
+        {
+          "id": "9983276c6fb03450c6d5ee6f",
+          "relevance": "RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly says iPhone 15 with no Plus or Pro designation."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly say used."
+            }
+          ],
+          "evidence": "A result explicitly offering used iPhone 15 devices; no alternative variant is stated."
+        },
+        {
+          "id": "a30348d76c75005bd30c99a4",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "UNVERIFIABLE",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "unknown",
+              "evidence": "The title and description refer generally to Apple iPhones and do not identify iPhone 15."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly identify used Apple iPhones."
+            }
+          ],
+          "evidence": "A broad used-iPhone category page without a specific model."
+        },
+        {
+          "id": "184dd80a3d89b6735d4550d8",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title and description explicitly identify iPhone 15 Pro Max."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly say used."
+            }
+          ],
+          "evidence": "This is explicitly a used iPhone 15 Pro Max, not the base iPhone 15."
+        },
+        {
+          "id": "b034e4640d92a9d23a0fe4e0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title explicitly identifies Apple iPhone 15 mobiles without Plus or Pro."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "unknown",
+              "evidence": "Description says used iPhone 15 mobiles are available in the category, but the result also covers new phones and does not identify an individual used listing."
+            }
+          ],
+          "evidence": "A broad iPhone 15 marketplace category mentioning both used and new items, not a specific used offer."
+        },
+        {
+          "id": "3b7a7af5aec022545f2ee750",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title and description explicitly identify iPhone 15 Pro."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Description explicitly refers to used iPhone 15 Pro mobiles."
+            }
+          ],
+          "evidence": "This is explicitly an iPhone 15 Pro category, not the base iPhone 15."
+        },
+        {
+          "id": "9f611de3be6d257fc535b28f",
+          "relevance": "IRRELEVANT",
+          "identity": "NOT_EXACT",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_fail",
+              "evidence": "Title and description explicitly identify iPhone 15 Pro Max."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Description explicitly refers to used iPhone 15 Pro Max mobiles."
+            }
+          ],
+          "evidence": "This is explicitly an iPhone 15 Pro Max category, not the base iPhone 15."
+        },
+        {
+          "id": "229ab78e6e24da3817f314c0",
+          "relevance": "PARTIALLY_RELEVANT",
+          "identity": "EXACT",
+          "hardConstraints": [
+            {
+              "field": "model",
+              "constraintIndex": 0,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly include iPhone 15 as well as iPhone 15 Pro."
+            },
+            {
+              "field": "condition",
+              "constraintIndex": 1,
+              "verdict": "verified_pass",
+              "evidence": "Title and description explicitly describe used iPhone results."
+            }
+          ],
+          "evidence": "A used-product category explicitly includes the base iPhone 15, but it is a multi-model shop category rather than a specific listing."
+        }
+      ]
+    },
+    {
+      "caseId": 15,
+      "inventoryAvailabilityAssessment": "unknown",
+      "judgeRationale": "The packet contains no candidates. An empty returned pool is not independent evidence that qualifying inventory is absent.",
+      "candidates": []
+    }
+  ]
+}
