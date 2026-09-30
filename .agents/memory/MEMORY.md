@@ -17,3 +17,4 @@
 - [Luxury Closet image transport](luxury-closet-image-transport.md) — feed product photos use HTTP URLs that redirect to identical HTTPS JPEGs; the separate store icon is not a product photo.
 - [Deal Outlet mobile redirects](deal-outlet-mobile-redirects.md) — mobile affiliate redirects go through Adjust to Play; the feed embeds exact web product URLs without a verified tracking route.
 - [GitHub API pushes](github-api-pushes.md) — when no GitHub git remote is configured, connector commits can advance main without sharing the local commit SHA.
+- [Blind benchmark corrections](blind-benchmark-corrections.md) — preserve pre-registered scores when independent adjudication misreads invalid identifiers; publish a separate sensitivity analysis.
