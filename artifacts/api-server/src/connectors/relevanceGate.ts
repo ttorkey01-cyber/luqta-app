@@ -240,14 +240,44 @@ function domainForCategory(category?: string | null) {
   return undefined;
 }
 
+function isNonPhoneProduct(product: ProductWithCanonicalEvidence) {
+  const label = normalizeText([
+    product.title,
+    product.productType,
+    product.subcategory,
+    product.canonical?.productType,
+    product.canonical?.subcategory,
+  ].filter(Boolean).join(" "));
+  const declared = normalizeText([
+    product.productType,
+    product.subcategory,
+    product.canonical?.productType,
+    product.canonical?.subcategory,
+  ].filter(Boolean).join(" "));
+  const category = normalizeText([product.category, product.canonical?.category].filter(Boolean).join(" "));
+  const nonPhoneType =
+    /\b(?:electronic components?|thermometers?|keyboards?|headphones?|earphones?|headsets?|smart\s*(?:watch|watches)|wristlets?|chargers?|charging cables?|cables?|smart accessor(?:y|ies)|phone accessor(?:y|ies)|screen protectors?)\b|مكونات إلكترونية|ميزان حرارة|لوحة مفاتيح|ساعات ذكية|ساعة ذكية|سماعات|سماعة|شاحن|كيبل|كابل|واقي شاشة/iu;
+  const phonePart =
+    /\b(?:phone|smartphone|mobile|iphone|galaxy)\b.{0,45}\b(?:case|cover|holder|stand|accessor(?:y|ies)|charging (?:dock|station))\b|\b(?:case|cover|holder|stand|replacement)\b.{0,45}\b(?:for|phone|smartphone|mobile|iphone|galaxy)\b|\b(?:for|compatible with|fits|works with)\s+(?:mobile phone|smartphone|phone|iphone|galaxy)\b|\b(?:phone|smartphone|mobile|iphone|galaxy)\s+(?:(?:lcd|oled)\s+)?(?:display|screen)\b|\b(?:display|screen)\s+(?:for|replacement|assembly)\b|\b(?:replacement|lcd|oled)\s+(?:display|screen)\b|كفر|جراب|حافظة|غطاء/iu;
+  return nonPhoneType.test(label) || nonPhoneType.test(category) ||
+    phonePart.test(label) || /\b(?:displays?|screens?)\b/iu.test(declared + " " + category);
+}
+
 function productTypeCompatibility(product: ProductWithCanonicalEvidence, gate: SearchRelevanceGate): RelevanceState {
   if (!gate.requestedType) return "UNKNOWN";
   const requested = PRODUCT_TYPES.find((definition) => definition.value === gate.requestedType);
   if (!requested) return "UNKNOWN";
   const title = normalizeText(product.title);
+  if (requested.value === "phone" && !gate.requiresExactModel &&
+      /^web(?:_search)?$/iu.test(product.sourceType) &&
+      (/\b(?:for sale|best prices?|all phones|shop all|collection|category|search results)\b|للبيع/iu.test(title) ||
+       (product.productUrl && webPageQuality(product) > 3))) {
+    return "CONFLICT";
+  }
   // An accessory's compatible phone model is not evidence that it is a phone.
   if (requested.value === "phone" &&
-      (/\b(?:phone|smartphone|mobile|iphone|galaxy)\b.{0,45}\b(?:case|cover|wristlet|screen protector|holder|stand|charger|charging cable|cable|band|shell|skin)\b/iu.test(title) ||
+      (isNonPhoneProduct(product) ||
+       /\b(?:phone|smartphone|mobile|iphone|galaxy)\b.{0,45}\b(?:case|cover|wristlet|screen protector|holder|stand|charger|charging cable|cable|band|shell|skin)\b/iu.test(title) ||
        /\b(?:case|cover|wristlet|screen protector|holder|stand|charger|cable)\b.{0,45}\b(?:for|phone|smartphone|iphone|galaxy)\b/iu.test(title) ||
        /كفر|جراب|حافظة|غطاء|واقي شاشة|شاحن|كيبل|سلك جوال/iu.test(title))) {
     return "CONFLICT";
@@ -267,6 +297,10 @@ function productTypeCompatibility(product: ProductWithCanonicalEvidence, gate: S
   if (candidate) {
     if (candidate.value === requested.value) return "MATCH";
     return "CONFLICT";
+  }
+  if (requested.value === "phone" && !gate.requiresExactModel &&
+      /\b(?:iphone\s+\d{1,2}|(?:samsung\s+)?galaxy\s+(?:s|a|z)\d{2})\b/iu.test(title)) {
+    return "MATCH";
   }
   const categoryDomain =
     domainForCategory(product.category) ??
@@ -429,6 +463,10 @@ export function filterSearchRelevance(
     const evidence = evaluateSearchRelevance(product, gate);
     return (
       evidence.productType !== "CONFLICT" &&
+      // A broad electronics category cannot establish a generic phone match.
+      // Exact-model searches retain their separate identifier requirement.
+      (gate.requestedType !== "phone" || gate.requiresExactModel ||
+        evidence.productType === "MATCH") &&
       (!options.requireProductTypeEvidence ||
         evidence.productType === "MATCH" ||
         evidence.productType === "POSSIBLE") &&

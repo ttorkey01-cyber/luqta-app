@@ -1009,6 +1009,59 @@ test("Arabic phone maximum cannot make inexpensive grooming products relevant", 
   assert.equal(response.structuredIntent?.productType, "phone");
 });
 
+test("Arabic phone maximum filters unrelated electronics before applying the hard price bound", async () => {
+  const candidates: ProviderProduct[] = [
+    { ...product("component", "Electronic component for mobile phone"), category: "electronics", price: 25 },
+    { ...product("thermometer", "Digital thermometer"), category: "electronics", price: 30 },
+    { ...product("smartwatch", "Smartwatch with mobile phone calls"), category: "electronics", price: 120 },
+    { ...product("headphones", "Bluetooth headphones for smartphone"), category: "electronics", price: 150 },
+    { ...product("charger", "Fast charger for mobile phone"), category: "electronics", price: 40 },
+    { ...product("cable", "USB cable for smartphone"), category: "electronics", price: 20 },
+    { ...product("case", "Smartphone case"), category: "electronics", price: 50 },
+    { ...product("generic", "Electronic gadget"), category: "electronics", price: 99 },
+    { ...product("under-budget", "Android smartphone with 6.7 inch display"), category: "electronics", price: 1_499 },
+    { ...product("over-budget", "Apple iPhone 15 Pro Max 256GB"), category: "electronics", price: 1_501 },
+    { ...product("unknown-price", "Samsung Galaxy S24 Ultra"), category: "electronics", price: undefined },
+  ];
+  const provider: SearchProvider = {
+    metadata,
+    async search() { return candidates; },
+  };
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({ query: "جوال أقل من 1500 ريال" });
+
+  assert.deepEqual(response.products.map((item) => item.id), ["under-budget"]);
+  assert.equal(response.exactMatches, 1);
+  assert.equal(response.constraintRelaxationAvailable, false);
+  assert.equal(response.structuredIntent?.maxPrice, 1_500);
+});
+
+test("Arabic phone maximum returns an honest empty result when only cheap non-phones exist", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [
+        { ...product("component", "Electronic component for mobile phone"), category: "electronics", price: 25 },
+        { ...product("thermometer", "Digital thermometer"), category: "electronics", price: 30 },
+        { ...product("smartwatch", "Smartwatch with mobile phone calls"), category: "electronics", price: 120 },
+        { ...product("headphones", "Bluetooth headphones for smartphone"), category: "electronics", price: 150 },
+        { ...product("charger", "Fast charger for mobile phone"), category: "electronics", price: 40 },
+        { ...product("cable", "USB cable for smartphone"), category: "electronics", price: 20 },
+        { ...product("case", "Smartphone case"), category: "electronics", price: 50 },
+        { ...product("generic", "Electronic gadget"), category: "electronics", price: 99 },
+      ];
+    },
+  };
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({ query: "جوال أقل من 1500 ريال" });
+
+  assert.deepEqual(response.products, []);
+  assert.equal(response.exactMatches, 0);
+  assert.equal(response.constraintRelaxationAvailable, true);
+});
+
 test("strict budgets return no-match rather than cheap hair tools or phone accessories", async () => {
   const cases: { query: string; items: ProviderProduct[] }[] = [
     {

@@ -297,6 +297,48 @@ test("captured Production family conflicts are rejected before a strict price ca
   );
 });
 
+test("generic phone requests require device evidence rather than an electronics category or incidental phone mention", () => {
+  const nonPhones = [
+    product("Generic electronic product", { category: "electronics" }),
+    product("Electronic component for mobile phone", { category: "electronics" }),
+    product("Digital thermometer", { category: "electronics" }),
+    product("Smartwatch with mobile phone calls", { category: "electronics" }),
+    product("Bluetooth headphones for smartphone", { category: "electronics" }),
+    product("Fast charger for mobile phone", { category: "electronics" }),
+    product("USB cable for smartphone", { category: "electronics" }),
+    product("Smartphone case", { category: "electronics", productType: "phone" }),
+    product("Smartphone accessory", { category: "electronics" }),
+    product("iPhone display for replacement", { category: "electronics" }),
+    product("Mobile Phone Display", { category: "electronics" }),
+    product("Mobile phone keyboard", { category: "electronics" }),
+    product("Smart accessories for mobile phone", { category: "electronics" }),
+    product("Smartphone wristlet", { category: "electronics" }),
+    product("Bluetooth speaker for mobile phone", { category: "electronics" }),
+    product("Mobile phone screen protector", { category: "electronics" }),
+    product("Mobile phone", { category: "Smart Accessories" }),
+    product("Mobile phones for sale", {
+      sourceType: "web", productUrl: "https://example.invalid/search/mobile-phones",
+    }),
+  ];
+  const phones = [
+    product("Android mobile phone", { category: "electronics" }),
+    product("Apple iPhone 15 Pro Max 256GB", { category: "electronics" }),
+    product("Samsung Galaxy S24 Ultra 256GB", { category: "electronics" }),
+    product("Android smartphone with 6.7 inch display", { category: "electronics" }),
+    product("Samsung Galaxy mobile device", { productType: "phone" }),
+    product("Android mobile phone", {
+      sourceType: "web", productUrl: "https://example.invalid/product/android-phone",
+    }),
+  ];
+  for (const query of ["جوال", "هاتف", "موبايل", "smartphone", "mobile phone"]) {
+    const gate = createSearchRelevanceGate(query);
+    assert.equal(gate.requestedType, "phone", query);
+    assert.ok(nonPhones.every((candidate) =>
+      evaluateSearchRelevance(candidate, gate).productType !== "MATCH"), query);
+    assert.deepEqual(filterSearchRelevance([...nonPhones, ...phones], gate), phones, query);
+  }
+});
+
 test("footwear and jeans sizes use their own context, not millimeters or inseams", () => {
   const nike = createSearchRelevanceGate("Nike أسود مقاس 42");
   assert.equal(nike.requestedType, "shoes");
