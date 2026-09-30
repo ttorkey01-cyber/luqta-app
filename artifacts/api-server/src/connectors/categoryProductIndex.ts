@@ -140,6 +140,7 @@ export class CategoryProductIndex {
       );
       if (categoryData.matches) {
         const filterIds = categoryData.filterIds;
+        const filterIdSet = new Set(filterIds);
         indexes.push(productIndex);
         filterIdsByIndex.set(productIndex, filterIds);
         for (const facetId of filterIds) {
@@ -148,7 +149,7 @@ export class CategoryProductIndex {
 
         for (const { filter, selectionIds } of filterDefinitions) {
           if (
-            selectionIds?.every((selectionId) => filterIds.includes(selectionId))
+            selectionIds?.every((selectionId) => filterIdSet.has(selectionId))
           ) {
             const filterIndexes = filterIndexesById.get(filter.id) ?? [];
             filterIndexes.push(productIndex);

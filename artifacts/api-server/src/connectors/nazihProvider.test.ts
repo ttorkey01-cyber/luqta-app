@@ -22,6 +22,7 @@ type ProbeHarness = {
   imageProbes: ImageProbe[];
   maxConcurrentImageProbes: number;
   warnings: unknown[][];
+  infos: unknown[][];
   restore: () => void;
 };
 
@@ -45,15 +46,20 @@ function createHarness(
 ): ProbeHarness {
   const imageProbes: ImageProbe[] = [];
   const warnings: unknown[][] = [];
+  const infos: unknown[][] = [];
   let activeImageProbes = 0;
   let maxConcurrentImageProbes = 0;
   const feedResponses = feeds.map(feedResponse);
   const originalFetch = globalThis.fetch;
   const originalWarn = logger.warn;
+  const originalInfo = logger.info;
 
   logger.warn = ((...args: unknown[]) => {
     warnings.push(args);
   }) as typeof logger.warn;
+  logger.info = ((...args: unknown[]) => {
+    infos.push(args);
+  }) as typeof logger.info;
 
   globalThis.fetch = (async (input, init) => {
     const url = String(input);
@@ -93,9 +99,11 @@ function createHarness(
       return maxConcurrentImageProbes;
     },
     warnings,
+    infos,
     restore() {
       globalThis.fetch = originalFetch;
       logger.warn = originalWarn;
+      logger.info = originalInfo;
     },
   };
 }
@@ -110,6 +118,25 @@ function provider() {
     currency: "SAR",
     priority: 1,
   });
+}
+
+function categoryIndexBuildStub(instance: object) {
+  const index = (instance as unknown as { categoryProductIndex: object })
+    .categoryProductIndex;
+  const original = Reflect.get(index, "setProductsYielding") as (
+    ...args: unknown[]
+  ) => Promise<void>;
+  return {
+    replace(build: () => Promise<void>) {
+      Reflect.set(index, "setProductsYielding", build);
+    },
+    runOriginal(...args: unknown[]) {
+      return original.call(index, ...args);
+    },
+    restore() {
+      Reflect.set(index, "setProductsYielding", original);
+    },
+  };
 }
 
 async function waitForHealth(
@@ -450,5 +477,103 @@ test("intent search returns promptly while the initial feed refresh is still run
     assert.equal(instance.getSearchIndexReadiness().refreshing, true);
   } finally {
     globalThis.fetch = originalFetch;
+  }
+});
+
+test("provider refresh timing diagnostics omit feed and product details", async () => {
+  const harness = createHarness([[{ id: "safe-product" }]], () => true);
+
+  try {
+    const instance = provider();
+    assert.equal(await instance.refreshIndex(false), 1);
+
+    const expectedEvents = [
+      ["Provider feed download and parse complete", ["feedDownloadParseDurationMs"]],
+      [
+        "Provider category-index build started",
+        ["feedDownloadParseDurationMs", "categoryIndexBuildDurationMs"],
+      ],
+      [
+        "Provider category-index build finished",
+        ["feedDownloadParseDurationMs", "categoryIndexBuildDurationMs"],
+      ],
+      [
+        "Provider product-index published",
+        [
+          "feedDownloadParseDurationMs",
+          "categoryIndexBuildDurationMs",
+          "totalRefreshDurationMs",
+        ],
+      ],
+    ] as const;
+    for (const [message, durationKeys] of expectedEvents) {
+      const event = harness.infos.find(([, loggedMessage]) =>
+        loggedMessage === message,
+      );
+      assert.ok(event, `expected timing event: ${message}`);
+      const fields = event[0] as Record<string, unknown>;
+      assert.deepEqual(
+        Object.keys(fields).sort(),
+        ["indexedProductCount", "providerId", ...durationKeys].sort(),
+      );
+      assert.equal(fields.providerId, "nazih-test");
+      assert.equal(fields.indexedProductCount, 1);
+      for (const key of durationKeys) {
+        assert.equal(typeof fields[key], "number");
+        assert.ok((fields[key] as number) >= 0);
+      }
+      assert.doesNotMatch(
+        JSON.stringify(event),
+        /nazih\.csv|safe-product|Product safe-product/,
+      );
+    }
+  } finally {
+    harness.restore();
+  }
+});
+
+test("feed provider keeps readiness pending through category build and retains its index after build failure", async () => {
+  const harness = createHarness(
+    [[{ id: "safety-item" }], [{ id: "replacement-item" }]],
+    () => true,
+  );
+
+  try {
+    const instance = provider();
+    const categoryBuild = categoryIndexBuildStub(instance);
+    let reachedBuild!: () => void;
+    let finishBuild!: () => void;
+    const buildStarted = new Promise<void>((resolve) => {
+      reachedBuild = resolve;
+    });
+    const buildGate = new Promise<void>((resolve) => {
+      finishBuild = resolve;
+    });
+    categoryBuild.replace(async (...args: unknown[]) => {
+      reachedBuild();
+      await buildGate;
+      await categoryBuild.runOriginal(...args);
+    });
+
+    const successfulRefresh = instance.refreshIndex(false);
+    await buildStarted;
+    assert.equal(instance.getSearchIndexReadiness().ready, false);
+    assert.equal(instance.getSearchIndexReadiness().refreshing, true);
+    finishBuild();
+    assert.equal(await successfulRefresh, 1);
+    assert.equal(instance.getSearchIndexReadiness().ready, true);
+    assert.equal(instance.getSearchIndexReadiness().refreshing, false);
+    categoryBuild.restore();
+
+    categoryBuild.replace(async () => {
+      throw new Error("category build failed");
+    });
+    await assert.rejects(instance.refreshIndex(true), /category build failed/);
+    assert.equal(instance.getSearchIndexReadiness().ready, true);
+    assert.equal(instance.getSearchIndexReadiness().productCount, 1);
+    assert.equal(instance.getSearchIndexReadiness().refreshing, false);
+    assert.equal((await instance.search({ query: "Product safety-item" })).length, 1);
+  } finally {
+    harness.restore();
   }
 });

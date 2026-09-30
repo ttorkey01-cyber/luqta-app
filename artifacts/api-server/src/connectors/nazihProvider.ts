@@ -28,6 +28,15 @@ const IMAGE_HEALTH_WARNING_FAILURE_THRESHOLD = 2;
 
 type CsvRecord = Record<string, string>;
 
+type RefreshTiming = {
+  startedAt: number;
+  feedDownloadParseStartedAt?: number;
+  feedDownloadParseCompletedAt?: number;
+  categoryIndexBuildStartedAt?: number;
+  categoryIndexBuildCompletedAt?: number;
+  productIndexPublishedAt?: number;
+};
+
 function normalizeHeader(value: string) {
   return value
     .replace(/^\uFEFF/, "")
@@ -538,7 +547,8 @@ export class AdmitadFeedProvider implements SearchProvider {
     }
     if (this.refreshPromise) return this.refreshPromise;
 
-    const refresh = retryFeedRefresh(() => this.fetchProductIndex())
+    const timing: RefreshTiming = { startedAt: Date.now() };
+    const refresh = retryFeedRefresh(() => this.fetchProductIndex(timing))
       .then(async (products) => {
         if (!products.length && this.productIndex.length) {
           logger.warn(
@@ -547,8 +557,35 @@ export class AdmitadFeedProvider implements SearchProvider {
           );
           return this.productIndex.length;
         }
+        timing.categoryIndexBuildStartedAt = Date.now();
+        logger.info(
+          {
+            providerId: this.metadata.id,
+            indexedProductCount: products.length,
+            feedDownloadParseDurationMs:
+              timing.feedDownloadParseCompletedAt! -
+              timing.feedDownloadParseStartedAt!,
+            categoryIndexBuildDurationMs: 0,
+          },
+          "Provider category-index build started",
+        );
         await this.categoryProductIndex.setProductsYielding(products);
+        timing.categoryIndexBuildCompletedAt = Date.now();
+        logger.info(
+          {
+            providerId: this.metadata.id,
+            indexedProductCount: products.length,
+            feedDownloadParseDurationMs:
+              timing.feedDownloadParseCompletedAt! -
+              timing.feedDownloadParseStartedAt!,
+            categoryIndexBuildDurationMs:
+              timing.categoryIndexBuildCompletedAt! -
+              timing.categoryIndexBuildStartedAt!,
+          },
+          "Provider category-index build finished",
+        );
         this.productIndex = products;
+        timing.productIndexPublishedAt = Date.now();
         this.indexRefreshedAt = Date.now();
         if (products.length) {
           this.metadata.currency = [
@@ -562,6 +599,21 @@ export class AdmitadFeedProvider implements SearchProvider {
         ).toISOString();
         this.queryCache.clear();
         void this.refreshImageHealth(products);
+        logger.info(
+          {
+            providerId: this.metadata.id,
+            feedDownloadParseDurationMs:
+              timing.feedDownloadParseCompletedAt! -
+              timing.feedDownloadParseStartedAt!,
+            categoryIndexBuildDurationMs:
+              timing.categoryIndexBuildCompletedAt! -
+              timing.categoryIndexBuildStartedAt!,
+            totalRefreshDurationMs:
+              timing.productIndexPublishedAt! - timing.startedAt,
+            indexedProductCount: products.length,
+          },
+          "Provider product-index published",
+        );
         return products.length;
       })
       .finally(() => {
@@ -700,7 +752,10 @@ export class AdmitadFeedProvider implements SearchProvider {
     }
   }
 
-  private async fetchProductIndex(): Promise<ProviderProduct[]> {
+  private async fetchProductIndex(
+    timing?: RefreshTiming,
+  ): Promise<ProviderProduct[]> {
+    if (timing) timing.feedDownloadParseStartedAt = Date.now();
     const feedUrl = safeHttpUrl(this.feedUrl);
     if (!feedUrl) {
       throw new Error(`${this.metadata.name} feed URL is not configured`);
@@ -826,6 +881,19 @@ export class AdmitadFeedProvider implements SearchProvider {
         );
       }
 
+      if (timing) {
+        timing.feedDownloadParseCompletedAt = Date.now();
+        logger.info(
+          {
+            providerId: this.metadata.id,
+            indexedProductCount: products.length,
+            feedDownloadParseDurationMs:
+              timing.feedDownloadParseCompletedAt -
+              timing.feedDownloadParseStartedAt!,
+          },
+          "Provider feed download and parse complete",
+        );
+      }
       logger.info(
         {
           providerId: this.metadata.id,

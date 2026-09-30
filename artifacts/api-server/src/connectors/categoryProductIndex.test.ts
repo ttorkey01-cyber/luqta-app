@@ -262,3 +262,67 @@ test("yielding and synchronous indexes match direct category and facet results",
     );
   }
 });
+
+test("optimized yielding index matches the old array-scan reference for empty and 5,000-product feeds", async () => {
+  const examples = [
+    { title: "Wireless smartphone and headphones", category: "Electronics > Phones", productType: "smartphone" },
+    { title: "Women's blue denim jeans", category: "Women's Clothing > Jeans", productType: "jeans" },
+    { title: "Hydrating facial moisturizer", category: "Beauty & Personal Care > Skincare", productType: "Skincare" },
+    { title: "Car tire and wheel accessories", category: "Automotive > Tires & Wheels", productType: "tires" },
+    { title: "Leather running shoes for women", category: "Shoes > Sneakers", productType: "sneakers" },
+    { title: "Generic unclassified item", category: "Other", productType: "miscellaneous" },
+    { title: "Women's blue denim jeans and running shoes", category: "Women's Clothing > Jeans and Shoes", productType: "sneakers" },
+  ] as const;
+
+  for (const count of [0, 5_000]) {
+    const products: ProviderProduct[] = Array.from({ length: count }, (_, index) => ({
+      ...examples[index % examples.length],
+      id: `synthetic-${index}`,
+      availability: "in_stock",
+      sourceType: "affiliate_feed",
+    }));
+    if (count) {
+      assert.ok(
+        LUQTA_CATEGORIES.every(
+          (category) => !getCategoryIndexData(products[5], category).matches,
+        ),
+        "unmatched fixture must have no category",
+      );
+      assert.ok(
+        LUQTA_CATEGORIES.some(
+          (category) => getCategoryIndexData(products[6], category).matches,
+        ),
+        "mixed fashion/shoes fixture must exercise category classification",
+      );
+    }
+    const reference = new CategoryProductIndex();
+    const optimized = new CategoryProductIndex();
+    // setProducts retains the original Array.includes membership logic.
+    reference.setProducts(products);
+    await optimized.setProductsYielding(products);
+
+    for (const category of LUQTA_CATEGORIES) {
+      for (const filterId of [
+        undefined,
+        ...getCategoryFilters(category).map((filter) => filter.id),
+      ]) {
+        const context = `${count} products / ${category} / ${filterId ?? "all"}`;
+        assert.equal(
+          optimized.getCount(products, category, filterId),
+          reference.getCount(products, category, filterId),
+          context,
+        );
+        assert.deepEqual(
+          [...optimized.getFacetCounts(products, category, filterId)],
+          [...reference.getFacetCounts(products, category, filterId)],
+          `${context} facets`,
+        );
+        assert.deepEqual(
+          optimized.getProducts(products, category, filterId, 1, count || 1),
+          reference.getProducts(products, category, filterId, 1, count || 1),
+          `${context} membership and order`,
+        );
+      }
+    }
+  }
+});

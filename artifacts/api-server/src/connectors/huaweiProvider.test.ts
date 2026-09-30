@@ -11,6 +11,25 @@ const PRODUCT = [
   "2499.00", "", DEEPLINK, "Huawei",
 ].join(";");
 
+function categoryIndexBuildStub(instance: object) {
+  const index = (instance as unknown as { categoryProductIndex: object })
+    .categoryProductIndex;
+  const original = Reflect.get(index, "setProductsYielding") as (
+    ...args: unknown[]
+  ) => Promise<void>;
+  return {
+    replace(build: () => Promise<void>) {
+      Reflect.set(index, "setProductsYielding", build);
+    },
+    runOriginal(...args: unknown[]) {
+      return original.call(index, ...args);
+    },
+    restore() {
+      Reflect.set(index, "setProductsYielding", original);
+    },
+  };
+}
+
 test("Huawei's valid header-only feed is ready and does not repeatedly refresh or block categories", async () => {
   const originalFetch = globalThis.fetch;
   let feedRequests = 0;
@@ -24,11 +43,32 @@ test("Huawei's valid header-only feed is ready and does not repeatedly refresh o
 
   try {
     const provider = new HuaweiProvider(FEED_URL, false);
+    const categoryBuild = categoryIndexBuildStub(provider);
+    let reachedBuild!: () => void;
+    let finishBuild!: () => void;
+    const buildStarted = new Promise<void>((resolve) => {
+      reachedBuild = resolve;
+    });
+    const buildGate = new Promise<void>((resolve) => {
+      finishBuild = resolve;
+    });
+    categoryBuild.replace(async (...args: unknown[]) => {
+      reachedBuild();
+      await buildGate;
+      await categoryBuild.runOriginal(...args);
+    });
+
     assert.equal(provider.getSearchIndexReadiness().ready, false);
-    assert.equal(await provider.refreshIndex(false), 0);
+    const successfulRefresh = provider.refreshIndex(false);
+    await buildStarted;
+    assert.equal(provider.getSearchIndexReadiness().ready, false);
+    assert.equal(provider.getSearchIndexReadiness().refreshing, true);
+    finishBuild();
+    assert.equal(await successfulRefresh, 0);
     assert.deepEqual(provider.getSearchIndexReadiness().ready, true);
     assert.equal(provider.getSearchIndexReadiness().refreshing, false);
     assert.equal(provider.getSearchIndexReadiness().productCount, 0);
+    categoryBuild.restore();
     assert.ok(provider.metadata.lastSuccessfulSync);
     assert.equal(provider.metadata.integrationStatus, "ready");
     assert.equal(provider.metadata.currency, "SAR");
@@ -54,7 +94,8 @@ test("Huawei ingests future real products, preserves deeplinks, and retains the 
       feedRequests += 1;
       if (feedRequests === 1) return new Response(`${HEADER}\n`);
       if (feedRequests === 2) return new Response(`${HEADER}\n${PRODUCT}\n`);
-      throw new Error("upstream temporarily unavailable");
+      if (feedRequests === 3) return new Response(`${HEADER}\n${PRODUCT}\n`);
+      throw new Error("Unexpected additional feed refresh");
     }
     return new Response(null, { status: 200 });
   }) as typeof fetch;
@@ -80,10 +121,16 @@ test("Huawei ingests future real products, preserves deeplinks, and retains the 
     assert.equal(category.ready, true);
     assert.equal(category.total, 1);
     assert.equal(category.products[0]?.id, "sku-123");
-    await assert.rejects(provider.refreshIndex(), /upstream temporarily unavailable/);
+    const categoryBuild = categoryIndexBuildStub(provider);
+    categoryBuild.replace(async () => {
+      throw new Error("category build failed");
+    });
+    await assert.rejects(provider.refreshIndex(), /category build failed/);
     assert.equal(provider.getSearchIndexReadiness().ready, true);
     assert.equal(provider.getSearchIndexReadiness().productCount, 1);
+    assert.equal(provider.getSearchIndexReadiness().refreshing, false);
     assert.equal((await provider.search({ query: "هواوي" })).length, 1);
+    categoryBuild.restore();
   } finally {
     globalThis.fetch = originalFetch;
   }
