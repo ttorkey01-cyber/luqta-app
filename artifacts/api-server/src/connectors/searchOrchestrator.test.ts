@@ -1,14 +1,20 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { ProviderRegistry } from "./providerRegistry";
-import { InventoryUnavailableError, SearchOrchestrator } from "./searchOrchestrator";
+import {
+  assessSearchQuality,
+  filterExplicitIntentResults,
+  InventoryUnavailableError,
+  ProviderSearchError,
+  SearchOrchestrator,
+} from "./searchOrchestrator";
 import { BraveWebSearchProvider } from "./braveWebSearchProvider";
 import {
   getCategoryFilterFacets,
   getCategoryFilterIds,
   matchesLuqtaCategory,
 } from "./categoryTaxonomy";
-import { normalizeArabicForSearch } from "./queryExpansion";
+import { expandShoppingQuery, normalizeArabicForSearch } from "./queryExpansion";
 import { HomeCurationService } from "./homeCurationService";
 import type {
   NormalizedProduct,
@@ -49,6 +55,94 @@ function product(id: string, title: string): ProviderProduct {
     exactMatchScore: 1,
   };
 }
+
+test("empty ready-provider failure is distinct from a healthy no-match", async () => {
+  const failedProvider: SearchProvider = {
+    metadata,
+    getSearchIndexReadiness() {
+      return {
+        ready: true,
+        productCount: 0,
+        refreshing: false,
+        lastSuccessfulSync: null,
+      };
+    },
+    async search() {
+      throw new Error("stubbed provider failure");
+    },
+  };
+  const failedSearch = new SearchOrchestrator(
+    new ProviderRegistry([failedProvider]),
+  );
+  await assert.rejects(
+    failedSearch.searchWithMetadata({ query: "rare product" }),
+    (error: unknown) =>
+      error instanceof ProviderSearchError &&
+      error.providerIds.includes(metadata.id),
+  );
+
+  const emptyProvider: SearchProvider = {
+    metadata,
+    async search() {
+      return [];
+    },
+    getSearchIndexReadiness() {
+      return {
+        ready: true,
+        productCount: 0,
+        refreshing: false,
+        lastSuccessfulSync: null,
+      };
+    },
+  };
+  const noMatch = await new SearchOrchestrator(
+    new ProviderRegistry([emptyProvider]),
+  ).searchWithMetadata({ query: "rare product" });
+  assert.deepEqual(noMatch.products, []);
+
+  await assert.rejects(
+    new SearchOrchestrator(new ProviderRegistry([])).searchWithMetadata({
+      query: "rare product",
+    }),
+    InventoryUnavailableError,
+  );
+});
+
+test("partial healthy provider products are returned when another ready provider fails", async () => {
+  const failedProvider: SearchProvider = {
+    metadata: { ...metadata, id: "failed-provider" },
+    async search() {
+      throw new Error("stubbed provider failure");
+    },
+    getSearchIndexReadiness() {
+      return {
+        ready: true,
+        productCount: 0,
+        refreshing: false,
+        lastSuccessfulSync: null,
+      };
+    },
+  };
+  const healthyProvider: SearchProvider = {
+    metadata: { ...metadata, id: "healthy-provider", priority: 2 },
+    async search() {
+      return [product("healthy-result", "Sony Wireless Headphones")];
+    },
+    getSearchIndexReadiness() {
+      return {
+        ready: true,
+        productCount: 1,
+        refreshing: false,
+        lastSuccessfulSync: null,
+      };
+    },
+  };
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([failedProvider, healthyProvider]),
+  ).searchWithMetadata({ query: "Sony Wireless Headphones" });
+
+  assert.ok(response.products.some((result) => result.id === "healthy-result"));
+});
 
 test("translated product matches outrank incidental Arabic mentions", async () => {
   const calls: ProviderSearchRequest[] = [];
@@ -189,6 +283,82 @@ test("Louis Vuitton abbreviation and transliteration searches reach the same cat
       `${query} did not issue the canonical connected-store query`,
     );
   }
+});
+
+test("description-only color on broad pages does not suppress Brave fallback", async () => {
+  let braveCalls = 0;
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return Array.from({ length: 5 }, (_, index) => ({
+        ...product(`family-${index}`, `Guess Handbag Collection ${index}`),
+        description: "A black handbag in the seasonal collection",
+        brand: "Guess",
+        productType: "handbag",
+        color: null,
+      }));
+    },
+  };
+  const fallback = new BraveWebSearchProvider("test-key", async () => {
+    braveCalls += 1;
+    return new Response(JSON.stringify({ web: { results: [] } }), {
+      status: 200,
+    });
+  });
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    fallback,
+  ).searchWithMetadata({
+    query: "Guess black handbag",
+    intent: { brand: "Guess", color: "black", productType: "handbag" },
+  });
+
+  assert.equal(response.strongInternalMatchCount, 0);
+  assert.ok(braveCalls > 0, "unknown title/structured color must not suppress fallback");
+  assert.equal(
+    response.products.filter((result) => result.id.startsWith("family-")).length,
+    5,
+    "fallback triggering must not remove V2 family-page candidates",
+  );
+
+  let matchedColorBraveCalls = 0;
+  const matchedColorProvider: SearchProvider = {
+    metadata,
+    async search() {
+      return Array.from({ length: 5 }, (_, index) => ({
+        ...product(`black-bag-${index}`, `Guess Black Handbag ${index}`),
+        brand: "Guess",
+        productType: "handbag",
+        color: "black",
+      }));
+    },
+  };
+  const matchedColorFallback = new BraveWebSearchProvider("test-key", async () => {
+    matchedColorBraveCalls += 1;
+    return new Response(JSON.stringify({ web: { results: [] } }), {
+      status: 200,
+    });
+  });
+  const matchedResponse = await new SearchOrchestrator(
+    new ProviderRegistry([matchedColorProvider]),
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    matchedColorFallback,
+  ).searchWithMetadata({
+    query: "Guess black handbag",
+    intent: { brand: "Guess", color: "black", productType: "handbag" },
+  });
+
+  assert.equal(matchedResponse.strongInternalMatchCount, 5);
+  assert.equal(matchedColorBraveCalls, 0);
 });
 
 test("uses bilingual Brave fallback only when fewer than five strong matches exist", async () => {
@@ -716,6 +886,246 @@ test("strict Arabic maximum excludes over-budget and unknown-price products and 
   assert.equal(response.structuredIntent?.productType, "handbag");
   assert.equal(response.structuredIntent?.condition, "used");
   assert.equal(response.structuredIntent?.location, "Riyadh");
+});
+
+test("requested color accepts UNKNOWN evidence but filters explicit conflicts without making identity claims", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [
+        {
+          ...product("color-unknown-family", "Guess Handbag Collection"),
+          productUrl: "https://guess.example.sa/collections/handbags",
+          brand: "Guess",
+          productType: "handbag",
+          color: null,
+        },
+        {
+          ...product("color-structured-match", "Guess Leather Handbag"),
+          brand: "Guess",
+          productType: "handbag",
+          color: "black",
+        },
+        {
+          ...product("color-title-conflict", "Guess Blue Handbag"),
+          brand: "Guess",
+          productType: "handbag",
+        },
+        {
+          ...product("color-structured-conflict", "Guess Handbag"),
+          brand: "Guess",
+          productType: "handbag",
+          color: "red",
+        },
+        {
+          ...product("wrong-brand", "Other Leather Handbag"),
+          brand: "Other",
+          productType: "handbag",
+        },
+        {
+          ...product("wrong-product", "Guess Leather Wallet"),
+          brand: "Guess",
+          productType: "handbag",
+        },
+      ];
+    },
+  };
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({
+    query: "Guess black handbag",
+    intent: { brand: "Guess", color: "black", productType: "handbag" },
+  });
+
+  const qualityQuery = expandShoppingQuery("Guess black handbag");
+  const explicitIntent = {
+    brand: "Guess",
+    color: "black",
+    productType: "handbag",
+  };
+  assert.deepEqual(
+    filterExplicitIntentResults(
+      response.products,
+      qualityQuery,
+      explicitIntent,
+    )
+      .map((result) => result.id)
+      .sort(),
+    ["color-structured-match", "color-unknown-family"],
+  );
+  const unknownColorResult = response.products.filter(
+    (result) => result.id === "color-unknown-family",
+  );
+  assert.equal(
+    assessSearchQuality(unknownColorResult, qualityQuery, explicitIntent)
+      .stronglyRelevantCount,
+    0,
+    "unknown color evidence must not count as a strong color match or suppress fallback",
+  );
+  // Identity EXACT is not an emitted label; ordinary searches make no exact claim.
+  assert.equal(response.exactMatches, undefined);
+  assert.equal(
+    response.products.find((result) => result.id === "color-unknown-family")
+      ?.productUrl?.includes("/collections/"),
+    true,
+  );
+});
+
+test("unusable nonempty Brave results do not discard an in-budget unknown-color internal candidate", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [
+        {
+          ...product("internal-unknown-color", "Guess Handbag Collection"),
+          description: "A collection page for Guess handbags",
+          brand: "Guess",
+          productType: "handbag",
+          color: null,
+          price: 80,
+          currency: "SAR",
+        },
+      ];
+    },
+  };
+  const fallback = new BraveWebSearchProvider("test-key", async () =>
+    new Response(
+      JSON.stringify({
+        web: {
+          results: [
+            {
+              title: "Guess Blue Handbag",
+              url: "https://guess.example.sa/blue-handbag",
+              description: "Blue Guess handbag",
+            },
+          ],
+        },
+      }),
+      { status: 200 },
+    ),
+  );
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    fallback,
+  ).searchWithMetadata({
+    query: "Guess black handbag under 100 SAR",
+    intent: {
+      brand: "Guess",
+      color: "black",
+      productType: "handbag",
+      maxPrice: 100,
+      currency: "SAR",
+    },
+  });
+
+  assert.equal(response.fallbackStatus, "empty");
+  assert.equal(fallback.getUsageMetrics().braveFallbackTriggered, 1);
+  assert.deepEqual(
+    response.products.map((result) => result.id),
+    ["internal-unknown-color"],
+  );
+});
+
+test("known structured condition can satisfy condition intent but UNKNOWN condition still needs label evidence", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [
+        {
+          ...product("condition-structured-match", "Guess Handbag"),
+          brand: "Guess",
+          productType: "handbag",
+          condition: "used",
+        },
+        {
+          ...product("condition-unknown", "Guess Handbag"),
+          brand: "Guess",
+          productType: "handbag",
+          condition: "unknown",
+        },
+        {
+          ...product("condition-structured-conflict", "Guess Used Handbag"),
+          brand: "Guess",
+          productType: "handbag",
+          condition: "new",
+        },
+      ];
+    },
+  };
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({
+    query: "Guess used handbag",
+    intent: { brand: "Guess", condition: "used", productType: "handbag" },
+  });
+
+  assert.deepEqual(
+    filterExplicitIntentResults(
+      response.products,
+      expandShoppingQuery("Guess used handbag"),
+      { brand: "Guess", condition: "used", productType: "handbag" },
+    ).map((result) => result.id),
+    ["condition-structured-match"],
+  );
+  assert.equal(response.exactMatches, undefined);
+});
+
+test("unknown color metadata does not relax strict maximum-price filtering", async () => {
+  const provider: SearchProvider = {
+    metadata,
+    async search() {
+      return [
+        {
+          ...product("color-under-budget", "Guess Handbag"),
+          brand: "Guess",
+          productType: "handbag",
+          color: null,
+          price: 99,
+          currency: "SAR",
+        },
+        {
+          ...product("color-over-budget", "Guess Handbag"),
+          brand: "Guess",
+          productType: "handbag",
+          color: null,
+          price: 101,
+          currency: "SAR",
+        },
+        {
+          ...product("color-price-unknown", "Guess Handbag"),
+          brand: "Guess",
+          productType: "handbag",
+          color: null,
+          price: null,
+          currency: "SAR",
+        },
+      ];
+    },
+  };
+  const response = await new SearchOrchestrator(
+    new ProviderRegistry([provider]),
+  ).searchWithMetadata({
+    query: "Guess black handbag",
+    intent: {
+      brand: "Guess",
+      color: "black",
+      productType: "handbag",
+      maxPrice: 100,
+      currency: "SAR",
+    },
+  });
+
+  assert.deepEqual(
+    response.products.map((result) => result.id),
+    ["color-under-budget"],
+  );
+  assert.equal(response.exactMatches, 1);
+  assert.equal(response.constraintRelaxationAvailable, false);
 });
 
 test("strict Arabic price range keeps in-range prices and reports zero exact matches separately", async () => {

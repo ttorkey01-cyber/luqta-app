@@ -20,7 +20,7 @@ export class RankingService {
             ? 1
             : 0
           : 0.5;
-        const priceScore = this.priceScore(result.price, intent);
+        const priceScore = this.priceScore(result.price, result.currency, intent);
         const baseRankScore =
           (result.exactMatchScore ?? 0.5) * 0.3 +
           (result.visualScore ?? 0.5) * 0.15 +
@@ -52,7 +52,11 @@ export class RankingService {
       .sort((a, b) => b.rankScore - a.rankScore);
   }
 
-  private priceScore(price: number | null | undefined, intent?: QueryIntent) {
+  private priceScore(
+    price: number | null | undefined,
+    currency: string | null | undefined,
+    intent?: QueryIntent,
+  ) {
     if (price === undefined || price === null) return 0.5;
     if (intent?.maxPrice !== undefined) {
       return price <= intent.maxPrice
@@ -63,6 +67,17 @@ export class RankingService {
       return price >= intent.minPrice
         ? 1
         : Math.max(0, price / intent.minPrice);
+    }
+    // A stated approximate budget is a small preference, never a price gate.
+    // Keep unknown prices neutral and preserve the original strict-bound priority.
+    const target = intent?.approximatePrice;
+    if (target !== undefined && Number.isFinite(target) && target > 0) {
+      // Never compare nominal amounts in different or unknown currencies.
+      if (currency?.trim().toUpperCase() !== (intent?.currency ?? "SAR").trim().toUpperCase()) {
+        return 0.5;
+      }
+      const relativeDistance = Math.min(1, Math.abs(price - target) / target);
+      return 0.6 - relativeDistance * 0.2;
     }
     return 0.5;
   }

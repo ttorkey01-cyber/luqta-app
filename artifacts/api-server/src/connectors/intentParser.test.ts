@@ -161,3 +161,76 @@ test("preserves an explicit strict maximum alongside an approximate price", asyn
   assert.equal(intent.maxPrice, 350);
   assert.equal(intent.minPrice, undefined);
 });
+
+test("parses حدود as an approximate price without adding strict price bounds", async () => {
+  const intent = await new DeterministicIntentParser().parse("شنطة حدود ٣٠٠ ريال");
+
+  assert.equal(intent.productType, "handbag");
+  assert.equal(intent.approximatePrice, 300);
+  assert.equal(intent.maxPrice, undefined);
+  assert.equal(intent.minPrice, undefined);
+  assert.equal(intent.currency, "SAR");
+});
+
+test("keeps Arabic strict price phrases strict and separate from soft amounts", async () => {
+  const parser = new DeterministicIntentParser();
+  const lessThan = await parser.parse("جزمة أقل من 300");
+  const doesNotExceed = await parser.parse("ساعة ما يتعدى 300");
+  const around = await parser.parse("جاكيت حوالي 300");
+
+  assert.equal(lessThan.maxPrice, 300);
+  assert.equal(lessThan.approximatePrice, undefined);
+  assert.equal(doesNotExceed.maxPrice, 300);
+  assert.equal(doesNotExceed.approximatePrice, undefined);
+  assert.equal(around.approximatePrice, 300);
+  assert.equal(around.maxPrice, undefined);
+});
+
+test("preserves contextual iPhone model numbers without treating them as prices", async () => {
+  const parser = new DeterministicIntentParser();
+  const english = await parser.parse("iPhone 15");
+  const mixed = await parser.parse("ابغى ايفون 15 Pro Max مستعمل حدود ٣٠٠");
+  const explicitlyBranded = await parser.parse("Apple iPhone 15");
+
+  assert.equal(english.productType, undefined);
+  assert.equal(english.brand, undefined);
+  assert.match(english.normalized ?? "", /iphone 15/iu);
+  assert.equal(english.maxPrice, undefined);
+  assert.equal(english.minPrice, undefined);
+  assert.equal(english.approximatePrice, undefined);
+
+  assert.equal(mixed.productType, undefined);
+  assert.equal(mixed.brand, undefined);
+  assert.equal(mixed.condition, "used");
+  assert.equal(mixed.approximatePrice, 300);
+  assert.equal(mixed.maxPrice, undefined);
+  assert.match(mixed.normalized ?? "", /iphone 15 pro max/iu);
+
+  assert.equal(explicitlyBranded.brand, "Apple");
+  assert.equal(explicitlyBranded.productType, undefined);
+  assert.match(explicitlyBranded.normalized ?? "", /iphone 15/iu);
+});
+
+test("preserves explicitly labeled fashion sizes but not unmarked standalone amounts", async () => {
+  const parser = new DeterministicIntentParser();
+  const labeled = await parser.parse("Diesel jeans مقاس 32 اسود مستعمل");
+  const sizeOnly = await parser.parse("مقاس 42");
+  const unmarked = await parser.parse("ساعة 300");
+
+  assert.equal(labeled.brand, "Diesel");
+  assert.equal(labeled.productType, "jeans");
+  assert.equal(labeled.color, "black");
+  assert.equal(labeled.condition, "used");
+  assert.match(labeled.normalized ?? "", /مقاس 32/iu);
+  assert.equal(labeled.maxPrice, undefined);
+  assert.equal(labeled.minPrice, undefined);
+
+  assert.match(sizeOnly.normalized ?? "", /مقاس 42/iu);
+  assert.equal(sizeOnly.maxPrice, undefined);
+  assert.equal(sizeOnly.minPrice, undefined);
+  assert.equal(sizeOnly.approximatePrice, undefined);
+  assert.doesNotMatch(unmarked.normalized ?? "", /300/u);
+  assert.equal(unmarked.maxPrice, undefined);
+  assert.equal(unmarked.minPrice, undefined);
+  assert.equal(unmarked.approximatePrice, undefined);
+});

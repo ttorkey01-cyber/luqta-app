@@ -238,6 +238,26 @@ function cleanKeywords(query: string) {
   )];
 }
 
+function parseContextualPhoneModel(query: string) {
+  const match = query.match(
+    /(?:^|[^\p{L}\p{N}])(?:iphone|ايفون|اي\s+فون)\s+(\d{1,3})(?:\s+(pro(?:\s+max)?|plus|mini))?(?=$|[^\p{L}\p{N}])/iu,
+  );
+  if (!match) return undefined;
+  const suffix = match[2]?.toLocaleLowerCase();
+  const canonicalSuffix =
+    suffix === "pro max" ? "Pro Max" :
+      suffix === "pro" ? "Pro" :
+        suffix === "plus" ? "Plus" :
+          suffix === "mini" ? "Mini" : "";
+  return `iPhone ${match[1]}${canonicalSuffix ? ` ${canonicalSuffix}` : ""}`;
+}
+
+function parseLabeledSizes(query: string) {
+  return [...query.matchAll(
+    /(?:^|[^\p{L}\p{N}])(مقاس|size)\s*(\d{1,3})(?=$|[^\p{L}\p{N}])/giu,
+  )].map((match) => `${match[1].toLocaleLowerCase()} ${match[2]}`);
+}
+
 /**
  * The interface allows a future authorized AI parser to be injected without
  * coupling the search pipeline to one provider. This project currently uses
@@ -267,6 +287,8 @@ export class DeterministicIntentParser implements AIIntentParser {
       (variant) => /[a-z]/iu.test(variant) && !/[\u0600-\u06ff]/u.test(variant),
     );
     const queryTokens = cleanKeywords(normalizedQuery);
+    const phoneModel = parseContextualPhoneModel(normalizedQuery);
+    const labeledSizes = parseLabeledSizes(normalizedQuery);
 
     const priceNumber = "([0-9][0-9,]*(?:\\.[0-9]+)?)";
     const range = normalizedQuery.match(
@@ -278,7 +300,7 @@ export class DeterministicIntentParser implements AIIntentParser {
     const approximatePrice = parsePrice(
       normalizedQuery,
       new RegExp(
-        `(?:around|about|approximately|approx\\.?|حوالي|حوالى|تقريبا|تقريباً|~)\\s*${priceNumber}`,
+        `(?:around|about|approximately|approx\\.?|حوالي|حوالى|حدود|تقريبا|تقريباً|~)\\s*${priceNumber}`,
         "iu",
       ),
     );
@@ -348,6 +370,8 @@ export class DeterministicIntentParser implements AIIntentParser {
       (token) =>
         !recognizedWords.has(token) &&
         !STOP_WORDS.has(token) &&
+        !(phoneModel && phoneModel.toLocaleLowerCase().split(/\s+/u).includes(token)) &&
+        !(labeledSizes.length && /^(?:مقاس|size)$/u.test(token)) &&
         !/^\d+$/u.test(token),
     );
     const normalized = [
@@ -361,6 +385,8 @@ export class DeterministicIntentParser implements AIIntentParser {
       partNumber,
       oemNumber,
       ...remainingKeywords,
+      phoneModel,
+      ...labeledSizes,
       productType?.value,
       maxPrice === undefined ? undefined : `under ${maxPrice}`,
       minPrice === undefined ? undefined : `above ${minPrice}`,

@@ -70,6 +70,13 @@ export class InventoryUnavailableError extends Error {
   }
 }
 
+export class ProviderSearchError extends Error {
+  constructor(readonly providerIds: string[]) {
+    super("Product search providers are temporarily unavailable");
+    this.name = "ProviderSearchError";
+  }
+}
+
 function withTimeout<T>(
   operation: () => Promise<T>,
   timeoutMs: number,
@@ -274,6 +281,8 @@ const ATTRIBUTE_GROUPS = [
   ["kids", "children", "اطفال"],
 ].map((terms) => new Set(terms.map(compactSearchToken)));
 
+const COLOR_GROUPS = ATTRIBUTE_GROUPS.slice(0, 7);
+
 const ARABIC_QUALITY_TRANSLATIONS = new Map([
   ["ساعه", "watch"],
   ["ساعة", "watch"],
@@ -350,6 +359,27 @@ function matchingTermGroup(value: string, groups: Set<string>[]) {
   return groups.find((group) => tokens.some((token) => group.has(token)));
 }
 
+function requestedConditions(intent?: QueryIntent) {
+  return [
+    intent?.condition,
+    intent?.newOrUsed,
+  ].filter(
+    (condition): condition is "new" | "used" | "refurbished" =>
+      Boolean(condition && condition !== "unknown"),
+  );
+}
+
+function hasStructuredConditionEvidence(
+  result: ProviderProduct,
+  intent?: QueryIntent,
+) {
+  return Boolean(
+    result.condition &&
+      result.condition !== "unknown" &&
+      requestedConditions(intent).includes(result.condition),
+  );
+}
+
 function uniqueGroups(groups: Set<string>[]) {
   const seen = new Set<string>();
   return groups.filter((group) => {
@@ -405,6 +435,9 @@ function buildQualityConstraints(
 
   const requiredAttributeGroups: Set<string>[] = [];
   const requiredAttributeTerms: string[] = [];
+  const requestedColorGroup = intent?.color
+    ? matchingTermGroup(intent.color, COLOR_GROUPS)
+    : undefined;
   const explicitAttributes = [
     intent?.color,
     intent?.audience,
@@ -418,6 +451,13 @@ function buildQualityConstraints(
   ].filter((item): item is string => Boolean(item?.trim()));
   for (const value of explicitAttributes) {
     const group = matchingTermGroup(value, ATTRIBUTE_GROUPS);
+    if (group && group === requestedColorGroup) continue;
+    if (
+      (value === intent?.condition || value === intent?.newOrUsed) &&
+      group
+    ) {
+      continue;
+    }
     if (group) requiredAttributeGroups.push(group);
     else if (
       value === intent?.color ||
@@ -510,6 +550,50 @@ function matchesExplicitIntent(
   ) {
     return false;
   }
+  const requestedColorGroup = intent.color
+    ? matchingTermGroup(intent.color, COLOR_GROUPS)
+    : undefined;
+  if (requestedColorGroup) {
+    const structuredColorGroup = result.color
+      ? matchingTermGroup(result.color, COLOR_GROUPS)
+      : undefined;
+    if (structuredColorGroup && structuredColorGroup !== requestedColorGroup) {
+      return false;
+    }
+
+    const titleTokens = new Set(
+      searchTokens(result.title).map(compactSearchToken),
+    );
+    const titleHasRequestedColor = groupMatchesSurface(
+      titleTokens,
+      requestedColorGroup,
+    );
+    const titleHasDifferentColor = COLOR_GROUPS.some(
+      (group) => group !== requestedColorGroup && groupMatchesSurface(titleTokens, group),
+    );
+    if (!titleHasRequestedColor && titleHasDifferentColor) return false;
+  }
+  const structuredCondition = result.condition;
+  const wantedConditions = requestedConditions(intent);
+  if (
+    structuredCondition &&
+    structuredCondition !== "unknown" &&
+    wantedConditions.some((condition) => condition !== structuredCondition)
+  ) {
+    return false;
+  }
+  const conditionEvidence = hasStructuredConditionEvidence(result, intent);
+  if (
+    !conditionEvidence &&
+    wantedConditions.some((condition) => {
+      const conditionGroup = matchingTermGroup(condition, ATTRIBUTE_GROUPS);
+      return (
+        !conditionGroup || !groupMatchesSurface(labelTokens, conditionGroup)
+      );
+    })
+  ) {
+    return false;
+  }
   if (
     !constraints.requiredProductGroups.every((group) =>
       groupMatchesSurface(labelTokens, group),
@@ -522,7 +606,12 @@ function matchesExplicitIntent(
   }
   if (
     !constraints.requiredAttributeGroups.every((group) =>
-      groupMatchesSurface(labelTokens, group),
+      conditionEvidence &&
+      wantedConditions.some(
+        (condition) => matchingTermGroup(condition, ATTRIBUTE_GROUPS) === group,
+      )
+        ? true
+        : groupMatchesSurface(labelTokens, group),
     ) ||
     !constraints.requiredAttributeTerms.every((term) =>
       surfaceMatchesTerm(labelTokens, term),
@@ -579,8 +668,22 @@ function resultMatchesConstraints(
         .join(" "),
     ).map(compactSearchToken),
   );
+  const requestedColorGroup = constraints.intent?.color
+    ? matchingTermGroup(constraints.intent.color, COLOR_GROUPS)
+    : undefined;
+  const titleTokens = new Set(
+    searchTokens(result.title).map(compactSearchToken),
+  );
+  const requestedColorIsStrong =
+    !requestedColorGroup ||
+    groupMatchesSurface(titleTokens, requestedColorGroup) ||
+    Boolean(
+      result.color &&
+        matchingTermGroup(result.color, COLOR_GROUPS) === requestedColorGroup,
+    );
   return {
     isStrong:
+      requestedColorIsStrong &&
       matchesExplicitIntent(result, constraints) &&
       constraints.alternatives.some((alternative) => {
         const identityIsStrong = alternative.identityTerms.every((term) =>
@@ -1288,7 +1391,7 @@ export class SearchOrchestrator {
         );
         fallbackStatus = relevantFallback.length > 0 ? "used" : "empty";
         const internalForMerge =
-          normalizedFallback.length > 0
+          relevantFallback.length > 0
             ? quality.relevantResults
             : internalRanked;
         merged = this.ranking
@@ -1403,19 +1506,24 @@ export class SearchOrchestrator {
     const unavailableProviders = providerResults
       .filter((providerResult) =>
         providerResult.readiness?.ready === false ||
-        providerResult.categoryResult?.ready === false ||
-        providerResult.timedOut ||
-        Boolean(providerResult.errorType),
+        providerResult.categoryResult?.ready === false,
       )
       .map((providerResult) => providerResult.providerId);
-    if (
-      (categoryBrowse
-        ? (categoryInventoryCount ?? 0) === 0
-        : response.products.length === 0) &&
-      (unavailableProviders.length > 0 || providers.length === 0)
-    ) {
+    const emptySearchResult = categoryBrowse
+      ? (categoryInventoryCount ?? 0) === 0
+      : response.products.length === 0;
+    if (emptySearchResult && (unavailableProviders.length > 0 || providers.length === 0)) {
       emit("inventory_unavailable", { providerIds: unavailableProviders });
       throw new InventoryUnavailableError(unavailableProviders);
+    }
+    const failedProviders = providerResults
+      .filter(
+        (providerResult) => providerResult.timedOut || providerResult.errorType,
+      )
+      .map((providerResult) => providerResult.providerId);
+    if (emptySearchResult && failedProviders.length > 0) {
+      emit("provider_search_error", { providerIds: failedProviders });
+      throw new ProviderSearchError(failedProviders);
     }
     const hasProviderFailure = providerResults.some(
       (providerResult) => providerResult.timedOut || providerResult.errorType,
