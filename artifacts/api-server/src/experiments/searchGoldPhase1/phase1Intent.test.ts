@@ -116,17 +116,97 @@ describe("Phase 1 Saudi shopping intent", () => {
     assert.equal(voltage.brand.value, null);
   });
 
-  it("keeps labeled and bare model codes without inventing a brand", async () => {
-    for (const [query, expectedCode] of [
-      ["FixtureBrand Model AB-120", "AB-120"],
-      ["FixtureBrand Model XR-9A", "XR-9A"],
-      ["WH-1000XM5", "WH-1000XM5"],
-    ]) {
+  it("keeps labeled and bare model codes while only extracting an explicitly labeled brand", async () => {
+    for (const [query, expectedCode, expectedBrand] of ([
+      ["FixtureBrand Model AB-120", "AB-120", "FixtureBrand"],
+      ["FixtureBrand Model XR-9A", "XR-9A", "FixtureBrand"],
+      ["WH-1000XM5", "WH-1000XM5", null],
+    ] as const)) {
       const intent = await parsePhase1Intent(query);
       assert.equal(intent.model.value, expectedCode);
       assert.equal(intent.model.sourceText, expectedCode);
-      assert.equal(intent.brand.value, null);
+      assert.equal(intent.brand.value, expectedBrand);
     }
+  });
+
+  it("decomposes explicit brand/model pairs, mixed-script phones, and corroborated Samsung typo", async () => {
+    const fixture = await parsePhase1Intent("FixtureBrand Model AB-120");
+    assert.equal(fixture.brand.value, "FixtureBrand");
+    assert.equal(fixture.brand.sourceText, "FixtureBrand");
+    assert.equal(fixture.model.value, "AB-120");
+    assert.equal((await parsePhase1Intent("أبي FixtureBrand Model XR-9A")).brand.value, "FixtureBrand");
+    for (const query of [
+      "FixtureBrand ExactModel Z-4",
+      "FixtureBrand XR-9A",
+      "FixtureBrand Shared Model P-20",
+      "FixtureBrand Camera M10",
+    ]) {
+      const intent = await parsePhase1Intent(query);
+      assert.equal(intent.brand.value, "FixtureBrand", query);
+    }
+    assert.equal((await parsePhase1Intent("FixtureBrand ExactModel Z-4")).model.value, "Z-4");
+    assert.equal((await parsePhase1Intent("FixtureBrand Shared Model P-20")).model.value, "P-20");
+    assert.equal((await parsePhase1Intent("FixtureBrand Camera M10")).model.value, "M10");
+
+    const iphone = await parsePhase1Intent("أبي iPhone ١٥");
+    assert.equal(iphone.brand.value, "Apple");
+    assert.equal(iphone.model.value, "iPhone ١٥");
+    assert.equal(iphone.model.sourceText, "iPhone ١٥");
+    const arabicIphone = await parsePhase1Intent("آيفون ١٥");
+    assert.equal(arabicIphone.brand.value, "Apple");
+    assert.equal(arabicIphone.model.value, "آيفون ١٥");
+    assert.ok(arabicIphone.hardRequirements.some((requirement) => requirement.field === "model" && requirement.value === "آيفون ١٥"));
+
+    const corrected = await parsePhase1Intent("Samsng Galaxy Fixture S24");
+    assert.equal(corrected.brand.value, "Samsung");
+    assert.equal(corrected.brand.sourceText, "Samsng");
+    assert.equal(corrected.model.value, "S24");
+    assert.equal((await parsePhase1Intent("Samsng case")).brand.value, null);
+  });
+
+  it("handles seller-scoped SKU, size systems, charger/Jaguar ambiguity, and soft preferences", async () => {
+    const sellerSku = await parsePhase1Intent("seller SKU: Ab-٠٠٤");
+    assert.equal(sellerSku.sku.value, "Ab-٠٠٤");
+    assert.ok(sellerSku.hardRequirements.some((requirement) => requirement.field === "seller_sku" && requirement.value === "Ab-٠٠٤"));
+
+    const euSize = await parsePhase1Intent("shoes EU 38");
+    assert.equal(euSize.size.value, "EU 38");
+    assert.ok(euSize.hardRequirements.some((requirement) => requirement.field === "size" && requirement.value === "EU 38"));
+    const unclearSize = await parsePhase1Intent("shoes size 38");
+    assert.equal(unclearSize.size.value, "38");
+    assert.match(unclearSize.clarificationReasons.join(" "), /size system/i);
+
+    const charger = await parsePhase1Intent("charger");
+    assert.match(charger.clarificationReasons.join(" "), /device|connector/i);
+    assert.equal((await parsePhase1Intent("USB-C charger")).clarificationReasons.length, 0);
+    const arabicTypeC = await parsePhase1Intent("ابي شاحن تايب سي");
+    assert.equal(arabicTypeC.productType.value, "charger");
+    assert.equal(arabicTypeC.clarificationReasons.length, 0);
+    assert.ok(arabicTypeC.hardRequirements.some((requirement) => requirement.field === "connector" && requirement.value === "USB-C"));
+    assert.match((await parsePhase1Intent("Jaguar")).clarificationReasons.join(" "), /vehicle|animal/i);
+    assert.equal((await parsePhase1Intent("Jaguar XE")).clarificationReasons.length, 0);
+
+    const preferred = await parsePhase1Intent("يفضل black shoes");
+    assert.equal(preferred.color.value, "black");
+    assert.equal(preferred.hardRequirements.some((requirement) => requirement.field === "color"), false);
+    assert.ok((await parsePhase1Intent("بس black shoes")).hardRequirements.some((requirement) => requirement.field === "color"));
+    assert.equal((await parsePhase1Intent("شنطة بحدود ٣٠٠")).budget.value?.approximate, 300);
+  });
+
+  it("recognizes requested Saudi Arabic-English product synonyms without guessing شمعة", async () => {
+    const synonyms: Array<[string, string]> = [
+      ["حقيبة", "handbag"], ["موبايل", "phone"], ["حذاء", "shoes"], ["نظارة", "glasses"],
+      ["ساعة", "watch"], ["صدام", "bumper"],
+    ];
+    for (const [query, product] of synonyms) {
+      assert.equal((await parsePhase1Intent(query)).productType.value, product, query);
+    }
+    assert.equal((await parsePhase1Intent("مستعمل phone")).condition.value, "used");
+    const original = await parsePhase1Intent("original phone");
+    assert.equal(original.authenticity.value, true);
+    assert.equal(original.hardRequirements.some((requirement) => requirement.field === "authenticity"), false);
+    const ambiguous = await parsePhase1Intent("شمعة السيارة");
+    assert.equal(ambiguous.productType.value, "headlight");
   });
 
   it("parses mixed Arabic/English earbuds and USB-C charger wording", async () => {

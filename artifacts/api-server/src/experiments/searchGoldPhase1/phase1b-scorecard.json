@@ -1,0 +1,4674 @@
+{
+  "schemaVersion": 1,
+  "benchmarkVersion": "phase1b-controlled-fixture-2026-09-30",
+  "generatedAt": "2026-09-30T08:38:28.339Z",
+  "classification": "CONTROLLED FIXTURE",
+  "baseline": {
+    "file": "baseline-v2.2-expanded.json",
+    "sha256": "9cb6ad9b4e254131f511d67530e89536247df461daf8419e52300996654b06b7",
+    "version": "v2.2.0-expanded-baseline-2026-09-30"
+  },
+  "frozenPhase1": {
+    "file": "phase1-results.json",
+    "sha256": "96200c055607c6f8b93e5fbc5c9d195c84716b7c45a7af5f8856ef909a9afe2b",
+    "pass": 18,
+    "fail": 21,
+    "metrics": {
+      "precisionAt1": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 13,
+        "denominator": 28,
+        "value": 0.4642857142857143,
+        "target": {
+          "operator": ">=",
+          "value": 0.7
+        },
+        "targetStatus": "NOT_REACHED"
+      },
+      "precisionAt3": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 13,
+        "denominator": 84,
+        "value": 0.15476190476190477,
+        "target": {
+          "operator": ">=",
+          "value": 0.6
+        },
+        "targetStatus": "NOT_REACHED"
+      },
+      "successAt5": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 13,
+        "denominator": 28,
+        "value": 0.4642857142857143,
+        "target": {
+          "operator": ">=",
+          "value": 0.75
+        },
+        "targetStatus": "NOT_REACHED"
+      },
+      "exactProductIdentificationRank1": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 2,
+        "denominator": 12,
+        "value": 0.16666666666666666,
+        "target": {
+          "operator": ">=",
+          "value": 0.8
+        },
+        "targetStatus": "NOT_REACHED",
+        "note": "Exact identity requires an explicit adapter classification of exact; probable-exact is not upgraded."
+      },
+      "hardConstraintCompliance": {
+        "resultLevel": {
+          "classification": "CONTROLLED FIXTURE",
+          "numerator": 7,
+          "denominator": 7,
+          "value": 1,
+          "target": null,
+          "targetStatus": "NOT_SCOREABLE",
+          "note": "Safety among displayed offers only. Abstained queries are excluded here and counted as missed fulfillment in queryLevel."
+        },
+        "queryLevel": {
+          "classification": "CONTROLLED FIXTURE",
+          "numerator": 9,
+          "denominator": 10,
+          "value": 0.9,
+          "target": {
+            "operator": ">=",
+            "value": 0.97
+          },
+          "targetStatus": "NOT_REACHED",
+          "note": "A query with known eligible fixture offers counts only when an eligible offer is returned; abstention is not successful fulfillment."
+        }
+      },
+      "irrelevantResultRate": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 0,
+        "denominator": 13,
+        "value": 0,
+        "target": {
+          "operator": "<=",
+          "value": 0.2
+        },
+        "targetStatus": "REACHED"
+      },
+      "falseExactMatchRate": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 0,
+        "denominator": 2,
+        "value": 0,
+        "target": {
+          "operator": "<=",
+          "value": 0.005
+        },
+        "targetStatus": "REACHED",
+        "note": "Only explicitly classified exact offers among presented results. This tiny controlled-fixture denominator cannot establish a production false-exact rate."
+      },
+      "correctNoMatchRate": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 5,
+        "denominator": 5,
+        "value": 1,
+        "target": {
+          "operator": ">=",
+          "value": 0.9
+        },
+        "targetStatus": "REACHED"
+      },
+      "arabicIntentAccuracy": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 12,
+        "denominator": 20,
+        "value": 0.6,
+        "target": {
+          "operator": ">=",
+          "value": 0.82
+        },
+        "targetStatus": "NOT_REACHED"
+      },
+      "identifierAccuracy": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 2,
+        "denominator": 8,
+        "value": 0.25,
+        "target": null,
+        "targetStatus": "NOT_SCOREABLE",
+        "note": "Diagnostic controlled-fixture measure; no separate identifier-accuracy threshold is defined in the blueprint scorecard."
+      },
+      "providerErrorNoMatchDistinction": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 6,
+        "denominator": 6,
+        "value": 1,
+        "target": {
+          "operator": ">=",
+          "value": 1
+        },
+        "targetStatus": "REACHED",
+        "note": "Sentinel provider failure must be PROVIDER_UNAVAILABLE/retrieval_failure; each finite-snapshot no-match must remain NO_CONFIDENT_MATCH/no_match."
+      },
+      "fixtureHarnessLatencyMs": {
+        "classification": "CONTROLLED FIXTURE",
+        "samples": 39,
+        "median": 8.84,
+        "p95": 516.88,
+        "target": null,
+        "targetStatus": "NOT_APPLICABLE_FIXTURE_HARNESS",
+        "note": "Measured end-to-end around the local Phase 1 wrapper plus in-memory fixture adapter, not production server latency."
+      }
+    }
+  },
+  "phase1bSummary": {
+    "pass": 31,
+    "fail": 8,
+    "comparedCaseCount": 39
+  },
+  "v2Comparison": {
+    "casesCompared": 39,
+    "regressions": 0,
+    "improvements": 21,
+    "unchangedPass": 10,
+    "unchangedFail": 8
+  },
+  "phase1Comparison": {
+    "summary": {
+      "casesCompared": 39,
+      "improvements": 13,
+      "regressions": 0,
+      "noMatchToUsefulResult": 13
+    },
+    "cases": [
+      {
+        "caseId": 1,
+        "title": "Exact GTIN versus a different GTIN",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "results",
+        "phase1bState": "results",
+        "phase1DisplayedIds": [
+          "gtin-exact"
+        ],
+        "phase1bDisplayedIds": [
+          "gtin-exact"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 2,
+        "title": "Exact brand plus model ahead of close model",
+        "phase1": "FAIL",
+        "phase1b": "PASS",
+        "transition": "FAIL_TO_PASS",
+        "phase1State": "no_match",
+        "phase1bState": "results",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [
+          "brand-model-exact",
+          "brand-model-close"
+        ],
+        "noMatchToUsefulResult": true,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": [
+          "brand-model-exact"
+        ]
+      },
+      {
+        "caseId": 3,
+        "title": "Seller-scoped SKU matches only its seller offer",
+        "phase1": "FAIL",
+        "phase1b": "FAIL",
+        "transition": "UNCHANGED",
+        "phase1State": "no_match",
+        "phase1bState": "no_match",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 4,
+        "title": "Exact MPN distinct from a near MPN",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "results",
+        "phase1bState": "results",
+        "phase1DisplayedIds": [
+          "mpn-exact"
+        ],
+        "phase1bDisplayedIds": [
+          "mpn-exact"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 5,
+        "title": "One exact product retains two distinct merchant offers",
+        "phase1": "FAIL",
+        "phase1b": "FAIL",
+        "transition": "UNCHANGED",
+        "phase1State": "no_match",
+        "phase1bState": "results",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [
+          "shared-offer-a",
+          "shared-offer-b"
+        ],
+        "noMatchToUsefulResult": true,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 6,
+        "title": "Exact model outranks a one-character-different model",
+        "phase1": "FAIL",
+        "phase1b": "FAIL",
+        "transition": "UNCHANGED",
+        "phase1State": "no_match",
+        "phase1bState": "results",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [
+          "one-char-exact"
+        ],
+        "noMatchToUsefulResult": true,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 7,
+        "title": "Arabic Bluetooth-audio category relevance",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "similar_alternative",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [
+          "arabic-audio"
+        ],
+        "phase1bDisplayedIds": [
+          "arabic-audio"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 10,
+        "title": "Arabic soft budget is not converted into a hard cap",
+        "phase1": "FAIL",
+        "phase1b": "FAIL",
+        "transition": "UNCHANGED",
+        "phase1State": "similar_alternative",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [
+          "soft-budget-near"
+        ],
+        "phase1bDisplayedIds": [
+          "soft-budget-near"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 13,
+        "title": "Mixed English/Arabic wireless-earbud query keeps verified white color",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "similar_alternative",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [
+          "mixed-white-earbuds"
+        ],
+        "phase1bDisplayedIds": [
+          "mixed-white-earbuds"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 14,
+        "title": "Arabic request preserves Latin brand/model identity",
+        "phase1": "FAIL",
+        "phase1b": "PASS",
+        "transition": "FAIL_TO_PASS",
+        "phase1State": "no_match",
+        "phase1bState": "results",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [
+          "mixed-brand-model"
+        ],
+        "noMatchToUsefulResult": true,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": [
+          "mixed-brand-model"
+        ]
+      },
+      {
+        "caseId": 17,
+        "title": "Dialect USB-C charger query retrieves connector-matched fixture",
+        "phase1": "FAIL",
+        "phase1b": "FAIL",
+        "transition": "UNCHANGED",
+        "phase1State": "similar_alternative",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [
+          "usb-c-fixture"
+        ],
+        "phase1bDisplayedIds": [
+          "usb-c-fixture"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 18,
+        "title": "Arabic synonym جوال retrieves the phone fixture",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "similar_alternative",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [
+          "arabic-phone-synonym"
+        ],
+        "phase1bDisplayedIds": [
+          "arabic-phone-synonym"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 19,
+        "title": "Arabic numerals preserve Latin phone model",
+        "phase1": "FAIL",
+        "phase1b": "FAIL",
+        "transition": "UNCHANGED",
+        "phase1State": "no_match",
+        "phase1bState": "no_match",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 20,
+        "title": "Unique supported brand typo correction",
+        "phase1": "FAIL",
+        "phase1b": "PASS",
+        "transition": "FAIL_TO_PASS",
+        "phase1State": "no_match",
+        "phase1bState": "results",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [
+          "brand-typo-correction"
+        ],
+        "noMatchToUsefulResult": true,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": [
+          "brand-typo-correction"
+        ]
+      },
+      {
+        "caseId": 21,
+        "title": "Ambiguous Jaguar query requests clarification",
+        "phase1": "FAIL",
+        "phase1b": "PASS",
+        "transition": "FAIL_TO_PASS",
+        "phase1State": "no_match",
+        "phase1bState": "clarification",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 22,
+        "title": "Unsupported Arabic misspelling does not invent a correction",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "no_match",
+        "phase1bState": "no_match",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 23,
+        "title": "Generic charger query asks for device or connector",
+        "phase1": "FAIL",
+        "phase1b": "PASS",
+        "transition": "FAIL_TO_PASS",
+        "phase1State": "similar_alternative",
+        "phase1bState": "clarification",
+        "phase1DisplayedIds": [
+          "generic-charger-lightning",
+          "generic-charger-usbc"
+        ],
+        "phase1bDisplayedIds": [],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [
+          "generic-charger-lightning",
+          "generic-charger-usbc"
+        ],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 33,
+        "title": "Strict maximum-price boundary is strictly less than SAR 300",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "similar_alternative",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [
+          "strict-under-300"
+        ],
+        "phase1bDisplayedIds": [
+          "strict-under-300"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 34,
+        "title": "Unknown price never qualifies under strict price cap",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "similar_alternative",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [
+          "unknown-price-qualifying"
+        ],
+        "phase1bDisplayedIds": [
+          "unknown-price-qualifying"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 35,
+        "title": "Requested blue color excludes navy and black",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "similar_alternative",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [
+          "color-blue"
+        ],
+        "phase1bDisplayedIds": [
+          "color-blue"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 36,
+        "title": "Absent requested color yields explicit no-match",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "no_match",
+        "phase1bState": "no_match",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 37,
+        "title": "Exact shoe size 38 in explicitly labeled EU system",
+        "phase1": "FAIL",
+        "phase1b": "PASS",
+        "transition": "FAIL_TO_PASS",
+        "phase1State": "no_match",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [
+          "size-38-eu"
+        ],
+        "noMatchToUsefulResult": true,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 38,
+        "title": "Missing size system requests clarification",
+        "phase1": "FAIL",
+        "phase1b": "PASS",
+        "transition": "FAIL_TO_PASS",
+        "phase1State": "no_match",
+        "phase1bState": "clarification",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 39,
+        "title": "New-only excludes used and unknown condition",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "similar_alternative",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [
+          "condition-new"
+        ],
+        "phase1bDisplayedIds": [
+          "condition-new"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 40,
+        "title": "Used-only excludes new and unknown condition",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "similar_alternative",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [
+          "used-only-used"
+        ],
+        "phase1bDisplayedIds": [
+          "used-only-used"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 41,
+        "title": "Used in Jeddah means seller location, not shipping destination",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "similar_alternative",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [
+          "local-used-jeddah"
+        ],
+        "phase1bDisplayedIds": [
+          "local-used-jeddah"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 49,
+        "title": "Cheaper offer is same identity, not merely a lookalike",
+        "phase1": "FAIL",
+        "phase1b": "FAIL",
+        "transition": "UNCHANGED",
+        "phase1State": "clarification",
+        "phase1bState": "clarification",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 51,
+        "title": "Stale/out-of-stock low offer is not called currently purchasable",
+        "phase1": "FAIL",
+        "phase1b": "PASS",
+        "transition": "FAIL_TO_PASS",
+        "phase1State": "no_match",
+        "phase1bState": "results",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [
+          "current-available-offer"
+        ],
+        "noMatchToUsefulResult": true,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 52,
+        "title": "Similar alternative is explicitly distinguished from exact",
+        "phase1": "FAIL",
+        "phase1b": "PASS",
+        "transition": "FAIL_TO_PASS",
+        "phase1State": "no_match",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [
+          "similar-camera"
+        ],
+        "noMatchToUsefulResult": true,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 53,
+        "title": "Only close model exists; it must not be called the same item",
+        "phase1": "FAIL",
+        "phase1b": "PASS",
+        "transition": "FAIL_TO_PASS",
+        "phase1State": "no_match",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [
+          "same-only-close"
+        ],
+        "noMatchToUsefulResult": true,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 55,
+        "title": "Unique nonexistent token returns explicit no-match",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "no_match",
+        "phase1bState": "no_match",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 56,
+        "title": "Absent category yields no match, not adjacent products",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "no_match",
+        "phase1bState": "no_match",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 57,
+        "title": "Relevance outranks popular synthetic affiliate",
+        "phase1": "FAIL",
+        "phase1b": "PASS",
+        "transition": "FAIL_TO_PASS",
+        "phase1State": "no_match",
+        "phase1bState": "results",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [
+          "affiliate-neutral-relevant"
+        ],
+        "noMatchToUsefulResult": true,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 58,
+        "title": "Strict color and price empty intersection remains empty",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "no_match",
+        "phase1bState": "no_match",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 59,
+        "title": "Duplicate indexed copies of one offer deduplicate",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "similar_alternative",
+        "phase1bState": "similar_alternative",
+        "phase1DisplayedIds": [
+          "duplicate-copy-a"
+        ],
+        "phase1bDisplayedIds": [
+          "duplicate-copy-a"
+        ],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 60,
+        "title": "Same product across merchants preserves both distinct offers",
+        "phase1": "FAIL",
+        "phase1b": "FAIL",
+        "transition": "UNCHANGED",
+        "phase1State": "no_match",
+        "phase1bState": "results",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [
+          "multi-merchant-a",
+          "multi-merchant-b"
+        ],
+        "noMatchToUsefulResult": true,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 61,
+        "title": "Conflicting synthetic evidence is surfaced as uncertainty",
+        "phase1": "FAIL",
+        "phase1b": "PASS",
+        "transition": "FAIL_TO_PASS",
+        "phase1State": "no_match",
+        "phase1bState": "conflicting_evidence",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [
+          "conflict-price-source-a",
+          "conflict-price-source-b"
+        ],
+        "noMatchToUsefulResult": true,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 62,
+        "title": "Affiliate metadata does not displace exact relevant result",
+        "phase1": "FAIL",
+        "phase1b": "PASS",
+        "transition": "FAIL_TO_PASS",
+        "phase1State": "no_match",
+        "phase1bState": "results",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [
+          "affiliate-neutral-exact-watch"
+        ],
+        "noMatchToUsefulResult": true,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      },
+      {
+        "caseId": 63,
+        "title": "Provider retrieval failure is not represented as verified no-match",
+        "phase1": "PASS",
+        "phase1b": "PASS",
+        "transition": "UNCHANGED",
+        "phase1State": "retrieval_failure",
+        "phase1bState": "retrieval_failure",
+        "phase1DisplayedIds": [],
+        "phase1bDisplayedIds": [],
+        "noMatchToUsefulResult": false,
+        "filteredPreviouslyDisplayedIds": [],
+        "exactDowngradedIds": [],
+        "similarPromotedToExactIds": []
+      }
+    ]
+  },
+  "scorecard": {
+    "scope": {
+      "classification": "CONTROLLED FIXTURE",
+      "approvedBlueprintCaseCount": 63,
+      "executedFixtureCaseCount": 39,
+      "unscorableCaseCount": 24,
+      "unscorableCaseIds": [
+        8,
+        9,
+        11,
+        12,
+        15,
+        16,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        50,
+        54
+      ],
+      "realObservedCount": 0,
+      "productionThresholdClaim": false,
+      "fixtureMetricsAreNotProductionEstimates": true
+    },
+    "metrics": {
+      "precisionAt1": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 25,
+        "denominator": 28,
+        "value": 0.8928571428571429,
+        "target": {
+          "operator": ">=",
+          "value": 0.7
+        },
+        "targetStatus": "REACHED"
+      },
+      "precisionAt3": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 28,
+        "denominator": 84,
+        "value": 0.3333333333333333,
+        "target": {
+          "operator": ">=",
+          "value": 0.6
+        },
+        "targetStatus": "NOT_REACHED"
+      },
+      "successAt5": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 25,
+        "denominator": 28,
+        "value": 0.8928571428571429,
+        "target": {
+          "operator": ">=",
+          "value": 0.75
+        },
+        "targetStatus": "REACHED"
+      },
+      "exactProductIdentificationRank1": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 9,
+        "denominator": 12,
+        "value": 0.75,
+        "target": {
+          "operator": ">=",
+          "value": 0.8
+        },
+        "targetStatus": "NOT_REACHED",
+        "note": "Exact identity requires an explicit adapter classification of exact; probable-exact is not upgraded."
+      },
+      "hardConstraintCompliance": {
+        "resultLevel": {
+          "classification": "CONTROLLED FIXTURE",
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1,
+          "target": null,
+          "targetStatus": "NOT_SCOREABLE",
+          "note": "Safety among displayed offers only. Abstained queries are excluded here and counted as missed fulfillment in queryLevel."
+        },
+        "queryLevel": {
+          "classification": "CONTROLLED FIXTURE",
+          "numerator": 10,
+          "denominator": 10,
+          "value": 1,
+          "target": {
+            "operator": ">=",
+            "value": 0.97
+          },
+          "targetStatus": "REACHED",
+          "note": "A query with known eligible fixture offers counts only when an eligible offer is returned; abstention is not successful fulfillment."
+        }
+      },
+      "irrelevantResultRate": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 0,
+        "denominator": 28,
+        "value": 0,
+        "target": {
+          "operator": "<=",
+          "value": 0.2
+        },
+        "targetStatus": "REACHED"
+      },
+      "falseExactMatchRate": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 0,
+        "denominator": 11,
+        "value": 0,
+        "target": {
+          "operator": "<=",
+          "value": 0.005
+        },
+        "targetStatus": "NOT_ESTABLISHED",
+        "note": "Only independently gold-labeled identity cases are scored. Unannotated exact assertions are reported separately, not assumed false or true. This controlled sample cannot establish a production rate.",
+        "unadjudicatedExactAssertions": 1
+      },
+      "correctNoMatchRate": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 5,
+        "denominator": 5,
+        "value": 1,
+        "target": {
+          "operator": ">=",
+          "value": 0.9
+        },
+        "targetStatus": "REACHED"
+      },
+      "arabicIntentAccuracy": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 16,
+        "denominator": 20,
+        "value": 0.8,
+        "target": {
+          "operator": ">=",
+          "value": 0.82
+        },
+        "targetStatus": "NOT_REACHED"
+      },
+      "identifierAccuracy": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 6,
+        "denominator": 8,
+        "value": 0.75,
+        "target": null,
+        "targetStatus": "NOT_SCOREABLE",
+        "note": "Diagnostic controlled-fixture measure; no separate identifier-accuracy threshold is defined in the blueprint scorecard."
+      },
+      "providerErrorNoMatchDistinction": {
+        "classification": "CONTROLLED FIXTURE",
+        "numerator": 6,
+        "denominator": 6,
+        "value": 1,
+        "target": {
+          "operator": ">=",
+          "value": 1
+        },
+        "targetStatus": "REACHED",
+        "note": "Sentinel provider failure must be PROVIDER_UNAVAILABLE/retrieval_failure; each finite-snapshot no-match must remain NO_CONFIDENT_MATCH/no_match."
+      },
+      "fixtureHarnessLatencyMs": {
+        "classification": "CONTROLLED FIXTURE",
+        "samples": 39,
+        "median": 11.58,
+        "p95": 454.08,
+        "target": null,
+        "targetStatus": "NOT_APPLICABLE_FIXTURE_HARNESS",
+        "note": "Measured end-to-end around the local Phase 1 wrapper plus in-memory fixture adapter, not production server latency."
+      }
+    },
+    "details": {
+      "relevantCaseCountForRanking": 28,
+      "rankingCases": [
+        {
+          "caseId": 1,
+          "goldRelevantIds": [
+            "gtin-exact"
+          ],
+          "observedTop5Ids": [
+            "gtin-exact"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 2,
+          "goldRelevantIds": [
+            "brand-model-exact",
+            "brand-model-close"
+          ],
+          "observedTop5Ids": [
+            "brand-model-exact",
+            "brand-model-close"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 3,
+          "goldRelevantIds": [
+            "sku-scoped-match"
+          ],
+          "observedTop5Ids": [],
+          "successAt5": false
+        },
+        {
+          "caseId": 4,
+          "goldRelevantIds": [
+            "mpn-exact"
+          ],
+          "observedTop5Ids": [
+            "mpn-exact"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 5,
+          "goldRelevantIds": [
+            "shared-offer-a",
+            "shared-offer-b"
+          ],
+          "observedTop5Ids": [
+            "shared-offer-a",
+            "shared-offer-b"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 6,
+          "goldRelevantIds": [
+            "one-char-exact",
+            "one-char-close"
+          ],
+          "observedTop5Ids": [
+            "one-char-exact"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 7,
+          "goldRelevantIds": [
+            "arabic-audio"
+          ],
+          "observedTop5Ids": [
+            "arabic-audio"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 13,
+          "goldRelevantIds": [
+            "mixed-white-earbuds"
+          ],
+          "observedTop5Ids": [
+            "mixed-white-earbuds"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 14,
+          "goldRelevantIds": [
+            "mixed-brand-model"
+          ],
+          "observedTop5Ids": [
+            "mixed-brand-model"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 17,
+          "goldRelevantIds": [
+            "usb-c-fixture"
+          ],
+          "observedTop5Ids": [
+            "usb-c-fixture"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 18,
+          "goldRelevantIds": [
+            "arabic-phone-synonym"
+          ],
+          "observedTop5Ids": [
+            "arabic-phone-synonym"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 19,
+          "goldRelevantIds": [
+            "arabic-numeral-iphone15"
+          ],
+          "observedTop5Ids": [],
+          "successAt5": false
+        },
+        {
+          "caseId": 20,
+          "goldRelevantIds": [
+            "brand-typo-correction"
+          ],
+          "observedTop5Ids": [
+            "brand-typo-correction"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 33,
+          "goldRelevantIds": [
+            "strict-under-300"
+          ],
+          "observedTop5Ids": [
+            "strict-under-300"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 34,
+          "goldRelevantIds": [
+            "unknown-price-qualifying"
+          ],
+          "observedTop5Ids": [
+            "unknown-price-qualifying"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 35,
+          "goldRelevantIds": [
+            "color-blue"
+          ],
+          "observedTop5Ids": [
+            "color-blue"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 37,
+          "goldRelevantIds": [
+            "size-38-eu"
+          ],
+          "observedTop5Ids": [
+            "size-38-eu"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 39,
+          "goldRelevantIds": [
+            "condition-new"
+          ],
+          "observedTop5Ids": [
+            "condition-new"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 40,
+          "goldRelevantIds": [
+            "used-only-used"
+          ],
+          "observedTop5Ids": [
+            "used-only-used"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 41,
+          "goldRelevantIds": [
+            "local-used-jeddah"
+          ],
+          "observedTop5Ids": [
+            "local-used-jeddah"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 49,
+          "goldRelevantIds": [
+            "cheaper-same-identity",
+            "cheaper-lookalike"
+          ],
+          "observedTop5Ids": [],
+          "successAt5": false
+        },
+        {
+          "caseId": 51,
+          "goldRelevantIds": [
+            "current-available-offer"
+          ],
+          "observedTop5Ids": [
+            "current-available-offer"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 52,
+          "goldRelevantIds": [
+            "similar-camera"
+          ],
+          "observedTop5Ids": [
+            "similar-camera"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 53,
+          "goldRelevantIds": [
+            "same-only-close"
+          ],
+          "observedTop5Ids": [
+            "same-only-close"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 57,
+          "goldRelevantIds": [
+            "affiliate-neutral-relevant"
+          ],
+          "observedTop5Ids": [
+            "affiliate-neutral-relevant"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 59,
+          "goldRelevantIds": [
+            "duplicate-copy-a",
+            "duplicate-copy-b"
+          ],
+          "observedTop5Ids": [
+            "duplicate-copy-a"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 60,
+          "goldRelevantIds": [
+            "multi-merchant-a",
+            "multi-merchant-b"
+          ],
+          "observedTop5Ids": [
+            "multi-merchant-a",
+            "multi-merchant-b"
+          ],
+          "successAt5": true
+        },
+        {
+          "caseId": 62,
+          "goldRelevantIds": [
+            "affiliate-neutral-exact-watch"
+          ],
+          "observedTop5Ids": [
+            "affiliate-neutral-exact-watch"
+          ],
+          "successAt5": true
+        }
+      ],
+      "independentGoldLabelsByCase": [
+        {
+          "caseId": 1,
+          "goldLabels": {
+            "exactProductId": "gtin-exact",
+            "identifier": "synthetic GTIN-14",
+            "nearProductId": "gtin-near"
+          }
+        },
+        {
+          "caseId": 2,
+          "goldLabels": {
+            "exactProductId": "brand-model-exact",
+            "closeProductId": "brand-model-close"
+          }
+        },
+        {
+          "caseId": 3,
+          "goldLabels": {
+            "seller": "Fixture Seller A",
+            "sku": "FS-4401",
+            "exactProductId": "sku-scoped-match",
+            "sameSkuOtherSellerMustNotMatch": "sku-other-seller"
+          }
+        },
+        {
+          "caseId": 4,
+          "goldLabels": {
+            "exactProductId": "mpn-exact",
+            "nearProductId": "mpn-close"
+          }
+        },
+        {
+          "caseId": 5,
+          "goldLabels": {
+            "identity": "synthetic-product-P20",
+            "offerIds": [
+              "shared-offer-a",
+              "shared-offer-b"
+            ]
+          }
+        },
+        {
+          "caseId": 6,
+          "goldLabels": {
+            "exactProductId": "one-char-exact",
+            "closeProductId": "one-char-close"
+          }
+        },
+        {
+          "caseId": 7,
+          "goldLabels": {
+            "relevantIds": [
+              "arabic-audio"
+            ],
+            "irrelevantIds": [
+              "arabic-irrelevant"
+            ]
+          }
+        },
+        {
+          "caseId": 10,
+          "goldLabels": {
+            "approximateBudgetSAR": 250,
+            "hardCap": false,
+            "bothOffersCanRemain": true
+          }
+        },
+        {
+          "caseId": 13,
+          "goldLabels": {
+            "qualifyingIds": [
+              "mixed-white-earbuds"
+            ],
+            "color": "white"
+          }
+        },
+        {
+          "caseId": 14,
+          "goldLabels": {
+            "exactProductId": "mixed-brand-model",
+            "exactModel": "QX-750"
+          }
+        },
+        {
+          "caseId": 17,
+          "goldLabels": {
+            "relevantIds": [
+              "usb-c-fixture"
+            ],
+            "unsupportedWattage": null
+          }
+        },
+        {
+          "caseId": 18,
+          "goldLabels": {
+            "canonicalIntent": "phone",
+            "relevantIds": [
+              "arabic-phone-synonym"
+            ]
+          }
+        },
+        {
+          "caseId": 19,
+          "goldLabels": {
+            "exactProductId": "arabic-numeral-iphone15",
+            "modelNumber": 15
+          }
+        },
+        {
+          "caseId": 20,
+          "goldLabels": {
+            "inputTypo": "Samsng",
+            "onlySupportedCorrection": "Samsung",
+            "exactProductId": "brand-typo-correction"
+          }
+        },
+        {
+          "caseId": 21,
+          "goldLabels": {
+            "interpretations": [
+              "automobile",
+              "animal"
+            ],
+            "expected": "clarification"
+          }
+        },
+        {
+          "caseId": 22,
+          "goldLabels": {
+            "exhaustiveFixtureSnapshot": true,
+            "supportedCorrection": null,
+            "expectedState": "no_match"
+          }
+        },
+        {
+          "caseId": 23,
+          "goldLabels": {
+            "ambiguity": "device/connector unspecified",
+            "expected": "clarification",
+            "noCompatibilityClaims": true
+          }
+        },
+        {
+          "caseId": 33,
+          "goldLabels": {
+            "qualifyingIds": [
+              "strict-under-300"
+            ],
+            "operator": "<",
+            "capSAR": 300
+          }
+        },
+        {
+          "caseId": 34,
+          "goldLabels": {
+            "qualifyingIds": [
+              "unknown-price-qualifying"
+            ],
+            "unknownPriceQualifies": false
+          }
+        },
+        {
+          "caseId": 35,
+          "goldLabels": {
+            "qualifyingIds": [
+              "color-blue"
+            ],
+            "navyEquivalentToBlue": false
+          }
+        },
+        {
+          "caseId": 36,
+          "goldLabels": {
+            "qualifyingIds": [],
+            "expectedState": "no_match"
+          }
+        },
+        {
+          "caseId": 37,
+          "goldLabels": {
+            "qualifyingIds": [
+              "size-38-eu"
+            ],
+            "size": 38,
+            "sizeSystem": "EU"
+          }
+        },
+        {
+          "caseId": 38,
+          "goldLabels": {
+            "systems": [
+              "EU",
+              "US"
+            ],
+            "expectedState": "clarification"
+          }
+        },
+        {
+          "caseId": 39,
+          "goldLabels": {
+            "qualifyingIds": [
+              "condition-new"
+            ],
+            "condition": "new"
+          }
+        },
+        {
+          "caseId": 40,
+          "goldLabels": {
+            "qualifyingIds": [
+              "used-only-used"
+            ],
+            "condition": "used"
+          }
+        },
+        {
+          "caseId": 41,
+          "goldLabels": {
+            "qualifyingIds": [
+              "local-used-jeddah"
+            ],
+            "sellerLocality": "Jeddah",
+            "deliveryIsNotLocality": true
+          }
+        },
+        {
+          "caseId": 49,
+          "goldLabels": {
+            "identity": "synthetic-Z4",
+            "cheaperSameIdentityOffer": "cheaper-same-identity",
+            "closeAlternative": "cheaper-lookalike"
+          }
+        },
+        {
+          "caseId": 51,
+          "goldLabels": {
+            "purchasableOfferIds": [
+              "current-available-offer"
+            ],
+            "staleUnavailableOfferId": "stale-cheaper-offer"
+          }
+        },
+        {
+          "caseId": 52,
+          "goldLabels": {
+            "resultId": "similar-camera",
+            "identity": "similar",
+            "expectedState": "similar_alternative"
+          }
+        },
+        {
+          "caseId": 53,
+          "goldLabels": {
+            "exactIdentityExists": false,
+            "closeProductId": "same-only-close",
+            "expectedClassification": "close"
+          }
+        },
+        {
+          "caseId": 55,
+          "goldLabels": {
+            "exhaustiveFixtureSnapshot": true,
+            "matchingFixtureIds": [],
+            "expectedState": "no_match"
+          }
+        },
+        {
+          "caseId": 56,
+          "goldLabels": {
+            "exhaustiveFixtureSnapshot": true,
+            "absentCategory": "refrigerator",
+            "expectedState": "no_match"
+          }
+        },
+        {
+          "caseId": 57,
+          "goldLabels": {
+            "relevantId": "affiliate-neutral-relevant",
+            "irrelevantPopularAffiliateId": "affiliate-irrelevant-popular",
+            "monetizationDoesNotChangeRelevance": true
+          }
+        },
+        {
+          "caseId": 58,
+          "goldLabels": {
+            "qualifyingIds": [],
+            "color": "blue",
+            "priceOperator": "<",
+            "capSAR": 300
+          }
+        },
+        {
+          "caseId": 59,
+          "goldLabels": {
+            "canonicalOfferId": "fixture-canonical-offer",
+            "duplicateRecordCount": 2
+          }
+        },
+        {
+          "caseId": 60,
+          "goldLabels": {
+            "identity": "synthetic-S60",
+            "offerIds": [
+              "multi-merchant-a",
+              "multi-merchant-b"
+            ]
+          }
+        },
+        {
+          "caseId": 61,
+          "goldLabels": {
+            "conflictingFields": [
+              "price",
+              "condition"
+            ],
+            "expectedState": "conflicting_evidence",
+            "bothSourcesAreSynthetic": true
+          }
+        },
+        {
+          "caseId": 62,
+          "goldLabels": {
+            "exactRelevantId": "affiliate-neutral-exact-watch",
+            "irrelevantAffiliateId": "affiliate-irrelevant-watch"
+          }
+        },
+        {
+          "caseId": 63,
+          "goldLabels": {
+            "providerThrows": true,
+            "expectedState": "retrieval_failure",
+            "distinctFromNoMatch": true
+          }
+        }
+      ],
+      "exactIdentityCaseCount": 12,
+      "exactAssertionsOnDisplayedResults": 12,
+      "exactAssertionsWithIndependentGold": 11,
+      "unadjudicatedExactAssertions": 1,
+      "unadjudicatedExactCases": [
+        57
+      ],
+      "arabicIntentCases": [
+        {
+          "caseId": 7,
+          "query": "أبي سماعة بلوتوث",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "أبي سماعة بلوتوث",
+            "explicitText": "أبي سماعة بلوتوث",
+            "normalizedQuery": "ابي سماعه بلوتوث",
+            "productType": {
+              "value": "headphones",
+              "evidence": "HIGH_CONFIDENCE"
+            },
+            "category": {
+              "value": "electronics",
+              "evidence": "HIGH_CONFIDENCE"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "أبي سماعة بلوتوث",
+              "normalized": "بلوتوث headphones",
+              "keywords": [
+                "سماعه",
+                "بلوتوث"
+              ],
+              "productType": "headphones",
+              "category": "electronics"
+            },
+            "expansions": {
+              "arabic": [
+                "أبي سماعة بلوتوث",
+                "سماعات بلوتوث",
+                "headphones بلوتوث",
+                "earphones بلوتوث",
+                "headset بلوتوث"
+              ],
+              "english": []
+            }
+          }
+        },
+        {
+          "caseId": 10,
+          "query": "أبي شنطة بحدود 250 ريال",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "أبي شنطة بحدود 250 ريال",
+            "explicitText": "أبي شنطة بحدود 250 ريال",
+            "normalizedQuery": "ابي شنطه بحدود 250 ريال",
+            "productType": {
+              "value": "handbag",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شنطة"
+            },
+            "category": {
+              "value": "bags_accessories",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شنطة"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": {
+                "min": null,
+                "max": null,
+                "approximate": 250,
+                "currency": "SAR"
+              },
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "بحدود 250"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "أبي شنطة بحدود 250 ريال",
+              "normalized": "بحدود ريال handbag",
+              "keywords": [
+                "شنطه",
+                "بحدود",
+                "250",
+                "ريال"
+              ],
+              "productType": "handbag",
+              "category": "bags_accessories"
+            },
+            "expansions": {
+              "arabic": [
+                "أبي شنطة بحدود 250 ريال",
+                "شنطة بحدود 250 ريال",
+                "handbag بحدود 250 ريال",
+                "bag بحدود 250 ريال",
+                "purse بحدود 250 ريال",
+                "handbags بحدود 250 ريال"
+              ],
+              "english": []
+            }
+          }
+        },
+        {
+          "caseId": 13,
+          "query": "wireless earbuds أبيها أبيض",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "wireless earbuds أبيها أبيض",
+            "explicitText": "wireless earbuds أبيها أبيض",
+            "normalizedQuery": "wireless earbuds ابيها ابيض",
+            "productType": {
+              "value": "earbuds",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "earbuds"
+            },
+            "category": {
+              "value": "electronics",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "earbuds"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": "white",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "أبيض"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [
+              {
+                "field": "color",
+                "value": "white",
+                "operator": "eq",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "أبيض"
+              }
+            ],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "wireless earbuds أبيها أبيض",
+              "normalized": "white wireless earbuds ابيها",
+              "keywords": [
+                "wireless",
+                "earbuds",
+                "ابيها",
+                "ابيض"
+              ],
+              "color": "white"
+            },
+            "expansions": {
+              "arabic": [
+                "wireless earbuds أبيها أبيض",
+                "ابيض wireless earbuds ابيها",
+                "wireless earbuds ابيها white"
+              ],
+              "english": []
+            }
+          }
+        },
+        {
+          "caseId": 14,
+          "query": "أبغى FixtureBrand model QX-750",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "أبغى FixtureBrand model QX-750",
+            "explicitText": "أبغى FixtureBrand model QX-750",
+            "normalizedQuery": "ابغي fixturebrand model qx-750",
+            "productType": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "category": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "brand": {
+              "value": "FixtureBrand",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "FixtureBrand"
+            },
+            "model": {
+              "value": "QX-750",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "QX-750"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": "QX-750",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "QX-750"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [
+              {
+                "field": "model",
+                "value": "QX-750",
+                "operator": "eq",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "QX-750"
+              }
+            ],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "أبغى FixtureBrand model QX-750",
+              "normalized": "fixturebrand model qx-750",
+              "keywords": [
+                "fixturebrand",
+                "model",
+                "qx-750"
+              ]
+            },
+            "expansions": {
+              "arabic": [
+                "أبغى FixtureBrand model QX-750"
+              ],
+              "english": []
+            }
+          }
+        },
+        {
+          "caseId": 17,
+          "query": "ابي شاحن تايب سي",
+          "pass": false,
+          "observedIntent": {
+            "rawQuery": "ابي شاحن تايب سي",
+            "explicitText": "ابي شاحن تايب سي",
+            "normalizedQuery": "ابي شاحن تايب سي",
+            "productType": {
+              "value": "charger",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شاحن"
+            },
+            "category": {
+              "value": "electronics",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شاحن"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [
+              {
+                "field": "connector",
+                "value": "USB-C",
+                "operator": "eq",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "تايب سي"
+              }
+            ],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "ابي شاحن تايب سي",
+              "normalized": "شاحن تايب سي",
+              "keywords": [
+                "شاحن",
+                "تايب",
+                "سي"
+              ]
+            },
+            "expansions": {
+              "arabic": [
+                "ابي شاحن تايب سي"
+              ],
+              "english": []
+            }
+          }
+        },
+        {
+          "caseId": 18,
+          "query": "أبي جوال",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "أبي جوال",
+            "explicitText": "أبي جوال",
+            "normalizedQuery": "ابي جوال",
+            "productType": {
+              "value": "phone",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "جوال"
+            },
+            "category": {
+              "value": "electronics",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "جوال"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "أبي جوال",
+              "normalized": "phone",
+              "keywords": [
+                "جوال"
+              ],
+              "productType": "phone",
+              "category": "electronics"
+            },
+            "expansions": {
+              "arabic": [
+                "أبي جوال",
+                "جوال"
+              ],
+              "english": [
+                "phone",
+                "smartphone",
+                "mobile"
+              ]
+            }
+          }
+        },
+        {
+          "caseId": 19,
+          "query": "أبي آيفون ١٥",
+          "pass": false,
+          "observedIntent": {
+            "rawQuery": "أبي آيفون ١٥",
+            "explicitText": "أبي آيفون ١٥",
+            "normalizedQuery": "ابي ايفون ١٥",
+            "productType": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "category": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "brand": {
+              "value": "Apple",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "آيفون"
+            },
+            "model": {
+              "value": "آيفون ١٥",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "آيفون ١٥"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": "آيفون ١٥",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "آيفون ١٥"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [
+              {
+                "field": "model",
+                "value": "آيفون ١٥",
+                "operator": "eq",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "آيفون ١٥"
+              }
+            ],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "أبي آيفون ١٥",
+              "normalized": "ايفون",
+              "keywords": [
+                "ايفون",
+                "15"
+              ]
+            },
+            "expansions": {
+              "arabic": [
+                "أبي آيفون ١٥"
+              ],
+              "english": []
+            }
+          }
+        },
+        {
+          "caseId": 20,
+          "query": "Samsng Galaxy Fixture S24",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "Samsng Galaxy Fixture S24",
+            "explicitText": "Samsng Galaxy Fixture S24",
+            "normalizedQuery": "samsng galaxy fixture s24",
+            "productType": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "category": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "brand": {
+              "value": "Samsung",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "Samsng"
+            },
+            "model": {
+              "value": "S24",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "S24"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": "S24",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "S24"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [
+              {
+                "field": "model",
+                "value": "S24",
+                "operator": "eq",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "S24"
+              }
+            ],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "Samsng Galaxy Fixture S24",
+              "normalized": "samsng galaxy fixture s24",
+              "keywords": [
+                "samsng",
+                "galaxy",
+                "fixture",
+                "s24"
+              ]
+            },
+            "expansions": {
+              "arabic": [],
+              "english": [
+                "Samsng Galaxy Fixture S24"
+              ]
+            }
+          }
+        },
+        {
+          "caseId": 21,
+          "query": "Jaguar",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "Jaguar",
+            "explicitText": "Jaguar",
+            "normalizedQuery": "jaguar",
+            "productType": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "category": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "brand": {
+              "value": "Jaguar",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "Jaguar"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [],
+            "ambiguityReasons": [
+              "Jaguar may refer to the vehicle brand or the animal."
+            ],
+            "clarificationReasons": [
+              "Do you mean a Jaguar vehicle or something related to the animal?"
+            ],
+            "baseIntent": {
+              "raw": "Jaguar",
+              "normalized": "jaguar",
+              "keywords": [
+                "jaguar"
+              ]
+            },
+            "expansions": {
+              "arabic": [],
+              "english": [
+                "Jaguar"
+              ]
+            }
+          }
+        },
+        {
+          "caseId": 22,
+          "query": "حقيبة مرزفنة",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "حقيبة مرزفنة",
+            "explicitText": "حقيبة مرزفنة",
+            "normalizedQuery": "حقيبه مرزفنه",
+            "productType": {
+              "value": "handbag",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "حقيبة"
+            },
+            "category": {
+              "value": "bags_accessories",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "حقيبة"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "حقيبة مرزفنة",
+              "normalized": "مرزفنه handbag",
+              "keywords": [
+                "حقيبه",
+                "مرزفنه"
+              ],
+              "productType": "handbag",
+              "category": "bags_accessories"
+            },
+            "expansions": {
+              "arabic": [
+                "حقيبة مرزفنة",
+                "شنطة مرزفنه",
+                "handbag مرزفنه",
+                "bag مرزفنه",
+                "purse مرزفنه",
+                "handbags مرزفنه"
+              ],
+              "english": []
+            }
+          }
+        },
+        {
+          "caseId": 23,
+          "query": "أبي شاحن",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "أبي شاحن",
+            "explicitText": "أبي شاحن",
+            "normalizedQuery": "ابي شاحن",
+            "productType": {
+              "value": "charger",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شاحن"
+            },
+            "category": {
+              "value": "electronics",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شاحن"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [],
+            "ambiguityReasons": [
+              "A generic charger request does not identify the device or connector."
+            ],
+            "clarificationReasons": [
+              "Please specify the device or charger connector/type."
+            ],
+            "baseIntent": {
+              "raw": "أبي شاحن",
+              "normalized": "شاحن",
+              "keywords": [
+                "شاحن"
+              ]
+            },
+            "expansions": {
+              "arabic": [
+                "أبي شاحن"
+              ],
+              "english": []
+            }
+          }
+        },
+        {
+          "caseId": 33,
+          "query": "شنطة أقل من 300 ريال",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "شنطة أقل من 300 ريال",
+            "explicitText": "شنطة أقل من 300 ريال",
+            "normalizedQuery": "شنطه اقل من 300 ريال",
+            "productType": {
+              "value": "handbag",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شنطة"
+            },
+            "category": {
+              "value": "bags_accessories",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شنطة"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": {
+                "min": null,
+                "max": 300,
+                "approximate": null,
+                "currency": "SAR"
+              },
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "اقل من 300"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [
+              {
+                "field": "budget.max",
+                "value": 300,
+                "operator": "lt",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "اقل من 300"
+              }
+            ],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "شنطة أقل من 300 ريال",
+              "normalized": "اقل ريال handbag under 300",
+              "keywords": [
+                "شنطه",
+                "اقل",
+                "300",
+                "ريال"
+              ],
+              "productType": "handbag",
+              "category": "bags_accessories",
+              "maxPrice": 300,
+              "currency": "SAR"
+            },
+            "expansions": {
+              "arabic": [
+                "شنطة أقل من 300 ريال",
+                "handbag under 300 ريال",
+                "bag under 300 ريال",
+                "purse under 300 ريال",
+                "handbags under 300 ريال",
+                "bags under 300 ريال"
+              ],
+              "english": []
+            }
+          }
+        },
+        {
+          "caseId": 34,
+          "query": "شنطة أقل من 300 ريال",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "شنطة أقل من 300 ريال",
+            "explicitText": "شنطة أقل من 300 ريال",
+            "normalizedQuery": "شنطه اقل من 300 ريال",
+            "productType": {
+              "value": "handbag",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شنطة"
+            },
+            "category": {
+              "value": "bags_accessories",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شنطة"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": {
+                "min": null,
+                "max": 300,
+                "approximate": null,
+                "currency": "SAR"
+              },
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "اقل من 300"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [
+              {
+                "field": "budget.max",
+                "value": 300,
+                "operator": "lt",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "اقل من 300"
+              }
+            ],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "شنطة أقل من 300 ريال",
+              "normalized": "اقل ريال handbag under 300",
+              "keywords": [
+                "شنطه",
+                "اقل",
+                "300",
+                "ريال"
+              ],
+              "productType": "handbag",
+              "category": "bags_accessories",
+              "maxPrice": 300,
+              "currency": "SAR"
+            },
+            "expansions": {
+              "arabic": [
+                "شنطة أقل من 300 ريال",
+                "handbag under 300 ريال",
+                "bag under 300 ريال",
+                "purse under 300 ريال",
+                "handbags under 300 ريال",
+                "bags under 300 ريال"
+              ],
+              "english": []
+            }
+          }
+        },
+        {
+          "caseId": 35,
+          "query": "أزرق",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "أزرق",
+            "explicitText": "أزرق",
+            "normalizedQuery": "ازرق",
+            "productType": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "category": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": "blue",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "أزرق"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [
+              {
+                "field": "color",
+                "value": "blue",
+                "operator": "eq",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "أزرق"
+              }
+            ],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "أزرق",
+              "normalized": "blue",
+              "keywords": [
+                "ازرق"
+              ],
+              "color": "blue"
+            },
+            "expansions": {
+              "arabic": [
+                "أزرق"
+              ],
+              "english": [
+                "blue"
+              ]
+            }
+          }
+        },
+        {
+          "caseId": 36,
+          "query": "أبي شنطة خضراء",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "أبي شنطة خضراء",
+            "explicitText": "أبي شنطة خضراء",
+            "normalizedQuery": "ابي شنطه خضراء",
+            "productType": {
+              "value": "handbag",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شنطة"
+            },
+            "category": {
+              "value": "bags_accessories",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شنطة"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": "green",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "خضراء"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [
+              {
+                "field": "color",
+                "value": "green",
+                "operator": "eq",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "خضراء"
+              }
+            ],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "أبي شنطة خضراء",
+              "normalized": "green handbag",
+              "keywords": [
+                "شنطه",
+                "خضراء"
+              ],
+              "productType": "handbag",
+              "category": "bags_accessories",
+              "color": "green"
+            },
+            "expansions": {
+              "arabic": [
+                "أبي شنطة خضراء",
+                "شنطة خضراء"
+              ],
+              "english": [
+                "green handbag",
+                "handbag green",
+                "bag green",
+                "purse green"
+              ]
+            }
+          }
+        },
+        {
+          "caseId": 37,
+          "query": "حذاء مقاس 38 EU",
+          "pass": false,
+          "observedIntent": {
+            "rawQuery": "حذاء مقاس 38 EU",
+            "explicitText": "حذاء مقاس 38 EU",
+            "normalizedQuery": "حذاء مقاس 38 eu",
+            "productType": {
+              "value": "shoes",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "حذاء"
+            },
+            "category": {
+              "value": "shoes",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "حذاء"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": "EU 38",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "مقاس 38 EU"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [
+              {
+                "field": "size",
+                "value": "EU 38",
+                "operator": "eq",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "مقاس 38 EU"
+              }
+            ],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "حذاء مقاس 38 EU",
+              "normalized": "مقاس eu shoes",
+              "keywords": [
+                "حذاء",
+                "مقاس",
+                "38",
+                "eu"
+              ],
+              "productType": "shoes",
+              "category": "shoes"
+            },
+            "expansions": {
+              "arabic": [
+                "حذاء مقاس 38 EU",
+                "shoes مقاس 38 eu",
+                "shoe مقاس 38 eu",
+                "sneakers مقاس 38 eu"
+              ],
+              "english": []
+            }
+          }
+        },
+        {
+          "caseId": 38,
+          "query": "shoe size 38",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "shoe size 38",
+            "explicitText": "shoe size 38",
+            "normalizedQuery": "shoe size 38",
+            "productType": {
+              "value": "shoes",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "shoe"
+            },
+            "category": {
+              "value": "shoes",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "shoe"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": "38",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "size 38"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [],
+            "ambiguityReasons": [
+              "The size value is explicit, but its sizing system is not specified."
+            ],
+            "clarificationReasons": [
+              "Please specify the size system (for example EU, UK, or US)."
+            ],
+            "baseIntent": {
+              "raw": "shoe size 38",
+              "normalized": "size shoes",
+              "keywords": [
+                "shoe",
+                "size",
+                "38"
+              ],
+              "productType": "shoes",
+              "category": "shoes"
+            },
+            "expansions": {
+              "arabic": [
+                "حذاء size 38"
+              ],
+              "english": [
+                "shoe size 38",
+                "shoes size 38",
+                "sneakers size 38"
+              ]
+            }
+          }
+        },
+        {
+          "caseId": 40,
+          "query": "مستعمل شنطة fixture",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "مستعمل شنطة fixture",
+            "explicitText": "مستعمل شنطة fixture",
+            "normalizedQuery": "مستعمل شنطه fixture",
+            "productType": {
+              "value": "handbag",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شنطة"
+            },
+            "category": {
+              "value": "bags_accessories",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شنطة"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": "used",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "مستعمل"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [
+              {
+                "field": "condition",
+                "value": "used",
+                "operator": "eq",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "مستعمل"
+              }
+            ],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "مستعمل شنطة fixture",
+              "normalized": "used مستعمل fixture handbag",
+              "keywords": [
+                "مستعمل",
+                "شنطه",
+                "fixture"
+              ],
+              "productType": "handbag",
+              "category": "bags_accessories",
+              "condition": "used"
+            },
+            "expansions": {
+              "arabic": [
+                "مستعمل شنطة fixture",
+                "شنطة مستعمل fixture"
+              ],
+              "english": [
+                "handbag used fixture",
+                "used handbag fixture",
+                "pre-owned handbag fixture",
+                "used bag fixture"
+              ]
+            }
+          }
+        },
+        {
+          "caseId": 41,
+          "query": "مستعمل في جدة",
+          "pass": true,
+          "observedIntent": {
+            "rawQuery": "مستعمل في جدة",
+            "explicitText": "مستعمل في جدة",
+            "normalizedQuery": "مستعمل في جده",
+            "productType": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "category": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "condition": {
+              "value": "used",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "مستعمل"
+            },
+            "city": {
+              "value": "Jeddah",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "جدة"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [
+              {
+                "field": "condition",
+                "value": "used",
+                "operator": "eq",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "مستعمل"
+              },
+              {
+                "field": "city",
+                "value": "Jeddah",
+                "operator": "eq",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "جدة"
+              }
+            ],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "مستعمل في جدة",
+              "normalized": "used مستعمل جده",
+              "keywords": [
+                "مستعمل",
+                "جده"
+              ],
+              "condition": "used"
+            },
+            "expansions": {
+              "arabic": [
+                "مستعمل في جدة",
+                "used في جده",
+                "pre-owned في جده"
+              ],
+              "english": []
+            }
+          }
+        },
+        {
+          "caseId": 58,
+          "query": "شنطة زرقاء أقل من 300 ريال",
+          "pass": false,
+          "observedIntent": {
+            "rawQuery": "شنطة زرقاء أقل من 300 ريال",
+            "explicitText": "شنطة زرقاء أقل من 300 ريال",
+            "normalizedQuery": "شنطه زرقاء اقل من 300 ريال",
+            "productType": {
+              "value": "handbag",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شنطة"
+            },
+            "category": {
+              "value": "bags_accessories",
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "شنطة"
+            },
+            "brand": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "model": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "sku": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "mpn": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "oem": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "gtin14": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "color": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "size": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "material": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "style": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "authenticity": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "budget": {
+              "value": {
+                "min": null,
+                "max": 300,
+                "approximate": null,
+                "currency": "SAR"
+              },
+              "evidence": "USER_EXPLICIT",
+              "sourceText": "اقل من 300"
+            },
+            "condition": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "city": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relation": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "relations": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "automotive": {
+              "value": null,
+              "evidence": "UNKNOWN"
+            },
+            "vehicle": {
+              "make": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "model": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "year": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partName": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "partNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              },
+              "oemNumber": {
+                "value": null,
+                "evidence": "UNKNOWN"
+              }
+            },
+            "hardRequirements": [
+              {
+                "field": "budget.max",
+                "value": 300,
+                "operator": "lt",
+                "evidence": "USER_EXPLICIT",
+                "sourceText": "اقل من 300"
+              }
+            ],
+            "ambiguityReasons": [],
+            "clarificationReasons": [],
+            "baseIntent": {
+              "raw": "شنطة زرقاء أقل من 300 ريال",
+              "normalized": "blue اقل ريال handbag under 300",
+              "keywords": [
+                "شنطه",
+                "زرقاء",
+                "اقل",
+                "300",
+                "ريال"
+              ],
+              "productType": "handbag",
+              "category": "bags_accessories",
+              "color": "blue",
+              "maxPrice": 300,
+              "currency": "SAR"
+            },
+            "expansions": {
+              "arabic": [
+                "شنطة زرقاء أقل من 300 ريال",
+                "blue handbag under 300 ريال",
+                "handbag blue under 300 ريال",
+                "bag blue under 300 ريال",
+                "purse blue under 300 ريال",
+                "handbags blue under 300 ريال"
+              ],
+              "english": []
+            }
+          }
+        }
+      ],
+      "identifierCases": [
+        {
+          "caseId": 1,
+          "expectedIds": [
+            "gtin-exact"
+          ],
+          "observedFirstId": "gtin-exact",
+          "pass": true
+        },
+        {
+          "caseId": 2,
+          "expectedIds": [
+            "brand-model-exact"
+          ],
+          "observedFirstId": "brand-model-exact",
+          "pass": true
+        },
+        {
+          "caseId": 3,
+          "expectedIds": [
+            "sku-scoped-match"
+          ],
+          "observedFirstId": null,
+          "pass": false
+        },
+        {
+          "caseId": 4,
+          "expectedIds": [
+            "mpn-exact"
+          ],
+          "observedFirstId": "mpn-exact",
+          "pass": true
+        },
+        {
+          "caseId": 6,
+          "expectedIds": [
+            "one-char-exact"
+          ],
+          "observedFirstId": "one-char-exact",
+          "pass": true
+        },
+        {
+          "caseId": 14,
+          "expectedIds": [
+            "mixed-brand-model"
+          ],
+          "observedFirstId": "mixed-brand-model",
+          "pass": true
+        },
+        {
+          "caseId": 19,
+          "expectedIds": [
+            "arabic-numeral-iphone15"
+          ],
+          "observedFirstId": null,
+          "pass": false
+        },
+        {
+          "caseId": 20,
+          "expectedIds": [
+            "brand-typo-correction"
+          ],
+          "observedFirstId": "brand-typo-correction",
+          "pass": true
+        }
+      ],
+      "providerErrorNoMatchCases": [
+        {
+          "caseId": 22,
+          "expected": "NO_CONFIDENT_MATCH/no_match",
+          "observed": "NO_CONFIDENT_MATCH/no_match",
+          "pass": true
+        },
+        {
+          "caseId": 36,
+          "expected": "NO_CONFIDENT_MATCH/no_match",
+          "observed": "NO_CONFIDENT_MATCH/no_match",
+          "pass": true
+        },
+        {
+          "caseId": 55,
+          "expected": "NO_CONFIDENT_MATCH/no_match",
+          "observed": "NO_CONFIDENT_MATCH/no_match",
+          "pass": true
+        },
+        {
+          "caseId": 56,
+          "expected": "NO_CONFIDENT_MATCH/no_match",
+          "observed": "NO_CONFIDENT_MATCH/no_match",
+          "pass": true
+        },
+        {
+          "caseId": 58,
+          "expected": "NO_CONFIDENT_MATCH/no_match",
+          "observed": "NO_CONFIDENT_MATCH/no_match",
+          "pass": true
+        },
+        {
+          "caseId": 63,
+          "expected": "PROVIDER_UNAVAILABLE/retrieval_failure",
+          "observed": "PROVIDER_UNAVAILABLE/retrieval_failure",
+          "pass": true
+        }
+      ],
+      "baselineComparison": {
+        "casesCompared": 39,
+        "regressions": 0,
+        "improvements": 21,
+        "unchangedPass": 10,
+        "unchangedFail": 8
+      }
+    }
+  },
+  "caveat": "All data and measurements are controlled fixtures, not real inventory or production quality. The frozen V2 hash attests output bytes, not a historical fixture-corpus hash."
+}

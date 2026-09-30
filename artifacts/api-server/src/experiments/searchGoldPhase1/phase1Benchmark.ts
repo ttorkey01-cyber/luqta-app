@@ -54,6 +54,8 @@ type AdapterDiagnostics = {
   providerErrors: string[];
   partialCoverage: boolean;
   clarificationReasons: string[];
+  identityGroups: Phase1SearchResult["identityGroups"];
+  comparisonEvidence: Phase1SearchResult["comparisonEvidence"];
   candidates: Array<{
     id: string;
     classification: string;
@@ -90,6 +92,7 @@ function classifyPhase1(value: string) {
 
 function interactionState(result: Phase1SearchResult) {
   if (result.state === "PROVIDER_UNAVAILABLE") return "retrieval_failure" as const;
+  if (result.state === "CONFLICTING_EVIDENCE") return "conflicting_evidence" as const;
   if (result.state === "INVALID_QUERY") return "clarification" as const;
   if (
     result.state === "NO_CONFIDENT_MATCH" &&
@@ -221,6 +224,8 @@ export const phase1Adapter: SearchAdapter = async (
     providerErrors: phase1.providerErrors,
     partialCoverage: phase1.partialCoverage,
     clarificationReasons: phase1.clarificationReasons,
+    identityGroups: phase1.identityGroups,
+    comparisonEvidence: phase1.comparisonEvidence,
     candidates: [...candidatesById.values()].map((candidate) => ({
       id: candidate.product.id,
       classification: candidate.classification,
@@ -243,6 +248,11 @@ export const phase1Adapter: SearchAdapter = async (
     products,
     classifications,
     interactionState: state,
+    identityGroups: Object.fromEntries(phase1.identityGroups.map((group) => [
+      group.id,
+      group.variants.flatMap((variant) => variant.offers.map((offer) =>
+        offer.id.slice(offer.id.indexOf(":") + 1))),
+    ])),
     exactMatches: products.filter(
       (product) => classifications[product.id] === "exact",
     ).length,
@@ -555,14 +565,26 @@ function scorecard(
   }
 
   let exactAssertions = 0;
+  let adjudicatedExactAssertions = 0;
+  let unadjudicatedExactAssertions = 0;
   let falseExact = 0;
+  const unadjudicatedExactCases: number[] = [];
   for (const testCase of acceptanceCases) {
     const result = resultOf(caseSnapshots.get(testCase.id)!);
     const goldExact = new Set(goldExactIds(testCase.goldLabels));
     for (const product of result?.products ?? []) {
       if (result?.classifications?.[product.id] !== "exact") continue;
       exactAssertions += 1;
-      if (!goldExact.has(product.id)) falseExact += 1;
+      if (goldExact.size === 0) {
+        // A case testing ranking, freshness or conflicting evidence is not an
+        // independent identity adjudication. Neither a pass nor a false-exact
+        // judgment can be inferred from the absence of an exact gold ID.
+        unadjudicatedExactAssertions += 1;
+        unadjudicatedExactCases.push(testCase.id);
+      } else {
+        adjudicatedExactAssertions += 1;
+        if (!goldExact.has(product.id)) falseExact += 1;
+      }
     }
   }
 
@@ -682,12 +704,22 @@ function scorecard(
         relevanceResultDenominator,
         { operator: "<=", value: 0.2 },
       ),
-      falseExactMatchRate: metric(
-        falseExact,
-        exactAssertions,
-        { operator: "<=", value: 0.005 },
-        "Only explicitly classified exact offers among presented results. This tiny controlled-fixture denominator cannot establish a production false-exact rate.",
-      ),
+      falseExactMatchRate: {
+        ...metric(
+          falseExact,
+          adjudicatedExactAssertions,
+          { operator: "<=", value: 0.005 },
+          "Only independently gold-labeled identity cases are scored. Unannotated exact assertions are reported separately, not assumed false or true. This controlled sample cannot establish a production rate.",
+        ),
+        unadjudicatedExactAssertions,
+        targetStatus: adjudicatedExactAssertions && falseExact / adjudicatedExactAssertions > 0.005
+          ? "NOT_REACHED"
+          : unadjudicatedExactAssertions
+            ? "NOT_ESTABLISHED"
+            : adjudicatedExactAssertions
+              ? "REACHED"
+              : "NOT_SCOREABLE",
+      },
       correctNoMatchRate: noMatchMetric,
       arabicIntentAccuracy: metric(
         arabicRows.filter((row) => row.pass).length,
@@ -736,6 +768,9 @@ function scorecard(
       })),
       exactIdentityCaseCount: exactCases.length,
       exactAssertionsOnDisplayedResults: visibleExactCount,
+      exactAssertionsWithIndependentGold: adjudicatedExactAssertions,
+      unadjudicatedExactAssertions,
+      unadjudicatedExactCases,
       arabicIntentCases: arabicRows,
       identifierCases: identifierRows,
       providerErrorNoMatchCases: noMatchAndFailureRows,

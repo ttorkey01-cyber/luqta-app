@@ -10,7 +10,8 @@ describe("bounded Phase 1 query planner", () => {
     assert.equal(plan[0]?.strategy, "EXACT_ID");
     assert.equal(plan[0]?.query, "٠٩٠٣-abC");
     assert.ok(plan.some((item) => item.query.includes("٠٩٠٣-abC")));
-    assert.ok(plan.length <= 3);
+    assert.equal(plan[0]?.stage, "EXACT");
+    assert.equal(plan.length, 1);
   });
 
   it("preserves slash identifiers, OEM numbers, Arabic digits, and bare model codes", async () => {
@@ -66,12 +67,24 @@ describe("bounded Phase 1 query planner", () => {
     assert.equal(planPhase1Queries(await parsePhase1Intent(naturalLanguage))[0]?.query, naturalLanguage);
   });
 
+  it("uses the original contextual model query at Stage B without unlocking broader stages", async () => {
+    const query = "FixtureBrand Shared Model P-20";
+    const intent = await parsePhase1Intent(query);
+    assert.ok(intent.hardRequirements.some((requirement) => requirement.field === "model"));
+    const plan = planPhase1Queries(intent, "BROAD");
+    assert.equal(plan[0]?.query, "P-20");
+    assert.equal(plan[0]?.stage, "EXACT");
+    assert.equal(plan[1]?.query, query);
+    assert.equal(plan[1]?.stage, "LEXICAL");
+    assert.deepEqual(plan.map((item) => item.stage), ["EXACT", "LEXICAL"]);
+  });
+
   it("returns one primary and only bounded bilingual fallbacks", async () => {
     const intent = await parsePhase1Intent("أبي شنطة جلد");
-    const plan = planPhase1Queries(intent);
+    const plan = planPhase1Queries(intent, "BROAD");
     assert.equal(plan[0]?.role, "PRIMARY");
     assert.ok(plan.slice(1).every((item) => item.role === "FALLBACK"));
-    assert.ok(plan.length >= 2 && plan.length <= 3);
+    assert.ok(plan.length >= 2 && plan.length <= 4);
     assert.equal(new Set(plan.map((item) => item.query.toLocaleLowerCase())).size, plan.length);
     assert.ok(plan.slice(1).some((item) => /[a-z]/iu.test(item.query)));
   });
@@ -100,6 +113,21 @@ describe("bounded Phase 1 query planner", () => {
     const plan = planPhase1Queries(intent);
     assert.equal(plan[0]?.query, "Toyota Camry");
     assert.equal(plan[0]?.strategy, "BRAND_MODEL");
+    assert.equal(plan[0]?.stage, "EXACT");
+  });
+
+  it("only adds later stages when requested and caps the plan at four distinct queries", async () => {
+    const intent = await parsePhase1Intent("أبي حقيبة جلد");
+    const exact = planPhase1Queries(intent);
+    assert.equal(exact.length, 1);
+    assert.deepEqual(exact.map((item) => item.stage), ["EXACT"]);
+
+    const expanded = planPhase1Queries(intent, "BROAD");
+    assert.ok(expanded.length <= 4);
+    assert.deepEqual(expanded.map((item) => item.stage), ["EXACT", ...expanded.slice(1).map((item) => item.stage)]);
+    assert.ok(expanded.slice(1).every((item) => ["LEXICAL", "EXPANSION", "BROAD"].includes(item.stage)));
+    assert.equal(new Set(expanded.map((item) => item.query.toLocaleLowerCase())).size, expanded.length);
+    assert.equal(planPhase1Queries(intent, "LEXICAL").some((item) => item.stage === "EXPANSION"), false);
   });
 
   it("does not expand unresolved Arabic شمعة into one guessed automotive part", async () => {

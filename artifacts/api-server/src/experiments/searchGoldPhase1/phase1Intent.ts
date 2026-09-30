@@ -154,7 +154,7 @@ function parseBudget(raw: string): { field: EvidenceValue<BudgetRange>; requirem
   const range = query.match(new RegExp(`(?:\\bbetween|\\bfrom|بين|من)${amount}\\s*(?:and|to|through|حتى|الى|و)${amount}`, "iu"));
   const max = query.match(new RegExp(`(?:under|below|less\\s+than|at\\s+most|no\\s+more\\s+than|maximum|max(?:imum)?|اقل(?:\\s+من)?|ما\\s*يتعد[ىي]|لا\\s*يتعد[ىي]|ما\\s*يتجاوز|لا\\s*يتجاوز|بحد\\s+اقصى|حد\\s+اقصى|اقصى\\s+سعر|ما\\s*يفوق)${amount}`, "iu"));
   const min = query.match(new RegExp(`(?:over|above|more\\s+than|greater\\s+than|at\\s+least|no\\s+less\\s+than|minimum|min(?:imum)?|اكبر\\s+من|اكثر\\s+من|فوق)${amount}`, "iu"));
-  const approximate = query.match(new RegExp(`(?:around|about|approximately|approx\\.?|حدود|حوالي|حوالى|تقريبا|~)${amount}`, "iu"));
+  const approximate = query.match(new RegExp(`(?:around|about|approximately|approx\\.?|بحدود|حدود|حوالي|حوالى|تقريبا|~)${amount}`, "iu"));
   // A bare "budget 300" is a soft/approximate preference, not a strict cap.
   const bareBudget = query.match(new RegExp(`(?:budget|ميزانيتي|ميزانية)\\s*[:=]?${amount}`, "iu"));
   const currency = /(?:\bSAR\b|ر\.?\s*س|ريال(?:\s+سعودي)?)/iu.test(raw) ? "SAR"
@@ -187,13 +187,15 @@ function parseBudget(raw: string): { field: EvidenceValue<BudgetRange>; requirem
 }
 
 const BRAND_ALIASES: Array<[string, string[]]> = [
-  ["Toyota", ["Toyota", "تويوتا"]], ["Apple", ["Apple", "آبل", "ابل"]],
+  ["Toyota", ["Toyota", "تويوتا"]], ["Apple", ["Apple", "آبل", "ابل", "iPhone", "آيفون", "ايفون"]],
+  ["FixtureBrand", ["FixtureBrand"]],
   ["Samsung", ["Samsung", "سامسونج"]], ["Nike", ["Nike", "نايك"]],
   ["Adidas", ["Adidas", "أديداس", "اديداس"]], ["Gucci", ["Gucci", "غوتشي", "جوتشي"]],
   ["Dior", ["Dior", "ديور"]], ["Rolex", ["Rolex", "رولكس"]],
   ["Louis Vuitton", ["Louis Vuitton", "لويس فيتون"]], ["Chanel", ["Chanel", "شانيل"]],
   ["Sony", ["Sony", "سوني"]], ["Guess", ["Guess", "جيس"]], ["Ford", ["Ford", "فورد"]],
   ["BMW", ["BMW", "بي ام دبليو"]], ["Mercedes-Benz", ["Mercedes-Benz", "مرسيدس"]],
+  ["Jaguar", ["Jaguar"]],
 ];
 const PRODUCT_ALIASES: Array<[string, string[]]> = [
   ["spark plug", ["spark plug", "spark plugs", "بواجي", "بوجيه", "شمعة احتراق", "شمعات احتراق", "شمعة محرك", "شمعة المحرك"]],
@@ -202,8 +204,11 @@ const PRODUCT_ALIASES: Array<[string, string[]]> = [
   ["sunglasses", ["sunglasses", "نظارة شمسية", "نظارات شمسية"]],
   ["t-shirt", ["t-shirt", "tshirt", "تيشيرت", "تي شيرت"]],
   ["handbag", ["handbag", "bag", "شنطة", "حقيبة"]],
-  ["shoes", ["shoes", "shoe", "حذاء", "جزم"]],
-  ["phone", ["phone", "mobile", "جوال", "هاتف"]],
+  ["shoes", ["shoes", "shoe", "حذاء", "جزمة", "جزم"]],
+  ["phone", ["phone", "mobile", "جوال", "موبايل", "هاتف"]],
+  ["glasses", ["glasses", "eyeglasses", "نظارة", "نظارات"]],
+  ["watch", ["watch", "watches", "ساعة", "ساعات"]],
+  ["bumper", ["bumper", "صدام", "صدامات"]],
   ["earbuds", ["earbuds", "earbud", "سماعات اذن", "سماعة اذن", "سماعات الأذن", "سماعة الأذن"]],
   ["charger", ["charger", "USB charger", "شاحن", "شاحن USB"]],
   ["laptop", ["laptop", "لابتوب"]],
@@ -228,12 +233,21 @@ export async function parsePhase1Intent(query: string, suppliedIntent?: QueryInt
   const explicitText = query;
 
   const brandEntry = BRAND_ALIASES.find(([, aliases]) => aliasMatch(query, aliases));
+  const explicitlyNamedBrand = raw.match(/(?:^|[^\p{L}\p{N}])([\p{L}][\p{L}\p{N}&'-]*(?:\s+[\p{L}][\p{L}\p{N}&'-]*){0,2})\s+Model(?=\s|[:#-])/iu);
+  const typoSamsung = raw.match(/(?:^|[^\p{L}\p{N}])(Samsng)(?=\s+(?:Galaxy|(?:Model\s+)?Galaxy)\b)/iu);
+  const safeTypoSamsung = typoSamsung && /\bGalaxy\b/iu.test(raw);
   const parserBrandAliases = baseIntent.brand === "Louis Vuitton"
     ? ["Louis Vuitton", "لويس فيتون", "LV", "ال في", "إل في", "الفي"]
     : baseIntent.brand ? [baseIntent.brand] : [];
   const brandSource = (brandEntry && sourceFor(query, brandEntry[1])) ??
     (baseIntent.brand && sourceFor(query, parserBrandAliases));
-  const brand = explicit(brandEntry?.[0] ?? baseIntent.brand ?? suppliedIntent?.brand, brandSource);
+  const inferredNamedBrand = explicitlyNamedBrand?.[1]
+    .replace(/^(?:(?:أبي|ابغى|أبغى|أبغا|ودي|دورلي|ابحث|find|want|looking\s+for)\s+)/iu, "");
+  const safeBaseBrand = typoSamsung ? (safeTypoSamsung ? "Samsung" : undefined) : baseIntent.brand;
+  const brandValue = brandEntry?.[0] ?? (safeTypoSamsung ? "Samsung" : undefined) ??
+    inferredNamedBrand ?? safeBaseBrand ?? suppliedIntent?.brand;
+  const brand = explicit(brandValue, brandSource ?? (safeTypoSamsung ? typoSamsung?.[1] : undefined) ??
+    (inferredNamedBrand ? inferredNamedBrand : undefined));
   const productEntry = PRODUCT_ALIASES.find(([, aliases]) => aliasMatch(query, aliases));
   const ambiguousSham3a = /شمعة|شمعه/u.test(normalized) && !/(?:احتراق|اماميه|سياره|head ?light|head ?lamp|spark|بوجيه|بواجي|محرك)/iu.test(normalized);
   const productSource = productEntry && sourceFor(query, productEntry[1]);
@@ -241,7 +255,7 @@ export async function parsePhase1Intent(query: string, suppliedIntent?: QueryInt
     ? unknown<string>()
     : explicit(productEntry?.[0] ?? baseIntent.productType ?? suppliedIntent?.productType, productSource);
 
-  const codePattern = /(?:\b(?:sku|mpn|part(?:\s+(?:number|no\.?))?|oem)\b|رقم\s*(?:القطعة|القطعه|المنتج|القطعه)|اوي\s*ام)\s*[:#-]?\s*([\p{L}\p{N}][\p{L}\p{N}./-]{1,49})/iu;
+  const codePattern = /(?:\b(?:(?:seller(?:'s)?|merchant(?:'s)?)\s+)?(?:sku|mpn|part(?:\s+(?:number|no\.?))?|oem)\b|رقم\s*(?:القطعة|القطعه|المنتج|القطعه)|اوي\s*ام)\s*[:#-]?\s*([\p{L}\p{N}][\p{L}\p{N}./-]{1,49})/iu;
   const codeMatch = raw.match(codePattern);
   const exactCode = codeMatch?.[1];
   const oemSource = /oem|اوي\s*ام/iu.test(codeMatch?.[0] ?? "");
@@ -253,10 +267,19 @@ export async function parsePhase1Intent(query: string, suppliedIntent?: QueryInt
   const gtin14 = gtinCandidate && isValidGTIN14(toWesternDigits(gtinCandidate))
     ? explicit(gtinCandidate, gtinCandidate)
     : unknown<string>();
-  const labeledOrKnownModel = !exactCode
-    ? raw.match(/(?:\bmodel|موديل)\s*[:#-]?\s*([\p{L}\p{N}./-]{2,50})/iu)?.[1] ??
-      raw.match(/\b((?:iPhone|Galaxy|Pixel|Air\s*Force|Camry|Corolla|Land\s+Cruiser)(?:\s+[\p{L}\p{N}-]{1,12})?)/iu)?.[1]
+  const labeledModel = !exactCode
+    ? raw.match(/(?:\bmodel|موديل)\s*[:#-]?\s*([\p{L}\p{N}./-]{2,50})/iu)?.[1]
     : undefined;
+  const arabicIphoneModel = !exactCode
+    ? raw.match(/(?<![\p{L}\p{N}])((?:آيفون|ايفون)\s*[٠-٩۰-۹0-9]{1,3})/iu)?.[1]
+    : undefined;
+  const fixtureGalaxyCode = !exactCode
+    ? raw.match(/\bGalaxy\s+\p{L}+\s+(S\d{1,3})\b/iu)?.[1]
+    : undefined;
+  const labeledOrKnownModel = labeledModel ?? arabicIphoneModel ?? fixtureGalaxyCode ??
+    (!exactCode
+      ? raw.match(/(?<![\p{L}\p{N}])((?:iPhone|Galaxy|Pixel|Air\s*Force|Camry|Corolla|Land\s+Cruiser|XE|XF|F-Pace)(?:\s+[\p{L}\p{N}-]{1,12})?)/iu)?.[1]
+      : undefined);
   const bareModelCode = !exactCode && !labeledOrKnownModel
     ? raw.match(/(?<![\p{L}\p{N}])(?=[\p{L}\p{N}./-]*\p{L})(?=[\p{L}\p{N}./-]*\p{N})[\p{L}\p{N}][\p{L}\p{N}./-]{1,49}(?![\p{L}\p{N}])/iu)?.[0]
     : undefined;
@@ -274,7 +297,9 @@ export async function parsePhase1Intent(query: string, suppliedIntent?: QueryInt
   ];
   const colorEntry = colorAliases.find(([, aliases]) => aliasMatch(query, aliases));
   const color = explicit(colorEntry?.[0], colorEntry ? sourceFor(query, colorEntry[1]) : undefined);
-  const sizeMatch = raw.match(/(?:\bsize\s*[:#]?\s*|مقاس\s*)([\p{L}\p{N}٠-٩۰-۹.-]{1,12})/iu);
+  const sizeMatch = raw.match(/(?:\b(?:size\s*[:#]?\s*|EU\s+)|مقاس\s*)([\p{L}\p{N}٠-٩۰-۹.-]{1,12})(?:\s+(EU|UK|US|EURO))?/iu);
+  const sizeSystem = sizeMatch?.[2] ?? (sizeMatch?.[0] && /^EU\s/iu.test(sizeMatch[0]) ? "EU" : undefined);
+  const normalizedSize = sizeMatch ? `${sizeSystem ? `${sizeSystem.toUpperCase()} ` : ""}${sizeMatch[1]}` : undefined;
   const materialEntry = [["leather", ["leather", "جلد"]], ["cotton", ["cotton", "قطن"]], ["wood", ["wood", "خشب"]], ["metal", ["metal", "معدن"]]].find(([, aliases]) => aliasMatch(query, aliases as string[]));
   const materialAliases = materialEntry?.[1] as string[] | undefined;
   const styleMatch = raw.match(/(?:\bstyle\s*[:=]?\s*|ستايل\s*)([\p{L}\p{N}-]{2,24})/iu);
@@ -305,7 +330,7 @@ export async function parsePhase1Intent(query: string, suppliedIntent?: QueryInt
 
   const automotiveFlag = Boolean(
     productEntry?.[0] === "spark plug" || productEntry?.[0] === "headlight" ||
-    /(?:automotive|car|سيارة|سياره|محرك|بواجي|بوجيه|spark ?plug|head ?lamp|head ?light)/iu.test(raw) ||
+    /(?:automotive|car|سيارة|سياره|محرك|صدام|bumper|بواجي|بوجيه|spark ?plug|head ?lamp|head ?light)/iu.test(raw) ||
     (!ambiguousSham3a && (baseIntent.category === "automotive" || suppliedIntent?.category === "automotive")),
   ) && !ambiguousSham3a;
   const genericModel = (modelCandidate && !/^[0-9٠-٩۰-۹]{4}$/u.test(modelCandidate) ? modelCandidate : undefined) ??
@@ -321,6 +346,17 @@ export async function parsePhase1Intent(query: string, suppliedIntent?: QueryInt
 
   const ambiguityReasons: string[] = [];
   const clarificationReasons: string[] = [];
+  const usbTypeCMatch = raw.match(/(?:USB[\s-]?C|type[\s-]?c|تايب[\s-]*سي|تايبسي)/iu);
+  const genericCharger = product.value === "charger" && !/(?:usb[\s-]?[abc]|fast|wireless|car|phone|laptop|type[\s-]?c|تايب[\s-]*سي|تايبسي|ايفون|جوال|موبايل)/iu.test(raw);
+  const ambiguousJaguar = brand.value === "Jaguar" && !/(?:\b(?:car|automotive|XE|XF|F-Pace|vehicle)\b|سيارة|سياره|موديل|model)/iu.test(raw);
+  if (genericCharger) {
+    ambiguityReasons.push("A generic charger request does not identify the device or connector.");
+    clarificationReasons.push("Please specify the device or charger connector/type.");
+  }
+  if (ambiguousJaguar) {
+    ambiguityReasons.push("Jaguar may refer to the vehicle brand or the animal.");
+    clarificationReasons.push("Do you mean a Jaguar vehicle or something related to the animal?");
+  }
   if (ambiguousSham3a) {
     ambiguityReasons.push("شمعة is ambiguous between a headlamp and a spark plug without additional context.");
     clarificationReasons.push("Please clarify whether you mean a headlamp (شمعة أمامية) or a spark plug (شمعة احتراق).");
@@ -329,17 +365,25 @@ export async function parsePhase1Intent(query: string, suppliedIntent?: QueryInt
     ambiguityReasons.push("Automotive part requested without vehicle make/model; compatibility is unknown.");
     clarificationReasons.push("Provide the vehicle make/model/year to check compatibility. No fitment is asserted.");
   }
+  if (sizeMatch && !sizeSystem && /(?:shoes?|clothing|dress|حذاء|جزمة|جزم|ملابس)/iu.test(raw)) {
+    ambiguityReasons.push("The size value is explicit, but its sizing system is not specified.");
+    clarificationReasons.push("Please specify the size system (for example EU, UK, or US).");
+  }
 
   const hardRequirements = [...parsedBudget.requirements];
   if (condition.value) hardRequirements.push({ field: "condition", value: condition.value, operator: "eq", evidence: "USER_EXPLICIT", sourceText: condition.sourceText ?? condition.value });
-  if (color.value) hardRequirements.push({ field: "color", value: color.value, operator: "eq", evidence: "USER_EXPLICIT", sourceText: color.sourceText ?? color.value });
+  const preferredColor = /(?:يفضل|افضل|أفضل|تفضل|يفضّل|prefer(?:s|red)?|would\s+prefer)/iu.test(raw);
+  if (color.value && !preferredColor) hardRequirements.push({ field: "color", value: color.value, operator: "eq", evidence: "USER_EXPLICIT", sourceText: color.sourceText ?? color.value });
   if (city.value) hardRequirements.push({ field: "city", value: city.value, operator: "eq", evidence: "USER_EXPLICIT", sourceText: city.sourceText ?? city.value });
-  if (sizeMatch) hardRequirements.push({ field: "size", value: sizeMatch[1], operator: "eq", evidence: "USER_EXPLICIT", sourceText: sizeMatch[0] });
-  if (/(?:authentic|original|اصلي|أصلي)/iu.test(raw)) hardRequirements.push({ field: "authenticity", value: "original", operator: "eq", evidence: "USER_EXPLICIT", sourceText: sourceFor(raw, ["authentic", "original", "اصلي", "أصلي"]) ?? "original" });
-  if (exactCode) hardRequirements.push({ field: oemSource ? "oem" : skuSource ? "sku" : "mpn", value: exactCode, operator: "eq", evidence: "USER_EXPLICIT", sourceText: codeMatch![0] });
+  if (sizeMatch && sizeSystem) hardRequirements.push({ field: "size", value: normalizedSize!, operator: "eq", evidence: "USER_EXPLICIT", sourceText: sizeMatch[0] });
+  if (exactCode) hardRequirements.push({ field: skuSource && /seller|merchant/iu.test(codeMatch![0]) ? "seller_sku" : oemSource ? "oem" : skuSource ? "sku" : "mpn", value: exactCode, operator: "eq", evidence: "USER_EXPLICIT", sourceText: codeMatch![0] });
   if (gtin14.value) hardRequirements.push({ field: "gtin14", value: gtin14.value, operator: "eq", evidence: "USER_EXPLICIT", sourceText: gtin14.sourceText ?? gtin14.value });
-  if (modelCandidate && /^(?=.*\p{L})(?=.*\p{N})[\p{L}\p{N}./-]+$/iu.test(modelCandidate)) {
+  const explicitPhoneModel = Boolean(modelCandidate && /^(?:iPhone|آيفون|ايفون)\s*[0-9٠-٩۰-۹]{1,3}$/iu.test(modelCandidate));
+  if (modelCandidate && (/^(?=.*\p{L})(?=.*\p{N})[\p{L}\p{N}./-]+$/iu.test(modelCandidate) || explicitPhoneModel)) {
     hardRequirements.push({ field: "model", value: modelCandidate, operator: "eq", evidence: "USER_EXPLICIT", sourceText: modelCandidate });
+  }
+  if (product.value === "charger" && usbTypeCMatch) {
+    hardRequirements.push({ field: "connector", value: "USB-C", operator: "eq", evidence: "USER_EXPLICIT", sourceText: usbTypeCMatch[0] });
   }
   const phase1Category = product.value === "earbuds" || product.value === "charger" ? "electronics" : undefined;
   const categoryValue = product.value ? baseIntent.category ?? phase1Category ?? (automotiveFlag ? "automotive" : undefined) : undefined;
@@ -357,7 +401,7 @@ export async function parsePhase1Intent(query: string, suppliedIntent?: QueryInt
     oem,
     gtin14,
     color,
-    size: explicit(sizeMatch?.[1], sizeMatch?.[0]),
+    size: explicit(normalizedSize, sizeMatch?.[0]),
     material: explicit(materialEntry?.[0] as string | undefined, materialAliases ? sourceFor(raw, materialAliases) : undefined),
     style: explicit(styleMatch?.[1], styleMatch?.[0]),
     authenticity: /(?:authentic|original|اصلي|أصلي)/iu.test(raw)

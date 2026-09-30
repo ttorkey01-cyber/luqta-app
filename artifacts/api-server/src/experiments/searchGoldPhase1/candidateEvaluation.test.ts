@@ -181,10 +181,11 @@ describe("isolated Phase 1 candidate evaluation", () => {
     });
     const result = evaluatePhase1Candidates(intent, [matchingModel, wrongBrand, nearModel]);
     assert.equal(result.qualifying[0]?.product.id, "matching-model");
-    assert.equal(result.qualifying[0]?.classification, "PROBABLE_EXACT");
+    assert.equal(result.qualifying[0]?.classification, "EXACT");
     assert.equal(result.qualifying[0]?.constraints.model.status, "verified_pass");
     assert.equal(result.rejected.find((candidate) => candidate.product.id === "wrong-brand")?.constraints.brand.status, "verified_fail");
-    assert.equal(result.rejected.find((candidate) => candidate.product.id === "near-model")?.constraints.model.status, "verified_fail");
+    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "near-model")?.constraints.model.status, "verified_fail");
+    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "near-model")?.classification, "CLOSE_ALTERNATIVE");
   });
 
   it("rejects product-type conflicts even when the broad category matches", async () => {
@@ -279,6 +280,238 @@ describe("isolated Phase 1 candidate evaluation", () => {
     });
     const skuResult = evaluatePhase1Candidates(skuIntent, [sellerSku]);
     assert.equal(skuResult.qualifying[0]?.classification, "PROBABLE_EXACT");
+  });
+
+  it("uses bounded source-title brand plus an exact bounded model without requiring product-type metadata", async () => {
+    const intent = await parsePhase1Intent("FixtureBrand Model Q-101");
+    const matches = product("model-no-type", {
+      title: "FixtureBrand Q-101 limited edition",
+      brand: null,
+      productType: null,
+      category: null,
+    });
+    const conflict = product("model-conflict", {
+      title: "FixtureBrand Q-100",
+      brand: null,
+      productType: null,
+      category: null,
+    });
+    const result = evaluatePhase1Candidates(intent, [matches, conflict]);
+    assert.equal(result.qualifying[0]?.product.id, "model-no-type");
+    assert.equal(result.qualifying[0]?.classification, "EXACT");
+    assert.equal(result.qualifying[0]?.constraints.brand.status, "verified_pass");
+    assert.equal(result.qualifying[0]?.constraints.model.status, "verified_pass");
+    assert.equal(result.rejected.find((candidate) => candidate.product.id === "model-conflict")?.constraints.model.status, "verified_fail");
+  });
+
+  it("does not claim an exact offer identity from brand and model alone for current/stale/offer requests", async () => {
+    const intent = await parsePhase1Intent("FixtureBrand current offer P-51");
+    const candidate = product("current-offer", {
+      title: "FixtureBrand current offer P-51",
+      availability: "in_stock",
+    });
+    const result = evaluatePhase1Candidates(intent, [candidate]);
+    assert.equal(result.qualifying[0]?.product.id, "current-offer");
+    assert.equal(result.qualifying[0]?.classification, "PROBABLE_EXACT");
+    assert.equal(result.qualifying[0]?.constraints.model.status, "verified_pass");
+  });
+
+  it("displays a relevant unknown-model result for an explicit similar request without qualifying it", async () => {
+    const intent = await parsePhase1Intent("similar alternative to FixtureBrand Camera M10");
+    const candidate = product("similar-camera", {
+      title: "FixtureBrand Camera M11",
+      productType: "camera",
+    });
+    const result = evaluatePhase1Candidates(intent, [candidate]);
+    assert.equal(result.qualifying.length, 0);
+    assert.equal(result.alternatives[0]?.classification, "SIMILAR");
+    assert.equal(result.alternatives[0]?.constraints.model.status, "unknown");
+    assert.ok(result.alternatives[0]?.evidence.some((item) => /model is unverified/u.test(item)));
+  });
+
+  it("does not let explicit similar intent waive another failed hard constraint", async () => {
+    const intent = await parsePhase1Intent("similar alternative to FixtureBrand Camera M10 red");
+    const candidate = product("similar-camera-wrong-color", {
+      title: "FixtureBrand Camera M11",
+      productType: "camera",
+      color: "black",
+    });
+    const result = evaluatePhase1Candidates(intent, [candidate]);
+    assert.equal(result.alternatives.length, 0);
+    assert.equal(result.rejected[0]?.constraints.color.status, "verified_fail");
+  });
+
+  it("does not infer exact identity from category/synonym relevance or an unbounded model token", async () => {
+    const intent = await parsePhase1Intent("FixtureBrand Q-101 phone");
+    const categoryOnly = product("category-only", {
+      title: "FixtureBrand phone Q-101 Pro",
+      brand: "FixtureBrand",
+      category: "electronics",
+      productType: "phone",
+    });
+    const result = evaluatePhase1Candidates(intent, [categoryOnly]);
+    assert.equal(result.qualifying.length, 0);
+    assert.notEqual(result.alternatives[0]?.classification, "EXACT");
+    assert.notEqual(result.alternatives[0]?.constraints.model.status, "verified_pass");
+  });
+
+  it("labels a verified near-model conflict as CLOSE_ALTERNATIVE without qualifying or hiding its failed model constraint", async () => {
+    const intent = await parsePhase1Intent("same FixtureBrand Model Q-100");
+    const nearModel = product("case53-near-model", {
+      title: "FixtureBrand Model Q-101",
+      brand: "FixtureBrand",
+      productType: null,
+      category: null,
+    });
+    const result = evaluatePhase1Candidates(intent, [nearModel]);
+    assert.equal(result.qualifying.length, 0);
+    assert.equal(result.alternatives[0]?.classification, "CLOSE_ALTERNATIVE");
+    assert.equal(result.alternatives[0]?.constraints.model.status, "verified_fail");
+  });
+
+  it("does not allow a near-model alternative to waive a conflicting explicit color", async () => {
+    const intent = await parsePhase1Intent("black same FixtureBrand Model Q-100");
+    const nearModelWrongColor = product("near-model-wrong-color", {
+      title: "FixtureBrand Model Q-101",
+      brand: "FixtureBrand",
+      color: "white",
+    });
+    const result = evaluatePhase1Candidates(intent, [nearModelWrongColor]);
+    assert.equal(result.alternatives.length, 0);
+    assert.equal(result.rejected[0]?.constraints.model.status, "verified_fail");
+    assert.equal(result.rejected[0]?.constraints.color.status, "verified_fail");
+  });
+
+  it("verifies a title-labeled EU size only for the matching number and never guesses a size system", async () => {
+    const euIntent = await parsePhase1Intent("حذاء مقاس 38 EU");
+    const result = evaluatePhase1Candidates(euIntent, [
+      product("eu-38-title", {
+        title: "running shoe size 38 EU",
+        category: "shoes",
+        productType: "shoe",
+      }),
+      product("eu-39-title", {
+        title: "running shoe size 39 EU",
+        category: "shoes",
+        productType: "shoe",
+      }),
+      product("unlabeled-38", {
+        title: "running shoe 38",
+        category: "shoes",
+        productType: "shoe",
+      }),
+    ]);
+    assert.equal(result.alternatives[0]?.product.id, "eu-38-title");
+    assert.equal(result.alternatives[0]?.constraints.size.status, "verified_pass");
+    assert.equal(result.rejected.find((candidate) => candidate.product.id === "eu-39-title")?.constraints.size.status, "verified_fail");
+    assert.equal(result.rejected.find((candidate) => candidate.product.id === "unlabeled-38")?.constraints.size.status, "unknown");
+  });
+
+  it("rejects a watch accessory as irrelevant to an explicit watch identity request", async () => {
+    const intent = await parsePhase1Intent("watch");
+    const result = evaluatePhase1Candidates(intent, [
+      product("watch-strap", {
+        title: "popular unrelated smartwatch strap",
+        productType: "accessory",
+      }),
+    ]);
+    assert.equal(result.alternatives.length, 0);
+    assert.equal(result.rejected[0]?.classification, "IRRELEVANT");
+  });
+
+  it("keeps headphones-versus-earbuds as a related alternative, not an exact identity", async () => {
+    const intent = await parsePhase1Intent("FixtureBrand headphones H-1");
+    const candidate = product("earbuds-near-type", {
+      title: "FixtureBrand earbuds H-1",
+      brand: "FixtureBrand",
+      productType: "earbuds",
+      category: "electronics",
+    });
+    const result = evaluatePhase1Candidates(intent, [candidate]);
+    assert.equal(result.qualifying.length, 0);
+    assert.equal(result.alternatives[0]?.classification, "CLOSE_ALTERNATIVE");
+    assert.equal(result.alternatives[0]?.constraints.product_type.status, "verified_fail");
+    assert.equal(result.alternatives[0]?.constraints.model.status, "verified_pass");
+  });
+
+  it("does not treat a labeled SKU title as verified without seller corroboration", async () => {
+    const intent = await parsePhase1Intent("handbag SKU: ABC-123");
+    const noSeller = product("sku-no-seller", {
+      title: "Handbag SKU: ABC-123",
+      merchant: null,
+    });
+    const result = evaluatePhase1Candidates(intent, [noSeller]);
+    assert.equal(result.qualifying.length, 0);
+    assert.equal(result.rejected[0]?.constraints.sku.status, "unknown");
+    assert.match(result.rejected[0]?.diagnostics.join(" ") ?? "", /seller and source identity/u);
+  });
+
+  it("keeps the same seller-scoped SKU as separate offers across different merchants", async () => {
+    const intent = await parsePhase1Intent("Fixture Seller SKU FS-4401");
+    const result = evaluatePhase1Candidates(intent, [
+      product("seller-a-sku", {
+        title: "Fixture Seller SKU FS-4401",
+        merchant: "Fixture Seller A",
+      }),
+      product("seller-b-sku", {
+        title: "Fixture Seller SKU FS-4401",
+        merchant: "Fixture Seller B",
+      }),
+    ]);
+    const offers = result.identityGroups?.flatMap((group) => group.variants.flatMap((variant) => variant.offers)) ?? [];
+    assert.equal(offers.length, 2);
+    assert.deepEqual(offers.map((offer) => offer.id), ["provider-a:seller-a-sku", "provider-a:seller-b-sku"]);
+    assert.deepEqual(offers.map((offer) => offer.merchant), ["Fixture Seller A", "Fixture Seller B"]);
+    assert.ok(result.qualifying.every((candidate) => candidate.classification !== "EXACT"));
+  });
+
+  it("retains separate merchant offers while grouping product variants and preserving strategy metadata", async () => {
+    const intent = await parsePhase1Intent("USB-C charger");
+    const first = product("offer-one", {
+      title: "USB-C charger",
+      merchant: "Shop One",
+    });
+    const second = product("offer-two", {
+      title: "USB-C charger",
+      merchant: "Shop Two",
+    });
+    const result = evaluatePhase1Candidates(intent, [first, second], {
+      "offer-one": "A",
+      "offer-two": "B",
+    });
+    assert.equal(result.alternatives.length, 2);
+    assert.equal(result.alternatives[0]?.strategy, "A");
+    assert.equal(result.alternatives[1]?.strategy, "B");
+    const offers = result.identityGroups?.flatMap((group) => group.variants.flatMap((variant) => variant.offers)) ?? [];
+    assert.deepEqual(offers.map((offer) => offer.id), ["provider-a:offer-one", "provider-a:offer-two"]);
+    assert.deepEqual(offers.map((offer) => offer.merchant), ["Shop One", "Shop Two"]);
+  });
+
+  it("keeps storage and structured size variants separate in identity grouping", async () => {
+    const storageA = product("storage-128", { title: "Fixture phone 128GB" });
+    const storageB = product("storage-256", { title: "Fixture phone 256GB" });
+    const sizeA = product("shoe-size-42", { title: "Fixture running shoe" });
+    const sizeB = product("shoe-size-43", { title: "Fixture running shoe" });
+    (sizeA.canonical as NormalizedProduct["canonical"] & { size?: string }).size = "42";
+    (sizeB.canonical as NormalizedProduct["canonical"] & { size?: string }).size = "43";
+    const intent = await parsePhase1Intent("fixture");
+    const result = evaluatePhase1Candidates(intent, [storageA, storageB, sizeA, sizeB]);
+    const phoneGroup = result.identityGroups?.find((group) => group.id.includes("fixture phone"));
+    const shoeGroup = result.identityGroups?.find((group) => group.id.includes("fixture running shoe"));
+    assert.equal(phoneGroup?.variants.length, 2);
+    assert.equal(shoeGroup?.variants.length, 2);
+  });
+
+  it("never presents a stale out-of-stock match as purchasable without a current offer", async () => {
+    const intent = await parsePhase1Intent("FixtureBrand stale current offer P-51");
+    const stale = product("stale-only", {
+      title: "FixtureBrand current offer P-51",
+      availability: "out_of_stock",
+    });
+    const result = evaluatePhase1Candidates(intent, [stale]);
+    assert.equal(result.qualifying.length, 0);
+    assert.equal(result.alternatives.length, 0);
+    assert.match(result.rejected[0]?.diagnostics.join(" ") ?? "", /out of stock/u);
   });
 
   it("does not assert authenticity or automotive fitment without authoritative structured evidence", async () => {
@@ -377,6 +610,58 @@ describe("isolated Phase 1 candidate evaluation", () => {
     assert.equal(result.rejected.find((candidate) => candidate.product.id === "color-unknown")?.constraints.color.status, "unknown");
   });
 
+  it("ranks a soft preferred color when verified without rejecting other or unknown colors", async () => {
+    const intent = await parsePhase1Intent("أبي شنطة يفضل أسود");
+    assert.equal(intent.hardRequirements.some((requirement) => requirement.field === "color"), false);
+    const result = evaluatePhase1Candidates(intent, [
+      product("preferred-black", {
+        title: "Generic handbag",
+        category: "bags_accessories",
+        productType: "handbag",
+        color: "black",
+      }),
+      product("other-color", {
+        title: "Generic handbag",
+        category: "bags_accessories",
+        productType: "handbag",
+        color: "blue",
+      }),
+      product("unknown-color", {
+        title: "Generic handbag",
+        category: "bags_accessories",
+        productType: "handbag",
+        color: null,
+      }),
+    ]);
+    assert.equal(result.alternatives[0]?.product.id, "preferred-black");
+    assert.ok(result.alternatives.some((candidate) => candidate.product.id === "other-color"));
+    assert.ok(result.alternatives.some((candidate) => candidate.product.id === "unknown-color"));
+    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "other-color")?.constraints.color, undefined);
+    assert.equal(result.rejected.length, 0);
+  });
+
+  it("keeps بس أسود as a hard color constraint", async () => {
+    const intent = await parsePhase1Intent("أبي شنطة بس أسود");
+    assert.equal(intent.hardRequirements.some((requirement) => requirement.field === "color"), true);
+    const result = evaluatePhase1Candidates(intent, [
+      product("strict-black", {
+        title: "Generic handbag",
+        category: "bags_accessories",
+        productType: "handbag",
+        color: "black",
+      }),
+      product("strict-blue", {
+        title: "Generic handbag",
+        category: "bags_accessories",
+        productType: "handbag",
+        color: "blue",
+      }),
+    ]);
+    assert.equal(result.alternatives[0]?.product.id, "strict-black");
+    assert.equal(result.alternatives[0]?.constraints.color.status, "verified_pass");
+    assert.equal(result.rejected.find((candidate) => candidate.product.id === "strict-blue")?.constraints.color.status, "verified_fail");
+  });
+
   it("ranks attribute-only used-in-Jeddah candidates from seller locality, not delivery text", async () => {
     const intent = await parsePhase1Intent("مستعمل في جدة");
     const result = evaluatePhase1Candidates(intent, [
@@ -398,7 +683,7 @@ describe("isolated Phase 1 candidate evaluation", () => {
     assert.equal(result.rejected.find((candidate) => candidate.product.id === "unknown-condition-city")?.constraints.condition.status, "unknown");
   });
 
-  it("keeps an available current offer and moves stale out-of-stock copies to diagnostics", async () => {
+  it("recovers the exact available current offer and moves stale out-of-stock copies to diagnostics", async () => {
     const intent = await parsePhase1Intent("FixtureBrand stale current offer P-51");
     const result = evaluatePhase1Candidates(intent, [
       product("stale-cheaper-offer", {
@@ -412,9 +697,9 @@ describe("isolated Phase 1 candidate evaluation", () => {
         availability: "in_stock",
       }),
     ]);
-    assert.ok(result.alternatives.some((candidate) => candidate.product.id === "current-available-offer"));
-    assert.equal(result.qualifying.length, 0, "unverified title-only model identity must not pass the hard gate");
-    assert.equal(result.alternatives.find((candidate) => candidate.product.id === "current-available-offer")?.constraints.model.status, "unknown");
+    assert.equal(result.qualifying[0]?.product.id, "current-available-offer");
+    assert.equal(result.qualifying[0]?.classification, "PROBABLE_EXACT");
+    assert.equal(result.qualifying[0]?.constraints.model.status, "verified_pass");
     assert.equal(result.alternatives.some((candidate) => candidate.product.id === "stale-cheaper-offer"), false);
     assert.match(
       result.rejected.find((candidate) => candidate.product.id === "stale-cheaper-offer")?.diagnostics.join(" ") ?? "",

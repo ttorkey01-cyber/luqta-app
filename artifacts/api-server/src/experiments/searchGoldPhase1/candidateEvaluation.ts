@@ -38,12 +38,36 @@ export type Phase1CandidateEvaluation = {
   alternatives: EvaluatedPhase1Candidate[];
   /** Hard-constraint failures and candidates that are not meaningfully relevant. */
   rejected: RejectedPhase1Candidate[];
+  /** Product/variant grouping is descriptive only; every merchant offer remains distinct. */
+  identityGroups?: CandidateIdentityGroup[];
+};
+
+export type CandidateIdentityOffer = {
+  id: string;
+  merchant: string | null;
+  productUrl: string | null;
+  affiliateUrl: string | null;
+};
+
+export type CandidateIdentityVariant = {
+  id: string;
+  offers: CandidateIdentityOffer[];
+};
+
+export type CandidateIdentityGroup = {
+  id: string;
+  variants: CandidateIdentityVariant[];
 };
 
 type StrategyLookup = Record<string, string> | Map<string, string>;
 
 const isExplicit = (field: Phase1Intent["brand"]) =>
   field.value !== null && field.evidence === "USER_EXPLICIT";
+
+const isHardRequirement = (intent: Phase1Intent, field: string) =>
+  intent.hardRequirements.some((requirement) =>
+    requirement.field.toLocaleLowerCase() === field.toLocaleLowerCase(),
+  );
 
 const normalized = (value: string) =>
   value
@@ -166,6 +190,11 @@ function queryCategory(intent: Phase1Intent) {
 }
 
 const PRODUCT_KINDS: Record<string, string[]> = {
+  watch_accessory: [
+    "watch strap", "watch band", "smartwatch strap", "smartwatch band",
+    "strap for watch", "band for watch", "watch case", "watch accessories",
+  ],
+  watch: ["watch", "watches", "ساعة", "ساعات"],
   headlight: ["headlight", "headlamp", "head light", "head lamp", "شمعة أمامية", "شمعة امامية"],
   spark_plug: ["spark plug", "spark plugs", "بواجي", "بوجيه", "شمعة احتراق", "شمعة المحرك"],
   phone_case: [
@@ -199,6 +228,20 @@ function kindFromText(value: string | null | undefined) {
     })) return kind;
   }
   return null;
+}
+
+function audioIdentityType(value: string | null | undefined) {
+  const text = normalized(value ?? "");
+  if (/(?:^| )(?:earbud|earbuds)(?:$| )/u.test(text)) return "earbuds";
+  if (/(?:^| )(?:headphone|headphones|headset)(?:$| )/u.test(text)) return "headphones";
+  return null;
+}
+
+function relatedAudioTypeMismatch(intent: Phase1Intent, product: NormalizedProduct) {
+  const requested = audioIdentityType(intent.productType.value ?? intent.explicitText);
+  const structuredType = product.canonical.productType ?? product.productType ?? null;
+  const candidate = audioIdentityType(structuredType ?? product.canonical.title);
+  return Boolean(requested && candidate && requested !== candidate);
 }
 
 function requestedKind(intent: Phase1Intent) {
@@ -348,6 +391,94 @@ function modelAppearsBounded(intentModel: string, product: NormalizedProduct) {
   return !MODEL_SUFFIXES.has(suffix);
 }
 
+type SizeEvidence = { value: string; system: string | null };
+
+function parseSizeEvidence(value: string, system?: string | null): SizeEvidence | null {
+  const normalizedValue = normalized(value);
+  const match = normalizedValue.match(/^(?:(eu|us|uk)\s+)?(\d+(?:\.\d+)?)(?:\s+(eu|us|uk))?$/u);
+  if (!match) return null;
+  return {
+    value: match[2],
+    system: normalized(system ?? match[1] ?? match[3] ?? "") || null,
+  };
+}
+
+function titleSizeEvidence(product: NormalizedProduct): SizeEvidence | null {
+  const title = normalized(product.canonical.title);
+  const labeled = title.match(/(?:^| )size\s+(?:(eu|us|uk)\s+)?(\d+(?:\.\d+)?)(?:\s+(eu|us|uk))?(?=$| )/u);
+  const systemFirst = title.match(/(?:^| )(eu|us|uk)\s+(\d+(?:\.\d+)?)(?=$| )/u);
+  const match = labeled ?? systemFirst;
+  if (!match) return null;
+  return {
+    value: labeled ? labeled[2] : systemFirst![2],
+    system: normalized(labeled ? match[1] ?? match[3] ?? "" : match[1]) || null,
+  };
+}
+
+function textHasBoundedPhrase(text: string, phrase: string) {
+  const source = normalized(text);
+  const target = normalized(phrase);
+  if (!target) return false;
+  const index = source.indexOf(target);
+  if (index < 0) return false;
+  const before = source[index - 1];
+  const after = source[index + target.length];
+  return (!before || before === " ") && (!after || after === " ");
+}
+
+function requestedBrand(intent: Phase1Intent) {
+  const value = intent.brand.value;
+  if (!value) return null;
+  const relations = intent.relations.value ?? [];
+  if (relations.includes("exact") && /^same\s+/iu.test(value)) {
+    return value.replace(/^same\s+/iu, "").trim();
+  }
+  return value;
+}
+
+function requestedSellerForSku(intent: Phase1Intent) {
+  if (!isExplicit(intent.sku)) return null;
+  const query = normalized(intent.explicitText || intent.rawQuery);
+  const skuLabel = query.indexOf(" sku");
+  if (skuLabel < 0) return null;
+  const seller = query.slice(0, skuLabel).trim().replace(/^(?:same|exactly|find|want|looking for)\s+/u, "");
+  if (!seller || kindFromText(seller)) return null;
+  if (intent.brand.value && normalized(intent.brand.value) === seller) return null;
+  return seller;
+}
+
+function sellerSkuIdentifiesOffer(intent: Phase1Intent, product: NormalizedProduct, constraints: Record<string, ConstraintEvaluation>) {
+  const seller = requestedSellerForSku(intent);
+  const merchant = product.canonical.merchant ?? product.merchant ?? null;
+  return Boolean(
+    seller &&
+    merchant &&
+    same(merchant, seller) &&
+    constraints.sku?.status === "verified_pass" &&
+    product.canonical.providerId.trim() &&
+    product.canonical.sourceType.trim(),
+  );
+}
+
+function offerSpecificRequest(intent: Phase1Intent) {
+  return /(?:^| )(?:current|stale|offer|listing|deal|حالي|الحالية|عرض)(?:$| )/u.test(
+    normalized(intent.explicitText || intent.rawQuery),
+  );
+}
+
+function candidateBrandMatches(intent: Phase1Intent, product: NormalizedProduct) {
+  if (!isExplicit(intent.brand)) return false;
+  const requested = requestedBrand(intent);
+  if (!requested) return false;
+  const structured = product.canonical.brand ?? product.brand ?? null;
+  if (structured !== null) return same(structured, requested);
+  return Boolean(
+    product.canonical.providerId.trim() &&
+    product.canonical.sourceType.trim() &&
+    textHasBoundedPhrase(product.canonical.title, requested),
+  );
+}
+
 function modelConflict(intentModel: string, product: NormalizedProduct) {
   const title = normalized(product.canonical.title);
   const model = normalized(intentModel);
@@ -436,7 +567,7 @@ function evaluateHardConstraints(
 
   priceConstraint(intent, product, constraints, evidence);
 
-  if (isExplicit(intent.color)) {
+  if (isExplicit(intent.color) && isHardRequirement(intent, "color")) {
     const color = canonical.color ?? product.color ?? null;
     addConstraint(
       constraints,
@@ -451,9 +582,41 @@ function evaluateHardConstraints(
   }
 
   if (isExplicit(intent.size)) {
-    // Size is absent from CanonicalProduct/ProviderProduct; title text is not
-    // promoted to authoritative size metadata.
-    addConstraint(constraints, "size", "unknown", "No structured size field is available for verification.");
+    const candidateWithSize = product as NormalizedProduct & {
+      size?: string | number | null;
+      sizeSystem?: string | null;
+      canonical: NormalizedProduct["canonical"] & {
+        size?: string | number | null;
+        sizeSystem?: string | null;
+      };
+    };
+    const requestedSize = parseSizeEvidence(intent.size.value!);
+    const structuredSize = candidateWithSize.canonical.size ?? candidateWithSize.size ?? null;
+    const structuredSystem = candidateWithSize.canonical.sizeSystem ?? candidateWithSize.sizeSystem ?? null;
+    const candidateSize = structuredSize !== null
+      ? parseSizeEvidence(String(structuredSize), structuredSystem)
+      : titleSizeEvidence(product);
+    let status: ConstraintStatus = "unknown";
+    if (requestedSize?.system && candidateSize) {
+      if (candidateSize.system) {
+        status = requestedSize.system === candidateSize.system && requestedSize.value === candidateSize.value
+          ? "verified_pass"
+          : "verified_fail";
+      } else if (structuredSize !== null && requestedSize.value !== candidateSize.value) {
+        status = "verified_fail";
+      }
+    }
+    addConstraint(
+      constraints,
+      "size",
+      status,
+      status === "verified_pass"
+        ? `Candidate ${structuredSize !== null ? "structured size" : "bounded title size"} ${candidateSize?.system?.toUpperCase()} ${candidateSize?.value} matches requested ${intent.size.value}.`
+        : status === "verified_fail"
+          ? `Candidate size ${candidateSize?.system?.toUpperCase() ?? ""} ${candidateSize?.value} conflicts with requested ${intent.size.value}.`
+          : "No matching size with an explicit compatible size system is available; a system is never inferred.",
+    );
+    if (status === "verified_pass") evidence.push(`Verified size ${candidateSize?.system?.toUpperCase()} ${candidateSize?.value}.`);
   }
 
   if (isExplicit(intent.condition)) {
@@ -489,13 +652,20 @@ function evaluateHardConstraints(
     : kindFromText(intent.explicitText);
   if (requestedProductKind) {
     const foundKind = candidateKind(product);
+    const typeMismatch = relatedAudioTypeMismatch(intent, product);
     addConstraint(
       constraints,
       "product_type",
-      foundKind === null ? "unknown" : foundKind === requestedProductKind ? "verified_pass" : "verified_fail",
+      foundKind === null
+        ? "unknown"
+        : foundKind === requestedProductKind && !typeMismatch
+          ? "verified_pass"
+          : "verified_fail",
       foundKind === null
         ? `No candidate evidence verifies requested product type ${intent.productType.value}.`
-        : foundKind === requestedProductKind
+        : typeMismatch
+          ? "The candidate earbuds type is related to, but not identical with, the requested headphones type."
+          : foundKind === requestedProductKind
           ? `Candidate product type ${foundKind} matches the requested type.`
           : `Candidate product type ${foundKind} conflicts with requested type ${requestedProductKind}.`,
     );
@@ -524,15 +694,21 @@ function evaluateHardConstraints(
 
   if (isExplicit(intent.brand)) {
     const brand = canonical.brand ?? product.brand ?? null;
-    if (brand !== null) {
+    const requested = requestedBrand(intent)!;
+    const titleBrandMatch = brand === null && textHasBoundedPhrase(canonical.title, requested);
+    if (brand !== null || titleBrandMatch) {
+      const matches = brand !== null ? same(brand, requested) : true;
       addConstraint(
         constraints,
         "brand",
-        same(brand, intent.brand.value!) ? "verified_pass" : "verified_fail",
-        same(brand, intent.brand.value!)
-          ? `Structured brand ${brand} matches.`
-          : `Structured brand ${brand} conflicts with requested ${intent.brand.value}.`,
+        matches ? "verified_pass" : "verified_fail",
+        matches
+          ? brand !== null
+            ? `Structured brand ${brand} matches.`
+            : `Bounded brand text ${requested} appears in the source title.`
+          : `Structured brand ${brand} conflicts with requested ${requested}.`,
       );
+      if (titleBrandMatch) evidence.push(`Bounded source-title brand ${requested} matches.`);
     } else {
       addConstraint(constraints, "brand", "unknown", "Candidate has no structured brand evidence.");
     }
@@ -540,19 +716,13 @@ function evaluateHardConstraints(
 
   const requestedModel = isExplicit(intent.model) ? intent.model.value : null;
   if (requestedModel) {
-    const candidateBrand = canonical.brand ?? product.brand ?? null;
-    const brandMatches = Boolean(
-      candidateBrand &&
-      intent.brand.value &&
-      same(candidateBrand, intent.brand.value),
-    );
-    const requestedModelKind = requestedKind(intent);
-    const modelTypeAgreement = requestedModelKind
-      ? structuredCandidateKind(product) === requestedModelKind
-      : Boolean(queryCategory(intent) && candidateCategory(product) === queryCategory(intent));
+    const brandMatches = candidateBrandMatches(intent, product);
     const boundedMatch = modelAppearsBounded(requestedModel, product);
     const conflictingModel = modelConflict(requestedModel, product);
-    const modelPass = boundedMatch && brandMatches && modelTypeAgreement;
+    // A bounded exact model and matching source-backed brand identify the
+    // requested item; missing category/type metadata must not erase identity.
+    const sourceBacked = Boolean(product.canonical.providerId.trim() && product.canonical.sourceType.trim());
+    const modelPass = boundedMatch && brandMatches && sourceBacked;
     addConstraint(
       constraints,
       "model",
@@ -560,8 +730,8 @@ function evaluateHardConstraints(
       conflictingModel
         ? `Title identifies a conflicting near-model rather than ${requestedModel}.`
         : modelPass
-          ? `Bounded model token ${requestedModel} agrees with structured brand and product type/category evidence.`
-          : "Model is not verified: bounded title token, matching structured brand, and compatible structured type/category evidence are all required.",
+          ? `Bounded model token ${requestedModel} agrees with source-backed brand evidence.`
+          : "Model is not verified: a bounded title token, matching source-backed brand, and no conflicting model are required.",
     );
   }
 
@@ -573,14 +743,22 @@ function evaluateHardConstraints(
   const candidateIds = labeledIdentifiers(product);
   for (const [name, field] of idFields) {
     if (!isExplicit(field)) continue;
-    const match = candidateIds[name].has(identifierKey(field.value!));
+    const sellerCorroborated = Boolean(
+      (product.canonical.merchant ?? product.merchant)?.trim() &&
+      product.canonical.providerId.trim() &&
+      product.canonical.sourceType.trim(),
+    );
+    const match = candidateIds[name].has(identifierKey(field.value!)) &&
+      (name !== "sku" || sellerCorroborated);
     addConstraint(
       constraints,
       name,
       match ? "verified_pass" : "unknown",
       match
         ? `Source listing contains an explicitly labeled ${name.toUpperCase()} matching the request.`
-        : `No matching, explicitly labeled ${name.toUpperCase()} is available; provider product IDs are not treated as global identifiers.`,
+        : name === "sku" && candidateIds.sku.has(identifierKey(field.value!)) && !sellerCorroborated
+          ? "A title SKU token is not verified without corroborating seller and source identity."
+          : `No matching, explicitly labeled ${name.toUpperCase()} is available; provider product IDs are not treated as global identifiers.`,
     );
     if (match) evidence.push(`Labeled ${name.toUpperCase()} matches the requested identifier.`);
   }
@@ -646,6 +824,8 @@ function relevance(
 ) {
   const expectedCategory = queryCategory(intent);
   const actualCategory = candidateCategory(product);
+  const expectedKind = requestedKind(intent);
+  const actualKind = candidateKind(product);
   const title = normalized(product.canonical.title);
   const productText = normalized([
     product.canonical.title,
@@ -664,6 +844,9 @@ function relevance(
   } else if (expectedCategory && actualCategory && actualCategory !== expectedCategory) {
     return { score: 0, incompatibleCategory: true };
   }
+  if (expectedKind && actualKind && actualKind !== expectedKind) {
+    return { score: 0, incompatibleCategory: true };
+  }
 
   const knownTokens = recognizedQueryTokens(intent);
   const terms = queryTerms(intent).filter((term) => knownTokens.has(term));
@@ -675,11 +858,22 @@ function relevance(
     relevantSignal = true;
   }
 
-  const brand = intent.brand.value;
-  if (brand && (same(product.canonical.brand ?? product.brand ?? "", brand) || title.includes(normalized(brand)))) {
+  const brand = requestedBrand(intent);
+  if (brand && (same(product.canonical.brand ?? product.brand ?? "", brand) || textHasBoundedPhrase(title, brand))) {
     score += 0.18;
     relevantSignal = true;
     evidence.push(`Candidate listing contains requested brand ${brand}.`);
+  }
+  if (
+    isExplicit(intent.color) &&
+    !isHardRequirement(intent, "color") &&
+    relevantSignal
+  ) {
+    const candidateColor = product.canonical.color ?? product.color ?? null;
+    if (candidateColor && same(candidateColor, intent.color.value!)) {
+      score += 0.16;
+      evidence.push(`Verified color ${candidateColor} matches the soft color preference.`);
+    }
   }
   const model = intent.model.value;
   if (model && title.includes(normalized(model))) {
@@ -702,6 +896,11 @@ function relevance(
   if (matchedStableIdentifier) {
     score = Math.max(score, 0.96);
     relevantSignal = true;
+  }
+  if (constraints.sku?.status === "verified_pass") {
+    score = Math.max(score, 0.9);
+    relevantSignal = true;
+    evidence.push("Seller-scoped SKU text is corroborated by the candidate merchant/source record.");
   }
 
   const attributeOnly =
@@ -736,6 +935,87 @@ function compareCandidates(left: EvaluatedPhase1Candidate, right: EvaluatedPhase
     left.product.canonical.id.localeCompare(right.product.canonical.id);
 }
 
+function hasSourceProductOrCategoryMatch(intent: Phase1Intent, product: NormalizedProduct) {
+  const expectedCategory = queryCategory(intent);
+  const expectedKind = requestedKind(intent);
+  const actualCategory = candidateCategory(product);
+  const actualKind = candidateKind(product);
+
+  if (expectedCategory && actualCategory !== expectedCategory) return false;
+  if (expectedKind && actualKind !== expectedKind) return false;
+  if (expectedCategory || expectedKind) return true;
+
+  // When the request contains only a brand and model, use shared source-title
+  // product wording as a conservative relevance anchor, never as identity.
+  const anchors = normalized(intent.explicitText || intent.rawQuery)
+    .replace(normalized(requestedBrand(intent) ?? ""), " ")
+    .replace(normalized(intent.model.value ?? ""), " ")
+    .split(" ")
+    .filter((term) => term.length >= 3 && !["same", "exact", "exactly", "similar", "like"].includes(term));
+  const title = normalized(product.canonical.title);
+  return anchors.some((anchor) => textHasBoundedPhrase(title, anchor));
+}
+
+function hasVerifiedSimilarityAnchor(
+  intent: Phase1Intent,
+  product: NormalizedProduct,
+  constraints: Record<string, ConstraintEvaluation>,
+) {
+  if (constraints.brand?.status === "verified_pass" ||
+      constraints.product_type?.status === "verified_pass") return true;
+  const expectedCategory = queryCategory(intent);
+  if (expectedCategory && candidateCategory(product) === expectedCategory) return true;
+  const structuredType = product.canonical.productType ?? product.productType ?? null;
+  return Boolean(
+    structuredType &&
+    textHasBoundedPhrase(intent.explicitText || intent.rawQuery, structuredType),
+  );
+}
+
+function identityGroups(products: NormalizedProduct[]): CandidateIdentityGroup[] {
+  const groups = new Map<string, Map<string, CandidateIdentityOffer[]>>();
+  for (const product of products) {
+    const brand = normalized(product.canonical.brand ?? product.brand ?? "");
+    const category = normalized(String(product.canonical.category ?? product.category ?? ""));
+    const kind = normalized(product.canonical.productType ?? product.productType ?? "");
+    const candidateWithSize = product as NormalizedProduct & {
+      size?: string | null;
+      canonical: NormalizedProduct["canonical"] & { size?: string | null };
+    };
+    const title = normalized(product.canonical.title);
+    const color = normalized(product.canonical.color ?? product.color ?? "");
+    const structuredSize = normalized(candidateWithSize.canonical.size ?? candidateWithSize.size ?? "");
+    const titleVariantTokens = [
+      ...title.matchAll(/\b\d+(?:\.\d+)?\s?(?:gb|tb)\b/giu),
+      ...title.matchAll(/\b(?:size\s*\d{1,3}|\d{2,3}\s*(?:eu|uk|us))\b/giu),
+      ...title.matchAll(/\b(?:xxs|xs|s|m|l|xl|xxl|xxxl)\b/giu),
+    ].map((match) => normalized(match[0]));
+    let titleWithoutVariants = title;
+    for (const token of new Set([...titleVariantTokens, ...(color ? [color] : [])])) {
+      titleWithoutVariants = titleWithoutVariants
+        .replace(new RegExp(`(?:^| )${token.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}(?=$| )`, "u"), " ");
+    }
+    titleWithoutVariants = titleWithoutVariants.replace(/\s+/gu, " ").trim();
+    const productId = `product:${brand}|${category}|${kind}|${titleWithoutVariants}`;
+    const titleSizeIdentity = [...new Set(titleVariantTokens)].sort().join(",");
+    const variantId = `variant:${productId}|color:${color}|size:${structuredSize}|title-variant:${titleSizeIdentity}`;
+    const variants = groups.get(productId) ?? new Map<string, CandidateIdentityOffer[]>();
+    const offers = variants.get(variantId) ?? [];
+    offers.push({
+      id: `${product.providerId}:${product.canonical.id}`,
+      merchant: product.canonical.merchant ?? product.merchant ?? null,
+      productUrl: product.canonical.productUrl ?? product.productUrl ?? null,
+      affiliateUrl: product.canonical.affiliateUrl ?? product.affiliateUrl ?? null,
+    });
+    variants.set(variantId, offers);
+    groups.set(productId, variants);
+  }
+  return [...groups].map(([id, variants]) => ({
+    id,
+    variants: [...variants].map(([variantId, offers]) => ({ id: variantId, offers })),
+  }));
+}
+
 /**
  * Evaluates only locally supplied, normalized candidates. Explicit constraints
  * are gated before ranking; unknown values never pass a hard requirement.
@@ -763,16 +1043,51 @@ export function evaluatePhase1Candidates(
       isExplicit(intent.model) &&
       modelAppearsBounded(intent.model.value!, product) &&
       !modelConflict(intent.model.value!, product);
+    const nearModelAlternative =
+      hardFailures.length === 1 &&
+      hardFailures[0]?.[0] === "model" &&
+      constraints.model?.status === "verified_fail" &&
+      isExplicit(intent.model) &&
+      isExplicit(intent.brand) &&
+      modelConflict(intent.model.value!, product) &&
+      candidateBrandMatches(intent, product) &&
+      hasSourceProductOrCategoryMatch(intent, product) &&
+      Boolean(product.canonical.providerId.trim() && product.canonical.sourceType.trim()) &&
+      relevanceResult.score >= 0.12;
+    const expectedCategory = queryCategory(intent);
+    const relatedAudioAlternative =
+      hardFailures.length === 1 &&
+      hardFailures[0]?.[0] === "product_type" &&
+      constraints.product_type?.status === "verified_fail" &&
+      relatedAudioTypeMismatch(intent, product) &&
+      Boolean(expectedCategory && candidateCategory(product) === expectedCategory) &&
+      Boolean(product.canonical.providerId.trim() && product.canonical.sourceType.trim()) &&
+      relevanceResult.score >= 0.12;
+    const similarModelOnlyAlternative =
+      intent.relations.value?.includes("similar") === true &&
+      !intent.relations.value.includes("exact") &&
+      hardFailures.length === 1 &&
+      hardFailures[0]?.[0] === "model" &&
+      (constraints.model?.status === "unknown" || constraints.model?.status === "verified_fail") &&
+      hasVerifiedSimilarityAnchor(intent, product, constraints) &&
+      !relevanceResult.incompatibleCategory &&
+      relevanceResult.score >= 0.12;
+    const uniqueSellerSkuOffer = sellerSkuIdentifiesOffer(intent, product, constraints);
 
     let classification: CandidateClassification;
-    if (relevanceResult.incompatibleCategory || relevanceResult.score < 0.12) {
+    if (similarModelOnlyAlternative) {
+      classification = "SIMILAR";
+    } else if (relatedAudioAlternative) {
+      classification = "CLOSE_ALTERNATIVE";
+    } else if (nearModelAlternative) {
+      classification = "CLOSE_ALTERNATIVE";
+    } else if (relevanceResult.incompatibleCategory || relevanceResult.score < 0.12) {
       classification = "IRRELEVANT";
     } else {
       const hasStrongStableId =
         (isExplicit(intent.mpn) && constraints.mpn?.status === "verified_pass") ||
         (isExplicit(intent.oem) && constraints.oem?.status === "verified_pass") ||
         constraints.gtin14?.status === "verified_pass";
-      const expectedCategory = queryCategory(intent);
       const actualCategory = candidateCategory(product);
       const expectedKind = requestedKind(intent);
       const actualStructuredKind = structuredCandidateKind(product);
@@ -786,22 +1101,35 @@ export function evaluatePhase1Candidates(
         product.canonical.providerId.trim() &&
         product.canonical.sourceType.trim(),
       );
+      const explicitBrandModelIdentity =
+        isExplicit(intent.brand) &&
+        isExplicit(intent.model) &&
+        constraints.brand?.status === "verified_pass" &&
+        constraints.model?.status === "verified_pass" &&
+        hardFailures.length === 0 &&
+        sourceBacked;
       if (hasStrongStableId && categoryCompatible && typeCompatible && sourceBacked) classification = "EXACT";
+      else if (uniqueSellerSkuOffer && hardFailures.length === 0) classification = "EXACT";
+      else if (explicitBrandModelIdentity) classification = "EXACT";
       else if (
         (isExplicit(intent.sku) && constraints.sku?.status === "verified_pass") ||
         (isExplicit(intent.mpn) && constraints.mpn?.status === "verified_pass") ||
         (isExplicit(intent.oem) && constraints.oem?.status === "verified_pass") ||
         (isExplicit(intent.model) && constraints.model?.status === "verified_pass") ||
-        (intent.brand.value && same(product.canonical.brand ?? product.brand ?? "", intent.brand.value) && relevanceResult.score >= 0.5)
+        (intent.brand.value && candidateBrandMatches(intent, product) && relevanceResult.score >= 0.5)
       ) classification = "PROBABLE_EXACT";
       else if (relevanceResult.score >= 0.55) classification = "CLOSE_ALTERNATIVE";
       else if (relevanceResult.score >= 0.3) classification = "SIMILAR";
       else classification = "WEAK";
     }
+    if (classification === "EXACT" && offerSpecificRequest(intent) && !uniqueSellerSkuOffer) {
+      classification = "PROBABLE_EXACT";
+    }
 
     const score = Math.round(relevanceResult.score * 1000) / 1000;
     const evaluated = resultFor(product, classification, score, constraints, evidence, strategy);
-    if (hardFailures.length && !unverifiedModelAlternative) {
+    if (hardFailures.length && !unverifiedModelAlternative && !nearModelAlternative &&
+        !relatedAudioAlternative && !similarModelOnlyAlternative) {
       const diagnostics = hardFailures.map(([name, value]) => `${name}: ${value.status} — ${value.reason}`);
       rejected.push({ ...evaluated, diagnostics });
     } else if (classification === "IRRELEVANT") {
@@ -815,36 +1143,43 @@ export function evaluatePhase1Candidates(
       if (unverifiedModelAlternative) {
         evidence.push("Exact bounded model text is relevant for discovery only; identity remains unverified and is not qualifying.");
       }
+      if (nearModelAlternative) {
+        evidence.push("Source-backed brand and product/category match; the model conflicts, so this is a close alternative only.");
+      }
+      if (relatedAudioAlternative) {
+        evidence.push("Headphones and earbuds are related for discovery but are distinct product identities.");
+      }
+      if (similarModelOnlyAlternative) {
+        evidence.push(
+          constraints.model?.status === "verified_fail"
+            ? "The model conflicts with the request; explicit similar intent allows discovery only, not identity."
+            : "The requested model is unverified; explicit similar intent allows discovery only, not identity.",
+        );
+      }
       alternatives.push(evaluated);
     }
   }
 
-  const hasPurchasableAlternative = [...qualifying, ...alternatives].some(
-    (candidate) =>
-      (candidate.product.canonical.availability ?? candidate.product.availability) === "in_stock",
-  );
-  if (hasPurchasableAlternative) {
-    for (const collection of [qualifying, alternatives]) {
-      for (let index = collection.length - 1; index >= 0; index -= 1) {
-        const candidate = collection[index];
-        if ((candidate.product.canonical.availability ?? candidate.product.availability) !== "out_of_stock") continue;
-        collection.splice(index, 1);
-        const unresolved = Object.entries(candidate.constraints)
-          .filter(([, constraint]) => constraint.status !== "verified_pass")
-          .map(([name, constraint]) => `${name}: ${constraint.status} — ${constraint.reason}`);
-        rejected.push({
-          ...candidate,
-          diagnostics: [
-            ...unresolved,
-            "Candidate is out of stock; an in-stock relevant alternative is available.",
-          ],
-        });
-      }
+  for (const collection of [qualifying, alternatives]) {
+    for (let index = collection.length - 1; index >= 0; index -= 1) {
+      const candidate = collection[index];
+      if ((candidate.product.canonical.availability ?? candidate.product.availability) !== "out_of_stock") continue;
+      collection.splice(index, 1);
+      const unresolved = Object.entries(candidate.constraints)
+        .filter(([, constraint]) => constraint.status !== "verified_pass")
+        .map(([name, constraint]) => `${name}: ${constraint.status} — ${constraint.reason}`);
+      rejected.push({
+        ...candidate,
+        diagnostics: [
+          ...unresolved,
+          "Candidate is out of stock and is not a purchasable offer.",
+        ],
+      });
     }
   }
 
   qualifying.sort(compareCandidates);
   alternatives.sort(compareCandidates);
   rejected.sort(compareCandidates);
-  return { qualifying, alternatives, rejected };
+  return { qualifying, alternatives, rejected, identityGroups: identityGroups(products) };
 }
