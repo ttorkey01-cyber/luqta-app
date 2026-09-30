@@ -1233,8 +1233,11 @@ export class SearchOrchestrator {
     const deduplicated = this.deduplication.deduplicate(categoryFiltered);
     // Reject only established product/size/model conflicts before price can
     // contribute to ranking. An unknown type or size is not a verified match.
+    const priceConstraintActive =
+      !categoryBrowse && hasStrictPriceConstraint(sharedIntent);
+    const relevanceOptions = { requireProductTypeEvidence: priceConstraintActive };
     const relevanceFiltered = relevanceGate
-      ? filterSearchRelevance(deduplicated, relevanceGate)
+      ? filterSearchRelevance(deduplicated, relevanceGate, relevanceOptions)
       : deduplicated;
     if (relevanceGate) {
       emit("relevance_gate_end", {
@@ -1242,8 +1245,6 @@ export class SearchOrchestrator {
         rejectedCount: deduplicated.length - relevanceFiltered.length,
       });
     }
-    const priceConstraintActive =
-      !categoryBrowse && hasStrictPriceConstraint(sharedIntent);
     const priceFiltered = priceConstraintActive
       ? filterStrictPriceResults(relevanceFiltered, sharedIntent)
       : relevanceFiltered;
@@ -1418,7 +1419,7 @@ export class SearchOrchestrator {
         const relevantFallback = filterStrictPriceResults(
           filterExplicitIntentResults(
             relevanceGate
-              ? filterSearchRelevance(normalizedFallback, relevanceGate)
+              ? filterSearchRelevance(normalizedFallback, relevanceGate, relevanceOptions)
               : normalizedFallback,
             queryExpansion,
             sharedIntent,
@@ -1467,7 +1468,7 @@ export class SearchOrchestrator {
     }
 
     const finalRelevant = relevanceGate
-      ? filterSearchRelevance(merged, relevanceGate)
+      ? filterSearchRelevance(merged, relevanceGate, relevanceOptions)
       : merged;
     const exactPriceResults = priceConstraintActive
       ? filterStrictPriceResults(finalRelevant, sharedIntent)

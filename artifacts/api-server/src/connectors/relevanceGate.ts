@@ -35,7 +35,7 @@ const PRODUCT_TYPES: readonly TypeDefinition[] = [
   { value: "headlight", domain: "automotive", aliases: ["headlight", "headlights", "headlamp", "headlamps", "شمعة", "شمعه", "شمعات"] },
   { value: "handbag", domain: "bags", aliases: ["handbag", "handbags", "hand bag", "purse", "bag", "bags", "شنطة", "شنطه", "حقيبة", "حقيبه", "شنط", "حقائب"] },
   { value: "wallet", domain: "bags", aliases: ["wallet", "wallets", "card holder", "محفظة", "محفظه"] },
-  { value: "phone accessory", domain: "electronics", aliases: ["mobile phone holder", "phone holder", "phone case", "phone cover", "screen protector", "phone stand", "كفر جوال", "حافظة جوال"] },
+  { value: "phone accessory", domain: "electronics", aliases: ["mobile phone holder", "phone holder", "phone case", "smartphone case", "iphone case", "phone cover", "smartphone cover", "smartphone wristlet", "phone wristlet", "screen protector", "phone stand", "كفر جوال", "حافظة جوال"] },
   { value: "phone", domain: "electronics", aliases: ["smartphone", "mobile phone", "cell phone", "phone", "mobile", "جوال", "موبايل", "هاتف"] },
   { value: "watch", domain: "watches", aliases: ["watch", "watches", "ساعة", "ساعه", "ساعات"] },
   { value: "watch band", domain: "watches", aliases: ["watch band", "watchband", "watch strap", "ساعة يد"] },
@@ -47,6 +47,7 @@ const PRODUCT_TYPES: readonly TypeDefinition[] = [
   { value: "shoes", domain: "footwear", aliases: ["sneakers", "trainers", "footwear", "shoes", "shoe", "حذاء", "احذية", "أحذية", "جزم", "جزمة"] },
   { value: "paddle brush", domain: "grooming", aliases: ["paddle brush", "hair brush", "hairbrush", "brush", "فرشاة شعر", "فرشه شعر", "فرشاة", "فرشه"] },
   { value: "shampoo", domain: "beauty", aliases: ["shampoo", "شامبو"] },
+  { value: "hair styling tool", domain: "beauty", aliases: ["hair straightener", "hair styler", "hot air styler", "hot air stylers", "مكواة فرد الشعر", "مصفف الشعر", "أجهزة تمليس الشعر", "اجهزة تمليس الشعر"] },
   { value: "grooming", domain: "grooming", aliases: ["beard trimmer", "hair trimmer", "shaver", "razor", "trimmer", "ماكينة حلاقة", "ماكينه حلاقه", "حلاقة", "حلاقه"] },
   { value: "cream", domain: "beauty", aliases: ["hair cream", "face cream", "cream", "كريم"] },
   { value: "cleanser", domain: "beauty", aliases: ["cleanser", "face wash", "غسول"] },
@@ -89,10 +90,19 @@ function detectType(text: string) {
 }
 
 function resolveRequestedType(query: string, intent?: QueryIntent) {
-  const intentType = intent?.productType?.trim();
-  const candidates = [intentType, query, intent?.raw, intent?.normalized]
-    .filter((value): value is string => Boolean(value?.trim()));
-  for (const candidate of candidates) {
+  const explicitQueryType = detectType(query);
+  if (explicitQueryType) return explicitQueryType;
+  // A sports-shoe brand with an EU-range numeric size and no other named
+  // family is footwear context, not a 42 mm watch-band request.
+  const normalized = normalizeText(query);
+  const labeledSize = normalized.match(/(?:size|مقاس)\s*(\d{2})(?!\d)/iu);
+  if (/\bnike\b/iu.test(normalized) &&
+      labeledSize && Number(labeledSize[1]) >= 35 && Number(labeledSize[1]) <= 50 &&
+      !/\b(?:watch|band|strap|apparel|shirt|jacket|jeans)\b|ساعة|سوار/iu.test(normalized)) {
+    return PRODUCT_TYPES.find(({ value }) => value === "shoes");
+  }
+  for (const candidate of [intent?.productType, intent?.raw, intent?.normalized]) {
+    if (!candidate?.trim()) continue;
     const found = detectType(candidate);
     if (found) return found;
   }
@@ -218,7 +228,7 @@ function productText(product: ProductWithCanonicalEvidence) {
 
 function domainForCategory(category?: string | null) {
   const normalized = normalizeText(category ?? "").replace(/[_-]/gu, " ");
-  if (/beauty|groom|cosmetic|personal care|skin care|العناية|تجميل|جمال|صحة/iu.test(normalized)) return "beauty";
+  if (/beauty|groom|cosmetic|personal care|skin care|hair|styler|العناية|تجميل|جمال|صحة|الشعر|تمليس/iu.test(normalized)) return "beauty";
   if (/bag|accessor/iu.test(normalized)) return "bags";
   if (/electronic/iu.test(normalized)) return "electronics";
   if (/watch|jewel/iu.test(normalized)) return "watches";
@@ -235,10 +245,11 @@ function productTypeCompatibility(product: ProductWithCanonicalEvidence, gate: S
   const requested = PRODUCT_TYPES.find((definition) => definition.value === gate.requestedType);
   if (!requested) return "UNKNOWN";
   const title = normalizeText(product.title);
-  // A complete phone model printed on an accessory is not the phone itself.
+  // An accessory's compatible phone model is not evidence that it is a phone.
   if (requested.value === "phone" &&
-      /\b(?:iphone\s+\d{1,3}|s\d{2}(?:\s+(?:ultra|plus|fe))?)\b/iu.test(title) &&
-      /\b(?:case|cover|screen protector|holder|stand|shell|skin)\b/iu.test(title)) {
+      (/\b(?:phone|smartphone|mobile|iphone|galaxy)\b.{0,45}\b(?:case|cover|wristlet|screen protector|holder|stand|charger|charging cable|cable|band|shell|skin)\b/iu.test(title) ||
+       /\b(?:case|cover|wristlet|screen protector|holder|stand|charger|cable)\b.{0,45}\b(?:for|phone|smartphone|iphone|galaxy)\b/iu.test(title) ||
+       /كفر|جراب|حافظة|غطاء|واقي شاشة|شاحن|كيبل|سلك جوال/iu.test(title))) {
     return "CONFLICT";
   }
   // Explicit catalog type beats incidental terms in a title or description.
@@ -288,10 +299,12 @@ function sizeCompatibility(product: ProviderProduct, gate: SearchRelevanceGate):
   if (jeanContext) {
     if (waist) return waist[1] === requestedSize ? "MATCH" : "CONFLICT";
     if (labeledApparelSize) {
-      return labeledApparelSize[1] === requestedSize ? "MATCH" : "CONFLICT";
+      if (labeledApparelSize[1] !== requestedSize) return "CONFLICT";
+      return webPageQuality(product) >= 4 ? "UNKNOWN" : "MATCH";
     }
     if (trailingApparelSize) {
-      return trailingApparelSize[1] === requestedSize ? "MATCH" : "CONFLICT";
+      if (trailingApparelSize[1] !== requestedSize) return "CONFLICT";
+      return webPageQuality(product) >= 4 ? "UNKNOWN" : "MATCH";
     }
     if (genericSize && /\b(?:eu|uk|us)\s*[-:]?\s*\d+\b/iu.test(text)) {
       return genericSize[1] === requestedSize ? "MATCH" : "CONFLICT";
@@ -299,6 +312,12 @@ function sizeCompatibility(product: ProviderProduct, gate: SearchRelevanceGate):
     return "UNKNOWN";
   }
 
+  if (gate.sizeDimension === "shoe") {
+    const trailingShoeSize = text.match(/\b(\d{1,3})\s*(?:eu|uk|us)\b/iu);
+    if (trailingShoeSize) {
+      return trailingShoeSize[1] === requestedSize ? "MATCH" : "CONFLICT";
+    }
+  }
   // Inseam numbers are not evidence for the requested waist/apparel size.
   if (/\binseam\s*[-:]?\s*\d{1,3}\b/iu.test(text) && !waist) return "UNKNOWN";
   if (genericSize) {
@@ -307,7 +326,7 @@ function sizeCompatibility(product: ProviderProduct, gate: SearchRelevanceGate):
     }
     return genericSize[1] === requestedSize ? "MATCH" : "CONFLICT";
   }
-  if (new RegExp(`\\b${requestedSize}\\s*mm\\b`, "iu").test(text)) {
+  if (new RegExp(`\\b${requestedSize}\\s*(?:mm\\b|مم(?=$|[^\\p{L}\\p{N}]))`, "iu").test(text)) {
     return "CONFLICT";
   }
   const bareNumber = new RegExp(
@@ -347,6 +366,22 @@ function isEditorialWebResult(product: ProviderProduct, exactModelRequest: boole
     (exactModelRequest && (categoryTitle || (categoryUrl && !isDetailPath)));
 }
 
+// This is ranking evidence about a page, not evidence of a product's identity,
+// price, stock, or variant availability. Non-web feed entries are product rows.
+function webPageQuality(product: ProviderProduct): number {
+  if (!/^web(?:_search)?$/iu.test(product.sourceType)) return 1;
+  const title = normalizeText(product.title);
+  const url = normalizeText(product.productUrl ?? "");
+  if (/\b(review|reviews|comparison|compare|vs\.?|article|guide|best\s+\d+|top\s+\d+|price history)\b|أفضل|مقارنة|كان بكام|تاريخ السعر/iu.test(title) ||
+      /\/(?:compare|article|blog|reviews?|price-history)(?:\/|[?#]|$)/iu.test(url)) return 5;
+  if (/\b(for sale|deals|best prices?|shop all|collection|category|search results|prices? (?:in|for|of))\b|للبيع|أسعار|افضل سعر/iu.test(title) ||
+      /\/(?:category|categories|collections?|search|prices?)(?:\/|[?#]|$)/iu.test(url)) return 4;
+  if (/\/(?:product|products|item|items|p|itm|listing)(?:\/|[?#]|$)/iu.test(url)) return 1;
+  if (/\b(?:\d{2,4}\s*(?:gb|tb)|(?:eu|uk|us|waist|size)\s*\d{1,3})\b/iu.test(title)) return 3;
+  if (/\b(?:buy|shop|order|تسوق|اشتري)\b/iu.test(title)) return 2;
+  return 3;
+}
+
 function identifierCompatibility(product: ProviderProduct, gate: SearchRelevanceGate): RelevanceState {
   if (gate.identifiers.length === 0) return "UNKNOWN";
   const title = product.title ?? "";
@@ -374,12 +409,16 @@ export function evaluateSearchRelevance(
 export function filterSearchRelevance(
   results: NormalizedProduct[],
   gate: SearchRelevanceGate,
+  options: { requireProductTypeEvidence?: boolean } = {},
 ): NormalizedProduct[] {
   return results.filter((product) => {
     if (isEditorialWebResult(product, gate.requiresExactModel)) return false;
     const evidence = evaluateSearchRelevance(product, gate);
     return (
       evidence.productType !== "CONFLICT" &&
+      (!options.requireProductTypeEvidence ||
+        evidence.productType === "MATCH" ||
+        evidence.productType === "POSSIBLE") &&
       evidence.size !== "CONFLICT" &&
       evidence.identifier !== "CONFLICT" &&
       (!gate.requiresExactModel || evidence.identifier === "MATCH")
@@ -409,6 +448,7 @@ export function sortSearchRelevance(
         STATE_ORDER[a.evidence.productType] -
           STATE_ORDER[b.evidence.productType] ||
         STATE_ORDER[a.evidence.size] - STATE_ORDER[b.evidence.size] ||
+        webPageQuality(a.product) - webPageQuality(b.product) ||
         (b.product.rankScore - a.product.rankScore) ||
         a.index - b.index,
     )

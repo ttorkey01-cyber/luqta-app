@@ -1009,6 +1009,37 @@ test("Arabic phone maximum cannot make inexpensive grooming products relevant", 
   assert.equal(response.structuredIntent?.productType, "phone");
 });
 
+test("strict budgets return no-match rather than cheap hair tools or phone accessories", async () => {
+  const cases: { query: string; items: ProviderProduct[] }[] = [
+    {
+      query: "شنطة سوداء أقل من 300 ريال",
+      items: [
+        { ...product("cheap-straightener", "مكواة فرد الشعر لون أسود"), category: "أجهزة تمليس الشعر", price: 173, currency: "SAR" },
+        { ...product("cheap-styler", "مصفف الشعر بالهواء الساخن باللون الأسود"), category: "Hot Air Stylers", price: 1.373, currency: "SAR" },
+      ],
+    },
+    {
+      query: "جوال أقل من 1500 ريال",
+      items: [
+        { ...product("cheap-case", "High Smartphone Case With Bumper, Iphone 11 Pro"), price: 45, currency: "SAR" },
+        { ...product("cheap-wristlet", "Large Logo Smartphone Wristlet"), price: 395, currency: "SAR" },
+      ],
+    },
+  ];
+  for (const { query, items } of cases) {
+    const provider: SearchProvider = {
+      metadata,
+      async search() { return items; },
+    };
+    const response = await new SearchOrchestrator(
+      new ProviderRegistry([provider]),
+    ).searchWithMetadata({ query });
+    assert.deepEqual(response.products, [], query);
+    assert.equal(response.exactMatches, 0);
+    assert.equal(response.constraintRelaxationAvailable, true);
+  }
+});
+
 test("Nike size 42 treats millimeters as conflicting evidence while retaining an unknown-size shoe", async () => {
   const provider: SearchProvider = {
     metadata,

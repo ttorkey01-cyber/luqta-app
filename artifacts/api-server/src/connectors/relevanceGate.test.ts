@@ -150,9 +150,9 @@ test("ten explicit intent patterns retain product and identifier relevance", () 
     ["Quartz wrist watch", "Cheap phone"],
   );
 
-  const noTypeGate = createSearchRelevanceGate("Nike black size 42");
-  assert.equal(noTypeGate.requestedType, undefined);
-  assert.equal(evaluateSearchRelevance(band, noTypeGate).productType, "UNKNOWN");
+  const contextualShoeGate = createSearchRelevanceGate("Nike black size 42");
+  assert.equal(contextualShoeGate.requestedType, "shoes");
+  assert.equal(evaluateSearchRelevance(band, contextualShoeGate).productType, "CONFLICT");
   assert.equal(
     evaluateSearchRelevance(product("SM-S928B Galaxy phone"), createSearchRelevanceGate("SM-S928")).identifier,
     "MATCH",
@@ -240,4 +240,144 @@ test("size and identifier checks stay unknown rather than inventing evidence", (
     preserveDistinctiveFallbackQuery("blue chair", "chair", unconstrained),
     "chair",
   );
+});
+
+test("captured Production family conflicts are rejected before a strict price can help them", () => {
+  const bags = createSearchRelevanceGate("شنطة سوداء أقل من 300 ريال");
+  const hairTools = [
+    product("مكواة فرد الشعر المزودة بلوحين مزدوجين - لون أسود", {
+      category: "أجهزة تمليس الشعر", price: 173.04, currency: "SAR",
+    }),
+    product("ديويت ستايل مصفف الشعر بالهواء الساخن باللون الأسود", {
+      category: "Hot Air Stylers", price: 1.373, currency: "SAR",
+    }),
+    product("Hand bag hair styler", { price: 50, currency: "SAR" }),
+  ];
+  const realBag = product("Black leather handbag", {
+    category: "bags_accessories", price: 299, currency: "SAR",
+  });
+  assert.deepEqual(
+    filterSearchRelevance([...hairTools, realBag], bags, { requireProductTypeEvidence: true })
+      .map((item) => item.title),
+    [realBag.title],
+  );
+  assert.deepEqual(
+    filterSearchRelevance(hairTools, bags, { requireProductTypeEvidence: true }),
+    [],
+  );
+  // The unconstrained black-bag query keeps its relevant product as before.
+  assert.equal(
+    filterSearchRelevance([...hairTools, realBag], createSearchRelevanceGate("شنطة سوداء"))[0],
+    realBag,
+  );
+
+  const phones = createSearchRelevanceGate("جوال أقل من 1500 ريال");
+  const cheapAccessories = [
+    product("High Smartphone Case With Bumper, Iphone 11 Pro, Pink", {
+      category: "Fashion", price: 45, currency: "SAR",
+    }),
+    product("Large Logo Smartphone Wristlet for women", {
+      category: "Fashion", price: 395, currency: "SAR",
+    }),
+    product("Signum Smartphone Case", { price: 45, currency: "SAR" }),
+    product("Cheap black electronic item", { price: 100, currency: "SAR" }),
+  ];
+  const actualPhone = product("Samsung Galaxy mobile phone", {
+    price: 1499, currency: "SAR", category: "electronics",
+  });
+  assert.deepEqual(
+    filterSearchRelevance([...cheapAccessories, actualPhone], phones, { requireProductTypeEvidence: true })
+      .map((item) => item.title),
+    [actualPhone.title],
+  );
+  assert.deepEqual(
+    filterSearchRelevance(cheapAccessories, phones, { requireProductTypeEvidence: true }),
+    [],
+  );
+});
+
+test("footwear and jeans sizes use their own context, not millimeters or inseams", () => {
+  const nike = createSearchRelevanceGate("Nike أسود مقاس 42");
+  assert.equal(nike.requestedType, "shoes");
+  assert.equal(nike.sizeDimension, "shoe");
+  const band = product("حزام رياضي Nike بلون أسود ليلي لإطار 42 مم", {
+    category: "bags_accessories", sourceType: "web", rankScore: 100,
+  });
+  const euShoe = product("Nike Men's Running Shoes, Black, 42 EU", {
+    category: "shoes", sourceType: "web", rankScore: 1,
+  });
+  const unknownShoe = product("Nike black running shoes", { category: "shoes" });
+  assert.equal(evaluateSearchRelevance(band, nike).productType, "CONFLICT");
+  assert.equal(evaluateSearchRelevance(band, nike).size, "CONFLICT");
+  assert.equal(evaluateSearchRelevance(euShoe, nike).size, "MATCH");
+  assert.equal(evaluateSearchRelevance(unknownShoe, nike).size, "UNKNOWN");
+  assert.deepEqual(
+    sortSearchRelevance(filterSearchRelevance([band, unknownShoe, euShoe], nike), nike)
+      .map((item) => item.title),
+    [euShoe.title, unknownShoe.title],
+  );
+  assert.equal(createSearchRelevanceGate("Nike watch band size 42").requestedType, "watch band");
+
+  const diesel = createSearchRelevanceGate("Diesel jeans مقاس 32");
+  const broad = product("Diesel Regular 32 Size Jeans for Men for sale | eBay", {
+    sourceType: "web", productUrl: "https://example.invalid/search/diesel-jeans", rankScore: 100,
+  });
+  const specific = product("Diesel jeans waist 32", {
+    sourceType: "web", productUrl: "https://example.invalid/itm/diesel-jeans", rankScore: 1,
+  });
+  const inseam = product("Diesel jeans waist 34 inseam 32", { rankScore: 200 });
+  assert.equal(evaluateSearchRelevance(broad, diesel).size, "UNKNOWN");
+  assert.equal(evaluateSearchRelevance(specific, diesel).size, "MATCH");
+  assert.equal(evaluateSearchRelevance(inseam, diesel).size, "CONFLICT");
+  assert.deepEqual(
+    sortSearchRelevance(filterSearchRelevance([broad, specific, inseam], diesel), diesel)
+      .map((item) => item.title),
+    [specific.title, broad.title],
+  );
+});
+
+test("web page quality prefers actual listings without inventing price or exact SKU evidence", () => {
+  const watch = createSearchRelevanceGate("ساعة حدود 500 ريال");
+  const watchListing = product("Casio wrist watch", {
+    sourceType: "web", category: "watches_jewelry",
+    productUrl: "https://example.invalid/product/casio-watch", price: 520, currency: "SAR",
+  });
+  const weakWatchPages = [
+    product("أفضل ساعات ذكية لعام 2026 - الاعلي تقييما", {
+      sourceType: "web", category: "watches_jewelry", rankScore: 100,
+    }),
+    product("سعر ساعة ذكية T500 - كان بكام", {
+      sourceType: "web", category: "watches_jewelry", rankScore: 90,
+    }),
+    product("ساعات ذكية للبيع | السوق المفتوح", {
+      sourceType: "web", category: "watches_jewelry", rankScore: 80,
+    }),
+  ];
+  assert.equal(sortSearchRelevance([watchListing, ...weakWatchPages], watch)[0], watchListing);
+  assert.equal(weakWatchPages.every((item) => item.price == null), true);
+  // 500 is a preference; a real 520 SAR watch stays eligible.
+  assert.deepEqual(filterSearchRelevance([watchListing], watch), [watchListing]);
+
+  const iphone = createSearchRelevanceGate("iPhone 15 Pro Max");
+  const listing = product("Apple iPhone 15 Pro Max 256GB Blue Titanium - eXtra", {
+    sourceType: "web", category: "electronics",
+    productUrl: "https://example.invalid/product/iphone-15-pro-max",
+  });
+  const marketplace = product("Apple iPhone 15 Pro Max Mobiles for Sale : Best Prices", {
+    sourceType: "web", category: "electronics", rankScore: 100,
+  });
+  assert.equal(evaluateSearchRelevance(listing, iphone).identifier, "MATCH");
+  assert.equal(sortSearchRelevance([marketplace, listing], iphone)[0], listing);
+  assert.deepEqual(filterSearchRelevance([product("iPhone 15 Pro")], iphone), []);
+
+  const samsung = createSearchRelevanceGate("Samsung S24 Ultra");
+  const specificSamsung = product("Samsung Galaxy S24 Ultra 256 GB Titanium Black", {
+    sourceType: "web", category: "electronics",
+    productUrl: "https://example.invalid/product/galaxy-s24-ultra",
+  });
+  const modelPage = product("Samsung Galaxy S24 Ultra with Galaxy AI", {
+    sourceType: "web", category: "electronics", rankScore: 100,
+  });
+  assert.equal(sortSearchRelevance([modelPage, specificSamsung], samsung)[0], specificSamsung);
+  assert.equal(evaluateSearchRelevance(modelPage, samsung).identifier, "MATCH");
 });
